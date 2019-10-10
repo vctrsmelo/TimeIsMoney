@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427001234F4A1E007A63D9 /* AppDelegate.swift */; };
+		EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427003234F4A1E007A63D9 /* SceneDelegate.swift */; };
+		EE427007234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE427005234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld */; };
+		EE427009234F4A1E007A63D9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427008234F4A1E007A63D9 /* ContentView.swift */; };
+		EE42700B234F4A22007A63D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE42700A234F4A22007A63D9 /* Assets.xcassets */; };
+		EE42700E234F4A22007A63D9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE42700D234F4A22007A63D9 /* Preview Assets.xcassets */; };
+		EE427011234F4A23007A63D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE42700F234F4A23007A63D9 /* LaunchScreen.storyboard */; };
+		EE42701C234F4A23007A63D9 /* Time_is_MoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE42701B234F4A23007A63D9 /* Time_is_MoneyTests.swift */; };
+		EE427027234F4A23007A63D9 /* Time_is_MoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427026234F4A23007A63D9 /* Time_is_MoneyUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EE427018234F4A23007A63D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE426FF6234F4A1E007A63D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE426FFD234F4A1E007A63D9;
+			remoteInfo = "Time is Money";
+		};
+		EE427023234F4A23007A63D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE426FF6234F4A1E007A63D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE426FFD234F4A1E007A63D9;
+			remoteInfo = "Time is Money";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EE426FFE234F4A1E007A63D9 /* Time is Money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time is Money.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE427001234F4A1E007A63D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EE427003234F4A1E007A63D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EE427006234F4A1E007A63D9 /* Time_is_Money.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Time_is_Money.xcdatamodel; sourceTree = "<group>"; };
+		EE427008234F4A1E007A63D9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EE42700A234F4A22007A63D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EE42700D234F4A22007A63D9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EE427010234F4A23007A63D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EE427012234F4A23007A63D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE427017234F4A23007A63D9 /* Time is MoneyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Time is MoneyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE42701B234F4A23007A63D9 /* Time_is_MoneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_is_MoneyTests.swift; sourceTree = "<group>"; };
+		EE42701D234F4A23007A63D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE427022234F4A23007A63D9 /* Time is MoneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Time is MoneyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE427026234F4A23007A63D9 /* Time_is_MoneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_is_MoneyUITests.swift; sourceTree = "<group>"; };
+		EE427028234F4A23007A63D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EE426FFB234F4A1E007A63D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE427014234F4A23007A63D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE42701F234F4A23007A63D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EE426FF5234F4A1E007A63D9 = {
+			isa = PBXGroup;
+			children = (
+				EE427000234F4A1E007A63D9 /* Time is Money */,
+				EE42701A234F4A23007A63D9 /* Time is MoneyTests */,
+				EE427025234F4A23007A63D9 /* Time is MoneyUITests */,
+				EE426FFF234F4A1E007A63D9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EE426FFF234F4A1E007A63D9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE426FFE234F4A1E007A63D9 /* Time is Money.app */,
+				EE427017234F4A23007A63D9 /* Time is MoneyTests.xctest */,
+				EE427022234F4A23007A63D9 /* Time is MoneyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EE427000234F4A1E007A63D9 /* Time is Money */ = {
+			isa = PBXGroup;
+			children = (
+				EE427001234F4A1E007A63D9 /* AppDelegate.swift */,
+				EE427003234F4A1E007A63D9 /* SceneDelegate.swift */,
+				EE427008234F4A1E007A63D9 /* ContentView.swift */,
+				EE42700A234F4A22007A63D9 /* Assets.xcassets */,
+				EE42700F234F4A23007A63D9 /* LaunchScreen.storyboard */,
+				EE427012234F4A23007A63D9 /* Info.plist */,
+				EE427005234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld */,
+				EE42700C234F4A22007A63D9 /* Preview Content */,
+			);
+			path = "Time is Money";
+			sourceTree = "<group>";
+		};
+		EE42700C234F4A22007A63D9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EE42700D234F4A22007A63D9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EE42701A234F4A23007A63D9 /* Time is MoneyTests */ = {
+			isa = PBXGroup;
+			children = (
+				EE42701B234F4A23007A63D9 /* Time_is_MoneyTests.swift */,
+				EE42701D234F4A23007A63D9 /* Info.plist */,
+			);
+			path = "Time is MoneyTests";
+			sourceTree = "<group>";
+		};
+		EE427025234F4A23007A63D9 /* Time is MoneyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EE427026234F4A23007A63D9 /* Time_is_MoneyUITests.swift */,
+				EE427028234F4A23007A63D9 /* Info.plist */,
+			);
+			path = "Time is MoneyUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EE426FFD234F4A1E007A63D9 /* Time is Money */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE42702B234F4A23007A63D9 /* Build configuration list for PBXNativeTarget "Time is Money" */;
+			buildPhases = (
+				EE426FFA234F4A1E007A63D9 /* Sources */,
+				EE426FFB234F4A1E007A63D9 /* Frameworks */,
+				EE426FFC234F4A1E007A63D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Time is Money";
+			productName = "Time is Money";
+			productReference = EE426FFE234F4A1E007A63D9 /* Time is Money.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EE427016234F4A23007A63D9 /* Time is MoneyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE42702E234F4A23007A63D9 /* Build configuration list for PBXNativeTarget "Time is MoneyTests" */;
+			buildPhases = (
+				EE427013234F4A23007A63D9 /* Sources */,
+				EE427014234F4A23007A63D9 /* Frameworks */,
+				EE427015234F4A23007A63D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE427019234F4A23007A63D9 /* PBXTargetDependency */,
+			);
+			name = "Time is MoneyTests";
+			productName = "Time is MoneyTests";
+			productReference = EE427017234F4A23007A63D9 /* Time is MoneyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EE427021234F4A23007A63D9 /* Time is MoneyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE427031234F4A23007A63D9 /* Build configuration list for PBXNativeTarget "Time is MoneyUITests" */;
+			buildPhases = (
+				EE42701E234F4A23007A63D9 /* Sources */,
+				EE42701F234F4A23007A63D9 /* Frameworks */,
+				EE427020234F4A23007A63D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE427024234F4A23007A63D9 /* PBXTargetDependency */,
+			);
+			name = "Time is MoneyUITests";
+			productName = "Time is MoneyUITests";
+			productReference = EE427022234F4A23007A63D9 /* Time is MoneyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EE426FF6234F4A1E007A63D9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = "Victor S Melo";
+				TargetAttributes = {
+					EE426FFD234F4A1E007A63D9 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					EE427016234F4A23007A63D9 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = EE426FFD234F4A1E007A63D9;
+					};
+					EE427021234F4A23007A63D9 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = EE426FFD234F4A1E007A63D9;
+					};
+				};
+			};
+			buildConfigurationList = EE426FF9234F4A1E007A63D9 /* Build configuration list for PBXProject "Time is Money" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EE426FF5234F4A1E007A63D9;
+			productRefGroup = EE426FFF234F4A1E007A63D9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE426FFD234F4A1E007A63D9 /* Time is Money */,
+				EE427016234F4A23007A63D9 /* Time is MoneyTests */,
+				EE427021234F4A23007A63D9 /* Time is MoneyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EE426FFC234F4A1E007A63D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE427011234F4A23007A63D9 /* LaunchScreen.storyboard in Resources */,
+				EE42700E234F4A22007A63D9 /* Preview Assets.xcassets in Resources */,
+				EE42700B234F4A22007A63D9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE427015234F4A23007A63D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE427020234F4A23007A63D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EE426FFA234F4A1E007A63D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE427007234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld in Sources */,
+				EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */,
+				EE427009234F4A1E007A63D9 /* ContentView.swift in Sources */,
+				EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE427013234F4A23007A63D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE42701C234F4A23007A63D9 /* Time_is_MoneyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE42701E234F4A23007A63D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE427027234F4A23007A63D9 /* Time_is_MoneyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EE427019234F4A23007A63D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE426FFD234F4A1E007A63D9 /* Time is Money */;
+			targetProxy = EE427018234F4A23007A63D9 /* PBXContainerItemProxy */;
+		};
+		EE427024234F4A23007A63D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE426FFD234F4A1E007A63D9 /* Time is Money */;
+			targetProxy = EE427023234F4A23007A63D9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EE42700F234F4A23007A63D9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE427010234F4A23007A63D9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EE427029234F4A23007A63D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EE42702A234F4A23007A63D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EE42702C234F4A23007A63D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Time is Money/Preview Content\"";
+				DEVELOPMENT_TEAM = Y93HUJS49V;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Time is Money/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.victormelo.Time-is-Money";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EE42702D234F4A23007A63D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Time is Money/Preview Content\"";
+				DEVELOPMENT_TEAM = Y93HUJS49V;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Time is Money/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.victormelo.Time-is-Money";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EE42702F234F4A23007A63D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y93HUJS49V;
+				INFOPLIST_FILE = "Time is MoneyTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.victormelo.Time-is-MoneyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Time is Money.app/Time is Money";
+			};
+			name = Debug;
+		};
+		EE427030234F4A23007A63D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y93HUJS49V;
+				INFOPLIST_FILE = "Time is MoneyTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.victormelo.Time-is-MoneyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Time is Money.app/Time is Money";
+			};
+			name = Release;
+		};
+		EE427032234F4A23007A63D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y93HUJS49V;
+				INFOPLIST_FILE = "Time is MoneyUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.victormelo.Time-is-MoneyUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Time is Money";
+			};
+			name = Debug;
+		};
+		EE427033234F4A23007A63D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y93HUJS49V;
+				INFOPLIST_FILE = "Time is MoneyUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.victormelo.Time-is-MoneyUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Time is Money";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EE426FF9234F4A1E007A63D9 /* Build configuration list for PBXProject "Time is Money" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE427029234F4A23007A63D9 /* Debug */,
+				EE42702A234F4A23007A63D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE42702B234F4A23007A63D9 /* Build configuration list for PBXNativeTarget "Time is Money" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE42702C234F4A23007A63D9 /* Debug */,
+				EE42702D234F4A23007A63D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE42702E234F4A23007A63D9 /* Build configuration list for PBXNativeTarget "Time is MoneyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE42702F234F4A23007A63D9 /* Debug */,
+				EE427030234F4A23007A63D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE427031234F4A23007A63D9 /* Build configuration list for PBXNativeTarget "Time is MoneyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE427032234F4A23007A63D9 /* Debug */,
+				EE427033234F4A23007A63D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EE427005234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EE427006234F4A1E007A63D9 /* Time_is_Money.xcdatamodel */,
+			);
+			currentVersion = EE427006234F4A1E007A63D9 /* Time_is_Money.xcdatamodel */;
+			path = Time_is_Money.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EE426FF6234F4A1E007A63D9 /* Project object */;
+}
