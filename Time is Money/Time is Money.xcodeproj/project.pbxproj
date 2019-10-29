@@ -10,7 +10,7 @@
 		EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427001234F4A1E007A63D9 /* AppDelegate.swift */; };
 		EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427003234F4A1E007A63D9 /* SceneDelegate.swift */; };
 		EE427007234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE427005234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld */; };
-		EE427009234F4A1E007A63D9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427008234F4A1E007A63D9 /* ContentView.swift */; };
+		EE427009234F4A1E007A63D9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427008234F4A1E007A63D9 /* MainView.swift */; };
 		EE42700B234F4A22007A63D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE42700A234F4A22007A63D9 /* Assets.xcassets */; };
 		EE42700E234F4A22007A63D9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE42700D234F4A22007A63D9 /* Preview Assets.xcassets */; };
 		EE427011234F4A23007A63D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE42700F234F4A23007A63D9 /* LaunchScreen.storyboard */; };
@@ -40,7 +40,7 @@
 		EE427001234F4A1E007A63D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE427003234F4A1E007A63D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EE427006234F4A1E007A63D9 /* Time_is_Money.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Time_is_Money.xcdatamodel; sourceTree = "<group>"; };
-		EE427008234F4A1E007A63D9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EE427008234F4A1E007A63D9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		EE42700A234F4A22007A63D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE42700D234F4A22007A63D9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EE427010234F4A23007A63D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 			children = (
 				EE427001234F4A1E007A63D9 /* AppDelegate.swift */,
 				EE427003234F4A1E007A63D9 /* SceneDelegate.swift */,
-				EE427008234F4A1E007A63D9 /* ContentView.swift */,
+				EE427008234F4A1E007A63D9 /* MainView.swift */,
 				EE42700A234F4A22007A63D9 /* Assets.xcassets */,
 				EE42700F234F4A23007A63D9 /* LaunchScreen.storyboard */,
 				EE427012234F4A23007A63D9 /* Info.plist */,
@@ -272,7 +272,7 @@
 			files = (
 				EE427007234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld in Sources */,
 				EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */,
-				EE427009234F4A1E007A63D9 /* ContentView.swift in Sources */,
+				EE427009234F4A1E007A63D9 /* MainView.swift in Sources */,
 				EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
