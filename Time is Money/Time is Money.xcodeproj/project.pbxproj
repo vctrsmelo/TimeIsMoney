@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE7C9CC7236C9C1D00167018 /* TimeInterval+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C9CC6236C9C1D00167018 /* TimeInterval+Conversions.swift */; };
+		BE7C9CC9236CA7AF00167018 /* TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C9CC8236CA7AF00167018 /* TimeUnit.swift */; };
+		BE7C9CCB236CAE2500167018 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C9CCA236CAE2500167018 /* User.swift */; };
+		BE935696236C922100B29EF5 /* PriceToHoursCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE935695236C922100B29EF5 /* PriceToHoursCalculator.swift */; };
 		EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427001234F4A1E007A63D9 /* AppDelegate.swift */; };
 		EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427003234F4A1E007A63D9 /* SceneDelegate.swift */; };
 		EE427007234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE427005234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld */; };
@@ -36,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE7C9CC6236C9C1D00167018 /* TimeInterval+Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Conversions.swift"; sourceTree = "<group>"; };
+		BE7C9CC8236CA7AF00167018 /* TimeUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUnit.swift; sourceTree = "<group>"; };
+		BE7C9CCA236CAE2500167018 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BE935695236C922100B29EF5 /* PriceToHoursCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceToHoursCalculator.swift; sourceTree = "<group>"; };
 		EE426FFE234F4A1E007A63D9 /* Time is Money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time is Money.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE427001234F4A1E007A63D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE427003234F4A1E007A63D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +86,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE7C9CC5236C9B8700167018 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BE7C9CC6236C9C1D00167018 /* TimeInterval+Conversions.swift */,
+				BE7C9CC8236CA7AF00167018 /* TimeUnit.swift */,
+				BE7C9CCA236CAE2500167018 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BE93568F236C8EA400B29EF5 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				BE935694236C8FA700B29EF5 /* Onboarding */,
+				BE935693236C8F9800B29EF5 /* Main */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		BE935691236C8F1800B29EF5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EE42700C234F4A22007A63D9 /* Preview Content */,
+				EE427005234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld */,
+				EE42700F234F4A23007A63D9 /* LaunchScreen.storyboard */,
+				EE427012234F4A23007A63D9 /* Info.plist */,
+				EE42700A234F4A22007A63D9 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BE935693236C8F9800B29EF5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				EE427008234F4A1E007A63D9 /* MainView.swift */,
+				BE935695236C922100B29EF5 /* PriceToHoursCalculator.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		BE935694236C8FA700B29EF5 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		EE426FF5234F4A1E007A63D9 = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +156,11 @@
 		EE427000234F4A1E007A63D9 /* Time is Money */ = {
 			isa = PBXGroup;
 			children = (
-				EE427001234F4A1E007A63D9 /* AppDelegate.swift */,
 				EE427003234F4A1E007A63D9 /* SceneDelegate.swift */,
-				EE427008234F4A1E007A63D9 /* MainView.swift */,
-				EE42700A234F4A22007A63D9 /* Assets.xcassets */,
-				EE42700F234F4A23007A63D9 /* LaunchScreen.storyboard */,
-				EE427012234F4A23007A63D9 /* Info.plist */,
-				EE427005234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld */,
-				EE42700C234F4A22007A63D9 /* Preview Content */,
+				EE427001234F4A1E007A63D9 /* AppDelegate.swift */,
+				BE7C9CC5236C9B8700167018 /* Models */,
+				BE93568F236C8EA400B29EF5 /* Flows */,
+				BE935691236C8F1800B29EF5 /* Resources */,
 			);
 			path = "Time is Money";
 			sourceTree = "<group>";
@@ -273,7 +325,11 @@
 				EE427007234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld in Sources */,
 				EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */,
 				EE427009234F4A1E007A63D9 /* MainView.swift in Sources */,
+				BE7C9CC7236C9C1D00167018 /* TimeInterval+Conversions.swift in Sources */,
+				BE7C9CCB236CAE2500167018 /* User.swift in Sources */,
 				EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */,
+				BE935696236C922100B29EF5 /* PriceToHoursCalculator.swift in Sources */,
+				BE7C9CC9236CA7AF00167018 /* TimeUnit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,10 +495,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Time is Money/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Time is Money/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = Y93HUJS49V;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Time is Money/Info.plist";
+				INFOPLIST_FILE = "Time is Money/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,10 +515,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Time is Money/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Time is Money/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = Y93HUJS49V;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Time is Money/Info.plist";
+				INFOPLIST_FILE = "Time is Money/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
