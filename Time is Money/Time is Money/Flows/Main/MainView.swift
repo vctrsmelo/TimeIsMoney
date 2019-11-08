@@ -30,10 +30,12 @@ struct MainView: View {
         
         let formattedValue = currencyFormatter.string(from: NSNumber(value: price)) ?? ""
         
+        let timeComponent = TimeComponent.from(seconds: workTime)
+        
         return VStack {
             
             //header
-            Text("Você terá que trabalhar \(workTime.getDateStringFormatted())")
+            Text("Você terá que trabalhar \(timeComponent.getDateStringFormatted())")
                 .padding(.top, 120)
             Text("")
             Text("para pagar estes \(formattedValue)")
