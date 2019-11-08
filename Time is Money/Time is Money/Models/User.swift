@@ -23,12 +23,12 @@ class User {
     // MARK: - Timestamp salary
     
     var salaryPerSecond: Double {
-        let secondSalary = salaryPerMinute/TimeUnit.secondsInMinute
+        let secondSalary = salaryPerMinute/TimeConverter.numberOfSecondsInAMinute
         return secondSalary
     }
     
     var salaryPerMinute: Double {
-        let minuteSalary = salaryPerHour / TimeUnit.minutesInHour
+        let minuteSalary = salaryPerHour / TimeConverter.numberOfMinutesInAnHour
         return minuteSalary
     }
     
@@ -43,7 +43,7 @@ class User {
     }
     
     var salaryPerWeek: Double {
-        let weeklySalary = monthlySalary / TimeUnit.weeksInMonth
+        let weeklySalary = monthlySalary / TimeConverter.numberOfWeeksInAMonth
         
         return weeklySalary
     }

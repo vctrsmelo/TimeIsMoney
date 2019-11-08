@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		BE7C9CC7236C9C1D00167018 /* TimeInterval+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C9CC6236C9C1D00167018 /* TimeInterval+Conversions.swift */; };
-		BE7C9CC9236CA7AF00167018 /* TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C9CC8236CA7AF00167018 /* TimeUnit.swift */; };
+		BE7C9CC9236CA7AF00167018 /* TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C9CC8236CA7AF00167018 /* TimeConverter.swift */; };
 		BE7C9CCB236CAE2500167018 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C9CCA236CAE2500167018 /* User.swift */; };
+		BE80F36623761C0200A95EAF /* TimeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE80F36523761C0200A95EAF /* TimeComponent.swift */; };
 		BE935696236C922100B29EF5 /* PriceToHoursCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE935695236C922100B29EF5 /* PriceToHoursCalculator.swift */; };
 		EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427001234F4A1E007A63D9 /* AppDelegate.swift */; };
 		EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427003234F4A1E007A63D9 /* SceneDelegate.swift */; };
@@ -41,8 +42,9 @@
 
 /* Begin PBXFileReference section */
 		BE7C9CC6236C9C1D00167018 /* TimeInterval+Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Conversions.swift"; sourceTree = "<group>"; };
-		BE7C9CC8236CA7AF00167018 /* TimeUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUnit.swift; sourceTree = "<group>"; };
+		BE7C9CC8236CA7AF00167018 /* TimeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConverter.swift; sourceTree = "<group>"; };
 		BE7C9CCA236CAE2500167018 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BE80F36523761C0200A95EAF /* TimeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeComponent.swift; sourceTree = "<group>"; };
 		BE935695236C922100B29EF5 /* PriceToHoursCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceToHoursCalculator.swift; sourceTree = "<group>"; };
 		EE426FFE234F4A1E007A63D9 /* Time is Money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time is Money.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE427001234F4A1E007A63D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,8 +92,9 @@
 			isa = PBXGroup;
 			children = (
 				BE7C9CC6236C9C1D00167018 /* TimeInterval+Conversions.swift */,
-				BE7C9CC8236CA7AF00167018 /* TimeUnit.swift */,
+				BE7C9CC8236CA7AF00167018 /* TimeConverter.swift */,
 				BE7C9CCA236CAE2500167018 /* User.swift */,
+				BE80F36523761C0200A95EAF /* TimeComponent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -329,7 +332,8 @@
 				BE7C9CCB236CAE2500167018 /* User.swift in Sources */,
 				EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */,
 				BE935696236C922100B29EF5 /* PriceToHoursCalculator.swift in Sources */,
-				BE7C9CC9236CA7AF00167018 /* TimeUnit.swift in Sources */,
+				BE80F36623761C0200A95EAF /* TimeComponent.swift in Sources */,
+				BE7C9CC9236CA7AF00167018 /* TimeConverter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

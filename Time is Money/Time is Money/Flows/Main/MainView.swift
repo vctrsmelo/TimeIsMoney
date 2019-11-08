@@ -33,7 +33,7 @@ struct MainView: View {
         return VStack {
             
             //header
-            Text("Você terá que trabalhar \(workTime.dateFormatted())")
+            Text("Você terá que trabalhar \(workTime.getDateStringFormatted())")
                 .padding(.top, 120)
             Text("")
             Text("para pagar estes \(formattedValue)")
