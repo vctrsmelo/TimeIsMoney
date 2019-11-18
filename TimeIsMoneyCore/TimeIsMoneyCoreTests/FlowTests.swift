@@ -8,7 +8,7 @@
 
 import Foundation
 import XCTest
-@testable import TimeIsMoneyEngine
+@testable import TimeIsMoneyCore
 
 class FlowTests: XCTestCase {
     
@@ -46,7 +46,7 @@ class FlowTests: XCTestCase {
         
         XCTAssertEqual(sut.getTimeNeededToPay(for: 100), Result.failure(CalculatorError.undefinedSalary))
     }
-    
+
     // MARK: Helpers
     
     func getSUT(salary: Double, weeklyWorkHours: Double, weeklyWorkDays: Int) -> Flow {

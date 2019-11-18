@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:TimeIsMoneyEngine.xcodeproj">
+      location = "self:TimeIsMoneyCore.xcodeproj">
    </FileRef>
 </Workspace>

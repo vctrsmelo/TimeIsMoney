@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE7C9CC7236C9C1D00167018 /* TimeInterval+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C9CC6236C9C1D00167018 /* TimeInterval+Conversions.swift */; };
-		BE7C9CC9236CA7AF00167018 /* TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C9CC8236CA7AF00167018 /* TimeConverter.swift */; };
-		BE7C9CCB236CAE2500167018 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C9CCA236CAE2500167018 /* User.swift */; };
-		BE80F36623761C0200A95EAF /* TimeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE80F36523761C0200A95EAF /* TimeComponent.swift */; };
-		BE935696236C922100B29EF5 /* PriceToHoursCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE935695236C922100B29EF5 /* PriceToHoursCalculator.swift */; };
+		BE815FC72383497200000FB9 /* TimeIsMoneyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */; };
+		BE815FC82383497200000FB9 /* TimeIsMoneyCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427001234F4A1E007A63D9 /* AppDelegate.swift */; };
 		EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427003234F4A1E007A63D9 /* SceneDelegate.swift */; };
 		EE427007234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE427005234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld */; };
@@ -40,12 +37,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		BE815F40238343EF00000FB9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BE815FC82383497200000FB9 /* TimeIsMoneyCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		BE7C9CC6236C9C1D00167018 /* TimeInterval+Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Conversions.swift"; sourceTree = "<group>"; };
-		BE7C9CC8236CA7AF00167018 /* TimeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConverter.swift; sourceTree = "<group>"; };
-		BE7C9CCA236CAE2500167018 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		BE80F36523761C0200A95EAF /* TimeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeComponent.swift; sourceTree = "<group>"; };
-		BE935695236C922100B29EF5 /* PriceToHoursCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceToHoursCalculator.swift; sourceTree = "<group>"; };
+		BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE426FFE234F4A1E007A63D9 /* Time is Money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time is Money.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE427001234F4A1E007A63D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE427003234F4A1E007A63D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE815FC72383497200000FB9 /* TimeIsMoneyCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,12 +99,16 @@
 		BE7C9CC5236C9B8700167018 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BE7C9CC6236C9C1D00167018 /* TimeInterval+Conversions.swift */,
-				BE7C9CC8236CA7AF00167018 /* TimeConverter.swift */,
-				BE7C9CCA236CAE2500167018 /* User.swift */,
-				BE80F36523761C0200A95EAF /* TimeComponent.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BE815FC52383497200000FB9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		BE93568F236C8EA400B29EF5 /* Flows */ = {
@@ -124,7 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				EE427008234F4A1E007A63D9 /* MainView.swift */,
-				BE935695236C922100B29EF5 /* PriceToHoursCalculator.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -143,6 +154,7 @@
 				EE42701A234F4A23007A63D9 /* Time is MoneyTests */,
 				EE427025234F4A23007A63D9 /* Time is MoneyUITests */,
 				EE426FFF234F4A1E007A63D9 /* Products */,
+				BE815FC52383497200000FB9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -204,6 +216,7 @@
 				EE426FFA234F4A1E007A63D9 /* Sources */,
 				EE426FFB234F4A1E007A63D9 /* Frameworks */,
 				EE426FFC234F4A1E007A63D9 /* Resources */,
+				BE815F40238343EF00000FB9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -328,12 +341,7 @@
 				EE427007234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld in Sources */,
 				EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */,
 				EE427009234F4A1E007A63D9 /* MainView.swift in Sources */,
-				BE7C9CC7236C9C1D00167018 /* TimeInterval+Conversions.swift in Sources */,
-				BE7C9CCB236CAE2500167018 /* User.swift in Sources */,
 				EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */,
-				BE935696236C922100B29EF5 /* PriceToHoursCalculator.swift in Sources */,
-				BE80F36623761C0200A95EAF /* TimeComponent.swift in Sources */,
-				BE7C9CC9236CA7AF00167018 /* TimeConverter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +510,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Time is Money/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = Y93HUJS49V;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Time is Money/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -522,6 +534,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Time is Money/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = Y93HUJS49V;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Time is Money/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

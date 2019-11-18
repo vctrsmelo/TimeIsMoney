@@ -7,16 +7,13 @@
 //
 
 import SwiftUI
+import TimeIsMoneyCore
 
 struct MainView: View {
     
     @State private var price: Double = 6600.00
-
-    let calculator = PriceToHoursCalculator(weeklyWorkHours: User.instance.weeklyWorkHours, monthlySalary: User.instance.monthlySalary, weeklyWorkDays: User.instance.weeklyWorkDays)
-
-    var workTime: Double {
-        return calculator.getWorkTimeNeededToPay(for: Price(price))
-    }
+    
+    private let flow = Flow(monthlySalary: 6600, weeklyWorkHours: 40, weeklyWorkDays: 5)
     
     private var currencyFormatter: NumberFormatter = {
         let f = NumberFormatter()
@@ -28,19 +25,29 @@ struct MainView: View {
     
     var body: some View {
         
-        let formattedValue = currencyFormatter.string(from: NSNumber(value: price)) ?? ""
+        let formattedValue = currencyFormatter.string(from: NSNumber(value: price)) ?? "?"
+        let maybeTimeNeeded = flow.getTimeNeededToPay(for: price)
         
-        let timeComponent = TimeComponent.from(seconds: workTime)
+        let timeMessage: String
+        
+        switch maybeTimeNeeded {
+        case .success(let worktime):
+            let dailyWorkHours = floor(flow.user.weeklyWorkHours / Double(flow.user.weeklyWorkDays))
+            timeMessage = TimeTextTranslator.getDescription(from: worktime, dailyWorkHours: dailyWorkHours, weeklyWorkDays:  flow.user.weeklyWorkDays)
+        case .failure(let error):
+            timeMessage = "¯\\_(ツ)_/¯"
+            print(error)
+        }
         
         return VStack {
             
             //header
-            Text("Você terá que trabalhar \(timeComponent.getDateStringFormatted())")
+            Text("Você terá que trabalhar \(timeMessage)")
                 .padding(.top, 120)
             Text("")
             Text("para pagar estes \(formattedValue)")
             // image
-            Image("table\(User.instance.getExpensivityIndex(price: price, maxIndex: 13))")
+            Image("table\(flow.getExpensivityIndex(price: price, maxIndex: 13))")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .padding(EdgeInsets(top: 20, leading: 16, bottom: 0, trailing: 16))

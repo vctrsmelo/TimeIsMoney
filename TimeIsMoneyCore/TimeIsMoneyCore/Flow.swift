@@ -11,36 +11,36 @@ import Foundation
 let WEEKS_IN_MONTH = 4.0
 let SECONDS_IN_HOUR = 3600.00
 
-typealias WorkTime = TimeInterval
+public typealias WorkTime = TimeInterval
 
-enum CalculatorError: Error {
+public enum CalculatorError: Error {
     case undefinedWeeklyWorkDays
     case undefinedWeeklyWorkHours
     case undefinedSalary
 }
 
-struct User {
-    let monthlySalary: Double
-    let weeklyWorkHours: Double
-    let weeklyWorkDays: Int
-}
+public class Flow {
 
-class Flow {
+    public let user: User
     
-    let user: User
-    
-    init(monthlySalary: Double, weeklyWorkHours: Double, weeklyWorkDays: Int) {
+    public init(monthlySalary: Double, weeklyWorkHours: Double, weeklyWorkDays: Int) {
         user = User(monthlySalary: monthlySalary, weeklyWorkHours: weeklyWorkHours, weeklyWorkDays: weeklyWorkDays)
     }
     
-    func getTimeNeededToPay(for price: Double) -> Result<WorkTime, CalculatorError> {
+    public func getTimeNeededToPay(for price: Double) -> Result<WorkTime, CalculatorError> {
         return Calculator.getWorkTimeToPay(for: price, user: user)
+    }
+
+    public func getExpensivityIndex(price: Double, maxIndex: Int) -> Int {
+        let maxPrice = user.monthlySalary
+        let currentLevel = min(Int(floor(price * Double(maxIndex) / maxPrice)), maxIndex)
+        
+        return currentLevel
     }
 }
 
-enum Calculator {
-    
-    static func getWorkTimeToPay(for price: Double, user: User) -> Result<WorkTime, CalculatorError> {
+public enum Calculator {
+    public static func getWorkTimeToPay(for price: Double, user: User) -> Result<WorkTime, CalculatorError> {
         
         guard price > 0.0 else { return .success(0.0) }
         
@@ -64,17 +64,24 @@ enum Calculator {
     }
 }
 
-class TimeTextTranslator {
+public class TimeTextTranslator {
     
-    static let formatter: DateComponentsFormatter = {
+    private static let formatter: DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = .full
         formatter.allowedUnits = [.year, .month, .weekOfMonth, .hour, .minute, .second]
         return formatter
     }()
     
-    static func getDescription(from workTime: WorkTime) -> String {
-        return formatter.string(from: workTime)!
+    public static func getDescription(from fullWorkTime: WorkTime, dailyWorkHours: Double, weeklyWorkDays: Int) -> String {
+        
+        // needed because otherwise would consider 24h as work daily routine.
+        let workTimeNormalizingDailyWork =  24.0 * fullWorkTime / dailyWorkHours
+        
+        // needed because otherwise would consider 7 days per week as work weekly routine.
+        let workTimeNormalizingWeekWork = 7 * workTimeNormalizingDailyWork / Double(weeklyWorkDays)
+        
+        return formatter.string(from: workTimeNormalizingWeekWork)!
     }
     
 }

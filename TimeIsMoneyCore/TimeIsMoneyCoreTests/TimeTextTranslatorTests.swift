@@ -7,10 +7,9 @@
 //
 
 import XCTest
-@testable import TimeIsMoneyEngine
+@testable import TimeIsMoneyCore
 
 class TimeTextTranslatorTests: XCTestCase {
-
     
     func test_translate_1second_to1second() {
         let seconds: TimeInterval = 1
@@ -27,7 +26,7 @@ class TimeTextTranslatorTests: XCTestCase {
         XCTAssertEqual(getSUT().getDescription(from: seconds), mockedFormatter.string(from: seconds))
     }
     
-    func test_translate_1year_and30min_to1hourAnd30min() {
+    func test_translate_31537800seconds_to1YearAnd30minutes() {
         let seconds: TimeInterval = 31537800
         XCTAssertEqual(getSUT().getDescription(from: seconds), mockedFormatter.string(from: seconds))
     }
