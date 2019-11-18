@@ -8,7 +8,7 @@
 
 import Foundation
 
-let WEEKS_IN_MONTH = 4.0
+let WEEKS_IN_MONTH = 4.429531 // ~30 days per month
 let SECONDS_IN_HOUR = 3600.00
 
 public typealias WorkTime = TimeInterval
@@ -53,7 +53,7 @@ public enum Calculator {
         }
         
         let dailyWorkHours = user.weeklyWorkHours / Double(user.weeklyWorkDays)
-        let weeklySalary = user.monthlySalary / WEEKS_IN_MONTH
+        let weeklySalary = ceil(user.monthlySalary / WEEKS_IN_MONTH)
         let dailySalary = weeklySalary / Double(user.weeklyWorkDays)
         let salaryPerHour = dailySalary / dailyWorkHours
         
@@ -69,19 +69,24 @@ public class TimeTextTranslator {
     private static let formatter: DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = .full
-        formatter.allowedUnits = [.year, .month, .weekOfMonth, .hour, .minute, .second]
+        formatter.allowedUnits = [.year, .month, .weekOfMonth, .day, .hour, .minute, .second]
         return formatter
     }()
     
-    public static func getDescription(from fullWorkTime: WorkTime, dailyWorkHours: Double, weeklyWorkDays: Int) -> String {
+    public static func getUnstoppedWorkTimeDescription(from fullWorkTime: WorkTime) -> String {
+        return formatter.string(from: fullWorkTime)!
+    }
+    
+    public static func getUserWorkTimeDescription(from fullWorkTime: WorkTime, dailyWorkHours: Double, weeklyWorkDays: Int) -> String {
         
         // needed because otherwise would consider 24h as work daily routine.
-        let workTimeNormalizingDailyWork =  24.0 * fullWorkTime / dailyWorkHours
+        let workTimeNormalizingDailyWork =  24.0 * (fullWorkTime / dailyWorkHours)
         
         // needed because otherwise would consider 7 days per week as work weekly routine.
         let workTimeNormalizingWeekWork = 7 * workTimeNormalizingDailyWork / Double(weeklyWorkDays)
         
         return formatter.string(from: workTimeNormalizingWeekWork)!
+        
     }
     
 }

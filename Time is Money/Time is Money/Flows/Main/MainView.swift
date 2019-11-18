@@ -33,7 +33,7 @@ struct MainView: View {
         switch maybeTimeNeeded {
         case .success(let worktime):
             let dailyWorkHours = floor(flow.user.weeklyWorkHours / Double(flow.user.weeklyWorkDays))
-            timeMessage = TimeTextTranslator.getDescription(from: worktime, dailyWorkHours: dailyWorkHours, weeklyWorkDays:  flow.user.weeklyWorkDays)
+            timeMessage = TimeTextTranslator.getUserWorkTimeDescription(from: worktime, dailyWorkHours: dailyWorkHours, weeklyWorkDays:  flow.user.weeklyWorkDays)
         case .failure(let error):
             timeMessage = "¯\\_(ツ)_/¯"
             print(error)
