@@ -10,6 +10,7 @@
 		BE25DE152379ED5A00324430 /* TimeIsMoneyEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE25DE0B2379ED5A00324430 /* TimeIsMoneyEngine.framework */; };
 		BE25DE262379EDA400324430 /* FlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE25DE252379EDA400324430 /* FlowTests.swift */; };
 		BE25DE282379EF2B00324430 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE25DE272379EF2B00324430 /* Flow.swift */; };
+		BE815F2E2383247D00000FB9 /* TimeTextTranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE815F2D2383247D00000FB9 /* TimeTextTranslatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		BE25DE1B2379ED5A00324430 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE25DE252379EDA400324430 /* FlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowTests.swift; sourceTree = "<group>"; };
 		BE25DE272379EF2B00324430 /* Flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
+		BE815F2D2383247D00000FB9 /* TimeTextTranslatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTextTranslatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			children = (
 				BE25DE1B2379ED5A00324430 /* Info.plist */,
 				BE25DE252379EDA400324430 /* FlowTests.swift */,
+				BE815F2D2383247D00000FB9 /* TimeTextTranslatorTests.swift */,
 			);
 			path = TimeIsMoneyEngineTests;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE25DE262379EDA400324430 /* FlowTests.swift in Sources */,
+				BE815F2E2383247D00000FB9 /* TimeTextTranslatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
