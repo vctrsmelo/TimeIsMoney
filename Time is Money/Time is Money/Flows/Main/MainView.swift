@@ -101,7 +101,7 @@ struct MainView: View {
                 .frame(width: nil, height: 100, alignment: .center)
                 .background(Color(.sRGB, red: 94/255.0, green: 128/255.0, blue: 142/255.0, opacity: 1))
         }
-        .background(Color(.sRGB, red: 255/255.0, green: 254/255.0, blue: 240/255.0, opacity: 1))
+        .background(Design.backgroundColor)
         .edgesIgnoringSafeArea(.all)
     }
 }
