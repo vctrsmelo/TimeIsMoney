@@ -33,7 +33,7 @@ public class Flow {
 
     public func getExpensivityIndex(price: Double, maxIndex: Int) -> Int {
         let maxPrice = user.monthlySalary
-        let currentLevel = min(Int(floor(price * Double(maxIndex) / maxPrice)), maxIndex)
+        let currentLevel = min(Int(round(price * Double(maxIndex) / maxPrice)), maxIndex)
         
         return currentLevel
     }
@@ -43,14 +43,9 @@ public enum Calculator {
     public static func getWorkTimeToPay(for price: Double, user: User) -> Result<WorkTime, CalculatorError> {
         
         guard price > 0.0 else { return .success(0.0) }
-        
         guard user.weeklyWorkDays > 0 else { return .failure(CalculatorError.undefinedWeeklyWorkDays)}
-        
         guard user.weeklyWorkHours > 0 else { return .failure(CalculatorError.undefinedWeeklyWorkHours)}
-        
-        guard user.monthlySalary > 0 else { return
-            .failure(CalculatorError.undefinedSalary)
-        }
+        guard user.monthlySalary > 0 else { return .failure(CalculatorError.undefinedSalary) }
         
         let dailyWorkHours = user.weeklyWorkHours / Double(user.weeklyWorkDays)
         let weeklySalary = ceil(user.monthlySalary / WEEKS_IN_MONTH)
@@ -85,8 +80,59 @@ public class TimeTextTranslator {
         // needed because otherwise would consider 7 days per week as work weekly routine.
         let workTimeNormalizingWeekWork = 7 * workTimeNormalizingDailyWork / Double(weeklyWorkDays)
         
+        adjustFormatterAllowedUnits(for: workTimeNormalizingWeekWork)
+        
         return formatter.string(from: workTimeNormalizingWeekWork)!
         
     }
     
+    private static func adjustFormatterAllowedUnits(for seconds: WorkTime) {
+        formatter.allowedUnits = [.year, .month, .weekOfMonth, .day, .hour, .minute, .second]
+        
+        if isLongerThanADay(seconds) {
+            formatter.allowedUnits.remove(.second)
+        }
+        
+        if isLongerThanAWeek(seconds) {
+            formatter.allowedUnits.remove(.minute)
+        }
+        
+        if isLongerThanAMonth(seconds) {
+            formatter.allowedUnits.remove(.hour)
+        }
+        
+        if isLongerThanAYear(seconds) {
+            formatter.allowedUnits.remove(.day)
+        }
+    }
+    
+    private static func isLongerThanADay(_ seconds: WorkTime) -> Bool {
+        return (seconds >= SecondsIn.day.asDouble())
+    }
+    
+    private static func isLongerThanAWeek(_ seconds: WorkTime) -> Bool {
+        return (seconds >= SecondsIn.week.asDouble())
+    }
+    
+    private static func isLongerThanAMonth(_ seconds: WorkTime) -> Bool {
+        return (seconds >= SecondsIn.month.asDouble())
+    }
+    
+    private static func isLongerThanAYear(_ seconds: WorkTime) -> Bool {
+        return (seconds >= SecondsIn.year.asDouble())
+    }
+    
+}
+
+enum SecondsIn: Int {
+    case year = 31104000
+    case month = 2592000
+    case week = 604800
+    case day = 86400
+    case hour = 3600
+    case minute = 60
+    
+    func asDouble() -> Double {
+        return Double(self.rawValue)
+    }
 }
