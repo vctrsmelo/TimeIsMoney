@@ -22,23 +22,25 @@ struct WelcomeView: View {
                     .aspectRatio(contentMode: .fit)
                     .padding(EdgeInsets(top: 20, leading: 16, bottom: 62, trailing: 16))
                 //bem vindo
-                Text("Welcome")
+                Text("Welcome!")
                     .font(Design.textTitleFont)
                     .foregroundColor(Design.textTitleColor)
+                    .padding(.bottom, 15)
                 
-                //subtitle
-                Text("Let's find out how much things really cost?")
-                    .frame(width: UIScreen.main.bounds.width-96)
-                    .font(Design.textSubtitleFont)
-                    .foregroundColor(Design.textTitleColor)
-                
-                
-                //description
-                
-                Text("For this we will only need two information. Let's go? 😄")
-                    .font(Design.textDefaultFont)
-                    .foregroundColor(Design.textDefaultColor)
-                Spacer()
+                Group {
+                    //subtitle
+                    Text("Let's find out how much things really cost?")
+                        .font(Design.textSubtitleFont)
+                        .foregroundColor(Design.textTitleColor)
+                        .padding(.bottom, 43)
+                    
+                    //description
+                    Text("For this we will only need two information. Let's go? 😄")
+                        .font(Design.textDefaultFont)
+                        .foregroundColor(Design.textDefaultColor)
+                    Spacer()
+                }
+                .frame(width: UIScreen.main.bounds.width-64)
             }
         }
     }

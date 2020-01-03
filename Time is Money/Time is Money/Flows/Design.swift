@@ -13,7 +13,7 @@ struct Design {
     static var backgroundColor = Color(.sRGB, red: 255/255.0, green: 254/255.0, blue: 240/255.0, opacity: 1)
     
     static var textTitleFont = Font.system(size: 50, weight: .heavy)
-    static var textSubtitleFont = Font.system(size: 25, weight: .bold)
+    static var textSubtitleFont = Font.system(size: 25, weight: .regular)
     static var textDefaultFont = Font.system(size: 25, weight: .light)
     
     static var textTitleColor = Color(.sRGB, red: 66/255.0, green: 94/255.0, blue: 106/255.0, opacity: 1)

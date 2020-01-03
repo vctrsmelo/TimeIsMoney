@@ -10,6 +10,8 @@
 		BE66B18323BD096800166912 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B18223BD096800166912 /* WelcomeView.swift */; };
 		BE815FC72383497200000FB9 /* TimeIsMoneyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */; };
 		BE815FC82383497200000FB9 /* TimeIsMoneyCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BEB0979A23BF984F00244E30 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0979923BF984F00244E30 /* PageViewController.swift */; };
+		BEB0979D23BF990E00244E30 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0979C23BF990E00244E30 /* PageView.swift */; };
 		BEFBF0E723BD470200FBE0D2 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFBF0E623BD470200FBE0D2 /* Design.swift */; };
 		EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427001234F4A1E007A63D9 /* AppDelegate.swift */; };
 		EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427003234F4A1E007A63D9 /* SceneDelegate.swift */; };
@@ -56,6 +58,8 @@
 /* Begin PBXFileReference section */
 		BE66B18223BD096800166912 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEB0979923BF984F00244E30 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		BEB0979C23BF990E00244E30 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		BEFBF0E623BD470200FBE0D2 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		EE426FFE234F4A1E007A63D9 /* Time is Money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time is Money.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE427001234F4A1E007A63D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 		BE935694236C8FA700B29EF5 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				BEB0979923BF984F00244E30 /* PageViewController.swift */,
+				BEB0979C23BF990E00244E30 /* PageView.swift */,
 				BE66B18223BD096800166912 /* WelcomeView.swift */,
 			);
 			path = Onboarding;
@@ -345,6 +351,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE66B18323BD096800166912 /* WelcomeView.swift in Sources */,
+				BEB0979D23BF990E00244E30 /* PageView.swift in Sources */,
+				BEB0979A23BF984F00244E30 /* PageViewController.swift in Sources */,
 				EE427007234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld in Sources */,
 				EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */,
 				BEFBF0E723BD470200FBE0D2 /* Design.swift in Sources */,
