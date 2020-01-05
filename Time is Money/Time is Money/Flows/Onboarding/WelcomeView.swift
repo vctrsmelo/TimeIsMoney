@@ -10,39 +10,32 @@ import SwiftUI
 
 struct WelcomeView: View {
     var body: some View {
-        ZStack {
-            Rectangle()
-                .foregroundColor(.clear)
-                .background(Design.backgroundColor)
-                .edgesIgnoringSafeArea(.all)
+        VStack {
+            //image
+            Image("MoneyClock")
+                .aspectRatio(contentMode: .fit)
+                .padding(EdgeInsets(top: 20, leading: 16, bottom: 62, trailing: 16))
+            //bem vindo
+            Text("Welcome!")
+                .font(Design.Font.Title.largeTitleFont)
+                .foregroundColor(Design.Color.Text.title)
+                .padding(.bottom, 15)
             
-            VStack {
-                //image
-                Image("MoneyClock")
-                    .aspectRatio(contentMode: .fit)
-                    .padding(EdgeInsets(top: 20, leading: 16, bottom: 62, trailing: 16))
-                //bem vindo
-                Text("Welcome!")
-                    .font(Design.textTitleFont)
-                    .foregroundColor(Design.textTitleColor)
-                    .padding(.bottom, 15)
+            Group {
+                //subtitle
+                Text("Let's find out how much things really cost?")
+                    .font(Design.Font.subtitle)
+                    .foregroundColor(Design.Color.Text.title)
+                    .padding(.bottom, 43)
                 
-                Group {
-                    //subtitle
-                    Text("Let's find out how much things really cost?")
-                        .font(Design.textSubtitleFont)
-                        .foregroundColor(Design.textTitleColor)
-                        .padding(.bottom, 43)
-                    
-                    //description
-                    Text("For this we will only need two information. Let's go? 😄")
-                        .font(Design.textDefaultFont)
-                        .foregroundColor(Design.textDefaultColor)
-                    Spacer()
-                }
-                .frame(width: UIScreen.main.bounds.width-64)
+                //description
+                Text("For this we will only need two information. Let's go? 😄")
+                    .font(Design.Font.standardLight)
+                    .foregroundColor(Design.Color.Text.standard)
+                Spacer()
             }
-        }
+            .frame(width: UIScreen.main.bounds.width-64)
+        }.withBackground()
     }
 }
 

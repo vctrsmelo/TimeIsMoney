@@ -9,13 +9,31 @@
 import Foundation
 import SwiftUI
 
-struct Design {
-    static var backgroundColor = Color(.sRGB, red: 255/255.0, green: 254/255.0, blue: 240/255.0, opacity: 1)
+enum Design {
     
-    static var textTitleFont = Font.system(size: 50, weight: .heavy)
-    static var textSubtitleFont = Font.system(size: 25, weight: .regular)
-    static var textDefaultFont = Font.system(size: 25, weight: .light)
+    enum Font {
+        static var standardLight = SwiftUI.Font.system(size: 25, weight: .light)
+        static var smallRegular = SwiftUI.Font.system(size: 20, weight: .regular)
+        static var subtitle = SwiftUI.Font.system(size: 25, weight: .regular)
+        
+        enum Title {
+            static var largeTitleFont = SwiftUI.Font.system(size: 50, weight: .heavy)
+            static var smallTitleFont = SwiftUI.Font.system(size: 30, weight: .heavy)
+        }
+
+    }
     
-    static var textTitleColor = Color(.sRGB, red: 66/255.0, green: 94/255.0, blue: 106/255.0, opacity: 1)
-    static var textDefaultColor = Color(.sRGB, red: 75/255.0, green: 105/255.0, blue: 118/255.0, opacity: 1)
+    enum Color {
+        
+        enum Background {
+            static var standard = SwiftUI.Color(.sRGB, red: 255/255.0, green: 254/255.0, blue: 240/255.0, opacity: 1)
+            static var selectedOption = SwiftUI.Color(.sRGB, red: 234/255.0, green: 117/255.0, blue: 48/255.0, opacity: 1)
+            static var unselectedOption = SwiftUI.Color(.sRGB, red: 120/255.0, green: 120/255.0, blue: 120/255.0, opacity: 1)
+        }
+
+        enum Text {
+            static var title = SwiftUI.Color(.sRGB, red: 66/255.0, green: 94/255.0, blue: 106/255.0, opacity: 1)
+            static var standard = SwiftUI.Color(.sRGB, red: 75/255.0, green: 105/255.0, blue: 118/255.0, opacity: 1)
+        }
+    }
 }

@@ -101,8 +101,8 @@ struct MainView: View {
                 .frame(width: nil, height: 100, alignment: .center)
                 .background(Color(.sRGB, red: 94/255.0, green: 128/255.0, blue: 142/255.0, opacity: 1))
         }
-        .background(Design.backgroundColor)
-        .edgesIgnoringSafeArea(.all)
+        .withBackground()
+        .navigationBarBackButtonHidden(true)
     }
 }
 
