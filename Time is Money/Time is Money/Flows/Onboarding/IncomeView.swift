@@ -7,8 +7,12 @@
 //
 
 import SwiftUI
+import TimeIsMoneyCore
 
 struct IncomeView: View {
+    
+    @State private var incomeValue: Decimal? = 1000
+    @EnvironmentObject var user: User
     
     init() {
         UITableView.appearance().tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: Double.leastNonzeroMagnitude))
@@ -16,8 +20,6 @@ struct IncomeView: View {
         UITableView.appearance().backgroundColor = .clear
     }
     
-    @State private var incomeValue: Decimal? = 1000
-    @EnvironmentObject var settings: UserSettings
     
     var body: some View {
         Group {
@@ -52,8 +54,11 @@ struct IncomeView: View {
                 Spacer()
             }
         }.withBackground()
+        .onAppear {
+            self.incomeValue = Decimal(self.user.monthlySalary)
+        }
         .onDisappear {
-            self.settings.monthlyIncome = self.incomeValue?.asDouble() ?? 0.0
+            self.user.monthlySalary = self.incomeValue?.asDouble() ?? 0.0
         }
     }
 }

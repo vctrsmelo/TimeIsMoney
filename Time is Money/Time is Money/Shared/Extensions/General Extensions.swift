@@ -8,12 +8,6 @@
 
 import Foundation
 
-extension Bool {
-    mutating func negate() {
-        self = !self
-    }
-}
-
 extension Decimal {
     func asDouble() -> Double {
         return (self as NSDecimalNumber).doubleValue

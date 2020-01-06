@@ -8,10 +8,11 @@
 
 import Foundation
 import SwiftUI
+import TimeIsMoneyCore
 
 struct WorkTimeView: View {
     
-    @EnvironmentObject var settings: UserSettings
+    @EnvironmentObject var user: User
     
     init() {
         UITableView.appearance().tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: Double.leastNonzeroMagnitude))
@@ -19,7 +20,8 @@ struct WorkTimeView: View {
         UITableView.appearance().backgroundColor = .clear
     }
     
-    @State private var selectedHours = 39
+    @State private var selectedHours: Int = 39
+    
     var hours = (1...168).map { "\($0)"}
     
     var body: some View {
@@ -59,8 +61,11 @@ struct WorkTimeView: View {
                 Spacer()
             }
         }.withBackground()
-        .onDisappear {
-            self.settings.weeklyWorkHours = self.selectedHours+1
+            .onDisappear(perform: {
+                self.user.weeklyWorkHours = self.selectedHours+1
+            })
+        .onAppear {
+            self.selectedHours = self.user.weeklyWorkHours-1
         }
     }
 }

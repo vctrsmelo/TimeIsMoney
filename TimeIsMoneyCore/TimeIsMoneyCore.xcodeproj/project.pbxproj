@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE270C3123C3C9E70099AAC7 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE270C3023C3C9E70099AAC7 /* Weekday.swift */; };
 		BE815FA02383474C00000FB9 /* TimeIsMoneyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE815F962383474C00000FB9 /* TimeIsMoneyCore.framework */; };
 		BE815FA52383474C00000FB9 /* TimeIsMoneyCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE815FA42383474C00000FB9 /* TimeIsMoneyCoreTests.swift */; };
 		BE815FA72383474C00000FB9 /* TimeIsMoneyCore.h in Headers */ = {isa = PBXBuildFile; fileRef = BE815F992383474C00000FB9 /* TimeIsMoneyCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE270C3023C3C9E70099AAC7 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		BE815F962383474C00000FB9 /* TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE815F992383474C00000FB9 /* TimeIsMoneyCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeIsMoneyCore.h; sourceTree = "<group>"; };
 		BE815F9A2383474C00000FB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,6 +60,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE270C3223C3C9F10099AAC7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE815FCB23834A1800000FB9 /* User.swift */,
+				BE270C3023C3C9E70099AAC7 /* Weekday.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BE815F8C2383474C00000FB9 = {
 			isa = PBXGroup;
 			children = (
@@ -79,10 +90,10 @@
 		BE815F982383474C00000FB9 /* TimeIsMoneyCore */ = {
 			isa = PBXGroup;
 			children = (
+				BE270C3223C3C9F10099AAC7 /* Model */,
 				BE815FBA2383480200000FB9 /* Flow.swift */,
 				BE815F992383474C00000FB9 /* TimeIsMoneyCore.h */,
 				BE815F9A2383474C00000FB9 /* Info.plist */,
-				BE815FCB23834A1800000FB9 /* User.swift */,
 			);
 			path = TimeIsMoneyCore;
 			sourceTree = "<group>";
@@ -210,6 +221,7 @@
 			files = (
 				BE815FCC23834A1800000FB9 /* User.swift in Sources */,
 				BE815FBB2383480200000FB9 /* Flow.swift in Sources */,
+				BE270C3123C3C9E70099AAC7 /* Weekday.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

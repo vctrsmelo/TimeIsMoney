@@ -7,62 +7,15 @@
 //
 
 import SwiftUI
-
-enum Weekday {
-    case monday
-    case tuesday
-    case wednesday
-    case thursday
-    case friday
-    case saturday
-    case sunday
-    
-    func localized() -> String {
-        switch self {
-        case .monday:
-            return "M"
-        case .tuesday, .thursday:
-            return "T"
-        case .wednesday:
-            return "W"
-        case .friday:
-            return "F"
-        case .saturday, .sunday:
-            return "S"
-        }
-    }
-    
-    func localizedLong() -> String {
-        switch self {
-        case .monday:
-            return "Monday"
-        case .tuesday:
-            return "Tuesday"
-        case .wednesday:
-            return "Wednesday"
-        case .thursday:
-            return "Thursday"
-        case .friday:
-            return "Friday"
-        case .saturday:
-            return "Saturday"
-        case .sunday:
-            return "Sunday"
-        }
-    }
-    
-    static func all() -> [Weekday] {
-        return [.monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday]
-    }
-}
+import TimeIsMoneyCore
 
 struct WeekdayView: View {
 
-    @EnvironmentObject var settings: UserSettings
+    @EnvironmentObject var user: User
 
     private let weekday: Weekday
     private var isSelected: Bool {
-        return settings.weekdays.contains(weekday)
+        return user.workdays.contains(weekday)
     }
     
     init(_ weekday: Weekday) {
@@ -77,10 +30,10 @@ struct WeekdayView: View {
             Circle()
                 .foregroundColor(backgroundColor)
             Button(action: {
-                if self.settings.weekdays.contains(self.weekday) {
-                    self.settings.weekdays.remove(self.weekday)
+                if self.isSelected {
+                    self.user.workdays.removeAll { $0 == self.weekday }
                 } else {
-                    self.settings.weekdays.insert(self.weekday)
+                    self.user.workdays.append(self.weekday)
                 }
             }) {
                 Text(self.weekday.localized())
@@ -95,13 +48,13 @@ struct WeekdayView: View {
 
 struct DaysOfWeekView: View {
     
-    @EnvironmentObject var settings: UserSettings
+    @EnvironmentObject var user: User
     
     private var workdays: String {
         let weekdays = Weekday.all()
         var result = ""
         for day in weekdays {
-            if settings.weekdays.contains(day) {
+            if user.workdays.contains(day) {
                 result += "\(day.localizedLong()), "
             }
         }
@@ -137,9 +90,9 @@ struct DaysOfWeekView: View {
 
 struct DaysOfWeekView_Previews: PreviewProvider {
     
-    static var settings = UserSettings()
+    static var user = User()
     
     static var previews: some View {
-        DaysOfWeekView().environmentObject(settings)
+        DaysOfWeekView().environmentObject(user)
     }
 }

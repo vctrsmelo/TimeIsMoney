@@ -23,8 +23,8 @@ public class Flow {
 
     public let user: User
     
-    public init(monthlySalary: Double, weeklyWorkHours: Double, weeklyWorkDays: Int) {
-        user = User(monthlySalary: monthlySalary, weeklyWorkHours: weeklyWorkHours, weeklyWorkDays: weeklyWorkDays)
+    public init(user: User = User.instance) {
+        self.user = user
     }
     
     public func getTimeNeededToPay(for price: Double) -> Result<WorkTime, CalculatorError> {
@@ -32,7 +32,7 @@ public class Flow {
     }
 
     public func getExpensivityIndex(price: Double, maxIndex: Int) -> Int {
-        let maxPrice = user.monthlySalary
+        let maxPrice = max(1,user.monthlySalary)
         let currentLevel = min(Int(round(price * Double(maxIndex) / maxPrice)), maxIndex)
         
         return currentLevel
@@ -43,13 +43,13 @@ public enum Calculator {
     public static func getWorkTimeToPay(for price: Double, user: User) -> Result<WorkTime, CalculatorError> {
         
         guard price > 0.0 else { return .success(0.0) }
-        guard user.weeklyWorkDays > 0 else { return .failure(CalculatorError.undefinedWeeklyWorkDays)}
+        guard user.workdays.count > 0 else { return .failure(CalculatorError.undefinedWeeklyWorkDays)}
         guard user.weeklyWorkHours > 0 else { return .failure(CalculatorError.undefinedWeeklyWorkHours)}
         guard user.monthlySalary > 0 else { return .failure(CalculatorError.undefinedSalary) }
         
-        let dailyWorkHours = user.weeklyWorkHours / Double(user.weeklyWorkDays)
+        let dailyWorkHours = Double(user.weeklyWorkHours) / Double(user.workdays.count)
         let weeklySalary = ceil(user.monthlySalary / WEEKS_IN_MONTH)
-        let dailySalary = weeklySalary / Double(user.weeklyWorkDays)
+        let dailySalary = weeklySalary / Double(user.workdays.count)
         let salaryPerHour = dailySalary / dailyWorkHours
         
         let hoursWorkingNeeded: WorkTime = (price/salaryPerHour)

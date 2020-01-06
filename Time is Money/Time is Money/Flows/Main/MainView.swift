@@ -46,7 +46,7 @@ struct MainView: View {
         return (price as NSDecimalNumber?)?.doubleValue ?? 0.0
     }
     
-    private let flow = Flow(monthlySalary: 6600, weeklyWorkHours: 44, weeklyWorkDays: 5)
+    private let flow = Flow()
     
     private var currencyFormatter: NumberFormatter = {
         let f = NumberFormatter()
@@ -58,7 +58,7 @@ struct MainView: View {
     
     var body: some View {
         
-        var formattedValue = currencyFormatter.string(from: NSNumber(value: priceAsDouble)) ?? "?"
+        let formattedValue = currencyFormatter.string(from: NSNumber(value: priceAsDouble)) ?? "?"
         let maybeTimeNeeded = flow.getTimeNeededToPay(for: priceAsDouble)
         
         let timeMessage: String
@@ -66,8 +66,8 @@ struct MainView: View {
         
         switch maybeTimeNeeded {
         case .success(let worktime):
-            let dailyWorkHours = floor(flow.user.weeklyWorkHours / Double(flow.user.weeklyWorkDays))
-            timeMessage = TimeTextTranslator.getUserWorkTimeDescription(from: worktime, dailyWorkHours: dailyWorkHours, weeklyWorkDays:  flow.user.weeklyWorkDays)
+            let dailyWorkHours = floor(Double(flow.user.weeklyWorkHours)/Double(flow.user.workdays.count))
+            timeMessage = TimeTextTranslator.getUserWorkTimeDescription(from: worktime, dailyWorkHours: dailyWorkHours, weeklyWorkDays:  flow.user.workdays.count)
         case .failure(let error):
             timeMessage = "¯\\_(ツ)_/¯"
             print(error)
