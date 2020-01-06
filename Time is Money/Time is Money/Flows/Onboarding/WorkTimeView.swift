@@ -11,6 +11,8 @@ import SwiftUI
 
 struct WorkTimeView: View {
     
+    @EnvironmentObject var settings: UserSettings
+    
     init() {
         UITableView.appearance().tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: Double.leastNonzeroMagnitude))
         UITableView.appearance().tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: Double.leastNonzeroMagnitude))
@@ -51,11 +53,15 @@ struct WorkTimeView: View {
                     .foregroundColor(Design.Color.Text.standard)
                     .pickerStyle(WheelPickerStyle())
                     .labelsHidden()
+                    
                 }
                 .background(Color.clear)
                 Spacer()
             }
         }.withBackground()
+        .onDisappear {
+            self.settings.weeklyWorkHours = self.selectedHours+1
+        }
     }
 }
 

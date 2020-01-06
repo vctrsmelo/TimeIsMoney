@@ -13,3 +13,13 @@ extension Bool {
         self = !self
     }
 }
+
+extension Decimal {
+    func asDouble() -> Double {
+        return (self as NSDecimalNumber).doubleValue
+    }
+    
+    func asNSNumber() -> NSNumber {
+        return (self as NSDecimalNumber)
+    }
+}

@@ -132,7 +132,6 @@ struct DaysOfWeekView: View {
                 .foregroundColor(Design.Color.Text.standard)
             Spacer()
         }.withBackground()
-
     }
 }
 

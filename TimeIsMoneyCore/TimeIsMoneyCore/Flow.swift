@@ -89,21 +89,29 @@ public class TimeTextTranslator {
     private static func adjustFormatterAllowedUnits(for seconds: WorkTime) {
         formatter.allowedUnits = [.year, .month, .weekOfMonth, .day, .hour, .minute, .second]
         
-        if isLongerThanADay(seconds) {
+        if isLongerThanAnHour(seconds) {
             formatter.allowedUnits.remove(.second)
         }
         
-        if isLongerThanAWeek(seconds) {
+        if isLongerThanADay(seconds) {
             formatter.allowedUnits.remove(.minute)
         }
         
-        if isLongerThanAMonth(seconds) {
+        if isLongerThanAWeek(seconds) {
             formatter.allowedUnits.remove(.hour)
         }
         
-        if isLongerThanAYear(seconds) {
+        if isLongerThanAMonth(seconds) {
             formatter.allowedUnits.remove(.day)
         }
+        
+        if isLongerThanAYear(seconds) {
+            formatter.allowedUnits.remove(.weekOfMonth)
+        }
+    }
+    
+    private static func isLongerThanAnHour(_ seconds: WorkTime) -> Bool {
+        return (seconds >= SecondsIn.hour.asDouble())
     }
     
     private static func isLongerThanADay(_ seconds: WorkTime) -> Bool {

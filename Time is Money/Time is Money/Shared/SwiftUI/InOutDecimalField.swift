@@ -1,44 +1,24 @@
 //
-//  DecimalField.swift
+//  InOutDecimalField.swift
+//  Time is Money
 //
-//  Created by Edwin Watkeys on 9/20/19.
-//  Copyright © 2019 Edwin Watkeys.
-//
-//  Permission is hereby granted, free of charge, to any person
-//  obtaining a copy of this software and associated documentation
-//  files (the "Software"), to deal in the Software without
-// restriction, including without limitation the rights to use,
-// copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software
-// is furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be
-// included in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-// DEALINGS IN THE SOFTWARE.
+//  Created by Victor Melo on 05/01/20.
+//  Copyright © 2020 Victor S Melo. All rights reserved.
 //
 
 import SwiftUI
 
-struct DecimalField : View {
+struct InOutDecimalField : View {
     let label: String
     @Binding var value: Decimal?
     let formatter: NumberFormatter
-    @State var displayedText: String? = nil
     @State var lastFormattedValue: Decimal? = nil
-    
+
     var body: some View {
+        print("reloaded decimalField")
         let b = Binding<String>(
-            get: { return self.displayedText ?? "" },
+            get: { return self.formatter.string(from: self.value?.asNSNumber() ?? 0.0) ?? ""},
             set: { newValue in
-                self.displayedText = newValue
                 self.value = self.formatter.number(from: newValue)?.decimalValue
         })
         
@@ -63,7 +43,7 @@ struct DecimalField : View {
     }
 }
 
-struct DecimalField_Previews: PreviewProvider {
+struct InOutDecimalField_Previews: PreviewProvider {
     
     static var previews: some View {
         TipCalculator()

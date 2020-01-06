@@ -18,7 +18,6 @@ struct IncomeView: View {
     
     @State private var incomeValue: Decimal? = 1000
     @EnvironmentObject var settings: UserSettings
-    @State var isOnboardingFinished = false
     
     var body: some View {
         Group {
@@ -33,7 +32,7 @@ struct IncomeView: View {
                     .scaledToFit()
                     .frame(width: UIScreen.main.bounds.width/1.6)
                     .padding(.bottom, 80)
-                DecimalField(label: "Income", value: $incomeValue, formatter: Formatters.currencyFormatter)
+                InOutDecimalField(label: "Income", value: $incomeValue, formatter: Formatters.currencyFormatter)
                     .frame(alignment: .center)
                     .multilineTextAlignment(.center)
                     .font(Design.Font.Title.largeTitleFont)
@@ -42,10 +41,7 @@ struct IncomeView: View {
                     .font(Design.Font.standardLight)
                     .foregroundColor(Design.Color.Text.standard)
                 Spacer()
-                Button(action: {
-                    self.isOnboardingFinished = true
-                    print("Foii")
-                }) {
+                NavigationLink(destination: MainView()) {
                     Text("Finish")
                         .font(Design.Font.standardLight)
                         .frame(width: 180, height: 30, alignment: .center)
@@ -53,12 +49,12 @@ struct IncomeView: View {
                         .foregroundColor(Color.white)
                         .cornerRadius(5)
                 }
-                NavigationLink(destination: MainView(), isActive: self.$isOnboardingFinished) {
-                    Text("")
-                }.hidden()
                 Spacer()
             }
         }.withBackground()
+        .onDisappear {
+            self.settings.monthlyIncome = self.incomeValue?.asDouble() ?? 0.0
+        }
     }
 }
 
