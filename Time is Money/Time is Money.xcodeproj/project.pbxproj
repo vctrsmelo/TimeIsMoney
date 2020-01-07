@@ -17,6 +17,7 @@
 		BE815FC82383497200000FB9 /* TimeIsMoneyCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE85876723BFF09200DEFE98 /* DecimalField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE85876623BFF09200DEFE98 /* DecimalField.swift */; };
 		BE85876923BFF2A300DEFE98 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE85876823BFF2A300DEFE98 /* Formatters.swift */; };
+		BEA9AB3423C5308B0057EA1E /* CurrencyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA9AB3323C5308B0057EA1E /* CurrencyField.swift */; };
 		BEB0979A23BF984F00244E30 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0979923BF984F00244E30 /* PageViewController.swift */; };
 		BEB0979D23BF990E00244E30 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0979C23BF990E00244E30 /* PageView.swift */; };
 		BEC00AE723BFD6A0001B6724 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC00AE623BFD6A0001B6724 /* PageControl.swift */; };
@@ -77,6 +78,7 @@
 		BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE85876623BFF09200DEFE98 /* DecimalField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecimalField.swift; sourceTree = "<group>"; };
 		BE85876823BFF2A300DEFE98 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		BEA9AB3323C5308B0057EA1E /* CurrencyField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyField.swift; sourceTree = "<group>"; };
 		BEB0979923BF984F00244E30 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		BEB0979C23BF990E00244E30 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		BEC00AE623BFD6A0001B6724 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			children = (
 				BE85876623BFF09200DEFE98 /* DecimalField.swift */,
 				BE270BEA23C2BE200099AAC7 /* InOutDecimalField.swift */,
+				BEA9AB3323C5308B0057EA1E /* CurrencyField.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				BE85876723BFF09200DEFE98 /* DecimalField.swift in Sources */,
 				BEFBF0E723BD470200FBE0D2 /* Design.swift in Sources */,
 				BEC00AF223BFE591001B6724 /* View+Extensions.swift in Sources */,
+				BEA9AB3423C5308B0057EA1E /* CurrencyField.swift in Sources */,
 				BE270BDB23C2570C0099AAC7 /* UserInfo.swift in Sources */,
 				BE270BD723C039E50099AAC7 /* DaysOfWeekView.swift in Sources */,
 				EE427009234F4A1E007A63D9 /* MainView.swift in Sources */,

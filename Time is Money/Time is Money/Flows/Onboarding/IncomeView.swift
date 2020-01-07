@@ -22,7 +22,8 @@ struct IncomeView: View {
     
     
     var body: some View {
-        Group {
+        
+        return Group {
             VStack {
                 Text("What is your income per month?")
                     .font(Design.Font.Title.smallTitleFont)
