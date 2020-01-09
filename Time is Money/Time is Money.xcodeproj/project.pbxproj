@@ -9,13 +9,9 @@
 /* Begin PBXBuildFile section */
 		BE270BD723C039E50099AAC7 /* DaysOfWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE270BD623C039E50099AAC7 /* DaysOfWeekView.swift */; };
 		BE270BD923C045820099AAC7 /* General Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE270BD823C045820099AAC7 /* General Extensions.swift */; };
-		BE270BDB23C2570C0099AAC7 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE270BDA23C2570C0099AAC7 /* UserInfo.swift */; };
-		BE270BEB23C2BE200099AAC7 /* InOutDecimalField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE270BEA23C2BE200099AAC7 /* InOutDecimalField.swift */; };
-		BE270BEF23C2BE950099AAC7 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE270BEE23C2BE950099AAC7 /* Persistence.swift */; };
 		BE66B18323BD096800166912 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B18223BD096800166912 /* WelcomeView.swift */; };
 		BE815FC72383497200000FB9 /* TimeIsMoneyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */; };
 		BE815FC82383497200000FB9 /* TimeIsMoneyCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BE85876723BFF09200DEFE98 /* DecimalField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE85876623BFF09200DEFE98 /* DecimalField.swift */; };
 		BE85876923BFF2A300DEFE98 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE85876823BFF2A300DEFE98 /* Formatters.swift */; };
 		BEA9AB3423C5308B0057EA1E /* CurrencyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA9AB3323C5308B0057EA1E /* CurrencyField.swift */; };
 		BEB0979A23BF984F00244E30 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0979923BF984F00244E30 /* PageViewController.swift */; };
@@ -71,12 +67,8 @@
 /* Begin PBXFileReference section */
 		BE270BD623C039E50099AAC7 /* DaysOfWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOfWeekView.swift; sourceTree = "<group>"; };
 		BE270BD823C045820099AAC7 /* General Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "General Extensions.swift"; sourceTree = "<group>"; };
-		BE270BDA23C2570C0099AAC7 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
-		BE270BEA23C2BE200099AAC7 /* InOutDecimalField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InOutDecimalField.swift; sourceTree = "<group>"; };
-		BE270BEE23C2BE950099AAC7 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		BE66B18223BD096800166912 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE85876623BFF09200DEFE98 /* DecimalField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecimalField.swift; sourceTree = "<group>"; };
 		BE85876823BFF2A300DEFE98 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		BEA9AB3323C5308B0057EA1E /* CurrencyField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyField.swift; sourceTree = "<group>"; };
 		BEB0979923BF984F00244E30 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -140,7 +132,6 @@
 		BE270BEC23C2BE6F0099AAC7 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				BE270BEE23C2BE950099AAC7 /* Persistence.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -148,9 +139,6 @@
 		BE270BED23C2BE730099AAC7 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				BE85876623BFF09200DEFE98 /* DecimalField.swift */,
-				BE270BEA23C2BE200099AAC7 /* InOutDecimalField.swift */,
-				BEA9AB3323C5308B0057EA1E /* CurrencyField.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -159,10 +147,10 @@
 			isa = PBXGroup;
 			children = (
 				BE270BEC23C2BE6F0099AAC7 /* Persistence */,
+				BEC6A5D023C6A5950014F0CE /* UIKit */,
 				BE270BED23C2BE730099AAC7 /* SwiftUI */,
 				BEC00AF023BFE57D001B6724 /* Extensions */,
 				BE85876823BFF2A300DEFE98 /* Formatters.swift */,
-				BE270BDA23C2570C0099AAC7 /* UserInfo.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -234,6 +222,14 @@
 			children = (
 				BEC00AE623BFD6A0001B6724 /* PageControl.swift */,
 				BEB0979923BF984F00244E30 /* PageViewController.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		BEC6A5D023C6A5950014F0CE /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				BEA9AB3323C5308B0057EA1E /* CurrencyField.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -438,18 +434,14 @@
 				BEC00AE723BFD6A0001B6724 /* PageControl.swift in Sources */,
 				BE85876923BFF2A300DEFE98 /* Formatters.swift in Sources */,
 				BEB0979A23BF984F00244E30 /* PageViewController.swift in Sources */,
-				BE270BEB23C2BE200099AAC7 /* InOutDecimalField.swift in Sources */,
 				BEC00AEB23BFDC3C001B6724 /* IncomeView.swift in Sources */,
 				EE427007234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld in Sources */,
 				BEC00AEF23BFE361001B6724 /* BackgroundView.swift in Sources */,
-				BE270BEF23C2BE950099AAC7 /* Persistence.swift in Sources */,
 				BE270BD923C045820099AAC7 /* General Extensions.swift in Sources */,
 				EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */,
-				BE85876723BFF09200DEFE98 /* DecimalField.swift in Sources */,
 				BEFBF0E723BD470200FBE0D2 /* Design.swift in Sources */,
 				BEC00AF223BFE591001B6724 /* View+Extensions.swift in Sources */,
 				BEA9AB3423C5308B0057EA1E /* CurrencyField.swift in Sources */,
-				BE270BDB23C2570C0099AAC7 /* UserInfo.swift in Sources */,
 				BE270BD723C039E50099AAC7 /* DaysOfWeekView.swift in Sources */,
 				EE427009234F4A1E007A63D9 /* MainView.swift in Sources */,
 				BEC00AE923BFDC2C001B6724 /* WorkTimeView.swift in Sources */,

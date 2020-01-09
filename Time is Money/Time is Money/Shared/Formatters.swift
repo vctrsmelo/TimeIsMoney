@@ -8,16 +8,16 @@
 
 import Foundation
 
-enum Formatters {
+extension Formatter {
     
-    static var currencyFormatter: NumberFormatter {
+    static var currency: NumberFormatter {
         let nf = NumberFormatter()
         nf.numberStyle = .currency
         nf.isLenient = true
         return nf
     }
     
-    static var decimalFormatter: NumberFormatter {
+    static var decimal: NumberFormatter {
         let nf = NumberFormatter()
         nf.numberStyle = .decimal
         nf.isLenient = true

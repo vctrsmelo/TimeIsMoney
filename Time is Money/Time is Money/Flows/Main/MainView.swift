@@ -114,8 +114,8 @@ struct MainView: View {
                     }
                 }
             }
-            
-            InOutDecimalField(label: "Value", value: $price, formatter: Formatters.currencyFormatter)
+
+            CurrencyField(placeholder: "Income")
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
                 .frame(width: nil, height: 100, alignment: .center)

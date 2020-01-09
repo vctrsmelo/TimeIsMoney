@@ -65,7 +65,8 @@ struct WorkTimeView: View {
                 self.user.weeklyWorkHours = self.selectedHours+1
             })
         .onAppear {
-            self.selectedHours = self.user.weeklyWorkHours-1
+            let initialHours = self.user.weeklyWorkHours > 1 ? self.user.weeklyWorkHours-1 : 39
+            self.selectedHours = initialHours
         }
     }
 }

@@ -35,7 +35,7 @@ struct IncomeView: View {
                     .scaledToFit()
                     .frame(width: UIScreen.main.bounds.width/1.6)
                     .padding(.bottom, 80)
-                InOutDecimalField(label: "Income", value: $incomeValue, formatter: Formatters.currencyFormatter)
+                CurrencyField(placeholder: "Income")
                     .frame(alignment: .center)
                     .multilineTextAlignment(.center)
                     .font(Design.Font.Title.largeTitleFont)
