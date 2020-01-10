@@ -40,7 +40,7 @@ struct QuickAnswerView: View {
 struct MainView: View {
     
     @State private var price: Decimal? = 6600.00
-    @ObservedObject private var keyboard = KeyboardResponder()
+    @ObservedObject private var keyboard = KeyboardResponder.shared
     
     private var priceAsDouble: Double {
         return (price as NSDecimalNumber?)?.doubleValue ?? 0.0
@@ -72,12 +72,11 @@ struct MainView: View {
             timeMessage = "¯\\_(ツ)_/¯"
             print(error)
         }
-        
+
         return VStack {
             
             //header
             Text("You have to work")
-                .padding(.top, 120)
                 .multilineTextAlignment(.center)
                 .font(Design.Font.standardLight)
                 .foregroundColor(Design.Color.Text.standard)
@@ -100,7 +99,8 @@ struct MainView: View {
             Image("table\(flow.getExpensivityIndex(price: priceAsDouble, maxIndex: 13))")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .padding(EdgeInsets(top: 20, leading: 16, bottom: 90, trailing: 16))
+                .frame(minWidth: UIScreen.main.bounds.width/2, maxWidth: UIScreen.main.bounds.width-64, minHeight: 64, maxHeight: 160, alignment: .center)
+                .padding(EdgeInsets(top: 20, leading: 16, bottom: 8, trailing: 16))
             // input
             Spacer()
             
@@ -115,19 +115,26 @@ struct MainView: View {
                 }
             }
 
-            CurrencyField(placeholder: "Income")
-                .multilineTextAlignment(.center)
-                .foregroundColor(.white)
-                .frame(width: nil, height: 100, alignment: .center)
+            CurrencyField(placeholder: "Income", textColor: .white)
+                .frame(width: UIScreen.main.bounds.width, height: getCurrencyFieldHeight(), alignment: .center)
                 .background(Color(.sRGB, red: 94/255.0, green: 128/255.0, blue: 142/255.0, opacity: 1))
-                .textContentType(.none)
-                .keyboardType(.decimalPad)
+                .padding(.bottom, getCurrencyFieldBottomPadding())
         }
-        .navigationBarBackButtonHidden(true)
-        .withBackground()
         .edgesIgnoringSafeArea(.bottom)
-        .padding(.bottom, keyboard.currentHeight)
+        .navigationBarBackButtonHidden(true)
+        .animation(.easeOut(duration: 0.25))
+        .withBackground()
+        
     }
+    
+    private func getCurrencyFieldBottomPadding() -> CGFloat {
+        return keyboard.isVisible ? keyboard.currentHeight+10 : keyboard.currentHeight
+    }
+    
+    private func getCurrencyFieldHeight() -> CGFloat {
+        return keyboard.isVisible ? 60 : 120
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -153,55 +160,18 @@ struct GeometryGetter: View {
     }
 }
 
-import Combine
-
-struct KeyboardHost<Content: View>: View {
-    let view: Content
-
-    @State private var keyboardHeight: CGFloat = 0
-
-    private let showPublisher = NotificationCenter.Publisher.init(
-        center: .default,
-        name: UIResponder.keyboardWillShowNotification
-    ).map { (notification) -> CGFloat in
-        if let rect = notification.userInfo?["UIKeyboardFrameEndUserInfoKey"] as? CGRect {
-            return rect.size.height
-        } else {
-            return 0
-        }
-    }
-
-    private let hidePublisher = NotificationCenter.Publisher.init(
-        center: .default,
-        name: UIResponder.keyboardWillHideNotification
-    ).map {_ -> CGFloat in 0}
-
-    // Like HStack or VStack, the only parameter is the view that this view should layout.
-    // (It takes one view rather than the multiple views that Stacks can take)
-    init(@ViewBuilder content: () -> Content) {
-        view = content()
-    }
-
-    var body: some View {
-        VStack {
-            view.padding(.bottom, keyboardHeight)
-//            Rectangle()
-//                .frame(height: keyboardHeight)
-//                .animation(.default)
-//                .foregroundColor(.clear)
-        }.onReceive(showPublisher.merge(with: hidePublisher)) { (height) in
-            self.keyboardHeight = height
-        }
-    }
-}
-
-import SwiftUI
-
 final class KeyboardResponder: ObservableObject {
+    
+    static let shared = KeyboardResponder()
+    
+    var isVisible: Bool {
+        return currentHeight > 0
+    }
+    
     private var notificationCenter: NotificationCenter
     @Published private(set) var currentHeight: CGFloat = 0
 
-    init(center: NotificationCenter = .default) {
+    private init(center: NotificationCenter = .default) {
         notificationCenter = center
         notificationCenter.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(keyBoardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -221,3 +191,4 @@ final class KeyboardResponder: ObservableObject {
         currentHeight = 0
     }
 }
+

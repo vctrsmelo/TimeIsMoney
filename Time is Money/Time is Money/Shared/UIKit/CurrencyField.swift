@@ -13,19 +13,26 @@ import TimeIsMoneyCore
 struct CurrencyField: UIViewRepresentable {
     
     private var placeholder: String?
+    private var textColor: UIColor
     
-    init(placeholder: String) {
+    init(placeholder: String, textColor: UIColor = Design.UIColor.Text.title) {
         self.placeholder = placeholder
+        self.textColor = textColor
     }
     
     func makeUIView(context: Context) -> UICurrencyField {
         let v = UICurrencyField()
         v.placeholder = self.placeholder
+        v.textColor = textColor
         return v
     }
     
     func updateUIView(_ uiView: UICurrencyField, context: Context) {
-        print("updated")
+        if KeyboardResponder.shared.currentHeight > 0 {
+            print("ta aparecendo keyboard")
+        } else {
+            print("Não ta aparecendo keyboard")
+        }
     }
 }
 
@@ -42,11 +49,24 @@ final class UICurrencyField: UITextField {
     }
         
     override func willMove(toSuperview newSuperview: UIView?) {
+        super.willMove(toSuperview: newSuperview)
         Formatter.currency.locale = locale
         self.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
         keyboardType = .numberPad
-        textAlignment = .right
+        font = Design.UIFont.Title.largeTitleFont
+        textAlignment = .center
         sendActions(for: .editingChanged)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    @objc func keyBoardWillShow(notification: Notification) {
+        font = Design.UIFont.Title.smallTitleFont
+    }
+
+    @objc func keyBoardWillHide(notification: Notification) {
+        font = Design.UIFont.Title.largeTitleFont
     }
     
     override func deleteBackward() {
@@ -63,7 +83,6 @@ final class UICurrencyField: UITextField {
         }
         text = decimal.currency
         lastValue = text
-        print("doubleValue:", doubleValue)
     }
     
 }

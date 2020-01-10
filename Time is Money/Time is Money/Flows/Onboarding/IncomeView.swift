@@ -14,6 +14,8 @@ struct IncomeView: View {
     @State private var incomeValue: Decimal? = 1000
     @EnvironmentObject var user: User
     
+    @ObservedObject private var keyboard = KeyboardResponder.shared
+    
     init() {
         UITableView.appearance().tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: Double.leastNonzeroMagnitude))
         UITableView.appearance().tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: Double.leastNonzeroMagnitude))
@@ -36,10 +38,7 @@ struct IncomeView: View {
                     .frame(width: UIScreen.main.bounds.width/1.6)
                     .padding(.bottom, 80)
                 CurrencyField(placeholder: "Income")
-                    .frame(alignment: .center)
-                    .multilineTextAlignment(.center)
-                    .font(Design.Font.Title.largeTitleFont)
-                    .foregroundColor(Design.Color.Text.standard)
+                    .frame(width: UIScreen.main.bounds.width, height: 60, alignment: .center)
                 Text("per month")
                     .font(Design.Font.standardLight)
                     .foregroundColor(Design.Color.Text.standard)
@@ -61,6 +60,7 @@ struct IncomeView: View {
         .onDisappear {
             self.user.monthlySalary = self.incomeValue?.asDouble() ?? 0.0
         }
+        .padding(.bottom, keyboard.currentHeight)
     }
 }
 
