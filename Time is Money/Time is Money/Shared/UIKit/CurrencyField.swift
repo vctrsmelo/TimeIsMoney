@@ -28,11 +28,7 @@ struct CurrencyField: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UICurrencyField, context: Context) {
-        if KeyboardResponder.shared.currentHeight > 0 {
-            print("ta aparecendo keyboard")
-        } else {
-            print("Não ta aparecendo keyboard")
-        }
+
     }
 }
 
@@ -127,35 +123,3 @@ struct CurrencyField_Previews: PreviewProvider {
     }
 
 }
-
-//struct CurrencyField: View {
-//
-//    private let adapter = MoneyInputAdapter()
-//    @Binding var value: Decimal?
-//
-//    var body: some View {
-//
-//         let b = Binding<String>(
-//            get: { return Formatters.currencyFormatter.string(from: self.value?.asNSNumber() ?? 0.0) ?? ""},
-//               set: { newValue in
-//                   self.value = Formatters.currencyFormatter.number(from: newValue)?.decimalValue
-//           })
-//
-//        return TextField("Income", text: b)
-//    }
-//}
-//
-//struct CurrencyField_Previews: PreviewProvider {
-//    static var previews: some View {
-//        IncomeTest()
-//    }
-//
-//    struct IncomeTest: View {
-//
-//        @State var value: Decimal?
-//
-//        var body: some View {
-//            CurrencyField(value: $value)
-//        }
-//    }
-//}

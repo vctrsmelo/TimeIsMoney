@@ -21,6 +21,11 @@
 		BEC00AEB23BFDC3C001B6724 /* IncomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC00AEA23BFDC3C001B6724 /* IncomeView.swift */; };
 		BEC00AEF23BFE361001B6724 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC00AEE23BFE361001B6724 /* BackgroundView.swift */; };
 		BEC00AF223BFE591001B6724 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC00AF123BFE591001B6724 /* View+Extensions.swift */; };
+		BEEA682723CA5B4000150B8A /* KeyboardObservingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA682123CA5B4000150B8A /* KeyboardObservingView.swift */; };
+		BEEA682823CA5B4000150B8A /* KeyboardObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA682323CA5B4000150B8A /* KeyboardObserving.swift */; };
+		BEEA682923CA5B4000150B8A /* View+KeyboardObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA682423CA5B4000150B8A /* View+KeyboardObserving.swift */; };
+		BEEA682A23CA5B4000150B8A /* HiddenWhenKeyboardVisibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA682523CA5B4000150B8A /* HiddenWhenKeyboardVisibleView.swift */; };
+		BEEA682B23CA5B4000150B8A /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEA682623CA5B4000150B8A /* Keyboard.swift */; };
 		BEFBF0E723BD470200FBE0D2 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFBF0E623BD470200FBE0D2 /* Design.swift */; };
 		EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427001234F4A1E007A63D9 /* AppDelegate.swift */; };
 		EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427003234F4A1E007A63D9 /* SceneDelegate.swift */; };
@@ -78,6 +83,11 @@
 		BEC00AEA23BFDC3C001B6724 /* IncomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeView.swift; sourceTree = "<group>"; };
 		BEC00AEE23BFE361001B6724 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		BEC00AF123BFE591001B6724 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		BEEA682123CA5B4000150B8A /* KeyboardObservingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardObservingView.swift; sourceTree = "<group>"; };
+		BEEA682323CA5B4000150B8A /* KeyboardObserving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardObserving.swift; sourceTree = "<group>"; };
+		BEEA682423CA5B4000150B8A /* View+KeyboardObserving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+KeyboardObserving.swift"; sourceTree = "<group>"; };
+		BEEA682523CA5B4000150B8A /* HiddenWhenKeyboardVisibleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiddenWhenKeyboardVisibleView.swift; sourceTree = "<group>"; };
+		BEEA682623CA5B4000150B8A /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		BEFBF0E623BD470200FBE0D2 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		EE426FFE234F4A1E007A63D9 /* Time is Money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time is Money.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE427001234F4A1E007A63D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +156,7 @@
 		BE7C9CC5236C9B8700167018 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				BEEA682023CA5B4000150B8A /* KeyboardObserving */,
 				BE270BEC23C2BE6F0099AAC7 /* Persistence */,
 				BEC6A5D023C6A5950014F0CE /* UIKit */,
 				BE270BED23C2BE730099AAC7 /* SwiftUI */,
@@ -232,6 +243,26 @@
 				BEA9AB3323C5308B0057EA1E /* CurrencyField.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		BEEA682023CA5B4000150B8A /* KeyboardObserving */ = {
+			isa = PBXGroup;
+			children = (
+				BEEA682123CA5B4000150B8A /* KeyboardObservingView.swift */,
+				BEEA682223CA5B4000150B8A /* viewmodifier */,
+				BEEA682523CA5B4000150B8A /* HiddenWhenKeyboardVisibleView.swift */,
+				BEEA682623CA5B4000150B8A /* Keyboard.swift */,
+			);
+			path = KeyboardObserving;
+			sourceTree = "<group>";
+		};
+		BEEA682223CA5B4000150B8A /* viewmodifier */ = {
+			isa = PBXGroup;
+			children = (
+				BEEA682323CA5B4000150B8A /* KeyboardObserving.swift */,
+				BEEA682423CA5B4000150B8A /* View+KeyboardObserving.swift */,
+			);
+			path = viewmodifier;
 			sourceTree = "<group>";
 		};
 		EE426FF5234F4A1E007A63D9 = {
@@ -434,12 +465,17 @@
 				BEC00AE723BFD6A0001B6724 /* PageControl.swift in Sources */,
 				BE85876923BFF2A300DEFE98 /* Formatters.swift in Sources */,
 				BEB0979A23BF984F00244E30 /* PageViewController.swift in Sources */,
+				BEEA682823CA5B4000150B8A /* KeyboardObserving.swift in Sources */,
 				BEC00AEB23BFDC3C001B6724 /* IncomeView.swift in Sources */,
 				EE427007234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld in Sources */,
 				BEC00AEF23BFE361001B6724 /* BackgroundView.swift in Sources */,
+				BEEA682923CA5B4000150B8A /* View+KeyboardObserving.swift in Sources */,
 				BE270BD923C045820099AAC7 /* General Extensions.swift in Sources */,
 				EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */,
 				BEFBF0E723BD470200FBE0D2 /* Design.swift in Sources */,
+				BEEA682A23CA5B4000150B8A /* HiddenWhenKeyboardVisibleView.swift in Sources */,
+				BEEA682B23CA5B4000150B8A /* Keyboard.swift in Sources */,
+				BEEA682723CA5B4000150B8A /* KeyboardObservingView.swift in Sources */,
 				BEC00AF223BFE591001B6724 /* View+Extensions.swift in Sources */,
 				BEA9AB3423C5308B0057EA1E /* CurrencyField.swift in Sources */,
 				BE270BD723C039E50099AAC7 /* DaysOfWeekView.swift in Sources */,

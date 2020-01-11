@@ -40,7 +40,7 @@ struct QuickAnswerView: View {
 struct MainView: View {
     
     @State private var price: Decimal? = 6600.00
-    @ObservedObject private var keyboard = KeyboardResponder.shared
+    @State var value: CGFloat = 0.0
     
     private var priceAsDouble: Double {
         return (price as NSDecimalNumber?)?.doubleValue ?? 0.0
@@ -116,23 +116,38 @@ struct MainView: View {
             }
 
             CurrencyField(placeholder: "Income", textColor: .white)
-                .frame(width: UIScreen.main.bounds.width, height: getCurrencyFieldHeight(), alignment: .center)
+                .frame(width: UIScreen.main.bounds.width, height: 120, alignment: .center)
                 .background(Color(.sRGB, red: 94/255.0, green: 128/255.0, blue: 142/255.0, opacity: 1))
-                .padding(.bottom, getCurrencyFieldBottomPadding())
         }
         .edgesIgnoringSafeArea(.bottom)
         .navigationBarBackButtonHidden(true)
-        .animation(.easeOut(duration: 0.25))
+//        .animation(.easeOut(duration: 0.25))
         .withBackground()
+        .offset(y: -self.value)
+            .animation(.spring())
+        .onAppear {
+            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { notification in
+                
+                let keyWindow = UIApplication.shared.connectedScenes
+                    .filter({$0.activationState == .foregroundActive})
+                    .map({$0 as? UIWindowScene})
+                    .compactMap({$0})
+                    .first?.windows
+                    .filter({$0.isKeyWindow}).first
+                
+                let bottom = keyWindow?.safeAreaInsets.bottom ?? 0
+                
+                let value = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+                let height = value.height
+                
+                self.value = height - bottom
+            }
+            
+            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { _ in
+                self.value = 0
+            }
+        }
         
-    }
-    
-    private func getCurrencyFieldBottomPadding() -> CGFloat {
-        return keyboard.isVisible ? keyboard.currentHeight+10 : keyboard.currentHeight
-    }
-    
-    private func getCurrencyFieldHeight() -> CGFloat {
-        return keyboard.isVisible ? 60 : 120
     }
     
 }
@@ -142,53 +157,3 @@ struct ContentView_Previews: PreviewProvider {
         MainView()
     }
 }
-
-
-struct GeometryGetter: View {
-    @Binding var rect: CGRect
-
-    var body: some View {
-        GeometryReader { geometry in
-            Group { () -> AnyView in
-                DispatchQueue.main.async {
-                    self.rect = geometry.frame(in: .global)
-                }
-
-                return AnyView(Color.clear)
-            }
-        }
-    }
-}
-
-final class KeyboardResponder: ObservableObject {
-    
-    static let shared = KeyboardResponder()
-    
-    var isVisible: Bool {
-        return currentHeight > 0
-    }
-    
-    private var notificationCenter: NotificationCenter
-    @Published private(set) var currentHeight: CGFloat = 0
-
-    private init(center: NotificationCenter = .default) {
-        notificationCenter = center
-        notificationCenter.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyBoardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-
-    deinit {
-        notificationCenter.removeObserver(self)
-    }
-
-    @objc func keyBoardWillShow(notification: Notification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            currentHeight = keyboardSize.height
-        }
-    }
-
-    @objc func keyBoardWillHide(notification: Notification) {
-        currentHeight = 0
-    }
-}
-
