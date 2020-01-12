@@ -13,6 +13,7 @@ struct IncomeView: View {
     
     @State private var incomeValue: Decimal? = 1000
     @EnvironmentObject var user: User
+    @State private var offsetValue: CGFloat = 0.0
     
     init() {
         UITableView.appearance().tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: Double.leastNonzeroMagnitude))
@@ -58,6 +59,7 @@ struct IncomeView: View {
         .onDisappear {
             self.user.monthlySalary = self.incomeValue?.asDouble() ?? 0.0
         }
+        .keyboardSensible($offsetValue)
     }
 }
 

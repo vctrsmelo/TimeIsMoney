@@ -40,7 +40,7 @@ struct QuickAnswerView: View {
 struct MainView: View {
     
     @State private var price: Decimal? = 6600.00
-    @State var value: CGFloat = 0.0
+    @State private var offsetValue: CGFloat = 0.0
     
     private var priceAsDouble: Double {
         return (price as NSDecimalNumber?)?.doubleValue ?? 0.0
@@ -123,30 +123,31 @@ struct MainView: View {
         .navigationBarBackButtonHidden(true)
 //        .animation(.easeOut(duration: 0.25))
         .withBackground()
-        .offset(y: -self.value)
-            .animation(.spring())
-        .onAppear {
-            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { notification in
-                
-                let keyWindow = UIApplication.shared.connectedScenes
-                    .filter({$0.activationState == .foregroundActive})
-                    .map({$0 as? UIWindowScene})
-                    .compactMap({$0})
-                    .first?.windows
-                    .filter({$0.isKeyWindow}).first
-                
-                let bottom = keyWindow?.safeAreaInsets.bottom ?? 0
-                
-                let value = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
-                let height = value.height
-                
-                self.value = height - bottom
-            }
-            
-            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { _ in
-                self.value = 0
-            }
-        }
+        .keyboardSensible($offsetValue)
+//        .offset(y: -self.value)
+//            .animation(.spring())
+//        .onAppear {
+//            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { notification in
+//
+//                let keyWindow = UIApplication.shared.connectedScenes
+//                    .filter({$0.activationState == .foregroundActive})
+//                    .map({$0 as? UIWindowScene})
+//                    .compactMap({$0})
+//                    .first?.windows
+//                    .filter({$0.isKeyWindow}).first
+//
+//                let bottom = keyWindow?.safeAreaInsets.bottom ?? 0
+//
+//                let value = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+//                let height = value.height
+//
+//                self.value = height - bottom
+//            }
+//
+//            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { _ in
+//                self.value = 0
+//            }
+//        }
         
     }
     
