@@ -18,15 +18,18 @@ extension View {
     }
 }
 
+// MARK: - Keyboard
+
 enum KeyboardSensibleType {
     case padding
     case offset
     case paddingAndOffset
 }
 
+
 extension View {
     
-    func keyboardSensible(_ offsetValue: Binding<CGFloat>, type: KeyboardSensibleType) -> some View {
+    func keyboardSensible(_ offsetValue: Binding<CGFloat>, type: KeyboardSensibleType, onAppearKeyboardCustom: (() -> Void)? = nil, onHideKeyboardCustom: (() -> Void)? = nil) -> some View {
         
         func adjustedType(_ type: KeyboardSensibleType) -> some View {
             switch type {
@@ -40,8 +43,8 @@ extension View {
             }
         }
         
-        return adjustedType(type)
-            .animation(.spring())
+        return
+            adjustedType(type)
             .onAppear {
             NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { notification in
                 
@@ -58,12 +61,27 @@ extension View {
                 let height = value.height
                 
                 offsetValue.wrappedValue = height - bottom
+                
+                onAppearKeyboardCustom?()
             }
             
             NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { _ in
                 offsetValue.wrappedValue = 0
+                onHideKeyboardCustom?()
             }
         }
     }
     
+}
+
+
+// MARK: - Navigation Bar
+
+extension View {
+    
+    func withoutNavigationBar() -> some View {
+        return self
+                .navigationBarTitle("")
+                .navigationBarHidden(true)
+    }
 }

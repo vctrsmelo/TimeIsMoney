@@ -11,7 +11,7 @@ import TimeIsMoneyCore
 
 struct IncomeView: View {
     
-    @State private var incomeValue: Decimal? = 1000
+    @State private var incomeValue: Decimal = 1000
     @EnvironmentObject var user: User
     @State private var offsetValue: CGFloat = 0.0
     
@@ -36,7 +36,7 @@ struct IncomeView: View {
                     .scaledToFit()
                     .frame(width: UIScreen.main.bounds.width/1.6)
                     .padding(.bottom, 80)
-                CurrencyField(placeholder: "Income")
+                CurrencyField($incomeValue, placeholder: "Income")
                     .frame(width: UIScreen.main.bounds.width, height: 60, alignment: .center)
                 Text("per month")
                     .font(Design.Font.standardLight)
@@ -57,7 +57,7 @@ struct IncomeView: View {
             self.incomeValue = Decimal(self.user.monthlySalary)
         }
         .onDisappear {
-            self.user.monthlySalary = self.incomeValue?.asDouble() ?? 0.0
+            self.user.monthlySalary = self.incomeValue.asDouble()
         }
         .keyboardSensible($offsetValue, type: .padding)
     }

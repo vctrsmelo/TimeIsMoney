@@ -39,7 +39,7 @@ struct QuickAnswerView: View {
 
 struct MainView: View {
     
-    @State private var price: Decimal? = 6600.00
+    @State private var price: Decimal = 6600.00
     @State private var offsetValue: CGFloat = 0.0
     
     private var priceAsDouble: Double {
@@ -81,26 +81,32 @@ struct MainView: View {
                 .font(Design.Font.standardLight)
                 .foregroundColor(Design.Color.Text.standard)
                 .padding(.bottom, 10)
+                .padding(.top, 10)
+                .animation(.none)
             Text("\(timeMessage)")
                 .font(Design.Font.Title.smallTitleFont)
                 .foregroundColor(Design.Color.Text.standard)
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 10)
+                .animation(.none)
             Text("To pay those")
                 .multilineTextAlignment(.center)
                 .font(Design.Font.standardLight)
                 .foregroundColor(Design.Color.Text.standard)
                 .padding(.bottom, 10)
+                .animation(.none)
             Text("\(formattedValue)")
                 .font(Design.Font.subtitle)
                 .foregroundColor(Design.Color.Text.standard)
                 .padding(.bottom, 10)
+                .animation(.none)
             // image
             Image("table\(flow.getExpensivityIndex(price: priceAsDouble, maxIndex: 13))")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(minWidth: UIScreen.main.bounds.width/2, maxWidth: UIScreen.main.bounds.width-64, minHeight: 64, maxHeight: 160, alignment: .center)
                 .padding(EdgeInsets(top: 20, leading: 16, bottom: 8, trailing: 16))
+                .animation(.none)
             // input
             Spacer()
             
@@ -109,46 +115,21 @@ struct MainView: View {
                     ForEach(quickAnswers, id: \.self) { quickAnswer in
                         QuickAnswerView(value: quickAnswer).onTapGesture {
                             self.price = Decimal(quickAnswer)
-                            print(self.price!)
                         }
                     }
                 }
             }
 
-            CurrencyField(placeholder: "Income", textColor: .white)
+            CurrencyField($price, placeholder: "Income", textColor: .white)
                 .frame(width: UIScreen.main.bounds.width, height: 120, alignment: .center)
                 .background(Color(.sRGB, red: 94/255.0, green: 128/255.0, blue: 142/255.0, opacity: 1))
         }
         .edgesIgnoringSafeArea(.bottom)
         .navigationBarBackButtonHidden(true)
-//        .animation(.easeOut(duration: 0.25))
         .withBackground()
-            .keyboardSensible($offsetValue, type: .paddingAndOffset)
-//        .offset(y: -self.value)
-//            .animation(.spring())
-//        .onAppear {
-//            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { notification in
-//
-//                let keyWindow = UIApplication.shared.connectedScenes
-//                    .filter({$0.activationState == .foregroundActive})
-//                    .map({$0 as? UIWindowScene})
-//                    .compactMap({$0})
-//                    .first?.windows
-//                    .filter({$0.isKeyWindow}).first
-//
-//                let bottom = keyWindow?.safeAreaInsets.bottom ?? 0
-//
-//                let value = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
-//                let height = value.height
-//
-//                self.value = height - bottom
-//            }
-//
-//            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { _ in
-//                self.value = 0
-//            }
-//        }
-        
+        .keyboardSensible($offsetValue, type: .paddingAndOffset, onAppearKeyboardCustom: nil, onHideKeyboardCustom: nil)
+        .animation(.spring())
+        .withoutNavigationBar()
     }
     
 }

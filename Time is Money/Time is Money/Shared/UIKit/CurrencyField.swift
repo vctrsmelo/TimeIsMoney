@@ -12,16 +12,18 @@ import TimeIsMoneyCore
 
 struct CurrencyField: UIViewRepresentable {
     
+    private var value: Binding<Decimal>
     private var placeholder: String?
     private var textColor: UIColor
     
-    init(placeholder: String, textColor: UIColor = Design.UIColor.Text.title) {
+    init(_ value: Binding<Decimal>, placeholder: String, textColor: UIColor = Design.UIColor.Text.title) {
+        self.value = value
         self.placeholder = placeholder
         self.textColor = textColor
     }
     
     func makeUIView(context: Context) -> UICurrencyField {
-        let v = UICurrencyField()
+        let v = UICurrencyField(value)
         v.placeholder = self.placeholder
         v.textColor = textColor
         return v
@@ -37,13 +39,26 @@ final class UICurrencyField: UITextField {
     var decimal: Decimal { string.decimal / pow(10, Formatter.currency.maximumFractionDigits) }
     var maximum: Decimal = 999_999_999.99
     private var lastValue: String?
+    
+    private var value: Binding<Decimal>?
+    
     var locale: Locale = .current {
         didSet {
             Formatter.currency.locale = locale
             sendActions(for: .editingChanged)
         }
     }
-        
+    
+    init(_ value: Binding<Decimal>) {
+        super.init(frame: .zero)
+        self.value = value
+        self.text = value.wrappedValue.currency
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         Formatter.currency.locale = locale
@@ -79,6 +94,7 @@ final class UICurrencyField: UITextField {
         }
         text = decimal.currency
         lastValue = text
+        value?.wrappedValue = decimal
     }
     
 }
