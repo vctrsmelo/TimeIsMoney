@@ -123,7 +123,7 @@ struct MainView: View {
         .navigationBarBackButtonHidden(true)
 //        .animation(.easeOut(duration: 0.25))
         .withBackground()
-        .keyboardSensible($offsetValue)
+            .keyboardSensible($offsetValue, type: .paddingAndOffset)
 //        .offset(y: -self.value)
 //            .animation(.spring())
 //        .onAppear {

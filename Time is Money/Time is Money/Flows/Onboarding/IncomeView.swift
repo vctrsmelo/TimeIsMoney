@@ -22,7 +22,7 @@ struct IncomeView: View {
     }
     
     
-    var body: some View {
+    var body: some View { 
         
         return Group {
             VStack {
@@ -59,7 +59,7 @@ struct IncomeView: View {
         .onDisappear {
             self.user.monthlySalary = self.incomeValue?.asDouble() ?? 0.0
         }
-        .keyboardSensible($offsetValue)
+        .keyboardSensible($offsetValue, type: .padding)
     }
 }
 

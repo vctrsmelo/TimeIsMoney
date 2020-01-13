@@ -18,11 +18,29 @@ extension View {
     }
 }
 
+enum KeyboardSensibleType {
+    case padding
+    case offset
+    case paddingAndOffset
+}
+
 extension View {
     
-    func keyboardSensible(_ offsetValue: Binding<CGFloat>) -> some View {
-        self.padding(.top, offsetValue.wrappedValue)
-            .offset(y: -offsetValue.wrappedValue)
+    func keyboardSensible(_ offsetValue: Binding<CGFloat>, type: KeyboardSensibleType) -> some View {
+        
+        func adjustedType(_ type: KeyboardSensibleType) -> some View {
+            switch type {
+            case .padding:
+                return AnyView(self.padding(.bottom, offsetValue.wrappedValue))
+            case .offset:
+                return AnyView(self.offset(y: -offsetValue.wrappedValue))
+            case .paddingAndOffset:
+                return AnyView(self.padding(.top, offsetValue.wrappedValue)
+                           .offset(y: -offsetValue.wrappedValue))
+            }
+        }
+        
+        return adjustedType(type)
             .animation(.spring())
             .onAppear {
             NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { notification in
