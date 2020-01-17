@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BE270BD723C039E50099AAC7 /* DaysOfWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE270BD623C039E50099AAC7 /* DaysOfWeekView.swift */; };
 		BE270BD923C045820099AAC7 /* General Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE270BD823C045820099AAC7 /* General Extensions.swift */; };
+		BE57677E23CE838D004BF48C /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57677D23CE838D004BF48C /* EditView.swift */; };
 		BE66B18323BD096800166912 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B18223BD096800166912 /* WelcomeView.swift */; };
 		BE815FC72383497200000FB9 /* TimeIsMoneyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */; };
 		BE815FC82383497200000FB9 /* TimeIsMoneyCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -21,6 +22,8 @@
 		BEC00AEB23BFDC3C001B6724 /* IncomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC00AEA23BFDC3C001B6724 /* IncomeView.swift */; };
 		BEC00AEF23BFE361001B6724 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC00AEE23BFE361001B6724 /* BackgroundView.swift */; };
 		BEC00AF223BFE591001B6724 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC00AF123BFE591001B6724 /* View+Extensions.swift */; };
+		BEC748BB23D23BB50027F26D /* WeekHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC748BA23D23BB50027F26D /* WeekHStack.swift */; };
+		BEC748BD23D23BCF0027F26D /* WeekdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC748BC23D23BCF0027F26D /* WeekdayView.swift */; };
 		BEFBF0E723BD470200FBE0D2 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFBF0E623BD470200FBE0D2 /* Design.swift */; };
 		EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427001234F4A1E007A63D9 /* AppDelegate.swift */; };
 		EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427003234F4A1E007A63D9 /* SceneDelegate.swift */; };
@@ -67,6 +70,7 @@
 /* Begin PBXFileReference section */
 		BE270BD623C039E50099AAC7 /* DaysOfWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOfWeekView.swift; sourceTree = "<group>"; };
 		BE270BD823C045820099AAC7 /* General Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "General Extensions.swift"; sourceTree = "<group>"; };
+		BE57677D23CE838D004BF48C /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		BE66B18223BD096800166912 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE85876823BFF2A300DEFE98 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 		BEC00AEA23BFDC3C001B6724 /* IncomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeView.swift; sourceTree = "<group>"; };
 		BEC00AEE23BFE361001B6724 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		BEC00AF123BFE591001B6724 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		BEC748BA23D23BB50027F26D /* WeekHStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHStack.swift; sourceTree = "<group>"; };
+		BEC748BC23D23BCF0027F26D /* WeekdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayView.swift; sourceTree = "<group>"; };
 		BEFBF0E623BD470200FBE0D2 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		EE426FFE234F4A1E007A63D9 /* Time is Money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time is Money.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE427001234F4A1E007A63D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -136,11 +142,22 @@
 			path = Persistence;
 			sourceTree = "<group>";
 		};
-		BE270BED23C2BE730099AAC7 /* SwiftUI */ = {
+		BE37E3D823CF93A000A4D3CC /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				BEC00AEE23BFE361001B6724 /* BackgroundView.swift */,
+				BEC748BA23D23BB50027F26D /* WeekHStack.swift */,
+				BEC748BC23D23BCF0027F26D /* WeekdayView.swift */,
 			);
 			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		BE57677C23CE8374004BF48C /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				BE57677D23CE838D004BF48C /* EditView.swift */,
+			);
+			path = Edit;
 			sourceTree = "<group>";
 		};
 		BE7C9CC5236C9B8700167018 /* Shared */ = {
@@ -148,8 +165,9 @@
 			children = (
 				BE270BEC23C2BE6F0099AAC7 /* Persistence */,
 				BEC6A5D023C6A5950014F0CE /* UIKit */,
-				BE270BED23C2BE730099AAC7 /* SwiftUI */,
+				BE37E3D823CF93A000A4D3CC /* SwiftUI */,
 				BEC00AF023BFE57D001B6724 /* Extensions */,
+				BEFBF0E623BD470200FBE0D2 /* Design.swift */,
 				BE85876823BFF2A300DEFE98 /* Formatters.swift */,
 			);
 			path = Shared;
@@ -168,9 +186,8 @@
 			children = (
 				BE270BDC23C2599B0099AAC7 /* Base */,
 				BE935694236C8FA700B29EF5 /* Onboarding */,
+				BE57677C23CE8374004BF48C /* Edit */,
 				BE935693236C8F9800B29EF5 /* Main */,
-				BEFBF0E623BD470200FBE0D2 /* Design.swift */,
-				BEC00AEE23BFE361001B6724 /* BackgroundView.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -434,6 +451,8 @@
 				BEC00AE723BFD6A0001B6724 /* PageControl.swift in Sources */,
 				BE85876923BFF2A300DEFE98 /* Formatters.swift in Sources */,
 				BEB0979A23BF984F00244E30 /* PageViewController.swift in Sources */,
+				BEC748BB23D23BB50027F26D /* WeekHStack.swift in Sources */,
+				BEC748BD23D23BCF0027F26D /* WeekdayView.swift in Sources */,
 				BEC00AEB23BFDC3C001B6724 /* IncomeView.swift in Sources */,
 				EE427007234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld in Sources */,
 				BEC00AEF23BFE361001B6724 /* BackgroundView.swift in Sources */,
@@ -443,6 +462,7 @@
 				BEC00AF223BFE591001B6724 /* View+Extensions.swift in Sources */,
 				BEA9AB3423C5308B0057EA1E /* CurrencyField.swift in Sources */,
 				BE270BD723C039E50099AAC7 /* DaysOfWeekView.swift in Sources */,
+				BE57677E23CE838D004BF48C /* EditView.swift in Sources */,
 				EE427009234F4A1E007A63D9 /* MainView.swift in Sources */,
 				BEC00AE923BFDC2C001B6724 /* WorkTimeView.swift in Sources */,
 				EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */,

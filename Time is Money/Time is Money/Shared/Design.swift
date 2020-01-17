@@ -13,14 +13,21 @@ import SwiftUI
 enum Design {
     
     enum Font {
+        
         static var standardLight = SwiftUI.Font.system(size: 25, weight: .light)
-        static var smallRegular = SwiftUI.Font.system(size: 20, weight: .regular)
+        static var standardRegular = SwiftUI.Font.system(size: 25, weight: .regular)
+        
+        static var smallRegular = SwiftUI.Font.system(size: 18, weight: .regular)
+        static var smallLight = SwiftUI.Font.system(size: 18, weight: .light)
+        
+        
         static var subtitle = SwiftUI.Font.system(size: 25, weight: .regular)
         
         enum Title {
             static var largeTitleFont = SwiftUI.Font.system(size: 50, weight: .heavy)
             static var smallTitleFont = SwiftUI.Font.system(size: 30, weight: .heavy)
         }
+        
 
     }
     
@@ -42,6 +49,16 @@ enum Design {
 
 extension Design {
     enum UIFont {
+        
+        static var standardLight = UIKit.UIFont.systemFont(ofSize: 25, weight: .light)
+        static var standardRegular = UIKit.UIFont.systemFont(ofSize: 25, weight: .regular)
+        
+        static var smallRegular = UIKit.UIFont.systemFont(ofSize: 18, weight: .regular)
+        static var smallLight = UIKit.UIFont.systemFont(ofSize: 18, weight: .light)
+        
+        
+        static var subtitle = UIKit.UIFont.systemFont(ofSize: 25, weight: .regular)
+        
         enum Title {
             static var largeTitleFont = UIKit.UIFont.systemFont(ofSize: 50, weight: .heavy)
             static var smallTitleFont = UIKit.UIFont.systemFont(ofSize: 30, weight: .heavy)

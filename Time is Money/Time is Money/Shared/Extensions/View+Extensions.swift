@@ -29,6 +29,10 @@ enum KeyboardSensibleType {
 
 extension View {
     
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
+    }
+    
     func keyboardSensible(_ offsetValue: Binding<CGFloat>, type: KeyboardSensibleType, onAppearKeyboardCustom: (() -> Void)? = nil, onHideKeyboardCustom: (() -> Void)? = nil) -> some View {
         
         func adjustedType(_ type: KeyboardSensibleType) -> some View {

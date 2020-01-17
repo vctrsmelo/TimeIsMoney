@@ -15,6 +15,7 @@ public class User: ObservableObject {
     @Published public var monthlySalary: Double {
         didSet {
             UserDefaults.standard.set(monthlySalary, forKey: "MonthlySalary")
+            print("didSet salary: \(monthlySalary)")
         }
     }
     
@@ -31,6 +32,15 @@ public class User: ObservableObject {
                 UserDefaults.standard.set(encoded, forKey: "Workdays")
             }
         }
+    }
+    
+    public var sortedWorkdays: [Weekday] {
+        var sortedWorkdays = Weekday.all()
+        sortedWorkdays.removeAll {
+            !self.workdays.contains($0)
+        }
+        
+        return sortedWorkdays
     }
     
     public init() {

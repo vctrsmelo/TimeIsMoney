@@ -15,17 +15,30 @@ struct CurrencyField: UIViewRepresentable {
     private var value: Binding<Decimal>
     private var placeholder: String?
     private var textColor: UIColor
+    private var font: UIFont
+    private var textAlignment: NSTextAlignment
     
-    init(_ value: Binding<Decimal>, placeholder: String, textColor: UIColor = Design.UIColor.Text.title) {
+    var keyboardWillHide: (() -> ())?
+    var keyboardWillShow: (() -> ())?
+    
+    init(_ value: Binding<Decimal>, placeholder: String, textColor: UIColor = Design.UIColor.Text.title, font: UIFont = Design.UIFont.Title.largeTitleFont, textAlignment: NSTextAlignment = .center, keyboardWillHide: (() -> ())? = nil, keyboardWillShow: (() -> ())? = nil) {
         self.value = value
         self.placeholder = placeholder
         self.textColor = textColor
+        self.font = font
+        self.textAlignment = textAlignment
+        self.keyboardWillHide = keyboardWillHide
+        self.keyboardWillShow = keyboardWillShow
     }
     
     func makeUIView(context: Context) -> UICurrencyField {
         let v = UICurrencyField(value)
         v.placeholder = self.placeholder
         v.textColor = textColor
+        v.font = font
+        v.textAlignment = self.textAlignment
+        v.keyboardWillHideClosure = self.keyboardWillHide
+        v.keyboardWillShowClosure = self.keyboardWillShow
         return v
     }
     
@@ -41,6 +54,9 @@ final class UICurrencyField: UITextField {
     private var lastValue: String?
     
     private var value: Binding<Decimal>?
+    
+    var keyboardWillHideClosure: (() -> ())?
+    var keyboardWillShowClosure: (() -> ())?
     
     var locale: Locale = .current {
         didSet {
@@ -64,8 +80,6 @@ final class UICurrencyField: UITextField {
         Formatter.currency.locale = locale
         self.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
         keyboardType = .numberPad
-        font = Design.UIFont.Title.largeTitleFont
-        textAlignment = .center
         sendActions(for: .editingChanged)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -73,11 +87,11 @@ final class UICurrencyField: UITextField {
     }
 
     @objc func keyBoardWillShow(notification: Notification) {
-        font = Design.UIFont.Title.smallTitleFont
+        keyboardWillShowClosure?()
     }
 
     @objc func keyBoardWillHide(notification: Notification) {
-        font = Design.UIFont.Title.largeTitleFont
+        keyboardWillHideClosure?()
     }
     
     override func deleteBackward() {

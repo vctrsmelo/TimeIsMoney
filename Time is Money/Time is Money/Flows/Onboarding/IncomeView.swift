@@ -11,8 +11,9 @@ import TimeIsMoneyCore
 
 struct IncomeView: View {
     
-    @State private var incomeValue: Decimal = 1000
     @EnvironmentObject var user: User
+    
+    @State private var incomeValue: Decimal = 1000
     @State private var offsetValue: CGFloat = 0.0
     
     init() {

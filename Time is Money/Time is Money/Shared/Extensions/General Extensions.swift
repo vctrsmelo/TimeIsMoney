@@ -17,3 +17,9 @@ extension Decimal {
         return (self as NSDecimalNumber)
     }
 }
+
+extension Double {
+    func asDecimal() -> Decimal {
+        Decimal(self)
+    }
+}
