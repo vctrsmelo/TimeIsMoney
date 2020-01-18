@@ -33,7 +33,7 @@ public class Flow {
 
     public func getExpensivityIndex(price: Double, maxIndex: Int) -> Int {
         let maxPrice = max(1,user.monthlySalary)
-        let currentLevel = min(Int(round(price * Double(maxIndex) / maxPrice)), maxIndex)
+        let currentLevel = min(Int(round(price * Double(maxIndex) / maxPrice.asDouble())), maxIndex)
         
         return currentLevel
     }
@@ -48,7 +48,7 @@ public enum Calculator {
         guard user.monthlySalary > 0 else { return .failure(CalculatorError.undefinedSalary) }
         
         let dailyWorkHours = Double(user.weeklyWorkHours) / Double(user.workdays.count)
-        let weeklySalary = ceil(user.monthlySalary / WEEKS_IN_MONTH)
+        let weeklySalary = ceil(user.monthlySalary.asDouble() / WEEKS_IN_MONTH)
         let dailySalary = weeklySalary / Double(user.workdays.count)
         let salaryPerHour = dailySalary / dailyWorkHours
         
@@ -74,12 +74,16 @@ public class TimeTextTranslator {
     
     public static func getUserWorkTimeDescription(from fullWorkTime: WorkTime, dailyWorkHours: Double, weeklyWorkDays: Int) -> String {
         
+        guard dailyWorkHours > 0 else {
+            return "You need to increase your work hours"
+        }
+        
         // needed because otherwise would consider 24h as work daily routine.
         let workTimeNormalizingDailyWork =  24.0 * (fullWorkTime / dailyWorkHours)
         
         // needed because otherwise would consider 7 days per week as work weekly routine.
         let workTimeNormalizingWeekWork = 7 * workTimeNormalizingDailyWork / Double(weeklyWorkDays)
-        
+    
         adjustFormatterAllowedUnits(for: workTimeNormalizingWeekWork)
         
         return formatter.string(from: workTimeNormalizingWeekWork)!

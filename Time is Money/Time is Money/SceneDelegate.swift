@@ -28,8 +28,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
         
         let pages = [AnyView(WelcomeView()),
-                    AnyView(WorkTimeView()),
                     AnyView(DaysOfWeekView()),
+                    AnyView(WorkTimeView()),
                     AnyView(IncomeView())]
         
         let contentView = PageView(pages).environment(\.managedObjectContext, context)

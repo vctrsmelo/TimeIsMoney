@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import TimeIsMoneyCore
 
 struct WeekdayView: View {
 
@@ -45,8 +46,8 @@ struct WeekdayView: View {
     }
 }
 
-struct Weekday_Previews: PreviewProvider {
+struct WeekdayView_Previews: PreviewProvider {
     static var previews: some View {
-        Weekday()
+        WeekdayView(Weekday.monday)
     }
 }

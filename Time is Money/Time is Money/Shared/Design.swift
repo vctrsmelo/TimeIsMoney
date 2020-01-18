@@ -33,6 +33,8 @@ enum Design {
     
     enum Color {
         
+        static var disabled = SwiftUI.Color(red: 200/255, green: 200/255, blue: 200/255)
+        
         enum Background {
             static var standard = SwiftUI.Color(.sRGB, red: 255/255.0, green: 254/255.0, blue: 240/255.0, opacity: 1)
             static var selectedOption = SwiftUI.Color(.sRGB, red: 234/255.0, green: 117/255.0, blue: 48/255.0, opacity: 1)

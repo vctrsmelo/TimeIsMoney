@@ -12,7 +12,7 @@ public class User: ObservableObject {
     
     public static var instance = User()
     
-    @Published public var monthlySalary: Double {
+    @Published public var monthlySalary: Decimal {
         didSet {
             UserDefaults.standard.set(monthlySalary, forKey: "MonthlySalary")
             print("didSet salary: \(monthlySalary)")
@@ -22,6 +22,8 @@ public class User: ObservableObject {
     @Published public var weeklyWorkHours: Int {
         didSet {
             UserDefaults.standard.set(weeklyWorkHours, forKey: "WeeklyWorkHours")
+            syncWorkdaysWithWorkHours()
+
         }
     }
     
@@ -31,6 +33,8 @@ public class User: ObservableObject {
             if let encoded = try? encoder.encode(workdays) {
                 UserDefaults.standard.set(encoded, forKey: "Workdays")
             }
+            
+            syncWorkdaysWithWorkHours()
         }
     }
     
@@ -44,7 +48,7 @@ public class User: ObservableObject {
     }
     
     public init() {
-        self.monthlySalary = UserDefaults.standard.double(forKey: "MonthlySalary")
+        self.monthlySalary = UserDefaults.standard.double(forKey: "MonthlySalary").asDecimal()
         self.weeklyWorkHours = UserDefaults.standard.integer(forKey: "WeeklyWorkHours")
         
         self.workdays = [Weekday]()
@@ -53,5 +57,18 @@ public class User: ObservableObject {
                 self.workdays = decoded
             }
         }
+    }
+    
+    private func syncWorkdaysWithWorkHours() {
+        if weeklyWorkHours < workdays.count {
+            weeklyWorkHours = workdays.count
+            
+        } else if weeklyWorkHours > workdays.count*24 {
+            weeklyWorkHours = workdays.count*24
+        }
+    }
+    
+    public func isSelectedHoursValid(_ selectedHours: Int) -> Bool {
+        return (selectedHours < workdays.count || selectedHours > workdays.count * 24)
     }
 }

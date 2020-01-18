@@ -8,12 +8,18 @@
 
 import Foundation
 
-//extension Double {
-//    func truncated(toPlaces places:Int) -> Double {
-//        let divisor = pow(10.0, Double(places+1))
-//        let result = trunc(self * divisor) / divisor
-//        print("trunc \(self * divisor))")
-//        return result
-//    }
-//}
-//
+extension Decimal {
+    func asDouble() -> Double {
+        return (self as NSDecimalNumber).doubleValue
+    }
+    
+    func asNSNumber() -> NSNumber {
+        return (self as NSDecimalNumber)
+    }
+}
+
+extension Double {
+    func asDecimal() -> Decimal {
+        Decimal(self)
+    }
+}

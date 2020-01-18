@@ -14,13 +14,7 @@ struct EditView: View {
     
     @EnvironmentObject var user: User
     
-    @State private var worktime: Int = 39
-    @State private var salary: Decimal = 0.0
-    @State private var workdays = [Weekday]()
-    
-    @State private var isFirstAppearance: Bool = true
-    
-    private let hours = (1...168).map { "\($0)"}
+    private let hours = (0...168).map { "\($0)"}
     
     @State private var moneyPerHour: NSNumber = 0.0
     
@@ -29,7 +23,6 @@ struct EditView: View {
     }
     
     var body: some View {
-        print(worktime)
         return NavigationView {
             VStack {
                 Form {
@@ -51,36 +44,21 @@ struct EditView: View {
                     self.hideKeyboard()
                 }
             )
-            .onReceive(user.$monthlySalary, perform: { output in
-                print("onReceive salary: \(self.user.monthlySalary.asDecimal())")
-                self.worktime = self.user.weeklyWorkHours
-                self.salary = self.user.monthlySalary.asDecimal()
-                self.workdays = self.user.workdays
-            })
-//            .onAppear() {
-//                if self.isFirstAppearance {
-//                    self.worktime = self.user.weeklyWorkHours
-//                    self.salary = self.user.monthlySalary.asDecimal()
-//                    self.workdays = self.user.workdays
-//                    print("appear self salary: \(self.salary)")
-//                }
-//                 self.isFirstAppearance = false
-//            }
-            .onDisappear {
-                print("disappear self salary: \(self.salary)")
-                self.user.weeklyWorkHours = self.worktime
-                self.user.monthlySalary = self.salary.asDouble()
-                self.user.workdays = self.workdays
-                print("disappear user salary: \(self.user.monthlySalary)")
-            }
         }
     }
     
     private var worktimePicker: some View {
-        Picker(selection: $worktime, label: EmptyView()) {
+        
+        let selectedHours = Binding(
+            get: { return self.user.weeklyWorkHours },
+            set: { self.user.weeklyWorkHours = $0 }
+        )
+        
+       return Picker(selection: selectedHours, label: EmptyView()) {
             ForEach(0 ..< hours.count) {
                 Text(self.hours[$0]+" hours")
                     .font(Design.Font.standardRegular)
+                    .foregroundColor(self.user.isSelectedHoursValid($0) ? Design.Color.disabled : Design.Color.Text.standard)
 
             }
         }
@@ -101,7 +79,13 @@ struct EditView: View {
     }
     
     private var salaryField: some View {
-        return CurrencyField($salary, placeholder: "", font: Design.UIFont.standardRegular, textAlignment: NSTextAlignment.left)
+        
+        let salaryBinding = Binding(
+            get: { self.user.monthlySalary },
+            set: { self.user.monthlySalary = $0 }
+       )
+        
+        return CurrencyField(salaryBinding, placeholder: "", font: Design.UIFont.standardRegular, textAlignment: NSTextAlignment.left)
     }
     
 }

@@ -20,24 +20,29 @@ struct WorkTimeView: View {
         UITableView.appearance().backgroundColor = .clear
     }
     
-    @State private var selectedHours: Int = 39
-    
-    var hours = (1...168).map { "\($0)"}
+    var hours = (0...100).map { "\($0)"}
     
     var body: some View {
+        
+        let selectedHours = Binding(
+            get: { self.user.weeklyWorkHours },
+            set: { self.user.weeklyWorkHours = $0 }
+        )
+    
+        let hoursArrayIndex = max(0, min(hours.count-1,selectedHours.wrappedValue))
         
         return Group {
             VStack {
                 Text("How much hours do you work per week?")
                     .font(Design.Font.Title.smallTitleFont)
                     .foregroundColor(Design.Color.Text.title)
-                    .padding(.bottom, 26)
-                    .padding(.top, 43)
+                    .padding(EdgeInsets(top: 43, leading: 16, bottom: 26, trailing: 16))
+                    .multilineTextAlignment(.center)
                 Image("table2")
                     .resizable()
                     .scaledToFit()
                     .frame(width: UIScreen.main.bounds.width/1.6)
-                Text("\(hours[selectedHours])")
+                Text("\(hours[hoursArrayIndex])")
                     .font(Design.Font.Title.largeTitleFont)
                     .foregroundColor(Design.Color.Text.standard)
                     .padding(.bottom, 6)
@@ -45,29 +50,31 @@ struct WorkTimeView: View {
                     .font(Design.Font.subtitle)
                     .foregroundColor(Design.Color.Text.standard)
                     .padding(.bottom, 14)
-                Section {
-                    Picker(selection: $selectedHours, label: EmptyView()) {
-                        ForEach(0 ..< hours.count) {
-                            Text(self.hours[$0]+" hours").tag($0)
-
-                        }
-                    }
-                    .foregroundColor(Design.Color.Text.standard)
-                    .pickerStyle(WheelPickerStyle())
-                    .labelsHidden()
-                    
-                }
-                .background(Color.clear)
+                maybePickerSection(selectedHours: selectedHours)
                 Spacer()
             }
         }.withBackground()
-            .onDisappear(perform: {
-                self.user.weeklyWorkHours = self.selectedHours+1
-            })
-        .onAppear {
-            let initialHours = self.user.weeklyWorkHours > 1 ? self.user.weeklyWorkHours-1 : 39
-            self.selectedHours = initialHours
+    }
+    
+    private func maybePickerSection(selectedHours: Binding<Int>) -> some View {
+        guard user.workdays.isEmpty == false else {
+            return AnyView(Text("(Set your workdays to update here)"))
         }
+            
+        return AnyView(
+            Section {
+                Picker(selection: selectedHours, label: EmptyView()) {
+                    ForEach(0 ..< self.hours.count) {
+                        Text(self.hours[$0]+" hours")
+                            .foregroundColor(self.user.isSelectedHoursValid($0) ? Design.Color.disabled : Design.Color.Text.standard)
+                    }
+                }
+                .foregroundColor(Design.Color.Text.standard)
+                .pickerStyle(WheelPickerStyle())
+                .labelsHidden()
+            }
+            .background(Color.clear)
+        )
     }
 }
 

@@ -43,7 +43,7 @@ struct CurrencyField: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UICurrencyField, context: Context) {
-
+        uiView.text = value.wrappedValue.currency
     }
 }
 
@@ -51,7 +51,7 @@ final class UICurrencyField: UITextField {
     
     var decimal: Decimal { string.decimal / pow(10, Formatter.currency.maximumFractionDigits) }
     var maximum: Decimal = 999_999_999.99
-    private var lastValue: String?
+    var lastValue: String?
     
     private var value: Binding<Decimal>?
     

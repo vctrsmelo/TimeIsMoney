@@ -12,8 +12,7 @@ import TimeIsMoneyCore
 struct IncomeView: View {
     
     @EnvironmentObject var user: User
-    
-    @State private var incomeValue: Decimal = 1000
+
     @State private var offsetValue: CGFloat = 0.0
     
     init() {
@@ -23,7 +22,12 @@ struct IncomeView: View {
     }
     
     
-    var body: some View { 
+    var body: some View {
+        
+        let incomeBinding = Binding(
+            get: { self.user.monthlySalary },
+            set: { self.user.monthlySalary = $0 }
+        )
         
         return Group {
             VStack {
@@ -37,7 +41,7 @@ struct IncomeView: View {
                     .scaledToFit()
                     .frame(width: UIScreen.main.bounds.width/1.6)
                     .padding(.bottom, 80)
-                CurrencyField($incomeValue, placeholder: "Income")
+                CurrencyField(incomeBinding, placeholder: "Income")
                     .frame(width: UIScreen.main.bounds.width, height: 60, alignment: .center)
                 Text("per month")
                     .font(Design.Font.standardLight)
@@ -54,12 +58,6 @@ struct IncomeView: View {
                 Spacer()
             }
         }.withBackground()
-        .onAppear {
-            self.incomeValue = Decimal(self.user.monthlySalary)
-        }
-        .onDisappear {
-            self.user.monthlySalary = self.incomeValue.asDouble()
-        }
         .keyboardSensible($offsetValue, type: .padding)
     }
 }

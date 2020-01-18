@@ -13,7 +13,7 @@ struct MainView: View {
     
     @EnvironmentObject var user: User
     
-    @State private var price: Decimal = 6600.00
+    @State private var price: Decimal = 100
     @State private var offsetValue: CGFloat = 0.0
     @State private var showEditView = false
     
@@ -47,7 +47,14 @@ struct MainView: View {
             timeMessage = "¯\\_(ツ)_/¯"
             print(error)
         }
-
+        
+        let priceBinding = Binding(
+            get: { self.price },
+            set: { self.price = $0 }
+        )
+        
+        print(priceBinding.wrappedValue)
+        
         return VStack {
             
             //header
@@ -89,13 +96,13 @@ struct MainView: View {
                 HStack(spacing: 15) {
                     ForEach(quickAnswers, id: \.self) { quickAnswer in
                         QuickAnswerView(value: quickAnswer).onTapGesture {
-                            self.price = Decimal(quickAnswer)
+                            priceBinding.wrappedValue = Decimal(quickAnswer)
                         }
                     }
                 }
             }
 
-            CurrencyField($price, placeholder: "Income", textColor: .white)
+            CurrencyField(priceBinding, placeholder: "Income", textColor: .white)
                 .frame(width: UIScreen.main.bounds.width, height: 120, alignment: .center)
                 .background(Color(.sRGB, red: 94/255.0, green: 128/255.0, blue: 142/255.0, opacity: 1))
         }
