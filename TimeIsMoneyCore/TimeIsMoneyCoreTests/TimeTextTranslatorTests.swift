@@ -41,6 +41,26 @@ class TimeTextTranslatorTests: XCTestCase {
         XCTAssertEqual(getUnstoppedWorkTimeDescription(from: seconds), mockedFormatter.string(from: seconds))
     }
     
+    func test_getUserWorkTimeDescription() {
+        let priceAsSeconds: Double = 3600*3
+        let dailyWorkHours: Double = 1
+        let weeklyWorkDays: Int = 3
+        
+        let result = getSUT().getUserWorkTimeDescription(from: priceAsSeconds, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
+        
+        XCTAssertEqual(result, "3 days")
+    }
+    
+    func test_getUserWorkTimeDescription2() {
+        let priceAsSeconds: Double = 3600
+        let dailyWorkHours: Double = 1
+        let weeklyWorkDays: Int = 1
+        
+        let result = getSUT().getUserWorkTimeDescription(from: priceAsSeconds, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
+        
+        XCTAssertEqual(result, "1 hour")
+    }
+    
     // MARK: Helpers
     
     func getSUT() -> TimeTextTranslator.Type {
@@ -48,6 +68,7 @@ class TimeTextTranslatorTests: XCTestCase {
     }
     
     func getUnstoppedWorkTimeDescription(from seconds: WorkTime) -> String {
+        TimeTextTranslator.allowedUnits = [.year, .month, .weekOfMonth, .day, .hour, .minute, .second]
         return TimeTextTranslator.getUnstoppedWorkTimeDescription(from: seconds)
     }
     

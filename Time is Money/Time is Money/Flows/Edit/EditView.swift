@@ -31,11 +31,6 @@ struct EditView: View {
                         EditFieldView(title: "Dias de trabalho semanal", icon: Image("CalendarIcon"), inputView: AnyView(weekdays))
                         EditFieldView(title: "Salário Mensal", icon: Image("MoneyIcon"), inputView: AnyView(salaryField))
                     }
-                    
-                    Section(header: Text("Interesting Information")) {
-                        Text("Per work hour you receive: \(moneyPerHourFormatted)")
-                        .listRowBackground(Design.Color.Background.standard)
-                    }
                 }
             }
             .withBackground()

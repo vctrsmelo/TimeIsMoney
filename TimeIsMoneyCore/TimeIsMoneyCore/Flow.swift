@@ -11,6 +11,7 @@ import Foundation
 let WEEKS_IN_MONTH = 4.429531 // ~30 days per month
 let SECONDS_IN_HOUR = 3600.00
 
+///WorkTime in seconds
 public typealias WorkTime = TimeInterval
 
 public enum CalculatorError: Error {
@@ -43,11 +44,12 @@ public enum Calculator {
     public static func getWorkTimeToPay(for price: Double, user: User) -> Result<WorkTime, CalculatorError> {
         
         guard price > 0.0 else { return .success(0.0) }
-        guard user.workdays.count > 0 else { return .failure(CalculatorError.undefinedWeeklyWorkDays)}
-        guard user.weeklyWorkHours > 0 else { return .failure(CalculatorError.undefinedWeeklyWorkHours)}
-        guard user.monthlySalary > 0 else { return .failure(CalculatorError.undefinedSalary) }
+        guard workAtLeastOneDayPerWeek(user) else { return .failure(CalculatorError.undefinedWeeklyWorkDays)}
+        guard workAtLeast1HourPerWeek(user) else { return .failure(CalculatorError.undefinedWeeklyWorkHours)}
+        guard hasMonthlyIncome(user) else { return .failure(CalculatorError.undefinedSalary) }
         
         let dailyWorkHours = Double(user.weeklyWorkHours) / Double(user.workdays.count)
+        
         let weeklySalary = ceil(user.monthlySalary.asDouble() / WEEKS_IN_MONTH)
         let dailySalary = weeklySalary / Double(user.workdays.count)
         let salaryPerHour = dailySalary / dailyWorkHours
@@ -57,9 +59,30 @@ public enum Calculator {
         
         return .success(secondsWorkingNeeded)
     }
+    
+    private static func workAtLeastOneDayPerWeek(_ user: User) -> Bool {
+        user.workdays.count > 0
+    }
+    
+    private static func workAtLeast1HourPerWeek(_ user: User) -> Bool {
+        user.weeklyWorkHours > 0
+    }
+    
+    private static func hasMonthlyIncome(_ user: User) -> Bool {
+        user.monthlySalary > 0
+    }
 }
 
 public class TimeTextTranslator {
+    
+    public static var allowedUnits: NSCalendar.Unit {
+        get {
+            return formatter.allowedUnits
+        }
+        set {
+            formatter.allowedUnits = newValue
+        }
+    }
     
     private static let formatter: DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()
@@ -72,19 +95,28 @@ public class TimeTextTranslator {
         return formatter.string(from: fullWorkTime)!
     }
     
-    public static func getUserWorkTimeDescription(from fullWorkTime: WorkTime, dailyWorkHours: Double, weeklyWorkDays: Int) -> String {
+    public static func getUserWorkTimeDescription(from priceAsSeconds: WorkTime, dailyWorkHours: Double, weeklyWorkDays: Int) -> String {
         
         guard dailyWorkHours > 0 else {
             return "You need to increase your work hours"
         }
         
+        adjustFormatterAllowedUnits(for: priceAsSeconds)
+        
+        if priceAsSeconds <= dailyWorkHours * (SecondsIn.hour.asDouble()) {
+            return formatter.string(from: priceAsSeconds)!
+        }
+        
         // needed because otherwise would consider 24h as work daily routine.
-        let workTimeNormalizingDailyWork =  24.0 * (fullWorkTime / dailyWorkHours)
+        let workTimeNormalizingDailyWork =  24.0 * (priceAsSeconds / dailyWorkHours)
+        
+        if priceAsSeconds <= dailyWorkHours * Double(weeklyWorkDays) * (SecondsIn.hour.asDouble()) {
+            return formatter.string(from: workTimeNormalizingDailyWork)!
+        }
         
         // needed because otherwise would consider 7 days per week as work weekly routine.
         let workTimeNormalizingWeekWork = 7 * workTimeNormalizingDailyWork / Double(weeklyWorkDays)
     
-        adjustFormatterAllowedUnits(for: workTimeNormalizingWeekWork)
         
         return formatter.string(from: workTimeNormalizingWeekWork)!
         

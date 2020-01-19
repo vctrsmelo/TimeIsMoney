@@ -31,7 +31,6 @@
 		EE42700B234F4A22007A63D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE42700A234F4A22007A63D9 /* Assets.xcassets */; };
 		EE42700E234F4A22007A63D9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE42700D234F4A22007A63D9 /* Preview Assets.xcassets */; };
 		EE427011234F4A23007A63D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE42700F234F4A23007A63D9 /* LaunchScreen.storyboard */; };
-		EE42701C234F4A23007A63D9 /* Time_is_MoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE42701B234F4A23007A63D9 /* Time_is_MoneyTests.swift */; };
 		EE427027234F4A23007A63D9 /* Time_is_MoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427026234F4A23007A63D9 /* Time_is_MoneyUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,7 +92,6 @@
 		EE427010234F4A23007A63D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE427012234F4A23007A63D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE427017234F4A23007A63D9 /* Time is MoneyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Time is MoneyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE42701B234F4A23007A63D9 /* Time_is_MoneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_is_MoneyTests.swift; sourceTree = "<group>"; };
 		EE42701D234F4A23007A63D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE427022234F4A23007A63D9 /* Time is MoneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Time is MoneyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE427026234F4A23007A63D9 /* Time_is_MoneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_is_MoneyUITests.swift; sourceTree = "<group>"; };
@@ -126,20 +124,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BE270BDC23C2599B0099AAC7 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		BE270BEC23C2BE6F0099AAC7 /* Persistence */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Persistence;
-			sourceTree = "<group>";
-		};
 		BE37E3D823CF93A000A4D3CC /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,7 +145,6 @@
 		BE7C9CC5236C9B8700167018 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				BE270BEC23C2BE6F0099AAC7 /* Persistence */,
 				BEC6A5D023C6A5950014F0CE /* UIKit */,
 				BE37E3D823CF93A000A4D3CC /* SwiftUI */,
 				BEC00AF023BFE57D001B6724 /* Extensions */,
@@ -182,7 +165,6 @@
 		BE93568F236C8EA400B29EF5 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
-				BE270BDC23C2599B0099AAC7 /* Base */,
 				BE935694236C8FA700B29EF5 /* Onboarding */,
 				BE57677C23CE8374004BF48C /* Edit */,
 				BE935693236C8F9800B29EF5 /* Main */,
@@ -292,7 +274,6 @@
 		EE42701A234F4A23007A63D9 /* Time is MoneyTests */ = {
 			isa = PBXGroup;
 			children = (
-				EE42701B234F4A23007A63D9 /* Time_is_MoneyTests.swift */,
 				EE42701D234F4A23007A63D9 /* Info.plist */,
 			);
 			path = "Time is MoneyTests";
@@ -381,6 +362,7 @@
 					};
 					EE427016234F4A23007A63D9 = {
 						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1130;
 						TestTargetID = EE426FFD234F4A1E007A63D9;
 					};
 					EE427021234F4A23007A63D9 = {
@@ -469,7 +451,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE42701C234F4A23007A63D9 /* Time_is_MoneyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,6 +656,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y93HUJS49V;
 				INFOPLIST_FILE = "Time is MoneyTests/Info.plist";
@@ -686,6 +668,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.victormelo.Time-is-MoneyTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Time is Money.app/Time is Money";
@@ -697,6 +680,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y93HUJS49V;
 				INFOPLIST_FILE = "Time is MoneyTests/Info.plist";
