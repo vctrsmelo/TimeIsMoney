@@ -34,8 +34,6 @@ struct IncomeView: View {
                 Text("What is your income per month?")
                     .font(Design.Font.Title.smallTitleFont)
                     .foregroundColor(Design.Color.Text.title)
-                    .padding(.bottom, 26)
-                    .padding(.top, 43)
                 Image("Money")
                     .resizable()
                     .scaledToFit()

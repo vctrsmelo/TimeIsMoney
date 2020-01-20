@@ -24,8 +24,12 @@ enum Design {
         static var subtitle = SwiftUI.Font.system(size: 25, weight: .regular)
         
         enum Title {
-            static var largeTitleFont = SwiftUI.Font.system(size: 50, weight: .heavy)
-            static var smallTitleFont = SwiftUI.Font.system(size: 30, weight: .heavy)
+            static var largeTitleFont = customTitleFont(size: 50)
+            static var smallTitleFont = customTitleFont(size: 30)
+            
+            static func customTitleFont(size: CGFloat) -> SwiftUI.Font {
+                SwiftUI.Font.system(size: size, weight: .heavy)
+            }
         }
         
 

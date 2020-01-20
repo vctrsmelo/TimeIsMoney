@@ -54,7 +54,6 @@ struct EditView: View {
                 Text(self.hours[$0]+" hours")
                     .font(Design.Font.standardRegular)
                     .foregroundColor(self.user.isSelectedHoursValid($0) ? Design.Color.disabled : Design.Color.Text.standard)
-
             }
         }
         .labelsHidden()
@@ -131,6 +130,8 @@ struct WeekdayRowView: View {
         }
         return HStack {
             Text(weekday.localizedLong())
+                .font(Design.Font.standardLight)
+                .foregroundColor(Design.Color.Text.standard)
             Spacer()
             Image(systemName: "checkmark").foregroundColor(checkmarkColor)
         }

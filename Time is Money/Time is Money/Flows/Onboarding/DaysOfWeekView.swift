@@ -30,8 +30,6 @@ struct DaysOfWeekView: View {
             Text("Which days of the week do you usually work?")
                 .font(Design.Font.Title.smallTitleFont)
                 .foregroundColor(Design.Color.Text.title)
-                .padding(.bottom, 26)
-                .padding(.top, 43)
             Image("Calendar")
                 .resizable()
                 .scaledToFit()

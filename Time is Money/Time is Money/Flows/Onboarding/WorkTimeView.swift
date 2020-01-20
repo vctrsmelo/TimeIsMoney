@@ -14,12 +14,6 @@ struct WorkTimeView: View {
     
     @EnvironmentObject var user: User
     
-    init() {
-        UITableView.appearance().tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: Double.leastNonzeroMagnitude))
-        UITableView.appearance().tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: Double.leastNonzeroMagnitude))
-        UITableView.appearance().backgroundColor = .clear
-    }
-    
     var hours = (0...100).map { "\($0)"}
     
     var body: some View {
@@ -34,10 +28,8 @@ struct WorkTimeView: View {
         return Group {
             VStack {
                 Text("How much hours do you work per week?")
-                    .font(Design.Font.Title.smallTitleFont)
+                    .font(Design.Font.Title.customTitleFont(size: 30))
                     .foregroundColor(Design.Color.Text.title)
-                    .padding(EdgeInsets(top: 43, leading: 16, bottom: 26, trailing: 16))
-                    .multilineTextAlignment(.center)
                 Image("table2")
                     .resizable()
                     .scaledToFit()
@@ -58,7 +50,12 @@ struct WorkTimeView: View {
     
     private func maybePickerSection(selectedHours: Binding<Int>) -> some View {
         guard user.workdays.isEmpty == false else {
-            return AnyView(Text("(Set your workdays to update here)"))
+            return
+                AnyView(
+                        Text("(Set your workdays to update here)")
+                            .font(Design.Font.smallLight)
+                            .foregroundColor(Design.Color.Text.standard)
+                )
         }
             
         return AnyView(
