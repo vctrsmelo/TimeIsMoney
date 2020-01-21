@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A0439D7B538F8642174D71C /* Pods_Time_Is_Money_Time_is_Money.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89DA3F9B9FBD56CB958B96F /* Pods_Time_Is_Money_Time_is_Money.framework */; };
 		BE270BD723C039E50099AAC7 /* DaysOfWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE270BD623C039E50099AAC7 /* DaysOfWeekView.swift */; };
 		BE57677E23CE838D004BF48C /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57677D23CE838D004BF48C /* EditView.swift */; };
 		BE66B18323BD096800166912 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B18223BD096800166912 /* WelcomeView.swift */; };
@@ -66,6 +67,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1E576229802A8BB2ECFE7E3C /* Pods-Time Is Money-Time is Money.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time Is Money-Time is Money.release.xcconfig"; path = "Target Support Files/Pods-Time Is Money-Time is Money/Pods-Time Is Money-Time is Money.release.xcconfig"; sourceTree = "<group>"; };
+		30114F19B14CB7CCF80DDDA5 /* Pods-Time Is Money-Time is Money.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time Is Money-Time is Money.debug.xcconfig"; path = "Target Support Files/Pods-Time Is Money-Time is Money/Pods-Time Is Money-Time is Money.debug.xcconfig"; sourceTree = "<group>"; };
+		859912838D1CA2042502621A /* Pods-Time is Money.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time is Money.debug.xcconfig"; path = "Target Support Files/Pods-Time is Money/Pods-Time is Money.debug.xcconfig"; sourceTree = "<group>"; };
+		B89DA3F9B9FBD56CB958B96F /* Pods_Time_Is_Money_Time_is_Money.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Time_Is_Money_Time_is_Money.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE270BD623C039E50099AAC7 /* DaysOfWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOfWeekView.swift; sourceTree = "<group>"; };
 		BE57677D23CE838D004BF48C /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		BE66B18223BD096800166912 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -82,6 +87,7 @@
 		BEC748BA23D23BB50027F26D /* WeekHStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHStack.swift; sourceTree = "<group>"; };
 		BEC748BC23D23BCF0027F26D /* WeekdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayView.swift; sourceTree = "<group>"; };
 		BEFBF0E623BD470200FBE0D2 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
+		E8294E6DB87CD33D0D6C0156 /* Pods-Time is Money.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time is Money.release.xcconfig"; path = "Target Support Files/Pods-Time is Money/Pods-Time is Money.release.xcconfig"; sourceTree = "<group>"; };
 		EE426FFE234F4A1E007A63D9 /* Time is Money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time is Money.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE427001234F4A1E007A63D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE427003234F4A1E007A63D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +110,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE815FC72383497200000FB9 /* TimeIsMoneyCore.framework in Frameworks */,
+				8A0439D7B538F8642174D71C /* Pods_Time_Is_Money_Time_is_Money.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +131,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA077249FFB451F5DBB6C189 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				859912838D1CA2042502621A /* Pods-Time is Money.debug.xcconfig */,
+				E8294E6DB87CD33D0D6C0156 /* Pods-Time is Money.release.xcconfig */,
+				30114F19B14CB7CCF80DDDA5 /* Pods-Time Is Money-Time is Money.debug.xcconfig */,
+				1E576229802A8BB2ECFE7E3C /* Pods-Time Is Money-Time is Money.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
 		BE37E3D823CF93A000A4D3CC /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */,
+				B89DA3F9B9FBD56CB958B96F /* Pods_Time_Is_Money_Time_is_Money.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -238,6 +258,7 @@
 				EE427025234F4A23007A63D9 /* Time is MoneyUITests */,
 				EE426FFF234F4A1E007A63D9 /* Products */,
 				BE815FC52383497200000FB9 /* Frameworks */,
+				AA077249FFB451F5DBB6C189 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -295,18 +316,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE42702B234F4A23007A63D9 /* Build configuration list for PBXNativeTarget "Time is Money" */;
 			buildPhases = (
+				88F9A90B4F93708DF419EBFD /* [CP] Check Pods Manifest.lock */,
 				EE426FFA234F4A1E007A63D9 /* Sources */,
 				EE426FFB234F4A1E007A63D9 /* Frameworks */,
 				EE426FFC234F4A1E007A63D9 /* Resources */,
 				BE815F40238343EF00000FB9 /* Embed Frameworks */,
+				4F8F5EE15D0A9D08DFF0B56A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Time is Money";
-			packageProductDependencies = (
-			);
 			productName = "Time is Money";
 			productReference = EE426FFE234F4A1E007A63D9 /* Time is Money.app */;
 			productType = "com.apple.product-type.application";
@@ -380,8 +401,6 @@
 				Base,
 			);
 			mainGroup = EE426FF5234F4A1E007A63D9;
-			packageReferences = (
-			);
 			productRefGroup = EE426FFF234F4A1E007A63D9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -419,6 +438,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4F8F5EE15D0A9D08DFF0B56A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Time Is Money-Time is Money/Pods-Time Is Money-Time is Money-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Time Is Money-Time is Money/Pods-Time Is Money-Time is Money-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Time Is Money-Time is Money/Pods-Time Is Money-Time is Money-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88F9A90B4F93708DF419EBFD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Time Is Money-Time is Money-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EE426FFA234F4A1E007A63D9 /* Sources */ = {
@@ -605,6 +666,7 @@
 		};
 		EE42702C234F4A23007A63D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30114F19B14CB7CCF80DDDA5 /* Pods-Time Is Money-Time is Money.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -629,6 +691,7 @@
 		};
 		EE42702D234F4A23007A63D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E576229802A8BB2ECFE7E3C /* Pods-Time Is Money-Time is Money.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

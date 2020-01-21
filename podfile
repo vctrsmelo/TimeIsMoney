@@ -1,0 +1,20 @@
+workspace 'Time Is Money.xcworkspace'
+use_frameworks!
+
+# ignore all warnings from all pods
+inhibit_all_warnings!
+
+xcodeproj 'Time is Money/Time is Money.xcodeproj'
+xcodeproj 'TimeIsMoneyCore/TimeIsMoneyCore.xcodeproj'
+
+abstract_target 'Time Is Money' do
+    pod 'R.swift'
+
+    target 'Time is Money' do
+        project 'Time is Money/Time is Money.xcodeproj'
+    end
+
+    target 'TimeIsMoneyCore' do
+        project 'TimeIsMoneyCore/TimeIsMoneyCore.xcodeproj'
+    end
+end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2858D295F6A7215D25046406 /* Pods_Time_Is_Money_TimeIsMoneyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 025D468F3AB1B6C7900F4601 /* Pods_Time_Is_Money_TimeIsMoneyCore.framework */; };
 		BE270C3123C3C9E70099AAC7 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE270C3023C3C9E70099AAC7 /* Weekday.swift */; };
 		BE815FA02383474C00000FB9 /* TimeIsMoneyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE815F962383474C00000FB9 /* TimeIsMoneyCore.framework */; };
 		BE815FA52383474C00000FB9 /* TimeIsMoneyCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE815FA42383474C00000FB9 /* TimeIsMoneyCoreTests.swift */; };
@@ -29,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		025D468F3AB1B6C7900F4601 /* Pods_Time_Is_Money_TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Time_Is_Money_TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		032A36989AA4BF684502A103 /* Pods-Time Is Money-TimeIsMoneyCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time Is Money-TimeIsMoneyCore.release.xcconfig"; path = "Target Support Files/Pods-Time Is Money-TimeIsMoneyCore/Pods-Time Is Money-TimeIsMoneyCore.release.xcconfig"; sourceTree = "<group>"; };
+		150BAEF5E7698FC2535CDE2B /* Pods-Time Is Money-TimeIsMoneyCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time Is Money-TimeIsMoneyCore.debug.xcconfig"; path = "Target Support Files/Pods-Time Is Money-TimeIsMoneyCore/Pods-Time Is Money-TimeIsMoneyCore.debug.xcconfig"; sourceTree = "<group>"; };
 		BE270C3023C3C9E70099AAC7 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		BE815F962383474C00000FB9 /* TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE815F992383474C00000FB9 /* TimeIsMoneyCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeIsMoneyCore.h; sourceTree = "<group>"; };
@@ -48,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2858D295F6A7215D25046406 /* Pods_Time_Is_Money_TimeIsMoneyCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +67,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE44FB6248C8183743BE06B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				025D468F3AB1B6C7900F4601 /* Pods_Time_Is_Money_TimeIsMoneyCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BE270C3223C3C9F10099AAC7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +90,8 @@
 				BE815F982383474C00000FB9 /* TimeIsMoneyCore */,
 				BE815FA32383474C00000FB9 /* TimeIsMoneyCoreTests */,
 				BE815F972383474C00000FB9 /* Products */,
+				D564AF9C43F01CB18D831961 /* Pods */,
+				AE44FB6248C8183743BE06B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +135,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		D564AF9C43F01CB18D831961 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				150BAEF5E7698FC2535CDE2B /* Pods-Time Is Money-TimeIsMoneyCore.debug.xcconfig */,
+				032A36989AA4BF684502A103 /* Pods-Time Is Money-TimeIsMoneyCore.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -138,6 +163,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE815FAA2383474C00000FB9 /* Build configuration list for PBXNativeTarget "TimeIsMoneyCore" */;
 			buildPhases = (
+				18D8C67C8BDCA740AE1831BA /* [CP] Check Pods Manifest.lock */,
 				BE815F912383474C00000FB9 /* Headers */,
 				BE815F922383474C00000FB9 /* Sources */,
 				BE815F932383474C00000FB9 /* Frameworks */,
@@ -224,6 +250,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18D8C67C8BDCA740AE1831BA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Time Is Money-TimeIsMoneyCore-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BE815F922383474C00000FB9 /* Sources */ = {
@@ -380,6 +431,7 @@
 		};
 		BE815FAB2383474C00000FB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 150BAEF5E7698FC2535CDE2B /* Pods-Time Is Money-TimeIsMoneyCore.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -406,6 +458,7 @@
 		};
 		BE815FAC2383474C00000FB9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 032A36989AA4BF684502A103 /* Pods-Time Is Money-TimeIsMoneyCore.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
