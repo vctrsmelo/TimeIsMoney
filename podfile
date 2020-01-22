@@ -17,4 +17,8 @@ abstract_target 'Time Is Money' do
     target 'TimeIsMoneyCore' do
         project 'TimeIsMoneyCore/TimeIsMoneyCore.xcodeproj'
     end
+
+    target 'TimeIsMoneyCoreTests' do
+        project 'TimeIsMoneyCore/TimeIsMoneyCore.xcodeproj'
+    end
 end

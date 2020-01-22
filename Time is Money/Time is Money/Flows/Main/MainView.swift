@@ -16,6 +16,7 @@ struct MainView: View {
     @State private var price: Decimal = 100
     @State private var offsetValue: CGFloat = 0.0
     @State private var showEditView = false
+    @State private var topTextPadding: CGFloat = 0.0
     
     private var priceAsDouble: Double {
         return (price as NSDecimalNumber?)?.doubleValue ?? 0.0
@@ -30,6 +31,7 @@ struct MainView: View {
         f.numberStyle = .currency
         return f
     }()
+    
     
     var body: some View {
         
@@ -58,35 +60,34 @@ struct MainView: View {
         return VStack {
             
             //header
-            Text("You have to work")
-                .multilineTextAlignment(.center)
-                .font(Design.Font.standardLight)
-                .foregroundColor(Design.Color.Text.standard)
-                .padding(.bottom, 10)
-                .padding(.top, 10)
-                .animation(.none)
-            Text("\(timeMessage)")
-                .font(Design.Font.Title.smallTitleFont)
-                .foregroundColor(Design.Color.Text.standard)
-                .multilineTextAlignment(.center)
-                .padding(.bottom, 10)
-                .animation(.none)
-            Text("To pay those")
-                .multilineTextAlignment(.center)
-                .font(Design.Font.standardLight)
-                .foregroundColor(Design.Color.Text.standard)
-                .padding(.bottom, 10)
-                .animation(.none)
-            Text("\(formattedValue)")
-                .font(Design.Font.subtitle)
-                .foregroundColor(Design.Color.Text.standard)
-                .padding(.bottom, 10)
-                .animation(.none)
+            Group {
+                Text("You have to work")
+                    .multilineTextAlignment(.center)
+                    .font(Design.Font.standardLight)
+                    .foregroundColor(Design.Color.Text.standard)
+                    .animation(.none)
+                Text("\(timeMessage)")
+                    .font(Design.Font.Title.smallTitleFont)
+                    .foregroundColor(Design.Color.Text.standard)
+                    .multilineTextAlignment(.center)
+                    .animation(.none)
+                    .padding(.top, 10)
+                Text("to pay those")
+                    .multilineTextAlignment(.center)
+                    .font(Design.Font.standardLight)
+                    .foregroundColor(Design.Color.Text.standard)
+                    .animation(.none)
+                Text("\(formattedValue)")
+                    .font(Design.Font.subtitle)
+                    .foregroundColor(Design.Color.Text.standard)
+                    .animation(.none)
+            }
+            .offset(x: 0, y: topTextPadding)
             // image
             Image("table\(flow.getExpensivityIndex(price: priceAsDouble, maxIndex: 13))")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(minWidth: UIScreen.main.bounds.width/2, maxWidth: UIScreen.main.bounds.width-64, minHeight: 64, maxHeight: 160, alignment: .center)
+                .frame(minWidth: UIScreen.main.bounds.width/2, maxWidth: UIScreen.main.bounds.width-64, minHeight: 64, maxHeight: UIScreen.main.bounds.height/3, alignment: .center)
                 .padding(EdgeInsets(top: 20, leading: 16, bottom: 8, trailing: 16))
                 .animation(.none)
             // input
@@ -102,33 +103,44 @@ struct MainView: View {
                 }
             }
 
-            CurrencyField(priceBinding, placeholder: "Income", textColor: .white)
+            CurrencyField(priceBinding, placeholder: "Income".localized, textColor: .white)
                 .frame(width: UIScreen.main.bounds.width, height: 120, alignment: .center)
                 .background(Color(.sRGB, red: 94/255.0, green: 128/255.0, blue: 142/255.0, opacity: 1))
         }
+        .navigationBarBackButtonHidden(true)
         .navigationBarItems(trailing:
             Button(action: {
                 self.showEditView.toggle()
             }) {
-                Image(systemName: "person.crop.circle").imageScale(.large)
+                Image(systemName: "gear").imageScale(.large)
             }
         )
         .sheet(isPresented: $showEditView) {
             EditView().environmentObject(self.user)
         }
         .edgesIgnoringSafeArea(.bottom)
-        .navigationBarBackButtonHidden(true)
             
         .withBackground()
-        .keyboardSensible($offsetValue, type: .paddingAndOffset, onAppearKeyboardCustom: nil, onHideKeyboardCustom: nil)
+        .keyboardSensible($offsetValue, type: .paddingAndOffset, onAppearKeyboardCustom: {
+            self.topTextPadding = -UIScreen.main.bounds.height/16
+        }, onHideKeyboardCustom: {
+            self.topTextPadding = 0
+        })
         .animation(.spring())
+        .onAppear() {
+            if self.user.isOnboardingCompleted == false {
+                self.user.isOnboardingCompleted = true
+            }
+        }
     }
     
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        ForEach(Self.supportedLocales, id:\.self) { locale in
+            MainView().environment(\.locale, locale)
+        }
     }
 }
 

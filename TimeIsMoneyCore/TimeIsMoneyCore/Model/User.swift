@@ -13,6 +13,12 @@ public class User: ObservableObject {
     public static var instance = User()
     private var testing: Bool
     
+    @Published public var isOnboardingCompleted: Bool {
+        didSet {
+            UserDefaults.standard.set(isOnboardingCompleted, forKey: "isOnboardingCompleted")
+        }
+    }
+    
     @Published public var monthlySalary: Decimal {
         didSet {
             guard testing == false else { return }
@@ -51,21 +57,24 @@ public class User: ObservableObject {
     
     public init(testing: Bool = false) {
         self.testing = testing
+        
         if testing {
             self.monthlySalary = 1000.0
             self.weeklyWorkHours = 7
             self.workdays = Weekday.all()
+            self.isOnboardingCompleted = false
             
         } else {
             self.monthlySalary = UserDefaults.standard.double(forKey: "MonthlySalary").asDecimal()
             self.weeklyWorkHours = UserDefaults.standard.integer(forKey: "WeeklyWorkHours")
+            self.isOnboardingCompleted = UserDefaults.standard.bool(forKey: "isOnboardingCompleted")
             
             self.workdays = [Weekday]()
-            if let workdaysData = UserDefaults.standard.data(forKey: "Workdays") {
-                if let decoded = try? JSONDecoder().decode([Weekday].self, from: workdaysData) {
-                    self.workdays = decoded
-                }
-            }
+            
+            guard let workdaysData = UserDefaults.standard.data(forKey: "Workdays") else { return }
+            guard let decoded = try? JSONDecoder().decode([Weekday].self, from: workdaysData) else { return }
+            
+            self.workdays = decoded
         }
 
     }

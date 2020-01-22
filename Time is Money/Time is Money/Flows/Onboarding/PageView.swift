@@ -30,6 +30,7 @@ struct PageView<Page: View>: View {
             .navigationBarTitle("")
             .navigationBarHidden(true)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

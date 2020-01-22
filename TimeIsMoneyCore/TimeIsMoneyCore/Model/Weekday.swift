@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 public enum Weekday: String, Codable, Identifiable {
     
@@ -25,53 +26,57 @@ public enum Weekday: String, Codable, Identifiable {
     public func localized() -> String {
         switch self {
         case .monday:
-            return "M"
-        case .tuesday, .thursday:
-            return "T"
+            return "Mon_weekday_short".localized
+        case .tuesday:
+            return "Tue_weekday_short".localized
         case .wednesday:
-            return "W"
+            return "Wed_weekday_short".localized
+        case .thursday:
+            return "Thu_weekday_short".localized
         case .friday:
-            return "F"
-        case .saturday, .sunday:
-            return "S"
+            return "Fri_weekday_short".localized
+        case .saturday:
+            return "Sat_weekday_short".localized
+        case .sunday:
+            return "Sun_weekday_short".localized
         }
     }
     
     public func localizedMedium() -> String {
         switch self {
-        case .monday:
-            return "Mon"
+       case .monday:
+            return "Mon_weekday_medium".localized
         case .tuesday:
-            return "Tue"
+            return "Tue_weekday_medium".localized
         case .wednesday:
-            return "Wed"
+            return "Wed_weekday_medium".localized
         case .thursday:
-            return "Thu"
+            return "Thu_weekday_medium".localized
         case .friday:
-            return "Fri"
+            return "Fri_weekday_medium".localized
         case .saturday:
-            return "Sat"
+            return "Sat_weekday_medium".localized
         case .sunday:
-            return "Sun"
+            return "Sun_weekday_medium".localized
         }
     }
     
     public func localizedLong() -> String {
         switch self {
         case .monday:
-            return "Monday"
+            return "Mon_weekday_long".localized
         case .tuesday:
-            return "Tuesday"
+            return "Tue_weekday_long".localized
         case .wednesday:
-            return "Wednesday"
+            return "Wed_weekday_long".localized
         case .thursday:
-            return "Thursday"
+            return "Thu_weekday_long".localized
         case .friday:
-            return "Friday"
+            return "Fri_weekday_long".localized
         case .saturday:
-            return "Saturday"
+            return "Sat_weekday_long".localized
         case .sunday:
-            return "Sunday"
+            return "Sun_weekday_long".localized
         }
     }
     

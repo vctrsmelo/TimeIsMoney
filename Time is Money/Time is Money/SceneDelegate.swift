@@ -32,13 +32,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     AnyView(WorkTimeView()),
                     AnyView(IncomeView())]
         
-        let contentView = PageView(pages).environment(\.managedObjectContext, context)
-//        let contentView = MainView().environment(\.managedObjectContext, context)
-
+        let onboardingView = PageView(pages).environmentObject(user).environment(\.managedObjectContext, context).environmentObject(user)
+        
+        let mainView = NavigationView {
+                MainView()
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
+            .environment(\.managedObjectContext, context).environmentObject(user)
+        
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView.environmentObject(user))
+            
+            if user.isOnboardingCompleted {
+                window.rootViewController = UIHostingController(rootView: mainView)
+            } else {
+                window.rootViewController = UIHostingController(rootView: onboardingView)
+            }
+            
             self.window = window
             window.makeKeyAndVisible()
         }

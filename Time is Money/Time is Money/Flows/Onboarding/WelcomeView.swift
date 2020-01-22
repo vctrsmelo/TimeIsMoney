@@ -19,28 +19,33 @@ struct WelcomeView: View {
             Text("Welcome!")
                 .font(Design.Font.Title.largeTitleFont)
                 .foregroundColor(Design.Color.Text.title)
-                .padding(.bottom, 15)
+
+            Spacer()
             
             Group {
                 //subtitle
                 Text("Let's find out how much things really cost?")
                     .font(Design.Font.subtitle)
                     .foregroundColor(Design.Color.Text.title)
-                    .padding(.bottom, 43)
-                
+                Spacer()
                 //description
-                Text("For this we will only need two information. Let's go? 😄")
+                Text("For this we will only need three information. Let's go? 😄")
                     .font(Design.Font.standardLight)
                     .foregroundColor(Design.Color.Text.standard)
                 Spacer()
             }
             .frame(width: UIScreen.main.bounds.width-64)
         }.withBackground()
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
     }
 }
 
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeView()
+        return ForEach(Self.supportedLocales, id: \.identifier) { locale in
+            WelcomeView()
+                .environment(\.locale, locale)
+        }
     }
 }

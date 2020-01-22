@@ -27,9 +27,9 @@ struct EditView: View {
             VStack {
                 Form {
                     Section {
-                        EditFieldView(title: "Weekly Worktime", icon: Image("MoneyClockIcon"), inputView: AnyView(worktimePicker))
-                        EditFieldView(title: "Weekly workdays", icon: Image("CalendarIcon"), inputView: AnyView(weekdays))
-                        EditFieldView(title: "Monthly Income", icon: Image("MoneyIcon"), inputView: AnyView(salaryField))
+                        EditFieldView(title: "Weekly Worktime".localized, icon: Image("MoneyClockIcon"), inputView: AnyView(worktimePicker))
+                        EditFieldView(title: "Weekly workdays".localized, icon: Image("CalendarIcon"), inputView: AnyView(weekdays))
+                        EditFieldView(title: "Monthly Income".localized, icon: Image("MoneyIcon"), inputView: AnyView(salaryField))
                     }
                 }
             }

@@ -3,12 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		8A0439D7B538F8642174D71C /* Pods_Time_Is_Money_Time_is_Money.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89DA3F9B9FBD56CB958B96F /* Pods_Time_Is_Money_Time_is_Money.framework */; };
 		BE270BD723C039E50099AAC7 /* DaysOfWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE270BD623C039E50099AAC7 /* DaysOfWeekView.swift */; };
+		BE28C4F123D7A9D300CA9D13 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28C4F023D7A9D300CA9D13 /* R.generated.swift */; };
+		BE28C4F823D7AB3400CA9D13 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE28C4FA23D7AB3400CA9D13 /* Localizable.strings */; };
+		BE28C4FE23D7AC7200CA9D13 /* Time_is_MoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28C4FD23D7AC7200CA9D13 /* Time_is_MoneyTests.swift */; };
+		BE28C50023D7AD9600CA9D13 /* PreviewProvider+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28C4FF23D7AD9600CA9D13 /* PreviewProvider+Locale.swift */; };
 		BE57677E23CE838D004BF48C /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57677D23CE838D004BF48C /* EditView.swift */; };
 		BE66B18323BD096800166912 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B18223BD096800166912 /* WelcomeView.swift */; };
 		BE815FC72383497200000FB9 /* TimeIsMoneyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */; };
@@ -72,6 +76,12 @@
 		859912838D1CA2042502621A /* Pods-Time is Money.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time is Money.debug.xcconfig"; path = "Target Support Files/Pods-Time is Money/Pods-Time is Money.debug.xcconfig"; sourceTree = "<group>"; };
 		B89DA3F9B9FBD56CB958B96F /* Pods_Time_Is_Money_Time_is_Money.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Time_Is_Money_Time_is_Money.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE270BD623C039E50099AAC7 /* DaysOfWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOfWeekView.swift; sourceTree = "<group>"; };
+		BE28C4F023D7A9D300CA9D13 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		BE28C4F523D7AABA00CA9D13 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		BE28C4F923D7AB3400CA9D13 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		BE28C4FC23D7AB5300CA9D13 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BE28C4FD23D7AC7200CA9D13 /* Time_is_MoneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_is_MoneyTests.swift; sourceTree = "<group>"; };
+		BE28C4FF23D7AD9600CA9D13 /* PreviewProvider+Locale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewProvider+Locale.swift"; sourceTree = "<group>"; };
 		BE57677D23CE838D004BF48C /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		BE66B18223BD096800166912 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,6 +210,7 @@
 				EE42700F234F4A23007A63D9 /* LaunchScreen.storyboard */,
 				EE427012234F4A23007A63D9 /* Info.plist */,
 				EE42700A234F4A22007A63D9 /* Assets.xcassets */,
+				BE28C4FA23D7AB3400CA9D13 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -229,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				BEC00AF123BFE591001B6724 /* View+Extensions.swift */,
+				BE28C4FF23D7AD9600CA9D13 /* PreviewProvider+Locale.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -253,6 +265,7 @@
 		EE426FF5234F4A1E007A63D9 = {
 			isa = PBXGroup;
 			children = (
+				BE28C4F023D7A9D300CA9D13 /* R.generated.swift */,
 				EE427000234F4A1E007A63D9 /* Time is Money */,
 				EE42701A234F4A23007A63D9 /* Time is MoneyTests */,
 				EE427025234F4A23007A63D9 /* Time is MoneyUITests */,
@@ -296,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				EE42701D234F4A23007A63D9 /* Info.plist */,
+				BE28C4FD23D7AC7200CA9D13 /* Time_is_MoneyTests.swift */,
 			);
 			path = "Time is MoneyTests";
 			sourceTree = "<group>";
@@ -317,6 +331,7 @@
 			buildConfigurationList = EE42702B234F4A23007A63D9 /* Build configuration list for PBXNativeTarget "Time is Money" */;
 			buildPhases = (
 				88F9A90B4F93708DF419EBFD /* [CP] Check Pods Manifest.lock */,
+				BE28C4EF23D7A96C00CA9D13 /* R.Swift */,
 				EE426FFA234F4A1E007A63D9 /* Sources */,
 				EE426FFB234F4A1E007A63D9 /* Frameworks */,
 				EE426FFC234F4A1E007A63D9 /* Resources */,
@@ -399,6 +414,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = EE426FF5234F4A1E007A63D9;
 			productRefGroup = EE426FFF234F4A1E007A63D9 /* Products */;
@@ -418,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE427011234F4A23007A63D9 /* LaunchScreen.storyboard in Resources */,
+				BE28C4F823D7AB3400CA9D13 /* Localizable.strings in Resources */,
 				EE42700E234F4A22007A63D9 /* Preview Assets.xcassets in Resources */,
 				EE42700B234F4A22007A63D9 /* Assets.xcassets in Resources */,
 			);
@@ -479,6 +496,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BE28C4EF23D7A96C00CA9D13 /* R.Swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.Swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -492,7 +529,9 @@
 				BE85876923BFF2A300DEFE98 /* Formatters.swift in Sources */,
 				BEB0979A23BF984F00244E30 /* PageViewController.swift in Sources */,
 				BEC748BB23D23BB50027F26D /* WeekHStack.swift in Sources */,
+				BE28C50023D7AD9600CA9D13 /* PreviewProvider+Locale.swift in Sources */,
 				BEC748BD23D23BCF0027F26D /* WeekdayView.swift in Sources */,
+				BE28C4F123D7A9D300CA9D13 /* R.generated.swift in Sources */,
 				BEC00AEB23BFDC3C001B6724 /* IncomeView.swift in Sources */,
 				EE427007234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld in Sources */,
 				BEC00AEF23BFE361001B6724 /* BackgroundView.swift in Sources */,
@@ -512,6 +551,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE28C4FE23D7AC7200CA9D13 /* Time_is_MoneyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,10 +579,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		BE28C4FA23D7AB3400CA9D13 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE28C4F923D7AB3400CA9D13 /* pt-BR */,
+				BE28C4FC23D7AB5300CA9D13 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		EE42700F234F4A23007A63D9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EE427010234F4A23007A63D9 /* Base */,
+				BE28C4F523D7AABA00CA9D13 /* pt-BR */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -554,6 +604,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -614,6 +665,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

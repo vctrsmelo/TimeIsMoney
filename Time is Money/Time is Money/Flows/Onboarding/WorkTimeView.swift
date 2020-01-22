@@ -62,7 +62,7 @@ struct WorkTimeView: View {
             Section {
                 Picker(selection: selectedHours, label: EmptyView()) {
                     ForEach(0 ..< self.hours.count) {
-                        Text(self.hours[$0]+" hours")
+                        Text(self.hours[$0]+" "+"hours".localized)
                             .foregroundColor(self.user.isSelectedHoursValid($0) ? Design.Color.disabled : Design.Color.Text.standard)
                     }
                 }
@@ -77,6 +77,9 @@ struct WorkTimeView: View {
 
 struct WorkTimeView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkTimeView()
+        return ForEach(Self.supportedLocales, id: \.identifier) { locale in
+            WorkTimeView()
+                
+        }
     }
 }

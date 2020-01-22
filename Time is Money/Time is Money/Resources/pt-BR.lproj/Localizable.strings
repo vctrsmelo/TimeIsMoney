@@ -1,0 +1,54 @@
+/* 
+  Localizable.strings
+  Time is Money
+
+  Created by Victor Melo on 21/01/20.
+  Copyright © 2020 Victor S Melo. All rights reserved.
+*/
+
+"Welcome!" = "Bem vindo!";
+"Let's find out how much things really cost?" = "Vamos descobrir quanto as coisas realmente custam?";
+"For this we will only need three information. Let's go? 😄" = "Para isso precisamos de apenas 3 informações. Vamos lá? 😄";
+"Which days of the week do you usually work?" = "Quais dias da semana você geralmente trabalha?";
+
+"Mon_weekday_short" = "S";
+"Tue_weekday_short" = "T";
+"Wed_weekday_short" = "Q";
+"Thu_weekday_short" = "Q";
+"Fri_weekday_short" = "S";
+"Sat_weekday_short" = "S";
+"Sun_weekday_short" = "D";
+
+"Mon_weekday_medium" = "Seg";
+"Tue_weekday_medium" = "Ter";
+"Wed_weekday_medium" = "Qua";
+"Thu_weekday_medium" = "Qui";
+"Fri_weekday_medium" = "Sex";
+"Sat_weekday_medium" = "Sab";
+"Sun_weekday_medium" = "Dom";
+
+"Mon_weekday_long" = "Segunda";
+"Tue_weekday_long" = "Terça";
+"Wed_weekday_long" = "Quarta";
+"Thu_weekday_long" = "Quinta";
+"Fri_weekday_long" = "Sexta";
+"Sat_weekday_long" = "Sábado";
+"Sun_weekday_long" = "Domingo";
+
+"How much hours do you work per week?" = "Quantas horas semanais você trabalha?";
+"Hours per week" = "Horas por semana";
+"(Set your workdays to update here)" = "(Defina seus dias de trabalho para atualizar aqui)";
+
+"hours" = "horas";
+
+"What is your income per month?" = "Qual seu salário mensal?";
+"Income" = "Salário";
+"per month" = "por mês";
+"Finish" = "Pronto";
+
+"You have to work" = "Você precisa trabalhar";
+"to pay those" = "para pagar estes";
+
+"Weekly Worktime" = "Horas semanais de trabalho";
+"Weekly workdays" = "Dias de trabalho";
+"Monthly Income" = "Salário mensal";

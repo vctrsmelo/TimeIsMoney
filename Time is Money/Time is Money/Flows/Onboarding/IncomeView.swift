@@ -52,6 +52,7 @@ struct IncomeView: View {
                         .background(Design.Color.Text.standard)
                         .foregroundColor(Color.white)
                         .cornerRadius(5)
+                
                 }
                 Spacer()
             }

@@ -18,7 +18,7 @@ struct DaysOfWeekView: View {
         var result = ""
         for day in weekdays {
             if user.workdays.contains(day) {
-                result += "\(day.localizedLong()), "
+                result +=  "\(day.localizedLong()), "
             }
         }
         return "\(result.dropLast(2))"
@@ -54,6 +54,12 @@ struct DaysOfWeekView_Previews: PreviewProvider {
     static var user = User()
     
     static var previews: some View {
-        DaysOfWeekView().environmentObject(user)
+        
+        return ForEach(Self.supportedLocales, id: \.identifier) { locale in
+            DaysOfWeekView()
+                .environmentObject(user)
+                .environment(\.locale, locale)
+                
+        }
     }
 }

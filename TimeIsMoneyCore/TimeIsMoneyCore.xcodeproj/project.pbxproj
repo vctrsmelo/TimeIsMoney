@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2858D295F6A7215D25046406 /* Pods_Time_Is_Money_TimeIsMoneyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 025D468F3AB1B6C7900F4601 /* Pods_Time_Is_Money_TimeIsMoneyCore.framework */; };
+		A649752CDC0D1053F3A6E4D1 /* Pods_Time_Is_Money_TimeIsMoneyCoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF14C4E6CDA5C540565B647 /* Pods_Time_Is_Money_TimeIsMoneyCoreTests.framework */; };
 		BE270C3123C3C9E70099AAC7 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE270C3023C3C9E70099AAC7 /* Weekday.swift */; };
+		BE28C4F423D7AA4D00CA9D13 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28C4F323D7AA4D00CA9D13 /* R.generated.swift */; };
+		BE28C50623D7B4A500CA9D13 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28C50523D7B4A500CA9D13 /* String+Localized.swift */; };
 		BE815FA02383474C00000FB9 /* TimeIsMoneyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE815F962383474C00000FB9 /* TimeIsMoneyCore.framework */; };
 		BE815FA52383474C00000FB9 /* TimeIsMoneyCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE815FA42383474C00000FB9 /* TimeIsMoneyCoreTests.swift */; };
 		BE815FA72383474C00000FB9 /* TimeIsMoneyCore.h in Headers */ = {isa = PBXBuildFile; fileRef = BE815F992383474C00000FB9 /* TimeIsMoneyCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -32,8 +35,13 @@
 /* Begin PBXFileReference section */
 		025D468F3AB1B6C7900F4601 /* Pods_Time_Is_Money_TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Time_Is_Money_TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		032A36989AA4BF684502A103 /* Pods-Time Is Money-TimeIsMoneyCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time Is Money-TimeIsMoneyCore.release.xcconfig"; path = "Target Support Files/Pods-Time Is Money-TimeIsMoneyCore/Pods-Time Is Money-TimeIsMoneyCore.release.xcconfig"; sourceTree = "<group>"; };
+		0424D3728448B5F582A62F28 /* Pods-Time Is Money-TimeIsMoneyCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time Is Money-TimeIsMoneyCoreTests.debug.xcconfig"; path = "Target Support Files/Pods-Time Is Money-TimeIsMoneyCoreTests/Pods-Time Is Money-TimeIsMoneyCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		150BAEF5E7698FC2535CDE2B /* Pods-Time Is Money-TimeIsMoneyCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time Is Money-TimeIsMoneyCore.debug.xcconfig"; path = "Target Support Files/Pods-Time Is Money-TimeIsMoneyCore/Pods-Time Is Money-TimeIsMoneyCore.debug.xcconfig"; sourceTree = "<group>"; };
+		1AF14C4E6CDA5C540565B647 /* Pods_Time_Is_Money_TimeIsMoneyCoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Time_Is_Money_TimeIsMoneyCoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B715F6A418202B59E5B6D8C2 /* Pods-Time Is Money-TimeIsMoneyCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time Is Money-TimeIsMoneyCoreTests.release.xcconfig"; path = "Target Support Files/Pods-Time Is Money-TimeIsMoneyCoreTests/Pods-Time Is Money-TimeIsMoneyCoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		BE270C3023C3C9E70099AAC7 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
+		BE28C4F323D7AA4D00CA9D13 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		BE28C50523D7B4A500CA9D13 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		BE815F962383474C00000FB9 /* TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE815F992383474C00000FB9 /* TimeIsMoneyCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeIsMoneyCore.h; sourceTree = "<group>"; };
 		BE815F9A2383474C00000FB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +69,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE815FA02383474C00000FB9 /* TimeIsMoneyCore.framework in Frameworks */,
+				A649752CDC0D1053F3A6E4D1 /* Pods_Time_Is_Money_TimeIsMoneyCoreTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				025D468F3AB1B6C7900F4601 /* Pods_Time_Is_Money_TimeIsMoneyCore.framework */,
+				1AF14C4E6CDA5C540565B647 /* Pods_Time_Is_Money_TimeIsMoneyCoreTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -87,6 +97,7 @@
 		BE815F8C2383474C00000FB9 = {
 			isa = PBXGroup;
 			children = (
+				BE28C4F323D7AA4D00CA9D13 /* R.generated.swift */,
 				BE815F982383474C00000FB9 /* TimeIsMoneyCore */,
 				BE815FA32383474C00000FB9 /* TimeIsMoneyCoreTests */,
 				BE815F972383474C00000FB9 /* Products */,
@@ -131,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				BED15C6D23C5283400EA9E46 /* GeneralExtensions.swift */,
+				BE28C50523D7B4A500CA9D13 /* String+Localized.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -140,6 +152,8 @@
 			children = (
 				150BAEF5E7698FC2535CDE2B /* Pods-Time Is Money-TimeIsMoneyCore.debug.xcconfig */,
 				032A36989AA4BF684502A103 /* Pods-Time Is Money-TimeIsMoneyCore.release.xcconfig */,
+				0424D3728448B5F582A62F28 /* Pods-Time Is Money-TimeIsMoneyCoreTests.debug.xcconfig */,
+				B715F6A418202B59E5B6D8C2 /* Pods-Time Is Money-TimeIsMoneyCoreTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -164,6 +178,7 @@
 			buildConfigurationList = BE815FAA2383474C00000FB9 /* Build configuration list for PBXNativeTarget "TimeIsMoneyCore" */;
 			buildPhases = (
 				18D8C67C8BDCA740AE1831BA /* [CP] Check Pods Manifest.lock */,
+				BE28C4F223D7A9DC00CA9D13 /* R.Swift */,
 				BE815F912383474C00000FB9 /* Headers */,
 				BE815F922383474C00000FB9 /* Sources */,
 				BE815F932383474C00000FB9 /* Frameworks */,
@@ -182,9 +197,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE815FAD2383474C00000FB9 /* Build configuration list for PBXNativeTarget "TimeIsMoneyCoreTests" */;
 			buildPhases = (
+				D4DC1DD3F471CB08EB300699 /* [CP] Check Pods Manifest.lock */,
 				BE815F9B2383474C00000FB9 /* Sources */,
 				BE815F9C2383474C00000FB9 /* Frameworks */,
 				BE815F9D2383474C00000FB9 /* Resources */,
+				64747F01CA345093C87A82B3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -274,6 +291,65 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		64747F01CA345093C87A82B3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Time Is Money-TimeIsMoneyCoreTests/Pods-Time Is Money-TimeIsMoneyCoreTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Time Is Money-TimeIsMoneyCoreTests/Pods-Time Is Money-TimeIsMoneyCoreTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Time Is Money-TimeIsMoneyCoreTests/Pods-Time Is Money-TimeIsMoneyCoreTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE28C4F223D7A9DC00CA9D13 /* R.Swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.Swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$SRCROOT/R.generated.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+		D4DC1DD3F471CB08EB300699 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Time Is Money-TimeIsMoneyCoreTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -281,8 +357,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE28C50623D7B4A500CA9D13 /* String+Localized.swift in Sources */,
 				BED15C6E23C5283400EA9E46 /* GeneralExtensions.swift in Sources */,
 				BE815FCC23834A1800000FB9 /* User.swift in Sources */,
+				BE28C4F423D7AA4D00CA9D13 /* R.generated.swift in Sources */,
 				BE815FBB2383480200000FB9 /* Flow.swift in Sources */,
 				BE270C3123C3C9E70099AAC7 /* Weekday.swift in Sources */,
 			);
@@ -484,6 +562,7 @@
 		};
 		BE815FAE2383474C00000FB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0424D3728448B5F582A62F28 /* Pods-Time Is Money-TimeIsMoneyCoreTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -503,6 +582,7 @@
 		};
 		BE815FAF2383474C00000FB9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B715F6A418202B59E5B6D8C2 /* Pods-Time Is Money-TimeIsMoneyCoreTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
