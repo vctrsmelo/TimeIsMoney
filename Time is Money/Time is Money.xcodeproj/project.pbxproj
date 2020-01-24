@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8A0439D7B538F8642174D71C /* Pods_Time_Is_Money_Time_is_Money.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89DA3F9B9FBD56CB958B96F /* Pods_Time_Is_Money_Time_is_Money.framework */; };
+		BE2291DF23DA75950098C106 /* View+IsHidden.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2291DE23DA75950098C106 /* View+IsHidden.swift */; };
 		BE270BD723C039E50099AAC7 /* DaysOfWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE270BD623C039E50099AAC7 /* DaysOfWeekView.swift */; };
 		BE28C4F123D7A9D300CA9D13 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28C4F023D7A9D300CA9D13 /* R.generated.swift */; };
 		BE28C4F823D7AB3400CA9D13 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE28C4FA23D7AB3400CA9D13 /* Localizable.strings */; };
@@ -75,6 +76,7 @@
 		30114F19B14CB7CCF80DDDA5 /* Pods-Time Is Money-Time is Money.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time Is Money-Time is Money.debug.xcconfig"; path = "Target Support Files/Pods-Time Is Money-Time is Money/Pods-Time Is Money-Time is Money.debug.xcconfig"; sourceTree = "<group>"; };
 		859912838D1CA2042502621A /* Pods-Time is Money.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time is Money.debug.xcconfig"; path = "Target Support Files/Pods-Time is Money/Pods-Time is Money.debug.xcconfig"; sourceTree = "<group>"; };
 		B89DA3F9B9FBD56CB958B96F /* Pods_Time_Is_Money_Time_is_Money.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Time_Is_Money_Time_is_Money.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE2291DE23DA75950098C106 /* View+IsHidden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+IsHidden.swift"; sourceTree = "<group>"; };
 		BE270BD623C039E50099AAC7 /* DaysOfWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOfWeekView.swift; sourceTree = "<group>"; };
 		BE28C4F023D7A9D300CA9D13 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		BE28C4F523D7AABA00CA9D13 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			children = (
 				BEC00AF123BFE591001B6724 /* View+Extensions.swift */,
 				BE28C4FF23D7AD9600CA9D13 /* PreviewProvider+Locale.swift */,
+				BE2291DE23DA75950098C106 /* View+IsHidden.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 			files = (
 				BE66B18323BD096800166912 /* WelcomeView.swift in Sources */,
 				BEB0979D23BF990E00244E30 /* PageView.swift in Sources */,
+				BE2291DF23DA75950098C106 /* View+IsHidden.swift in Sources */,
 				BEC00AE723BFD6A0001B6724 /* PageControl.swift in Sources */,
 				BE85876923BFF2A300DEFE98 /* Formatters.swift in Sources */,
 				BEB0979A23BF984F00244E30 /* PageViewController.swift in Sources */,
