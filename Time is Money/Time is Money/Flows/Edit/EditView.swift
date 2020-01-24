@@ -122,12 +122,8 @@ struct WeekdayRowView: View {
     var body: some View {
         
         let isSelected = self.user.workdays.contains(self.weekday)
-        
         let checkmarkColor = (isSelected) ?  Color(.blue) : Color(.gray)
 
-        if isSelected {
-            print("Selected")
-        }
         return HStack {
             Text(weekday.localizedLong())
                 .font(Design.Font.standardLight)

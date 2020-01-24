@@ -44,7 +44,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             
-            if user.isOnboardingCompleted {
+            if false {
                 window.rootViewController = UIHostingController(rootView: mainView)
             } else {
                 window.rootViewController = UIHostingController(rootView: onboardingView)

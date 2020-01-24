@@ -27,7 +27,7 @@ struct WorkTimeView: View {
         
         return Group {
             VStack {
-                Text("How much hours do you work per week?")
+                Text("How many hours do you work?")
                     .font(Design.Font.Title.customTitleFont(size: 30))
                     .foregroundColor(Design.Color.Text.title)
                 Image("table2")

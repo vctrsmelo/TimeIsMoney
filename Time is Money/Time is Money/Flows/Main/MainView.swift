@@ -8,6 +8,7 @@
 
 import SwiftUI
 import TimeIsMoneyCore
+import Rswift
 
 struct MainView: View {
     
@@ -39,7 +40,6 @@ struct MainView: View {
         let maybeTimeNeeded = flow.getTimeNeededToPay(for: priceAsDouble)
         
         let timeMessage: String
-        let quickAnswers: [Double] = [100, 200, 500, 1000]
         
         switch maybeTimeNeeded {
         case .success(let worktime):
@@ -55,57 +55,25 @@ struct MainView: View {
             set: { self.price = $0 }
         )
         
-        print(priceBinding.wrappedValue)
-        
         return VStack {
             
             //header
-            Group {
-                Text("You have to work")
-                    .multilineTextAlignment(.center)
-                    .font(Design.Font.standardLight)
-                    .foregroundColor(Design.Color.Text.standard)
-                    .animation(.none)
-                Text("\(timeMessage)")
-                    .font(Design.Font.Title.smallTitleFont)
-                    .foregroundColor(Design.Color.Text.standard)
-                    .multilineTextAlignment(.center)
-                    .animation(.none)
-                    .padding(.top, 10)
-                Text("to pay those")
-                    .multilineTextAlignment(.center)
-                    .font(Design.Font.standardLight)
-                    .foregroundColor(Design.Color.Text.standard)
-                    .animation(.none)
-                Text("\(formattedValue)")
-                    .font(Design.Font.subtitle)
-                    .foregroundColor(Design.Color.Text.standard)
-                    .animation(.none)
-            }
-            .offset(x: 0, y: topTextPadding)
+            headerTextSection(timeMessage: timeMessage, formattedValue: formattedValue)
+            
             // image
-            Image("table\(flow.getExpensivityIndex(price: priceAsDouble, maxIndex: 13))")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(minWidth: UIScreen.main.bounds.width/2, maxWidth: UIScreen.main.bounds.width-64, minHeight: 64, maxHeight: UIScreen.main.bounds.height/3, alignment: .center)
-                .padding(EdgeInsets(top: 20, leading: 16, bottom: 8, trailing: 16))
-                .animation(.none)
-            // input
+            tableImageSection(flow: self.flow)
+
             Spacer()
             
-            ScrollView (.horizontal, showsIndicators: false) {
-                HStack(spacing: 15) {
-                    ForEach(quickAnswers, id: \.self) { quickAnswer in
-                        QuickAnswerView(value: quickAnswer).onTapGesture {
-                            priceBinding.wrappedValue = Decimal(quickAnswer)
-                        }
-                    }
-                }
-            }
+            Text("Type below the price")
+                .font(Design.Font.smallLight)
+                .foregroundColor(Design.Color.Text.standard)
 
             CurrencyField(priceBinding, placeholder: "Income".localized, textColor: .white)
-                .frame(width: UIScreen.main.bounds.width, height: 120, alignment: .center)
+                .frame(width: UIScreen.main.bounds.width-16, height: 50, alignment: .center)
                 .background(Color(.sRGB, red: 94/255.0, green: 128/255.0, blue: 142/255.0, opacity: 1))
+                .cornerRadius(100)
+            
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(trailing:
@@ -118,8 +86,6 @@ struct MainView: View {
         .sheet(isPresented: $showEditView) {
             EditView().environmentObject(self.user)
         }
-        .edgesIgnoringSafeArea(.bottom)
-            
         .withBackground()
         .keyboardSensible($offsetValue, type: .paddingAndOffset, onAppearKeyboardCustom: {
             self.topTextPadding = -UIScreen.main.bounds.height/16
@@ -134,6 +100,40 @@ struct MainView: View {
         }
     }
     
+    private func headerTextSection(timeMessage: String, formattedValue: String) -> some View {
+        Group {
+            Text("You have to work")
+                .multilineTextAlignment(.center)
+                .font(Design.Font.standardLight)
+                .foregroundColor(Design.Color.Text.standard)
+                .animation(.none)
+            Text("\(timeMessage)")
+                .font(Design.Font.Title.smallTitleFont)
+                .foregroundColor(Design.Color.Text.standard)
+                .multilineTextAlignment(.center)
+                .animation(.none)
+                .padding(.top, 10)
+            Text("to pay those")
+                .multilineTextAlignment(.center)
+                .font(Design.Font.standardLight)
+                .foregroundColor(Design.Color.Text.standard)
+                .animation(.none)
+            Text("\(formattedValue)")
+                .font(Design.Font.subtitle)
+                .foregroundColor(Design.Color.Text.standard)
+                .animation(.none)
+        }
+        .offset(x: 0, y: topTextPadding)
+    }
+    
+    private func tableImageSection(flow: Flow) -> some View {
+        Image("table\(flow.getExpensivityIndex(price: priceAsDouble, maxIndex: 13))")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(minWidth: UIScreen.main.bounds.width/2, maxWidth: UIScreen.main.bounds.width-64, minHeight: 64, maxHeight: UIScreen.main.bounds.height/3, alignment: .center)
+            .padding(EdgeInsets(top: 20, leading: 16, bottom: 8, trailing: 16))
+            .animation(.none)
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -146,30 +146,3 @@ struct ContentView_Previews: PreviewProvider {
 
 // MARK: - Other Views
 
-struct QuickAnswerView: View {
-    
-    private var value: Double = 0.0
-    
-    private var currencyFormatter: NumberFormatter = {
-        let f = NumberFormatter()
-        // allow no currency symbol, extra digits, etc
-        f.isLenient = true
-        f.numberStyle = .currency
-        return f
-    }()
-    
-    init(value: Double) {
-        self.value = value
-    }
-    
-    var body: some View {
-        let formattedValue = currencyFormatter.string(from: NSNumber(value: value)) ?? "?"
-        
-        return Text(" \(formattedValue) ")
-            .foregroundColor(.white)
-            .background(Color(.sRGB, red: 94/255.0, green: 128/255.0, blue: 142/255.0, opacity: 1)
-            )
-            .cornerRadius(5)
- 
-    }
-}

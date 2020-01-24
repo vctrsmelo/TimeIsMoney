@@ -298,7 +298,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 38 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 39 localization keys.
     struct localizable {
       /// en translation: (Set your workdays to update here)
       ///
@@ -404,6 +404,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: pt-BR, en
       static let tue_weekday_long = Rswift.StringResource(key: "Tue_weekday_long", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: Type below the price
+      ///
+      /// Locales: pt-BR, en
+      static let typeBelowThePrice = Rswift.StringResource(key: "Type below the price", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
       /// en translation: W
       ///
       /// Locales: pt-BR, en
@@ -841,6 +845,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Tue_weekday_long", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Type below the price
+      ///
+      /// Locales: pt-BR, en
+      static func typeBelowThePrice(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Type below the price", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Type below the price"
+        }
+
+        return NSLocalizedString("Type below the price", bundle: bundle, comment: "")
       }
 
       /// en translation: W

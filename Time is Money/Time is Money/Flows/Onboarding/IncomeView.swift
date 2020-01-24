@@ -31,7 +31,7 @@ struct IncomeView: View {
         
         return Group {
             VStack {
-                Text("What is your income per month?")
+                Text("What is your income?")
                     .font(Design.Font.Title.smallTitleFont)
                     .foregroundColor(Design.Color.Text.title)
                 Image("Money")

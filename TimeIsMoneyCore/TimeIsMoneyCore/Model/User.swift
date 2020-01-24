@@ -23,7 +23,6 @@ public class User: ObservableObject {
         didSet {
             guard testing == false else { return }
             UserDefaults.standard.set(monthlySalary, forKey: "MonthlySalary")
-            print("didSet salary: \(monthlySalary)")
         }
     }
     
@@ -82,7 +81,6 @@ public class User: ObservableObject {
     private func syncWorkdaysWithWorkHours() {
         if weeklyWorkHours < workdays.count {
             weeklyWorkHours = workdays.count
-            print("Alert: User weekly hour adjusted")
         } else if weeklyWorkHours > workdays.count*24 {
             weeklyWorkHours = workdays.count*24
         }
