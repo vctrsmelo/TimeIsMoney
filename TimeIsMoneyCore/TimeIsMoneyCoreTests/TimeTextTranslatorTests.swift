@@ -67,7 +67,7 @@ class TimeTextTranslatorTests: XCTestCase {
         return TimeTextTranslator.self
     }
     
-    func getUnstoppedWorkTimeDescription(from seconds: WorkTime) -> String {
+    func getUnstoppedWorkTimeDescription(from seconds: WorkTimeSeconds) -> String {
         TimeTextTranslator.allowedUnits = [.year, .month, .weekOfMonth, .day, .hour, .minute, .second]
         return TimeTextTranslator.getUnstoppedWorkTimeDescription(from: seconds)
     }

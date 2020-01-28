@@ -73,7 +73,7 @@ class FlowTests: XCTestCase {
         return Flow(user: testUser)
     }
     
-    func resultFloorAsHour(_ result: Result<WorkTime, CalculatorError>) -> Double? {
+    func resultFloorAsHour(_ result: Result<WorkTimeSeconds, CalculatorError>) -> Double? {
         switch result {
         case .success(let worktime):
             return floor(worktime/3600)*3600

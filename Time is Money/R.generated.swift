@@ -336,6 +336,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: pt-BR, en
       static let income = Rswift.StringResource(key: "Income", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: It will take
+      ///
+      /// Locales: pt-BR, en
+      static let itWillTake = Rswift.StringResource(key: "It will take", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
       /// en translation: Let's find out how much things really cost?
       ///
       /// Locales: pt-BR, en
@@ -440,10 +444,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: pt-BR, en
       static let whichDaysOfTheWeekDoYouUsuallyWork = Rswift.StringResource(key: "Which days of the week do you usually work?", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
-      /// en translation: You have to work
-      ///
-      /// Locales: pt-BR, en
-      static let youHaveToWork = Rswift.StringResource(key: "You have to work", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
       /// en translation: hours
       ///
       /// Locales: pt-BR, en
@@ -452,10 +452,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: pt-BR, en
       static let perMonth = Rswift.StringResource(key: "per month", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
-      /// en translation: to pay those
+      /// en translation: to pay only those
       ///
       /// Locales: pt-BR, en
-      static let toPayThose = Rswift.StringResource(key: "to pay those", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      static let toPayOnlyThose = Rswift.StringResource(key: "to pay only those", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
 
       /// en translation: (Set your workdays to update here)
       ///
@@ -590,6 +590,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Income", bundle: bundle, comment: "")
+      }
+
+      /// en translation: It will take
+      ///
+      /// Locales: pt-BR, en
+      static func itWillTake(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("It will take", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "It will take"
+        }
+
+        return NSLocalizedString("It will take", bundle: bundle, comment: "")
       }
 
       /// en translation: Let's find out how much things really cost?
@@ -982,21 +997,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Which days of the week do you usually work?", bundle: bundle, comment: "")
       }
 
-      /// en translation: You have to work
-      ///
-      /// Locales: pt-BR, en
-      static func youHaveToWork(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("You have to work", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "You have to work"
-        }
-
-        return NSLocalizedString("You have to work", bundle: bundle, comment: "")
-      }
-
       /// en translation: hours
       ///
       /// Locales: pt-BR, en
@@ -1027,19 +1027,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("per month", bundle: bundle, comment: "")
       }
 
-      /// en translation: to pay those
+      /// en translation: to pay only those
       ///
       /// Locales: pt-BR, en
-      static func toPayThose(preferredLanguages: [String]? = nil) -> String {
+      static func toPayOnlyThose(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("to pay those", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("to pay only those", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "to pay those"
+          return "to pay only those"
         }
 
-        return NSLocalizedString("to pay those", bundle: bundle, comment: "")
+        return NSLocalizedString("to pay only those", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}

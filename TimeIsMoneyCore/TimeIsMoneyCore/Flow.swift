@@ -11,8 +11,7 @@ import Foundation
 let WEEKS_IN_MONTH = 4.429531 // ~30 days per month
 let SECONDS_IN_HOUR = 3600.00
 
-///WorkTime in seconds
-public typealias WorkTime = TimeInterval
+public typealias WorkTimeSeconds = TimeInterval
 
 public enum CalculatorError: Error {
     case undefinedWeeklyWorkDays
@@ -28,7 +27,7 @@ public class Flow {
         self.user = user
     }
     
-    public func getTimeNeededToPay(for price: Double) -> Result<WorkTime, CalculatorError> {
+    public func getTimeNeededToPay(for price: Double) -> Result<WorkTimeSeconds, CalculatorError> {
         return Calculator.getWorkTimeToPay(for: price, user: user)
     }
 
@@ -41,7 +40,7 @@ public class Flow {
 }
 
 public enum Calculator {
-    public static func getWorkTimeToPay(for price: Double, user: User) -> Result<WorkTime, CalculatorError> {
+    public static func getWorkTimeToPay(for price: Double, user: User) -> Result<WorkTimeSeconds, CalculatorError> {
         
         guard price > 0.0 else { return .success(0.0) }
         guard workAtLeastOneDayPerWeek(user) else { return .failure(CalculatorError.undefinedWeeklyWorkDays)}
@@ -54,8 +53,8 @@ public enum Calculator {
         let dailySalary = weeklySalary / Double(user.workdays.count)
         let salaryPerHour = dailySalary / dailyWorkHours
         
-        let hoursWorkingNeeded: WorkTime = (price/salaryPerHour)
-        let secondsWorkingNeeded: WorkTime = hoursWorkingNeeded * SECONDS_IN_HOUR
+        let hoursWorkingNeeded: WorkTimeSeconds = (price/salaryPerHour)
+        let secondsWorkingNeeded: WorkTimeSeconds = hoursWorkingNeeded * SECONDS_IN_HOUR
         
         return .success(secondsWorkingNeeded)
     }
@@ -91,11 +90,11 @@ public class TimeTextTranslator {
         return formatter
     }()
     
-    public static func getUnstoppedWorkTimeDescription(from fullWorkTime: WorkTime) -> String {
+    public static func getUnstoppedWorkTimeDescription(from fullWorkTime: WorkTimeSeconds) -> String {
         return formatter.string(from: fullWorkTime)!
     }
     
-    public static func getUserWorkTimeDescription(from priceAsSeconds: WorkTime, dailyWorkHours: Double, weeklyWorkDays: Int) -> String {
+    public static func getUserWorkTimeDescription(from priceAsSeconds: WorkTimeSeconds, dailyWorkHours: Double, weeklyWorkDays: Int) -> String {
         
         guard dailyWorkHours > 0 else {
             return "You need to increase your work hours"
@@ -122,7 +121,7 @@ public class TimeTextTranslator {
         
     }
     
-    private static func adjustFormatterAllowedUnits(for seconds: WorkTime) {
+    private static func adjustFormatterAllowedUnits(for seconds: WorkTimeSeconds) {
         formatter.allowedUnits = [.year, .month, .weekOfMonth, .day, .hour, .minute, .second]
         
         if isLongerThanAnHour(seconds) {
@@ -146,23 +145,23 @@ public class TimeTextTranslator {
         }
     }
     
-    private static func isLongerThanAnHour(_ seconds: WorkTime) -> Bool {
+    private static func isLongerThanAnHour(_ seconds: WorkTimeSeconds) -> Bool {
         return (seconds >= SecondsIn.hour.asDouble())
     }
     
-    private static func isLongerThanADay(_ seconds: WorkTime) -> Bool {
+    private static func isLongerThanADay(_ seconds: WorkTimeSeconds) -> Bool {
         return (seconds >= SecondsIn.day.asDouble())
     }
     
-    private static func isLongerThanAWeek(_ seconds: WorkTime) -> Bool {
+    private static func isLongerThanAWeek(_ seconds: WorkTimeSeconds) -> Bool {
         return (seconds >= SecondsIn.week.asDouble())
     }
     
-    private static func isLongerThanAMonth(_ seconds: WorkTime) -> Bool {
+    private static func isLongerThanAMonth(_ seconds: WorkTimeSeconds) -> Bool {
         return (seconds >= SecondsIn.month.asDouble())
     }
     
-    private static func isLongerThanAYear(_ seconds: WorkTime) -> Bool {
+    private static func isLongerThanAYear(_ seconds: WorkTimeSeconds) -> Bool {
         return (seconds >= SecondsIn.year.asDouble())
     }
     

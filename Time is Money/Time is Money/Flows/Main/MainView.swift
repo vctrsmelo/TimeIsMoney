@@ -34,6 +34,8 @@ struct MainView: View {
         return f
     }()
     
+    private var dailyWorkHours: Double { Double(flow.user.weeklyWorkHours)/Double(flow.user.workdays.count)
+    }
     
     var body: some View {
         
@@ -44,8 +46,7 @@ struct MainView: View {
         
         switch maybeTimeNeeded {
         case .success(let worktime):
-            let dailyWorkHours = floor(Double(flow.user.weeklyWorkHours)/Double(flow.user.workdays.count))
-            timeMessage = TimeTextTranslator.getUserWorkTimeDescription(from: worktime, dailyWorkHours: dailyWorkHours, weeklyWorkDays:  flow.user.workdays.count)
+            timeMessage = TimeTextTranslator.getUserWorkTimeDescription(from: worktime, dailyWorkHours: floor(dailyWorkHours), weeklyWorkDays:  flow.user.workdays.count)
         case .failure(let error):
             timeMessage = "¯\\_(ツ)_/¯"
             print(error)
@@ -60,7 +61,9 @@ struct MainView: View {
             
             Group {
                 headerTextSection(timeMessage: timeMessage, formattedValue: formattedValue)
-            
+                
+                Spacer()
+                
                 tableImageSection(flow: self.flow)
             }
             .offset(x: 0, y: topTextPadding)
@@ -98,7 +101,7 @@ struct MainView: View {
     
     private func headerTextSection(timeMessage: String, formattedValue: String) -> some View {
         Group {
-            Text("It will cost you")
+            Text("It will take")
                 .multilineTextAlignment(.center)
                 .font(Design.Font.standardLight)
                 .foregroundColor(Design.Color.Text.standard)
@@ -109,9 +112,9 @@ struct MainView: View {
                 .multilineTextAlignment(.center)
                 .animation(.none)
                 .padding(.top, 10)
-            Text("Working 8h per day")
+            getExpectedWorkingTimeText()
             Group {
-                Text("to pay those")
+                Text("to pay only those")
                     .multilineTextAlignment(.center)
                     .font(Design.Font.standardLight)
                     .foregroundColor(Design.Color.Text.standard)
@@ -122,6 +125,17 @@ struct MainView: View {
             }
             .isHidden(isKeyboardVisible)
         }
+    }
+    
+    private func getExpectedWorkingTimeText() -> Text {
+        
+        let dailyWorkSeconds = dailyWorkHours * 3600
+        guard let hoursAndMinutesString = Formatter.hoursAndMinutes(seconds: dailyWorkSeconds) else {
+            return Text("")
+        }
+        
+        print("Daily work hours: "+"\(dailyWorkHours)")
+        return Text("Working "+hoursAndMinutesString+" per day")
     }
     
     private func tableImageSection(flow: Flow) -> some View {
