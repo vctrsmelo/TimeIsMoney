@@ -26,14 +26,14 @@ extension Formatter {
     
     static func hoursAndMinutes(seconds: TimeInterval) -> String? {
         let formatter = DateComponentsFormatter()
-        formatter.unitsStyle = .positional
-        formatter.allowedUnits = [.hour, .minute]
+        formatter.unitsStyle = .abbreviated
+        formatter.allowedUnits = [.hour]
         formatter.zeroFormattingBehavior = .pad
         guard let string = formatter.string(from: seconds) else {
             return nil
         }
     
-        return (seconds >= 36000) ? string : String(string.dropFirst())
+        return string
     }
     
 }

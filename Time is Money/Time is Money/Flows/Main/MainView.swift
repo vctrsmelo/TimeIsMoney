@@ -24,16 +24,7 @@ struct MainView: View {
         return (price as NSDecimalNumber?)?.doubleValue ?? 0.0
     }
     
-    
     private let flow = Flow()
-//
-//    private var currencyFormatter: NumberFormatter = {
-//        let f = NumberFormatter()
-//        // allow no currency symbol, extra digits, etc
-//        f.isLenient = true
-//        f.numberStyle = .currency
-//        return f
-//    }()
     
     var body: some View {
         
@@ -114,36 +105,42 @@ struct MainView: View {
                 .animation(.none)
                 .padding(.top, 10)
             getExpectedWorkingTimeText(priceAsSeconds: priceAsSeconds)
+                .font(Design.Font.standardLight)
+                .foregroundColor(Design.Color.Text.standard)
+                .padding(.top, 10)
             Group {
                 Text("to pay only those")
                     .multilineTextAlignment(.center)
                     .font(Design.Font.standardLight)
                     .foregroundColor(Design.Color.Text.standard)
                     .animation(.none)
+                    .padding(.top, 10)
                 Text("\(formattedValue)")
                     .font(Design.Font.subtitle)
                     .foregroundColor(Design.Color.Text.standard)
+                    .padding(.top, 10)
             }
             .isHidden(isKeyboardVisible)
         }
     }
     
     private func getExpectedWorkingTimeText(priceAsSeconds: TimeInterval) -> Text {
-        print("price as seconds: ---- \(priceAsSeconds)")
-        guard let routine = TimeTextTranslator.getWorkRoutineDescriptionToPay(for: priceAsSeconds, dailyWorkHours: user.dailyWorkHours, weeklyWorkDays: user.workdays.count) else {
+        let priceNormalizedToWorkTime = TimeTextTranslator.normalizeTimeToWorkTime(priceAsSeconds: priceAsSeconds, dailyWorkHours: user.dailyWorkHours, weeklyWorkDays: user.workdays.count)
+        guard let routine = TimeTextTranslator.getWorkRoutineDescriptionToPay(for: priceNormalizedToWorkTime, dailyWorkHours: user.dailyWorkHours, weeklyWorkDays: user.workdays.count) else {
             return Text("")
         }
         
-        let routineString: String
-        switch routine.period {
-        case .weekly:
-            routineString = "Working "+"\(routine.value)"+" per week"
-        case .daily:
-            routineString = "Working "+"\(routine.value)"+" per day"
+        let seconds = routine.value * 1.hour
+        guard let routineHoursAndMinutes = Formatter.hoursAndMinutes(seconds: seconds) else {
+            return Text("")
         }
         
-        print("Routine: ------- "+routineString)
-        return Text(routineString)
+        switch routine.period {
+        case .weekly:
+            return Text("Working "+"\(routineHoursAndMinutes)"+" per week")
+        case .daily:
+            return Text("Working "+"\(routineHoursAndMinutes)"+" per day")
+        }
     }
     
     private func tableImageSection(flow: Flow) -> some View {
