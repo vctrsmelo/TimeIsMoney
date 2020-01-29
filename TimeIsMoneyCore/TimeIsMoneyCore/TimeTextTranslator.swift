@@ -56,6 +56,17 @@ public class TimeTextTranslator {
         
     }
     
+    public static func getWorkRoutineDescriptionToPay(for price: WorkTimeSeconds, dailyWorkHours: Double, weeklyWorkDays: Int) -> Routine? {
+        guard price >= 1.day else { return nil }
+        
+        if price < 1.week {
+            return Routine(value: dailyWorkHours, period: .daily)
+        } else {
+            let weeklyWorkHours = dailyWorkHours * Double(weeklyWorkDays)
+            return Routine(value: weeklyWorkHours, period: .weekly)
+        }
+    }
+    
     private static func adjustFormatterAllowedUnits(for seconds: WorkTimeSeconds) {
         formatter.allowedUnits = [.year, .month, .weekOfMonth, .day, .hour, .minute, .second]
         

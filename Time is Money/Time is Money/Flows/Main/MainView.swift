@@ -19,35 +19,36 @@ struct MainView: View {
     @State private var showEditView = false
     @State private var topTextPadding: CGFloat = 0.0
     @State private var isKeyboardVisible = false
-    
+
     private var priceAsDouble: Double {
         return (price as NSDecimalNumber?)?.doubleValue ?? 0.0
     }
     
+    
     private let flow = Flow()
-    
-    private var currencyFormatter: NumberFormatter = {
-        let f = NumberFormatter()
-        // allow no currency symbol, extra digits, etc
-        f.isLenient = true
-        f.numberStyle = .currency
-        return f
-    }()
-    
-    private var dailyWorkHours: Double { Double(flow.user.weeklyWorkHours)/Double(flow.user.workdays.count)
-    }
+//
+//    private var currencyFormatter: NumberFormatter = {
+//        let f = NumberFormatter()
+//        // allow no currency symbol, extra digits, etc
+//        f.isLenient = true
+//        f.numberStyle = .currency
+//        return f
+//    }()
     
     var body: some View {
         
-        let formattedValue = currencyFormatter.string(from: NSNumber(value: priceAsDouble)) ?? "?"
+        let formattedValue = Formatter.currency.string(from: NSNumber(value: priceAsDouble)) ?? "?"
         let maybeTimeNeeded = flow.getTimeNeededToPay(for: priceAsDouble)
-        
+        let dailyWorkHours = floor(Double(user.weeklyWorkHours) / Double(user.workdays.count))
         let timeMessage: String
         
+        let priceAsSeconds: Double
         switch maybeTimeNeeded {
         case .success(let worktime):
-            timeMessage = TimeTextTranslator.getWorkTimeDescriptionToPay(for: worktime, dailyWorkHours: floor(dailyWorkHours), weeklyWorkDays:  flow.user.workdays.count)
+            priceAsSeconds = worktime
+            timeMessage = TimeTextTranslator.getWorkTimeDescriptionToPay(for: worktime, dailyWorkHours: dailyWorkHours, weeklyWorkDays:  flow.user.workdays.count)
         case .failure(let error):
+            priceAsSeconds = 0.0
             timeMessage = "¯\\_(ツ)_/¯"
             print(error)
         }
@@ -60,7 +61,7 @@ struct MainView: View {
         return VStack {
             
             Group {
-                headerTextSection(timeMessage: timeMessage, formattedValue: formattedValue)
+                headerTextSection(timeMessage: timeMessage, formattedValue: formattedValue, priceAsSeconds: priceAsSeconds)
                 
                 Spacer()
                 
@@ -99,7 +100,7 @@ struct MainView: View {
         }
     }
     
-    private func headerTextSection(timeMessage: String, formattedValue: String) -> some View {
+    private func headerTextSection(timeMessage: String, formattedValue: String, priceAsSeconds: TimeInterval) -> some View {
         Group {
             Text("It will take")
                 .multilineTextAlignment(.center)
@@ -112,7 +113,7 @@ struct MainView: View {
                 .multilineTextAlignment(.center)
                 .animation(.none)
                 .padding(.top, 10)
-            getExpectedWorkingTimeText()
+            getExpectedWorkingTimeText(priceAsSeconds: priceAsSeconds)
             Group {
                 Text("to pay only those")
                     .multilineTextAlignment(.center)
@@ -127,15 +128,22 @@ struct MainView: View {
         }
     }
     
-    private func getExpectedWorkingTimeText() -> Text {
-        
-        let dailyWorkSeconds = dailyWorkHours * 3600
-        guard let hoursAndMinutesString = Formatter.hoursAndMinutes(seconds: dailyWorkSeconds) else {
+    private func getExpectedWorkingTimeText(priceAsSeconds: TimeInterval) -> Text {
+        print("price as seconds: ---- \(priceAsSeconds)")
+        guard let routine = TimeTextTranslator.getWorkRoutineDescriptionToPay(for: priceAsSeconds, dailyWorkHours: user.dailyWorkHours, weeklyWorkDays: user.workdays.count) else {
             return Text("")
         }
         
-        print("Daily work hours: "+"\(dailyWorkHours)")
-        return Text("Working "+hoursAndMinutesString+" per day")
+        let routineString: String
+        switch routine.period {
+        case .weekly:
+            routineString = "Working "+"\(routine.value)"+" per week"
+        case .daily:
+            routineString = "Working "+"\(routine.value)"+" per day"
+        }
+        
+        print("Routine: ------- "+routineString)
+        return Text(routineString)
     }
     
     private func tableImageSection(flow: Flow) -> some View {
