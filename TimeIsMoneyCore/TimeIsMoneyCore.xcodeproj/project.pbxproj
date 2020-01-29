@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,8 +12,12 @@
 		BE270C3123C3C9E70099AAC7 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE270C3023C3C9E70099AAC7 /* Weekday.swift */; };
 		BE28C4F423D7AA4D00CA9D13 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28C4F323D7AA4D00CA9D13 /* R.generated.swift */; };
 		BE28C50623D7B4A500CA9D13 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28C50523D7B4A500CA9D13 /* String+Localized.swift */; };
+		BE2B83BB23E1E41C005847C4 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2B83BA23E1E41C005847C4 /* Calculator.swift */; };
+		BE2B83BD23E1E42F005847C4 /* TimeTextTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2B83BC23E1E42F005847C4 /* TimeTextTranslator.swift */; };
+		BE2B83BF23E1E447005847C4 /* SecondsContainedIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2B83BE23E1E447005847C4 /* SecondsContainedIn.swift */; };
+		BE2B83C223E1E78C005847C4 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2B83C123E1E78C005847C4 /* UserTests.swift */; };
+		BE2B83C423E1E7C0005847C4 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2B83C323E1E7C0005847C4 /* XCTestCase+Extensions.swift */; };
 		BE815FA02383474C00000FB9 /* TimeIsMoneyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE815F962383474C00000FB9 /* TimeIsMoneyCore.framework */; };
-		BE815FA52383474C00000FB9 /* TimeIsMoneyCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE815FA42383474C00000FB9 /* TimeIsMoneyCoreTests.swift */; };
 		BE815FA72383474C00000FB9 /* TimeIsMoneyCore.h in Headers */ = {isa = PBXBuildFile; fileRef = BE815F992383474C00000FB9 /* TimeIsMoneyCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE815FB8238347DD00000FB9 /* FlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE815FB6238347DD00000FB9 /* FlowTests.swift */; };
 		BE815FB9238347DD00000FB9 /* TimeTextTranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE815FB7238347DD00000FB9 /* TimeTextTranslatorTests.swift */; };
@@ -42,11 +46,15 @@
 		BE270C3023C3C9E70099AAC7 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		BE28C4F323D7AA4D00CA9D13 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		BE28C50523D7B4A500CA9D13 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		BE2B83BA23E1E41C005847C4 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		BE2B83BC23E1E42F005847C4 /* TimeTextTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTextTranslator.swift; sourceTree = "<group>"; };
+		BE2B83BE23E1E447005847C4 /* SecondsContainedIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondsContainedIn.swift; sourceTree = "<group>"; };
+		BE2B83C123E1E78C005847C4 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
+		BE2B83C323E1E7C0005847C4 /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		BE815F962383474C00000FB9 /* TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE815F992383474C00000FB9 /* TimeIsMoneyCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeIsMoneyCore.h; sourceTree = "<group>"; };
 		BE815F9A2383474C00000FB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE815F9F2383474C00000FB9 /* TimeIsMoneyCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeIsMoneyCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE815FA42383474C00000FB9 /* TimeIsMoneyCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIsMoneyCoreTests.swift; sourceTree = "<group>"; };
 		BE815FA62383474C00000FB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE815FB6238347DD00000FB9 /* FlowTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowTests.swift; sourceTree = "<group>"; };
 		BE815FB7238347DD00000FB9 /* TimeTextTranslatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTextTranslatorTests.swift; sourceTree = "<group>"; };
@@ -94,6 +102,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		BE2B83C023E1E458005847C4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BE815F992383474C00000FB9 /* TimeIsMoneyCore.h */,
+				BE815F9A2383474C00000FB9 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		BE815F8C2383474C00000FB9 = {
 			isa = PBXGroup;
 			children = (
@@ -118,11 +135,13 @@
 		BE815F982383474C00000FB9 /* TimeIsMoneyCore */ = {
 			isa = PBXGroup;
 			children = (
+				BE2B83C023E1E458005847C4 /* Resources */,
 				BED15C6C23C5282600EA9E46 /* Extensions */,
 				BE270C3223C3C9F10099AAC7 /* Model */,
 				BE815FBA2383480200000FB9 /* Flow.swift */,
-				BE815F992383474C00000FB9 /* TimeIsMoneyCore.h */,
-				BE815F9A2383474C00000FB9 /* Info.plist */,
+				BE2B83BA23E1E41C005847C4 /* Calculator.swift */,
+				BE2B83BC23E1E42F005847C4 /* TimeTextTranslator.swift */,
+				BE2B83BE23E1E447005847C4 /* SecondsContainedIn.swift */,
 			);
 			path = TimeIsMoneyCore;
 			sourceTree = "<group>";
@@ -130,10 +149,11 @@
 		BE815FA32383474C00000FB9 /* TimeIsMoneyCoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				BE815FA42383474C00000FB9 /* TimeIsMoneyCoreTests.swift */,
 				BE815FB6238347DD00000FB9 /* FlowTests.swift */,
 				BE815FB7238347DD00000FB9 /* TimeTextTranslatorTests.swift */,
 				BE815FA62383474C00000FB9 /* Info.plist */,
+				BE2B83C123E1E78C005847C4 /* UserTests.swift */,
+				BE2B83C323E1E7C0005847C4 /* XCTestCase+Extensions.swift */,
 			);
 			path = TimeIsMoneyCoreTests;
 			sourceTree = "<group>";
@@ -322,7 +342,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -358,7 +378,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE28C50623D7B4A500CA9D13 /* String+Localized.swift in Sources */,
+				BE2B83BD23E1E42F005847C4 /* TimeTextTranslator.swift in Sources */,
 				BED15C6E23C5283400EA9E46 /* GeneralExtensions.swift in Sources */,
+				BE2B83BB23E1E41C005847C4 /* Calculator.swift in Sources */,
+				BE2B83BF23E1E447005847C4 /* SecondsContainedIn.swift in Sources */,
 				BE815FCC23834A1800000FB9 /* User.swift in Sources */,
 				BE28C4F423D7AA4D00CA9D13 /* R.generated.swift in Sources */,
 				BE815FBB2383480200000FB9 /* Flow.swift in Sources */,
@@ -370,8 +393,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE2B83C423E1E7C0005847C4 /* XCTestCase+Extensions.swift in Sources */,
+				BE2B83C223E1E78C005847C4 /* UserTests.swift in Sources */,
 				BE815FB9238347DD00000FB9 /* TimeTextTranslatorTests.swift in Sources */,
-				BE815FA52383474C00000FB9 /* TimeIsMoneyCoreTests.swift in Sources */,
 				BE815FB8238347DD00000FB9 /* FlowTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,7 +542,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = TimeIsMoneyCore/Info.plist;
+				INFOPLIST_FILE = TimeIsMoneyCore/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -545,7 +569,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = TimeIsMoneyCore/Info.plist;
+				INFOPLIST_FILE = TimeIsMoneyCore/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

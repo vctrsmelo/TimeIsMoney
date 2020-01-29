@@ -10,8 +10,11 @@ import Foundation
 
 public class User: ObservableObject {
     
+    // MARK: Static Properties
+    
     public static var instance = User()
-    private var testing: Bool
+    
+    // MARK: Published Properties
     
     @Published public var isOnboardingCompleted: Bool {
         didSet {
@@ -45,6 +48,12 @@ public class User: ObservableObject {
         }
     }
     
+    // MARK: Properties
+    
+    public var dailyWorkHours: Double {
+        return Double(weeklyWorkHours) / Double(workdays.count)
+    }
+    
     public var sortedWorkdays: [Weekday] {
         var sortedWorkdays = Weekday.all()
         sortedWorkdays.removeAll {
@@ -53,6 +62,8 @@ public class User: ObservableObject {
         
         return sortedWorkdays
     }
+    
+    private var testing: Bool
     
     public init(testing: Bool = false) {
         self.testing = testing

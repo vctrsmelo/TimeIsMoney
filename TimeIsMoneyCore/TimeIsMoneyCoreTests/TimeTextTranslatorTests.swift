@@ -41,22 +41,22 @@ class TimeTextTranslatorTests: XCTestCase {
         XCTAssertEqual(getUnstoppedWorkTimeDescription(from: seconds), mockedFormatter.string(from: seconds))
     }
     
-    func test_getUserWorkTimeDescription() {
+    func testGetWorkTimeDescriptionToPay() {
         let priceAsSeconds: Double = 3600*3
         let dailyWorkHours: Double = 1
         let weeklyWorkDays: Int = 3
         
-        let result = getSUT().getUserWorkTimeDescription(from: priceAsSeconds, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
+        let result = getSUT().getWorkTimeDescriptionToPay(for: priceAsSeconds, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
         
         XCTAssertEqual(result, "3 days")
     }
     
-    func test_getUserWorkTimeDescription2() {
+    func testGetWorkTimeDescriptionToPay2() {
         let priceAsSeconds: Double = 3600
         let dailyWorkHours: Double = 1
         let weeklyWorkDays: Int = 1
         
-        let result = getSUT().getUserWorkTimeDescription(from: priceAsSeconds, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
+        let result = getSUT().getWorkTimeDescriptionToPay(for: priceAsSeconds, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
         
         XCTAssertEqual(result, "1 hour")
     }

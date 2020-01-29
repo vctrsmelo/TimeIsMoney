@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Decimal {
+public extension Decimal {
     func asDouble() -> Double {
         return (self as NSDecimalNumber).doubleValue
     }
@@ -18,7 +18,7 @@ extension Decimal {
     }
 }
 
-extension Double {
+public extension Double {
     func asDecimal() -> Decimal {
         Decimal(self)
     }

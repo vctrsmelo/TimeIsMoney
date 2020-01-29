@@ -12,65 +12,49 @@ import XCTest
 
 class FlowTests: XCTestCase {
     
-    func test_getTime_withValue0_returnsTimeZero() {
+    func testGetTimeWithZeroPriceReturnsZero() {
         let sut = getSUT(salary: 2000, weeklyWorkHours: 40, weeklyWorkDays: 5)
         XCTAssertEqual(sut.getTimeNeededToPay(for: 0.0), Result.success(0.0))
     }
     
-    func test_getTime_withValue100_andSalary2000_andWeeklyWorkHours40_andWeeklyWorkDays5_getWorkTime28800() {
-        let sut = getSUT(salary: 2000, weeklyWorkHours: 40, weeklyWorkDays: 5)
+    func testGetTimeWithValidPriceReturnsCorrectWorkTime() {
+        let sut1 = getSUT(salary: 2000, weeklyWorkHours: 40, weeklyWorkDays: 5)
+        let sut2 = getSUT(salary: 1000, weeklyWorkHours: 1, weeklyWorkDays: 1)
         
-        let floorHour = resultFloorAsHour(sut.getTimeNeededToPay(for: 100))
-        
-        XCTAssertEqual(floorHour, Time.hours(8).asSeconds())
+        XCTAssertEqual(resultFloorAsHour(sut1.getTimeNeededToPay(for: 100)), Time.hours(8).asSeconds())
+        XCTAssertEqual(sut2.getTimeNeededToPay(for: 250), Result.success(3982.300884955752))
     }
     
-    func test_getTime_withValueNegative100_andWeeklyWorkHours40_andWeeklyWorkDays5_getWorkTime0() {
+    func testGetTimeWithNegativePriceReturnsZero() {
         let sut = getSUT(salary: 2000, weeklyWorkHours: 40, weeklyWorkDays: 5)
         
         XCTAssertEqual(sut.getTimeNeededToPay(for: -100), Result.success(0.0))
     }
     
-    func test_getTime_withWeeklyWorkDays0_getCalculatorError() {
+    func testGetTimeWithZeroWorkdaysReturnsUndefinedWeeklyWorkDaysError() {
         let sut = getSUT(salary: 2000, weeklyWorkHours: 40, weeklyWorkDays: 0)
         
         XCTAssertEqual(sut.getTimeNeededToPay(for: 100), Result.failure(CalculatorError.undefinedWeeklyWorkDays))
     }
     
-    func test_getTime_withWeeklyWorkHours0_AndWorkdays5_getUndefinedWeeklyWorkHours() {
+    func testGetTimeWithZeroWorkhoursReturnsUndefinedWeeklyWorkHoursError() {
         let sut = getSUT(salary: 2000, weeklyWorkHours: 0, weeklyWorkDays: 5)
         
         XCTAssertEqual(sut.getTimeNeededToPay(for: 100), Result.failure(.undefinedWeeklyWorkHours))
     }
     
-    func test_getTime_withSalary0_getCalculatorError() {
+    func testGetTimeWithZeroSalaryReturnsUndefinedSalaryError() {
         let sut = getSUT(salary: 0, weeklyWorkHours: 10, weeklyWorkDays: 5)
         
         XCTAssertEqual(sut.getTimeNeededToPay(for: 100), Result.failure(CalculatorError.undefinedSalary))
     }
     
-    func test_getTime_withSalary1000_AndWeeklyHours1_Value250_get1Hour() {
-        let sut = getSUT(salary: 1000, weeklyWorkHours: 1, weeklyWorkDays: 1)
-
-        XCTAssertEqual(sut.getTimeNeededToPay(for: 250), Result.success(3982.300884955752))
-    }
-
     // MARK: Helpers
     
     func getSUT(salary: Double, weeklyWorkHours: Double, weeklyWorkDays: Int) -> Flow {
-
-        var workdays: [Weekday] = [.monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday]
+        let user = getUser(salary: salary, weeklyWorkHours: weeklyWorkHours, weeklyWorkDays: weeklyWorkDays)
         
-        (1...(7 - weeklyWorkDays)).forEach { _ in
-            workdays.removeLast()
-        }
-        
-        let testUser = User(testing: true)
-        testUser.monthlySalary = salary.asDecimal()
-        testUser.weeklyWorkHours = Int(weeklyWorkHours)
-        testUser.workdays = workdays
-
-        return Flow(user: testUser)
+        return Flow(user: user)
     }
     
     func resultFloorAsHour(_ result: Result<WorkTimeSeconds, CalculatorError>) -> Double? {
