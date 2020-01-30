@@ -80,7 +80,7 @@ struct MainView: View {
         }
         .withBackground()
         .keyboardSensible($offsetValue, type: .paddingAndOffset, onAppearKeyboardCustom: {
-            self.topTextPadding = -UIScreen.main.bounds.height/16
+            self.topTextPadding = -UIScreen.main.bounds.height/12
             self.isKeyboardVisible = true
         }, onHideKeyboardCustom: {
             self.topTextPadding = 0
@@ -151,7 +151,7 @@ struct MainView: View {
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: UIScreen.main.bounds.width-120, alignment: .center)
-            .frame(minHeight: 200, alignment: .center)
+            .frame(minHeight: 150, alignment: .center)
             .animation(.none)
     }
     
