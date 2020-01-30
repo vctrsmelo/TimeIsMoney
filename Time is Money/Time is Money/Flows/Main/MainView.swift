@@ -139,9 +139,9 @@ struct MainView: View {
         
         switch routine.period {
         case .weekly:
-            return Text("Working "+"\(routineHoursAndMinutes)"+" per week")
+            return Text(R.string.localizable.working()+" \(routineHoursAndMinutes) "+R.string.localizable.perWeek())
         case .daily:
-            return Text("Working "+"\(routineHoursAndMinutes)"+" per day")
+            return Text(R.string.localizable.working()+" \(routineHoursAndMinutes) "+R.string.localizable.perDay())
         }
     }
     

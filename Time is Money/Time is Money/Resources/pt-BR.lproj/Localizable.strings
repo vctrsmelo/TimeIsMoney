@@ -6,10 +6,7 @@
   Copyright © 2020 Victor S Melo. All rights reserved.
 */
 
-"Welcome!" = "Bem vindo!";
-"Let's find out how much things really cost?" = "Vamos descobrir quanto as coisas realmente custam?";
-"For this we will only need three information. Let's go? 😄" = "Para isso precisamos de apenas 3 informações. Vamos lá? 😄";
-"Which days of the week do you usually work?" = "Quais dias da semana você geralmente trabalha?";
+// GENERAL STRINGS
 
 "Mon_weekday_short" = "S";
 "Tue_weekday_short" = "T";
@@ -35,16 +32,29 @@
 "Sat_weekday_long" = "Sábado";
 "Sun_weekday_long" = "Domingo";
 
-"How much hours do you work per week?" = "Quantas horas semanais você trabalha?";
+// ONBOARDING WELCOME
+
+"Welcome!" = "Bem vindo!";
+"Let's find out how much things really cost?" = "Vamos descobrir quanto as coisas realmente custam?";
+"For this we will only need three information. Let's go? 😄" = "Para isso precisamos de apenas 3 informações. Vamos lá? 😄";
+"Which days of the week do you usually work?" = "Quais dias da semana você geralmente trabalha?";
+
+// ONBOARDING WORK HOURS
+
+"How many hours do you work per week?" = "Quantas horas semanais você trabalha?";
 "Hours per week" = "Horas por semana";
 "(Set your workdays to update here)" = "(Defina seus dias de trabalho para atualizar aqui)";
 
 "hours" = "horas";
 
-"What is your income per month?" = "Qual seu salário mensal?";
+// ONBOARDING INCOME
+
+"What is your income?" = "Qual seu salário?";
 "Income" = "Salário";
 "per month" = "por mês";
 "Finish" = "Pronto";
+
+// MAIN VIEW
 
 "It will take" = "Vai demorar";
 "to pay only those" = "para pagar apenas estes";
@@ -54,3 +64,6 @@
 "Monthly Income" = "Salário mensal";
 
 "Type below the price" = "Digite o valor abaixo";
+"Working" = "Trabalhando";
+"per week" = "por semana";
+"per day" = "por dia";

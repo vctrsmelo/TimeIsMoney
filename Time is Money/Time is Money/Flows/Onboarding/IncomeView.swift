@@ -32,16 +32,18 @@ struct IncomeView: View {
         
         return Group {
             VStack {
-                Text("What is your income?")
+                Text(R.string.localizable.whatIsYourIncome())
                     .font(Design.Font.Title.smallTitleFont)
                     .foregroundColor(Design.Color.Text.title)
                     .offset(x: 0, y: topTextPadding)
+                Spacer()
                 Image("Money")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: UIScreen.main.bounds.width-120, alignment: .center)
                     .frame(minHeight: 100, alignment: .center)
                     .animation(.none)
+                Spacer()
                 CurrencyField(incomeBinding, placeholder: "Income")
                     .frame(width: UIScreen.main.bounds.width, height: 60, alignment: .center)
                 Text("per month")

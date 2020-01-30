@@ -27,7 +27,7 @@ struct WorkTimeView: View {
         
         return Group {
             VStack {
-                Text("How many hours do you work?")
+                Text(R.string.localizable.howManyHoursDoYouWorkPerWeek())
                     .font(Design.Font.Title.customTitleFont(size: 30))
                     .foregroundColor(Design.Color.Text.title)
                 Image("table2")
@@ -56,6 +56,7 @@ struct WorkTimeView: View {
                         Text("(Set your workdays to update here)")
                             .font(Design.Font.smallLight)
                             .foregroundColor(Design.Color.Text.standard)
+                            .multilineTextAlignment(.center)
                 )
         }
             

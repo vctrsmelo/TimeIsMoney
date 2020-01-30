@@ -51,7 +51,7 @@ struct EditView: View {
         
        return Picker(selection: selectedHours, label: EmptyView()) {
             ForEach(0 ..< hours.count) {
-                Text(self.hours[$0]+" hours")
+                Text(self.hours[$0]+" "+R.string.localizable.hours())
                     .font(Design.Font.standardRegular)
                     .foregroundColor(self.user.isSelectedHoursValid($0) ? Design.Color.disabled : Design.Color.Text.standard)
             }

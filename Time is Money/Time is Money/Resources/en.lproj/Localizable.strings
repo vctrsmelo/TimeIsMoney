@@ -6,10 +6,7 @@
   Copyright © 2020 Victor S Melo. All rights reserved.
 */
 
-"Welcome!" = "Welcome!";
-"Let's find out how much things really cost?" = "Let's find out how much things really cost?";
-"For this we will only need three information. Let's go? 😄" = "For this we will only need 3 information. Let's go? 😄";
-"Which days of the week do you usually work?" = "Which days of the week do you usually work?";
+// GENERAL STRINGS
 
 "Mon_weekday_short" = "M";
 "Tue_weekday_short" = "T";
@@ -35,16 +32,29 @@
 "Sat_weekday_long" = "Saturday";
 "Sun_weekday_long" = "Sunday";
 
-"How much hours do you work per week?" = "How much hours do you work per week?";
+// ONBOARDING WELCOME
+
+"Welcome!" = "Welcome!";
+"Let's find out how much things really cost?" = "Let's find out how much things really cost?";
+"For this we will only need three information. Let's go? 😄" = "For this we will only need 3 information. Let's go? 😄";
+"Which days of the week do you usually work?" = "Which days of the week do you usually work?";
+
+// ONBOARDING WORK HOURS
+
+"How many hours do you work per week?" = "How much hours do you work per week?";
 "Hours per week" = "Hours per week";
 "(Set your workdays to update here)" = "(Set your workdays to update here)";
 
 "hours" = "hours";
 
-"What is your income per month?" = "What is your income per month?";
+// ONBOARDING INCOME
+
+"What is your income?" = "What is your income?";
 "Income" = "Income";
 "per month" = "per month";
 "Finish" = "Finish";
+
+// MAIN VIEW
 
 "It will take" = "It will take";
 "to pay only those" = "to pay only those";
@@ -54,3 +64,6 @@
 "Monthly Income" = "Monthly Income";
 
 "Type below the price" = "Type below the price";
+"Working" = "Working";
+"per week" = "per week";
+"per day" = "per day";

@@ -76,15 +76,24 @@ public class User: ObservableObject {
             
         } else {
             self.monthlySalary = UserDefaults.standard.double(forKey: "MonthlySalary").asDecimal()
-            self.weeklyWorkHours = UserDefaults.standard.integer(forKey: "WeeklyWorkHours")
+            
+            if UserDefaults.standard.isKeyPresentInUserDefaults(key: "WeeklyWorkHours") {
+                self.weeklyWorkHours = UserDefaults.standard.integer(forKey: "WeeklyWorkHours")
+            } else {
+                self.weeklyWorkHours = 40
+            }
             self.isOnboardingCompleted = UserDefaults.standard.bool(forKey: "isOnboardingCompleted")
             
             self.workdays = [Weekday]()
             
-            guard let workdaysData = UserDefaults.standard.data(forKey: "Workdays") else { return }
-            guard let decoded = try? JSONDecoder().decode([Weekday].self, from: workdaysData) else { return }
+            if UserDefaults.standard.isKeyPresentInUserDefaults(key: "Workdays") {
+                guard let workdaysData = UserDefaults.standard.data(forKey: "Workdays") else { return }
+                guard let decoded = try? JSONDecoder().decode([Weekday].self, from: workdaysData) else { return }
+                self.workdays = decoded
+            } else {
+                self.workdays = [.monday, .tuesday, .wednesday, .thursday, .friday]
+            }
             
-            self.workdays = decoded
         }
 
     }
@@ -99,5 +108,11 @@ public class User: ObservableObject {
     
     public func isSelectedHoursValid(_ selectedHours: Int) -> Bool {
         return (selectedHours < workdays.count || selectedHours > workdays.count * 24)
+    }
+}
+
+extension UserDefaults {
+    func isKeyPresentInUserDefaults(key: String) -> Bool {
+        return UserDefaults.standard.object(forKey: key) != nil
     }
 }

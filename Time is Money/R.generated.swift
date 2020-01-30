@@ -298,7 +298,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 39 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 42 localization keys.
     struct localizable {
       /// en translation: (Set your workdays to update here)
       ///
@@ -331,7 +331,7 @@ struct R: Rswift.Validatable {
       /// en translation: How much hours do you work per week?
       ///
       /// Locales: pt-BR, en
-      static let howMuchHoursDoYouWorkPerWeek = Rswift.StringResource(key: "How much hours do you work per week?", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      static let howManyHoursDoYouWorkPerWeek = Rswift.StringResource(key: "How many hours do you work per week?", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
       /// en translation: Income
       ///
       /// Locales: pt-BR, en
@@ -436,22 +436,34 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: pt-BR, en
       static let welcome = Rswift.StringResource(key: "Welcome!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
-      /// en translation: What is your income per month?
+      /// en translation: What is your income?
       ///
       /// Locales: pt-BR, en
-      static let whatIsYourIncomePerMonth = Rswift.StringResource(key: "What is your income per month?", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      static let whatIsYourIncome = Rswift.StringResource(key: "What is your income?", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
       /// en translation: Which days of the week do you usually work?
       ///
       /// Locales: pt-BR, en
       static let whichDaysOfTheWeekDoYouUsuallyWork = Rswift.StringResource(key: "Which days of the week do you usually work?", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: Working
+      ///
+      /// Locales: pt-BR, en
+      static let working = Rswift.StringResource(key: "Working", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
       /// en translation: hours
       ///
       /// Locales: pt-BR, en
       static let hours = Rswift.StringResource(key: "hours", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: per day
+      ///
+      /// Locales: pt-BR, en
+      static let perDay = Rswift.StringResource(key: "per day", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
       /// en translation: per month
       ///
       /// Locales: pt-BR, en
       static let perMonth = Rswift.StringResource(key: "per month", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: per week
+      ///
+      /// Locales: pt-BR, en
+      static let perWeek = Rswift.StringResource(key: "per week", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
       /// en translation: to pay only those
       ///
       /// Locales: pt-BR, en
@@ -565,16 +577,16 @@ struct R: Rswift.Validatable {
       /// en translation: How much hours do you work per week?
       ///
       /// Locales: pt-BR, en
-      static func howMuchHoursDoYouWorkPerWeek(preferredLanguages: [String]? = nil) -> String {
+      static func howManyHoursDoYouWorkPerWeek(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("How much hours do you work per week?", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("How many hours do you work per week?", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "How much hours do you work per week?"
+          return "How many hours do you work per week?"
         }
 
-        return NSLocalizedString("How much hours do you work per week?", bundle: bundle, comment: "")
+        return NSLocalizedString("How many hours do you work per week?", bundle: bundle, comment: "")
       }
 
       /// en translation: Income
@@ -967,19 +979,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Welcome!", bundle: bundle, comment: "")
       }
 
-      /// en translation: What is your income per month?
+      /// en translation: What is your income?
       ///
       /// Locales: pt-BR, en
-      static func whatIsYourIncomePerMonth(preferredLanguages: [String]? = nil) -> String {
+      static func whatIsYourIncome(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("What is your income per month?", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("What is your income?", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "What is your income per month?"
+          return "What is your income?"
         }
 
-        return NSLocalizedString("What is your income per month?", bundle: bundle, comment: "")
+        return NSLocalizedString("What is your income?", bundle: bundle, comment: "")
       }
 
       /// en translation: Which days of the week do you usually work?
@@ -997,6 +1009,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Which days of the week do you usually work?", bundle: bundle, comment: "")
       }
 
+      /// en translation: Working
+      ///
+      /// Locales: pt-BR, en
+      static func working(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Working", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Working"
+        }
+
+        return NSLocalizedString("Working", bundle: bundle, comment: "")
+      }
+
       /// en translation: hours
       ///
       /// Locales: pt-BR, en
@@ -1012,6 +1039,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("hours", bundle: bundle, comment: "")
       }
 
+      /// en translation: per day
+      ///
+      /// Locales: pt-BR, en
+      static func perDay(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("per day", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "per day"
+        }
+
+        return NSLocalizedString("per day", bundle: bundle, comment: "")
+      }
+
       /// en translation: per month
       ///
       /// Locales: pt-BR, en
@@ -1025,6 +1067,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("per month", bundle: bundle, comment: "")
+      }
+
+      /// en translation: per week
+      ///
+      /// Locales: pt-BR, en
+      static func perWeek(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("per week", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "per week"
+        }
+
+        return NSLocalizedString("per week", bundle: bundle, comment: "")
       }
 
       /// en translation: to pay only those

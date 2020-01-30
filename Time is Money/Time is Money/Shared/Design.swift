@@ -16,6 +16,7 @@ enum Design {
         
         static var standardLight = SwiftUI.Font.system(size: 25, weight: .light)
         static var standardRegular = SwiftUI.Font.system(size: 25, weight: .regular)
+        static var standardMedium = SwiftUI.Font.system(size: 25, weight: .medium)
         
         static var smallRegular = SwiftUI.Font.system(size: 18, weight: .regular)
         static var smallLight = SwiftUI.Font.system(size: 18, weight: .light)
@@ -58,6 +59,7 @@ extension Design {
         
         static var standardLight = UIKit.UIFont.systemFont(ofSize: 25, weight: .light)
         static var standardRegular = UIKit.UIFont.systemFont(ofSize: 25, weight: .regular)
+        static var standardMedium = UIKit.UIFont.systemFont(ofSize: 25, weight: .medium)
         
         static var smallRegular = UIKit.UIFont.systemFont(ofSize: 18, weight: .regular)
         static var smallLight = UIKit.UIFont.systemFont(ofSize: 18, weight: .light)

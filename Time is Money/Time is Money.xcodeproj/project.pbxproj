@@ -231,8 +231,8 @@
 				BEC00AF323BFE5CD001B6724 /* UIKit */,
 				BEB0979C23BF990E00244E30 /* PageView.swift */,
 				BE66B18223BD096800166912 /* WelcomeView.swift */,
-				BE270BD623C039E50099AAC7 /* DaysOfWeekView.swift */,
 				BEC00AE823BFDC2C001B6724 /* WorkTimeView.swift */,
+				BE270BD623C039E50099AAC7 /* DaysOfWeekView.swift */,
 				BEC00AEA23BFDC3C001B6724 /* IncomeView.swift */,
 			);
 			path = Onboarding;
