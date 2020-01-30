@@ -44,11 +44,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             
-            if user.isOnboardingCompleted {
-                window.rootViewController = UIHostingController(rootView: mainView)
-            } else {
+//            if user.isOnboardingCompleted {
+//                window.rootViewController = UIHostingController(rootView: mainView)
+//            } else {
                 window.rootViewController = UIHostingController(rootView: onboardingView)
-            }
+//            }
             
             self.window = window
             window.makeKeyAndVisible()

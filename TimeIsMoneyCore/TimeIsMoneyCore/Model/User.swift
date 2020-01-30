@@ -24,14 +24,14 @@ public class User: ObservableObject {
     
     @Published public var monthlySalary: Decimal {
         didSet {
-            guard testing == false else { return }
+            guard isUnitTesting == false else { return }
             UserDefaults.standard.set(monthlySalary, forKey: "MonthlySalary")
         }
     }
     
     @Published public var weeklyWorkHours: Int {
         didSet {
-            guard testing == false else { return }
+            guard isUnitTesting == false else { return }
             syncWorkdaysWithWorkHours()
             UserDefaults.standard.set(weeklyWorkHours, forKey: "WeeklyWorkHours")
         }
@@ -39,7 +39,7 @@ public class User: ObservableObject {
     
     @Published public var workdays: [Weekday] {
         didSet {
-            guard testing == false else { return }
+            guard isUnitTesting == false else { return }
             syncWorkdaysWithWorkHours()
             let encoder = JSONEncoder()
             if let encoded = try? encoder.encode(workdays) {
@@ -63,10 +63,10 @@ public class User: ObservableObject {
         return sortedWorkdays
     }
     
-    private var testing: Bool
+    private var isUnitTesting: Bool
     
     public init(testing: Bool = false) {
-        self.testing = testing
+        self.isUnitTesting = testing
         
         if testing {
             self.monthlySalary = 1000.0
