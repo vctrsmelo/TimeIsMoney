@@ -51,7 +51,7 @@ struct IncomeView: View {
                 NavigationLink(destination: MainView()) {
                     Text("Finish")
                         .font(Design.Font.standardLight)
-                        .frame(width: 180, height: 30, alignment: .center)
+                        .frame(width: 200, height: 50, alignment: .center)
                         .background(Design.Color.Text.standard)
                         .foregroundColor(Color.white)
                         .cornerRadius(5)
