@@ -70,7 +70,9 @@ struct MainView: View {
             Button(action: {
                 self.showEditView.toggle()
             }) {
-                Image(systemName: "gear").imageScale(.large)
+                Image(systemName: "gear")
+                    .imageScale(.large)
+                    .foregroundColor(Design.Color.Text.standard)
             }
         )
         .sheet(isPresented: $showEditView) {
