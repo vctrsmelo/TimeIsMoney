@@ -48,34 +48,40 @@ public class TimeTextTranslator {
     
     public static func getNormalizedWorkTimeFrom(priceAsDecimalSeconds: NSDecimalNumber, dailyWorkHours: NSDecimalNumber, weeklyWorkDays: NSDecimalNumber) -> NSDecimalNumber {
         
-        var priceDiscountingTime = priceAsDecimalSeconds
+        var priceSecondsDiscountingTime = priceAsDecimalSeconds
         
         let oneYearInSeconds = NSDecimalNumber(value: 1.yearInSeconds)
         let oneMonthInSeconds = NSDecimalNumber(value: 1.monthInSeconds)
         let oneWeekInSeconds = NSDecimalNumber(value: 1.weekInSeconds)
         let oneDayInSeconds = NSDecimalNumber(value: 1.dayInSeconds)
         let oneHourInSeconds = NSDecimalNumber(value: 1.hourInSeconds)
+        let oneMinuteInSeconds = NSDecimalNumber(value: 1.minuteInSeconds)
         
-        let yearsNeeded = (priceDiscountingTime / oneYearInSeconds).floor
+        let yearsNeeded = (priceSecondsDiscountingTime / oneYearInSeconds).floor
         let yearsNeededAsSeconds = yearsNeeded * oneYearInSeconds
-        priceDiscountingTime -= yearsNeededAsSeconds
+        priceSecondsDiscountingTime -= yearsNeededAsSeconds
 
-        let monthsNeeded = (priceDiscountingTime / oneMonthInSeconds).floor
+        let monthsNeeded = (priceSecondsDiscountingTime / oneMonthInSeconds).floor
         let monthsNeededAsSeconds = monthsNeeded * oneMonthInSeconds
-        priceDiscountingTime -= monthsNeededAsSeconds
+        priceSecondsDiscountingTime -= monthsNeededAsSeconds
         
-        let weeksNeeded = (priceDiscountingTime / oneWeekInSeconds).floor
+        let weeksNeeded = (priceSecondsDiscountingTime / oneWeekInSeconds).floor
         let weeksNeededAsSeconds = weeksNeeded * oneWeekInSeconds
-        priceDiscountingTime -= weeksNeededAsSeconds
+        priceSecondsDiscountingTime -= weeksNeededAsSeconds
         
-        let daysNeeded = (priceDiscountingTime / oneDayInSeconds).floor
+        let daysNeeded = (priceSecondsDiscountingTime / oneDayInSeconds).floor
         let daysNeededAsSeconds = daysNeeded * oneDayInSeconds
-        priceDiscountingTime -= daysNeededAsSeconds
+        priceSecondsDiscountingTime -= daysNeededAsSeconds
         
-        let hoursNeeded = (priceDiscountingTime / oneHourInSeconds).floor
+        let hoursNeeded = (priceSecondsDiscountingTime / oneHourInSeconds).floor
         let hoursNeededAsSeconds = hoursNeeded * oneHourInSeconds
-        priceDiscountingTime -= hoursNeededAsSeconds
+        priceSecondsDiscountingTime -= hoursNeededAsSeconds
     
+        let minutesNeeded = (priceSecondsDiscountingTime / oneMinuteInSeconds).floor
+        let minutesNeededAsSeconds = minutesNeeded * oneMinuteInSeconds
+        priceSecondsDiscountingTime -= minutesNeededAsSeconds
+        
+        let neededSeconds = priceSecondsDiscountingTime
         
         // Return normalizations
         
@@ -89,33 +95,11 @@ public class TimeTextTranslator {
         
         let returnHoursInSeconds = getNumberOfWorkHoursAsSecondsToWorkAll(hoursNeeded: hoursNeeded, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
         
+        let returnMinutesInSeconds = getNumberOfWorkMinutesAsSecondsToWorkAll(minutesNeeded: minutesNeeded, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
         
-        return returnYearsAsSeconds + returnMonthsInSeconds + returnWeeksInSeconds + returnDaysInSeconds + returnHoursInSeconds
+        let returnNeededSeconds = neededSeconds
         
-//        let monthsNeeded = ((priceAsDecimalSeconds - yearsNeeded) / NSDecimalNumber(value: 1.monthInSeconds)).floor
-        
-        
-        // ------
-        
-//        let hoursNeeded = (priceAsDecimalSeconds / NSDecimalNumber(value: 1.hourInSeconds)).floor
-//
-//        let hoursNeededAsSeconds = hoursNeeded * NSDecimalNumber(value: 1.hourInSeconds)
-//        let minutesNeeded = ((priceAsDecimalSeconds - hoursNeededAsSeconds) / NSDecimalNumber(value: 1.minuteInSeconds)).floor
-//
-//        let minutesNeededAsSeconds = minutesNeeded * NSDecimalNumber(value: 1.minuteInSeconds)
-//        let secondsNeeded = (priceAsDecimalSeconds - hoursNeededAsSeconds - minutesNeededAsSeconds)
-//
-//        // Normalize
-//
-//        let returnHoursAsSeconds: NSDecimalNumber
-//        if hoursNeededAreExactlyANumberOfDays(hoursNeeded, dailyWorkHours: dailyWorkHours) {
-//            returnHoursAsSeconds = getNumberOfWorkDaysAsSecondsToWorkAll(hoursNeeded: hoursNeeded, dailyWorkHours: dailyWorkHours)
-//        } else {
-//            returnHoursAsSeconds = hoursNeeded * NSDecimalNumber(value: 1.hourInSeconds)
-//        }
-//
-//        return returnHoursAsSeconds
-//
+        return returnYearsAsSeconds + returnMonthsInSeconds + returnWeeksInSeconds + returnDaysInSeconds + returnHoursInSeconds + returnMinutesInSeconds + returnNeededSeconds
     }
     
     private static func hoursNeededAreExactlyANumberOfDays(_ hoursNeeded: NSDecimalNumber, dailyWorkHours: NSDecimalNumber) -> Bool {
@@ -179,6 +163,11 @@ public class TimeTextTranslator {
     private static func getNumberOfWorkHoursAsSecondsToWorkAll(hoursNeeded: NSDecimalNumber, dailyWorkHours: NSDecimalNumber, weeklyWorkDays: NSDecimalNumber) -> NSDecimalNumber {
         return hoursNeeded * NSDecimalNumber(value: 1.hourInSeconds)
     }
+    
+    private static func getNumberOfWorkMinutesAsSecondsToWorkAll(minutesNeeded: NSDecimalNumber, dailyWorkHours: NSDecimalNumber, weeklyWorkDays: NSDecimalNumber) -> NSDecimalNumber {
+        return minutesNeeded * NSDecimalNumber(value: 1.minuteInSeconds)
+    }
+
     
     public static func getWorkRoutineDescriptionToPay(for price: NSDecimalNumber, dailyWorkHours: Double, weeklyWorkDays: Int) -> Routine? {
         guard price >= NSDecimalNumber(value: 1.dayInSeconds) else { return nil }

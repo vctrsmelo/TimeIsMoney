@@ -121,6 +121,50 @@ class TimeTextTranslatorTests: XCTestCase {
         XCTAssertEqual(result.doubleValue, 2.daysInSeconds)
     }
     
+    // MARK: Minute only tests
+    
+    func testGetWorkTimeFor1MinuteWith24hDailyWorkGet1Minute() {
+        let priceAsSeconds: Double = 1.minuteInSeconds
+        let dailyWorkHours: Double = 24
+        let weeklyWorkDays: Int = 7
+        
+        let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
+        
+        XCTAssertEqual(result.doubleValue, 1.minuteInSeconds)
+    }
+    
+    func testGetWorkTimeFor60MinutesWith12hDailyWorkGet1Hour() {
+        let priceAsSeconds: Double = 60.minutesInSeconds
+        let dailyWorkHours: Double = 12
+        let weeklyWorkDays: Int = 7
+
+        let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
+        
+        XCTAssertEqual(result.doubleValue, 1.hourInSeconds)
+    }
+    
+    // MARK: Second only tests
+    
+    func testGetWorkTimeFor55SecondsWith24hDailyWorkGet55Seconds() {
+        let priceAsSeconds: Double = 55
+        let dailyWorkHours: Double = 24
+        let weeklyWorkDays: Int = 7
+        
+        let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
+        
+        XCTAssertEqual(result.doubleValue, 55)
+    }
+    
+    func testGetWorkTimeFor125SecondsWith12hDailyWorkGet2MinutesAnd5Seconds() {
+        let priceAsSeconds: Double = 125
+        let dailyWorkHours: Double = 12
+        let weeklyWorkDays: Int = 7
+
+        let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
+        
+        XCTAssertEqual(result.doubleValue, (2.minuteInSeconds + 5))
+    }
+    
     // MARK: Year and month only tests
     
     func testGetWorkTimeFor1YearAnd6MonthsWith24hDailyWorkGet1YearAnd6Months() {
@@ -181,6 +225,66 @@ class TimeTextTranslatorTests: XCTestCase {
         let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
         
          let expectedResult = NSDecimalNumber(value: priceAsSeconds) * NSDecimalNumber(value: 2)
+         XCTAssertEqual(result.doubleValue, expectedResult.doubleValue)
+    }
+    
+    // MARK: Year, month, week, day and hours
+     
+     func testGetWorkTimeFor1y6m2w4d3hWith12hDailyWorkTimeGetsTwiceWorkTimeNeeded() {
+        let oneYearInSeconds = NSDecimalNumber(value: 1.yearInSeconds)
+        let sixMonthsInSeconds = NSDecimalNumber(value: 6.monthsInSeconds)
+        let twoWeeksInSeconds = NSDecimalNumber(value: 2.weeksInSeconds)
+        let fourDaysInSeconds = NSDecimalNumber(value: 4.daysInSeconds)
+        let threeHoursInSeconds = NSDecimalNumber(value: 3.hoursInSeconds)
+        
+        let priceAsSeconds = (oneYearInSeconds + sixMonthsInSeconds + twoWeeksInSeconds + fourDaysInSeconds + threeHoursInSeconds)
+        let dailyWorkHours: Double = 12
+        let weeklyWorkDays: Int = 7
+        
+        let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds.doubleValue, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
+        
+         let expectedResult = ((oneYearInSeconds + sixMonthsInSeconds + twoWeeksInSeconds + fourDaysInSeconds) * NSDecimalNumber(value: 2)) + threeHoursInSeconds
+         XCTAssertEqual(result.doubleValue, expectedResult.doubleValue)
+    }
+    
+    // MARK: Year, month, week, day, hours and minutes
+     
+     func testGetWorkTimeFor1y6m2w4d3h40mWith12hDailyWorkTimeGetsTwiceWorkTimeNeeded() {
+        let oneYearInSeconds = NSDecimalNumber(value: 1.yearInSeconds)
+        let sixMonthsInSeconds = NSDecimalNumber(value: 6.monthsInSeconds)
+        let twoWeeksInSeconds = NSDecimalNumber(value: 2.weeksInSeconds)
+        let fourDaysInSeconds = NSDecimalNumber(value: 4.daysInSeconds)
+        let threeHoursInSeconds = NSDecimalNumber(value: 3.hoursInSeconds)
+        let fourtyMinutesInSeconds = NSDecimalNumber(value: 40.minutesInSeconds)
+        
+        let priceAsSeconds = (oneYearInSeconds + sixMonthsInSeconds + twoWeeksInSeconds + fourDaysInSeconds + threeHoursInSeconds + fourtyMinutesInSeconds)
+        let dailyWorkHours: Double = 12
+        let weeklyWorkDays: Int = 7
+        
+        let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds.doubleValue, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
+        
+         let expectedResult = ((oneYearInSeconds + sixMonthsInSeconds + twoWeeksInSeconds + fourDaysInSeconds) * NSDecimalNumber(value: 2)) + threeHoursInSeconds + fourtyMinutesInSeconds
+         XCTAssertEqual(result.doubleValue, expectedResult.doubleValue)
+    }
+    
+    // MARK: Year, month, week, day, hours, minutes and seconds
+     
+     func testGetWorkTimeFor1y6m2w4d3h40m55sWith12hDailyWorkTimeGetsTwiceWorkTimeNeeded() {
+        let oneYearInSeconds = NSDecimalNumber(value: 1.yearInSeconds)
+        let sixMonthsInSeconds = NSDecimalNumber(value: 6.monthsInSeconds)
+        let twoWeeksInSeconds = NSDecimalNumber(value: 2.weeksInSeconds)
+        let fourDaysInSeconds = NSDecimalNumber(value: 4.daysInSeconds)
+        let threeHoursInSeconds = NSDecimalNumber(value: 3.hoursInSeconds)
+        let fourtyMinutesInSeconds = NSDecimalNumber(value: 40.minutesInSeconds)
+        let fiftyFiveSeconds = NSDecimalNumber(value: 55)
+        
+        let priceAsSeconds = (oneYearInSeconds + sixMonthsInSeconds + twoWeeksInSeconds + fourDaysInSeconds + threeHoursInSeconds + fourtyMinutesInSeconds + fiftyFiveSeconds)
+        let dailyWorkHours: Double = 12
+        let weeklyWorkDays: Int = 7
+        
+        let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds.doubleValue, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
+        
+         let expectedResult = ((oneYearInSeconds + sixMonthsInSeconds + twoWeeksInSeconds + fourDaysInSeconds) * NSDecimalNumber(value: 2)) + threeHoursInSeconds + fourtyMinutesInSeconds + fiftyFiveSeconds
          XCTAssertEqual(result.doubleValue, expectedResult.doubleValue)
     }
     
