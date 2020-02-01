@@ -71,7 +71,7 @@ public extension TimeInterval {
     }
     
     var months: Self {
-        self * weeks * WEEKS_IN_MONTH
+        self * weeks * WEEKS_IN_MONTH.asDouble()
     }
     
     var years: Self {

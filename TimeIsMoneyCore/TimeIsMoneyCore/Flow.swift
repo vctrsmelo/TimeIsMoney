@@ -8,8 +8,8 @@
 
 import Foundation
 
-let WEEKS_IN_MONTH = 4.429531 // ~30 days per month
-let SECONDS_IN_HOUR = 3600.00
+let WEEKS_IN_MONTH = NSDecimalNumber(value: 4.429531) // ~30 days per month
+let SECONDS_IN_HOUR = NSDecimalNumber(value: 3600.00)
 
 public typealias WorkTimeSeconds = TimeInterval
 
