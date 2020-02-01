@@ -12,7 +12,7 @@ import XCTest
 
 extension XCTestCase {
 
-    func getUser(salary: Double, weeklyWorkHours: Double, weeklyWorkDays: Int) -> User {
+    func getUser(salary: Double = 1000, weeklyWorkHours: Double, weeklyWorkDays: Int) -> User {
         
         var workdays: [Weekday] = [.monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday]
         

@@ -11,6 +11,56 @@ import XCTest
 
 class TimeTextTranslatorTests: XCTestCase {
     
+    func testGetWorkTimeFor1YearWith24hDailyWorkGet1Year() {
+        let priceAsSeconds: Double = 1.yearInSeconds
+        let dailyWorkHours: Double = 24
+        let weeklyWorkDays: Int = 7
+        
+        let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
+        
+        XCTAssertEqual(result.doubleValue, 1.yearInSeconds)
+    }
+    
+    func testGetWorkTimeFor1YearWith12hDailyWorkGet2Years() {
+        let priceAsSeconds: Double = 1.yearInSeconds
+        let dailyWorkHours: Double = 12
+        let weeklyWorkDays: Int = 7
+        
+        let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
+        
+        XCTAssertEqual(result.doubleValue, 2.yearsInSeconds)
+    }
+    
+    func testGetWorkTimeFor1Day() {
+        let priceAsSeconds: Double = 8.hoursInSeconds
+        let dailyWorkHours: Double = 8
+        let weeklyWorkDays: Int = 5
+        
+        let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
+        
+        XCTAssertEqual(result.doubleValue, 1.dayInSeconds)
+    }
+    
+    func testGetWorkTimeFor2Days() {
+        let priceAsSeconds: Double = 16.hoursInSeconds
+        let dailyWorkHours: Double = 8
+        let weeklyWorkDays: Int = 5
+        
+        let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
+        
+        XCTAssertEqual(result.doubleValue, 2.daysInSeconds)
+    }
+    
+    func testGetWorkTimeForHalfDay() {
+        let priceAsSeconds: Double = 4.hoursInSeconds
+        let dailyWorkHours: Double = 8
+        let weeklyWorkDays: Int = 5
+
+        let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
+
+        XCTAssertEqual(result.doubleValue, 4.hoursInSeconds)
+    }
+    
     func testGetWorkTimeDescriptionToPay() {
         let priceAsSeconds: Double = 3.hourInSeconds
         let dailyWorkHours: Double = 1

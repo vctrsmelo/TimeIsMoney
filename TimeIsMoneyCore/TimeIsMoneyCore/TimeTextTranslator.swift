@@ -35,47 +35,77 @@ public class TimeTextTranslator {
             return "You need to increase your work hours"
         }
         
-        let normalizedWorkTime = normalizeTimeToWorkTime(priceAsSeconds: priceAsSeconds, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
+        let normalizedWorkTime = getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
         
-        return getWorkTimeDescriptionToPay(workTime: normalizedWorkTime)
-    }
-    
-    private static func isWorkTimeLesserThanADay(priceAsSeconds: WorkTimeSeconds,dailyWorkHours: WorkTimeSeconds) -> Bool {
-        priceAsSeconds <= dailyWorkHours * 1.hourInSeconds
-    }
-    
-    private static func isWorkTimeLesserThanAWeek(priceAsSeconds: WorkTimeSeconds,dailyWorkHours: WorkTimeSeconds, weeklyWorkDays: Int) -> Bool {
-        priceAsSeconds <= getWeeklyWorkHours(dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
-    }
-    
-    private static func getWeeklyWorkHours(dailyWorkHours: WorkTimeSeconds, weeklyWorkDays: Int) -> WorkTimeSeconds {
-        dailyWorkHours * Double(weeklyWorkDays) * (SecondsContainedIn.hour.asDouble())
-    }
-    
-    private static func getWorkTimeDescriptionToPay(workTime: NSDecimalNumber) -> String {
+        adjustFormatterAllowedUnits(for: normalizedWorkTime)
+        return formatter.string(from: normalizedWorkTime.timeIntervalValue) ?? "¯\\_(ツ)_/¯"
         
-        adjustFormatterAllowedUnits(for: workTime)
-        
-        return formatter.string(from: workTime.timeIntervalValue) ?? "¯\\_(ツ)_/¯"
     }
-    
-    public static func normalizeTimeToWorkTime(priceAsSeconds: WorkTimeSeconds, dailyWorkHours: Double, weeklyWorkDays: Int) -> NSDecimalNumber {
-        
-        if isWorkTimeLesserThanADay(priceAsSeconds: priceAsSeconds, dailyWorkHours: dailyWorkHours) {
-            return NSDecimalNumber(value: priceAsSeconds)
-        }
-        
-        // needed because otherwise would consider 24h as work daily routine.
-        let workTimeNormalizingDailyWork =  NSDecimalNumber(value: 24) * (NSDecimalNumber(value: priceAsSeconds) / NSDecimalNumber(value: dailyWorkHours))
 
-        if isWorkTimeLesserThanAWeek(priceAsSeconds: priceAsSeconds, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays) {
-            return workTimeNormalizingDailyWork
-        }
+    public static func getNormalizedWorkTimeFrom(priceAsSeconds: WorkTimeSeconds, dailyWorkHours: Double, weeklyWorkDays: Int) -> NSDecimalNumber {
+        getNormalizedWorkTimeFrom(priceAsDecimalSeconds: NSDecimalNumber(value: priceAsSeconds), dailyWorkHours: NSDecimalNumber(value: dailyWorkHours), weeklyWorkDays: NSDecimalNumber(value: weeklyWorkDays))
+    }
+    
+    public static func getNormalizedWorkTimeFrom(priceAsDecimalSeconds: NSDecimalNumber, dailyWorkHours: NSDecimalNumber, weeklyWorkDays: NSDecimalNumber) -> NSDecimalNumber {
         
-        // needed because otherwise would consider 7 days per week as work weekly routine.
-        let workTimeNormalizingWeekWork = NSDecimalNumber(value: 7) * workTimeNormalizingDailyWork / NSDecimalNumber(value: weeklyWorkDays)
+        let yearsNeeded = (priceAsDecimalSeconds / NSDecimalNumber(value: 1.yearInSeconds)).floor
+//        let yearsNeededAsSeconds = yearsNeeded * NSDecimalNumber(value: 1.yearInSeconds)
 
-        return workTimeNormalizingWeekWork
+        let returnYearsAsSeconds = getNumberOfWorkYearsAsSecondsToWorkAll(yearsNeeded: yearsNeeded, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
+        
+        return returnYearsAsSeconds
+        
+//        let monthsNeeded = ((priceAsDecimalSeconds - yearsNeeded) / NSDecimalNumber(value: 1.monthInSeconds)).floor
+        
+        
+        // ------
+        
+//        let hoursNeeded = (priceAsDecimalSeconds / NSDecimalNumber(value: 1.hourInSeconds)).floor
+//
+//        let hoursNeededAsSeconds = hoursNeeded * NSDecimalNumber(value: 1.hourInSeconds)
+//        let minutesNeeded = ((priceAsDecimalSeconds - hoursNeededAsSeconds) / NSDecimalNumber(value: 1.minuteInSeconds)).floor
+//
+//        let minutesNeededAsSeconds = minutesNeeded * NSDecimalNumber(value: 1.minuteInSeconds)
+//        let secondsNeeded = (priceAsDecimalSeconds - hoursNeededAsSeconds - minutesNeededAsSeconds)
+//
+//        // Normalize
+//
+//        let returnHoursAsSeconds: NSDecimalNumber
+//        if hoursNeededAreExactlyANumberOfDays(hoursNeeded, dailyWorkHours: dailyWorkHours) {
+//            returnHoursAsSeconds = getNumberOfWorkDaysAsSecondsToWorkAll(hoursNeeded: hoursNeeded, dailyWorkHours: dailyWorkHours)
+//        } else {
+//            returnHoursAsSeconds = hoursNeeded * NSDecimalNumber(value: 1.hourInSeconds)
+//        }
+//
+//        return returnHoursAsSeconds
+//
+    }
+    
+    private static func hoursNeededAreExactlyANumberOfDays(_ hoursNeeded: NSDecimalNumber, dailyWorkHours: NSDecimalNumber) -> Bool {
+        hoursNeeded % dailyWorkHours == 0
+    }
+    
+    private static func getNumberOfWorkYearsAsSecondsToWorkAll(yearsNeeded: NSDecimalNumber, dailyWorkHours: NSDecimalNumber, weeklyWorkDays: NSDecimalNumber) -> NSDecimalNumber {
+
+        let monthsInYear = NSDecimalNumber(value: 12)
+        let workdaysInMonth = weeklyWorkDays * WEEKS_IN_MONTH
+        
+        // DTA = numero de dias de trabalho no ano
+        let workdaysInYear = workdaysInMonth * monthsInYear
+            
+        // HTA = numero de horas de trabalho no ano
+        let workHoursInYear = workdaysInYear * dailyWorkHours
+        
+        let hoursNeeded = yearsNeeded * (NSDecimalNumber(value: 1.yearInSeconds)/NSDecimalNumber(value: 3600))
+        
+        // (hoursNeeded / HTA) * NSDecimalNumber(value: 1.yearInSeconds)
+        let yearsNeededResponse = (hoursNeeded / workHoursInYear)
+        
+        return yearsNeededResponse * NSDecimalNumber(value: 1.yearInSeconds)
+    }
+    
+    private static func getNumberOfWorkDaysAsSecondsToWorkAll(hoursNeeded: NSDecimalNumber, dailyWorkHours: NSDecimalNumber) -> NSDecimalNumber {
+        (hoursNeeded / dailyWorkHours) * NSDecimalNumber(value: 1.dayInSeconds)
     }
     
     public static func getWorkRoutineDescriptionToPay(for price: NSDecimalNumber, dailyWorkHours: Double, weeklyWorkDays: Int) -> Routine? {
