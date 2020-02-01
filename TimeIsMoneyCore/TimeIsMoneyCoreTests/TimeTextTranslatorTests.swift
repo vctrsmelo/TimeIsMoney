@@ -11,38 +11,8 @@ import XCTest
 
 class TimeTextTranslatorTests: XCTestCase {
     
-    func test_translate_1second_to1second() {
-        let seconds: TimeInterval = 1
-        XCTAssertEqual(getUnstoppedWorkTimeDescription(from: seconds), mockedFormatter.string(from: seconds))
-    }
-    
-    func test_translate_60seconds_to1minute() {
-        let seconds: TimeInterval = 1.secondToMinute
-        XCTAssertEqual(getUnstoppedWorkTimeDescription(from: seconds), mockedFormatter.string(from: seconds))
-    }
-
-    func test_translate_5400seconds_to1hourAnd30min() {
-        let seconds: TimeInterval = TimeInterval.from(hours: 1, minutes: 30)
-        XCTAssertEqual(getUnstoppedWorkTimeDescription(from: seconds), mockedFormatter.string(from: seconds))
-    }
-
-    func test_translate_31537800seconds_to1YearAnd30minutes() {
-        let seconds: TimeInterval = TimeInterval.from(years: 1, minutes: 30)
-        XCTAssertEqual(getUnstoppedWorkTimeDescription(from: seconds), mockedFormatter.string(from: seconds))
-    }
-
-    func testTranslateTo1month() {
-        let seconds: TimeInterval = 1.monthInSeconds
-        XCTAssertEqual(getUnstoppedWorkTimeDescription(from: seconds), mockedFormatter.string(from: seconds))
-    }
-
-    func test_translate_0seconds_to0seconds() {
-        let seconds: TimeInterval = 0
-        XCTAssertEqual(getUnstoppedWorkTimeDescription(from: seconds), mockedFormatter.string(from: seconds))
-    }
-    
     func testGetWorkTimeDescriptionToPay() {
-        let priceAsSeconds: Double = 3.secondToHour
+        let priceAsSeconds: Double = 3.hourInSeconds
         let dailyWorkHours: Double = 1
         let weeklyWorkDays: Int = 3
         
@@ -52,7 +22,7 @@ class TimeTextTranslatorTests: XCTestCase {
     }
     
     func testGetWorkTimeDescriptionToPay2() {
-        let priceAsSeconds: Double = 1.secondToHour
+        let priceAsSeconds: Double = 1.hourInSeconds
         let dailyWorkHours: Double = 1
         let weeklyWorkDays: Int = 1
         
@@ -62,7 +32,7 @@ class TimeTextTranslatorTests: XCTestCase {
     }
     
     func testGetWorkHoursRoutineFor10HoursReturnsNil() {
-        let priceAsSeconds: TimeInterval = 10.hoursInSeconds
+        let priceAsSeconds = NSDecimalNumber(value: 10.hoursInSeconds)
         let dailyWorkHours: Double = 8
         let weeklyWorkDays: Int = 5
         
@@ -72,7 +42,7 @@ class TimeTextTranslatorTests: XCTestCase {
     }
     
     func testGetWorkHoursRoutineFor48HoursReturnsDailyRoutine() {
-        let priceAsSeconds: TimeInterval = 48.hoursInSeconds
+        let priceAsSeconds = NSDecimalNumber(value: 48.hoursInSeconds)
         let dailyWorkHours: Double = 8
         let weeklyWorkDays: Int = 5
 
@@ -84,7 +54,7 @@ class TimeTextTranslatorTests: XCTestCase {
     }
     
     func testGetWorkHoursRoutineFor2WeeksReturnsWeeklyRoutine() {
-        let priceAsSeconds: TimeInterval = 2.weeksInSeconds
+        let priceAsSeconds = NSDecimalNumber(value: 2.weeksInSeconds)
         let dailyWorkHours: Double = 8
         let weeklyWorkDays: Int = 5
 

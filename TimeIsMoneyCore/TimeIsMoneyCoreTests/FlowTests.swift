@@ -24,32 +24,32 @@ class FlowTests: XCTestCase {
         let expectedWorkTime1 = sut1.user.getWorkTimeToPay(for: 100.0)
         let expectedWorkTime2 = sut2.user.getWorkTimeToPay(for: 250.0)
         
-        XCTAssertEqual(sut1.getTimeNeededToPay(for: 100), .success(expectedWorkTime1))
-        XCTAssertEqual(sut2.getTimeNeededToPay(for: 250), .success(expectedWorkTime2))
+        XCTAssertEqual(sut1.getTimeNeededToPay(forDouble: 100), .success(expectedWorkTime1))
+        XCTAssertEqual(sut2.getTimeNeededToPay(forDouble: 250), .success(expectedWorkTime2))
     }
     
     func testGetTimeWithNegativePriceReturnsZero() {
         let sut = getSUT(salary: 2000, weeklyWorkHours: 40, weeklyWorkDays: 5)
         
-        XCTAssertEqual(sut.getTimeNeededToPay(for: -100), Result.success(0.0))
+        XCTAssertEqual(sut.getTimeNeededToPay(forDouble: -100), Result.success(0.0))
     }
     
     func testGetTimeWithZeroWorkdaysReturnsUndefinedWeeklyWorkDaysError() {
         let sut = getSUT(salary: 2000, weeklyWorkHours: 40, weeklyWorkDays: 0)
         
-        XCTAssertEqual(sut.getTimeNeededToPay(for: 100), Result.failure(CalculatorError.undefinedWeeklyWorkDays))
+        XCTAssertEqual(sut.getTimeNeededToPay(forDouble: 100), Result.failure(CalculatorError.undefinedWeeklyWorkDays))
     }
     
     func testGetTimeWithZeroWorkhoursReturnsUndefinedWeeklyWorkHoursError() {
         let sut = getSUT(salary: 2000, weeklyWorkHours: 0, weeklyWorkDays: 5)
         
-        XCTAssertEqual(sut.getTimeNeededToPay(for: 100), Result.failure(.undefinedWeeklyWorkHours))
+        XCTAssertEqual(sut.getTimeNeededToPay(forDouble: 100), Result.failure(.undefinedWeeklyWorkHours))
     }
     
     func testGetTimeWithZeroSalaryReturnsUndefinedSalaryError() {
         let sut = getSUT(salary: 0, weeklyWorkHours: 10, weeklyWorkDays: 5)
         
-        XCTAssertEqual(sut.getTimeNeededToPay(for: 100), Result.failure(CalculatorError.undefinedSalary))
+        XCTAssertEqual(sut.getTimeNeededToPay(forDouble: 100), Result.failure(CalculatorError.undefinedSalary))
     }
     
     // MARK: Helpers

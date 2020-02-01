@@ -27,7 +27,7 @@ public class Flow {
         self.user = user
     }
     
-    public func getTimeNeededToPay(for moneyDouble: Double) -> Result<WorkTimeSeconds, CalculatorError> {
+    public func getTimeNeededToPay(forDouble moneyDouble: Double) -> Result<WorkTimeSeconds, CalculatorError> {
         return Calculator.getWorkTimeToPay(for: Money(value: moneyDouble), user: user)
     }
     
