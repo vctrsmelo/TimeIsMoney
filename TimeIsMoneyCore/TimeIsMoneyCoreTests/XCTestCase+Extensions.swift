@@ -6,8 +6,9 @@
 //  Copyright © 2020 Victor Melo. All rights reserved.
 //
 
+import Foundation
 import XCTest
-import TimeIsMoneyCore
+@testable import TimeIsMoneyCore
 
 extension XCTestCase {
 
@@ -28,4 +29,6 @@ extension XCTestCase {
         
         return user
     }
+    
+    
 }

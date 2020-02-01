@@ -17,7 +17,7 @@ class TimeTextTranslatorTests: XCTestCase {
     }
     
     func test_translate_60seconds_to1minute() {
-        let seconds: TimeInterval = 1.minute
+        let seconds: TimeInterval = 1.secondToMinute
         XCTAssertEqual(getUnstoppedWorkTimeDescription(from: seconds), mockedFormatter.string(from: seconds))
     }
 
@@ -32,7 +32,7 @@ class TimeTextTranslatorTests: XCTestCase {
     }
 
     func testTranslateTo1month() {
-        let seconds: TimeInterval = 1.month
+        let seconds: TimeInterval = 1.monthInSeconds
         XCTAssertEqual(getUnstoppedWorkTimeDescription(from: seconds), mockedFormatter.string(from: seconds))
     }
 
@@ -42,7 +42,7 @@ class TimeTextTranslatorTests: XCTestCase {
     }
     
     func testGetWorkTimeDescriptionToPay() {
-        let priceAsSeconds: Double = 3.hour
+        let priceAsSeconds: Double = 3.secondToHour
         let dailyWorkHours: Double = 1
         let weeklyWorkDays: Int = 3
         
@@ -52,7 +52,7 @@ class TimeTextTranslatorTests: XCTestCase {
     }
     
     func testGetWorkTimeDescriptionToPay2() {
-        let priceAsSeconds: Double = 1.hour
+        let priceAsSeconds: Double = 1.secondToHour
         let dailyWorkHours: Double = 1
         let weeklyWorkDays: Int = 1
         
@@ -62,7 +62,7 @@ class TimeTextTranslatorTests: XCTestCase {
     }
     
     func testGetWorkHoursRoutineFor10HoursReturnsNil() {
-        let priceAsSeconds: TimeInterval = 10.hours
+        let priceAsSeconds: TimeInterval = 10.hoursInSeconds
         let dailyWorkHours: Double = 8
         let weeklyWorkDays: Int = 5
         
@@ -72,7 +72,7 @@ class TimeTextTranslatorTests: XCTestCase {
     }
     
     func testGetWorkHoursRoutineFor48HoursReturnsDailyRoutine() {
-        let priceAsSeconds: TimeInterval = 48.hours
+        let priceAsSeconds: TimeInterval = 48.hoursInSeconds
         let dailyWorkHours: Double = 8
         let weeklyWorkDays: Int = 5
 
@@ -84,7 +84,7 @@ class TimeTextTranslatorTests: XCTestCase {
     }
     
     func testGetWorkHoursRoutineFor2WeeksReturnsWeeklyRoutine() {
-        let priceAsSeconds: TimeInterval = 2.weeks
+        let priceAsSeconds: TimeInterval = 2.weeksInSeconds
         let dailyWorkHours: Double = 8
         let weeklyWorkDays: Int = 5
 

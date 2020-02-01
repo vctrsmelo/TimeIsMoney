@@ -27,55 +27,55 @@ public extension Double {
 public extension TimeInterval {
     
     static func from(years: TimeInterval = 0.0, months: TimeInterval = 0.0, weeks: TimeInterval = 0.0, days: TimeInterval = 0.0, hours: TimeInterval = 0.0, minutes: TimeInterval = 0.0, seconds: TimeInterval = 0.0) -> Self {
-        return years.years + months.months + weeks.weeks + days.days + hours.hours + minutes.minutes + seconds
+        return years.yearsInSeconds + months.monthsInSeconds + weeks.weeksInSeconds + days.daysInSeconds + hours.hoursInSeconds + minutes.minutesInSeconds + seconds
     }
     
-    var minute: Self {
-        minutes
+    var minuteInSeconds: Self {
+        minutesInSeconds
     }
     
-    var hour: Self {
-        hours
+    var hourInSeconds: Self {
+        hoursInSeconds
     }
     
-    var day: Self {
-        days
+    var dayInSeconds: Self {
+        daysInSeconds
     }
     
-    var week: Self {
-        weeks
+    var weekInSeconds: Self {
+        weeksInSeconds
     }
     
-    var month: Self {
-        months
+    var monthInSeconds: Self {
+        monthsInSeconds
     }
     
-    var year: Self {
-        years
+    var yearInSeconds: Self {
+        yearsInSeconds
     }
     
-    var minutes: Self {
+    var minutesInSeconds: Self {
         self * 60
     }
     
-    var hours: Self {
+    var hoursInSeconds: Self {
         self * 3600
     }
     
-    var days: Self {
-        self * hours * 24
+    var daysInSeconds: Self {
+        self * hoursInSeconds * 24
     }
     
-    var weeks: Self {
-        self * days * 7
+    var weeksInSeconds: Self {
+        self * daysInSeconds * 7
     }
     
-    var months: Self {
-        self * weeks * WEEKS_IN_MONTH
+    var monthsInSeconds: Self {
+        self * weeksInSeconds * WEEKS_IN_MONTH.doubleValue
     }
     
-    var years: Self {
-        self * months * 12
+    var yearsInSeconds: Self {
+        self * monthsInSeconds * 12
     }
     
 }

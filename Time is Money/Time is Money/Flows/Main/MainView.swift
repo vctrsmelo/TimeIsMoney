@@ -20,16 +20,16 @@ struct MainView: View {
     @State private var topTextPadding: CGFloat = 0.0
     @State private var isKeyboardVisible = false
 
-    private var priceAsDouble: Double {
-        return (price as NSDecimalNumber?)?.doubleValue ?? 0.0
+    private var priceAsMoney: Money {
+        price as Money
     }
     
     private let flow = Flow()
     
     var body: some View {
         
-        let formattedValue = Formatter.currency.string(from: NSNumber(value: priceAsDouble)) ?? "?"
-        let maybeTimeNeeded = flow.getTimeNeededToPay(for: priceAsDouble)
+        let formattedValue = Formatter.currency.string(from: priceAsMoney) ?? "?"
+        let maybeTimeNeeded = flow.getTimeNeededToPay(for: priceAsMoney)
         let dailyWorkHours = floor(Double(user.weeklyWorkHours) / Double(user.workdays.count))
         let timeMessage: String
         
@@ -132,7 +132,7 @@ struct MainView: View {
             return Text("")
         }
         
-        let seconds = routine.value * 1.hour
+        let seconds = routine.value * 1.hourInSeconds
         guard let routineHoursAndMinutes = Formatter.hoursAndMinutes(seconds: seconds) else {
             return Text("")
         }
@@ -147,7 +147,7 @@ struct MainView: View {
     
     private func tableImageSection(flow: Flow) -> some View {
         
-        return Image("table\(flow.getExpensivityIndex(price: priceAsDouble, maxIndex: 13))")
+        return Image("table\(flow.getExpensivityIndex(price: priceAsMoney, maxIndex: 13))")
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: UIScreen.main.bounds.width-120, alignment: .center)

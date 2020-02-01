@@ -98,16 +98,37 @@ public class User: ObservableObject {
 
     }
     
+    public func getWorkTimeToPay(for moneyValue: Double) -> TimeInterval {
+        return getWorkTimeToPay(for: Money(value: moneyValue))
+    }
+    
+    public func getWorkTimeToPay(for moneyValue: Money) -> TimeInterval {
+        return (moneyValue / getSalaryPerSecond()).timeIntervalValue
+    }
+
+    public func getSalaryPerSecond() -> Money {
+        let salaryPerWeek = NSDecimalNumber(decimal: monthlySalary) / WEEKS_IN_MONTH
+        let salaryPerDay = salaryPerWeek / NSDecimalNumber(value: workdays.count)
+        let salaryPerHour = salaryPerDay / NSDecimalNumber(value: dailyWorkHours)
+        let salaryPerSecond = salaryPerHour / NSDecimalNumber(value: 3600)
+        
+        return salaryPerSecond
+    }
+    
+    public func getMoneyReceivedFromSeconds(workSeconds: TimeInterval) -> Money {
+        return getSalaryPerSecond() * NSDecimalNumber(value: workSeconds)
+    }
+    
+    public func isSelectedHoursValid(_ selectedHours: Int) -> Bool {
+        return (selectedHours < workdays.count || selectedHours > workdays.count * 24)
+    }
+    
     private func syncWorkdaysWithWorkHours() {
         if weeklyWorkHours < workdays.count {
             weeklyWorkHours = workdays.count
         } else if weeklyWorkHours > workdays.count*24 {
             weeklyWorkHours = workdays.count*24
         }
-    }
-    
-    public func isSelectedHoursValid(_ selectedHours: Int) -> Bool {
-        return (selectedHours < workdays.count || selectedHours > workdays.count * 24)
     }
 }
 

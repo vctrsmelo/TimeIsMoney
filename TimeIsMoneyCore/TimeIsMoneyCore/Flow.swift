@@ -8,8 +8,8 @@
 
 import Foundation
 
-let WEEKS_IN_MONTH = 4.429531 // ~30 days per month
-let SECONDS_IN_HOUR = 3600.00
+let WEEKS_IN_MONTH = NSDecimalNumber(value: 4.429531) // ~30 days per month
+let SECONDS_IN_HOUR = NSDecimalNumber(value: 3600.00)
 
 public typealias WorkTimeSeconds = TimeInterval
 
@@ -27,16 +27,20 @@ public class Flow {
         self.user = user
     }
     
-    public func getTimeNeededToPay(for price: Double) -> Result<WorkTimeSeconds, CalculatorError> {
-        return Calculator.getWorkTimeToPay(for: price, user: user)
+    public func getTimeNeededToPay(for moneyDouble: Double) -> Result<WorkTimeSeconds, CalculatorError> {
+        return Calculator.getWorkTimeToPay(for: Money(value: moneyDouble), user: user)
+    }
+    
+    public func getTimeNeededToPay(for money: Money) -> Result<WorkTimeSeconds, CalculatorError> {
+        return Calculator.getWorkTimeToPay(for: money, user: user)
     }
 
     /// Used to set image
-    public func getExpensivityIndex(price: Double, maxIndex: Int) -> Int {
-        let maxPrice = max(1,user.monthlySalary)
-        let normalizedIndex = Int(round(price * Double(maxIndex) / maxPrice.asDouble()))
-        let expensivityIndex = min(normalizedIndex, maxIndex)
+    public func getExpensivityIndex(price: NSDecimalNumber, maxIndex: NSDecimalNumber) -> Int {
+        let maxPrice = NSDecimalNumber(value: max(1,user.monthlySalary).asDouble())
+        let normalizedIndex = round((price * maxIndex / maxPrice).doubleValue)
+        let expensivityIndex = min(normalizedIndex, maxIndex.doubleValue)
         
-        return expensivityIndex
+        return Int(expensivityIndex)
     }
 }

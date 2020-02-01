@@ -25,6 +25,9 @@
 		BE815FBB2383480200000FB9 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE815FBA2383480200000FB9 /* Flow.swift */; };
 		BE815FCC23834A1800000FB9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE815FCB23834A1800000FB9 /* User.swift */; };
 		BED15C6E23C5283400EA9E46 /* GeneralExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED15C6D23C5283400EA9E46 /* GeneralExtensions.swift */; };
+		BEED4E0D23E4F24C00C81A31 /* ValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEED4E0C23E4F24C00C81A31 /* ValueTests.swift */; };
+		BEED4E1223E4F5D500C81A31 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEED4E1123E4F5D500C81A31 /* Money.swift */; };
+		BEED4E1423E4F7DC00C81A31 /* NSDecimalNumber+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEED4E1323E4F7DC00C81A31 /* NSDecimalNumber+Operators.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		BE815FBA2383480200000FB9 /* Flow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
 		BE815FCB23834A1800000FB9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BED15C6D23C5283400EA9E46 /* GeneralExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralExtensions.swift; sourceTree = "<group>"; };
+		BEED4E0C23E4F24C00C81A31 /* ValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTests.swift; sourceTree = "<group>"; };
+		BEED4E1123E4F5D500C81A31 /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		BEED4E1323E4F7DC00C81A31 /* NSDecimalNumber+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDecimalNumber+Operators.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,7 @@
 		BE270C3223C3C9F10099AAC7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BEED4E1123E4F5D500C81A31 /* Money.swift */,
 				BE815FCB23834A1800000FB9 /* User.swift */,
 				BE270C3023C3C9E70099AAC7 /* Weekday.swift */,
 				BE2B83C523E1FF0B005847C4 /* Routine.swift */,
@@ -157,6 +164,7 @@
 				BE815FA62383474C00000FB9 /* Info.plist */,
 				BE2B83C123E1E78C005847C4 /* UserTests.swift */,
 				BE2B83C323E1E7C0005847C4 /* XCTestCase+Extensions.swift */,
+				BEED4E0C23E4F24C00C81A31 /* ValueTests.swift */,
 			);
 			path = TimeIsMoneyCoreTests;
 			sourceTree = "<group>";
@@ -166,6 +174,7 @@
 			children = (
 				BED15C6D23C5283400EA9E46 /* GeneralExtensions.swift */,
 				BE28C50523D7B4A500CA9D13 /* String+Localized.swift */,
+				BEED4E1323E4F7DC00C81A31 /* NSDecimalNumber+Operators.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -212,6 +221,8 @@
 			dependencies = (
 			);
 			name = TimeIsMoneyCore;
+			packageProductDependencies = (
+			);
 			productName = TimeIsMoneyCore;
 			productReference = BE815F962383474C00000FB9 /* TimeIsMoneyCore.framework */;
 			productType = "com.apple.product-type.framework";
@@ -264,6 +275,8 @@
 				Base,
 			);
 			mainGroup = BE815F8C2383474C00000FB9;
+			packageReferences = (
+			);
 			productRefGroup = BE815F972383474C00000FB9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -381,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE2B83C623E1FF0B005847C4 /* Routine.swift in Sources */,
+				BEED4E1223E4F5D500C81A31 /* Money.swift in Sources */,
 				BE28C50623D7B4A500CA9D13 /* String+Localized.swift in Sources */,
 				BE2B83BD23E1E42F005847C4 /* TimeTextTranslator.swift in Sources */,
 				BED15C6E23C5283400EA9E46 /* GeneralExtensions.swift in Sources */,
@@ -388,6 +402,7 @@
 				BE2B83BF23E1E447005847C4 /* SecondsContainedIn.swift in Sources */,
 				BE815FCC23834A1800000FB9 /* User.swift in Sources */,
 				BE28C4F423D7AA4D00CA9D13 /* R.generated.swift in Sources */,
+				BEED4E1423E4F7DC00C81A31 /* NSDecimalNumber+Operators.swift in Sources */,
 				BE815FBB2383480200000FB9 /* Flow.swift in Sources */,
 				BE270C3123C3C9E70099AAC7 /* Weekday.swift in Sources */,
 			);
@@ -398,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE2B83C423E1E7C0005847C4 /* XCTestCase+Extensions.swift in Sources */,
+				BEED4E0D23E4F24C00C81A31 /* ValueTests.swift in Sources */,
 				BE2B83C223E1E78C005847C4 /* UserTests.swift in Sources */,
 				BE815FB9238347DD00000FB9 /* TimeTextTranslatorTests.swift in Sources */,
 				BE815FB8238347DD00000FB9 /* FlowTests.swift in Sources */,
