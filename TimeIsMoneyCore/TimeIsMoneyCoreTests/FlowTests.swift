@@ -21,8 +21,11 @@ class FlowTests: XCTestCase {
         let sut1 = getSUT(salary: 2000, weeklyWorkHours: 40, weeklyWorkDays: 5)
         let sut2 = getSUT(salary: 1000, weeklyWorkHours: 1, weeklyWorkDays: 1)
         
-        XCTAssertEqual(resultFloorAsHour(sut1.getTimeNeededToPay(for: 100)), Time.hours(8).asSeconds())
-        XCTAssertEqual(sut2.getTimeNeededToPay(for: 250), Result.success(3982.300884955752))
+        let expectedWorkTime1 = getWorkTimeToPay(for: 100.0, user: sut1.user)
+        let expectedWorkTime2 = getWorkTimeToPay(for: 250.0, user: sut2.user)
+        
+        XCTAssertEqual(sut1.getTimeNeededToPay(for: 100), .success(expectedWorkTime1))
+        XCTAssertEqual(sut2.getTimeNeededToPay(for: 250), .success(expectedWorkTime2))
     }
     
     func testGetTimeWithNegativePriceReturnsZero() {
