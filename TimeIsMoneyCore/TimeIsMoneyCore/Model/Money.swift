@@ -35,10 +35,10 @@ public struct Value {
         self.value = ValueType.timeInSeconds(workSeconds)
     }
     
-    func getAsMoney(for user: User) -> Money {
+    func getAsMoney(for user: User) -> Result<Money, CalculatorError> {
         switch value {
         case .monetary(let value):
-            return value
+            return .success(value)
         case .timeInSeconds(let value):
             return value.asMoney(for: user)
         }
@@ -56,8 +56,8 @@ public struct Value {
 
 private extension TimeInterval {
     
-    func asMoney(for user: User) -> Money {
-        return Money(integerLiteral: 1000)
+    func asMoney(for user: User) -> Result<Money, CalculatorError> {
+        return Calculator.getMoneyReceivedFromWorkSeconds(workSeconds: self, user: user)
     }
 }
 

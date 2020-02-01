@@ -10,11 +10,16 @@ import Foundation
 
 public enum Calculator {
     
+    public static func getWorkTimeToPay(for price: Double, user: User) -> Result<WorkTimeSeconds, CalculatorError> {
+        return getWorkTimeToPay(for: Money(value: price), user: user)
+
+    }
+    
     public static func getWorkTimeToPay(for price: Money, user: User) -> Result<WorkTimeSeconds, CalculatorError> {
         guard price > 0.0 else { return .success(0.0) }
-        guard isWorkingAtLeastOneDayPerWeek(user) else { return .failure(CalculatorError.undefinedWeeklyWorkDays)}
-        guard isWorkingAtLeast1HourPerWeek(user) else { return .failure(CalculatorError.undefinedWeeklyWorkHours)}
-        guard hasMonthlyIncome(user) else { return .failure(CalculatorError.undefinedSalary) }
+        if case .failure(let error) = isUserDataValid(user) {
+            return .failure(error)
+        }
         
         let dailyWorkHours = NSDecimalNumber(value: user.weeklyWorkHours) / NSDecimalNumber(value: user.workdays.count)
         
@@ -28,9 +33,24 @@ public enum Calculator {
         return .success(secondsWorkingNeeded.asTimeInterval())
     }
     
-    public static func getWorkTimeToPay(for price: Double, user: User) -> Result<WorkTimeSeconds, CalculatorError> {
-        return getWorkTimeToPay(for: Money(value: price), user: user)
-
+    public static func getMoneyReceivedFromWorkSeconds(workSeconds: TimeInterval, user: User) -> Result<Money, CalculatorError> {
+        guard workSeconds > 0.0 else { return .success(0.0) }
+        if case .failure(let error) = isUserDataValid(user) {
+            return .failure(error)
+        }
+        
+        let salaryPerSecond = user.getSalaryPerSecond()
+        let receivedMoney = salaryPerSecond * NSDecimalNumber(value: workSeconds)
+        
+        return .success(receivedMoney)
+    }
+    
+    private static func isUserDataValid(_ user: User) -> Result<Void, CalculatorError> {
+        guard isWorkingAtLeastOneDayPerWeek(user) else { return .failure(CalculatorError.undefinedWeeklyWorkDays)}
+        guard isWorkingAtLeast1HourPerWeek(user) else { return .failure(CalculatorError.undefinedWeeklyWorkHours)}
+        guard hasMonthlyIncome(user) else { return .failure(CalculatorError.undefinedSalary) }
+        
+        return .success(())
     }
     
     private static func isWorkingAtLeastOneDayPerWeek(_ user: User) -> Bool {

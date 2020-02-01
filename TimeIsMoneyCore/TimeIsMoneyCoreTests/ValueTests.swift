@@ -15,7 +15,7 @@ class ValueTests: XCTestCase {
         let sut = makeSUT(value: .monetary(NSDecimalNumber(100)))
         let user = getUser(salary: 8000, weeklyWorkHours: 40, weeklyWorkDays: 5)
         
-        XCTAssertEqual(sut.getAsMoney(for: user), 100)
+        XCTAssertEqual(sut.getAsMoney(for: user), .success(100.asMoney()))
     }
     
     func testStartValueSecondsGetSeconds() {
@@ -32,9 +32,19 @@ class ValueTests: XCTestCase {
         let sut = makeSUT(value: .monetary(money))
         let user = getUser(salary: 1000, weeklyWorkHours: 40, weeklyWorkDays: 5)
 
-        let expectedResult = getWorkTimeToPay(for: money, user: user)
+        let expectedResult = user.getWorkTimeToPay(for: money)
         
         XCTAssertEqual(sut.getAsTimeInSeconds(for: user), .success(expectedResult))
+    }
+    
+    func testStartValueSecondsGetMoney() {
+        let workSeconds: TimeInterval = 3600
+        let sut = makeSUT(value: .timeInSeconds(workSeconds))
+        let user = getUser(salary: 1000, weeklyWorkHours: 40, weeklyWorkDays: 5)
+
+        let expectedResult = user.getMoneyReceivedFromSeconds(workSeconds: workSeconds)
+        
+        XCTAssertEqual(sut.getAsMoney(for: user), .success(expectedResult))
     }
 
     // MARK: - Helpers

@@ -50,6 +50,11 @@ extension Double {
     }
 }
 
+extension Int {
+    func asMoney() -> Money {
+        return Money(value: self)
+    }
+}
 
 extension Decimal {
     func asMoney() -> Money {

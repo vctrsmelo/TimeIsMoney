@@ -21,8 +21,8 @@ class FlowTests: XCTestCase {
         let sut1 = getSUT(salary: 2000, weeklyWorkHours: 40, weeklyWorkDays: 5)
         let sut2 = getSUT(salary: 1000, weeklyWorkHours: 1, weeklyWorkDays: 1)
         
-        let expectedWorkTime1 = getWorkTimeToPay(for: 100.0, user: sut1.user)
-        let expectedWorkTime2 = getWorkTimeToPay(for: 250.0, user: sut2.user)
+        let expectedWorkTime1 = sut1.user.getWorkTimeToPay(for: 100.0)
+        let expectedWorkTime2 = sut2.user.getWorkTimeToPay(for: 250.0)
         
         XCTAssertEqual(sut1.getTimeNeededToPay(for: 100), .success(expectedWorkTime1))
         XCTAssertEqual(sut2.getTimeNeededToPay(for: 250), .success(expectedWorkTime2))
