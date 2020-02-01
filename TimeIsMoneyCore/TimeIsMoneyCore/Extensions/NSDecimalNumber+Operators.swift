@@ -63,11 +63,9 @@ extension Decimal {
 }
 
 extension NSDecimalNumber {
-    func asDouble() -> Double {
-        return self.doubleValue
-    }
     
-    func asTimeInterval() -> TimeInterval {
+    var timeIntervalValue: TimeInterval {
         return self.doubleValue
     }
+
 }

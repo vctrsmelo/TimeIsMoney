@@ -19,4 +19,8 @@ enum SecondsContainedIn: Int {
     func asDouble() -> Double {
         return Double(self.rawValue)
     }
+    
+    func asNSDecimalNumber() -> NSDecimalNumber {
+        return NSDecimalNumber(value: self.rawValue)
+    }
 }

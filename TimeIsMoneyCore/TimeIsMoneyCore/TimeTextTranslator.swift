@@ -41,7 +41,7 @@ public class TimeTextTranslator {
     }
     
     private static func isWorkTimeLesserThanADay(priceAsSeconds: WorkTimeSeconds,dailyWorkHours: WorkTimeSeconds) -> Bool {
-        priceAsSeconds <= dailyWorkHours * 1.hour
+        priceAsSeconds <= dailyWorkHours * 1.hourInSeconds
     }
     
     private static func isWorkTimeLesserThanAWeek(priceAsSeconds: WorkTimeSeconds,dailyWorkHours: WorkTimeSeconds, weeklyWorkDays: Int) -> Bool {
@@ -52,36 +52,36 @@ public class TimeTextTranslator {
         dailyWorkHours * Double(weeklyWorkDays) * (SecondsContainedIn.hour.asDouble())
     }
     
-    private static func getWorkTimeDescriptionToPay(workTime: WorkTimeSeconds) -> String {
+    private static func getWorkTimeDescriptionToPay(workTime: NSDecimalNumber) -> String {
         
         adjustFormatterAllowedUnits(for: workTime)
         
-        return formatter.string(from: workTime)!
+        return formatter.string(from: workTime.timeIntervalValue) ?? "¯\\_(ツ)_/¯"
     }
     
-    public static func normalizeTimeToWorkTime(priceAsSeconds: WorkTimeSeconds, dailyWorkHours: Double, weeklyWorkDays: Int) -> WorkTimeSeconds {
+    public static func normalizeTimeToWorkTime(priceAsSeconds: WorkTimeSeconds, dailyWorkHours: Double, weeklyWorkDays: Int) -> NSDecimalNumber {
         
         if isWorkTimeLesserThanADay(priceAsSeconds: priceAsSeconds, dailyWorkHours: dailyWorkHours) {
-            return priceAsSeconds
+            return NSDecimalNumber(value: priceAsSeconds)
         }
         
         // needed because otherwise would consider 24h as work daily routine.
-        let workTimeNormalizingDailyWork =  24.0 * (priceAsSeconds / dailyWorkHours)
+        let workTimeNormalizingDailyWork =  NSDecimalNumber(value: 24) * (NSDecimalNumber(value: priceAsSeconds) / NSDecimalNumber(value: dailyWorkHours))
 
         if isWorkTimeLesserThanAWeek(priceAsSeconds: priceAsSeconds, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays) {
             return workTimeNormalizingDailyWork
         }
         
         // needed because otherwise would consider 7 days per week as work weekly routine.
-        let workTimeNormalizingWeekWork = 7 * workTimeNormalizingDailyWork / Double(weeklyWorkDays)
+        let workTimeNormalizingWeekWork = NSDecimalNumber(value: 7) * workTimeNormalizingDailyWork / NSDecimalNumber(value: weeklyWorkDays)
 
         return workTimeNormalizingWeekWork
     }
     
-    public static func getWorkRoutineDescriptionToPay(for price: WorkTimeSeconds, dailyWorkHours: Double, weeklyWorkDays: Int) -> Routine? {
-        guard price >= 1.day else { return nil }
+    public static func getWorkRoutineDescriptionToPay(for price: NSDecimalNumber, dailyWorkHours: Double, weeklyWorkDays: Int) -> Routine? {
+        guard price >= NSDecimalNumber(value: 1.dayInSeconds) else { return nil }
         
-        if price < 1.week {
+        if price < NSDecimalNumber(value: 1.weekInSeconds) {
             return Routine(value: dailyWorkHours, period: .daily)
         } else {
             let weeklyWorkHours = dailyWorkHours * Double(weeklyWorkDays)
@@ -89,7 +89,7 @@ public class TimeTextTranslator {
         }
     }
     
-    private static func adjustFormatterAllowedUnits(for seconds: WorkTimeSeconds) {
+    private static func adjustFormatterAllowedUnits(for seconds: NSDecimalNumber) {
         formatter.allowedUnits = [.year, .month, .weekOfMonth, .day, .hour, .minute, .second]
         
         if isLongerThanAnHour(seconds) {
@@ -110,24 +110,24 @@ public class TimeTextTranslator {
         }
     }
     
-    private static func isLongerThanAnHour(_ seconds: WorkTimeSeconds) -> Bool {
-        return (seconds >= SecondsContainedIn.hour.asDouble())
+    private static func isLongerThanAnHour(_ seconds: NSDecimalNumber) -> Bool {
+        return (seconds >= SecondsContainedIn.hour.asNSDecimalNumber())
     }
     
-    private static func isLongerThanADay(_ seconds: WorkTimeSeconds) -> Bool {
-        return (seconds >= SecondsContainedIn.day.asDouble())
+    private static func isLongerThanADay(_ seconds: NSDecimalNumber) -> Bool {
+        return (seconds >= SecondsContainedIn.day.asNSDecimalNumber())
     }
     
-    private static func isLongerThanAWeek(_ seconds: WorkTimeSeconds) -> Bool {
-        return (seconds >= SecondsContainedIn.week.asDouble())
+    private static func isLongerThanAWeek(_ seconds: NSDecimalNumber) -> Bool {
+        return (seconds >= SecondsContainedIn.week.asNSDecimalNumber())
     }
     
-    private static func isLongerThanAMonth(_ seconds: WorkTimeSeconds) -> Bool {
-        return (seconds >= SecondsContainedIn.month.asDouble())
+    private static func isLongerThanAMonth(_ seconds: NSDecimalNumber) -> Bool {
+        return (seconds >= SecondsContainedIn.month.asNSDecimalNumber())
     }
     
-    private static func isLongerThanAYear(_ seconds: WorkTimeSeconds) -> Bool {
-        return (seconds >= SecondsContainedIn.year.asDouble())
+    private static func isLongerThanAYear(_ seconds: NSDecimalNumber) -> Bool {
+        return (seconds >= SecondsContainedIn.year.asNSDecimalNumber())
     }
     
 }

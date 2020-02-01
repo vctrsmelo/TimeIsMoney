@@ -103,7 +103,7 @@ public class User: ObservableObject {
     }
     
     public func getWorkTimeToPay(for moneyValue: Money) -> TimeInterval {
-        return (moneyValue / getSalaryPerSecond()).asTimeInterval()
+        return (moneyValue / getSalaryPerSecond()).timeIntervalValue
     }
 
     public func getSalaryPerSecond() -> Money {

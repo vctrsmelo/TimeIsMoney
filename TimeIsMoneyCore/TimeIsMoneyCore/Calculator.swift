@@ -30,7 +30,7 @@ public enum Calculator {
         let hoursWorkingNeeded = (price/salaryPerHour)
         let secondsWorkingNeeded = hoursWorkingNeeded * SECONDS_IN_HOUR
         
-        return .success(secondsWorkingNeeded.asTimeInterval())
+        return .success(secondsWorkingNeeded.timeIntervalValue)
     }
     
     public static func getMoneyReceivedFromWorkSeconds(workSeconds: TimeInterval, user: User) -> Result<Money, CalculatorError> {

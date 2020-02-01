@@ -19,23 +19,23 @@ public struct Value {
     
     public let value: ValueType
     
-    init(valueType: ValueType) {
+    public init(valueType: ValueType) {
         self.value = valueType
     }
     
-    init(money: Money) {
+    public init(money: Money) {
         self.value = ValueType.monetary(money)
     }
     
-    init(money: Double) {
+    public init(money: Double) {
         self.value = ValueType.monetary(Money(value: money))
     }
     
-    init(workSeconds: TimeInterval) {
+    public init(workSeconds: TimeInterval) {
         self.value = ValueType.timeInSeconds(workSeconds)
     }
     
-    func getAsMoney(for user: User) -> Result<Money, CalculatorError> {
+    public func getAsMoney(for user: User) -> Result<Money, CalculatorError> {
         switch value {
         case .monetary(let value):
             return .success(value)
@@ -44,7 +44,7 @@ public struct Value {
         }
     }
     
-    func getAsTimeInSeconds(for user: User) -> Result<WorkTimeSeconds, CalculatorError> {
+    public func getAsTimeInSeconds(for user: User) -> Result<WorkTimeSeconds, CalculatorError> {
         switch value {
         case .monetary(let value):
             return value.asSeconds(for: user)
