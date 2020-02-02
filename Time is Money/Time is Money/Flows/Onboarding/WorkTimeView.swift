@@ -29,8 +29,9 @@ struct WorkTimeView: View {
             VStack {
                 Text(R.string.localizable.howManyHoursDoYouWorkPerWeek())
                     .lineLimit(nil)
-                    .adaptableFont(.smallTitleFont, maxSize: 30)
+                    .adaptableFont(.smallTitleFont, maxSize: 25)
                     .foregroundColor(Design.Color.Text.title)
+                    .frame(maxHeight: .infinity)
                 Image("table2")
                     .resizable()
                     .aspectRatio(contentMode: .fit)

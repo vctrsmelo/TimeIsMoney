@@ -38,12 +38,22 @@ extension View {
         func adjustedType(_ type: KeyboardSensibleType) -> some View {
             switch type {
             case .padding:
-                return AnyView(self.padding(.bottom, offsetValue.wrappedValue))
+                return ZStack {
+                    BackgroundView()
+                    AnyView(self.padding(.bottom, offsetValue.wrappedValue))
+                }
             case .offset:
-                return AnyView(self.offset(y: -offsetValue.wrappedValue))
+                return ZStack {
+                    BackgroundView()
+                        AnyView(self.offset(y: -offsetValue.wrappedValue))
+                    }
             case .paddingAndOffset:
-                return AnyView(self.padding(.top, offsetValue.wrappedValue)
+            return ZStack {
+                    BackgroundView()
+                    AnyView(self.padding(.top, offsetValue.wrappedValue)
                            .offset(y: -offsetValue.wrappedValue))
+                
+                   }
             }
         }
         
@@ -66,11 +76,13 @@ extension View {
                 
                 offsetValue.wrappedValue = height - bottom
                 
+                Keyboard.currentHeight = height
                 onAppearKeyboardCustom?()
             }
             
             NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { _ in
                 offsetValue.wrappedValue = 0
+                Keyboard.currentHeight = 0.0
                 onHideKeyboardCustom?()
             }
         }
@@ -121,4 +133,9 @@ extension View {
                 .font(adaptableFont.getFont(size: self.getSize(g, maxSize: maxSize)))
         }
     }
+}
+
+
+enum Keyboard {
+    static var currentHeight: CGFloat = 0.0
 }

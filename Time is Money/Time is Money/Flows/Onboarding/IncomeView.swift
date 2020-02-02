@@ -14,7 +14,7 @@ struct IncomeView: View {
     @EnvironmentObject var user: User
 
     @State private var offsetValue: CGFloat = 0.0
-    @State private var topTextPadding: CGFloat = 0.0
+    
     
     init() {
         UITableView.appearance().tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: Double.leastNonzeroMagnitude))
@@ -32,44 +32,54 @@ struct IncomeView: View {
         
         return Group {
             VStack {
-                Text(R.string.localizable.whatIsYourIncome())
-                    .padding(.top, 20)
-                    .font(Design.Font.Title.smallTitleFont)
-                    .foregroundColor(Design.Color.Text.title)
-                    .offset(x: 0, y: topTextPadding)
-                Spacer()
-                Image("Money_img")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: UIScreen.main.bounds.width-120, alignment: .center)
-                    .frame(minHeight: 100, alignment: .center)
-                    .animation(.none)
-                Spacer()
-                CurrencyField(incomeBinding, placeholder: "Income")
-                    .frame(width: UIScreen.main.bounds.width, height: 60, alignment: .center)
-                Text("per month")
-                    .font(Design.Font.standardLight)
-                    .foregroundColor(Design.Color.Text.standard)
-                Spacer()
-                NavigationLink(destination: MainView()) {
-                    Text("Finish")
-                        .font(Design.Font.standardLight)
-                        .frame(width: 200, height: 50, alignment: .center)
-                        .background(Design.Color.Text.standard)
-                        .foregroundColor(Color.white)
-                        .cornerRadius(5)
+                HStack {
+                    Text(R.string.localizable.whatIsYourIncome())
+                        .padding(.top, 20)
+                        .adaptableFont(.smallTitleFont, maxSize: 25)
+                        .foregroundColor(Design.Color.Text.title)
+                        .frame(maxWidth: .infinity, maxHeight:80)
+                }
                 
+                Spacer()
+                
+                HStack {
+                    Image("Money_img")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: UIScreen.main.bounds.width-120, alignment: .center)
+                        .frame(minHeight: 100, alignment: .center)
+                        .animation(.none)
+                }
+                
+                Spacer()
+                
+                HStack {
+                    CurrencyField(incomeBinding, placeholder: "Income")
+                        .frame(width: UIScreen.main.bounds.width, height: 60, alignment: .center)
+                    Text("per month")
+                        .font(Design.Font.standardLight)
+                        .foregroundColor(Design.Color.Text.standard)
+                }
+                
+                Spacer()
+                
+                HStack {
+                    NavigationLink(destination: MainView()) {
+                        Text("Finish")
+                            .font(Design.Font.standardLight)
+                            .frame(width: 200, height: 50, alignment: .center)
+                            .background(Design.Color.Text.standard)
+                            .foregroundColor(Color.white)
+                            .cornerRadius(5)
+                    }
                 }
                 Spacer()
             }
-        }.withBackground()
+        }
+        .withBackground()
         .navigationBarTitle("")
         .navigationBarHidden(true)
-        .keyboardSensible($offsetValue, type: .paddingAndOffset, onAppearKeyboardCustom: {
-            self.topTextPadding = -UIScreen.main.bounds.height/16
-        }, onHideKeyboardCustom: {
-            self.topTextPadding = 0
-        })
+        .keyboardSensible($offsetValue, type: .padding)
     }
 }
 
