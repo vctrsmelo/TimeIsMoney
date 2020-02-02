@@ -238,7 +238,6 @@ class TimeTextTranslatorTests: XCTestCase {
         XCTAssertEqual(result?.period, .weekly)
     }
 
-
     // MARK: Helpers
     
     func getSUT() -> TimeTextTranslator.Type {

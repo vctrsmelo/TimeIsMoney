@@ -58,21 +58,34 @@ public class User: ObservableObject {
         return NSDecimalNumber(value: weeklyWorkHours) / NSDecimalNumber(value: workdays.count)
     }
     
-    public var dailyWorkSeconds: NSDecimalNumber {
-        return dailyWorkHours * NSDecimalNumber(value: 1.hourInSeconds)
-    }
-    
-    public var weeklyWorkSeconds: NSDecimalNumber {
-        return dailyWorkSeconds * NSDecimalNumber(value: workdays.count)
+    public var yearlyWorkSeconds: NSDecimalNumber {
+        return monthlyWorkSeconds * NSDecimalNumber(value: 12)
     }
     
     public var monthlyWorkSeconds: NSDecimalNumber {
         return weeklyWorkSeconds * WEEKS_IN_MONTH
     }
     
-    public var yearlyWorkSeconds: NSDecimalNumber {
-        return monthlyWorkSeconds * NSDecimalNumber(value: 12)
+    public var weeklyWorkSeconds: NSDecimalNumber {
+        return NSDecimalNumber(value: weeklyWorkHours) * NSDecimalNumber(value: SecondsContainedIn.hour.asDouble())
     }
+    
+    public var dailyWorkSeconds: NSDecimalNumber {
+        return dailyWorkHours * NSDecimalNumber(value: 1.hourInSeconds)
+    }
+    
+    public var hourWorkSeconds: NSDecimalNumber {
+        NSDecimalNumber(value: 3600)
+    }
+    
+    public var minuteWorkSeconds: NSDecimalNumber {
+        NSDecimalNumber(value: 60)
+    }
+    
+    public var secondWorkSeconds: NSDecimalNumber {
+        NSDecimalNumber(value: 60)
+    }
+    
     
     public var sortedWorkdays: [Weekday] {
         var sortedWorkdays = Weekday.all()
@@ -119,24 +132,39 @@ public class User: ObservableObject {
     }
     
     public func getWorkTimeToPay(for moneyValue: Double) -> TimeInterval {
-        return getWorkTimeToPay(for: Money(value: moneyValue))
+        getWorkTimeToPay(for: Money(value: moneyValue))
     }
     
     public func getWorkTimeToPay(for moneyValue: Money) -> TimeInterval {
-        return (moneyValue / getSalaryPerSecond()).timeIntervalValue
+        (moneyValue / getSalaryPerSecond()).timeIntervalValue
+    }
+    
+    public func getSalaryPerYear() -> Money {
+        NSDecimalNumber(decimal: monthlySalary) * NSDecimalNumber(value: 12)
+    }
+    
+    public func getSalaryPerMonth() -> Money {
+        NSDecimalNumber(decimal: monthlySalary)
+    }
+    
+    public func getSalaryPerWeek() -> Money {
+        getSalaryPerMonth() / WEEKS_IN_MONTH
+    }
+    
+    public func getSalaryPerDay() -> Money {
+        getSalaryPerWeek() / NSDecimalNumber(value: weeklyWorkDays)
     }
     
     public func getSalaryPerHour() -> Money {
-        let salaryPerWeek = NSDecimalNumber(decimal: monthlySalary) / WEEKS_IN_MONTH
-        let salaryPerDay = salaryPerWeek / NSDecimalNumber(value: workdays.count)
-        let salaryPerHour = salaryPerDay / dailyWorkHours
-        
-        return salaryPerHour
+        getSalaryPerDay() / dailyWorkHours
+    }
+    
+    public func getSalaryPerMinute() -> Money {
+        getSalaryPerHour() / NSDecimalNumber(value: 60)
     }
 
     public func getSalaryPerSecond() -> Money {
-        let salaryPerSecond = getSalaryPerHour() / NSDecimalNumber(value: 3600)
-        return salaryPerSecond
+        getSalaryPerMinute() / NSDecimalNumber(value: SecondsContainedIn.minute.rawValue)
     }
     
     public func getMoneyReceivedFromSeconds(workSeconds: TimeInterval) -> Money {

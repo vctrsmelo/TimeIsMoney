@@ -48,6 +48,10 @@ public func -=(lhs: inout NSDecimalNumber, rhs: NSDecimalNumber) {
     lhs = lhs - rhs
 }
 
+public func +=(lhs: inout NSDecimalNumber, rhs: NSDecimalNumber) {
+    lhs = lhs + rhs
+}
+
 public func %(lhs: NSDecimalNumber, rhs: NSDecimalNumber) -> NSDecimalNumber {
     let dividend = lhs
     let divisor = rhs

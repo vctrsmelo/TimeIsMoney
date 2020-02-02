@@ -21,19 +21,56 @@ public enum Calculator {
             return .failure(error)
         }
         
-        let weeklyWorkHours = user.weeklyWorkHours
-        let workdaysCount = user.workdays.count
+        var priceDiscountingAlreadyPaidValue = price
+        var currentWorkSeconds = NSDecimalNumber(value: 0.0)
         
-        let dailyWorkHours = weeklyWorkHours / workdaysCount
+        var yearsIteration: Int = 0
+        // year
+        while priceDiscountingAlreadyPaidValue >= user.getSalaryPerYear() {
+            yearsIteration += 1
+            priceDiscountingAlreadyPaidValue -= user.getSalaryPerYear()
+            currentWorkSeconds += user.yearlyWorkSeconds
+        }
         
-        let weeklySalary = user.monthlySalary.asMoney() / WEEKS_IN_MONTH
-        let dailySalary = weeklySalary / NSDecimalNumber(value: user.workdays.count)
-        let salaryPerHour = dailySalary / NSDecimalNumber(value: dailyWorkHours)
+        var monthIteration: Int = 0
+        // month
+        while priceDiscountingAlreadyPaidValue >= user.getSalaryPerMonth() {
+            monthIteration += 1
+            priceDiscountingAlreadyPaidValue -= user.getSalaryPerMonth()
+            currentWorkSeconds += user.monthlyWorkSeconds
+        }
+    
+        // week
+        while priceDiscountingAlreadyPaidValue >= user.getSalaryPerWeek() {
+            priceDiscountingAlreadyPaidValue -= user.getSalaryPerWeek()
+            currentWorkSeconds += user.weeklyWorkSeconds
+        }
         
-        let hoursWorkingNeeded = (price/salaryPerHour)
-        let secondsWorkingNeeded = hoursWorkingNeeded * SECONDS_IN_HOUR
+        // day
+        while priceDiscountingAlreadyPaidValue >= user.getSalaryPerDay() {
+            priceDiscountingAlreadyPaidValue -= user.getSalaryPerDay()
+            currentWorkSeconds += user.dailyWorkSeconds
+        }
         
-        return .success(secondsWorkingNeeded.timeIntervalValue)
+        // hour
+        while priceDiscountingAlreadyPaidValue >= user.getSalaryPerHour() {
+            priceDiscountingAlreadyPaidValue -= user.getSalaryPerHour()
+            currentWorkSeconds += user.hourWorkSeconds
+        }
+        
+        // minute
+        while priceDiscountingAlreadyPaidValue >= user.getSalaryPerMinute() {
+            priceDiscountingAlreadyPaidValue -= user.getSalaryPerMinute()
+            currentWorkSeconds += user.minuteWorkSeconds
+        }
+        
+        // second
+        while priceDiscountingAlreadyPaidValue >= user.getSalaryPerSecond() {
+            priceDiscountingAlreadyPaidValue -= user.getSalaryPerSecond()
+            currentWorkSeconds += user.secondWorkSeconds
+        }
+        
+        return .success(currentWorkSeconds.timeIntervalValue)
     }
     
     public static func getMoneyReceivedFromWorkSeconds(workSeconds: TimeInterval, user: User) -> Result<Money, CalculatorError> {

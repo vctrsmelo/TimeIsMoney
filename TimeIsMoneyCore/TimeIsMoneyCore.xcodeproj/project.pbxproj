@@ -19,6 +19,7 @@
 		BE2B83C423E1E7C0005847C4 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2B83C323E1E7C0005847C4 /* XCTestCase+Extensions.swift */; };
 		BE2B83C623E1FF0B005847C4 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2B83C523E1FF0B005847C4 /* Routine.swift */; };
 		BE57FFCE23E62D5800FDEFA7 /* DateComponentsFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57FFCD23E62D5800FDEFA7 /* DateComponentsFormatter+Extensions.swift */; };
+		BE57FFD023E7070600FDEFA7 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57FFCF23E7070600FDEFA7 /* CalculatorTests.swift */; };
 		BE815FA02383474C00000FB9 /* TimeIsMoneyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE815F962383474C00000FB9 /* TimeIsMoneyCore.framework */; };
 		BE815FA72383474C00000FB9 /* TimeIsMoneyCore.h in Headers */ = {isa = PBXBuildFile; fileRef = BE815F992383474C00000FB9 /* TimeIsMoneyCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE815FB8238347DD00000FB9 /* FlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE815FB6238347DD00000FB9 /* FlowTests.swift */; };
@@ -58,6 +59,7 @@
 		BE2B83C323E1E7C0005847C4 /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		BE2B83C523E1FF0B005847C4 /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
 		BE57FFCD23E62D5800FDEFA7 /* DateComponentsFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponentsFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		BE57FFCF23E7070600FDEFA7 /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
 		BE815F962383474C00000FB9 /* TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE815F992383474C00000FB9 /* TimeIsMoneyCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeIsMoneyCore.h; sourceTree = "<group>"; };
 		BE815F9A2383474C00000FB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				BE2B83C123E1E78C005847C4 /* UserTests.swift */,
 				BE2B83C323E1E7C0005847C4 /* XCTestCase+Extensions.swift */,
 				BEED4E0C23E4F24C00C81A31 /* ValueTests.swift */,
+				BE57FFCF23E7070600FDEFA7 /* CalculatorTests.swift */,
 			);
 			path = TimeIsMoneyCoreTests;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE2B83C423E1E7C0005847C4 /* XCTestCase+Extensions.swift in Sources */,
+				BE57FFD023E7070600FDEFA7 /* CalculatorTests.swift in Sources */,
 				BEED4E0D23E4F24C00C81A31 /* ValueTests.swift in Sources */,
 				BE2B83C223E1E78C005847C4 /* UserTests.swift in Sources */,
 				BE815FB9238347DD00000FB9 /* TimeTextTranslatorTests.swift in Sources */,
