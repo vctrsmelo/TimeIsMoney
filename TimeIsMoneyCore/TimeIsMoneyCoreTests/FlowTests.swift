@@ -17,17 +17,6 @@ class FlowTests: XCTestCase {
         XCTAssertEqual(sut.getTimeNeededToPay(for: 0.0), Result.success(0.0))
     }
     
-    func testGetTimeWithValidPriceReturnsCorrectWorkTime() {
-        let sut1 = getSUT(salary: 2000, weeklyWorkHours: 40, weeklyWorkDays: 5)
-        let sut2 = getSUT(salary: 1000, weeklyWorkHours: 1, weeklyWorkDays: 1)
-        
-        let expectedWorkTime1 = sut1.user.getWorkTimeToPay(for: 100.0)
-        let expectedWorkTime2 = sut2.user.getWorkTimeToPay(for: 250.0)
-        
-        XCTAssertEqual(sut1.getTimeNeededToPay(forDouble: 100), .success(expectedWorkTime1))
-        XCTAssertEqual(sut2.getTimeNeededToPay(forDouble: 250), .success(expectedWorkTime2))
-    }
-    
     func testGetTimeWithNegativePriceReturnsZero() {
         let sut = getSUT(salary: 2000, weeklyWorkHours: 40, weeklyWorkDays: 5)
         

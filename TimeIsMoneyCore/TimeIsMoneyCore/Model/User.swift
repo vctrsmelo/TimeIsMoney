@@ -131,14 +131,6 @@ public class User: ObservableObject {
 
     }
     
-    public func getWorkTimeToPay(for moneyValue: Double) -> TimeInterval {
-        getWorkTimeToPay(for: Money(value: moneyValue))
-    }
-    
-    public func getWorkTimeToPay(for moneyValue: Money) -> TimeInterval {
-        (moneyValue / getSalaryPerSecond()).timeIntervalValue
-    }
-    
     public func getSalaryPerYear() -> Money {
         NSDecimalNumber(decimal: monthlySalary) * NSDecimalNumber(value: 12)
     }
