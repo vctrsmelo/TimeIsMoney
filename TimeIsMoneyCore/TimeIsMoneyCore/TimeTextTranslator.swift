@@ -39,7 +39,7 @@ public class TimeTextTranslator {
             return "You need to increase your work hours"
         }
         
-        let normalizedWorkTime = getNormalizedWorkTimeFrom(priceAsSeconds: NSDecimalNumber(value: priceAsSeconds), dailyWorkHours: user.dailyWorkHours, weeklyWorkDays: NSDecimalNumber(value: user.workdays.count), user: user)
+        let normalizedWorkTime = getNormalizedWorkTimeFrom(priceAsSeconds: NSDecimalNumber(value: priceAsSeconds), user: user)
         
         adjustFormatterAllowedUnits(for: normalizedWorkTime, user: user)
         
@@ -47,8 +47,8 @@ public class TimeTextTranslator {
 
         return formattedDescription
     }
-    //price as seconds: 43055,04132 //user salary: 1000 // weekly work hours: 10h // workdays: 3 //semanas resultado esperado: 1,3288593
-    public static func getNormalizedWorkTimeFrom(priceAsSeconds: NSDecimalNumber, dailyWorkHours: NSDecimalNumber, weeklyWorkDays: NSDecimalNumber, user: User) -> NSDecimalNumber {
+
+    public static func getNormalizedWorkTimeFrom(priceAsSeconds: NSDecimalNumber, user: User) -> NSDecimalNumber {
         
             var priceSecondsDiscountingTime = priceAsSeconds
             

@@ -18,7 +18,7 @@
 		BE2B83C223E1E78C005847C4 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2B83C123E1E78C005847C4 /* UserTests.swift */; };
 		BE2B83C423E1E7C0005847C4 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2B83C323E1E7C0005847C4 /* XCTestCase+Extensions.swift */; };
 		BE2B83C623E1FF0B005847C4 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2B83C523E1FF0B005847C4 /* Routine.swift */; };
-		BE57FFCE23E62D5800FDEFA7 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57FFCD23E62D5800FDEFA7 /* Date+Extensions.swift */; };
+		BE57FFCE23E62D5800FDEFA7 /* DateComponentsFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57FFCD23E62D5800FDEFA7 /* DateComponentsFormatter+Extensions.swift */; };
 		BE815FA02383474C00000FB9 /* TimeIsMoneyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE815F962383474C00000FB9 /* TimeIsMoneyCore.framework */; };
 		BE815FA72383474C00000FB9 /* TimeIsMoneyCore.h in Headers */ = {isa = PBXBuildFile; fileRef = BE815F992383474C00000FB9 /* TimeIsMoneyCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE815FB8238347DD00000FB9 /* FlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE815FB6238347DD00000FB9 /* FlowTests.swift */; };
@@ -57,7 +57,7 @@
 		BE2B83C123E1E78C005847C4 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		BE2B83C323E1E7C0005847C4 /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		BE2B83C523E1FF0B005847C4 /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
-		BE57FFCD23E62D5800FDEFA7 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		BE57FFCD23E62D5800FDEFA7 /* DateComponentsFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponentsFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		BE815F962383474C00000FB9 /* TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE815F992383474C00000FB9 /* TimeIsMoneyCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeIsMoneyCore.h; sourceTree = "<group>"; };
 		BE815F9A2383474C00000FB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 				BED15C6D23C5283400EA9E46 /* GeneralExtensions.swift */,
 				BE28C50523D7B4A500CA9D13 /* String+Localized.swift */,
 				BEED4E1323E4F7DC00C81A31 /* NSDecimalNumber+Operators.swift */,
-				BE57FFCD23E62D5800FDEFA7 /* Date+Extensions.swift */,
+				BE57FFCD23E62D5800FDEFA7 /* DateComponentsFormatter+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -399,7 +399,7 @@
 				BE2B83C623E1FF0B005847C4 /* Routine.swift in Sources */,
 				BEED4E1223E4F5D500C81A31 /* Money.swift in Sources */,
 				BE28C50623D7B4A500CA9D13 /* String+Localized.swift in Sources */,
-				BE57FFCE23E62D5800FDEFA7 /* Date+Extensions.swift in Sources */,
+				BE57FFCE23E62D5800FDEFA7 /* DateComponentsFormatter+Extensions.swift in Sources */,
 				BE2B83BD23E1E42F005847C4 /* TimeTextTranslator.swift in Sources */,
 				BED15C6E23C5283400EA9E46 /* GeneralExtensions.swift in Sources */,
 				BE2B83BB23E1E41C005847C4 /* Calculator.swift in Sources */,

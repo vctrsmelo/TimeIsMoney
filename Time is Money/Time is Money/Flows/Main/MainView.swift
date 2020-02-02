@@ -126,7 +126,7 @@ struct MainView: View {
     }
     
     private func getExpectedWorkingTimeText(priceAsSeconds: TimeInterval) -> Text {
-        let priceNormalizedToWorkTime = TimeTextTranslator.getNormalizedWorkTimeFrom(priceAsSeconds: NSDecimalNumber(value: priceAsSeconds), dailyWorkHours: user.dailyWorkHours, weeklyWorkDays: NSDecimalNumber(value: user.workdays.count), user: user)
+        let priceNormalizedToWorkTime = TimeTextTranslator.getNormalizedWorkTimeFrom(priceAsSeconds: NSDecimalNumber(value: priceAsSeconds), user: user)
         guard let routine = TimeTextTranslator.getWorkRoutineDescriptionToPay(for: priceNormalizedToWorkTime, dailyWorkHours: user.dailyWorkHours, weeklyWorkDays: user.workdays.count) else {
             return Text("")
         }
