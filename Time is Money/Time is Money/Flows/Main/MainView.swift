@@ -30,14 +30,13 @@ struct MainView: View {
         
         let formattedValue = Formatter.currency.string(from: priceAsMoney) ?? "?"
         let maybeTimeNeeded = flow.getTimeNeededToPay(for: priceAsMoney)
-        let dailyWorkHours = floor(Double(user.weeklyWorkHours) / Double(user.workdays.count))
         let timeMessage: String
         
         let priceAsSeconds: Double
         switch maybeTimeNeeded {
         case .success(let worktime):
             priceAsSeconds = worktime
-            timeMessage = TimeTextTranslator.getWorkTimeDescriptionToPay(for: worktime, dailyWorkHours: dailyWorkHours, weeklyWorkDays:  flow.user.workdays.count)
+            timeMessage = TimeTextTranslator.getWorkTimeDescriptionToPay(for: worktime, user: flow.user)
         case .failure(let error):
             priceAsSeconds = 0.0
             timeMessage = "¯\\_(ツ)_/¯"
@@ -127,13 +126,13 @@ struct MainView: View {
     }
     
     private func getExpectedWorkingTimeText(priceAsSeconds: TimeInterval) -> Text {
-        let priceNormalizedToWorkTime = TimeTextTranslator.normalizeTimeToWorkTime(priceAsSeconds: priceAsSeconds, dailyWorkHours: user.dailyWorkHours, weeklyWorkDays: user.workdays.count)
+        let priceNormalizedToWorkTime = TimeTextTranslator.getNormalizedWorkTimeFrom(priceAsSeconds: NSDecimalNumber(value: priceAsSeconds), user: user)
         guard let routine = TimeTextTranslator.getWorkRoutineDescriptionToPay(for: priceNormalizedToWorkTime, dailyWorkHours: user.dailyWorkHours, weeklyWorkDays: user.workdays.count) else {
             return Text("")
         }
         
-        let seconds = routine.value * 1.hourInSeconds
-        guard let routineHoursAndMinutes = Formatter.hoursAndMinutes(seconds: seconds) else {
+        let seconds = routine.value * NSDecimalNumber(value: 1.hourInSeconds)
+        guard let routineHoursAndMinutes = Formatter.hoursAndMinutes(seconds: seconds.doubleValue) else {
             return Text("")
         }
         

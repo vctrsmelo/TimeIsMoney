@@ -12,14 +12,23 @@ import XCTest
 
 extension XCTestCase {
 
-    func getUser(salary: Double, weeklyWorkHours: Double, weeklyWorkDays: Int) -> User {
+    func getUser(salary: Double = 1000, dailyWorkHours: Double, weeklyWorkDays: Int) -> User {
+        
+        let weeklyWorkHours = NSDecimalNumber(value: dailyWorkHours) * NSDecimalNumber(value: weeklyWorkDays)
+        
+        return getUser(salary: salary, weeklyWorkHours: weeklyWorkHours.timeIntervalValue, weeklyWorkDays: weeklyWorkDays)
+    }
+    
+    func getUser(salary: Double = 1000, weeklyWorkHours: Double, weeklyWorkDays: Int) -> User {
         
         var workdays: [Weekday] = [.monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday]
         
-        let notWorkingDays = (1...(7 - weeklyWorkDays))
-        
-        notWorkingDays.forEach { _ in
-            workdays.removeLast()
+        if weeklyWorkDays < 7 {
+            let notWorkingDays = (1...(7 - weeklyWorkDays))
+            
+            notWorkingDays.forEach { _ in
+                workdays.removeLast()
+            }
         }
         
         let user = User(testing: true)

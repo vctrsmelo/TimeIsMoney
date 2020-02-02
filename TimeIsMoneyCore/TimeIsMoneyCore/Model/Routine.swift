@@ -9,7 +9,7 @@
 import Foundation
 
 public struct Routine {
-    public let value: Double
+    public let value: NSDecimalNumber
     public let period: RoutineTimePeriod
 }
 

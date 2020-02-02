@@ -21,11 +21,14 @@ public enum Calculator {
             return .failure(error)
         }
         
-        let dailyWorkHours = NSDecimalNumber(value: user.weeklyWorkHours) / NSDecimalNumber(value: user.workdays.count)
+        let weeklyWorkHours = user.weeklyWorkHours
+        let workdaysCount = user.workdays.count
+        
+        let dailyWorkHours = weeklyWorkHours / workdaysCount
         
         let weeklySalary = user.monthlySalary.asMoney() / WEEKS_IN_MONTH
         let dailySalary = weeklySalary / NSDecimalNumber(value: user.workdays.count)
-        let salaryPerHour = dailySalary / dailyWorkHours
+        let salaryPerHour = dailySalary / NSDecimalNumber(value: dailyWorkHours)
         
         let hoursWorkingNeeded = (price/salaryPerHour)
         let secondsWorkingNeeded = hoursWorkingNeeded * SECONDS_IN_HOUR

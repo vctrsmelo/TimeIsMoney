@@ -22,6 +22,10 @@ public extension Double {
     func asDecimal() -> Decimal {
         Decimal(self)
     }
+    
+    func asNSDecimalNumber() -> NSDecimalNumber {
+        NSDecimalNumber(value: self)
+    }
 }
 
 public extension TimeInterval {
@@ -63,19 +67,22 @@ public extension TimeInterval {
     }
     
     var daysInSeconds: Self {
-        self * hoursInSeconds * 24
+        self * 86400
     }
     
     var weeksInSeconds: Self {
-        self * daysInSeconds * 7
+        self * 604800
     }
     
     var monthsInSeconds: Self {
-        self * weeksInSeconds * WEEKS_IN_MONTH.doubleValue
+        (NSDecimalNumber(value: self) * (NSDecimalNumber(value: 604800) * WEEKS_IN_MONTH)).doubleValue
     }
     
     var yearsInSeconds: Self {
-        self * monthsInSeconds * 12
+        
+        let oneYearInSeconds = NSDecimalNumber(value: 1) * (NSDecimalNumber(value: 1) * (NSDecimalNumber(value: 604800) * WEEKS_IN_MONTH) * NSDecimalNumber(value: 12))
+        
+        return (NSDecimalNumber(value: self) * oneYearInSeconds).doubleValue
     }
     
 }

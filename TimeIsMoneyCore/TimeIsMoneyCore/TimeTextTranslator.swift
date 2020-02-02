@@ -22,7 +22,11 @@ public class TimeTextTranslator {
     private static let formatter: DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = .full
-        formatter.allowedUnits = [.year, .month, .weekOfMonth, .day, .hour, .minute, .second]
+        formatter.allowedUnits = [NSCalendar.Unit.era, .year, .month, .weekOfMonth, .day, .hour, .minute, .second]
+        
+        let calendar = Calendar.current
+        formatter.calendar = calendar
+        
         return formatter
     }()
     
@@ -30,83 +34,99 @@ public class TimeTextTranslator {
         return formatter.string(from: fullWorkTime)!
     }
     
-    public static func getWorkTimeDescriptionToPay(for priceAsSeconds: WorkTimeSeconds, dailyWorkHours: Double, weeklyWorkDays: Int) -> String {
-        guard dailyWorkHours > 0 else {
+    public static func getWorkTimeDescriptionToPay(for priceAsSeconds: WorkTimeSeconds, user: User) -> String {
+        guard user.dailyWorkHours > 0 else {
             return "You need to increase your work hours"
         }
         
-        let normalizedWorkTime = normalizeTimeToWorkTime(priceAsSeconds: priceAsSeconds, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
+        let normalizedWorkTime = getNormalizedWorkTimeFrom(priceAsSeconds: NSDecimalNumber(value: priceAsSeconds), user: user)
         
-        return getWorkTimeDescriptionToPay(workTime: normalizedWorkTime)
-    }
-    
-    private static func isWorkTimeLesserThanADay(priceAsSeconds: WorkTimeSeconds,dailyWorkHours: WorkTimeSeconds) -> Bool {
-        priceAsSeconds <= dailyWorkHours * 1.hourInSeconds
-    }
-    
-    private static func isWorkTimeLesserThanAWeek(priceAsSeconds: WorkTimeSeconds,dailyWorkHours: WorkTimeSeconds, weeklyWorkDays: Int) -> Bool {
-        priceAsSeconds <= getWeeklyWorkHours(dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays)
-    }
-    
-    private static func getWeeklyWorkHours(dailyWorkHours: WorkTimeSeconds, weeklyWorkDays: Int) -> WorkTimeSeconds {
-        dailyWorkHours * Double(weeklyWorkDays) * (SecondsContainedIn.hour.asDouble())
-    }
-    
-    private static func getWorkTimeDescriptionToPay(workTime: NSDecimalNumber) -> String {
+        adjustFormatterAllowedUnits(for: normalizedWorkTime, user: user)
         
-        adjustFormatterAllowedUnits(for: workTime)
-        
-        return formatter.string(from: workTime.timeIntervalValue) ?? "¯\\_(ツ)_/¯"
-    }
-    
-    public static func normalizeTimeToWorkTime(priceAsSeconds: WorkTimeSeconds, dailyWorkHours: Double, weeklyWorkDays: Int) -> NSDecimalNumber {
-        
-        if isWorkTimeLesserThanADay(priceAsSeconds: priceAsSeconds, dailyWorkHours: dailyWorkHours) {
-            return NSDecimalNumber(value: priceAsSeconds)
-        }
-        
-        // needed because otherwise would consider 24h as work daily routine.
-        let workTimeNormalizingDailyWork =  NSDecimalNumber(value: 24) * (NSDecimalNumber(value: priceAsSeconds) / NSDecimalNumber(value: dailyWorkHours))
+        let formattedDescription = formatter.string(from: normalizedWorkTime) ?? "¯\\_(ツ)_/¯"
 
-        if isWorkTimeLesserThanAWeek(priceAsSeconds: priceAsSeconds, dailyWorkHours: dailyWorkHours, weeklyWorkDays: weeklyWorkDays) {
-            return workTimeNormalizingDailyWork
-        }
-        
-        // needed because otherwise would consider 7 days per week as work weekly routine.
-        let workTimeNormalizingWeekWork = NSDecimalNumber(value: 7) * workTimeNormalizingDailyWork / NSDecimalNumber(value: weeklyWorkDays)
+        return formattedDescription
+    }
 
-        return workTimeNormalizingWeekWork
+    public static func getNormalizedWorkTimeFrom(priceAsSeconds: NSDecimalNumber, user: User) -> NSDecimalNumber {
+        
+            var priceSecondsDiscountingTime = priceAsSeconds
+            
+            let oneWorkYearInSeconds = user.yearlyWorkSeconds
+            let oneWorkMonthInSeconds = user.monthlyWorkSeconds
+            let oneWorkWeekInSeconds = user.weeklyWorkSeconds
+            let oneWorkDayInSeconds = user.dailyWorkSeconds
+        
+            let oneYearInSeconds = NSDecimalNumber(value: 1.yearInSeconds)
+            let oneMonthInSeconds = NSDecimalNumber(value: 1.monthInSeconds)
+            let oneWeekInSeconds = NSDecimalNumber(value: 1.weekInSeconds)
+            let oneDayInSeconds = NSDecimalNumber(value: 1.dayInSeconds)
+            let oneHourInSeconds = NSDecimalNumber(value: 1.hourInSeconds)
+            let oneMinuteInSeconds = NSDecimalNumber(value: 1.minuteInSeconds)
+        
+            let yearsNeeded = (priceSecondsDiscountingTime / oneWorkYearInSeconds).floor
+            let yearsNeededAsSeconds = yearsNeeded * oneYearInSeconds
+            priceSecondsDiscountingTime -= yearsNeeded * oneWorkYearInSeconds
+
+            let monthsNeeded = (priceSecondsDiscountingTime / oneWorkMonthInSeconds).floor
+            let monthsNeededAsSeconds = monthsNeeded * oneMonthInSeconds
+            priceSecondsDiscountingTime -= monthsNeeded * oneWorkMonthInSeconds
+            
+            let weeksNeeded = (priceSecondsDiscountingTime / oneWorkWeekInSeconds).floor
+            let weeksNeededAsSeconds = weeksNeeded * oneWeekInSeconds
+            priceSecondsDiscountingTime -= weeksNeeded * oneWorkWeekInSeconds
+            
+            let daysNeeded = (priceSecondsDiscountingTime / oneWorkDayInSeconds).floor
+            let daysNeededAsSeconds = daysNeeded * oneDayInSeconds
+            priceSecondsDiscountingTime -= daysNeeded * oneWorkDayInSeconds
+            
+            let hoursNeeded = (priceSecondsDiscountingTime / oneHourInSeconds).floor
+            let hoursNeededAsSeconds = hoursNeeded * oneHourInSeconds
+            priceSecondsDiscountingTime -= hoursNeeded * oneHourInSeconds
+        
+            let minutesNeeded = (priceSecondsDiscountingTime / oneMinuteInSeconds).floor
+            let minutesNeededAsSeconds = minutesNeeded * oneMinuteInSeconds
+            priceSecondsDiscountingTime -= minutesNeeded * oneMinuteInSeconds
+            
+            let neededSeconds = priceSecondsDiscountingTime
+            
+            let returnValue = yearsNeededAsSeconds + monthsNeededAsSeconds + weeksNeededAsSeconds + daysNeededAsSeconds + hoursNeededAsSeconds + minutesNeededAsSeconds + neededSeconds
+            
+            return returnValue
     }
     
-    public static func getWorkRoutineDescriptionToPay(for price: NSDecimalNumber, dailyWorkHours: Double, weeklyWorkDays: Int) -> Routine? {
+    private static func hoursNeededAreExactlyANumberOfDays(_ hoursNeeded: NSDecimalNumber, dailyWorkHours: NSDecimalNumber) -> Bool {
+        hoursNeeded % dailyWorkHours == 0
+    }
+    
+    public static func getWorkRoutineDescriptionToPay(for price: NSDecimalNumber, dailyWorkHours: NSDecimalNumber, weeklyWorkDays: Int) -> Routine? {
         guard price >= NSDecimalNumber(value: 1.dayInSeconds) else { return nil }
         
         if price < NSDecimalNumber(value: 1.weekInSeconds) {
             return Routine(value: dailyWorkHours, period: .daily)
         } else {
-            let weeklyWorkHours = dailyWorkHours * Double(weeklyWorkDays)
+            let weeklyWorkHours = dailyWorkHours * NSDecimalNumber(value: weeklyWorkDays)
             return Routine(value: weeklyWorkHours, period: .weekly)
         }
     }
     
-    private static func adjustFormatterAllowedUnits(for seconds: NSDecimalNumber) {
+    private static func adjustFormatterAllowedUnits(for seconds: NSDecimalNumber, user: User) {
         formatter.allowedUnits = [.year, .month, .weekOfMonth, .day, .hour, .minute, .second]
         
-        if isLongerThanAnHour(seconds) {
+        if isLongerThanADay(seconds) {
             formatter.allowedUnits.remove(.second)
+        }
+        
+        if isLongerThanAWeek(seconds) {
             formatter.allowedUnits.remove(.minute)
         }
         
-        if isLongerThanADay(seconds) {
+        if isLongerThanAMonth(seconds) {
             formatter.allowedUnits.remove(.hour)
         }
         
-        if isLongerThanAMonth(seconds) {
-            formatter.allowedUnits.remove(.day)
-        }
-        
         if isLongerThanAYear(seconds) {
-            formatter.allowedUnits.remove(.weekOfMonth)
+            formatter.allowedUnits.remove(.day)
         }
     }
     
@@ -130,4 +150,19 @@ public class TimeTextTranslator {
         return (seconds >= SecondsContainedIn.year.asNSDecimalNumber())
     }
     
+    private static func isLongerThanAWorkDay(_ seconds: NSDecimalNumber, dailyWorkSeconds: NSDecimalNumber) -> Bool {
+        return (seconds >= dailyWorkSeconds)
+    }
+    
+    private static func isLongerThanAWorkWeek(_ seconds: NSDecimalNumber, weekyWorkSeconds: NSDecimalNumber) -> Bool {
+        return (seconds >= weekyWorkSeconds)
+    }
+    
+    private static func isLongerThanAWorkMonth(_ seconds: NSDecimalNumber, monthlyWorkSeconds: NSDecimalNumber) -> Bool {
+        return (seconds >= monthlyWorkSeconds)
+    }
+    
+    private static func isLongerThanAWorkYear(_ seconds: NSDecimalNumber, yearlyWorkSeconds: NSDecimalNumber) -> Bool {
+        return (seconds >= yearlyWorkSeconds)
+    }
 }
