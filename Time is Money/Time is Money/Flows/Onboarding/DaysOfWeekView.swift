@@ -35,17 +35,14 @@ struct DaysOfWeekView: View {
                         .lineLimit(nil)
                         .adaptableFont(.smallTitleFont, maxSize: 30)
                         .foregroundColor(Design.Color.Text.title)
-                        .background(Color.red)
-                }.frame(maxHeight: g.size.height/4)
-
-                Spacer()
+                }
                 
                 HStack {
                     Image("Calendar_img")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: UIScreen.main.bounds.width/2)
-                        .background(Color.yellow)
+                        .frame(width: UIScreen.main.bounds.width/2.5)
+                        .padding(.bottom, 30)
                 }
                 
                 Spacer()
@@ -54,14 +51,14 @@ struct DaysOfWeekView: View {
                     ForEach(Weekday.all(), id: \.self) {
                         WeekdayView($0)
                     }
+                }.frame(maxWidth: UIScreen.main.bounds.width-16, minHeight: 50, maxHeight: 100, alignment: .center)
+                
+                HStack {
+                    Text(self.workdays)
+                        .font(Design.Font.smallRegular)
+                        .foregroundColor(Design.Color.Text.standard)
                 }
-                .background(Color.green)
-                
                 Spacer()
-                
-                Text(self.workdays)
-                    .font(Design.Font.smallRegular)
-                    .foregroundColor(Design.Color.Text.standard)
         
         }
         .withBackground()

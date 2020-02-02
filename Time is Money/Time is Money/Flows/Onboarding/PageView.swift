@@ -20,6 +20,7 @@ struct PageView<Page: View>: View {
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
+                BackgroundView()
                 VStack {
                     PageViewController(controllers: viewControllers, currentPage: $currentPage)
                         .edgesIgnoringSafeArea(.all)
@@ -32,11 +33,11 @@ struct PageView<Page: View>: View {
                     }
                 }
             }
-            .background(Design.Color.Background.standard)
             .navigationBarTitle("")
             .navigationBarHidden(true)
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .withBackground()
     }
 }
 

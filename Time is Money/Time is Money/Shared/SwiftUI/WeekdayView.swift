@@ -37,12 +37,13 @@ struct WeekdayView: View {
                 }
             }) {
                 Text(self.weekday.localized())
-                .font(Design.Font.smallRegular)
+                    .adaptableFont(.smallRegular, maxSize: 30)
+                .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
                 .foregroundColor(Color.white)
             }
             
         }
-        .frame(width: 40, height: 40, alignment: .center)
+//        .frame(width: 40, height: 40, alignment: .center)
     }
 }
 

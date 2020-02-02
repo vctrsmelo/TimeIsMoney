@@ -23,19 +23,19 @@ struct WelcomeView: View {
                 .foregroundColor(Design.Color.Text.title)
             
             //subtitle
-            Text("Let's find out how much things really cost?")                    .lineLimit(nil)
+            Text("Let's find out how much things really cost?")
+                .lineLimit(nil)
                 .adaptableFont(.subtitle, maxSize: 25)
+                .frame(idealWidth: UIScreen.main.bounds.width-64, maxWidth: UIScreen.main.bounds.width-16, minHeight: 25, idealHeight: 50, alignment: .center)
                 .foregroundColor(Design.Color.Text.title)
             Spacer()
             //description
 
-            GeometryReader { g in
-                Text("For this we will only need three information. Let's go? 😄")
-                    .lineLimit(nil)
-                    .frame(idealWidth: g.size.width-64, maxWidth: g.size.width, minHeight: 25, idealHeight: 50, alignment: .center)
-                    .adaptableFont(.standardLight, maxSize: 20)
-                    .foregroundColor(Design.Color.Text.standard)
-            }
+            Text("For this we will only need three information. Let's go? 😄")
+                .lineLimit(nil)
+                .frame(idealWidth: UIScreen.main.bounds.width-64, maxWidth: UIScreen.main.bounds.width-16, minHeight: 25, idealHeight: 50, alignment: .center)
+                .adaptableFont(.standardLight, maxSize: 20)
+                .foregroundColor(Design.Color.Text.standard)
             Spacer()
         }
         .withBackground()

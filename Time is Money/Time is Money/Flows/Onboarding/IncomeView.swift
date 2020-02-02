@@ -33,6 +33,7 @@ struct IncomeView: View {
         return Group {
             VStack {
                 Text(R.string.localizable.whatIsYourIncome())
+                    .padding(.top, 20)
                     .font(Design.Font.Title.smallTitleFont)
                     .foregroundColor(Design.Color.Text.title)
                     .offset(x: 0, y: topTextPadding)
