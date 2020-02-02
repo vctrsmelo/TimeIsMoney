@@ -89,3 +89,36 @@ extension View {
                 .navigationBarHidden(true)
     }
 }
+
+
+// MARK: - Adaptable Font
+
+extension View {
+    
+    private func getSize(_ g: GeometryProxy, maxSize: CGFloat? = nil) -> CGFloat {
+        
+        let calculatedSize = (g.size.height > g.size.width) ? g.size.width * 0.4 : g.size.height * 0.4
+        
+        if let maxSize = maxSize {
+            return calculatedSize > maxSize ? UIFontMetrics.default.scaledValue(for: maxSize) : calculatedSize
+        } else {
+            return calculatedSize
+        }
+    }
+    
+    
+    func adaptableFont(_ adaptableFont: Design.AdaptableFont, maxSize: CGFloat? = nil) ->
+        some View {
+        GeometryReader{g in
+            self
+                .font(adaptableFont.getFont(size:  self.getSize(g, maxSize: maxSize)))
+        }
+    }
+    
+    func adaptableFont(_ adaptableFont: Design.AdaptableFont.Title, maxSize: CGFloat? = nil) -> some View {
+        GeometryReader{g in
+            self
+                .font(adaptableFont.getFont(size: self.getSize(g, maxSize: maxSize)))
+        }
+    }
+}

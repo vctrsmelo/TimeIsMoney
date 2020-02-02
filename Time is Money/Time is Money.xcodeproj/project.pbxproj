@@ -14,6 +14,7 @@
 		BE28C4F823D7AB3400CA9D13 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE28C4FA23D7AB3400CA9D13 /* Localizable.strings */; };
 		BE28C4FE23D7AC7200CA9D13 /* Time_is_MoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28C4FD23D7AC7200CA9D13 /* Time_is_MoneyTests.swift */; };
 		BE28C50023D7AD9600CA9D13 /* PreviewProvider+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28C4FF23D7AD9600CA9D13 /* PreviewProvider+Locale.swift */; };
+		BE37722923E7149F003C8D3F /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37722823E7149F003C8D3F /* Device.swift */; };
 		BE57677E23CE838D004BF48C /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57677D23CE838D004BF48C /* EditView.swift */; };
 		BE66B18323BD096800166912 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B18223BD096800166912 /* WelcomeView.swift */; };
 		BE815FC72383497200000FB9 /* TimeIsMoneyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */; };
@@ -22,6 +23,7 @@
 		BEA9AB3423C5308B0057EA1E /* CurrencyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA9AB3323C5308B0057EA1E /* CurrencyField.swift */; };
 		BEB0979A23BF984F00244E30 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0979923BF984F00244E30 /* PageViewController.swift */; };
 		BEB0979D23BF990E00244E30 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0979C23BF990E00244E30 /* PageView.swift */; };
+		BEBACBB123E745EA002ABD20 /* ScaledFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBACBB023E745EA002ABD20 /* ScaledFont.swift */; };
 		BEC00AE723BFD6A0001B6724 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC00AE623BFD6A0001B6724 /* PageControl.swift */; };
 		BEC00AE923BFDC2C001B6724 /* WorkTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC00AE823BFDC2C001B6724 /* WorkTimeView.swift */; };
 		BEC00AEB23BFDC3C001B6724 /* IncomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC00AEA23BFDC3C001B6724 /* IncomeView.swift */; };
@@ -84,6 +86,7 @@
 		BE28C4FC23D7AB5300CA9D13 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BE28C4FD23D7AC7200CA9D13 /* Time_is_MoneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_is_MoneyTests.swift; sourceTree = "<group>"; };
 		BE28C4FF23D7AD9600CA9D13 /* PreviewProvider+Locale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewProvider+Locale.swift"; sourceTree = "<group>"; };
+		BE37722823E7149F003C8D3F /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		BE57677D23CE838D004BF48C /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		BE66B18223BD096800166912 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +94,7 @@
 		BEA9AB3323C5308B0057EA1E /* CurrencyField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyField.swift; sourceTree = "<group>"; };
 		BEB0979923BF984F00244E30 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		BEB0979C23BF990E00244E30 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		BEBACBB023E745EA002ABD20 /* ScaledFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledFont.swift; sourceTree = "<group>"; };
 		BEC00AE623BFD6A0001B6724 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		BEC00AE823BFDC2C001B6724 /* WorkTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkTimeView.swift; sourceTree = "<group>"; };
 		BEC00AEA23BFDC3C001B6724 /* IncomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeView.swift; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 		BE37E3D823CF93A000A4D3CC /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				BEBACBAF23E745E0002ABD20 /* ViewModifiers */,
 				BEC00AEE23BFE361001B6724 /* BackgroundView.swift */,
 				BEC748BA23D23BB50027F26D /* WeekHStack.swift */,
 				BEC748BC23D23BCF0027F26D /* WeekdayView.swift */,
@@ -181,6 +186,7 @@
 				BEC00AF023BFE57D001B6724 /* Extensions */,
 				BEFBF0E623BD470200FBE0D2 /* Design.swift */,
 				BE85876823BFF2A300DEFE98 /* Formatters.swift */,
+				BE37722823E7149F003C8D3F /* Device.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -231,11 +237,19 @@
 				BEC00AF323BFE5CD001B6724 /* UIKit */,
 				BEB0979C23BF990E00244E30 /* PageView.swift */,
 				BE66B18223BD096800166912 /* WelcomeView.swift */,
-				BEC00AE823BFDC2C001B6724 /* WorkTimeView.swift */,
 				BE270BD623C039E50099AAC7 /* DaysOfWeekView.swift */,
+				BEC00AE823BFDC2C001B6724 /* WorkTimeView.swift */,
 				BEC00AEA23BFDC3C001B6724 /* IncomeView.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		BEBACBAF23E745E0002ABD20 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				BEBACBB023E745EA002ABD20 /* ScaledFont.swift */,
+			);
+			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
 		BEC00AF023BFE57D001B6724 /* Extensions */ = {
@@ -532,6 +546,7 @@
 				BEC00AE723BFD6A0001B6724 /* PageControl.swift in Sources */,
 				BE85876923BFF2A300DEFE98 /* Formatters.swift in Sources */,
 				BEB0979A23BF984F00244E30 /* PageViewController.swift in Sources */,
+				BEBACBB123E745EA002ABD20 /* ScaledFont.swift in Sources */,
 				BEC748BB23D23BB50027F26D /* WeekHStack.swift in Sources */,
 				BE28C50023D7AD9600CA9D13 /* PreviewProvider+Locale.swift in Sources */,
 				BEC748BD23D23BCF0027F26D /* WeekdayView.swift in Sources */,
@@ -547,6 +562,7 @@
 				BE57677E23CE838D004BF48C /* EditView.swift in Sources */,
 				EE427009234F4A1E007A63D9 /* MainView.swift in Sources */,
 				BEC00AE923BFDC2C001B6724 /* WorkTimeView.swift in Sources */,
+				BE37722923E7149F003C8D3F /* Device.swift in Sources */,
 				EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

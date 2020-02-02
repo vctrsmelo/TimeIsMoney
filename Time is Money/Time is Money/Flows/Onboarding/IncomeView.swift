@@ -37,7 +37,7 @@ struct IncomeView: View {
                     .foregroundColor(Design.Color.Text.title)
                     .offset(x: 0, y: topTextPadding)
                 Spacer()
-                Image("Money")
+                Image("Money_img")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: UIScreen.main.bounds.width-120, alignment: .center)
@@ -62,6 +62,8 @@ struct IncomeView: View {
                 Spacer()
             }
         }.withBackground()
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
         .keyboardSensible($offsetValue, type: .paddingAndOffset, onAppearKeyboardCustom: {
             self.topTextPadding = -UIScreen.main.bounds.height/16
         }, onHideKeyboardCustom: {

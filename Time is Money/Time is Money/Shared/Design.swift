@@ -12,6 +12,20 @@ import SwiftUI
 
 enum Design {
     
+    enum AdaptableFont {
+        case standardLight
+        case standardRegular
+        case standardMedium
+        case smallRegular
+        case subtitle
+        
+        enum Title {
+            case largeTitleFont
+            case smallTitleFont
+            
+        }
+    }
+    
     enum Font {
         
         static var standardLight = SwiftUI.Font.system(size: 25, weight: .light)
@@ -80,5 +94,34 @@ extension Design {
             static var standard = UIKit.UIColor(red: 75/255.0, green: 105/255.0, blue: 118/255.0, alpha: 1)
         }
     
+    }
+}
+
+
+extension Design.AdaptableFont {
+    func getFont(size: CGFloat) -> SwiftUI.Font {
+        
+        switch self {
+
+        case .standardLight: return SwiftUI.Font.system(size: size, weight: .light)
+        case .standardRegular: return SwiftUI.Font.system(size: size, weight: .regular)
+        case .standardMedium: return SwiftUI.Font.system(size: size, weight: .medium)
+        case .smallRegular: return SwiftUI.Font.system(size: size, weight: .regular)
+        case .subtitle: return SwiftUI.Font.system(size: size, weight: .regular)
+        
+        }
+    }
+}
+
+extension Design.AdaptableFont.Title {
+    
+    func getFont(size: CGFloat) -> SwiftUI.Font {
+        
+        switch self {
+
+        case .largeTitleFont: return SwiftUI.Font.system(size: size, weight: .heavy)
+        case .smallTitleFont: return SwiftUI.Font.system(size: size, weight: .heavy)
+            
+        }
     }
 }

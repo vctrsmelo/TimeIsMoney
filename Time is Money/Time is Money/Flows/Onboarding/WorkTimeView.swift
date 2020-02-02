@@ -28,16 +28,18 @@ struct WorkTimeView: View {
         return Group {
             VStack {
                 Text(R.string.localizable.howManyHoursDoYouWorkPerWeek())
-                    .font(Design.Font.Title.customTitleFont(size: 30))
+                    .lineLimit(nil)
+                    .adaptableFont(.smallTitleFont, maxSize: 30)
                     .foregroundColor(Design.Color.Text.title)
                 Image("table2")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: UIScreen.main.bounds.width-120, alignment: .center)
-                    .frame(minHeight: 150, alignment: .center)
+                    .frame(minHeight: 50, alignment: .center)
                     .animation(.none)
+            
                 Text("\(hours[hoursArrayIndex])")
-                    .font(Design.Font.Title.largeTitleFont)
+                    .font(Design.Font.Title.smallTitleFont)
                     .foregroundColor(Design.Color.Text.standard)
                     .padding(.bottom, 6)
                 Text("Hours per week")
@@ -47,6 +49,8 @@ struct WorkTimeView: View {
                 Spacer()
             }
         }.withBackground()
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
     }
     
     private func maybePickerSection(selectedHours: Binding<Int>) -> some View {

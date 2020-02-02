@@ -109,16 +109,16 @@ struct R: Rswift.Validatable {
   struct image {
     /// Image `CalendarIcon`.
     static let calendarIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "CalendarIcon")
-    /// Image `Calendar`.
-    static let calendar = Rswift.ImageResource(bundle: R.hostingBundle, name: "Calendar")
+    /// Image `Calendar_img`.
+    static let calendar_img = Rswift.ImageResource(bundle: R.hostingBundle, name: "Calendar_img")
     /// Image `MoneyClockIcon`.
     static let moneyClockIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "MoneyClockIcon")
-    /// Image `MoneyClock`.
-    static let moneyClock = Rswift.ImageResource(bundle: R.hostingBundle, name: "MoneyClock")
+    /// Image `MoneyClock_img`.
+    static let moneyClock_img = Rswift.ImageResource(bundle: R.hostingBundle, name: "MoneyClock_img")
     /// Image `MoneyIcon`.
     static let moneyIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "MoneyIcon")
-    /// Image `Money`.
-    static let money = Rswift.ImageResource(bundle: R.hostingBundle, name: "Money")
+    /// Image `Money_img`.
+    static let money_img = Rswift.ImageResource(bundle: R.hostingBundle, name: "Money_img")
     /// Image `table0`.
     static let table0 = Rswift.ImageResource(bundle: R.hostingBundle, name: "table0")
     /// Image `table10`.
@@ -149,13 +149,6 @@ struct R: Rswift.Validatable {
     static let table9 = Rswift.ImageResource(bundle: R.hostingBundle, name: "table9")
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "Calendar", bundle: ..., traitCollection: ...)`
-    static func calendar(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.calendar, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "CalendarIcon", bundle: ..., traitCollection: ...)`
     static func calendarIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.calendarIcon, compatibleWith: traitCollection)
@@ -163,16 +156,9 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "Money", bundle: ..., traitCollection: ...)`
-    static func money(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.money, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "MoneyClock", bundle: ..., traitCollection: ...)`
-    static func moneyClock(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.moneyClock, compatibleWith: traitCollection)
+    /// `UIImage(named: "Calendar_img", bundle: ..., traitCollection: ...)`
+    static func calendar_img(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.calendar_img, compatibleWith: traitCollection)
     }
     #endif
 
@@ -184,9 +170,23 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "MoneyClock_img", bundle: ..., traitCollection: ...)`
+    static func moneyClock_img(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.moneyClock_img, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "MoneyIcon", bundle: ..., traitCollection: ...)`
     static func moneyIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.moneyIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Money_img", bundle: ..., traitCollection: ...)`
+    static func money_img(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.money_img, compatibleWith: traitCollection)
     }
     #endif
 
@@ -298,12 +298,16 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 42 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 57 localization keys.
     struct localizable {
       /// en translation: (Set your workdays to update here)
       ///
       /// Locales: pt-BR, en
       static let setYourWorkdaysToUpdateHere = Rswift.StringResource(key: "(Set your workdays to update here)", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: Calendar_img
+      ///
+      /// Locales: pt-BR, en
+      static let calendar_img = Rswift.StringResource(key: "Calendar_img", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
       /// en translation: F
       ///
       /// Locales: pt-BR, en
@@ -356,6 +360,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: pt-BR, en
       static let mon_weekday_long = Rswift.StringResource(key: "Mon_weekday_long", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: MoneyClock_img
+      ///
+      /// Locales: pt-BR, en
+      static let moneyClock_img = Rswift.StringResource(key: "MoneyClock_img", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: Money_img
+      ///
+      /// Locales: pt-BR, en
+      static let money_img = Rswift.StringResource(key: "Money_img", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
       /// en translation: Monthly Income
       ///
       /// Locales: pt-BR, en
@@ -464,6 +476,54 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: pt-BR, en
       static let perWeek = Rswift.StringResource(key: "per week", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: table1
+      ///
+      /// Locales: pt-BR, en
+      static let table1 = Rswift.StringResource(key: "table1", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: table10
+      ///
+      /// Locales: pt-BR, en
+      static let table10 = Rswift.StringResource(key: "table10", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: table11
+      ///
+      /// Locales: pt-BR, en
+      static let table11 = Rswift.StringResource(key: "table11", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: table12
+      ///
+      /// Locales: pt-BR, en
+      static let table12 = Rswift.StringResource(key: "table12", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: table2
+      ///
+      /// Locales: pt-BR, en
+      static let table2 = Rswift.StringResource(key: "table2", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: table3
+      ///
+      /// Locales: pt-BR, en
+      static let table3 = Rswift.StringResource(key: "table3", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: table4
+      ///
+      /// Locales: pt-BR, en
+      static let table4 = Rswift.StringResource(key: "table4", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: table5
+      ///
+      /// Locales: pt-BR, en
+      static let table5 = Rswift.StringResource(key: "table5", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: table6
+      ///
+      /// Locales: pt-BR, en
+      static let table6 = Rswift.StringResource(key: "table6", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: table7
+      ///
+      /// Locales: pt-BR, en
+      static let table7 = Rswift.StringResource(key: "table7", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: table8
+      ///
+      /// Locales: pt-BR, en
+      static let table8 = Rswift.StringResource(key: "table8", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: table9
+      ///
+      /// Locales: pt-BR, en
+      static let table9 = Rswift.StringResource(key: "table9", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
       /// en translation: to pay only those
       ///
       /// Locales: pt-BR, en
@@ -482,6 +542,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("(Set your workdays to update here)", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Calendar_img
+      ///
+      /// Locales: pt-BR, en
+      static func calendar_img(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Calendar_img", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Calendar_img"
+        }
+
+        return NSLocalizedString("Calendar_img", bundle: bundle, comment: "")
       }
 
       /// en translation: F
@@ -677,6 +752,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Mon_weekday_long", bundle: bundle, comment: "")
+      }
+
+      /// en translation: MoneyClock_img
+      ///
+      /// Locales: pt-BR, en
+      static func moneyClock_img(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("MoneyClock_img", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "MoneyClock_img"
+        }
+
+        return NSLocalizedString("MoneyClock_img", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Money_img
+      ///
+      /// Locales: pt-BR, en
+      static func money_img(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Money_img", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Money_img"
+        }
+
+        return NSLocalizedString("Money_img", bundle: bundle, comment: "")
       }
 
       /// en translation: Monthly Income
@@ -1082,6 +1187,186 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("per week", bundle: bundle, comment: "")
+      }
+
+      /// en translation: table1
+      ///
+      /// Locales: pt-BR, en
+      static func table1(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("table1", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "table1"
+        }
+
+        return NSLocalizedString("table1", bundle: bundle, comment: "")
+      }
+
+      /// en translation: table10
+      ///
+      /// Locales: pt-BR, en
+      static func table10(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("table10", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "table10"
+        }
+
+        return NSLocalizedString("table10", bundle: bundle, comment: "")
+      }
+
+      /// en translation: table11
+      ///
+      /// Locales: pt-BR, en
+      static func table11(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("table11", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "table11"
+        }
+
+        return NSLocalizedString("table11", bundle: bundle, comment: "")
+      }
+
+      /// en translation: table12
+      ///
+      /// Locales: pt-BR, en
+      static func table12(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("table12", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "table12"
+        }
+
+        return NSLocalizedString("table12", bundle: bundle, comment: "")
+      }
+
+      /// en translation: table2
+      ///
+      /// Locales: pt-BR, en
+      static func table2(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("table2", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "table2"
+        }
+
+        return NSLocalizedString("table2", bundle: bundle, comment: "")
+      }
+
+      /// en translation: table3
+      ///
+      /// Locales: pt-BR, en
+      static func table3(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("table3", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "table3"
+        }
+
+        return NSLocalizedString("table3", bundle: bundle, comment: "")
+      }
+
+      /// en translation: table4
+      ///
+      /// Locales: pt-BR, en
+      static func table4(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("table4", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "table4"
+        }
+
+        return NSLocalizedString("table4", bundle: bundle, comment: "")
+      }
+
+      /// en translation: table5
+      ///
+      /// Locales: pt-BR, en
+      static func table5(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("table5", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "table5"
+        }
+
+        return NSLocalizedString("table5", bundle: bundle, comment: "")
+      }
+
+      /// en translation: table6
+      ///
+      /// Locales: pt-BR, en
+      static func table6(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("table6", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "table6"
+        }
+
+        return NSLocalizedString("table6", bundle: bundle, comment: "")
+      }
+
+      /// en translation: table7
+      ///
+      /// Locales: pt-BR, en
+      static func table7(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("table7", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "table7"
+        }
+
+        return NSLocalizedString("table7", bundle: bundle, comment: "")
+      }
+
+      /// en translation: table8
+      ///
+      /// Locales: pt-BR, en
+      static func table8(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("table8", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "table8"
+        }
+
+        return NSLocalizedString("table8", bundle: bundle, comment: "")
+      }
+
+      /// en translation: table9
+      ///
+      /// Locales: pt-BR, en
+      static func table9(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("table9", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "table9"
+        }
+
+        return NSLocalizedString("table9", bundle: bundle, comment: "")
       }
 
       /// en translation: to pay only those

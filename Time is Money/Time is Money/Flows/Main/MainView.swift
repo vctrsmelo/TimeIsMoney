@@ -150,23 +150,28 @@ struct MainView: View {
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: UIScreen.main.bounds.width-120, alignment: .center)
-            .frame(minHeight: 150, alignment: .center)
+            .frame(minHeight: 50, alignment: .center)
             .animation(.none)
     }
     
     private func inputSection(priceBinding: Binding<Decimal>) -> some View {
-        Group {
+        
+        let width = UIScreen.main.bounds.width - (Device.hasTopNotch ? 16 : 0)
+        let cornerRadius: CGFloat = Device.hasTopNotch ? 100 : 0
+//        let keyboardVisibleOffset: CGFloat = Device.hasTopNotch ? -8 : -16
+        
+        return Group {
             Text("Type below the price")
                 .font(Design.Font.smallLight)
                 .foregroundColor(Design.Color.Text.standard)
                 .isHidden(isKeyboardVisible)
 
             CurrencyField(priceBinding, placeholder: "Income".localized, textColor: .white)
-                .frame(width: UIScreen.main.bounds.width-16, height: 50, alignment: .center)
+                .frame(width: width, height: 50, alignment: .center)
                 .background(Color(.sRGB, red: 94/255.0, green: 128/255.0, blue: 142/255.0, opacity: 1))
-                .cornerRadius(100)
+                .cornerRadius(cornerRadius)
         }
-        .offset(x: 0, y: (isKeyboardVisible) ? -8 : 0)
+//        .offset(x: 0, y: (isKeyboardVisible) ? keyboardVisibleOffset : 0)
     }
 }
 

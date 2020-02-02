@@ -12,30 +12,33 @@ struct WelcomeView: View {
     var body: some View {
         VStack {
             //image
-            Image("MoneyClock")
-                .aspectRatio(contentMode: .fit)
-                .padding(EdgeInsets(top: 20, leading: 16, bottom: 62, trailing: 16))
+            Image("MoneyClock_img")
+                .resizable()
+                .scaledToFit()
+                .frame(minHeight: 150)
+                .padding(.top, 20)
             //bem vindo
             Text("Welcome!")
                 .font(Design.Font.Title.largeTitleFont)
                 .foregroundColor(Design.Color.Text.title)
-
-            Spacer()
             
-            Group {
-                //subtitle
-                Text("Let's find out how much things really cost?")
-                    .font(Design.Font.subtitle)
-                    .foregroundColor(Design.Color.Text.title)
-                Spacer()
-                //description
+            //subtitle
+            Text("Let's find out how much things really cost?")                    .lineLimit(nil)
+                .adaptableFont(.subtitle, maxSize: 25)
+                .foregroundColor(Design.Color.Text.title)
+            Spacer()
+            //description
+
+            GeometryReader { g in
                 Text("For this we will only need three information. Let's go? 😄")
-                    .font(Design.Font.standardLight)
+                    .lineLimit(nil)
+                    .frame(idealWidth: g.size.width-64, maxWidth: g.size.width, minHeight: 25, idealHeight: 50, alignment: .center)
+                    .adaptableFont(.standardLight, maxSize: 20)
                     .foregroundColor(Design.Color.Text.standard)
-                Spacer()
             }
-            .frame(width: UIScreen.main.bounds.width-64)
-        }.withBackground()
+            Spacer()
+        }
+        .withBackground()
         .navigationBarTitle("")
         .navigationBarHidden(true)
     }

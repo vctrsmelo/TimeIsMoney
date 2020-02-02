@@ -20,13 +20,19 @@ struct PageView<Page: View>: View {
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
-                PageViewController(controllers: viewControllers, currentPage: $currentPage).edgesIgnoringSafeArea(.all)
-                HStack {
-                    Spacer()
-                    PageControl(numberOfPages: viewControllers.count, currentPage: $currentPage)
-                    Spacer()
+                VStack {
+                    PageViewController(controllers: viewControllers, currentPage: $currentPage)
+                        .edgesIgnoringSafeArea(.all)
+                        .navigationBarTitle("")
+                        .navigationBarHidden(true)
+                    HStack {
+                        Spacer()
+                        PageControl(numberOfPages: viewControllers.count, currentPage: $currentPage)
+                        Spacer()
+                    }
                 }
             }
+            .background(Design.Color.Background.standard)
             .navigationBarTitle("")
             .navigationBarHidden(true)
         }
