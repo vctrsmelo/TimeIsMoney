@@ -50,6 +50,10 @@ public class User: ObservableObject {
     
     // MARK: Properties
     
+    public var weeklyWorkDays: Int {
+        return workdays.count
+    }
+    
     public var dailyWorkHours: NSDecimalNumber {
         return NSDecimalNumber(value: weeklyWorkHours) / NSDecimalNumber(value: workdays.count)
     }
