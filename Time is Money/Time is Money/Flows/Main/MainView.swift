@@ -48,36 +48,51 @@ struct MainView: View {
             set: { self.price = $0 }
         )
         
-        return VStack {
+        return VStack(alignment: .center, spacing: 0) {
             
-            Group {
-                headerTextSection(timeMessage: timeMessage, formattedValue: formattedValue, priceAsSeconds: priceAsSeconds)
-                
+            HStack(spacing: 0) {
                 Spacer()
-                
-                tableImageSection(flow: self.flow)
+                VStack(alignment: .trailing, spacing: 0) {
+                    Button(action: {
+                        self.showEditView.toggle()
+                    }) {
+                        Image(systemName: "gear")
+                            .imageScale(.large)
+                            .foregroundColor(Design.Color.Text.standard)
+                    }
+                    .padding(.trailing, 8)
+                }
+            
+            }.frame(width: UIScreen.main.bounds.width, height: 50)
+            .background(Color.green)
+            .isHidden(isKeyboardVisible)
+            
+            
+            HStack {
+            headerTextSection(timeMessage: timeMessage, formattedValue: formattedValue, priceAsSeconds: priceAsSeconds)
+                .background(Color.red)
             }
-            .offset(x: 0, y: topTextPadding)
-
+                
+            HStack {
+                tableImageSection(flow: self.flow)
+                    .background(Color.yellow)
+            }
+            
             Spacer()
-                        
+            
+            HStack {
             inputSection(priceBinding: priceBinding)
+                .background(Color.green)
+            }
             
         }
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(trailing:
-            Button(action: {
-                self.showEditView.toggle()
-            }) {
-                Image(systemName: "gear")
-                    .imageScale(.large)
-                    .foregroundColor(Design.Color.Text.standard)
-            }
-        )
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
         .sheet(isPresented: $showEditView) {
             EditView().environmentObject(self.user)
         }
-        .withBackground()
+        .frame(width: UIScreen.main.bounds.width, alignment: .center)
         .keyboardSensible($offsetValue, type: .paddingAndOffset, onAppearKeyboardCustom: {
             self.topTextPadding = -UIScreen.main.bounds.height/12
             self.isKeyboardVisible = true
@@ -93,18 +108,22 @@ struct MainView: View {
     }
     
     private func headerTextSection(timeMessage: String, formattedValue: String, priceAsSeconds: TimeInterval) -> some View {
-        Group {
+        VStack {
             Text("It will take")
                 .multilineTextAlignment(.center)
                 .font(Design.Font.standardLight)
                 .foregroundColor(Design.Color.Text.standard)
                 .animation(.none)
+                .isHidden(isKeyboardVisible)
             Text("\(timeMessage)")
-                .font(Design.Font.Title.smallTitleFont)
+                .lineLimit(nil)
+                .font(Design.Font.Title.customTitleFont(size: 25))
                 .foregroundColor(Design.Color.Text.standard)
                 .multilineTextAlignment(.center)
                 .animation(.none)
                 .padding(.top, 10)
+                .frame(minHeight: 80)
+    
             getExpectedWorkingTimeText(priceAsSeconds: priceAsSeconds)
                 .font(Design.Font.standardLight)
                 .foregroundColor(Design.Color.Text.standard)
@@ -160,16 +179,16 @@ struct MainView: View {
         let cornerRadius: CGFloat = Device.hasTopNotch ? 100 : 0
 //        let keyboardVisibleOffset: CGFloat = Device.hasTopNotch ? -8 : -16
         
-        return Group {
+        return VStack {
             Text("Type below the price")
                 .font(Design.Font.smallLight)
                 .foregroundColor(Design.Color.Text.standard)
                 .isHidden(isKeyboardVisible)
 
             CurrencyField(priceBinding, placeholder: "Income".localized, textColor: .white)
-                .frame(width: width, height: 50, alignment: .center)
-                .background(Color(.sRGB, red: 94/255.0, green: 128/255.0, blue: 142/255.0, opacity: 1))
                 .cornerRadius(cornerRadius)
+                .background(Color(.sRGB, red: 94/255.0, green: 128/255.0, blue: 142/255.0, opacity: 1))
+                .frame(width: width, height: 50, alignment: .center)
         }
 //        .offset(x: 0, y: (isKeyboardVisible) ? keyboardVisibleOffset : 0)
     }
