@@ -15,13 +15,11 @@ struct IncomeView: View {
 
     @State private var offsetValue: CGFloat = 0.0
     
-    
     init() {
         UITableView.appearance().tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: Double.leastNonzeroMagnitude))
         UITableView.appearance().tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: Double.leastNonzeroMagnitude))
         UITableView.appearance().backgroundColor = .clear
     }
-    
     
     var body: some View {
         
@@ -56,6 +54,9 @@ struct IncomeView: View {
                 HStack {
                     CurrencyField(incomeBinding, placeholder: "Income")
                         .frame(width: UIScreen.main.bounds.width, height: 60, alignment: .center)
+                }
+                
+                HStack {
                     Text("per month")
                         .font(Design.Font.standardLight)
                         .foregroundColor(Design.Color.Text.standard)

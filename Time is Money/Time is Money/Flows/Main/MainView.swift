@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import UIKit
 import TimeIsMoneyCore
 import Rswift
 
@@ -59,30 +60,30 @@ struct MainView: View {
                         Image(systemName: "gear")
                             .imageScale(.large)
                             .foregroundColor(Design.Color.Text.standard)
+                            .frame(width: 60, height: 60)
                     }
                     .padding(.trailing, 8)
+                    
                 }
             
-            }.frame(width: UIScreen.main.bounds.width, height: 50)
-            .background(Color.green)
+            }.frame(width: UIScreen.main.bounds.width, height: 60)
             .isHidden(isKeyboardVisible)
             
             
             HStack {
             headerTextSection(timeMessage: timeMessage, formattedValue: formattedValue, priceAsSeconds: priceAsSeconds)
-                .background(Color.red)
             }
                 
+            Spacer()
+            
             HStack {
                 tableImageSection(flow: self.flow)
-                    .background(Color.yellow)
             }
             
             Spacer()
             
             HStack {
-            inputSection(priceBinding: priceBinding)
-                .background(Color.green)
+                inputSection(priceBinding: priceBinding)
             }
             
         }
@@ -114,7 +115,6 @@ struct MainView: View {
                 .font(Design.Font.standardLight)
                 .foregroundColor(Design.Color.Text.standard)
                 .animation(.none)
-                .isHidden(isKeyboardVisible)
             Text("\(timeMessage)")
                 .lineLimit(nil)
                 .font(Design.Font.Title.customTitleFont(size: 25))
@@ -175,9 +175,9 @@ struct MainView: View {
     
     private func inputSection(priceBinding: Binding<Decimal>) -> some View {
         
-        let width = UIScreen.main.bounds.width - (Device.hasTopNotch ? 16 : 0)
-        let cornerRadius: CGFloat = Device.hasTopNotch ? 100 : 0
-//        let keyboardVisibleOffset: CGFloat = Device.hasTopNotch ? -8 : -16
+        let width = UIScreen.main.bounds.width - (UIDevice.current.hasHomeButton ? 0 : 16)
+        let cornerRadius: CGFloat = UIDevice.current.hasHomeButton ? 0 : 100
+        let keyboardVisibleOffset: CGFloat = UIDevice.current.hasHomeButton ? 0 : -16
         
         return VStack {
             Text("Type below the price")
@@ -186,11 +186,11 @@ struct MainView: View {
                 .isHidden(isKeyboardVisible)
 
             CurrencyField(priceBinding, placeholder: "Income".localized, textColor: .white)
-                .cornerRadius(cornerRadius)
                 .background(Color(.sRGB, red: 94/255.0, green: 128/255.0, blue: 142/255.0, opacity: 1))
                 .frame(width: width, height: 50, alignment: .center)
+                .cornerRadius(cornerRadius)
         }
-//        .offset(x: 0, y: (isKeyboardVisible) ? keyboardVisibleOffset : 0)
+        .offset(x: 0, y: (isKeyboardVisible) ? keyboardVisibleOffset : 0)
     }
 }
 

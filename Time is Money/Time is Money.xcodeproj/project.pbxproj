@@ -14,7 +14,7 @@
 		BE28C4F823D7AB3400CA9D13 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE28C4FA23D7AB3400CA9D13 /* Localizable.strings */; };
 		BE28C4FE23D7AC7200CA9D13 /* Time_is_MoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28C4FD23D7AC7200CA9D13 /* Time_is_MoneyTests.swift */; };
 		BE28C50023D7AD9600CA9D13 /* PreviewProvider+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28C4FF23D7AD9600CA9D13 /* PreviewProvider+Locale.swift */; };
-		BE37722923E7149F003C8D3F /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37722823E7149F003C8D3F /* Device.swift */; };
+		BE37722923E7149F003C8D3F /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37722823E7149F003C8D3F /* UIDevice+Extensions.swift */; };
 		BE57677E23CE838D004BF48C /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57677D23CE838D004BF48C /* EditView.swift */; };
 		BE66B18323BD096800166912 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B18223BD096800166912 /* WelcomeView.swift */; };
 		BE815FC72383497200000FB9 /* TimeIsMoneyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */; };
@@ -86,7 +86,7 @@
 		BE28C4FC23D7AB5300CA9D13 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BE28C4FD23D7AC7200CA9D13 /* Time_is_MoneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_is_MoneyTests.swift; sourceTree = "<group>"; };
 		BE28C4FF23D7AD9600CA9D13 /* PreviewProvider+Locale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewProvider+Locale.swift"; sourceTree = "<group>"; };
-		BE37722823E7149F003C8D3F /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		BE37722823E7149F003C8D3F /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
 		BE57677D23CE838D004BF48C /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		BE66B18223BD096800166912 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,7 +186,6 @@
 				BEC00AF023BFE57D001B6724 /* Extensions */,
 				BEFBF0E623BD470200FBE0D2 /* Design.swift */,
 				BE85876823BFF2A300DEFE98 /* Formatters.swift */,
-				BE37722823E7149F003C8D3F /* Device.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -255,6 +254,7 @@
 		BEC00AF023BFE57D001B6724 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BE37722823E7149F003C8D3F /* UIDevice+Extensions.swift */,
 				BEC00AF123BFE591001B6724 /* View+Extensions.swift */,
 				BE28C4FF23D7AD9600CA9D13 /* PreviewProvider+Locale.swift */,
 				BE2291DE23DA75950098C106 /* View+IsHidden.swift */,
@@ -562,7 +562,7 @@
 				BE57677E23CE838D004BF48C /* EditView.swift in Sources */,
 				EE427009234F4A1E007A63D9 /* MainView.swift in Sources */,
 				BEC00AE923BFDC2C001B6724 /* WorkTimeView.swift in Sources */,
-				BE37722923E7149F003C8D3F /* Device.swift in Sources */,
+				BE37722923E7149F003C8D3F /* UIDevice+Extensions.swift in Sources */,
 				EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -755,6 +755,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.victormelo.Time-is-Money";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -781,6 +782,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.victormelo.Time-is-Money";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
