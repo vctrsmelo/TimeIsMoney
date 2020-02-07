@@ -83,4 +83,9 @@ public enum Weekday: String, Codable, Identifiable {
     static public func all() -> [Weekday] {
         return [.monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday]
     }
+    
+    /// mon, tue, wed, thu, fri
+    static public func weekdays() -> [Weekday] {
+        [.monday, .tuesday, .wednesday, .thursday, .friday]
+    }
 }
