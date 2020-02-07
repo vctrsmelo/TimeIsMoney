@@ -16,10 +16,10 @@ extension XCTestCase {
         
         let weeklyWorkHours = NSDecimalNumber(value: dailyWorkHours) * NSDecimalNumber(value: weeklyWorkDays)
         
-        return getUser(salary: salary, weeklyWorkHours: weeklyWorkHours.timeIntervalValue, weeklyWorkDays: weeklyWorkDays)
+        return getUser(salary: salary, weeklyWorkHours: weeklyWorkHours.intValue, weeklyWorkDays: weeklyWorkDays)
     }
     
-    func getUser(salary: Double = 1000, weeklyWorkHours: Double, weeklyWorkDays: Int) -> User {
+    func getUser(salary: Double = 1000, weeklyWorkHours: Int, weeklyWorkDays: Int) -> User {
         
         var workdays: [Weekday] = [.monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday]
         
@@ -31,12 +31,7 @@ extension XCTestCase {
             }
         }
         
-        let user = User(testing: true)
-        user.monthlySalary = salary.asDecimal()
-        user.weeklyWorkHours = Int(weeklyWorkHours)
-        user.workdays = workdays
-        
-        return user
+        return User(isOnboardingCompleted: true, monthlySalary: salary.asDecimal(), weeklyWorkHours: weeklyWorkHours, workdays: workdays)
     }
     
     

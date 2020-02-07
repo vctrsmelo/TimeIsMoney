@@ -211,7 +211,7 @@ class TimeTextTranslatorTests: XCTestCase {
         let priceAsSeconds = NSDecimalNumber(value: 10.hoursInSeconds)
         let user = getUser(dailyWorkHours: 8, weeklyWorkDays: 5)
 
-        let result = getSUT().getWorkRoutineDescriptionToPay(for: priceAsSeconds, dailyWorkHours: user.dailyWorkHours, weeklyWorkDays: user.weeklyWorkDays)
+        let result = getSUT().getWorkRoutineDescriptionToPay(for: priceAsSeconds, dailyWorkHours: user.dailyWorkHours, weeklyWorkDays: user.weeklyWorkDays.intValue)
 
         XCTAssertNil(result)
     }
@@ -220,7 +220,7 @@ class TimeTextTranslatorTests: XCTestCase {
         let priceAsSeconds = NSDecimalNumber(value: 48.hoursInSeconds)
         let user = getUser(dailyWorkHours: 8, weeklyWorkDays: 5)
 
-        let result = getSUT().getWorkRoutineDescriptionToPay(for: priceAsSeconds, dailyWorkHours: user.dailyWorkHours, weeklyWorkDays: user.weeklyWorkDays)
+        let result = getSUT().getWorkRoutineDescriptionToPay(for: priceAsSeconds, dailyWorkHours: user.dailyWorkHours, weeklyWorkDays: user.weeklyWorkDays.intValue)
 
         XCTAssertNotNil(result)
         XCTAssertEqual(result?.value, 8)
@@ -231,7 +231,7 @@ class TimeTextTranslatorTests: XCTestCase {
         let priceAsSeconds = NSDecimalNumber(value: 2.weeksInSeconds)
         let user = getUser(dailyWorkHours: 8, weeklyWorkDays: 5)
 
-        let result = getSUT().getWorkRoutineDescriptionToPay(for: priceAsSeconds, dailyWorkHours: user.dailyWorkHours, weeklyWorkDays: user.weeklyWorkDays)
+        let result = getSUT().getWorkRoutineDescriptionToPay(for: priceAsSeconds, dailyWorkHours: user.dailyWorkHours, weeklyWorkDays: user.weeklyWorkDays.intValue)
 
         XCTAssertNotNil(result)
         XCTAssertEqual(result?.value, 8*5)
@@ -244,7 +244,7 @@ class TimeTextTranslatorTests: XCTestCase {
         return TimeTextTranslator.self
     }
     
-    func getUnstoppedWorkTimeDescription(from seconds: WorkTimeSeconds) -> String {
+    func getUnstoppedWorkTimeDescription(from seconds: TimeInterval) -> String {
         TimeTextTranslator.allowedUnits = [.year, .month, .weekOfMonth, .day, .hour, .minute, .second]
         return TimeTextTranslator.getUnstoppedWorkTimeDescription(from: seconds)
     }

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import Time_is_Money
+@testable import Time_is_Money
 
 class UserTests: XCTestCase {
 
@@ -24,12 +24,12 @@ class UserTests: XCTestCase {
     
     func getSUT(salary: Double = 0.0, workTime: WorkTimeMeasure, weeklyWorkDays: Int = 5) -> User {
         
-        let weeklyWorkHours: Double
+        let weeklyWorkHours: Int
         switch workTime {
         case .daily(let time):
-            weeklyWorkHours = time * Double(weeklyWorkDays)
+            weeklyWorkHours = Int(time) * weeklyWorkDays
         case .weekly(let time):
-            weeklyWorkHours = time
+            weeklyWorkHours = Int(time)
         }
         
         return getUser(salary: salary, weeklyWorkHours: weeklyWorkHours, weeklyWorkDays: weeklyWorkDays)

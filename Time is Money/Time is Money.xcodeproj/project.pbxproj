@@ -43,7 +43,6 @@
 		BE92646C23ED9F4A0072A555 /* TimeTextTranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92646A23ED9F4A0072A555 /* TimeTextTranslatorTests.swift */; };
 		BE92646D23ED9F4A0072A555 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92646523ED9F4A0072A555 /* CalculatorTests.swift */; };
 		BE92646E23ED9F4A0072A555 /* ValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92646923ED9F4A0072A555 /* ValueTests.swift */; };
-		BE92646F23ED9F4A0072A555 /* FlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92646623ED9F4A0072A555 /* FlowTests.swift */; };
 		BE92647023ED9F4A0072A555 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92646423ED9F4A0072A555 /* UserTests.swift */; };
 		BEA9AB3423C5308B0057EA1E /* CurrencyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA9AB3323C5308B0057EA1E /* CurrencyField.swift */; };
 		BEB0979A23BF984F00244E30 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0979923BF984F00244E30 /* PageViewController.swift */; };
@@ -123,7 +122,6 @@
 		BE92645E23ED9F270072A555 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		BE92646423ED9F4A0072A555 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		BE92646523ED9F4A0072A555 /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
-		BE92646623ED9F4A0072A555 /* FlowTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowTests.swift; sourceTree = "<group>"; };
 		BE92646723ED9F4A0072A555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../TimeIsMoneyCore/TimeIsMoneyCoreTests/Info.plist; sourceTree = "<group>"; };
 		BE92646823ED9F4A0072A555 /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		BE92646923ED9F4A0072A555 /* ValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTests.swift; sourceTree = "<group>"; };
@@ -383,7 +381,6 @@
 			children = (
 				BE92646A23ED9F4A0072A555 /* TimeTextTranslatorTests.swift */,
 				EE42701D234F4A23007A63D9 /* Info.plist */,
-				BE92646623ED9F4A0072A555 /* FlowTests.swift */,
 				BE92646723ED9F4A0072A555 /* Info.plist */,
 				BE92646423ED9F4A0072A555 /* UserTests.swift */,
 				BE92646823ED9F4A0072A555 /* XCTestCase+Extensions.swift */,
@@ -658,7 +655,6 @@
 				BE92647023ED9F4A0072A555 /* UserTests.swift in Sources */,
 				BE92646B23ED9F4A0072A555 /* XCTestCase+Extensions.swift in Sources */,
 				BE28C4FE23D7AC7200CA9D13 /* Time_is_MoneyTests.swift in Sources */,
-				BE92646F23ED9F4A0072A555 /* FlowTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
