@@ -8,7 +8,7 @@
 
 import Foundation
 
-private let WEEKS_IN_MONTH = NSDecimalNumber(value: 4.429531) // ~30 days per month
+let WEEKS_IN_MONTH = NSDecimalNumber(value: 4.429531) // ~30 days per month
 
 protocol TimePeriod {
     var value: NSDecimalNumber { get }

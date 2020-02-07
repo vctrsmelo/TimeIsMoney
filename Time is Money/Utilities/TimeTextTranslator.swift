@@ -8,9 +8,9 @@
 
 import Foundation
 
-public class TimeTextTranslator {
+class TimeTextTranslator {
     
-    public static var allowedUnits: NSCalendar.Unit {
+    static var allowedUnits: NSCalendar.Unit {
         get {
             return formatter.allowedUnits
         }
@@ -30,11 +30,11 @@ public class TimeTextTranslator {
         return formatter
     }()
     
-    public static func getUnstoppedWorkTimeDescription(from fullWorkTime: WorkTimeSeconds) -> String {
+    static func getUnstoppedWorkTimeDescription(from fullWorkTime: TimeInterval) -> String {
         return formatter.string(from: fullWorkTime)!
     }
     
-    public static func getWorkTimeDescriptionToPay(for priceAsSeconds: WorkTimeSeconds, user: User) -> String {
+    static func getWorkTimeDescriptionToPay(for priceAsSeconds: TimeInterval, user: User) -> String {
         guard user.dailyWorkHours > 0 else {
             return "You need to increase your work hours"
         }
@@ -48,7 +48,7 @@ public class TimeTextTranslator {
         return formattedDescription
     }
 
-    public static func getNormalizedWorkTimeFrom(priceAsSeconds: NSDecimalNumber, user: User) -> NSDecimalNumber {
+    static func getNormalizedWorkTimeFrom(priceAsSeconds: NSDecimalNumber, user: User) -> NSDecimalNumber {
         
             var priceSecondsDiscountingTime = priceAsSeconds
             
@@ -99,7 +99,7 @@ public class TimeTextTranslator {
         hoursNeeded % dailyWorkHours == 0
     }
     
-    public static func getWorkRoutineDescriptionToPay(for price: NSDecimalNumber, dailyWorkHours: NSDecimalNumber, weeklyWorkDays: Int) -> Routine? {
+    static func getWorkRoutineDescriptionToPay(for price: NSDecimalNumber, dailyWorkHours: NSDecimalNumber, weeklyWorkDays: Int) -> Routine? {
         guard price >= NSDecimalNumber(value: 1.dayInSeconds) else { return nil }
         
         if price < NSDecimalNumber(value: 1.weekInSeconds) {

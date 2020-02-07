@@ -26,57 +26,57 @@ public enum Weekday: String, Codable, Identifiable {
     public func localized() -> String {
         switch self {
         case .monday:
-            return "Mon_weekday_short".localized
+            return R.string.localizable.mon_weekday_short()
         case .tuesday:
-            return "Tue_weekday_short".localized
+            return R.string.localizable.tue_weekday_short()
         case .wednesday:
-            return "Wed_weekday_short".localized
+            return R.string.localizable.wed_weekday_short()
         case .thursday:
-            return "Thu_weekday_short".localized
+            return R.string.localizable.thu_weekday_short()
         case .friday:
-            return "Fri_weekday_short".localized
+            return R.string.localizable.fri_weekday_short()
         case .saturday:
-            return "Sat_weekday_short".localized
+            return R.string.localizable.sat_weekday_short()
         case .sunday:
-            return "Sun_weekday_short".localized
+            return R.string.localizable.sun_weekday_short()
         }
     }
     
     public func localizedMedium() -> String {
         switch self {
-       case .monday:
-            return "Mon_weekday_medium".localized
+        case .monday:
+            return R.string.localizable.mon_weekday_medium()
         case .tuesday:
-            return "Tue_weekday_medium".localized
+            return R.string.localizable.tue_weekday_medium()
         case .wednesday:
-            return "Wed_weekday_medium".localized
+            return R.string.localizable.wed_weekday_medium()
         case .thursday:
-            return "Thu_weekday_medium".localized
+            return R.string.localizable.thu_weekday_medium()
         case .friday:
-            return "Fri_weekday_medium".localized
+            return R.string.localizable.fri_weekday_medium()
         case .saturday:
-            return "Sat_weekday_medium".localized
+            return R.string.localizable.sat_weekday_medium()
         case .sunday:
-            return "Sun_weekday_medium".localized
+            return R.string.localizable.sun_weekday_medium()
         }
     }
     
     public func localizedLong() -> String {
         switch self {
         case .monday:
-            return "Mon_weekday_long".localized
+            return R.string.localizable.mon_weekday_long()
         case .tuesday:
-            return "Tue_weekday_long".localized
+            return R.string.localizable.tue_weekday_long()
         case .wednesday:
-            return "Wed_weekday_long".localized
+            return R.string.localizable.wed_weekday_long()
         case .thursday:
-            return "Thu_weekday_long".localized
+            return R.string.localizable.thu_weekday_long()
         case .friday:
-            return "Fri_weekday_long".localized
+            return R.string.localizable.fri_weekday_long()
         case .saturday:
-            return "Sat_weekday_long".localized
+            return R.string.localizable.sat_weekday_long()
         case .sunday:
-            return "Sun_weekday_long".localized
+            return R.string.localizable.sun_weekday_long()
         }
     }
     
@@ -87,5 +87,11 @@ public enum Weekday: String, Codable, Identifiable {
     /// mon, tue, wed, thu, fri
     static public func weekdays() -> [Weekday] {
         [.monday, .tuesday, .wednesday, .thursday, .friday]
+    }
+}
+
+extension Array where Element == Weekday {
+    func sortedWeekdays() -> [Weekday] {
+        return Weekday.all().filter { contains($0) }
     }
 }

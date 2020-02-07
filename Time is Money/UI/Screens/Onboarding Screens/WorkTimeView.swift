@@ -11,15 +11,16 @@ import SwiftUI
 
 struct WorkTimeView: View {
     
-    @EnvironmentObject var user: User
+    @EnvironmentObject var appState: AppState
+    @Environment(\.interactors) var interactors: InteractorsContainer
     
     var hours = (0...100).map { "\($0)"}
     
     var body: some View {
         
         let selectedHours = Binding(
-            get: { self.user.weeklyWorkHours },
-            set: { self.user.weeklyWorkHours = $0 }
+            get: { self.appState.user.weeklyWorkHours },
+            set: { self.appState.user.weeklyWorkHours = $0 }
         )
     
         let hoursArrayIndex = max(0, min(hours.count-1,selectedHours.wrappedValue))
@@ -54,7 +55,7 @@ struct WorkTimeView: View {
     }
     
     private func maybePickerSection(selectedHours: Binding<Int>) -> some View {
-        guard user.workdays.isEmpty == false else {
+        guard appState.user.workdays.isEmpty == false else {
             return
                 AnyView(
                         Text("(Set your workdays to update here)")
@@ -63,13 +64,15 @@ struct WorkTimeView: View {
                             .multilineTextAlignment(.center)
                 )
         }
+        
+        let hours = R.string.localizable.hours()
             
         return AnyView(
             Section {
                 Picker(selection: selectedHours, label: EmptyView()) {
                     ForEach(0 ..< self.hours.count) {
-                        Text(self.hours[$0]+" "+"hours".localized)
-                            .foregroundColor(self.user.isSelectedHoursValid($0) ? Design.Color.disabled : Design.Color.Text.standard)
+                        Text(self.hours[$0]+" "+hours)
+                            .foregroundColor(self.appState.user.isSelectedHoursValid($0) ? Design.Color.disabled : Design.Color.Text.standard)
                     }
                 }
                 .foregroundColor(Design.Color.Text.standard)

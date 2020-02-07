@@ -6,6 +6,8 @@
 //  Copyright © 2020 Victor S Melo. All rights reserved.
 //
 
+import Foundation
+
 public extension Double {
     func asDecimal() -> Decimal {
         Decimal(self)

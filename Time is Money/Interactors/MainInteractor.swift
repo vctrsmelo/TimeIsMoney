@@ -27,3 +27,9 @@ struct RealMainInteractor: MainInteractor {
     }
     
 }
+
+struct StubMainInteractor: MainInteractor {
+    func loadUser() {
+        // TODO: Implement
+    }
+}

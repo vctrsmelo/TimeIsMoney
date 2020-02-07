@@ -11,7 +11,8 @@ import UIKit
 
 struct EditView: View {
     
-    @EnvironmentObject var user: User
+    @EnvironmentObject var appState: AppState
+    @Environment(\.interactors) var interactors: InteractorsContainer
     
     private let hours = (0...168).map { "\($0)"}
     
@@ -22,13 +23,18 @@ struct EditView: View {
     }
     
     var body: some View {
+        
+        let weeklyWorktime = R.string.localizable.weeklyWorktime()
+        let weeklyWorkdays = R.string.localizable.weeklyWorkdays()
+        let monthlyIncome = R.string.localizable.monthlyIncome()
+        
         return NavigationView {
             VStack {
                 Form {
                     Section {
-                        EditFieldView(title: "Weekly Worktime".localized, icon: Image("MoneyClockIcon"), inputView: AnyView(worktimePicker))
-                        EditFieldView(title: "Weekly workdays".localized, icon: Image("CalendarIcon"), inputView: AnyView(weekdays))
-                        EditFieldView(title: "Monthly Income".localized, icon: Image("MoneyIcon"), inputView: AnyView(salaryField))
+                        EditFieldView(title: weeklyWorktime, icon: Image("MoneyClockIcon"), inputView: AnyView(worktimePicker))
+                        EditFieldView(title: weeklyWorkdays, icon: Image("CalendarIcon"), inputView: AnyView(weekdays))
+                        EditFieldView(title: monthlyIncome, icon: Image("MoneyIcon"), inputView: AnyView(salaryField))
                     }
                 }
             }
@@ -44,22 +50,22 @@ struct EditView: View {
     private var worktimePicker: some View {
         
         let selectedHours = Binding(
-            get: { return self.user.weeklyWorkHours },
-            set: { self.user.weeklyWorkHours = $0 }
+            get: { return self.appState.user.weeklyWorkHours },
+            set: { self.appState.user.weeklyWorkHours = $0 }
         )
         
        return Picker(selection: selectedHours, label: EmptyView()) {
             ForEach(0 ..< hours.count) {
                 Text(self.hours[$0]+" "+R.string.localizable.hours())
                     .font(Design.Font.standardRegular)
-                    .foregroundColor(self.user.isSelectedHoursValid($0) ? Design.Color.disabled : Design.Color.Text.standard)
+                    .foregroundColor(self.appState.user.isSelectedHoursValid($0) ? Design.Color.disabled : Design.Color.Text.standard)
             }
         }
         .labelsHidden()
     }
     
     private var weekdays: some View {
-        let weekdays = self.user.sortedWorkdays.map { $0.localizedMedium() }.reduce("") { (result, newVal) -> String in
+        let weekdays = self.appState.user.workdays.sortedWeekdays().map { $0.localizedMedium() }.reduce("") { (result, newVal) -> String in
            return result+"\(newVal), "
         }.dropLast(2)
         
@@ -74,8 +80,8 @@ struct EditView: View {
     private var salaryField: some View {
         
         let salaryBinding = Binding(
-            get: { self.user.monthlySalary },
-            set: { self.user.monthlySalary = $0 }
+            get: { self.appState.user.monthlySalary },
+            set: { self.appState.user.monthlySalary = $0 }
        )
         
         return CurrencyField(salaryBinding, placeholder: "", font: Design.UIFont.standardRegular, textAlignment: NSTextAlignment.left)
@@ -93,8 +99,6 @@ struct EditView_Previews: PreviewProvider {
 
 struct WeekdaySelectionListView: View {
     
-    @EnvironmentObject var user: User
-    
     private let weekdays = Weekday.all()
     
     var body: some View {
@@ -110,7 +114,8 @@ struct WeekdaySelectionListView: View {
 
 struct WeekdayRowView: View {
     
-    @EnvironmentObject var user: User
+    @EnvironmentObject var appState: AppState
+    @Environment(\.interactors) var interactors: InteractorsContainer
     
     private let weekday: Weekday
     
@@ -120,7 +125,7 @@ struct WeekdayRowView: View {
     
     var body: some View {
         
-        let isSelected = self.user.workdays.contains(self.weekday)
+        let isSelected = self.appState.user.workdays.contains(self.weekday)
         let checkmarkColor = (isSelected) ?  Color(.blue) : Color(.gray)
 
         return HStack {
@@ -133,10 +138,10 @@ struct WeekdayRowView: View {
         .listRowBackground(Design.Color.Background.standard)
         .contentShape(Rectangle())
         .onTapGesture {
-            if self.user.workdays.contains(self.weekday) {
-                self.user.workdays.removeAll { $0 == self.weekday }
+            if self.appState.user.workdays.contains(self.weekday) {
+                self.appState.user.workdays.removeAll { $0 == self.weekday }
             } else {
-                self.user.workdays.append(self.weekday)
+                self.appState.user.workdays.append(self.weekday)
             }
         }
     }

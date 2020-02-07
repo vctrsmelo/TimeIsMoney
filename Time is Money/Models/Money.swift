@@ -44,7 +44,7 @@ import Foundation
         }
     }
     
-     func getAsTimeInSeconds(for user: User) -> Result<WorkTimeSeconds, CalculatorError> {
+     func getAsTimeInSeconds(for user: User) -> Result<TimeInterval, CalculatorError> {
         switch value {
         case .monetary(let value):
             return value.asSeconds(for: user)
@@ -62,7 +62,7 @@ private extension TimeInterval {
 }
 
 private extension Money {
-    func asSeconds(for user: User) -> Result<WorkTimeSeconds, CalculatorError> {
+    func asSeconds(for user: User) -> Result<TimeInterval, CalculatorError> {
         return Calculator.getWorkTimeToPay(for: self, user: user)
     }
 }

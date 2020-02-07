@@ -10,7 +10,8 @@ import SwiftUI
 
 struct IncomeView: View {
     
-    @EnvironmentObject var user: User
+    @EnvironmentObject var appState: AppState
+    @Environment(\.interactors) var interactors: InteractorsContainer
 
     @State private var offsetValue: CGFloat = 0.0
     
@@ -23,8 +24,8 @@ struct IncomeView: View {
     var body: some View {
         
         let incomeBinding = Binding(
-            get: { self.user.monthlySalary },
-            set: { self.user.monthlySalary = $0 }
+            get: { self.appState.user.monthlySalary },
+            set: { self.appState.user.monthlySalary = $0 }
         )
         
         return Group {

@@ -10,11 +10,12 @@ import SwiftUI
 
 struct WeekdayView: View {
 
-    @EnvironmentObject var user: User
+    @EnvironmentObject var appState: AppState
+    @Environment(\.interactors) var interactors: InteractorsContainer
 
     private let weekday: Weekday
     private var isSelected: Bool {
-        return user.workdays.contains(weekday)
+        return appState.user.workdays.contains(weekday)
     }
     
     init(_ weekday: Weekday) {
@@ -30,9 +31,9 @@ struct WeekdayView: View {
                 .foregroundColor(backgroundColor)
             Button(action: {
                 if self.isSelected {
-                    self.user.workdays.removeAll { $0 == self.weekday }
+                    self.appState.user.workdays.removeAll { $0 == self.weekday }
                 } else {
-                    self.user.workdays.append(self.weekday)
+                    self.appState.user.workdays.append(self.weekday)
                 }
             }) {
                 Text(self.weekday.localized())

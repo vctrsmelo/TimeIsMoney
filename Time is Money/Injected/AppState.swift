@@ -20,6 +20,18 @@ public extension AppState {
         public var monthlySalary: Decimal = 1000
         public var weeklyWorkHours: Int = 40
         public var workdays: [Weekday] = Weekday.weekdays()
+        
+        func isSelectedHoursValid(_ selectedHours: Int) -> Bool {
+            return (selectedHours < workdays.count || selectedHours > workdays.count * 24)
+        }
+
+        private mutating func syncWorkdaysWithWorkHours() {
+            if weeklyWorkHours < workdays.count {
+                weeklyWorkHours = workdays.count
+            } else if weeklyWorkHours > workdays.count*24 {
+                weeklyWorkHours = workdays.count*24
+            }
+        }
     }
 }
 

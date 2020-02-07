@@ -6,16 +6,20 @@
 //  Copyright © 2020 Victor S Melo. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
 
-struct Interactors {
+struct InteractorsContainer: EnvironmentKey {
+    
     let mainInteractor: MainInteractor
     
-    init(mainInteractor: MainInteractor) {
-        self.mainInteractor = mainInteractor
-    }
+    static var defaultValue: Self { Self.default }
     
-//    static var stub: Self {
-//        .init(mainInteractor: StubMainInteractor())
-//    }
+    private static let `default` = Self(mainInteractor: StubMainInteractor())
+}
+
+extension EnvironmentValues {
+    var interactors: InteractorsContainer {
+        get { self[InteractorsContainer.self] }
+        set { self[InteractorsContainer.self] = newValue }
+    }
 }

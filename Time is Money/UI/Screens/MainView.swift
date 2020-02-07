@@ -12,7 +12,8 @@ import Rswift
 
 struct MainView: View {
     
-    @EnvironmentObject var user: User
+    @EnvironmentObject var appState: AppState
+    @Environment(\.interactors) var interactors: InteractorsContainer
     
     @State private var price: Decimal = 100
     @State private var offsetValue: CGFloat = 0.0
@@ -24,19 +25,17 @@ struct MainView: View {
         price as Money
     }
     
-    private let flow = Flow()
-    
     var body: some View {
         
         let formattedValue = Formatter.currency.string(from: priceAsMoney) ?? "?"
-        let maybeTimeNeeded = flow.getTimeNeededToPay(for: priceAsMoney)
+        let maybeTimeNeeded = Calculator.getWorkTimeToPay(for: priceAsMoney, user: appState.user)
         let timeMessage: String
         
         let priceAsSeconds: Double
         switch maybeTimeNeeded {
         case .success(let worktime):
             priceAsSeconds = worktime
-            timeMessage = TimeTextTranslator.getWorkTimeDescriptionToPay(for: worktime, user: flow.user)
+            timeMessage = TimeTextTranslator.getWorkTimeDescriptionToPay(for: worktime, user: appState.user)
         case .failure(let error):
             priceAsSeconds = 0.0
             timeMessage = "¯\\_(ツ)_/¯"
@@ -49,7 +48,6 @@ struct MainView: View {
         )
         
         return VStack(alignment: .center, spacing: 0) {
-            
             HStack(spacing: 0) {
                 Spacer()
                 VStack(alignment: .trailing, spacing: 0) {
@@ -62,35 +60,35 @@ struct MainView: View {
                             .frame(width: 60, height: 60)
                     }
                     .padding(.trailing, 8)
-                    
+
                 }
-            
+
             }.frame(width: UIScreen.main.bounds.width, height: 60)
             .isHidden(isKeyboardVisible)
-            
-            
+
+
             HStack {
             headerTextSection(timeMessage: timeMessage, formattedValue: formattedValue, priceAsSeconds: priceAsSeconds)
             }
-                
+
             Spacer()
-            
+
             HStack {
-                tableImageSection(flow: self.flow)
+                tableImageSection()
             }
-            
+
             Spacer()
-            
+
             HStack {
                 inputSection(priceBinding: priceBinding)
             }
-            
+
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle("")
         .navigationBarHidden(true)
         .sheet(isPresented: $showEditView) {
-            EditView().environmentObject(self.user)
+            EditView()
         }
         .frame(width: UIScreen.main.bounds.width, alignment: .center)
         .keyboardSensible($offsetValue, type: .paddingAndOffset, onAppearKeyboardCustom: {
@@ -101,8 +99,8 @@ struct MainView: View {
             self.isKeyboardVisible = false
         })
         .onAppear() {
-            if self.user.isOnboardingCompleted == false {
-                self.user.isOnboardingCompleted = true
+            if self.appState.user.isOnboardingCompleted == false {
+                self.appState.user.isOnboardingCompleted.toggle()
             }
         }
     }
@@ -144,8 +142,8 @@ struct MainView: View {
     }
     
     private func getExpectedWorkingTimeText(priceAsSeconds: TimeInterval) -> Text {
-        let priceNormalizedToWorkTime = TimeTextTranslator.getNormalizedWorkTimeFrom(priceAsSeconds: NSDecimalNumber(value: priceAsSeconds), user: user)
-        guard let routine = TimeTextTranslator.getWorkRoutineDescriptionToPay(for: priceNormalizedToWorkTime, dailyWorkHours: user.dailyWorkHours, weeklyWorkDays: user.workdays.count) else {
+        let priceNormalizedToWorkTime = TimeTextTranslator.getNormalizedWorkTimeFrom(priceAsSeconds: NSDecimalNumber(value: priceAsSeconds), user: appState.user)
+        guard let routine = TimeTextTranslator.getWorkRoutineDescriptionToPay(for: priceNormalizedToWorkTime, dailyWorkHours: appState.user.dailyWorkHours, weeklyWorkDays: appState.user.workdays.count) else {
             return Text("")
         }
         
@@ -162,9 +160,9 @@ struct MainView: View {
         }
     }
     
-    private func tableImageSection(flow: Flow) -> some View {
+    private func tableImageSection() -> some View {
         
-        return Image("table\(flow.getExpensivityIndex(price: priceAsMoney, maxIndex: 13))")
+        return Image("table\(TableImage.getImageIndex(price: priceAsMoney, user: appState.user))")
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: UIScreen.main.bounds.width-120, alignment: .center)
@@ -178,13 +176,15 @@ struct MainView: View {
         let cornerRadius: CGFloat = UIDevice.current.hasHomeButton ? 0 : 100
         let keyboardVisibleOffset: CGFloat = UIDevice.current.hasHomeButton ? 0 : -16
         
+        let income = R.string.localizable.income()
+        
         return VStack {
             Text("Type below the price")
                 .font(Design.Font.smallLight)
                 .foregroundColor(Design.Color.Text.standard)
                 .isHidden(isKeyboardVisible)
 
-            CurrencyField(priceBinding, placeholder: "Income".localized, textColor: .white)
+            CurrencyField(priceBinding, placeholder: income, textColor: .white)
                 .background(Color(.sRGB, red: 94/255.0, green: 128/255.0, blue: 142/255.0, opacity: 1))
                 .frame(width: width, height: 50, alignment: .center)
                 .cornerRadius(cornerRadius)

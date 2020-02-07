@@ -10,12 +10,11 @@ import Foundation
 import UIKit
 import Combine
 
-public protocol UserRepository {
+protocol UserRepository {
     func loadUser() -> User
-    
 }
 
-public struct UserDefaultsUserRepository: UserRepository {
+struct UserDefaultsUserRepository: UserRepository {
     
     enum Key: String {
         case isOnboardingCompleted
@@ -24,13 +23,13 @@ public struct UserDefaultsUserRepository: UserRepository {
         case workdays = "Workdays"
     }
     
-    public func loadUser() -> User {
+    func loadUser() -> User {
         let monthlySalary = UserDefaults.standard.double(forKey: .monthlySalary)
         let weeklyWorkHours = UserDefaults.standard.maybeInteger(forKey: .weeklyWorkHours) ?? 40
         let isOnboardingCompleted = UserDefaults.standard.bool(forKey: .isOnboardingCompleted)
         let workdays = UserDefaults.standard.maybeWeekdays(forKey: .workdays) ?? Weekday.weekdays()
         
-        return User(monthlySalary: monthlySalary.asDecimal(), weeklyWorkHours: weeklyWorkHours, isOnboardingCompleted: isOnboardingCompleted, workdays: workdays)
+        return User(isOnboardingCompleted: isOnboardingCompleted, monthlySalary: monthlySalary.asDecimal(), weeklyWorkHours: weeklyWorkHours, workdays: workdays)
     }
     
 }

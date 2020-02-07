@@ -10,13 +10,14 @@ import SwiftUI
 
 struct DaysOfWeekView: View {
     
-    @EnvironmentObject var user: User
+    @EnvironmentObject var appState: AppState
+    @Environment(\.interactors) var interactors: InteractorsContainer
     
     private var workdays: String {
         let weekdays = Weekday.all()
         var result = ""
         for day in weekdays {
-            if user.workdays.contains(day) {
+            if appState.user.workdays.contains(day) {
                 result +=  "\(day.localizedLong()), "
             }
         }
@@ -69,13 +70,11 @@ struct DaysOfWeekView: View {
 
 struct DaysOfWeekView_Previews: PreviewProvider {
     
-    static var user = User()
-    
     static var previews: some View {
         
         return ForEach(Self.supportedLocales, id: \.identifier) { locale in
             DaysOfWeekView()
-                .environmentObject(user)
+                .environmentObject(AppState())
                 .environment(\.locale, locale)
                 
         }
