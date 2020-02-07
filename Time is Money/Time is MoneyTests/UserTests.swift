@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import TimeIsMoneyCore
+import Time_is_Money
 
 class UserTests: XCTestCase {
 

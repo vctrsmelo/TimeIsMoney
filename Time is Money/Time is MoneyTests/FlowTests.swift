@@ -8,7 +8,7 @@
 
 import Foundation
 import XCTest
-@testable import TimeIsMoneyCore
+@testable import Time_is_Money
 
 class FlowTests: XCTestCase {
     
