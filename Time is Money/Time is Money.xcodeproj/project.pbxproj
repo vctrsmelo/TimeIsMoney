@@ -7,19 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A0439D7B538F8642174D71C /* Pods_Time_Is_Money_Time_is_Money.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89DA3F9B9FBD56CB958B96F /* Pods_Time_Is_Money_Time_is_Money.framework */; };
-		BE2291DF23DA75950098C106 /* View+IsHidden.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2291DE23DA75950098C106 /* View+IsHidden.swift */; };
+		656D24ECE819A573D47C940D /* Pods_Time_is_Money.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DE7463242B13DBA38ABD09 /* Pods_Time_is_Money.framework */; };
 		BE270BD723C039E50099AAC7 /* DaysOfWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE270BD623C039E50099AAC7 /* DaysOfWeekView.swift */; };
 		BE28C4F123D7A9D300CA9D13 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28C4F023D7A9D300CA9D13 /* R.generated.swift */; };
 		BE28C4F823D7AB3400CA9D13 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE28C4FA23D7AB3400CA9D13 /* Localizable.strings */; };
 		BE28C4FE23D7AC7200CA9D13 /* Time_is_MoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28C4FD23D7AC7200CA9D13 /* Time_is_MoneyTests.swift */; };
 		BE28C50023D7AD9600CA9D13 /* PreviewProvider+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28C4FF23D7AD9600CA9D13 /* PreviewProvider+Locale.swift */; };
-		BE37722923E7149F003C8D3F /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37722823E7149F003C8D3F /* UIDevice+Extensions.swift */; };
+		BE37722923E7149F003C8D3F /* UIDevice+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37722823E7149F003C8D3F /* UIDevice+Type.swift */; };
+		BE442C6223EDA31B002306E6 /* Decimal+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442C6123EDA31B002306E6 /* Decimal+Conversions.swift */; };
+		BE442C6423EDA32F002306E6 /* Double+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442C6323EDA32F002306E6 /* Double+Conversions.swift */; };
+		BE442C6623EDA369002306E6 /* TimeInterval+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442C6523EDA369002306E6 /* TimeInterval+Conversions.swift */; };
+		BE442C6723EDA399002306E6 /* NSDecimalNumber+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645023ED9F270072A555 /* NSDecimalNumber+Operators.swift */; };
+		BE442C6823EDA399002306E6 /* DateComponentsFormatter+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645123ED9F270072A555 /* DateComponentsFormatter+String.swift */; };
+		BE442C6B23EDA674002306E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE442C6A23EDA674002306E6 /* Preview Assets.xcassets */; };
+		BE442C6D23EDA834002306E6 /* SecondsContainedIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442C6C23EDA834002306E6 /* SecondsContainedIn.swift */; };
+		BE442C7023EDA9DC002306E6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645E23ED9F270072A555 /* AppState.swift */; };
+		BE442C7123EDA9E0002306E6 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645B23ED9F270072A555 /* Weekday.swift */; };
+		BE442C7223EDAA09002306E6 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645D23ED9F270072A555 /* UserRepository.swift */; };
+		BE442C7323EDAA14002306E6 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645923ED9F270072A555 /* Money.swift */; };
+		BE442C7423EDAA14002306E6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645A23ED9F270072A555 /* User.swift */; };
+		BE442C7523EDAA16002306E6 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645C23ED9F270072A555 /* Routine.swift */; };
+		BE442C7823EDAAB5002306E6 /* User+Salary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442C7723EDAAB5002306E6 /* User+Salary.swift */; };
+		BE442C7A23EDAB0F002306E6 /* TimePeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442C7923EDAB0F002306E6 /* TimePeriod.swift */; };
+		BE4B4F0823EDC89A0090CCD9 /* User+WorkTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F0723EDC89A0090CCD9 /* User+WorkTime.swift */; };
+		BE4B4F0A23EDCCE50090CCD9 /* TableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F0923EDCCE50090CCD9 /* TableImage.swift */; };
 		BE57677E23CE838D004BF48C /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57677D23CE838D004BF48C /* EditView.swift */; };
 		BE66B18323BD096800166912 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B18223BD096800166912 /* WelcomeView.swift */; };
-		BE815FC72383497200000FB9 /* TimeIsMoneyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */; };
-		BE815FC82383497200000FB9 /* TimeIsMoneyCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE85876923BFF2A300DEFE98 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE85876823BFF2A300DEFE98 /* Formatters.swift */; };
+		BE92644423EC4F020072A555 /* CurrencyInputComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92644323EC4F020072A555 /* CurrencyInputComponentView.swift */; };
+		BE92644623ECD0380072A555 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92644523ECD0380072A555 /* MainInteractor.swift */; };
+		BE92644C23ED95210072A555 /* InteractorsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92644B23ED95210072A555 /* InteractorsContainer.swift */; };
+		BE92646023ED9F270072A555 /* TimeTextTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645323ED9F270072A555 /* TimeTextTranslator.swift */; };
+		BE92646123ED9F270072A555 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92644D23ED9F270072A555 /* Calculator.swift */; };
+		BE92646B23ED9F4A0072A555 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92646823ED9F4A0072A555 /* XCTestCase+Extensions.swift */; };
+		BE92646C23ED9F4A0072A555 /* TimeTextTranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92646A23ED9F4A0072A555 /* TimeTextTranslatorTests.swift */; };
+		BE92646D23ED9F4A0072A555 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92646523ED9F4A0072A555 /* CalculatorTests.swift */; };
+		BE92646E23ED9F4A0072A555 /* ValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92646923ED9F4A0072A555 /* ValueTests.swift */; };
+		BE92647023ED9F4A0072A555 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92646423ED9F4A0072A555 /* UserTests.swift */; };
 		BEA9AB3423C5308B0057EA1E /* CurrencyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA9AB3323C5308B0057EA1E /* CurrencyField.swift */; };
 		BEB0979A23BF984F00244E30 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0979923BF984F00244E30 /* PageViewController.swift */; };
 		BEB0979D23BF990E00244E30 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0979C23BF990E00244E30 /* PageView.swift */; };
@@ -34,10 +58,8 @@
 		BEFBF0E723BD470200FBE0D2 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFBF0E623BD470200FBE0D2 /* Design.swift */; };
 		EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427001234F4A1E007A63D9 /* AppDelegate.swift */; };
 		EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427003234F4A1E007A63D9 /* SceneDelegate.swift */; };
-		EE427007234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE427005234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld */; };
 		EE427009234F4A1E007A63D9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427008234F4A1E007A63D9 /* MainView.swift */; };
 		EE42700B234F4A22007A63D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE42700A234F4A22007A63D9 /* Assets.xcassets */; };
-		EE42700E234F4A22007A63D9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE42700D234F4A22007A63D9 /* Preview Assets.xcassets */; };
 		EE427011234F4A23007A63D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE42700F234F4A23007A63D9 /* LaunchScreen.storyboard */; };
 		EE427027234F4A23007A63D9 /* Time_is_MoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427026234F4A23007A63D9 /* Time_is_MoneyUITests.swift */; };
 /* End PBXBuildFile section */
@@ -59,26 +81,10 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		BE815F40238343EF00000FB9 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				BE815FC82383497200000FB9 /* TimeIsMoneyCore.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		1E576229802A8BB2ECFE7E3C /* Pods-Time Is Money-Time is Money.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time Is Money-Time is Money.release.xcconfig"; path = "Target Support Files/Pods-Time Is Money-Time is Money/Pods-Time Is Money-Time is Money.release.xcconfig"; sourceTree = "<group>"; };
-		30114F19B14CB7CCF80DDDA5 /* Pods-Time Is Money-Time is Money.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time Is Money-Time is Money.debug.xcconfig"; path = "Target Support Files/Pods-Time Is Money-Time is Money/Pods-Time Is Money-Time is Money.debug.xcconfig"; sourceTree = "<group>"; };
-		859912838D1CA2042502621A /* Pods-Time is Money.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time is Money.debug.xcconfig"; path = "Target Support Files/Pods-Time is Money/Pods-Time is Money.debug.xcconfig"; sourceTree = "<group>"; };
-		B89DA3F9B9FBD56CB958B96F /* Pods_Time_Is_Money_Time_is_Money.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Time_Is_Money_Time_is_Money.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE2291DE23DA75950098C106 /* View+IsHidden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+IsHidden.swift"; sourceTree = "<group>"; };
+		39B88DD7EAD41710042B064D /* Pods-Time is Money.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time is Money.release.xcconfig"; path = "Target Support Files/Pods-Time is Money/Pods-Time is Money.release.xcconfig"; sourceTree = "<group>"; };
+		69DE7463242B13DBA38ABD09 /* Pods_Time_is_Money.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Time_is_Money.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72A8156F1017C5870C6B6FFB /* Pods-Time is Money.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time is Money.debug.xcconfig"; path = "Target Support Files/Pods-Time is Money/Pods-Time is Money.debug.xcconfig"; sourceTree = "<group>"; };
 		BE270BD623C039E50099AAC7 /* DaysOfWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOfWeekView.swift; sourceTree = "<group>"; };
 		BE28C4F023D7A9D300CA9D13 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		BE28C4F523D7AABA00CA9D13 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -86,11 +92,40 @@
 		BE28C4FC23D7AB5300CA9D13 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BE28C4FD23D7AC7200CA9D13 /* Time_is_MoneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_is_MoneyTests.swift; sourceTree = "<group>"; };
 		BE28C4FF23D7AD9600CA9D13 /* PreviewProvider+Locale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewProvider+Locale.swift"; sourceTree = "<group>"; };
-		BE37722823E7149F003C8D3F /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
+		BE37722823E7149F003C8D3F /* UIDevice+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Type.swift"; sourceTree = "<group>"; };
+		BE442C6123EDA31B002306E6 /* Decimal+Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Conversions.swift"; sourceTree = "<group>"; };
+		BE442C6323EDA32F002306E6 /* Double+Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Conversions.swift"; sourceTree = "<group>"; wrapsLines = 0; };
+		BE442C6523EDA369002306E6 /* TimeInterval+Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Conversions.swift"; sourceTree = "<group>"; };
+		BE442C6A23EDA674002306E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BE442C6C23EDA834002306E6 /* SecondsContainedIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondsContainedIn.swift; sourceTree = "<group>"; };
+		BE442C6E23EDA864002306E6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE442C7723EDAAB5002306E6 /* User+Salary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Salary.swift"; sourceTree = "<group>"; };
+		BE442C7923EDAB0F002306E6 /* TimePeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePeriod.swift; sourceTree = "<group>"; };
+		BE4B4F0723EDC89A0090CCD9 /* User+WorkTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+WorkTime.swift"; sourceTree = "<group>"; };
+		BE4B4F0923EDCCE50090CCD9 /* TableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableImage.swift; sourceTree = "<group>"; };
 		BE57677D23CE838D004BF48C /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		BE66B18223BD096800166912 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE85876823BFF2A300DEFE98 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		BE92644323EC4F020072A555 /* CurrencyInputComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyInputComponentView.swift; sourceTree = "<group>"; };
+		BE92644523ECD0380072A555 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		BE92644B23ED95210072A555 /* InteractorsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorsContainer.swift; sourceTree = "<group>"; };
+		BE92644D23ED9F270072A555 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		BE92645023ED9F270072A555 /* NSDecimalNumber+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDecimalNumber+Operators.swift"; sourceTree = "<group>"; };
+		BE92645123ED9F270072A555 /* DateComponentsFormatter+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponentsFormatter+String.swift"; sourceTree = "<group>"; };
+		BE92645323ED9F270072A555 /* TimeTextTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTextTranslator.swift; sourceTree = "<group>"; };
+		BE92645923ED9F270072A555 /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		BE92645A23ED9F270072A555 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BE92645B23ED9F270072A555 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
+		BE92645C23ED9F270072A555 /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
+		BE92645D23ED9F270072A555 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		BE92645E23ED9F270072A555 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		BE92646423ED9F4A0072A555 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
+		BE92646523ED9F4A0072A555 /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
+		BE92646723ED9F4A0072A555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../TimeIsMoneyCore/TimeIsMoneyCoreTests/Info.plist; sourceTree = "<group>"; };
+		BE92646823ED9F4A0072A555 /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
+		BE92646923ED9F4A0072A555 /* ValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTests.swift; sourceTree = "<group>"; };
+		BE92646A23ED9F4A0072A555 /* TimeTextTranslatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTextTranslatorTests.swift; sourceTree = "<group>"; };
 		BEA9AB3323C5308B0057EA1E /* CurrencyField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyField.swift; sourceTree = "<group>"; };
 		BEB0979923BF984F00244E30 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		BEB0979C23BF990E00244E30 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
@@ -103,16 +138,12 @@
 		BEC748BA23D23BB50027F26D /* WeekHStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHStack.swift; sourceTree = "<group>"; };
 		BEC748BC23D23BCF0027F26D /* WeekdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayView.swift; sourceTree = "<group>"; };
 		BEFBF0E623BD470200FBE0D2 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
-		E8294E6DB87CD33D0D6C0156 /* Pods-Time is Money.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time is Money.release.xcconfig"; path = "Target Support Files/Pods-Time is Money/Pods-Time is Money.release.xcconfig"; sourceTree = "<group>"; };
 		EE426FFE234F4A1E007A63D9 /* Time is Money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time is Money.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE427001234F4A1E007A63D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE427003234F4A1E007A63D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EE427006234F4A1E007A63D9 /* Time_is_Money.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Time_is_Money.xcdatamodel; sourceTree = "<group>"; };
 		EE427008234F4A1E007A63D9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		EE42700A234F4A22007A63D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EE42700D234F4A22007A63D9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EE427010234F4A23007A63D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		EE427012234F4A23007A63D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE427017234F4A23007A63D9 /* Time is MoneyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Time is MoneyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE42701D234F4A23007A63D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE427022234F4A23007A63D9 /* Time is MoneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Time is MoneyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,8 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE815FC72383497200000FB9 /* TimeIsMoneyCore.framework in Frameworks */,
-				8A0439D7B538F8642174D71C /* Pods_Time_Is_Money_Time_is_Money.framework in Frameworks */,
+				656D24ECE819A573D47C940D /* Pods_Time_is_Money.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,100 +177,148 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AA077249FFB451F5DBB6C189 /* Pods */ = {
+		1810937E6B25167BFE90E2C0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				859912838D1CA2042502621A /* Pods-Time is Money.debug.xcconfig */,
-				E8294E6DB87CD33D0D6C0156 /* Pods-Time is Money.release.xcconfig */,
-				30114F19B14CB7CCF80DDDA5 /* Pods-Time Is Money-Time is Money.debug.xcconfig */,
-				1E576229802A8BB2ECFE7E3C /* Pods-Time Is Money-Time is Money.release.xcconfig */,
+				72A8156F1017C5870C6B6FFB /* Pods-Time is Money.debug.xcconfig */,
+				39B88DD7EAD41710042B064D /* Pods-Time is Money.release.xcconfig */,
 			);
-			name = Pods;
-			path = ../Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
-		BE37E3D823CF93A000A4D3CC /* SwiftUI */ = {
+		BE442C5623ED9FE1002306E6 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				EE427003234F4A1E007A63D9 /* SceneDelegate.swift */,
+				EE427001234F4A1E007A63D9 /* AppDelegate.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		BE442C5723ED9FE5002306E6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BE442C6C23EDA834002306E6 /* SecondsContainedIn.swift */,
+				BEC00AF023BFE57D001B6724 /* Extensions */,
+				BE92644D23ED9F270072A555 /* Calculator.swift */,
+				BE92645323ED9F270072A555 /* TimeTextTranslator.swift */,
+				BEFBF0E623BD470200FBE0D2 /* Design.swift */,
+				BE85876823BFF2A300DEFE98 /* Formatters.swift */,
+				BE442C7923EDAB0F002306E6 /* TimePeriod.swift */,
+				BE4B4F0923EDCCE50090CCD9 /* TableImage.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		BE442C5823ED9FEE002306E6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BE442C6923EDA674002306E6 /* Preview Content */,
+				EE42700A234F4A22007A63D9 /* Assets.xcassets */,
+				EE42700F234F4A23007A63D9 /* LaunchScreen.storyboard */,
+				BE28C4FA23D7AB3400CA9D13 /* Localizable.strings */,
+				BE442C6E23EDA864002306E6 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BE442C5923ED9FF5002306E6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				BEBACBAF23E745E0002ABD20 /* ViewModifiers */,
+				BE442C5F23EDA084002306E6 /* Screens */,
+				BE442C5E23EDA080002306E6 /* Components */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		BE442C5A23ED9FF7002306E6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BE92645923ED9F270072A555 /* Money.swift */,
+				BE92645A23ED9F270072A555 /* User.swift */,
+				BE92645B23ED9F270072A555 /* Weekday.swift */,
+				BE92645C23ED9F270072A555 /* Routine.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BE442C5B23ED9FF9002306E6 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				BE92644523ECD0380072A555 /* MainInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		BE442C5C23ED9FFC002306E6 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				BE92645D23ED9F270072A555 /* UserRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		BE442C5D23EDA000002306E6 /* Injected */ = {
+			isa = PBXGroup;
+			children = (
+				BE92645E23ED9F270072A555 /* AppState.swift */,
+				BE92644B23ED95210072A555 /* InteractorsContainer.swift */,
+			);
+			path = Injected;
+			sourceTree = "<group>";
+		};
+		BE442C5E23EDA080002306E6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
 				BEC00AEE23BFE361001B6724 /* BackgroundView.swift */,
 				BEC748BA23D23BB50027F26D /* WeekHStack.swift */,
 				BEC748BC23D23BCF0027F26D /* WeekdayView.swift */,
+				BEA9AB3323C5308B0057EA1E /* CurrencyField.swift */,
+				BE92644323EC4F020072A555 /* CurrencyInputComponentView.swift */,
+				BEC00AE623BFD6A0001B6724 /* PageControl.swift */,
+				BEB0979923BF984F00244E30 /* PageViewController.swift */,
+				BEB0979C23BF990E00244E30 /* PageView.swift */,
 			);
-			path = SwiftUI;
+			path = Components;
 			sourceTree = "<group>";
 		};
-		BE57677C23CE8374004BF48C /* Edit */ = {
+		BE442C5F23EDA084002306E6 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				BE442C6023EDA10E002306E6 /* Onboarding Screens */,
+				EE427008234F4A1E007A63D9 /* MainView.swift */,
 				BE57677D23CE838D004BF48C /* EditView.swift */,
 			);
-			path = Edit;
+			path = Screens;
 			sourceTree = "<group>";
 		};
-		BE7C9CC5236C9B8700167018 /* Shared */ = {
+		BE442C6023EDA10E002306E6 /* Onboarding Screens */ = {
 			isa = PBXGroup;
 			children = (
-				BEC6A5D023C6A5950014F0CE /* UIKit */,
-				BE37E3D823CF93A000A4D3CC /* SwiftUI */,
-				BEC00AF023BFE57D001B6724 /* Extensions */,
-				BEFBF0E623BD470200FBE0D2 /* Design.swift */,
-				BE85876823BFF2A300DEFE98 /* Formatters.swift */,
+				BE270BD623C039E50099AAC7 /* DaysOfWeekView.swift */,
+				BEC00AEA23BFDC3C001B6724 /* IncomeView.swift */,
+				BE66B18223BD096800166912 /* WelcomeView.swift */,
+				BEC00AE823BFDC2C001B6724 /* WorkTimeView.swift */,
 			);
-			path = Shared;
+			path = "Onboarding Screens";
+			sourceTree = "<group>";
+		};
+		BE442C6923EDA674002306E6 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BE442C6A23EDA674002306E6 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		BE815FC52383497200000FB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */,
-				B89DA3F9B9FBD56CB958B96F /* Pods_Time_Is_Money_Time_is_Money.framework */,
+				69DE7463242B13DBA38ABD09 /* Pods_Time_is_Money.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BE93568F236C8EA400B29EF5 /* Flows */ = {
-			isa = PBXGroup;
-			children = (
-				BE935694236C8FA700B29EF5 /* Onboarding */,
-				BE57677C23CE8374004BF48C /* Edit */,
-				BE935693236C8F9800B29EF5 /* Main */,
-			);
-			path = Flows;
-			sourceTree = "<group>";
-		};
-		BE935691236C8F1800B29EF5 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				EE42700C234F4A22007A63D9 /* Preview Content */,
-				EE427005234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld */,
-				EE42700F234F4A23007A63D9 /* LaunchScreen.storyboard */,
-				EE427012234F4A23007A63D9 /* Info.plist */,
-				EE42700A234F4A22007A63D9 /* Assets.xcassets */,
-				BE28C4FA23D7AB3400CA9D13 /* Localizable.strings */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		BE935693236C8F9800B29EF5 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				EE427008234F4A1E007A63D9 /* MainView.swift */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		BE935694236C8FA700B29EF5 /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				BEC00AF323BFE5CD001B6724 /* UIKit */,
-				BEB0979C23BF990E00244E30 /* PageView.swift */,
-				BE66B18223BD096800166912 /* WelcomeView.swift */,
-				BE270BD623C039E50099AAC7 /* DaysOfWeekView.swift */,
-				BEC00AE823BFDC2C001B6724 /* WorkTimeView.swift */,
-				BEC00AEA23BFDC3C001B6724 /* IncomeView.swift */,
-			);
-			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		BEBACBAF23E745E0002ABD20 /* ViewModifiers */ = {
@@ -254,41 +332,37 @@
 		BEC00AF023BFE57D001B6724 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				BE37722823E7149F003C8D3F /* UIDevice+Extensions.swift */,
+				BE37722823E7149F003C8D3F /* UIDevice+Type.swift */,
 				BEC00AF123BFE591001B6724 /* View+Extensions.swift */,
 				BE28C4FF23D7AD9600CA9D13 /* PreviewProvider+Locale.swift */,
-				BE2291DE23DA75950098C106 /* View+IsHidden.swift */,
+				BE442C6123EDA31B002306E6 /* Decimal+Conversions.swift */,
+				BE442C6323EDA32F002306E6 /* Double+Conversions.swift */,
+				BE442C6523EDA369002306E6 /* TimeInterval+Conversions.swift */,
+				BE92645023ED9F270072A555 /* NSDecimalNumber+Operators.swift */,
+				BE92645123ED9F270072A555 /* DateComponentsFormatter+String.swift */,
+				BE442C7723EDAAB5002306E6 /* User+Salary.swift */,
+				BE4B4F0723EDC89A0090CCD9 /* User+WorkTime.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		BEC00AF323BFE5CD001B6724 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				BEC00AE623BFD6A0001B6724 /* PageControl.swift */,
-				BEB0979923BF984F00244E30 /* PageViewController.swift */,
-			);
-			path = UIKit;
-			sourceTree = "<group>";
-		};
-		BEC6A5D023C6A5950014F0CE /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				BEA9AB3323C5308B0057EA1E /* CurrencyField.swift */,
-			);
-			path = UIKit;
 			sourceTree = "<group>";
 		};
 		EE426FF5234F4A1E007A63D9 = {
 			isa = PBXGroup;
 			children = (
+				BE442C5623ED9FE1002306E6 /* System */,
+				BE442C5723ED9FE5002306E6 /* Utilities */,
+				BE442C5D23EDA000002306E6 /* Injected */,
+				BE442C5C23ED9FFC002306E6 /* Repositories */,
+				BE442C5B23ED9FF9002306E6 /* Interactors */,
+				BE442C5A23ED9FF7002306E6 /* Models */,
+				BE442C5923ED9FF5002306E6 /* UI */,
+				BE442C5823ED9FEE002306E6 /* Resources */,
 				BE28C4F023D7A9D300CA9D13 /* R.generated.swift */,
-				EE427000234F4A1E007A63D9 /* Time is Money */,
 				EE42701A234F4A23007A63D9 /* Time is MoneyTests */,
 				EE427025234F4A23007A63D9 /* Time is MoneyUITests */,
 				EE426FFF234F4A1E007A63D9 /* Products */,
 				BE815FC52383497200000FB9 /* Frameworks */,
-				AA077249FFB451F5DBB6C189 /* Pods */,
+				1810937E6B25167BFE90E2C0 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -302,30 +376,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EE427000234F4A1E007A63D9 /* Time is Money */ = {
-			isa = PBXGroup;
-			children = (
-				EE427003234F4A1E007A63D9 /* SceneDelegate.swift */,
-				EE427001234F4A1E007A63D9 /* AppDelegate.swift */,
-				BE7C9CC5236C9B8700167018 /* Shared */,
-				BE93568F236C8EA400B29EF5 /* Flows */,
-				BE935691236C8F1800B29EF5 /* Resources */,
-			);
-			path = "Time is Money";
-			sourceTree = "<group>";
-		};
-		EE42700C234F4A22007A63D9 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				EE42700D234F4A22007A63D9 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 		EE42701A234F4A23007A63D9 /* Time is MoneyTests */ = {
 			isa = PBXGroup;
 			children = (
+				BE92646A23ED9F4A0072A555 /* TimeTextTranslatorTests.swift */,
 				EE42701D234F4A23007A63D9 /* Info.plist */,
+				BE92646723ED9F4A0072A555 /* Info.plist */,
+				BE92646423ED9F4A0072A555 /* UserTests.swift */,
+				BE92646823ED9F4A0072A555 /* XCTestCase+Extensions.swift */,
+				BE92646923ED9F4A0072A555 /* ValueTests.swift */,
+				BE92646523ED9F4A0072A555 /* CalculatorTests.swift */,
 				BE28C4FD23D7AC7200CA9D13 /* Time_is_MoneyTests.swift */,
 			);
 			path = "Time is MoneyTests";
@@ -347,13 +407,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE42702B234F4A23007A63D9 /* Build configuration list for PBXNativeTarget "Time is Money" */;
 			buildPhases = (
-				88F9A90B4F93708DF419EBFD /* [CP] Check Pods Manifest.lock */,
+				C2DBEFCDA3648FBB26355388 /* [CP] Check Pods Manifest.lock */,
 				BE28C4EF23D7A96C00CA9D13 /* R.Swift */,
 				EE426FFA234F4A1E007A63D9 /* Sources */,
 				EE426FFB234F4A1E007A63D9 /* Frameworks */,
 				EE426FFC234F4A1E007A63D9 /* Resources */,
-				BE815F40238343EF00000FB9 /* Embed Frameworks */,
-				4F8F5EE15D0A9D08DFF0B56A /* [CP] Embed Pods Frameworks */,
+				0B1B414EC172E0780F87F8F7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -452,7 +511,7 @@
 			files = (
 				EE427011234F4A23007A63D9 /* LaunchScreen.storyboard in Resources */,
 				BE28C4F823D7AB3400CA9D13 /* Localizable.strings in Resources */,
-				EE42700E234F4A22007A63D9 /* Preview Assets.xcassets in Resources */,
+				BE442C6B23EDA674002306E6 /* Preview Assets.xcassets in Resources */,
 				EE42700B234F4A22007A63D9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,43 +533,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4F8F5EE15D0A9D08DFF0B56A /* [CP] Embed Pods Frameworks */ = {
+		0B1B414EC172E0780F87F8F7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Time Is Money-Time is Money/Pods-Time Is Money-Time is Money-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Time is Money/Pods-Time is Money-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Time Is Money-Time is Money/Pods-Time Is Money-Time is Money-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Time is Money/Pods-Time is Money-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Time Is Money-Time is Money/Pods-Time Is Money-Time is Money-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		88F9A90B4F93708DF419EBFD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Time Is Money-Time is Money-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Time is Money/Pods-Time is Money-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BE28C4EF23D7A96C00CA9D13 /* R.Swift */ = {
@@ -533,6 +570,28 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
+		C2DBEFCDA3648FBB26355388 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Time is Money-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -541,29 +600,48 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE66B18323BD096800166912 /* WelcomeView.swift in Sources */,
+				BE442C7123EDA9E0002306E6 /* Weekday.swift in Sources */,
+				BE442C7223EDAA09002306E6 /* UserRepository.swift in Sources */,
+				BE442C6623EDA369002306E6 /* TimeInterval+Conversions.swift in Sources */,
 				BEB0979D23BF990E00244E30 /* PageView.swift in Sources */,
-				BE2291DF23DA75950098C106 /* View+IsHidden.swift in Sources */,
+				BE442C7A23EDAB0F002306E6 /* TimePeriod.swift in Sources */,
 				BEC00AE723BFD6A0001B6724 /* PageControl.swift in Sources */,
 				BE85876923BFF2A300DEFE98 /* Formatters.swift in Sources */,
 				BEB0979A23BF984F00244E30 /* PageViewController.swift in Sources */,
 				BEBACBB123E745EA002ABD20 /* ScaledFont.swift in Sources */,
 				BEC748BB23D23BB50027F26D /* WeekHStack.swift in Sources */,
 				BE28C50023D7AD9600CA9D13 /* PreviewProvider+Locale.swift in Sources */,
+				BE4B4F0823EDC89A0090CCD9 /* User+WorkTime.swift in Sources */,
+				BE92646023ED9F270072A555 /* TimeTextTranslator.swift in Sources */,
 				BEC748BD23D23BCF0027F26D /* WeekdayView.swift in Sources */,
 				BE28C4F123D7A9D300CA9D13 /* R.generated.swift in Sources */,
+				BE442C7523EDAA16002306E6 /* Routine.swift in Sources */,
 				BEC00AEB23BFDC3C001B6724 /* IncomeView.swift in Sources */,
-				EE427007234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld in Sources */,
+				BE442C6423EDA32F002306E6 /* Double+Conversions.swift in Sources */,
+				BE442C6223EDA31B002306E6 /* Decimal+Conversions.swift in Sources */,
+				BE92644C23ED95210072A555 /* InteractorsContainer.swift in Sources */,
+				BE442C7423EDAA14002306E6 /* User.swift in Sources */,
 				BEC00AEF23BFE361001B6724 /* BackgroundView.swift in Sources */,
 				EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */,
+				BE442C7823EDAAB5002306E6 /* User+Salary.swift in Sources */,
 				BEFBF0E723BD470200FBE0D2 /* Design.swift in Sources */,
 				BEC00AF223BFE591001B6724 /* View+Extensions.swift in Sources */,
+				BE442C6823EDA399002306E6 /* DateComponentsFormatter+String.swift in Sources */,
 				BEA9AB3423C5308B0057EA1E /* CurrencyField.swift in Sources */,
+				BE4B4F0A23EDCCE50090CCD9 /* TableImage.swift in Sources */,
 				BE270BD723C039E50099AAC7 /* DaysOfWeekView.swift in Sources */,
+				BE442C7023EDA9DC002306E6 /* AppState.swift in Sources */,
 				BE57677E23CE838D004BF48C /* EditView.swift in Sources */,
 				EE427009234F4A1E007A63D9 /* MainView.swift in Sources */,
 				BEC00AE923BFDC2C001B6724 /* WorkTimeView.swift in Sources */,
-				BE37722923E7149F003C8D3F /* UIDevice+Extensions.swift in Sources */,
+				BE37722923E7149F003C8D3F /* UIDevice+Type.swift in Sources */,
+				BE92646123ED9F270072A555 /* Calculator.swift in Sources */,
+				BE442C6D23EDA834002306E6 /* SecondsContainedIn.swift in Sources */,
 				EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */,
+				BE442C6723EDA399002306E6 /* NSDecimalNumber+Operators.swift in Sources */,
+				BE442C7323EDAA14002306E6 /* Money.swift in Sources */,
+				BE92644423EC4F020072A555 /* CurrencyInputComponentView.swift in Sources */,
+				BE92644623ECD0380072A555 /* MainInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,6 +649,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE92646C23ED9F4A0072A555 /* TimeTextTranslatorTests.swift in Sources */,
+				BE92646D23ED9F4A0072A555 /* CalculatorTests.swift in Sources */,
+				BE92646E23ED9F4A0072A555 /* ValueTests.swift in Sources */,
+				BE92647023ED9F4A0072A555 /* UserTests.swift in Sources */,
+				BE92646B23ED9F4A0072A555 /* XCTestCase+Extensions.swift in Sources */,
 				BE28C4FE23D7AC7200CA9D13 /* Time_is_MoneyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -738,19 +821,19 @@
 		};
 		EE42702C234F4A23007A63D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30114F19B14CB7CCF80DDDA5 /* Pods-Time Is Money-Time is Money.debug.xcconfig */;
+			baseConfigurationReference = 72A8156F1017C5870C6B6FFB /* Pods-Time is Money.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_ASSET_PATHS = "\"Time is Money/Resources/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = Y93HUJS49V;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "Time is Money/Resources/Info.plist";
+				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -765,19 +848,19 @@
 		};
 		EE42702D234F4A23007A63D9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E576229802A8BB2ECFE7E3C /* Pods-Time Is Money-Time is Money.release.xcconfig */;
+			baseConfigurationReference = 39B88DD7EAD41710042B064D /* Pods-Time is Money.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_ASSET_PATHS = "\"Time is Money/Resources/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = Y93HUJS49V;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "Time is Money/Resources/Info.plist";
+				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -917,19 +1000,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		EE427005234F4A1E007A63D9 /* Time_is_Money.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				EE427006234F4A1E007A63D9 /* Time_is_Money.xcdatamodel */,
-			);
-			currentVersion = EE427006234F4A1E007A63D9 /* Time_is_Money.xcdatamodel */;
-			path = Time_is_Money.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = EE426FF6234F4A1E007A63D9 /* Project object */;
 }
