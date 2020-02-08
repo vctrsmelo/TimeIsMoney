@@ -44,6 +44,8 @@ struct EditView: View {
                     self.hideKeyboard()
                 }
             )
+        }.onDisappear {
+            self.interactors.mainInteractor.saveUser()
         }
     }
     

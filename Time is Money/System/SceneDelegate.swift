@@ -20,23 +20,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     AnyView(WorkTimeView()),
                     AnyView(IncomeView())]
         
-        let appState = AppState()
-        let interactors = InteractorsContainer(mainInteractor: RealMainInteractor(userRepository: UserDefaultsUserRepository(), appState: appState))
+        let interactors = InteractorsContainer.defaultValue
         
         interactors.mainInteractor.loadUser()
-        let onboardingView = PageView(pages).environmentObject(appState)
+        let onboardingView = PageView(pages).environmentObject(interactors.mainInteractor.appState)
         
         let mainView = NavigationView {
                 MainView()
             }
             .navigationViewStyle(StackNavigationViewStyle())
-            .environmentObject(appState)
+            .environmentObject(interactors.mainInteractor.appState)
         
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             
-            if appState.user.isOnboardingCompleted {
+            if interactors.mainInteractor.appState.user.isOnboardingCompleted {
                 window.rootViewController = UIHostingController(rootView: mainView)
             } else {
                 window.rootViewController = UIHostingController(rootView: onboardingView)

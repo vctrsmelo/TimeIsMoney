@@ -23,8 +23,16 @@ public extension AppState {
     struct User {
         public var isOnboardingCompleted: Bool = false
         public var monthlySalary: Decimal = 1000
-        public var weeklyWorkHours: Int = 40
-        public var workdays: [Weekday] = Weekday.weekdays()
+        public var weeklyWorkHours: Int = 40 {
+            didSet {
+                syncWorkdaysWithWorkHours()
+            }
+        }
+        public var workdays: [Weekday] = Weekday.weekdays() {
+            didSet {
+                syncWorkdaysWithWorkHours()
+            }
+        }
         
         func isSelectedHoursValid(_ selectedHours: Int) -> Bool {
             return (selectedHours < workdays.count || selectedHours > workdays.count * 24)

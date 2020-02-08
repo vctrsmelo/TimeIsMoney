@@ -59,21 +59,9 @@ import Foundation
         priceDiscountingAlreadyPaidValue -= user.getSalaryPerMinute() * workMinutesNeeded
         currentWorkSeconds += user.minuteWorkSeconds * workMinutesNeeded
         
-//        // minute
-//        while priceDiscountingAlreadyPaidValue >= user.getSalaryPerMinute() {
-//            priceDiscountingAlreadyPaidValue -= user.getSalaryPerMinute()
-//            currentWorkSeconds += user.minuteWorkSeconds
-//        }
-        
         let workSecondsNeeded = (priceDiscountingAlreadyPaidValue / user.getSalaryPerSecond()).floor
         priceDiscountingAlreadyPaidValue -= user.getSalaryPerSecond() * workSecondsNeeded
-        currentWorkSeconds += user.secondWorkSeconds
-        
-//        // second
-//        while priceDiscountingAlreadyPaidValue >= user.getSalaryPerSecond() {
-//            priceDiscountingAlreadyPaidValue -= user.getSalaryPerSecond()
-//            currentWorkSeconds += user.secondWorkSeconds
-//        }
+        currentWorkSeconds += user.secondWorkSeconds * workSecondsNeeded
         
         return .success(currentWorkSeconds.timeIntervalValue)
     }

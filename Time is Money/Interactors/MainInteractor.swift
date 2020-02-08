@@ -9,7 +9,9 @@
 import Foundation
 
 protocol MainInteractor {
+    var appState: AppState { get }
     func loadUser()
+    func saveUser()
 }
 
 struct RealMainInteractor: MainInteractor {
@@ -25,10 +27,8 @@ struct RealMainInteractor: MainInteractor {
     func loadUser() {
         appState.user = userRepository.loadUser()
     }
-}
-
-struct StubMainInteractor: MainInteractor {
-    func loadUser() {
-        // TODO: Implement
+    
+    func saveUser() {
+        userRepository.saveUser(user: appState.user)
     }
 }

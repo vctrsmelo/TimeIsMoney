@@ -12,6 +12,7 @@ import Combine
 
 protocol UserRepository {
     func loadUser() -> User
+    func saveUser(user: User)
 }
 
 struct UserDefaultsUserRepository: UserRepository {
@@ -32,6 +33,15 @@ struct UserDefaultsUserRepository: UserRepository {
         return User(isOnboardingCompleted: isOnboardingCompleted, monthlySalary: monthlySalary.asDecimal(), weeklyWorkHours: weeklyWorkHours, workdays: workdays)
     }
     
+    func saveUser(user: User) {
+        UserDefaults.standard.set(user.isOnboardingCompleted, forKey: Key.isOnboardingCompleted.rawValue)
+        UserDefaults.standard.set(user.monthlySalary, forKey: Key.monthlySalary.rawValue)
+        UserDefaults.standard.set(user.weeklyWorkHours, forKey: Key.weeklyWorkHours.rawValue)
+        
+        if let encoded = try? JSONEncoder().encode(user.workdays) {
+            UserDefaults.standard.set(encoded, forKey: Key.workdays.rawValue)
+        }
+    }
 }
 
 private extension UserDefaults {

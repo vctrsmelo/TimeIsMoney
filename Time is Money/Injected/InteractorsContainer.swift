@@ -14,7 +14,7 @@ struct InteractorsContainer: EnvironmentKey {
     
     static var defaultValue: Self { Self.default }
     
-    private static let `default` = Self(mainInteractor: StubMainInteractor())
+    private static let `default` = Self(mainInteractor: RealMainInteractor(userRepository: UserDefaultsUserRepository(), appState: AppState()))
     
     init(mainInteractor: MainInteractor) {
         self.mainInteractor = mainInteractor

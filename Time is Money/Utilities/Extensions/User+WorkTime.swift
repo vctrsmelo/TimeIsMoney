@@ -43,6 +43,6 @@ extension User {
     }
     
     public var secondWorkSeconds: NSDecimalNumber {
-        NSDecimalNumber(value: 60)
+        NSDecimalNumber(value: 1)
     }
 }
