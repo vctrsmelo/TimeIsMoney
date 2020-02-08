@@ -15,6 +15,11 @@ struct InteractorsContainer: EnvironmentKey {
     static var defaultValue: Self { Self.default }
     
     private static let `default` = Self(mainInteractor: StubMainInteractor())
+    
+    init(mainInteractor: MainInteractor) {
+        self.mainInteractor = mainInteractor
+        self.mainInteractor.loadUser()
+    }
 }
 
 extension EnvironmentValues {

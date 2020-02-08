@@ -15,36 +15,31 @@ struct MainView: View {
     @EnvironmentObject var appState: AppState
     @Environment(\.interactors) var interactors: InteractorsContainer
     
-    @State private var price: Decimal = 100
     @State private var offsetValue: CGFloat = 0.0
     @State private var showEditView = false
     @State private var topTextPadding: CGFloat = 0.0
     @State private var isKeyboardVisible = false
-
-    private var priceAsMoney: Money {
-        price as Money
-    }
     
     var body: some View {
         
-        let formattedValue = Formatter.currency.string(from: priceAsMoney) ?? "?"
-        let maybeTimeNeeded = Calculator.getWorkTimeToPay(for: priceAsMoney, user: appState.user)
-        let timeMessage: String
+        let value = appState.getCurrentValue()
         
-        let priceAsSeconds: Double
-        switch maybeTimeNeeded {
-        case .success(let worktime):
-            priceAsSeconds = worktime
-            timeMessage = TimeTextTranslator.getWorkTimeDescriptionToPay(for: worktime, user: appState.user)
-        case .failure(let error):
+        let formattedValue = Formatter.currency.string(from: appState.currentPrice) ?? "?"
+        
+        let timeMessage: String
+        let priceAsSeconds: TimeInterval
+        
+        if let calculatedPrice = value.getAsTimeInSeconds() {
+            priceAsSeconds = calculatedPrice
+            timeMessage = TimeTextTranslator.getWorkTimeDescriptionToPay(for: priceAsSeconds, user: appState.user)
+        } else {
             priceAsSeconds = 0.0
             timeMessage = "¯\\_(ツ)_/¯"
-            print(error)
         }
         
         let priceBinding = Binding(
-            get: { self.price },
-            set: { self.price = $0 }
+            get: { self.appState.currentPrice.decimalValue },
+            set: { self.appState.currentPrice = NSDecimalNumber(decimal: $0) }
         )
         
         return VStack(alignment: .center, spacing: 0) {
@@ -162,7 +157,7 @@ struct MainView: View {
     
     private func tableImageSection() -> some View {
         
-        return Image("table\(TableImage.getImageIndex(price: priceAsMoney, user: appState.user))")
+        return Image("table\(TableImage.getImageIndex(price: appState.currentPrice, user: appState.user))")
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: UIScreen.main.bounds.width-120, alignment: .center)

@@ -17,40 +17,55 @@ import Foundation
         case timeInSeconds(_ value: TimeInterval)
     }
     
-     let value: ValueType
+    let value: ValueType
+    var user: User
     
-     init(valueType: ValueType) {
+    init(valueType: ValueType, user: User) {
         self.value = valueType
+        self.user = user
     }
     
-     init(money: Money) {
+     init(money: Money, user: User) {
         self.value = ValueType.monetary(money)
+        self.user = user
     }
     
-     init(money: Double) {
+     init(money: Double, user: User) {
         self.value = ValueType.monetary(Money(value: money))
+        self.user = user
     }
     
-     init(workSeconds: TimeInterval) {
+     init(workSeconds: TimeInterval, user: User) {
         self.value = ValueType.timeInSeconds(workSeconds)
+        self.user = user
     }
     
-     func getAsMoney(for user: User) -> Result<Money, CalculatorError> {
+     func getAsMoney() -> Money? {
+        var moneyValue: Money?
         switch value {
         case .monetary(let value):
-            return .success(value)
+            moneyValue = value
         case .timeInSeconds(let value):
-            return value.asMoney(for: user)
+            if case .success(let mValue) = value.asMoney(for: user) {
+                moneyValue = mValue
+            }
         }
+
+        return moneyValue
     }
     
-     func getAsTimeInSeconds(for user: User) -> Result<TimeInterval, CalculatorError> {
+     func getAsTimeInSeconds() -> TimeInterval? {
+        var timeInSecondsValue: TimeInterval?
         switch value {
         case .monetary(let value):
-            return value.asSeconds(for: user)
+            if case .success(let tValue) = value.asSeconds(for: user) {
+                timeInSecondsValue = tValue
+            }
         case .timeInSeconds(let value):
-            return .success(value)
+            timeInSecondsValue = value
         }
+        
+        return timeInSecondsValue
     }
 }
 

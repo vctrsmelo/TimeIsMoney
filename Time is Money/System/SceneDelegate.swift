@@ -21,7 +21,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     AnyView(IncomeView())]
         
         let appState = AppState()
-        let onboardingView = PageView(pages).environmentObject(appState)//.environment(\.managedObjectContext, context)
+        let interactors = InteractorsContainer(mainInteractor: RealMainInteractor(userRepository: UserDefaultsUserRepository(), appState: appState))
+        
+        interactors.mainInteractor.loadUser()
+        let onboardingView = PageView(pages).environmentObject(appState)
         
         let mainView = NavigationView {
                 MainView()

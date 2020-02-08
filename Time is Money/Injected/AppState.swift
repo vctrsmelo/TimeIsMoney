@@ -10,7 +10,12 @@ import SwiftUI
 
 public class AppState: ObservableObject {
     @Published var user = User()
+    @Published var currentPrice = Money(value: 100.0)
     @Published var system = System()
+    
+    func getCurrentValue() -> Value {
+        return Value(money: currentPrice, user: user)
+    }
 }
 
 typealias User = AppState.User

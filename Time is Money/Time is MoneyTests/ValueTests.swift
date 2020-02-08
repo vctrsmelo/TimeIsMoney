@@ -12,35 +12,35 @@ import XCTest
 class ValueTests: XCTestCase {
     
     func testStartValueMoneyGetMoney() {
-        let sut = makeSUT(value: .monetary(NSDecimalNumber(100)))
         let user = getUser(salary: 8000, weeklyWorkHours: 40, weeklyWorkDays: 5)
+        let sut = makeSUT(value: .monetary(NSDecimalNumber(100)), user: user)
         
-        XCTAssertEqual(sut.getAsMoney(for: user), .success(100.asMoney()))
+        XCTAssertEqual(sut.getAsMoney(), 100.asMoney())
     }
     
     func testStartValueSecondsGetSeconds() {
-        let sut = makeSUT(value: .timeInSeconds(500))
         let user = getUser(salary: 8000, weeklyWorkHours: 40, weeklyWorkDays: 5)
+        let sut = makeSUT(value: .timeInSeconds(500), user: user)
         
-        let result = sut.getAsTimeInSeconds(for: user)
+        let result = sut.getAsTimeInSeconds()
         
-        XCTAssertEqual(result, .success(500))
+        XCTAssertEqual(result, 500)
     }
     
     func testStartValueSecondsGetMoney() {
-        let workSeconds: TimeInterval = 3600
-        let sut = makeSUT(value: .timeInSeconds(workSeconds))
         let user = getUser(salary: 1000, weeklyWorkHours: 40, weeklyWorkDays: 5)
+        let workSeconds: TimeInterval = 3600
+        let sut = makeSUT(value: .timeInSeconds(workSeconds), user: user)
 
         let expectedResult = user.getMoneyReceivedFromSeconds(workSeconds: workSeconds)
         
-        XCTAssertEqual(sut.getAsMoney(for: user), .success(expectedResult))
+        XCTAssertEqual(sut.getAsMoney(), expectedResult)
     }
 
     // MARK: - Helpers
     
-    private func makeSUT(value: Value.ValueType) -> Value {
-        return Value(valueType: value)
+    private func makeSUT(value: Value.ValueType, user: User) -> Value {
+        return Value(valueType: value, user: user)
     }
 
 }

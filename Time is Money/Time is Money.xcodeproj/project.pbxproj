@@ -225,9 +225,9 @@
 		BE442C5923ED9FF5002306E6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				BEBACBAF23E745E0002ABD20 /* ViewModifiers */,
-				BE442C5F23EDA084002306E6 /* Screens */,
 				BE442C5E23EDA080002306E6 /* Components */,
+				BE442C5F23EDA084002306E6 /* Screens */,
+				BEBACBAF23E745E0002ABD20 /* ViewModifiers */,
 			);
 			path = UI;
 			sourceTree = "<group>";

@@ -25,7 +25,6 @@ struct RealMainInteractor: MainInteractor {
     func loadUser() {
         appState.user = userRepository.loadUser()
     }
-    
 }
 
 struct StubMainInteractor: MainInteractor {

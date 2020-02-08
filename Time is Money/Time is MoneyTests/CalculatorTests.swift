@@ -25,6 +25,22 @@ class CalculatorTests: XCTestCase {
         
         XCTAssertEqual(normalizedWorkTime1, normalizedWorkTime2)
     }
+    
+    func testGreaterValueReturnsGreaterResult() {
+        let user = getUser(salary: 6600, weeklyWorkHours: 40, weeklyWorkDays: 5)
+        
+        let lowerPrice = Money(value: 1)
+        let biggerPrice = Money(value: 10)
+        
+        guard case .success(let lowerNotNormalizedTime) = getSUT().getWorkTimeToPay(for: lowerPrice, user: user) else { XCTFail(); return }
+        guard case .success(let biggerNotNormalizedTime) = getSUT().getWorkTimeToPay(for: biggerPrice, user: user) else { XCTFail(); return }
+        
+        let lowerNormalizedTime = TimeTextTranslator.getNormalizedWorkTimeFrom(priceAsSeconds: NSDecimalNumber(value: lowerNotNormalizedTime), user: user)
+        let biggerNormalizedTime = TimeTextTranslator.getNormalizedWorkTimeFrom(priceAsSeconds: NSDecimalNumber(value: biggerNotNormalizedTime), user: user)
+        
+        XCTAssertGreaterThan(biggerNotNormalizedTime, lowerNotNormalizedTime)
+        XCTAssertGreaterThan(biggerNormalizedTime, lowerNormalizedTime)
+    }
 
     // MARK: - Helpers
     private func getSUT() -> Calculator.Type {

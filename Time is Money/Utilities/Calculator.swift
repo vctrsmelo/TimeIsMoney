@@ -12,11 +12,16 @@ import Foundation
     case undefinedWeeklyWorkDays
     case undefinedWeeklyWorkHours
     case undefinedSalary
+    case undefinedPrice
 }
 
  enum Calculator {
     
-     static func getWorkTimeToPay(for price: Double, user: User) -> Result<TimeInterval, CalculatorError> {
+     static func getWorkTimeToPay(for price: Double?, user: User) -> Result<TimeInterval, CalculatorError> {
+        guard let price = price else {
+            return .failure(CalculatorError.undefinedPrice)
+        }
+        
         return getWorkTimeToPay(for: Money(value: price), user: user)
 
     }
@@ -30,51 +35,45 @@ import Foundation
         var priceDiscountingAlreadyPaidValue = price
         var currentWorkSeconds = NSDecimalNumber(value: 0.0)
         
-        var yearsIteration: Int = 0
-        // year
-        while priceDiscountingAlreadyPaidValue >= user.getSalaryPerYear() {
-            yearsIteration += 1
-            priceDiscountingAlreadyPaidValue -= user.getSalaryPerYear()
-            currentWorkSeconds += user.yearlyWorkSeconds
-        }
+        let workYearsNeeded = (priceDiscountingAlreadyPaidValue / user.getSalaryPerYear()).floor
+        priceDiscountingAlreadyPaidValue -= user.getSalaryPerYear() * workYearsNeeded
+        currentWorkSeconds += user.yearlyWorkSeconds * workYearsNeeded
+
+        let workMonthsNeeded = (priceDiscountingAlreadyPaidValue / user.getSalaryPerMonth()).floor
+        priceDiscountingAlreadyPaidValue -= user.getSalaryPerMonth() * workMonthsNeeded
+        currentWorkSeconds += user.monthlyWorkSeconds * workMonthsNeeded
         
-        var monthIteration: Int = 0
-        // month
-        while priceDiscountingAlreadyPaidValue >= user.getSalaryPerMonth() {
-            monthIteration += 1
-            priceDiscountingAlreadyPaidValue -= user.getSalaryPerMonth()
-            currentWorkSeconds += user.monthlyWorkSeconds
-        }
-    
-        // week
-        while priceDiscountingAlreadyPaidValue >= user.getSalaryPerWeek() {
-            priceDiscountingAlreadyPaidValue -= user.getSalaryPerWeek()
-            currentWorkSeconds += user.weeklyWorkSeconds
-        }
+        let workWeeksNeeded = (priceDiscountingAlreadyPaidValue / user.getSalaryPerWeek()).floor
+        priceDiscountingAlreadyPaidValue -= user.getSalaryPerWeek() * workWeeksNeeded
+        currentWorkSeconds += user.weeklyWorkSeconds * workWeeksNeeded
+            
+        let workDaysNeeded = (priceDiscountingAlreadyPaidValue / user.getSalaryPerDay()).floor
+        priceDiscountingAlreadyPaidValue -= user.getSalaryPerDay() * workDaysNeeded
+        currentWorkSeconds += user.dailyWorkSeconds * workDaysNeeded
         
-        // day
-        while priceDiscountingAlreadyPaidValue >= user.getSalaryPerDay() {
-            priceDiscountingAlreadyPaidValue -= user.getSalaryPerDay()
-            currentWorkSeconds += user.dailyWorkSeconds
-        }
+        let workHoursNeeded = (priceDiscountingAlreadyPaidValue / user.getSalaryPerHour()).floor
+        priceDiscountingAlreadyPaidValue -= user.getSalaryPerHour() * workHoursNeeded
+        currentWorkSeconds += user.hourWorkSeconds * workHoursNeeded
+
+        let workMinutesNeeded = (priceDiscountingAlreadyPaidValue / user.getSalaryPerMinute()).floor
+        priceDiscountingAlreadyPaidValue -= user.getSalaryPerMinute() * workMinutesNeeded
+        currentWorkSeconds += user.minuteWorkSeconds * workMinutesNeeded
         
-        // hour
-        while priceDiscountingAlreadyPaidValue >= user.getSalaryPerHour() {
-            priceDiscountingAlreadyPaidValue -= user.getSalaryPerHour()
-            currentWorkSeconds += user.hourWorkSeconds
-        }
+//        // minute
+//        while priceDiscountingAlreadyPaidValue >= user.getSalaryPerMinute() {
+//            priceDiscountingAlreadyPaidValue -= user.getSalaryPerMinute()
+//            currentWorkSeconds += user.minuteWorkSeconds
+//        }
         
-        // minute
-        while priceDiscountingAlreadyPaidValue >= user.getSalaryPerMinute() {
-            priceDiscountingAlreadyPaidValue -= user.getSalaryPerMinute()
-            currentWorkSeconds += user.minuteWorkSeconds
-        }
+        let workSecondsNeeded = (priceDiscountingAlreadyPaidValue / user.getSalaryPerSecond()).floor
+        priceDiscountingAlreadyPaidValue -= user.getSalaryPerSecond() * workSecondsNeeded
+        currentWorkSeconds += user.secondWorkSeconds
         
-        // second
-        while priceDiscountingAlreadyPaidValue >= user.getSalaryPerSecond() {
-            priceDiscountingAlreadyPaidValue -= user.getSalaryPerSecond()
-            currentWorkSeconds += user.secondWorkSeconds
-        }
+//        // second
+//        while priceDiscountingAlreadyPaidValue >= user.getSalaryPerSecond() {
+//            priceDiscountingAlreadyPaidValue -= user.getSalaryPerSecond()
+//            currentWorkSeconds += user.secondWorkSeconds
+//        }
         
         return .success(currentWorkSeconds.timeIntervalValue)
     }
