@@ -47,6 +47,7 @@ struct EditView: View {
         }.onDisappear {
             self.interactors.mainInteractor.saveUser()
         }
+
     }
     
     private var worktimePicker: some View {
