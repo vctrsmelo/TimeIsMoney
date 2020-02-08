@@ -65,7 +65,7 @@ struct IncomeView: View {
                 Spacer()
                 
                 HStack {
-                    NavigationLink(destination: MainView()) {
+                    NavigationLink(destination: MainView().environmentObject(self.appState)) {
                         Text("Finish")
                             .font(Design.Font.standardLight)
                             .frame(width: 200, height: 50, alignment: .center)

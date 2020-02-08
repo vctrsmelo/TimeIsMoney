@@ -29,7 +29,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let mainView = NavigationView {
                 MainView()
             }
-            .navigationViewStyle(StackNavigationViewStyle()).environmentObject(appState)
+            .navigationViewStyle(StackNavigationViewStyle())
+            .environmentObject(appState)
         
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

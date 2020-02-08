@@ -83,7 +83,7 @@ struct MainView: View {
         .navigationBarTitle("")
         .navigationBarHidden(true)
         .sheet(isPresented: $showEditView) {
-            EditView()
+            EditView().environmentObject(self.appState)
         }
         .frame(width: UIScreen.main.bounds.width, alignment: .center)
         .keyboardSensible($offsetValue, type: .paddingAndOffset, onAppearKeyboardCustom: {

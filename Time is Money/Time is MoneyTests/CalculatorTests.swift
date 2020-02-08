@@ -41,6 +41,37 @@ class CalculatorTests: XCTestCase {
         XCTAssertGreaterThan(biggerNotNormalizedTime, lowerNotNormalizedTime)
         XCTAssertGreaterThan(biggerNormalizedTime, lowerNormalizedTime)
     }
+    
+    func testGetTimeWithZeroPriceReturnsZero() {
+        let user = getUser(salary: 2000, weeklyWorkHours: 40, weeklyWorkDays: 5)
+        
+        XCTAssertEqual(getSUT().getWorkTimeToPay(for: 0.0, user: user), Result.success(0.0))
+    }
+    
+    func testGetTimeWithNegativePriceReturnsZero() {
+        let user = getUser(salary: 2000, weeklyWorkHours: 40, weeklyWorkDays: 5)
+        
+        XCTAssertEqual(getSUT().getWorkTimeToPay(for: -100, user: user), Result.success(0.0))
+    }
+    
+    func testGetTimeWithZeroWorkdaysReturnsUndefinedWeeklyWorkDaysError() {
+        let user = getUser(salary: 2000, weeklyWorkHours: 40, weeklyWorkDays: 0)
+        
+        XCTAssertEqual(getSUT().getWorkTimeToPay(for: 100, user: user), Result.failure(CalculatorError.undefinedWeeklyWorkDays))
+    }
+    
+    func testGetTimeWithZeroWorkhoursReturnsUndefinedWeeklyWorkHoursError() {
+        let user = getUser(salary: 2000, weeklyWorkHours: 0, weeklyWorkDays: 5)
+        
+        XCTAssertEqual(getSUT().getWorkTimeToPay(for: 100, user: user), Result.failure(.undefinedWeeklyWorkHours))
+    }
+    
+    func testGetTimeWithZeroSalaryReturnsUndefinedSalaryError() {
+        let user = getUser(salary: 0, weeklyWorkHours: 40, weeklyWorkDays: 5)
+        
+        XCTAssertEqual(getSUT().getWorkTimeToPay(for: 100, user: user), Result.failure(CalculatorError.undefinedSalary))
+    }
+    
 
     // MARK: - Helpers
     private func getSUT() -> Calculator.Type {
