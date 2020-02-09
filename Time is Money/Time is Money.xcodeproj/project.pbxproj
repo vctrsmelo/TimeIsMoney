@@ -31,9 +31,9 @@
 		BE4B4F0823EDC89A0090CCD9 /* User+WorkTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F0723EDC89A0090CCD9 /* User+WorkTime.swift */; };
 		BE4B4F0A23EDCCE50090CCD9 /* TableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F0923EDCCE50090CCD9 /* TableImage.swift */; };
 		BE4B4F0E23EEF8F10090CCD9 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F0D23EEF8F10090CCD9 /* AvatarView.swift */; };
-		BE4B4F1123EEFB340090CCD9 /* ScenarioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1023EEFB340090CCD9 /* ScenarioView.swift */; };
 		BE4B4F1323EEFE500090CCD9 /* ScenarioFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1223EEFE500090CCD9 /* ScenarioFactory.swift */; };
 		BE4B4F1523EF18E30090CCD9 /* AvatarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1423EF18E30090CCD9 /* AvatarFactory.swift */; };
+		BE4B4F1723F0ACC40090CCD9 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1623F0ACC40090CCD9 /* Avatar.swift */; };
 		BE57677E23CE838D004BF48C /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57677D23CE838D004BF48C /* EditView.swift */; };
 		BE66B18323BD096800166912 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B18223BD096800166912 /* WelcomeView.swift */; };
 		BE85876923BFF2A300DEFE98 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE85876823BFF2A300DEFE98 /* Formatters.swift */; };
@@ -106,9 +106,9 @@
 		BE4B4F0723EDC89A0090CCD9 /* User+WorkTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+WorkTime.swift"; sourceTree = "<group>"; };
 		BE4B4F0923EDCCE50090CCD9 /* TableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableImage.swift; sourceTree = "<group>"; };
 		BE4B4F0D23EEF8F10090CCD9 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
-		BE4B4F1023EEFB340090CCD9 /* ScenarioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioView.swift; sourceTree = "<group>"; };
 		BE4B4F1223EEFE500090CCD9 /* ScenarioFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioFactory.swift; sourceTree = "<group>"; };
 		BE4B4F1423EF18E30090CCD9 /* AvatarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarFactory.swift; sourceTree = "<group>"; };
+		BE4B4F1623F0ACC40090CCD9 /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
 		BE57677D23CE838D004BF48C /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		BE66B18223BD096800166912 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -246,6 +246,7 @@
 				BE92645A23ED9F270072A555 /* User.swift */,
 				BE92645B23ED9F270072A555 /* Weekday.swift */,
 				BE92645C23ED9F270072A555 /* Routine.swift */,
+				BE4B4F1623F0ACC40090CCD9 /* Avatar.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -324,7 +325,6 @@
 			isa = PBXGroup;
 			children = (
 				BE4B4F0D23EEF8F10090CCD9 /* AvatarView.swift */,
-				BE4B4F1023EEFB340090CCD9 /* ScenarioView.swift */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -620,6 +620,7 @@
 				BE442C6623EDA369002306E6 /* TimeInterval+Conversions.swift in Sources */,
 				BEB0979D23BF990E00244E30 /* PageView.swift in Sources */,
 				BE442C7A23EDAB0F002306E6 /* TimePeriod.swift in Sources */,
+				BE4B4F1723F0ACC40090CCD9 /* Avatar.swift in Sources */,
 				BEC00AE723BFD6A0001B6724 /* PageControl.swift in Sources */,
 				BE85876923BFF2A300DEFE98 /* Formatters.swift in Sources */,
 				BEB0979A23BF984F00244E30 /* PageViewController.swift in Sources */,
@@ -643,7 +644,6 @@
 				BEC00AF223BFE591001B6724 /* View+Extensions.swift in Sources */,
 				BE442C6823EDA399002306E6 /* DateComponentsFormatter+String.swift in Sources */,
 				BEA9AB3423C5308B0057EA1E /* CurrencyField.swift in Sources */,
-				BE4B4F1123EEFB340090CCD9 /* ScenarioView.swift in Sources */,
 				BE4B4F0A23EDCCE50090CCD9 /* TableImage.swift in Sources */,
 				BE270BD723C039E50099AAC7 /* DaysOfWeekView.swift in Sources */,
 				BE442C7023EDA9DC002306E6 /* AppState.swift in Sources */,

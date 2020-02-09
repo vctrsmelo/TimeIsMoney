@@ -11,18 +11,18 @@ import SwiftUI
 struct AvatarFactory {
     
     static func male1() -> Avatar {
-        Avatar(happy: Image("male_1_happy"), normal: Image("male_1_normal"), sad: Image("male_1_sad"))
+        AvatarMale1()
     }
     
     static func male2() -> Avatar {
-        Avatar(happy: Image("male_2_happy"), normal: Image("male_2_normal"), sad: Image("male_2_sad"))
+        AvatarMale2()
     }
     
     static func female1() -> Avatar {
-        Avatar(happy: Image("female_1_happy"), normal: Image("female_1_normal"), sad: Image("female_1_sad"))
+        AvatarFemale1()
     }
     
     static func female2() -> Avatar {
-        Avatar(happy: Image("female_2_happy"), normal: Image("female_2_normal"), sad: Image("female_2_sad"))
+        AvatarFemale2()
     }
 }
