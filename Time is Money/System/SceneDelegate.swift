@@ -16,13 +16,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         let pages = [AnyView(WelcomeView()),
+                     AnyView(AvatarOnboardingPickerView()),
                     AnyView(DaysOfWeekView()),
                     AnyView(WorkTimeView()),
                     AnyView(IncomeView())]
         
         let interactors = InteractorsContainer.defaultValue
         
-        interactors.mainInteractor.loadUser()
+        interactors.mainInteractor.loadAppState()
         let onboardingView = PageView(pages).environmentObject(interactors.mainInteractor.appState)
         
         let mainView = NavigationView {

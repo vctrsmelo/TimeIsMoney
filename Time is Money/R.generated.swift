@@ -784,12 +784,16 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 57 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 59 localization keys.
     struct localizable {
       /// en translation: (Set your workdays to update here)
       ///
       /// Locales: pt-BR, en
       static let setYourWorkdaysToUpdateHere = Rswift.StringResource(key: "(Set your workdays to update here)", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: Avatar
+      ///
+      /// Locales: pt-BR, en
+      static let avatar = Rswift.StringResource(key: "Avatar", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
       /// en translation: Calendar_img
       ///
       /// Locales: pt-BR, en
@@ -874,6 +878,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: pt-BR, en
       static let sat_weekday_long = Rswift.StringResource(key: "Sat_weekday_long", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: Select your Avatar
+      ///
+      /// Locales: pt-BR, en
+      static let selectYourAvatar = Rswift.StringResource(key: "Select your Avatar", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
       /// en translation: Sun
       ///
       /// Locales: pt-BR, en
@@ -1028,6 +1036,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("(Set your workdays to update here)", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Avatar
+      ///
+      /// Locales: pt-BR, en
+      static func avatar(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Avatar", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Avatar"
+        }
+
+        return NSLocalizedString("Avatar", bundle: bundle, comment: "")
       }
 
       /// en translation: Calendar_img
@@ -1343,6 +1366,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Sat_weekday_long", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Select your Avatar
+      ///
+      /// Locales: pt-BR, en
+      static func selectYourAvatar(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Select your Avatar", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Select your Avatar"
+        }
+
+        return NSLocalizedString("Select your Avatar", bundle: bundle, comment: "")
       }
 
       /// en translation: Sun

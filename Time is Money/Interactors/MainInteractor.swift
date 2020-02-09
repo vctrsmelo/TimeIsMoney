@@ -10,25 +10,29 @@ import Foundation
 
 protocol MainInteractor {
     var appState: AppState { get }
-    func loadUser()
-    func saveUser()
+    func loadAppState()
+    func saveAppState()
 }
 
 struct RealMainInteractor: MainInteractor {
     
-    let userRepository: UserRepository
+    let userRepository: AppStateRepository
     let appState: AppState
     
-    init(userRepository: UserRepository, appState: AppState) {
+    init(userRepository: AppStateRepository, appState: AppState) {
         self.userRepository = userRepository
         self.appState = appState
     }
     
-    func loadUser() {
+    func loadAppState() {
         appState.user = userRepository.loadUser()
+        appState.avatarId = userRepository.loadAvatarId()
+        appState.workplace = userRepository.loadWorkplace()
     }
     
-    func saveUser() {
-        userRepository.saveUser(user: appState.user)
+    func saveAppState() {
+        userRepository.saveUser(appState.user)
+        userRepository.saveAvatarId(appState.avatarId)
+        userRepository.saveWorkplace(appState.workplace)
     }
 }

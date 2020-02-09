@@ -14,11 +14,11 @@ struct InteractorsContainer: EnvironmentKey {
     
     static var defaultValue: Self { Self.default }
     
-    private static let `default` = Self(mainInteractor: RealMainInteractor(userRepository: UserDefaultsUserRepository(), appState: AppState()))
+    private static let `default` = Self(mainInteractor: RealMainInteractor(userRepository: UserDefaultsAppStateRepository(), appState: AppState()))
     
     init(mainInteractor: MainInteractor) {
         self.mainInteractor = mainInteractor
-        self.mainInteractor.loadUser()
+        self.mainInteractor.loadAppState()
     }
 }
 

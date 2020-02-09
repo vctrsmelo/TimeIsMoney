@@ -17,6 +17,7 @@ struct EditView: View {
     private let hours = (0...168).map { "\($0)"}
     
     @State private var moneyPerHour: NSNumber = 0.0
+    @State private var showingAlert = false
     
     private var moneyPerHourFormatted: String {
         return Formatter.currency.string(from: moneyPerHour) ?? ""
@@ -31,7 +32,7 @@ struct EditView: View {
         return NavigationView {
             VStack {
                 Form {
-                    Section {
+                    Section(header: EmptyView(), footer: avatarSection) {
                         EditFieldView(title: weeklyWorktime, icon: Image("MoneyClockIcon"), inputView: AnyView(worktimePicker))
                         EditFieldView(title: weeklyWorkdays, icon: Image("CalendarIcon"), inputView: AnyView(weekdays))
                         EditFieldView(title: monthlyIncome, icon: Image("MoneyIcon"), inputView: AnyView(salaryField))
@@ -45,9 +46,20 @@ struct EditView: View {
                 }
             )
         }.onDisappear {
-            self.interactors.mainInteractor.saveUser()
+            self.interactors.mainInteractor.saveAppState()
         }
 
+    }
+    
+    private var avatarSection: some View {
+        return VStack {
+            Text(R.string.localizable.avatar())
+                .multilineTextAlignment(.center)
+                .font(Design.Font.standardLight)
+                .foregroundColor(Design.Color.Text.standard)
+                .animation(.none)
+            HAvatarPickerView(buttonWidth: 50)
+        }
     }
     
     private var worktimePicker: some View {

@@ -63,7 +63,7 @@ struct MainView: View {
 
 
             HStack {
-            headerTextSection(timeMessage: timeMessage, formattedValue: formattedValue, priceAsSeconds: priceAsSeconds)
+                headerTextSection(timeMessage: timeMessage, formattedValue: formattedValue, priceAsSeconds: priceAsSeconds)
             }
 
             Spacer()
@@ -97,7 +97,7 @@ struct MainView: View {
             if self.appState.user.isOnboardingCompleted == false {
                 self.appState.user.isOnboardingCompleted.toggle()
             }
-            self.interactors.mainInteractor.saveUser()
+            self.interactors.mainInteractor.saveAppState()
         }
     }
     

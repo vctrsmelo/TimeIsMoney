@@ -39,6 +39,9 @@
 "For this we will only need three information. Let's go? 😄" = "For this we will only need 3 information. Let's go? 😄";
 "Which days of the week do you usually work?" = "Which days of the week do you usually work?";
 
+// ONBOARDING AVATAR
+"Select your Avatar" = "Select your Avatar";
+
 // ONBOARDING WORK HOURS
 
 "How many hours do you work per week?" = "How much hours do you work per week?";
@@ -85,3 +88,7 @@
 "table11" = "table11";
 "table12" = "table12";
 "%@" = "%@";
+
+// EDIT
+
+"Avatar" = "Avatar";

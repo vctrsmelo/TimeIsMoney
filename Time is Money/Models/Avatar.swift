@@ -23,7 +23,7 @@ struct AvatarMale1: Avatar {
 }
 
 struct AvatarMale2: Avatar {
-    var id: String = "male1"
+    var id: String = "male2"
     var happy: Image = Image("male_2_happy")
     var normal: Image = Image("male_2_happy")
     var sad: Image = Image("male_2_happy")

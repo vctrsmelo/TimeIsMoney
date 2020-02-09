@@ -22,7 +22,7 @@
 		BE442C6D23EDA834002306E6 /* SecondsContainedIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442C6C23EDA834002306E6 /* SecondsContainedIn.swift */; };
 		BE442C7023EDA9DC002306E6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645E23ED9F270072A555 /* AppState.swift */; };
 		BE442C7123EDA9E0002306E6 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645B23ED9F270072A555 /* Weekday.swift */; };
-		BE442C7223EDAA09002306E6 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645D23ED9F270072A555 /* UserRepository.swift */; };
+		BE442C7223EDAA09002306E6 /* AppStateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645D23ED9F270072A555 /* AppStateRepository.swift */; };
 		BE442C7323EDAA14002306E6 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645923ED9F270072A555 /* Money.swift */; };
 		BE442C7423EDAA14002306E6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645A23ED9F270072A555 /* User.swift */; };
 		BE442C7523EDAA16002306E6 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645C23ED9F270072A555 /* Routine.swift */; };
@@ -34,6 +34,9 @@
 		BE4B4F1323EEFE500090CCD9 /* ScenarioFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1223EEFE500090CCD9 /* ScenarioFactory.swift */; };
 		BE4B4F1523EF18E30090CCD9 /* AvatarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1423EF18E30090CCD9 /* AvatarFactory.swift */; };
 		BE4B4F1723F0ACC40090CCD9 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1623F0ACC40090CCD9 /* Avatar.swift */; };
+		BE4B4F1923F0B78C0090CCD9 /* AvatarOnboardingPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1823F0B78C0090CCD9 /* AvatarOnboardingPickerView.swift */; };
+		BE4B4F1B23F0C15C0090CCD9 /* AvatarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1A23F0C15C0090CCD9 /* AvatarPickerView.swift */; };
+		BE4B4F1E23F0C5890090CCD9 /* AvatarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1D23F0C5890090CCD9 /* AvatarButtonView.swift */; };
 		BE57677E23CE838D004BF48C /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57677D23CE838D004BF48C /* EditView.swift */; };
 		BE66B18323BD096800166912 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B18223BD096800166912 /* WelcomeView.swift */; };
 		BE85876923BFF2A300DEFE98 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE85876823BFF2A300DEFE98 /* Formatters.swift */; };
@@ -109,6 +112,9 @@
 		BE4B4F1223EEFE500090CCD9 /* ScenarioFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioFactory.swift; sourceTree = "<group>"; };
 		BE4B4F1423EF18E30090CCD9 /* AvatarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarFactory.swift; sourceTree = "<group>"; };
 		BE4B4F1623F0ACC40090CCD9 /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
+		BE4B4F1823F0B78C0090CCD9 /* AvatarOnboardingPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarOnboardingPickerView.swift; sourceTree = "<group>"; };
+		BE4B4F1A23F0C15C0090CCD9 /* AvatarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerView.swift; sourceTree = "<group>"; };
+		BE4B4F1D23F0C5890090CCD9 /* AvatarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarButtonView.swift; sourceTree = "<group>"; };
 		BE57677D23CE838D004BF48C /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		BE66B18223BD096800166912 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,7 +130,7 @@
 		BE92645A23ED9F270072A555 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BE92645B23ED9F270072A555 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		BE92645C23ED9F270072A555 /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
-		BE92645D23ED9F270072A555 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		BE92645D23ED9F270072A555 /* AppStateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateRepository.swift; sourceTree = "<group>"; };
 		BE92645E23ED9F270072A555 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		BE92646423ED9F4A0072A555 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		BE92646523ED9F4A0072A555 /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
@@ -262,7 +268,7 @@
 		BE442C5C23ED9FFC002306E6 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				BE92645D23ED9F270072A555 /* UserRepository.swift */,
+				BE92645D23ED9F270072A555 /* AppStateRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -279,7 +285,9 @@
 		BE442C5E23EDA080002306E6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BE4B4F1C23F0C5780090CCD9 /* AvatarButtonView */,
 				BE4B4F0F23EEFB240090CCD9 /* Images */,
+				BE4B4F1A23F0C15C0090CCD9 /* AvatarPickerView.swift */,
 				BEC00AEE23BFE361001B6724 /* BackgroundView.swift */,
 				BEC748BA23D23BB50027F26D /* WeekHStack.swift */,
 				BEC748BC23D23BCF0027F26D /* WeekdayView.swift */,
@@ -305,6 +313,7 @@
 		BE442C6023EDA10E002306E6 /* Onboarding Screens */ = {
 			isa = PBXGroup;
 			children = (
+				BE4B4F1823F0B78C0090CCD9 /* AvatarOnboardingPickerView.swift */,
 				BE270BD623C039E50099AAC7 /* DaysOfWeekView.swift */,
 				BEC00AEA23BFDC3C001B6724 /* IncomeView.swift */,
 				BE66B18223BD096800166912 /* WelcomeView.swift */,
@@ -327,6 +336,14 @@
 				BE4B4F0D23EEF8F10090CCD9 /* AvatarView.swift */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		BE4B4F1C23F0C5780090CCD9 /* AvatarButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				BE4B4F1D23F0C5890090CCD9 /* AvatarButtonView.swift */,
+			);
+			path = AvatarButtonView;
 			sourceTree = "<group>";
 		};
 		BE815FC52383497200000FB9 /* Frameworks */ = {
@@ -614,14 +631,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE4B4F1923F0B78C0090CCD9 /* AvatarOnboardingPickerView.swift in Sources */,
 				BE66B18323BD096800166912 /* WelcomeView.swift in Sources */,
 				BE442C7123EDA9E0002306E6 /* Weekday.swift in Sources */,
-				BE442C7223EDAA09002306E6 /* UserRepository.swift in Sources */,
+				BE442C7223EDAA09002306E6 /* AppStateRepository.swift in Sources */,
 				BE442C6623EDA369002306E6 /* TimeInterval+Conversions.swift in Sources */,
 				BEB0979D23BF990E00244E30 /* PageView.swift in Sources */,
 				BE442C7A23EDAB0F002306E6 /* TimePeriod.swift in Sources */,
 				BE4B4F1723F0ACC40090CCD9 /* Avatar.swift in Sources */,
 				BEC00AE723BFD6A0001B6724 /* PageControl.swift in Sources */,
+				BE4B4F1E23F0C5890090CCD9 /* AvatarButtonView.swift in Sources */,
 				BE85876923BFF2A300DEFE98 /* Formatters.swift in Sources */,
 				BEB0979A23BF984F00244E30 /* PageViewController.swift in Sources */,
 				BEBACBB123E745EA002ABD20 /* ScaledFont.swift in Sources */,
@@ -642,6 +661,7 @@
 				BE442C7823EDAAB5002306E6 /* User+Salary.swift in Sources */,
 				BEFBF0E723BD470200FBE0D2 /* Design.swift in Sources */,
 				BEC00AF223BFE591001B6724 /* View+Extensions.swift in Sources */,
+				BE4B4F1B23F0C15C0090CCD9 /* AvatarPickerView.swift in Sources */,
 				BE442C6823EDA399002306E6 /* DateComponentsFormatter+String.swift in Sources */,
 				BEA9AB3423C5308B0057EA1E /* CurrencyField.swift in Sources */,
 				BE4B4F0A23EDCCE50090CCD9 /* TableImage.swift in Sources */,

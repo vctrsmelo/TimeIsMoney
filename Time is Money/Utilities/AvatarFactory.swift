@@ -9,9 +9,17 @@
 import SwiftUI
 
 struct AvatarFactory {
-    
+
     static let all: [Avatar] = {
         [male1(), male2(), female1(), female2()]
+    }()
+
+    static let allMale: [Avatar] = {
+        [male1(), male2()]
+    }()
+    
+    static let allFemale: [Avatar] = {
+        [female1(), female2()]
     }()
     
     static func male1() -> Avatar {

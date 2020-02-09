@@ -32,7 +32,7 @@ struct WorkTimeView: View {
                     .adaptableFont(.smallTitleFont, maxSize: 25)
                     .foregroundColor(Design.Color.Text.title)
                     .frame(maxHeight: .infinity)
-                Image("table2")
+                Image("office_\(appState.avatarId)_table2")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: UIScreen.main.bounds.width-120, alignment: .center)

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ScenarioFactory {
     
-    enum Workplace {
+    enum Workplace: String {
         case office
     }
     
