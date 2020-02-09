@@ -20,6 +20,8 @@ struct MainView: View {
     @State private var topTextPadding: CGFloat = 0.0
     @State private var isKeyboardVisible = false
     
+    let scenarios = ScenarioFactory.officeScenarios(avatar: AvatarFactory.male1())
+    
     var body: some View {
         
         let value = appState.getCurrentValue()
@@ -69,7 +71,7 @@ struct MainView: View {
             Spacer()
 
             HStack {
-                tableImageSection()
+                workplaceImageSection()
             }
 
             Spacer()
@@ -156,9 +158,22 @@ struct MainView: View {
         }
     }
     
-    private func tableImageSection() -> some View {
+//    private func tableImageSection() -> some View {
+//        return Image("table\(TableImage.getImageIndex(price: appState.currentPrice, user: appState.user))")
+//            .resizable()
+//            .aspectRatio(contentMode: .fit)
+//            .frame(width: UIScreen.main.bounds.width-120, alignment: .center)
+//            .frame(minHeight: 50, alignment: .center)
+//            .animation(.none)
+//    }
+    
+    private func workplaceImageSection() -> some View {
         
-        return Image("table\(TableImage.getImageIndex(price: appState.currentPrice, user: appState.user))")
+        let scenarios = ScenarioFactory.getAllScenarios(for: appState.workplace, avatar: appState.avatar)
+        
+        let scenario = ScenarioFactory.getScenario(from: scenarios, price: appState.currentPrice, user: appState.user)
+
+        return ScenarioView(scenario: scenario)
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: UIScreen.main.bounds.width-120, alignment: .center)

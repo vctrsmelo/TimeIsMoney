@@ -105,7 +105,7 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.image` struct is generated, and contains static references to 20 images.
+  /// This `R.image` struct is generated, and contains static references to 32 images.
   struct image {
     /// Image `CalendarIcon`.
     static let calendarIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "CalendarIcon")
@@ -119,34 +119,58 @@ struct R: Rswift.Validatable {
     static let moneyIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "MoneyIcon")
     /// Image `Money_img`.
     static let money_img = Rswift.ImageResource(bundle: R.hostingBundle, name: "Money_img")
-    /// Image `table0`.
-    static let table0 = Rswift.ImageResource(bundle: R.hostingBundle, name: "table0")
-    /// Image `table10`.
-    static let table10 = Rswift.ImageResource(bundle: R.hostingBundle, name: "table10")
-    /// Image `table11`.
-    static let table11 = Rswift.ImageResource(bundle: R.hostingBundle, name: "table11")
-    /// Image `table12`.
-    static let table12 = Rswift.ImageResource(bundle: R.hostingBundle, name: "table12")
-    /// Image `table13`.
-    static let table13 = Rswift.ImageResource(bundle: R.hostingBundle, name: "table13")
-    /// Image `table1`.
-    static let table1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "table1")
-    /// Image `table2`.
-    static let table2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "table2")
-    /// Image `table3`.
-    static let table3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "table3")
-    /// Image `table4`.
-    static let table4 = Rswift.ImageResource(bundle: R.hostingBundle, name: "table4")
-    /// Image `table5`.
-    static let table5 = Rswift.ImageResource(bundle: R.hostingBundle, name: "table5")
-    /// Image `table6`.
-    static let table6 = Rswift.ImageResource(bundle: R.hostingBundle, name: "table6")
-    /// Image `table7`.
-    static let table7 = Rswift.ImageResource(bundle: R.hostingBundle, name: "table7")
-    /// Image `table8`.
-    static let table8 = Rswift.ImageResource(bundle: R.hostingBundle, name: "table8")
-    /// Image `table9`.
-    static let table9 = Rswift.ImageResource(bundle: R.hostingBundle, name: "table9")
+    /// Image `female_1_happy`.
+    static let female_1_happy = Rswift.ImageResource(bundle: R.hostingBundle, name: "female_1_happy")
+    /// Image `female_1_normal`.
+    static let female_1_normal = Rswift.ImageResource(bundle: R.hostingBundle, name: "female_1_normal")
+    /// Image `female_1_sad`.
+    static let female_1_sad = Rswift.ImageResource(bundle: R.hostingBundle, name: "female_1_sad")
+    /// Image `female_2_happy`.
+    static let female_2_happy = Rswift.ImageResource(bundle: R.hostingBundle, name: "female_2_happy")
+    /// Image `female_2_normal`.
+    static let female_2_normal = Rswift.ImageResource(bundle: R.hostingBundle, name: "female_2_normal")
+    /// Image `female_2_sad`.
+    static let female_2_sad = Rswift.ImageResource(bundle: R.hostingBundle, name: "female_2_sad")
+    /// Image `male_1_happy`.
+    static let male_1_happy = Rswift.ImageResource(bundle: R.hostingBundle, name: "male_1_happy")
+    /// Image `male_1_normal`.
+    static let male_1_normal = Rswift.ImageResource(bundle: R.hostingBundle, name: "male_1_normal")
+    /// Image `male_1_sad`.
+    static let male_1_sad = Rswift.ImageResource(bundle: R.hostingBundle, name: "male_1_sad")
+    /// Image `male_2_happy`.
+    static let male_2_happy = Rswift.ImageResource(bundle: R.hostingBundle, name: "male_2_happy")
+    /// Image `male_2_normal`.
+    static let male_2_normal = Rswift.ImageResource(bundle: R.hostingBundle, name: "male_2_normal")
+    /// Image `male_2_sad`.
+    static let male_2_sad = Rswift.ImageResource(bundle: R.hostingBundle, name: "male_2_sad")
+    /// Image `office_table0`.
+    static let office_table0 = Rswift.ImageResource(bundle: R.hostingBundle, name: "office_table0")
+    /// Image `office_table10`.
+    static let office_table10 = Rswift.ImageResource(bundle: R.hostingBundle, name: "office_table10")
+    /// Image `office_table11`.
+    static let office_table11 = Rswift.ImageResource(bundle: R.hostingBundle, name: "office_table11")
+    /// Image `office_table12`.
+    static let office_table12 = Rswift.ImageResource(bundle: R.hostingBundle, name: "office_table12")
+    /// Image `office_table13`.
+    static let office_table13 = Rswift.ImageResource(bundle: R.hostingBundle, name: "office_table13")
+    /// Image `office_table1`.
+    static let office_table1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "office_table1")
+    /// Image `office_table2`.
+    static let office_table2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "office_table2")
+    /// Image `office_table3`.
+    static let office_table3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "office_table3")
+    /// Image `office_table4`.
+    static let office_table4 = Rswift.ImageResource(bundle: R.hostingBundle, name: "office_table4")
+    /// Image `office_table5`.
+    static let office_table5 = Rswift.ImageResource(bundle: R.hostingBundle, name: "office_table5")
+    /// Image `office_table6`.
+    static let office_table6 = Rswift.ImageResource(bundle: R.hostingBundle, name: "office_table6")
+    /// Image `office_table7`.
+    static let office_table7 = Rswift.ImageResource(bundle: R.hostingBundle, name: "office_table7")
+    /// Image `office_table8`.
+    static let office_table8 = Rswift.ImageResource(bundle: R.hostingBundle, name: "office_table8")
+    /// Image `office_table9`.
+    static let office_table9 = Rswift.ImageResource(bundle: R.hostingBundle, name: "office_table9")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "CalendarIcon", bundle: ..., traitCollection: ...)`
@@ -191,100 +215,184 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "table0", bundle: ..., traitCollection: ...)`
-    static func table0(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.table0, compatibleWith: traitCollection)
+    /// `UIImage(named: "female_1_happy", bundle: ..., traitCollection: ...)`
+    static func female_1_happy(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.female_1_happy, compatibleWith: traitCollection)
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "table1", bundle: ..., traitCollection: ...)`
-    static func table1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.table1, compatibleWith: traitCollection)
+    /// `UIImage(named: "female_1_normal", bundle: ..., traitCollection: ...)`
+    static func female_1_normal(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.female_1_normal, compatibleWith: traitCollection)
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "table10", bundle: ..., traitCollection: ...)`
-    static func table10(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.table10, compatibleWith: traitCollection)
+    /// `UIImage(named: "female_1_sad", bundle: ..., traitCollection: ...)`
+    static func female_1_sad(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.female_1_sad, compatibleWith: traitCollection)
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "table11", bundle: ..., traitCollection: ...)`
-    static func table11(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.table11, compatibleWith: traitCollection)
+    /// `UIImage(named: "female_2_happy", bundle: ..., traitCollection: ...)`
+    static func female_2_happy(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.female_2_happy, compatibleWith: traitCollection)
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "table12", bundle: ..., traitCollection: ...)`
-    static func table12(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.table12, compatibleWith: traitCollection)
+    /// `UIImage(named: "female_2_normal", bundle: ..., traitCollection: ...)`
+    static func female_2_normal(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.female_2_normal, compatibleWith: traitCollection)
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "table13", bundle: ..., traitCollection: ...)`
-    static func table13(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.table13, compatibleWith: traitCollection)
+    /// `UIImage(named: "female_2_sad", bundle: ..., traitCollection: ...)`
+    static func female_2_sad(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.female_2_sad, compatibleWith: traitCollection)
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "table2", bundle: ..., traitCollection: ...)`
-    static func table2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.table2, compatibleWith: traitCollection)
+    /// `UIImage(named: "male_1_happy", bundle: ..., traitCollection: ...)`
+    static func male_1_happy(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.male_1_happy, compatibleWith: traitCollection)
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "table3", bundle: ..., traitCollection: ...)`
-    static func table3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.table3, compatibleWith: traitCollection)
+    /// `UIImage(named: "male_1_normal", bundle: ..., traitCollection: ...)`
+    static func male_1_normal(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.male_1_normal, compatibleWith: traitCollection)
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "table4", bundle: ..., traitCollection: ...)`
-    static func table4(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.table4, compatibleWith: traitCollection)
+    /// `UIImage(named: "male_1_sad", bundle: ..., traitCollection: ...)`
+    static func male_1_sad(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.male_1_sad, compatibleWith: traitCollection)
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "table5", bundle: ..., traitCollection: ...)`
-    static func table5(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.table5, compatibleWith: traitCollection)
+    /// `UIImage(named: "male_2_happy", bundle: ..., traitCollection: ...)`
+    static func male_2_happy(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.male_2_happy, compatibleWith: traitCollection)
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "table6", bundle: ..., traitCollection: ...)`
-    static func table6(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.table6, compatibleWith: traitCollection)
+    /// `UIImage(named: "male_2_normal", bundle: ..., traitCollection: ...)`
+    static func male_2_normal(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.male_2_normal, compatibleWith: traitCollection)
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "table7", bundle: ..., traitCollection: ...)`
-    static func table7(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.table7, compatibleWith: traitCollection)
+    /// `UIImage(named: "male_2_sad", bundle: ..., traitCollection: ...)`
+    static func male_2_sad(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.male_2_sad, compatibleWith: traitCollection)
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "table8", bundle: ..., traitCollection: ...)`
-    static func table8(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.table8, compatibleWith: traitCollection)
+    /// `UIImage(named: "office_table0", bundle: ..., traitCollection: ...)`
+    static func office_table0(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.office_table0, compatibleWith: traitCollection)
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "table9", bundle: ..., traitCollection: ...)`
-    static func table9(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.table9, compatibleWith: traitCollection)
+    /// `UIImage(named: "office_table1", bundle: ..., traitCollection: ...)`
+    static func office_table1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.office_table1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "office_table10", bundle: ..., traitCollection: ...)`
+    static func office_table10(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.office_table10, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "office_table11", bundle: ..., traitCollection: ...)`
+    static func office_table11(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.office_table11, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "office_table12", bundle: ..., traitCollection: ...)`
+    static func office_table12(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.office_table12, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "office_table13", bundle: ..., traitCollection: ...)`
+    static func office_table13(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.office_table13, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "office_table2", bundle: ..., traitCollection: ...)`
+    static func office_table2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.office_table2, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "office_table3", bundle: ..., traitCollection: ...)`
+    static func office_table3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.office_table3, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "office_table4", bundle: ..., traitCollection: ...)`
+    static func office_table4(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.office_table4, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "office_table5", bundle: ..., traitCollection: ...)`
+    static func office_table5(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.office_table5, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "office_table6", bundle: ..., traitCollection: ...)`
+    static func office_table6(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.office_table6, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "office_table7", bundle: ..., traitCollection: ...)`
+    static func office_table7(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.office_table7, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "office_table8", bundle: ..., traitCollection: ...)`
+    static func office_table8(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.office_table8, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "office_table9", bundle: ..., traitCollection: ...)`
+    static func office_table9(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.office_table9, compatibleWith: traitCollection)
     }
     #endif
 
