@@ -157,7 +157,8 @@ struct MainView: View {
     }
     
     private func workplaceImageSection() -> some View {
-        let scenarios = ScenarioFactory.getAllScenarios(for: .office, avatar: appState.avatar)
+        let avatar = AvatarFactory.getById(id: appState.avatarId)
+        let scenarios = ScenarioFactory.getAllScenarios(for: .office, avatar: avatar)
         return ScenarioFactory.getScenario(from: scenarios, price: appState.currentPrice, user: appState.user)
             .resizable()
             .aspectRatio(contentMode: .fit)

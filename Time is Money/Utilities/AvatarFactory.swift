@@ -10,6 +10,10 @@ import SwiftUI
 
 struct AvatarFactory {
     
+    static let all: [Avatar] = {
+        [male1(), male2(), female1(), female2()]
+    }()
+    
     static func male1() -> Avatar {
         AvatarMale1()
     }
@@ -24,5 +28,9 @@ struct AvatarFactory {
     
     static func female2() -> Avatar {
         AvatarFemale2()
+    }
+    
+    static func getById(id: String) -> Avatar {
+        all.first { $0.id == id } ?? male1()
     }
 }
