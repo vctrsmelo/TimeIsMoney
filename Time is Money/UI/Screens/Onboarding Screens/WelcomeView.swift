@@ -31,7 +31,7 @@ struct WelcomeView: View {
             Spacer()
             //description
 
-            Text("For this we will only need three information. Let's go? 😄")
+            Text(R.string.localizable.forThisWeWillNeedOnlyAFewInformationLetSGo😄())
                 .lineLimit(nil)
                 .frame(idealWidth: UIScreen.main.bounds.width-64, maxWidth: UIScreen.main.bounds.width-16, minHeight: 25, idealHeight: 50, alignment: .center)
                 .adaptableFont(.standardLight, maxSize: 20)

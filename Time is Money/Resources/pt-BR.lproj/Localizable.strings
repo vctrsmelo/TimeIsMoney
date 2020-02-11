@@ -36,7 +36,7 @@
 
 "Welcome!" = "Bem vindo!";
 "Let's find out how much things really cost?" = "Vamos descobrir quanto as coisas realmente custam?";
-"For this we will only need three information. Let's go? 😄" = "Para isso precisamos de apenas 3 informações. Vamos lá? 😄";
+"For this we will need only a few information. Let's go? 😄" = "Para isso precisamos de algumas informações. Vamos lá? 😄";
 "Which days of the week do you usually work?" = "Quais dias da semana você geralmente trabalha?";
 
 // ONBOARDING AVATAR
@@ -92,3 +92,6 @@
 // EDIT
 
 "Avatar" = "Avatar";
+
+"Yay! update" = "Oba! Atualização";
+"Now you can select a different avatar. Go to settings screen to select yours" = "Agora você pode selecionar um avatar diferente. Vá para tela de configurações para selecionar o seu.";

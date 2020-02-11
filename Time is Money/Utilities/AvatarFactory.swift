@@ -39,6 +39,6 @@ struct AvatarFactory {
     }
     
     static func getById(id: String) -> Avatar {
-        all.first { $0.id == id } ?? male1()
+        all.first { $0.id == id } ?? AvatarMale2Deprecated()
     }
 }

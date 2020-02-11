@@ -36,7 +36,7 @@
 
 "Welcome!" = "Welcome!";
 "Let's find out how much things really cost?" = "Let's find out how much things really cost?";
-"For this we will only need three information. Let's go? 😄" = "For this we will only need 3 information. Let's go? 😄";
+"For this we will need only a few information. Let's go? 😄" = "For this we will need only a few information. Let's go? 😄";
 "Which days of the week do you usually work?" = "Which days of the week do you usually work?";
 
 // ONBOARDING AVATAR
@@ -92,3 +92,7 @@
 // EDIT
 
 "Avatar" = "Avatar";
+
+"Yay! update" = "Yay! update";
+"Now you can select a different avatar. Go to settings screen to select yours" = "Now you can select a different avatar. Go to settings screen to select yours";
+

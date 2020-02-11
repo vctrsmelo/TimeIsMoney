@@ -29,6 +29,13 @@ struct AvatarMale2: Avatar {
     var sad: Image = Image("male_2_happy")
 }
 
+struct AvatarMale2Deprecated: Avatar {
+    var id: String = "male2-deprecated"
+    var happy: Image = Image("male_2_happy")
+    var normal: Image = Image("male_2_happy")
+    var sad: Image = Image("male_2_happy")
+}
+
 struct AvatarFemale1: Avatar {
     var id: String = "female1"
     var happy: Image = Image("female_1_happy")

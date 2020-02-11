@@ -20,6 +20,8 @@ struct MainView: View {
     @State private var topTextPadding: CGFloat = 0.0
     @State private var isKeyboardVisible = false
     
+    @State private var isAlertShowing: Bool = false
+    
     var body: some View {
         
         let value = appState.getCurrentValue()
@@ -97,7 +99,17 @@ struct MainView: View {
             if self.appState.user.isOnboardingCompleted == false {
                 self.appState.user.isOnboardingCompleted.toggle()
             }
+            
+            if self.appState.avatarId == "male2-deprecated" {
+                self.isAlertShowing = true
+                self.appState.avatarId = "male2"
+            }
+            
             self.interactors.mainInteractor.saveAppState()
+        }.alert(isPresented: $isAlertShowing) {
+            
+            
+            return Alert(title: Text(R.string.localizable.yayUpdate()), message: Text(R.string.localizable.nowYouCanSelectADifferentAvatarGoToSettingsScreenToSelectYours()), dismissButton: Alert.Button.default(Text("Ok")))
         }
     }
     

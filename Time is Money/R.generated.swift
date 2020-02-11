@@ -784,7 +784,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 59 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 61 localization keys.
     struct localizable {
       /// en translation: (Set your workdays to update here)
       ///
@@ -806,10 +806,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: pt-BR, en
       static let finish = Rswift.StringResource(key: "Finish", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
-      /// en translation: For this we will only need 3 information. Let's go? 😄
+      /// en translation: For this we will need only a few information. Let's go? 😄
       ///
       /// Locales: pt-BR, en
-      static let forThisWeWillOnlyNeedThreeInformationLetSGo😄 = Rswift.StringResource(key: "For this we will only need three information. Let's go? 😄", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      static let forThisWeWillNeedOnlyAFewInformationLetSGo😄 = Rswift.StringResource(key: "For this we will need only a few information. Let's go? 😄", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
       /// en translation: Fri
       ///
       /// Locales: pt-BR, en
@@ -862,6 +862,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: pt-BR, en
       static let monthlyIncome = Rswift.StringResource(key: "Monthly Income", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: Now you can select a different avatar. Go to settings screen to select yours
+      ///
+      /// Locales: pt-BR, en
+      static let nowYouCanSelectADifferentAvatarGoToSettingsScreenToSelectYours = Rswift.StringResource(key: "Now you can select a different avatar. Go to settings screen to select yours", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
       /// en translation: S
       ///
       /// Locales: pt-BR, en
@@ -954,6 +958,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: pt-BR, en
       static let working = Rswift.StringResource(key: "Working", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: Yay! update
+      ///
+      /// Locales: pt-BR, en
+      static let yayUpdate = Rswift.StringResource(key: "Yay! update", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
       /// en translation: hours
       ///
       /// Locales: pt-BR, en
@@ -1098,19 +1106,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Finish", bundle: bundle, comment: "")
       }
 
-      /// en translation: For this we will only need 3 information. Let's go? 😄
+      /// en translation: For this we will need only a few information. Let's go? 😄
       ///
       /// Locales: pt-BR, en
-      static func forThisWeWillOnlyNeedThreeInformationLetSGo😄(preferredLanguages: [String]? = nil) -> String {
+      static func forThisWeWillNeedOnlyAFewInformationLetSGo😄(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("For this we will only need three information. Let's go? 😄", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("For this we will need only a few information. Let's go? 😄", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "For this we will only need three information. Let's go? 😄"
+          return "For this we will need only a few information. Let's go? 😄"
         }
 
-        return NSLocalizedString("For this we will only need three information. Let's go? 😄", bundle: bundle, comment: "")
+        return NSLocalizedString("For this we will need only a few information. Let's go? 😄", bundle: bundle, comment: "")
       }
 
       /// en translation: Fri
@@ -1306,6 +1314,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Monthly Income", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Now you can select a different avatar. Go to settings screen to select yours
+      ///
+      /// Locales: pt-BR, en
+      static func nowYouCanSelectADifferentAvatarGoToSettingsScreenToSelectYours(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Now you can select a different avatar. Go to settings screen to select yours", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Now you can select a different avatar. Go to settings screen to select yours"
+        }
+
+        return NSLocalizedString("Now you can select a different avatar. Go to settings screen to select yours", bundle: bundle, comment: "")
       }
 
       /// en translation: S
@@ -1651,6 +1674,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Working", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Yay! update
+      ///
+      /// Locales: pt-BR, en
+      static func yayUpdate(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Yay! update", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Yay! update"
+        }
+
+        return NSLocalizedString("Yay! update", bundle: bundle, comment: "")
       }
 
       /// en translation: hours

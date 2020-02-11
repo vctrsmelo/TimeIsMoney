@@ -13,6 +13,10 @@
 		BE28C4F823D7AB3400CA9D13 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE28C4FA23D7AB3400CA9D13 /* Localizable.strings */; };
 		BE28C50023D7AD9600CA9D13 /* PreviewProvider+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28C4FF23D7AD9600CA9D13 /* PreviewProvider+Locale.swift */; };
 		BE37722923E7149F003C8D3F /* UIDevice+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37722823E7149F003C8D3F /* UIDevice+Type.swift */; };
+		BE38A04F23F34434005D51F9 /* GlobalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38A04E23F34434005D51F9 /* GlobalConfiguration.swift */; };
+		BE38A05123F34454005D51F9 /* DefaultConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38A05023F34454005D51F9 /* DefaultConfiguration.swift */; };
+		BE38A05323F3445F005D51F9 /* ConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38A05223F3445F005D51F9 /* ConfigurationProtocol.swift */; };
+		BE38A05623F345D0005D51F9 /* DSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38A05523F345D0005D51F9 /* DSFont.swift */; };
 		BE442C6223EDA31B002306E6 /* Decimal+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442C6123EDA31B002306E6 /* Decimal+Conversions.swift */; };
 		BE442C6423EDA32F002306E6 /* Double+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442C6323EDA32F002306E6 /* Double+Conversions.swift */; };
 		BE442C6623EDA369002306E6 /* TimeInterval+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442C6523EDA369002306E6 /* TimeInterval+Conversions.swift */; };
@@ -98,6 +102,10 @@
 		BE28C4FC23D7AB5300CA9D13 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BE28C4FF23D7AD9600CA9D13 /* PreviewProvider+Locale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewProvider+Locale.swift"; sourceTree = "<group>"; };
 		BE37722823E7149F003C8D3F /* UIDevice+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Type.swift"; sourceTree = "<group>"; };
+		BE38A04E23F34434005D51F9 /* GlobalConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfiguration.swift; sourceTree = "<group>"; };
+		BE38A05023F34454005D51F9 /* DefaultConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultConfiguration.swift; sourceTree = "<group>"; };
+		BE38A05223F3445F005D51F9 /* ConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationProtocol.swift; sourceTree = "<group>"; };
+		BE38A05523F345D0005D51F9 /* DSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSFont.swift; sourceTree = "<group>"; };
 		BE442C6123EDA31B002306E6 /* Decimal+Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Conversions.swift"; sourceTree = "<group>"; };
 		BE442C6323EDA32F002306E6 /* Double+Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Conversions.swift"; sourceTree = "<group>"; wrapsLines = 0; };
 		BE442C6523EDA369002306E6 /* TimeInterval+Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Conversions.swift"; sourceTree = "<group>"; };
@@ -197,6 +205,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BE38A04D23F34426005D51F9 /* Design System */ = {
+			isa = PBXGroup;
+			children = (
+				BE38A04E23F34434005D51F9 /* GlobalConfiguration.swift */,
+				BE38A05023F34454005D51F9 /* DefaultConfiguration.swift */,
+				BE38A05223F3445F005D51F9 /* ConfigurationProtocol.swift */,
+				BE38A05523F345D0005D51F9 /* DSFont.swift */,
+			);
+			path = "Design System";
+			sourceTree = "<group>";
+		};
 		BE442C5623ED9FE1002306E6 /* System */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +257,7 @@
 		BE442C5923ED9FF5002306E6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				BE38A04D23F34426005D51F9 /* Design System */,
 				BE442C5E23EDA080002306E6 /* Components */,
 				BE442C5F23EDA084002306E6 /* Screens */,
 				BEBACBAF23E745E0002ABD20 /* ViewModifiers */,
@@ -633,6 +653,8 @@
 			files = (
 				BE4B4F1923F0B78C0090CCD9 /* AvatarOnboardingPickerView.swift in Sources */,
 				BE66B18323BD096800166912 /* WelcomeView.swift in Sources */,
+				BE38A05123F34454005D51F9 /* DefaultConfiguration.swift in Sources */,
+				BE38A05623F345D0005D51F9 /* DSFont.swift in Sources */,
 				BE442C7123EDA9E0002306E6 /* Weekday.swift in Sources */,
 				BE442C7223EDAA09002306E6 /* AppStateRepository.swift in Sources */,
 				BE442C6623EDA369002306E6 /* TimeInterval+Conversions.swift in Sources */,
@@ -647,6 +669,7 @@
 				BEC748BB23D23BB50027F26D /* WeekHStack.swift in Sources */,
 				BE28C50023D7AD9600CA9D13 /* PreviewProvider+Locale.swift in Sources */,
 				BE4B4F0823EDC89A0090CCD9 /* User+WorkTime.swift in Sources */,
+				BE38A05323F3445F005D51F9 /* ConfigurationProtocol.swift in Sources */,
 				BE92646023ED9F270072A555 /* TimeTextTranslator.swift in Sources */,
 				BEC748BD23D23BCF0027F26D /* WeekdayView.swift in Sources */,
 				BE28C4F123D7A9D300CA9D13 /* R.generated.swift in Sources */,
@@ -656,6 +679,7 @@
 				BE442C6223EDA31B002306E6 /* Decimal+Conversions.swift in Sources */,
 				BE92644C23ED95210072A555 /* InteractorsContainer.swift in Sources */,
 				BE442C7423EDAA14002306E6 /* User.swift in Sources */,
+				BE38A04F23F34434005D51F9 /* GlobalConfiguration.swift in Sources */,
 				BEC00AEF23BFE361001B6724 /* BackgroundView.swift in Sources */,
 				EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */,
 				BE442C7823EDAAB5002306E6 /* User+Salary.swift in Sources */,
@@ -863,7 +887,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = Y93HUJS49V;
 				ENABLE_PREVIEWS = YES;
@@ -876,7 +900,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.victormelo.Time-is-Money";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -890,7 +914,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = Y93HUJS49V;
 				ENABLE_PREVIEWS = YES;
@@ -903,7 +927,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.victormelo.Time-is-Money";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
