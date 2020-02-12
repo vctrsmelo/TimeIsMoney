@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-struct WorkTimeView: View {
+struct OnboardingWorkTimeView: View {
     
     @EnvironmentObject var appState: AppState
     @Environment(\.interactors) var interactors: InteractorsContainer
@@ -27,17 +27,25 @@ struct WorkTimeView: View {
         
         return Group {
             VStack {
+                
+                Spacer()
+                
                 Text(R.string.localizable.howManyHoursDoYouWorkPerWeek())
                     .lineLimit(nil)
                     .font(config.font.bold(size: .title).swiftUIFont)
                     .foregroundColor(config.color.complementaryColor.swiftUIColor)
                     .frame(maxHeight: .infinity)
+                
+                Spacer()
+                
                 Image("office_\(appState.avatarId)_table2")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: UIScreen.main.bounds.width-120, alignment: .center)
                     .frame(minHeight: 50, alignment: .center)
                     .animation(.none)
+                
+                Spacer()
             
                 Text("\(hours[hoursArrayIndex])")
                     .font(config.font.bold(size: .title).swiftUIFont)
@@ -47,6 +55,7 @@ struct WorkTimeView: View {
                     .font(config.font.bold(size: .title).swiftUIFont)
                     .foregroundColor(config.color.complementaryColor.swiftUIColor)
                 maybePickerSection(selectedHours: selectedHours)
+                
                 Spacer()
             }
         }.withBackground()
@@ -87,7 +96,7 @@ struct WorkTimeView: View {
 struct WorkTimeView_Previews: PreviewProvider {
     static var previews: some View {
         return ForEach(Self.supportedLocales, id: \.identifier) { locale in
-            WorkTimeView()
+            OnboardingWorkTimeView()
                 
         }
     }

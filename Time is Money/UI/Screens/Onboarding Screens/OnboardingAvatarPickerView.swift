@@ -9,7 +9,7 @@
 import SwiftUI
 import Rswift
 
-struct AvatarOnboardingPickerView: View {
+struct OnboardingAvatarPickerView: View {
     
     @EnvironmentObject var appState: AppState
     @Environment(\.interactors) var interactors: InteractorsContainer
@@ -33,6 +33,6 @@ struct AvatarOnboardingPickerView: View {
 
 struct AvatarPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        AvatarOnboardingPickerView()
+        OnboardingAvatarPickerView()
     }
 }

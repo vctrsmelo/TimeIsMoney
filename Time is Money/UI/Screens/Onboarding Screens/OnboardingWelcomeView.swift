@@ -8,26 +8,28 @@
 
 import SwiftUI
 
-struct WelcomeView: View {
+struct OnboardingWelcomeView: View {
     
     let config = GlobalConfiguration.configuration
     
     var body: some View {
         VStack {
-            //image
+
+            Spacer()
+            
             Image("MoneyClock_img")
                 .resizable()
                 .scaledToFit()
                 .frame(maxWidth: UIScreen.main.bounds.width * 2/3 , minHeight: 150)
-                .padding(.top, 20)
             
-            //bem vindo
+            
             Text("Welcome!")
                 .font(config.font.bold(size: .heading).swiftUIFont)
                 .foregroundColor(config.color.complementaryColor.swiftUIColor)
-                .padding(.bottom, 20)
+                .padding(.top, 20)
+
+            Spacer()
             
-            //subtitle
             Text("Let's find out how much things really cost?")
                 .lineLimit(nil)
                 .font(config.font.regular(size: .subtitle).swiftUIFont)
@@ -35,7 +37,6 @@ struct WelcomeView: View {
                 .frame(idealWidth: UIScreen.main.bounds.width-64, maxWidth: UIScreen.main.bounds.width-16, minHeight: 25, idealHeight: 50, alignment: .center)
             
             Spacer()
-            //description
 
             Text(R.string.localizable.forThisWeWillNeedOnlyAFewInformationLetSGo😄())
                 .lineLimit(nil)
@@ -53,7 +54,7 @@ struct WelcomeView: View {
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
         return ForEach(Self.supportedLocales, id: \.identifier) { locale in
-            WelcomeView()
+            OnboardingWelcomeView()
                 .environment(\.locale, locale)
         }
     }

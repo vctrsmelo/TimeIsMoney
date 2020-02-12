@@ -26,23 +26,17 @@ class DefaultColorStyle: ColorStyle {
 }
 
 class DefaultFontConfiguration: FontConfiguration {
+    
     func light(size: FontSize) -> DSFont {
-        let font = Font.system(size: size.rawValue, weight: .light)
-        let uiFont = UIFont.systemFont(ofSize: size.rawValue, weight: .light)
-        return DSFont(swiftUIFont: font, uiKitFont: uiFont)
+        getDSFont(size: size, weight: .light)
     }
     
-    
     func regular(size: FontSize) -> DSFont {
-        let font = Font.system(size: size.rawValue, weight: .regular)
-        let uiFont = UIFont.systemFont(ofSize: size.rawValue, weight: .regular)
-        return DSFont(swiftUIFont: font, uiKitFont: uiFont)
+        getDSFont(size: size, weight: .regular)
     }
     
     func semibold(size: FontSize) -> DSFont {
-        let font = Font.system(size: size.rawValue, weight: .light)
-        let uiFont = UIFont.systemFont(ofSize: size.rawValue, weight: .light)
-        return DSFont(swiftUIFont: font, uiKitFont: uiFont)
+        getDSFont(size: size, weight: .semibold)
     }
     
     func bold(size: FontSize) -> DSFont {
@@ -50,7 +44,7 @@ class DefaultFontConfiguration: FontConfiguration {
     }
     
     private func getDSFont(size: FontSize, weight: Font.Weight) -> DSFont {
-        let font = Font.system(size: size.rawValue, weight: .light)
+        let font = Font.system(size: size.rawValue, weight: weight)
         let uiFont = UIFont.systemFont(ofSize: size.rawValue, weight: weight.uiFontWeight)
         return DSFont(swiftUIFont: font, uiKitFont: uiFont)
     }

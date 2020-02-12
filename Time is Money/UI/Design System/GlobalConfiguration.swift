@@ -7,9 +7,26 @@
 //
 
 import Foundation
+import UIKit
+import SwiftUI
 
-let config = GlobalConfiguration.configuration
+var config: ThemeConfigurationProtocol {
+    GlobalConfiguration.configuration
+}
 
 class GlobalConfiguration {
-    static var configuration: ThemeConfigurationProtocol = DefaultConfiguration()
+   
+    static private var interfaceStyle: UIUserInterfaceStyle {
+        UIViewController().traitCollection.userInterfaceStyle
+    }
+    
+    private static var currentInterfaceStyle = UIViewController().traitCollection.userInterfaceStyle
+    
+    static var configuration: ThemeConfigurationProtocol {
+        (interfaceStyle == .dark) ? darkModeConfiguration : defaultConfiguration
+    }
+    
+    static private let defaultConfiguration = DefaultConfiguration()
+    static private let darkModeConfiguration = DarkModeConfiguration()
+
 }

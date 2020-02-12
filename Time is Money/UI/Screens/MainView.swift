@@ -53,7 +53,7 @@ struct MainView: View {
                     }) {
                         Image(systemName: "gear")
                             .imageScale(.large)
-                            .foregroundColor(Design.Color.Text.standard)
+                            .foregroundColor(config.color.complementaryColor.swiftUIColor)
                             .frame(width: 60, height: 60)
                     }
                     .padding(.trailing, 8)
@@ -117,32 +117,32 @@ struct MainView: View {
         VStack {
             Text("It will take")
                 .multilineTextAlignment(.center)
-                .font(Design.Font.standardLight)
-                .foregroundColor(Design.Color.Text.standard)
+                .font(config.font.light(size: .body).swiftUIFont)
+                .foregroundColor(config.color.complementaryColor.swiftUIColor)
                 .animation(.none)
             Text("\(timeMessage)")
                 .lineLimit(nil)
-                .font(Design.Font.Title.customTitleFont(size: 25))
-                .foregroundColor(Design.Color.Text.standard)
+                .font(config.font.bold(size: .title).swiftUIFont)
+                .foregroundColor(config.color.complementaryColor.swiftUIColor)
                 .multilineTextAlignment(.center)
                 .animation(.none)
                 .padding(.top, 10)
                 .frame(minHeight: 80)
     
             getExpectedWorkingTimeText(priceAsSeconds: priceAsSeconds)
-                .font(Design.Font.standardLight)
-                .foregroundColor(Design.Color.Text.standard)
+                .font(config.font.light(size: .body).swiftUIFont)
+                .foregroundColor(config.color.complementaryColor.swiftUIColor)
                 .padding(.top, 10)
             Group {
                 Text("to pay only those")
                     .multilineTextAlignment(.center)
-                    .font(Design.Font.standardLight)
-                    .foregroundColor(Design.Color.Text.standard)
+                    .font(config.font.light(size: .body).swiftUIFont)
+                    .foregroundColor(config.color.complementaryColor.swiftUIColor)
                     .animation(.none)
                     .padding(.top, 10)
                 Text("\(formattedValue)")
-                    .font(Design.Font.subtitle)
-                    .foregroundColor(Design.Color.Text.standard)
+                    .font(config.font.bold(size: .subtitle).swiftUIFont)
+                    .foregroundColor(config.color.complementaryColor.swiftUIColor)
                     .padding(.top, 10)
             }
             .isHidden(isKeyboardVisible)
@@ -189,8 +189,8 @@ struct MainView: View {
         
         return VStack {
             Text("Type below the price")
-                .font(Design.Font.smallLight)
-                .foregroundColor(Design.Color.Text.standard)
+                .font(config.font.light(size: .h4).swiftUIFont)
+                .foregroundColor(config.color.complementaryColor.swiftUIColor)
                 .isHidden(isKeyboardVisible)
 
             CurrencyField(priceBinding, placeholder: income, textColor: .white)

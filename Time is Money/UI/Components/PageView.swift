@@ -43,6 +43,6 @@ struct PageView<Page: View>: View {
 
 struct PageView_Previews: PreviewProvider {
     static var previews: some View {
-        PageView([AnyView(WelcomeView()), AnyView(WorkTimeView()), AnyView(DaysOfWeekView()), AnyView(IncomeView())])
+        PageView([AnyView(OnboardingWelcomeView()), AnyView(OnboardingWorkTimeView()), AnyView(OnboardingWeekdaysView()), AnyView(OnboardingIncomeView())])
     }
 }

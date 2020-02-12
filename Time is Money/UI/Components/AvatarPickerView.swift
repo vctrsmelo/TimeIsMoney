@@ -24,12 +24,12 @@ struct VAvatarPickerView: View {
             VStack {
                 HStack {
                     ForEach(AvatarFactory.allMale, id: \.id) {
-                        AvatarButtonView(avatar: $0, isSelected: $0.id == self.appState.avatarId)
+                        AvatarButtonView(avatar: $0, isSelected: $0.id == self.appState.avatarId, buttonWidth: self.buttonWidth)
                     }
                 }
                 HStack {
                     ForEach(AvatarFactory.allFemale, id: \.id) {
-                        AvatarButtonView(avatar: $0, isSelected: $0.id == self.appState.avatarId)
+                        AvatarButtonView(avatar: $0, isSelected: $0.id == self.appState.avatarId, buttonWidth: self.buttonWidth)
                     }
                 }
             }
@@ -52,7 +52,7 @@ struct HAvatarPickerView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 ForEach(AvatarFactory.all, id: \.id) {
-                    AvatarButtonView(avatar: $0, isSelected: $0.id == self.appState.avatarId)
+                    AvatarButtonView(avatar: $0, isSelected: $0.id == self.appState.avatarId, buttonWidth: self.buttonWidth)
                 }
             }
         }

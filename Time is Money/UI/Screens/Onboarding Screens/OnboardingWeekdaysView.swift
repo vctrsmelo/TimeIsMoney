@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct DaysOfWeekView: View {
+struct OnboardingWeekdaysView: View {
     
     @EnvironmentObject var appState: AppState
     @Environment(\.interactors) var interactors: InteractorsContainer
@@ -29,13 +29,17 @@ struct DaysOfWeekView: View {
         GeometryReader { g in
             VStack(spacing: 0) {
                 
+                Spacer()
+                
                 HStack {
                     Text("Which days of the week do you usually work?")
                     .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
                         .lineLimit(nil)
-                        .adaptableFont(.smallTitleFont, maxSize: 30)
-                        .foregroundColor(Design.Color.Text.title)
+                        .font(config.font.bold(size: .title).swiftUIFont)
+                        .foregroundColor(config.color.complementaryColor.swiftUIColor)
                 }
+                
+                Spacer()
                 
                 HStack {
                     Image("Calendar_img")
@@ -55,9 +59,10 @@ struct DaysOfWeekView: View {
                 
                 HStack {
                     Text(self.workdays)
-                        .font(Design.Font.smallRegular)
-                        .foregroundColor(Design.Color.Text.standard)
+                        .font(config.font.regular(size: .h4).swiftUIFont)
+                        .foregroundColor(config.color.complementaryColor.swiftUIColor)
                 }
+                
                 Spacer()
         
         }
@@ -73,7 +78,7 @@ struct DaysOfWeekView_Previews: PreviewProvider {
     static var previews: some View {
         
         return ForEach(Self.supportedLocales, id: \.identifier) { locale in
-            DaysOfWeekView()
+            OnboardingWeekdaysView()
                 .environmentObject(AppState())
                 .environment(\.locale, locale)
                 
