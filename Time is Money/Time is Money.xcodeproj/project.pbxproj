@@ -15,6 +15,7 @@
 		BE293A5E23F4719500BB4E98 /* UIColor+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293A5D23F4719500BB4E98 /* UIColor+Init.swift */; };
 		BE293A6023F4895A00BB4E98 /* Font+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293A5F23F4895A00BB4E98 /* Font+UIFont.swift */; };
 		BE293A6223F4957400BB4E98 /* DarkModeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293A6123F4957400BB4E98 /* DarkModeConfiguration.swift */; };
+		BE2F8B2623F4B30900D26E27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE2F8B2523F4B30900D26E27 /* GoogleService-Info.plist */; };
 		BE37722923E7149F003C8D3F /* UIDevice+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37722823E7149F003C8D3F /* UIDevice+Type.swift */; };
 		BE38A04F23F34434005D51F9 /* GlobalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38A04E23F34434005D51F9 /* GlobalConfiguration.swift */; };
 		BE38A05123F34454005D51F9 /* DefaultConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38A05023F34454005D51F9 /* DefaultConfiguration.swift */; };
@@ -107,6 +108,7 @@
 		BE293A5D23F4719500BB4E98 /* UIColor+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Init.swift"; sourceTree = "<group>"; };
 		BE293A5F23F4895A00BB4E98 /* Font+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+UIFont.swift"; sourceTree = "<group>"; };
 		BE293A6123F4957400BB4E98 /* DarkModeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeConfiguration.swift; sourceTree = "<group>"; };
+		BE2F8B2523F4B30900D26E27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BE37722823E7149F003C8D3F /* UIDevice+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Type.swift"; sourceTree = "<group>"; };
 		BE38A04E23F34434005D51F9 /* GlobalConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfiguration.swift; sourceTree = "<group>"; };
 		BE38A05023F34454005D51F9 /* DefaultConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultConfiguration.swift; sourceTree = "<group>"; };
@@ -218,6 +220,21 @@
 				BE293A6123F4957400BB4E98 /* DarkModeConfiguration.swift */,
 			);
 			path = Configurations;
+			sourceTree = "<group>";
+		};
+		BE2F8B2723F4B31700D26E27 /* Time is Money */ = {
+			isa = PBXGroup;
+			children = (
+				BE442C5623ED9FE1002306E6 /* System */,
+				BE442C5723ED9FE5002306E6 /* Utilities */,
+				BE442C5D23EDA000002306E6 /* Injected */,
+				BE442C5C23ED9FFC002306E6 /* Repositories */,
+				BE442C5B23ED9FF9002306E6 /* Interactors */,
+				BE442C5A23ED9FF7002306E6 /* Models */,
+				BE442C5923ED9FF5002306E6 /* UI */,
+				BE442C5823ED9FEE002306E6 /* Resources */,
+			);
+			path = "Time is Money";
 			sourceTree = "<group>";
 		};
 		BE38A04D23F34426005D51F9 /* Design System */ = {
@@ -420,15 +437,9 @@
 		EE426FF5234F4A1E007A63D9 = {
 			isa = PBXGroup;
 			children = (
-				BE442C5623ED9FE1002306E6 /* System */,
-				BE442C5723ED9FE5002306E6 /* Utilities */,
-				BE442C5D23EDA000002306E6 /* Injected */,
-				BE442C5C23ED9FFC002306E6 /* Repositories */,
-				BE442C5B23ED9FF9002306E6 /* Interactors */,
-				BE442C5A23ED9FF7002306E6 /* Models */,
-				BE442C5923ED9FF5002306E6 /* UI */,
-				BE442C5823ED9FEE002306E6 /* Resources */,
 				BE28C4F023D7A9D300CA9D13 /* R.generated.swift */,
+				BE2F8B2723F4B31700D26E27 /* Time is Money */,
+				BE2F8B2523F4B30900D26E27 /* GoogleService-Info.plist */,
 				EE42701A234F4A23007A63D9 /* Time is MoneyTests */,
 				EE427025234F4A23007A63D9 /* Time is MoneyUITests */,
 				EE426FFF234F4A1E007A63D9 /* Products */,
@@ -580,6 +591,7 @@
 			files = (
 				EE427011234F4A23007A63D9 /* LaunchScreen.storyboard in Resources */,
 				BE28C4F823D7AB3400CA9D13 /* Localizable.strings in Resources */,
+				BE2F8B2623F4B30900D26E27 /* GoogleService-Info.plist in Resources */,
 				BE442C6B23EDA674002306E6 /* Preview Assets.xcassets in Resources */,
 				EE42700B234F4A22007A63D9 /* Assets.xcassets in Resources */,
 			);
@@ -915,7 +927,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = Resources/Info.plist;
+				INFOPLIST_FILE = "Time is Money/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -942,7 +954,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = Resources/Info.plist;
+				INFOPLIST_FILE = "Time is Money/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
