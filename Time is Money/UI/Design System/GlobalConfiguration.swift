@@ -8,6 +8,8 @@
 
 import Foundation
 
+let config = GlobalConfiguration.configuration
+
 class GlobalConfiguration {
     static var configuration: ThemeConfigurationProtocol = DefaultConfiguration()
 }

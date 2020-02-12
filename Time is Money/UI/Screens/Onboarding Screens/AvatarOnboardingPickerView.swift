@@ -19,8 +19,8 @@ struct AvatarOnboardingPickerView: View {
             HStack {
                 Text(R.string.localizable.selectYourAvatar())
                     .lineLimit(nil)
-                    .adaptableFont(.smallTitleFont, maxSize: 25)
-                    .foregroundColor(Design.Color.Text.title)
+                    .font(config.font.bold(size: .title).swiftUIFont)
+                    .foregroundColor(config.color.complementaryColor.swiftUIColor)
                     .frame(maxHeight: UIScreen.main.bounds.height/4)
             }
             VAvatarPickerView(buttonWidth: 100)

@@ -9,33 +9,39 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    
+    let config = GlobalConfiguration.configuration
+    
     var body: some View {
         VStack {
             //image
             Image("MoneyClock_img")
                 .resizable()
                 .scaledToFit()
-                .frame(minHeight: 150)
+                .frame(maxWidth: UIScreen.main.bounds.width * 2/3 , minHeight: 150)
                 .padding(.top, 20)
+            
             //bem vindo
             Text("Welcome!")
-                .font(Design.Font.Title.largeTitleFont)
-                .foregroundColor(Design.Color.Text.title)
+                .font(config.font.bold(size: .heading).swiftUIFont)
+                .foregroundColor(config.color.complementaryColor.swiftUIColor)
+                .padding(.bottom, 20)
             
             //subtitle
             Text("Let's find out how much things really cost?")
                 .lineLimit(nil)
-                .adaptableFont(.subtitle, maxSize: 25)
+                .font(config.font.regular(size: .subtitle).swiftUIFont)
+                .foregroundColor(config.color.complementaryColor.swiftUIColor)
                 .frame(idealWidth: UIScreen.main.bounds.width-64, maxWidth: UIScreen.main.bounds.width-16, minHeight: 25, idealHeight: 50, alignment: .center)
-                .foregroundColor(Design.Color.Text.title)
+            
             Spacer()
             //description
 
             Text(R.string.localizable.forThisWeWillNeedOnlyAFewInformationLetSGo😄())
                 .lineLimit(nil)
+                .font(config.font.light(size: .subtitle).swiftUIFont)
+                .foregroundColor(config.color.complementaryColor.swiftUIColor)
                 .frame(idealWidth: UIScreen.main.bounds.width-64, maxWidth: UIScreen.main.bounds.width-16, minHeight: 25, idealHeight: 50, alignment: .center)
-                .adaptableFont(.standardLight, maxSize: 20)
-                .foregroundColor(Design.Color.Text.standard)
             Spacer()
         }
         .withBackground()

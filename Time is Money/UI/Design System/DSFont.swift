@@ -10,6 +10,6 @@ import SwiftUI
 import UIKit
 
 struct DSFont {
-    let font: Font
-    let uiFont: UIFont
+    let swiftUIFont: Font
+    let uiKitFont: UIFont
 }

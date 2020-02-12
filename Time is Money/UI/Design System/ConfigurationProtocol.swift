@@ -10,18 +10,25 @@ import SwiftUI
 import UIKit
 
  protocol FontConfiguration {
-    var regular: DSFont { get }
-    var bold: DSFont { get }
-    var semibold: DSFont { get }
+    func light(size: FontSize) -> DSFont
+    func regular(size: FontSize) -> DSFont
+    func bold(size: FontSize) -> DSFont
+    func semibold(size: FontSize) -> DSFont
 }
 
  enum FontSize: CGFloat {
+    case h0 = 50.0
     case h1 = 24.0
     case h2 = 20.0
     case h3 = 16.0
     case h4 = 14.0
     case h5 = 12.0
     case h6 = 10.0
+    
+    static var heading = FontSize.h0
+    static var title = FontSize.h1
+    static var subtitle = FontSize.h2
+    static var body = FontSize.h3
 }
 
  enum Spacing: CGFloat {
@@ -35,8 +42,10 @@ import UIKit
     var brandColor: UIColor { get }
     var primaryColor: UIColor { get }
     var secondaryColor: UIColor { get }
-    var tertiaryColor: UIColor { get }
-    var darkColor: UIColor { get }
+    var complementaryColor: UIColor { get }
+    var enabledColor: UIColor { get }
+    var disabledColor: UIColor { get }
+
 }
 
  enum CornerRadiusType: Int {
