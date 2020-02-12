@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct IncomeView: View {
+struct OnboardingIncomeView: View {
     
     @EnvironmentObject var appState: AppState
     @Environment(\.interactors) var interactors: InteractorsContainer
@@ -30,11 +30,14 @@ struct IncomeView: View {
         
         return Group {
             VStack {
+                
+                Spacer()
+                
                 HStack {
                     Text(R.string.localizable.whatIsYourIncome())
                         .padding(.top, 20)
-                        .adaptableFont(.smallTitleFont, maxSize: 25)
-                        .foregroundColor(Design.Color.Text.title)
+                        .font(config.font.bold(size: .title).swiftUIFont)
+                        .foregroundColor(config.color.complementaryColor.swiftUIColor)
                         .frame(maxWidth: .infinity, maxHeight:80)
                 }
                 
@@ -58,8 +61,8 @@ struct IncomeView: View {
                 
                 HStack {
                     Text("per month")
-                        .font(Design.Font.standardLight)
-                        .foregroundColor(Design.Color.Text.standard)
+                        .font(config.font.light(size: .body).swiftUIFont)
+                        .foregroundColor(config.color.complementaryColor.swiftUIColor)
                 }
                 
                 Spacer()
@@ -67,13 +70,14 @@ struct IncomeView: View {
                 HStack {
                     NavigationLink(destination: MainView().environmentObject(self.appState)) {
                         Text("Finish")
-                            .font(Design.Font.standardLight)
+                            .font(config.font.semibold(size: .body).swiftUIFont)
                             .frame(width: 200, height: 50, alignment: .center)
-                            .background(Design.Color.Text.standard)
-                            .foregroundColor(Color.white)
+                            .background(config.color.complementaryColor.swiftUIColor)
+                            .foregroundColor(config.color.primaryColor.swiftUIColor)
                             .cornerRadius(5)
                     }
                 }
+                
                 Spacer()
             }
         }
@@ -86,6 +90,6 @@ struct IncomeView: View {
 
 struct IncomeView_Previews: PreviewProvider {
     static var previews: some View {
-        IncomeView()
+        OnboardingIncomeView()
     }
 }

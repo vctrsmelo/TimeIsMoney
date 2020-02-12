@@ -50,7 +50,7 @@ private extension Image {
             .scaledToFit()
             .frame(width: avatarWidth, alignment: .center)
             .padding(buttonPadding)
-            .background(isSelected ? Design.Color.Background.selectedOption : Design.Color.Background.unselectedOption)
+            .background(isSelected ? GlobalConfiguration.configuration.color.enabledColor.swiftUIColor : GlobalConfiguration.configuration.color.disabledColor.swiftUIColor)
             .cornerRadius(32)
     }
 }

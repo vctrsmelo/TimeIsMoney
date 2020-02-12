@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-struct WorkTimeView: View {
+struct OnboardingWorkTimeView: View {
     
     @EnvironmentObject var appState: AppState
     @Environment(\.interactors) var interactors: InteractorsContainer
@@ -27,26 +27,35 @@ struct WorkTimeView: View {
         
         return Group {
             VStack {
+                
+                Spacer()
+                
                 Text(R.string.localizable.howManyHoursDoYouWorkPerWeek())
                     .lineLimit(nil)
-                    .adaptableFont(.smallTitleFont, maxSize: 25)
-                    .foregroundColor(Design.Color.Text.title)
+                    .font(config.font.bold(size: .title).swiftUIFont)
+                    .foregroundColor(config.color.complementaryColor.swiftUIColor)
                     .frame(maxHeight: .infinity)
+                
+                Spacer()
+                
                 Image("office_\(appState.avatarId)_table2")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: UIScreen.main.bounds.width-120, alignment: .center)
                     .frame(minHeight: 50, alignment: .center)
                     .animation(.none)
+                
+                Spacer()
             
                 Text("\(hours[hoursArrayIndex])")
-                    .font(Design.Font.Title.smallTitleFont)
-                    .foregroundColor(Design.Color.Text.standard)
+                    .font(config.font.bold(size: .title).swiftUIFont)
+                    .foregroundColor(config.color.complementaryColor.swiftUIColor)
                     .padding(.bottom, 6)
                 Text("Hours per week")
-                    .font(Design.Font.subtitle)
-                    .foregroundColor(Design.Color.Text.standard)
+                    .font(config.font.bold(size: .title).swiftUIFont)
+                    .foregroundColor(config.color.complementaryColor.swiftUIColor)
                 maybePickerSection(selectedHours: selectedHours)
+                
                 Spacer()
             }
         }.withBackground()
@@ -59,8 +68,8 @@ struct WorkTimeView: View {
             return
                 AnyView(
                         Text("(Set your workdays to update here)")
-                            .font(Design.Font.smallLight)
-                            .foregroundColor(Design.Color.Text.standard)
+                            .font(config.font.light(size: .h4).swiftUIFont)
+                        .foregroundColor(config.color.complementaryColor.swiftUIColor)
                             .multilineTextAlignment(.center)
                 )
         }
@@ -72,10 +81,10 @@ struct WorkTimeView: View {
                 Picker(selection: selectedHours, label: EmptyView()) {
                     ForEach(0 ..< self.hours.count) {
                         Text(self.hours[$0]+" "+hours)
-                            .foregroundColor(self.appState.user.isSelectedHoursValid($0) ? Design.Color.disabled : Design.Color.Text.standard)
+                            .foregroundColor(self.appState.user.isSelectedHoursValid($0) ? config.color.disabledColor.swiftUIColor : config.color.complementaryColor.swiftUIColor)
                     }
                 }
-                .foregroundColor(Design.Color.Text.standard)
+                .foregroundColor(config.color.complementaryColor.swiftUIColor)
                 .pickerStyle(WheelPickerStyle())
                 .labelsHidden()
             }
@@ -87,7 +96,7 @@ struct WorkTimeView: View {
 struct WorkTimeView_Previews: PreviewProvider {
     static var previews: some View {
         return ForEach(Self.supportedLocales, id: \.identifier) { locale in
-            WorkTimeView()
+            OnboardingWorkTimeView()
                 
         }
     }

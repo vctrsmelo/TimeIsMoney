@@ -23,8 +23,8 @@ struct WeekdayView: View {
     }
     
     var body: some View {
-        typealias backgrounds = Design.Color.Background
-        let backgroundColor = isSelected ? backgrounds.selectedOption : backgrounds.unselectedOption
+        let color = GlobalConfiguration.configuration.color
+        let backgroundColor = isSelected ? color.enabledColor.swiftUIColor : color.disabledColor.swiftUIColor
         
         return ZStack {
             Circle()
@@ -37,9 +37,9 @@ struct WeekdayView: View {
                 }
             }) {
                 Text(self.weekday.localized())
-                    .adaptableFont(.smallRegular, maxSize: 30)
-                .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
-                .foregroundColor(Color.white)
+                    .font(config.font.regular(size: .h4).swiftUIFont)
+                    .foregroundColor(Color.white)
+                    .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
             }
             
         }

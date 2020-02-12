@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		656D24ECE819A573D47C940D /* Pods_Time_is_Money.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DE7463242B13DBA38ABD09 /* Pods_Time_is_Money.framework */; };
-		BE270BD723C039E50099AAC7 /* DaysOfWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE270BD623C039E50099AAC7 /* DaysOfWeekView.swift */; };
+		BE270BD723C039E50099AAC7 /* OnboardingWeekdaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE270BD623C039E50099AAC7 /* OnboardingWeekdaysView.swift */; };
 		BE28C4F123D7A9D300CA9D13 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28C4F023D7A9D300CA9D13 /* R.generated.swift */; };
 		BE28C4F823D7AB3400CA9D13 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE28C4FA23D7AB3400CA9D13 /* Localizable.strings */; };
 		BE28C50023D7AD9600CA9D13 /* PreviewProvider+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28C4FF23D7AD9600CA9D13 /* PreviewProvider+Locale.swift */; };
+		BE293A5E23F4719500BB4E98 /* UIColor+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293A5D23F4719500BB4E98 /* UIColor+Init.swift */; };
+		BE293A6023F4895A00BB4E98 /* Font+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293A5F23F4895A00BB4E98 /* Font+UIFont.swift */; };
+		BE293A6223F4957400BB4E98 /* DarkModeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293A6123F4957400BB4E98 /* DarkModeConfiguration.swift */; };
 		BE37722923E7149F003C8D3F /* UIDevice+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37722823E7149F003C8D3F /* UIDevice+Type.swift */; };
 		BE38A04F23F34434005D51F9 /* GlobalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38A04E23F34434005D51F9 /* GlobalConfiguration.swift */; };
 		BE38A05123F34454005D51F9 /* DefaultConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38A05023F34454005D51F9 /* DefaultConfiguration.swift */; };
@@ -38,11 +41,11 @@
 		BE4B4F1323EEFE500090CCD9 /* ScenarioFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1223EEFE500090CCD9 /* ScenarioFactory.swift */; };
 		BE4B4F1523EF18E30090CCD9 /* AvatarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1423EF18E30090CCD9 /* AvatarFactory.swift */; };
 		BE4B4F1723F0ACC40090CCD9 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1623F0ACC40090CCD9 /* Avatar.swift */; };
-		BE4B4F1923F0B78C0090CCD9 /* AvatarOnboardingPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1823F0B78C0090CCD9 /* AvatarOnboardingPickerView.swift */; };
+		BE4B4F1923F0B78C0090CCD9 /* OnboardingAvatarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1823F0B78C0090CCD9 /* OnboardingAvatarPickerView.swift */; };
 		BE4B4F1B23F0C15C0090CCD9 /* AvatarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1A23F0C15C0090CCD9 /* AvatarPickerView.swift */; };
 		BE4B4F1E23F0C5890090CCD9 /* AvatarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1D23F0C5890090CCD9 /* AvatarButtonView.swift */; };
 		BE57677E23CE838D004BF48C /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57677D23CE838D004BF48C /* EditView.swift */; };
-		BE66B18323BD096800166912 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B18223BD096800166912 /* WelcomeView.swift */; };
+		BE66B18323BD096800166912 /* OnboardingWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B18223BD096800166912 /* OnboardingWelcomeView.swift */; };
 		BE85876923BFF2A300DEFE98 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE85876823BFF2A300DEFE98 /* Formatters.swift */; };
 		BE92644423EC4F020072A555 /* CurrencyInputComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92644323EC4F020072A555 /* CurrencyInputComponentView.swift */; };
 		BE92644623ECD0380072A555 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92644523ECD0380072A555 /* MainInteractor.swift */; };
@@ -59,8 +62,8 @@
 		BEB0979D23BF990E00244E30 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0979C23BF990E00244E30 /* PageView.swift */; };
 		BEBACBB123E745EA002ABD20 /* ScaledFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBACBB023E745EA002ABD20 /* ScaledFont.swift */; };
 		BEC00AE723BFD6A0001B6724 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC00AE623BFD6A0001B6724 /* PageControl.swift */; };
-		BEC00AE923BFDC2C001B6724 /* WorkTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC00AE823BFDC2C001B6724 /* WorkTimeView.swift */; };
-		BEC00AEB23BFDC3C001B6724 /* IncomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC00AEA23BFDC3C001B6724 /* IncomeView.swift */; };
+		BEC00AE923BFDC2C001B6724 /* OnboardingWorkTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC00AE823BFDC2C001B6724 /* OnboardingWorkTimeView.swift */; };
+		BEC00AEB23BFDC3C001B6724 /* OnboardingIncomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC00AEA23BFDC3C001B6724 /* OnboardingIncomeView.swift */; };
 		BEC00AEF23BFE361001B6724 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC00AEE23BFE361001B6724 /* BackgroundView.swift */; };
 		BEC00AF223BFE591001B6724 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC00AF123BFE591001B6724 /* View+Extensions.swift */; };
 		BEC748BB23D23BB50027F26D /* WeekHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC748BA23D23BB50027F26D /* WeekHStack.swift */; };
@@ -95,12 +98,15 @@
 		39B88DD7EAD41710042B064D /* Pods-Time is Money.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time is Money.release.xcconfig"; path = "Target Support Files/Pods-Time is Money/Pods-Time is Money.release.xcconfig"; sourceTree = "<group>"; };
 		69DE7463242B13DBA38ABD09 /* Pods_Time_is_Money.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Time_is_Money.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72A8156F1017C5870C6B6FFB /* Pods-Time is Money.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time is Money.debug.xcconfig"; path = "Target Support Files/Pods-Time is Money/Pods-Time is Money.debug.xcconfig"; sourceTree = "<group>"; };
-		BE270BD623C039E50099AAC7 /* DaysOfWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOfWeekView.swift; sourceTree = "<group>"; };
+		BE270BD623C039E50099AAC7 /* OnboardingWeekdaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWeekdaysView.swift; sourceTree = "<group>"; };
 		BE28C4F023D7A9D300CA9D13 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		BE28C4F523D7AABA00CA9D13 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		BE28C4F923D7AB3400CA9D13 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		BE28C4FC23D7AB5300CA9D13 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BE28C4FF23D7AD9600CA9D13 /* PreviewProvider+Locale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewProvider+Locale.swift"; sourceTree = "<group>"; };
+		BE293A5D23F4719500BB4E98 /* UIColor+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Init.swift"; sourceTree = "<group>"; };
+		BE293A5F23F4895A00BB4E98 /* Font+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+UIFont.swift"; sourceTree = "<group>"; };
+		BE293A6123F4957400BB4E98 /* DarkModeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeConfiguration.swift; sourceTree = "<group>"; };
 		BE37722823E7149F003C8D3F /* UIDevice+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Type.swift"; sourceTree = "<group>"; };
 		BE38A04E23F34434005D51F9 /* GlobalConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfiguration.swift; sourceTree = "<group>"; };
 		BE38A05023F34454005D51F9 /* DefaultConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultConfiguration.swift; sourceTree = "<group>"; };
@@ -120,11 +126,11 @@
 		BE4B4F1223EEFE500090CCD9 /* ScenarioFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioFactory.swift; sourceTree = "<group>"; };
 		BE4B4F1423EF18E30090CCD9 /* AvatarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarFactory.swift; sourceTree = "<group>"; };
 		BE4B4F1623F0ACC40090CCD9 /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
-		BE4B4F1823F0B78C0090CCD9 /* AvatarOnboardingPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarOnboardingPickerView.swift; sourceTree = "<group>"; };
+		BE4B4F1823F0B78C0090CCD9 /* OnboardingAvatarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingAvatarPickerView.swift; sourceTree = "<group>"; };
 		BE4B4F1A23F0C15C0090CCD9 /* AvatarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerView.swift; sourceTree = "<group>"; };
 		BE4B4F1D23F0C5890090CCD9 /* AvatarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarButtonView.swift; sourceTree = "<group>"; };
 		BE57677D23CE838D004BF48C /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
-		BE66B18223BD096800166912 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		BE66B18223BD096800166912 /* OnboardingWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeView.swift; sourceTree = "<group>"; };
 		BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE85876823BFF2A300DEFE98 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		BE92644323EC4F020072A555 /* CurrencyInputComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyInputComponentView.swift; sourceTree = "<group>"; };
@@ -150,8 +156,8 @@
 		BEB0979C23BF990E00244E30 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		BEBACBB023E745EA002ABD20 /* ScaledFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledFont.swift; sourceTree = "<group>"; };
 		BEC00AE623BFD6A0001B6724 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
-		BEC00AE823BFDC2C001B6724 /* WorkTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkTimeView.swift; sourceTree = "<group>"; };
-		BEC00AEA23BFDC3C001B6724 /* IncomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeView.swift; sourceTree = "<group>"; };
+		BEC00AE823BFDC2C001B6724 /* OnboardingWorkTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWorkTimeView.swift; sourceTree = "<group>"; };
+		BEC00AEA23BFDC3C001B6724 /* OnboardingIncomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingIncomeView.swift; sourceTree = "<group>"; };
 		BEC00AEE23BFE361001B6724 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		BEC00AF123BFE591001B6724 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		BEC748BA23D23BB50027F26D /* WeekHStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHStack.swift; sourceTree = "<group>"; };
@@ -205,11 +211,20 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BE293A6323F4958400BB4E98 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				BE38A05023F34454005D51F9 /* DefaultConfiguration.swift */,
+				BE293A6123F4957400BB4E98 /* DarkModeConfiguration.swift */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
 		BE38A04D23F34426005D51F9 /* Design System */ = {
 			isa = PBXGroup;
 			children = (
+				BE293A6323F4958400BB4E98 /* Configurations */,
 				BE38A04E23F34434005D51F9 /* GlobalConfiguration.swift */,
-				BE38A05023F34454005D51F9 /* DefaultConfiguration.swift */,
 				BE38A05223F3445F005D51F9 /* ConfigurationProtocol.swift */,
 				BE38A05523F345D0005D51F9 /* DSFont.swift */,
 			);
@@ -333,11 +348,11 @@
 		BE442C6023EDA10E002306E6 /* Onboarding Screens */ = {
 			isa = PBXGroup;
 			children = (
-				BE4B4F1823F0B78C0090CCD9 /* AvatarOnboardingPickerView.swift */,
-				BE270BD623C039E50099AAC7 /* DaysOfWeekView.swift */,
-				BEC00AEA23BFDC3C001B6724 /* IncomeView.swift */,
-				BE66B18223BD096800166912 /* WelcomeView.swift */,
-				BEC00AE823BFDC2C001B6724 /* WorkTimeView.swift */,
+				BE4B4F1823F0B78C0090CCD9 /* OnboardingAvatarPickerView.swift */,
+				BE270BD623C039E50099AAC7 /* OnboardingWeekdaysView.swift */,
+				BEC00AEA23BFDC3C001B6724 /* OnboardingIncomeView.swift */,
+				BE66B18223BD096800166912 /* OnboardingWelcomeView.swift */,
+				BEC00AE823BFDC2C001B6724 /* OnboardingWorkTimeView.swift */,
 			);
 			path = "Onboarding Screens";
 			sourceTree = "<group>";
@@ -396,6 +411,8 @@
 				BE92645123ED9F270072A555 /* DateComponentsFormatter+String.swift */,
 				BE442C7723EDAAB5002306E6 /* User+Salary.swift */,
 				BE4B4F0723EDC89A0090CCD9 /* User+WorkTime.swift */,
+				BE293A5D23F4719500BB4E98 /* UIColor+Init.swift */,
+				BE293A5F23F4895A00BB4E98 /* Font+UIFont.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -651,8 +668,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE4B4F1923F0B78C0090CCD9 /* AvatarOnboardingPickerView.swift in Sources */,
-				BE66B18323BD096800166912 /* WelcomeView.swift in Sources */,
+				BE4B4F1923F0B78C0090CCD9 /* OnboardingAvatarPickerView.swift in Sources */,
+				BE66B18323BD096800166912 /* OnboardingWelcomeView.swift in Sources */,
 				BE38A05123F34454005D51F9 /* DefaultConfiguration.swift in Sources */,
 				BE38A05623F345D0005D51F9 /* DSFont.swift in Sources */,
 				BE442C7123EDA9E0002306E6 /* Weekday.swift in Sources */,
@@ -669,12 +686,14 @@
 				BEC748BB23D23BB50027F26D /* WeekHStack.swift in Sources */,
 				BE28C50023D7AD9600CA9D13 /* PreviewProvider+Locale.swift in Sources */,
 				BE4B4F0823EDC89A0090CCD9 /* User+WorkTime.swift in Sources */,
+				BE293A5E23F4719500BB4E98 /* UIColor+Init.swift in Sources */,
+				BE293A6023F4895A00BB4E98 /* Font+UIFont.swift in Sources */,
 				BE38A05323F3445F005D51F9 /* ConfigurationProtocol.swift in Sources */,
 				BE92646023ED9F270072A555 /* TimeTextTranslator.swift in Sources */,
 				BEC748BD23D23BCF0027F26D /* WeekdayView.swift in Sources */,
 				BE28C4F123D7A9D300CA9D13 /* R.generated.swift in Sources */,
 				BE442C7523EDAA16002306E6 /* Routine.swift in Sources */,
-				BEC00AEB23BFDC3C001B6724 /* IncomeView.swift in Sources */,
+				BEC00AEB23BFDC3C001B6724 /* OnboardingIncomeView.swift in Sources */,
 				BE442C6423EDA32F002306E6 /* Double+Conversions.swift in Sources */,
 				BE442C6223EDA31B002306E6 /* Decimal+Conversions.swift in Sources */,
 				BE92644C23ED95210072A555 /* InteractorsContainer.swift in Sources */,
@@ -689,11 +708,12 @@
 				BE442C6823EDA399002306E6 /* DateComponentsFormatter+String.swift in Sources */,
 				BEA9AB3423C5308B0057EA1E /* CurrencyField.swift in Sources */,
 				BE4B4F0A23EDCCE50090CCD9 /* TableImage.swift in Sources */,
-				BE270BD723C039E50099AAC7 /* DaysOfWeekView.swift in Sources */,
+				BE270BD723C039E50099AAC7 /* OnboardingWeekdaysView.swift in Sources */,
 				BE442C7023EDA9DC002306E6 /* AppState.swift in Sources */,
 				BE57677E23CE838D004BF48C /* EditView.swift in Sources */,
 				EE427009234F4A1E007A63D9 /* MainView.swift in Sources */,
-				BEC00AE923BFDC2C001B6724 /* WorkTimeView.swift in Sources */,
+				BE293A6223F4957400BB4E98 /* DarkModeConfiguration.swift in Sources */,
+				BEC00AE923BFDC2C001B6724 /* OnboardingWorkTimeView.swift in Sources */,
 				BE37722923E7149F003C8D3F /* UIDevice+Type.swift in Sources */,
 				BE92646123ED9F270072A555 /* Calculator.swift in Sources */,
 				BE4B4F0E23EEF8F10090CCD9 /* AvatarView.swift in Sources */,

@@ -15,11 +15,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
-        let pages = [AnyView(WelcomeView()),
-                     AnyView(AvatarOnboardingPickerView()),
-                    AnyView(DaysOfWeekView()),
-                    AnyView(WorkTimeView()),
-                    AnyView(IncomeView())]
+        let pages = [AnyView(OnboardingWelcomeView()),
+                     AnyView(OnboardingAvatarPickerView()),
+                    AnyView(OnboardingWeekdaysView()),
+                    AnyView(OnboardingWorkTimeView()),
+                    AnyView(OnboardingIncomeView())]
         
         let interactors = InteractorsContainer.defaultValue
         

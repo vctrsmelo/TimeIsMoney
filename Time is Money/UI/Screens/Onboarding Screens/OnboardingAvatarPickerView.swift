@@ -9,7 +9,7 @@
 import SwiftUI
 import Rswift
 
-struct AvatarOnboardingPickerView: View {
+struct OnboardingAvatarPickerView: View {
     
     @EnvironmentObject var appState: AppState
     @Environment(\.interactors) var interactors: InteractorsContainer
@@ -19,8 +19,8 @@ struct AvatarOnboardingPickerView: View {
             HStack {
                 Text(R.string.localizable.selectYourAvatar())
                     .lineLimit(nil)
-                    .adaptableFont(.smallTitleFont, maxSize: 25)
-                    .foregroundColor(Design.Color.Text.title)
+                    .font(config.font.bold(size: .title).swiftUIFont)
+                    .foregroundColor(config.color.complementaryColor.swiftUIColor)
                     .frame(maxHeight: UIScreen.main.bounds.height/4)
             }
             VAvatarPickerView(buttonWidth: 100)
@@ -33,6 +33,6 @@ struct AvatarOnboardingPickerView: View {
 
 struct AvatarPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        AvatarOnboardingPickerView()
+        OnboardingAvatarPickerView()
     }
 }

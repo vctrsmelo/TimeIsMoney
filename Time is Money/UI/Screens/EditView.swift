@@ -52,13 +52,13 @@ struct EditView: View {
     }
     
     private var avatarSection: some View {
-        return VStack {
+        VStack {
             Text(R.string.localizable.avatar())
                 .multilineTextAlignment(.center)
-                .font(Design.Font.standardLight)
-                .foregroundColor(Design.Color.Text.standard)
+                .font(config.font.light(size: .body).swiftUIFont)
+                .foregroundColor(config.color.complementaryColor.swiftUIColor)
                 .animation(.none)
-            HAvatarPickerView(buttonWidth: 50)
+            HAvatarPickerView(buttonWidth: (UIScreen.main.bounds.width/4 <= 100) ? UIScreen.main.bounds.width/4 : 100)
         }
     }
     
@@ -72,8 +72,8 @@ struct EditView: View {
        return Picker(selection: selectedHours, label: EmptyView()) {
             ForEach(0 ..< hours.count) {
                 Text(self.hours[$0]+" "+R.string.localizable.hours())
-                    .font(Design.Font.standardRegular)
-                    .foregroundColor(self.appState.user.isSelectedHoursValid($0) ? Design.Color.disabled : Design.Color.Text.standard)
+                    .font(config.font.regular(size: .body).swiftUIFont)
+                    .foregroundColor(self.appState.user.isSelectedHoursValid($0) ? config.color.disabledColor.swiftUIColor : config.color.complementaryColor.swiftUIColor)
             }
         }
         .labelsHidden()
@@ -88,7 +88,7 @@ struct EditView: View {
         
         return NavigationLink(destination: WeekdaySelectionListView()) {
             view
-            .font(Design.Font.standardRegular)
+            .font(config.font.regular(size: .body).swiftUIFont)
         }
     }
     
@@ -99,7 +99,7 @@ struct EditView: View {
             set: { self.appState.user.monthlySalary = $0 }
        )
         
-        return CurrencyField(salaryBinding, placeholder: "", font: Design.UIFont.standardRegular, textAlignment: NSTextAlignment.left)
+        return CurrencyField(salaryBinding, placeholder: "", font: config.font.regular(size: .body).uiKitFont, textAlignment: NSTextAlignment.left)
     }
     
 }
@@ -145,12 +145,12 @@ struct WeekdayRowView: View {
 
         return HStack {
             Text(weekday.localizedLong())
-                .font(Design.Font.standardLight)
-                .foregroundColor(Design.Color.Text.standard)
+                .font(config.font.light(size: .body).swiftUIFont)
+                .foregroundColor(config.color.complementaryColor.swiftUIColor)
             Spacer()
             Image(systemName: "checkmark").foregroundColor(checkmarkColor)
         }
-        .listRowBackground(Design.Color.Background.standard)
+        .listRowBackground(config.color.primaryColor.swiftUIColor)
         .contentShape(Rectangle())
         .onTapGesture {
             if self.appState.user.workdays.contains(self.weekday) {
@@ -180,14 +180,14 @@ struct EditFieldView: View {
             VStack {
                 HStack {
                     Text(title)
-                        .font(Design.Font.smallLight)
+                        .font(config.font.light(size: .h4).swiftUIFont)
                     Spacer()
                 }.padding(.bottom, -10)
                 
                 inputView
             }
-            .foregroundColor(Design.Color.Text.standard)
+            .foregroundColor(config.color.complementaryColor.swiftUIColor)
         }
-        .listRowBackground(Design.Color.Background.standard)
+        .listRowBackground(config.color.primaryColor.swiftUIColor)
     }
 }
