@@ -194,7 +194,7 @@ struct MainView: View {
                 .isHidden(isKeyboardVisible)
 
             CurrencyField(priceBinding, placeholder: income, textColor: .white)
-                .background(Color(.sRGB, red: 94/255.0, green: 128/255.0, blue: 142/255.0, opacity: 1))
+                .background(config.color.complementaryColor.swiftUIColor)
                 .frame(width: width, height: 50, alignment: .center)
                 .cornerRadius(cornerRadius)
         }
