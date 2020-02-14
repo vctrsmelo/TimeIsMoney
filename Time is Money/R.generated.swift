@@ -105,6 +105,78 @@ struct R: Rswift.Validatable {
   }
   #endif
 
+  /// This `R.color` struct is generated, and contains static references to 6 colors.
+  struct color {
+    /// Color `defaultBrandColor`.
+    static let defaultBrandColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "defaultBrandColor")
+    /// Color `defaultComplementaryColor`.
+    static let defaultComplementaryColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "defaultComplementaryColor")
+    /// Color `defaultDisabledColor`.
+    static let defaultDisabledColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "defaultDisabledColor")
+    /// Color `defaultEnabledColor`.
+    static let defaultEnabledColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "defaultEnabledColor")
+    /// Color `defaultPrimaryColor`.
+    static let defaultPrimaryColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "defaultPrimaryColor")
+    /// Color `defaultSecondaryColor`.
+    static let defaultSecondaryColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "defaultSecondaryColor")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "defaultBrandColor", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func defaultBrandColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.defaultBrandColor, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "defaultComplementaryColor", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func defaultComplementaryColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.defaultComplementaryColor, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "defaultDisabledColor", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func defaultDisabledColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.defaultDisabledColor, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "defaultEnabledColor", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func defaultEnabledColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.defaultEnabledColor, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "defaultPrimaryColor", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func defaultPrimaryColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.defaultPrimaryColor, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "defaultSecondaryColor", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func defaultSecondaryColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.defaultSecondaryColor, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
   /// This `R.file` struct is generated, and contains static references to 1 files.
   struct file {
     /// Resource file `GoogleService-Info.plist`.
