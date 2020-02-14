@@ -32,6 +32,7 @@ struct AvatarButtonView: View {
         }) {
             avatar.happy
                 .avatarViewModifiers(avatarWidth: buttonWidth, buttonPadding: buttonPadding, isSelected: isSelected)
+                
         }
     }
 }
@@ -50,7 +51,10 @@ private extension Image {
             .scaledToFit()
             .frame(width: avatarWidth, alignment: .center)
             .padding(buttonPadding)
+            .scaleEffect(isSelected ? 0.90 : 1)
+            .animation(.easeInOut)
             .background(isSelected ? GlobalConfiguration.configuration.color.enabledColor.swiftUIColor : GlobalConfiguration.configuration.color.disabledColor.swiftUIColor)
             .cornerRadius(32)
+
     }
 }
