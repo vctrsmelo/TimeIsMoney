@@ -61,8 +61,6 @@ import UIKit
     }
 }
 
-
-
 protocol ThemeConfigurationProtocol {
     var color: ColorStyle { get }
     var font: FontConfiguration { get }
