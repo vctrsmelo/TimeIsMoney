@@ -35,8 +35,8 @@ class TimeTextTranslator {
     }
     
     static func getWorkTimeDescriptionToPay(for priceAsSeconds: TimeInterval, user: User) -> String {
-        guard user.dailyWorkHours > 0 else {
-            return "You need to increase your work hours"
+        guard user.dailyWorkHours > 0.00000 && user.monthlySalary > 0.00000 else {
+            return R.string.localizable.foreverIGuess😮()
         }
         
         let normalizedWorkTime = getNormalizedWorkTimeFrom(priceAsSeconds: NSDecimalNumber(value: priceAsSeconds), user: user)
@@ -49,6 +49,7 @@ class TimeTextTranslator {
     }
 
     static func getNormalizedWorkTimeFrom(priceAsSeconds: NSDecimalNumber, user: User) -> NSDecimalNumber {
+            guard user.weeklyWorkHours > 0 else { return NSDecimalNumber(value: 0.0) }
         
             var priceSecondsDiscountingTime = priceAsSeconds
             

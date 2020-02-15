@@ -15,7 +15,8 @@ extension User {
     }
     
     var dailyWorkHours: NSDecimalNumber {
-        NSDecimalNumber(value: weeklyWorkHours) / weeklyWorkDays
+        guard weeklyWorkDays > 0 else { return NSDecimalNumber(value: 0) }
+        return NSDecimalNumber(value: weeklyWorkHours) / weeklyWorkDays
     }
     
     public var yearlyWorkSeconds: NSDecimalNumber {

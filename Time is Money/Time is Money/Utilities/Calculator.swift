@@ -28,6 +28,8 @@ import Foundation
     
      static func getWorkTimeToPay(for price: Money, user: User) -> Result<TimeInterval, CalculatorError> {
         guard price > 0.0 else { return .success(0.0) }
+        guard user.workdays.count > 0 else { return .success(0.0) }
+        guard user.monthlySalary > 0.0 else { return .success(0.0) }
         if case .failure(let error) = isUserDataValid(user) {
             return .failure(error)
         }

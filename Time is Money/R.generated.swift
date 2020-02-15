@@ -870,7 +870,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 61 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 64 localization keys.
     struct localizable {
       /// en translation: (Set your workdays to update here)
       ///
@@ -896,6 +896,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: pt-BR, en
       static let forThisWeWillNeedOnlyAFewInformationLetSGo😄 = Rswift.StringResource(key: "For this we will need only a few information. Let's go? 😄", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: Forever, I guess 😮
+      ///
+      /// Locales: pt-BR, en
+      static let foreverIGuess😮 = Rswift.StringResource(key: "Forever, I guess 😮", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
       /// en translation: Fri
       ///
       /// Locales: pt-BR, en
@@ -920,6 +924,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: pt-BR, en
       static let itWillTake = Rswift.StringResource(key: "It will take", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: It's on the house 🤑
+      ///
+      /// Locales: pt-BR, en
+      static let itSOnTheHouse🤑 = Rswift.StringResource(key: "It's on the house 🤑", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      /// en translation: Less than a second
+      ///
+      /// Locales: pt-BR, en
+      static let lessThanASecond = Rswift.StringResource(key: "Less than a second", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
       /// en translation: Let's find out how much things really cost?
       ///
       /// Locales: pt-BR, en
@@ -1112,10 +1124,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: pt-BR, en
       static let table9 = Rswift.StringResource(key: "table9", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
-      /// en translation: to pay only those
+      /// en translation: to pay off these
       ///
       /// Locales: pt-BR, en
-      static let toPayOnlyThose = Rswift.StringResource(key: "to pay only those", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
+      static let toPayOffThese = Rswift.StringResource(key: "to pay off these", tableName: "Localizable", bundle: R.hostingBundle, locales: ["pt-BR", "en"], comment: nil)
 
       /// en translation: (Set your workdays to update here)
       ///
@@ -1207,6 +1219,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("For this we will need only a few information. Let's go? 😄", bundle: bundle, comment: "")
       }
 
+      /// en translation: Forever, I guess 😮
+      ///
+      /// Locales: pt-BR, en
+      static func foreverIGuess😮(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Forever, I guess 😮", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Forever, I guess 😮"
+        }
+
+        return NSLocalizedString("Forever, I guess 😮", bundle: bundle, comment: "")
+      }
+
       /// en translation: Fri
       ///
       /// Locales: pt-BR, en
@@ -1295,6 +1322,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("It will take", bundle: bundle, comment: "")
+      }
+
+      /// en translation: It's on the house 🤑
+      ///
+      /// Locales: pt-BR, en
+      static func itSOnTheHouse🤑(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("It's on the house 🤑", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "It's on the house 🤑"
+        }
+
+        return NSLocalizedString("It's on the house 🤑", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Less than a second
+      ///
+      /// Locales: pt-BR, en
+      static func lessThanASecond(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Less than a second", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Less than a second"
+        }
+
+        return NSLocalizedString("Less than a second", bundle: bundle, comment: "")
       }
 
       /// en translation: Let's find out how much things really cost?
@@ -2017,19 +2074,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("table9", bundle: bundle, comment: "")
       }
 
-      /// en translation: to pay only those
+      /// en translation: to pay off these
       ///
       /// Locales: pt-BR, en
-      static func toPayOnlyThose(preferredLanguages: [String]? = nil) -> String {
+      static func toPayOffThese(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("to pay only those", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("to pay off these", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "to pay only those"
+          return "to pay off these"
         }
 
-        return NSLocalizedString("to pay only those", bundle: bundle, comment: "")
+        return NSLocalizedString("to pay off these", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}

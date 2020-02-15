@@ -31,9 +31,17 @@ struct MainView: View {
         let timeMessage: String
         let priceAsSeconds: TimeInterval
         
-        if let calculatedPrice = value.getAsTimeInSeconds() {
+        if let money = value.getAsMoney(), money < Money(value: 0.01) {
+            priceAsSeconds = 0.0
+            timeMessage = R.string.localizable.itSOnTheHouse🤑()
+            
+        } else if appState.user.dailyWorkHours <= NSDecimalNumber(value: 0.1) || appState.user.monthlySalary <= Decimal(0.01) {
+            priceAsSeconds = 0.0
+            timeMessage = R.string.localizable.foreverIGuess😮()
+            
+        } else if let calculatedPrice = value.getAsTimeInSeconds() {
             priceAsSeconds = calculatedPrice
-            timeMessage = TimeTextTranslator.getWorkTimeDescriptionToPay(for: priceAsSeconds, user: appState.user)
+            timeMessage = priceAsSeconds < 1 ? R.string.localizable.lessThanASecond() : TimeTextTranslator.getWorkTimeDescriptionToPay(for: priceAsSeconds, user: appState.user)
         } else {
             priceAsSeconds = 0.0
             timeMessage = "¯\\_(ツ)_/¯"
@@ -56,7 +64,6 @@ struct MainView: View {
                             .foregroundColor(config.color.complementaryColor.swiftUIColor)
                             .frame(width: 60, height: 60)
                     }
-                    .padding(.trailing, 8)
 
                 }
 
@@ -67,6 +74,7 @@ struct MainView: View {
             HStack {
                 headerTextSection(timeMessage: timeMessage, formattedValue: formattedValue, priceAsSeconds: priceAsSeconds)
             }
+            .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
 
             Spacer()
 
@@ -107,19 +115,20 @@ struct MainView: View {
             
             self.interactors.mainInteractor.saveAppState()
         }.alert(isPresented: $isAlertShowing) {
-            
-            
             return Alert(title: Text(R.string.localizable.yayUpdate()), message: Text(R.string.localizable.nowYouCanSelectADifferentAvatarGoToSettingsScreenToSelectYours()), dismissButton: Alert.Button.default(Text("Ok")))
         }
     }
     
     private func headerTextSection(timeMessage: String, formattedValue: String, priceAsSeconds: TimeInterval) -> some View {
-        VStack {
+        let isMonetaryValueZero = appState.getCurrentValue().getAsMoney() == 0.0
+        
+        return VStack {
             Text("It will take")
                 .multilineTextAlignment(.center)
                 .font(config.font.light(size: .body).swiftUIFont)
                 .foregroundColor(config.color.complementaryColor.swiftUIColor)
                 .animation(.none)
+                .isHidden(isMonetaryValueZero)
             Text("\(timeMessage)")
                 .lineLimit(nil)
                 .font(config.font.bold(size: .title).swiftUIFont)
@@ -127,23 +136,26 @@ struct MainView: View {
                 .multilineTextAlignment(.center)
                 .animation(.none)
                 .padding(.top, 10)
-                .frame(minHeight: 80)
     
             getExpectedWorkingTimeText(priceAsSeconds: priceAsSeconds)
                 .font(config.font.light(size: .body).swiftUIFont)
                 .foregroundColor(config.color.complementaryColor.swiftUIColor)
                 .padding(.top, 10)
+                .isHidden(isMonetaryValueZero)
             Group {
-                Text("to pay only those")
+                Text("to pay off these")
                     .multilineTextAlignment(.center)
                     .font(config.font.light(size: .body).swiftUIFont)
                     .foregroundColor(config.color.complementaryColor.swiftUIColor)
                     .animation(.none)
-                    .padding(.top, 10)
+                    .isHidden(isMonetaryValueZero)
                 Text("\(formattedValue)")
+                    .frame(minWidth: 100, alignment: .center)
                     .font(config.font.bold(size: .subtitle).swiftUIFont)
                     .foregroundColor(config.color.complementaryColor.swiftUIColor)
                     .padding(.top, 10)
+                    .isHidden(isMonetaryValueZero)
+                
             }
             .isHidden(isKeyboardVisible)
         }

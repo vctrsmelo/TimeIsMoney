@@ -24,11 +24,13 @@ extension User {
     }
 
     func getSalaryPerDay() -> Money {
-        getSalaryPerWeek() / weeklyWorkDays
+        guard weeklyWorkDays > 0 else { return Money(value: 0) }
+        return getSalaryPerWeek() / weeklyWorkDays
     }
 
     func getSalaryPerHour() -> Money {
-        getSalaryPerDay() / dailyWorkHours
+        guard dailyWorkHours > 0 else { return Money(value: 0) }
+        return getSalaryPerDay() / dailyWorkHours
     }
 
     func getSalaryPerMinute() -> Money {
