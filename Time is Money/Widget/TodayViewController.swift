@@ -11,25 +11,41 @@ import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding {
         
+//    var viewModel: TodayViewModel
+    var monetaryValue = NSDecimalNumber(value: 0)
+
     let titleLabel = UILabel()
     let toPayOffLabel = UILabel()
     let monetaryValueLabel = UILabel()
     let stackView = UIStackView()
     
     let buttonsStackView = UIStackView()
-    let clearButton = UIButton()
-    let plus1Button = UIButton()
-    let plus10Button = UIButton()
-    let plus50Button = UIButton()
-    let plus100Button = UIButton()
-    let plus1000Button = UIButton()
+    let buttons = [
+        CalculatorButton(title: "C", action: ClearAction()),
+        CalculatorButton(title: "+1", action: AddValueAction.withValue(1)),
+        CalculatorButton(title: "+5", action: AddValueAction.withValue(5)),
+        CalculatorButton(title: "+10", action: AddValueAction.withValue(10)),
+        CalculatorButton(title: "+50", action: AddValueAction.withValue(50)),
+        CalculatorButton(title: "+100", action: AddValueAction.withValue(100)),
+        CalculatorButton(title: "+1k", action: AddValueAction.withValue(1000))
+    ]
+    
+    init() {
+//        self.viewModel = TodayViewModel()
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        viewModel.delegate = self
         
         titleLabel.text = "3 weeks, 2 hours"
         toPayOffLabel.text = "to pay off"
-        monetaryValueLabel.text = "$5,234.00"
+//        monetaryValueLabel.text = Formatter.currency.string(from: monetaryValue)
         
         view.addSubview(stackView)
         stackView.axis = .vertical
@@ -49,19 +65,20 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     private func configureButtonsStackView() {
-        clearButton.setTitle("C", for: .normal)
-        plus1Button.setTitle("+1", for: .normal)
-        plus10Button.setTitle("+10", for: .normal)
-        plus50Button.setTitle("+50", for: .normal)
-        plus100Button.setTitle("+100", for: .normal)
-        plus1000Button.setTitle("+1000", for: .normal)
-        
-        buttonsStackView.addArrangedSubview(clearButton)
-        buttonsStackView.addArrangedSubview(plus1Button)
-        buttonsStackView.addArrangedSubview(plus10Button)
-        buttonsStackView.addArrangedSubview(plus50Button)
-        buttonsStackView.addArrangedSubview(plus100Button)
-        buttonsStackView.addArrangedSubview(plus1000Button)
+        buttons.forEach {
+            buttonsStackView.addArrangedSubview($0)
+            $0.addTarget(self, action: #selector(buttonAction(sender:)), for: .touchUpInside)
+        }
+    }
+    
+    @objc
+    func buttonAction(sender: CalculatorButton) {
+        calculate(sender.action)
+//        monetaryValueLabel.text = Formatter.currency.string(from: monetaryValue)
+    }
+    
+    func calculate(_ calculatorAction: CalculatorAction) {
+        monetaryValue = calculatorAction.action(monetaryValue)
     }
         
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
@@ -74,4 +91,41 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         completionHandler(NCUpdateResult.newData)
     }
     
+}
+
+//extension TodayViewController: TodayViewModelDelegate {
+//
+//    func didUpdateWorkingTime(_ workingTime: String) {
+//
+//    }
+//
+//}
+
+@objc
+protocol CalculatorAction {
+    @objc func action(_ input: NSDecimalNumber) -> NSDecimalNumber
+}
+
+@objc
+class ClearAction: NSObject, CalculatorAction {
+    func action(_ input: NSDecimalNumber) -> NSDecimalNumber {
+        NSDecimalNumber(value: 0)
+    }
+}
+
+class AddValueAction: CalculatorAction {
+    
+    private var value = NSDecimalNumber(value: 0)
+    
+    init(value: NSDecimalNumber) {
+        self.value = value
+    }
+    
+    static func withValue(_ value: NSDecimalNumber) -> AddValueAction {
+        AddValueAction(value: value)
+    }
+    
+    func action(_ input: NSDecimalNumber) -> NSDecimalNumber {
+        input.adding(value)
+    }
 }

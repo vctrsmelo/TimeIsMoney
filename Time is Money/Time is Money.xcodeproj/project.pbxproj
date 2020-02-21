@@ -22,7 +22,6 @@
 		BE38A05323F3445F005D51F9 /* ConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38A05223F3445F005D51F9 /* ConfigurationProtocol.swift */; };
 		BE38A05623F345D0005D51F9 /* DSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38A05523F345D0005D51F9 /* DSFont.swift */; };
 		BE442C6223EDA31B002306E6 /* Decimal+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442C6123EDA31B002306E6 /* Decimal+Conversions.swift */; };
-		BE442C6423EDA32F002306E6 /* Double+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442C6323EDA32F002306E6 /* Double+Conversions.swift */; };
 		BE442C6623EDA369002306E6 /* TimeInterval+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442C6523EDA369002306E6 /* TimeInterval+Conversions.swift */; };
 		BE442C6723EDA399002306E6 /* NSDecimalNumber+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645023ED9F270072A555 /* NSDecimalNumber+Operators.swift */; };
 		BE442C6823EDA399002306E6 /* DateComponentsFormatter+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645123ED9F270072A555 /* DateComponentsFormatter+String.swift */; };
@@ -36,6 +35,11 @@
 		BE442C7523EDAA16002306E6 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645C23ED9F270072A555 /* Routine.swift */; };
 		BE442C7823EDAAB5002306E6 /* User+Salary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442C7723EDAAB5002306E6 /* User+Salary.swift */; };
 		BE442C7A23EDAB0F002306E6 /* TimePeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442C7923EDAB0F002306E6 /* TimePeriod.swift */; };
+		BE475313240084D300B7E953 /* Double+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE475310240084D300B7E953 /* Double+Conversions.swift */; };
+		BE475314240084D300B7E953 /* UserDefaultsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE475311240084D300B7E953 /* UserDefaultsRepository.swift */; };
+		BE475315240084D300B7E953 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE475312240084D300B7E953 /* Formatters.swift */; };
+		BE475318240084E500B7E953 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE475316240084E500B7E953 /* TodayViewModel.swift */; };
+		BE475319240084E500B7E953 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE475317240084E500B7E953 /* CalculatorButton.swift */; };
 		BE4B4F0823EDC89A0090CCD9 /* User+WorkTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F0723EDC89A0090CCD9 /* User+WorkTime.swift */; };
 		BE4B4F0A23EDCCE50090CCD9 /* TableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F0923EDCCE50090CCD9 /* TableImage.swift */; };
 		BE4B4F0E23EEF8F10090CCD9 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F0D23EEF8F10090CCD9 /* AvatarView.swift */; };
@@ -47,7 +51,6 @@
 		BE4B4F1E23F0C5890090CCD9 /* AvatarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1D23F0C5890090CCD9 /* AvatarButtonView.swift */; };
 		BE57677E23CE838D004BF48C /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57677D23CE838D004BF48C /* EditView.swift */; };
 		BE66B18323BD096800166912 /* OnboardingWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B18223BD096800166912 /* OnboardingWelcomeView.swift */; };
-		BE85876923BFF2A300DEFE98 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE85876823BFF2A300DEFE98 /* Formatters.swift */; };
 		BE92644423EC4F020072A555 /* CurrencyInputComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92644323EC4F020072A555 /* CurrencyInputComponentView.swift */; };
 		BE92644623ECD0380072A555 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92644523ECD0380072A555 /* MainInteractor.swift */; };
 		BE92644C23ED95210072A555 /* InteractorsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92644B23ED95210072A555 /* InteractorsContainer.swift */; };
@@ -140,13 +143,17 @@
 		BE38A05223F3445F005D51F9 /* ConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationProtocol.swift; sourceTree = "<group>"; };
 		BE38A05523F345D0005D51F9 /* DSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSFont.swift; sourceTree = "<group>"; };
 		BE442C6123EDA31B002306E6 /* Decimal+Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Conversions.swift"; sourceTree = "<group>"; };
-		BE442C6323EDA32F002306E6 /* Double+Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Conversions.swift"; sourceTree = "<group>"; wrapsLines = 0; };
 		BE442C6523EDA369002306E6 /* TimeInterval+Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Conversions.swift"; sourceTree = "<group>"; };
 		BE442C6A23EDA674002306E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BE442C6C23EDA834002306E6 /* SecondsContainedIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondsContainedIn.swift; sourceTree = "<group>"; };
 		BE442C6E23EDA864002306E6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE442C7723EDAAB5002306E6 /* User+Salary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Salary.swift"; sourceTree = "<group>"; };
 		BE442C7923EDAB0F002306E6 /* TimePeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePeriod.swift; sourceTree = "<group>"; };
+		BE475310240084D300B7E953 /* Double+Conversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Conversions.swift"; sourceTree = "<group>"; };
+		BE475311240084D300B7E953 /* UserDefaultsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsRepository.swift; sourceTree = "<group>"; };
+		BE475312240084D300B7E953 /* Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		BE475316240084E500B7E953 /* TodayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
+		BE475317240084E500B7E953 /* CalculatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
 		BE4B4F0723EDC89A0090CCD9 /* User+WorkTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+WorkTime.swift"; sourceTree = "<group>"; };
 		BE4B4F0923EDCCE50090CCD9 /* TableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableImage.swift; sourceTree = "<group>"; };
 		BE4B4F0D23EEF8F10090CCD9 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
@@ -159,7 +166,6 @@
 		BE57677D23CE838D004BF48C /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		BE66B18223BD096800166912 /* OnboardingWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeView.swift; sourceTree = "<group>"; };
 		BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE85876823BFF2A300DEFE98 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		BE92644323EC4F020072A555 /* CurrencyInputComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyInputComponentView.swift; sourceTree = "<group>"; };
 		BE92644523ECD0380072A555 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		BE92644B23ED95210072A555 /* InteractorsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorsContainer.swift; sourceTree = "<group>"; };
@@ -303,7 +309,6 @@
 				BE92644D23ED9F270072A555 /* Calculator.swift */,
 				BE92645323ED9F270072A555 /* TimeTextTranslator.swift */,
 				BEFBF0E623BD470200FBE0D2 /* Design.swift */,
-				BE85876823BFF2A300DEFE98 /* Formatters.swift */,
 				BE442C7923EDAB0F002306E6 /* TimePeriod.swift */,
 				BE4B4F0923EDCCE50090CCD9 /* TableImage.swift */,
 				BE4B4F1223EEFE500090CCD9 /* ScenarioFactory.swift */,
@@ -420,6 +425,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		BE47530F240084D300B7E953 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				BE475310240084D300B7E953 /* Double+Conversions.swift */,
+				BE475311240084D300B7E953 /* UserDefaultsRepository.swift */,
+				BE475312240084D300B7E953 /* Formatters.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		BE4B4F0F23EEFB240090CCD9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,7 +476,6 @@
 				BEC00AF123BFE591001B6724 /* View+Extensions.swift */,
 				BE28C4FF23D7AD9600CA9D13 /* PreviewProvider+Locale.swift */,
 				BE442C6123EDA31B002306E6 /* Decimal+Conversions.swift */,
-				BE442C6323EDA32F002306E6 /* Double+Conversions.swift */,
 				BE442C6523EDA369002306E6 /* TimeInterval+Conversions.swift */,
 				BE92645023ED9F270072A555 /* NSDecimalNumber+Operators.swift */,
 				BE92645123ED9F270072A555 /* DateComponentsFormatter+String.swift */,
@@ -476,6 +490,8 @@
 		BEC76D9523F93F0C0059C724 /* Widget */ = {
 			isa = PBXGroup;
 			children = (
+				BE475317240084E500B7E953 /* CalculatorButton.swift */,
+				BE475316240084E500B7E953 /* TodayViewModel.swift */,
 				BEC76D9623F93F0C0059C724 /* TodayViewController.swift */,
 				BEC76D9823F93F0C0059C724 /* MainInterface.storyboard */,
 				BEC76D9B23F93F0C0059C724 /* Info.plist */,
@@ -487,6 +503,7 @@
 			isa = PBXGroup;
 			children = (
 				BE28C4F023D7A9D300CA9D13 /* R.generated.swift */,
+				BE47530F240084D300B7E953 /* Shared */,
 				BE2F8B2723F4B31700D26E27 /* Time is Money */,
 				BE2F8B2523F4B30900D26E27 /* GoogleService-Info.plist */,
 				BEC76D9523F93F0C0059C724 /* Widget */,
@@ -763,6 +780,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE475318240084E500B7E953 /* TodayViewModel.swift in Sources */,
+				BE475319240084E500B7E953 /* CalculatorButton.swift in Sources */,
 				BEC76D9723F93F0C0059C724 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -778,26 +797,27 @@
 				BE442C7123EDA9E0002306E6 /* Weekday.swift in Sources */,
 				BE442C7223EDAA09002306E6 /* AppStateRepository.swift in Sources */,
 				BE442C6623EDA369002306E6 /* TimeInterval+Conversions.swift in Sources */,
+				BE475314240084D300B7E953 /* UserDefaultsRepository.swift in Sources */,
 				BEB0979D23BF990E00244E30 /* PageView.swift in Sources */,
 				BE442C7A23EDAB0F002306E6 /* TimePeriod.swift in Sources */,
 				BE4B4F1723F0ACC40090CCD9 /* Avatar.swift in Sources */,
 				BEC00AE723BFD6A0001B6724 /* PageControl.swift in Sources */,
 				BE4B4F1E23F0C5890090CCD9 /* AvatarButtonView.swift in Sources */,
-				BE85876923BFF2A300DEFE98 /* Formatters.swift in Sources */,
 				BEB0979A23BF984F00244E30 /* PageViewController.swift in Sources */,
 				BEBACBB123E745EA002ABD20 /* ScaledFont.swift in Sources */,
 				BEC748BB23D23BB50027F26D /* WeekHStack.swift in Sources */,
 				BE28C50023D7AD9600CA9D13 /* PreviewProvider+Locale.swift in Sources */,
+				BE475315240084D300B7E953 /* Formatters.swift in Sources */,
 				BE4B4F0823EDC89A0090CCD9 /* User+WorkTime.swift in Sources */,
 				BE293A5E23F4719500BB4E98 /* UIColor+Init.swift in Sources */,
 				BE293A6023F4895A00BB4E98 /* Font+UIFont.swift in Sources */,
+				BE475313240084D300B7E953 /* Double+Conversions.swift in Sources */,
 				BE38A05323F3445F005D51F9 /* ConfigurationProtocol.swift in Sources */,
 				BE92646023ED9F270072A555 /* TimeTextTranslator.swift in Sources */,
 				BEC748BD23D23BCF0027F26D /* WeekdayView.swift in Sources */,
 				BE28C4F123D7A9D300CA9D13 /* R.generated.swift in Sources */,
 				BE442C7523EDAA16002306E6 /* Routine.swift in Sources */,
 				BEC00AEB23BFDC3C001B6724 /* OnboardingIncomeView.swift in Sources */,
-				BE442C6423EDA32F002306E6 /* Double+Conversions.swift in Sources */,
 				BE442C6223EDA31B002306E6 /* Decimal+Conversions.swift in Sources */,
 				BE92644C23ED95210072A555 /* InteractorsContainer.swift in Sources */,
 				BE442C7423EDAA14002306E6 /* User.swift in Sources */,

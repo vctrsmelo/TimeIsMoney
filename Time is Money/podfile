@@ -9,3 +9,8 @@ target 'Time is Money' do
     pod 'Firebase/Analytics'
     project 'Time is Money.xcodeproj'
 end
+
+target 'Widget' do
+    pod 'R.swift'
+    project 'Time is Money.xcodeproj'
+end
