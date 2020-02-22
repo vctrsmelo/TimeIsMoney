@@ -15,7 +15,6 @@ protocol TodayViewModelDelegate: AnyObject {
 
 class TodayViewModel {
 
-//    let user = UserDefaultsUserRepository().loadUser()
 
     weak var delegate: TodayViewModelDelegate?
 
