@@ -15,12 +15,19 @@ protocol TodayViewModelDelegate: AnyObject {
 
 class TodayViewModel {
     
-    let db = UserDefaultsRepository()
+    let monthlySalary: NSDecimalNumber
+    let weeklyWorkHours: Int
+    let weeklyWorkdays: [WidgetWeekday]
 
     weak var delegate: TodayViewModelDelegate?
 
     init(delegate: TodayViewModelDelegate? = nil) {
         self.delegate = delegate
+        
+        let db = UserDefaultsRepository()
+        self.monthlySalary = NSDecimalNumber(value: db.loadMonthlySalary())
+        self.weeklyWorkHours = db.loadWeeklyWorkHours()
+        self.weeklyWorkdays = db.loadWorkdays()
     }
 
     func updateWorkingTime(newValue: NSDecimalNumber) {
