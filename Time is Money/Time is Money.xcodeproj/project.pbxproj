@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		656D24ECE819A573D47C940D /* Pods_Time_is_Money.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DE7463242B13DBA38ABD09 /* Pods_Time_is_Money.framework */; };
-		B35A6C6A168A51C76314FB79 /* Pods_Time_is_Money_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FB313556CA0827677B5927 /* Pods_Time_is_Money_Widget.framework */; };
+		84A43F4FE38E8E11343AAF92 /* Pods_Calculator_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0604340B27B5099964EC827 /* Pods_Calculator_Widget.framework */; };
 		BE270BD723C039E50099AAC7 /* OnboardingWeekdaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE270BD623C039E50099AAC7 /* OnboardingWeekdaysView.swift */; };
 		BE28C4F123D7A9D300CA9D13 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28C4F023D7A9D300CA9D13 /* R.generated.swift */; };
 		BE28C4F823D7AB3400CA9D13 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE28C4FA23D7AB3400CA9D13 /* Localizable.strings */; };
@@ -17,6 +17,8 @@
 		BE293A6023F4895A00BB4E98 /* Font+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293A5F23F4895A00BB4E98 /* Font+UIFont.swift */; };
 		BE293A6223F4957400BB4E98 /* DarkModeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293A6123F4957400BB4E98 /* DarkModeConfiguration.swift */; };
 		BE2F8B2623F4B30900D26E27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE2F8B2523F4B30900D26E27 /* GoogleService-Info.plist */; };
+		BE3725672401C11800CC1CE8 /* WidgetUserDefaultsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3725662401C11800CC1CE8 /* WidgetUserDefaultsRepository.swift */; };
+		BE37256A2401C16D00CC1CE8 /* WidgetWeekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3725692401C16D00CC1CE8 /* WidgetWeekday.swift */; };
 		BE37722923E7149F003C8D3F /* UIDevice+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37722823E7149F003C8D3F /* UIDevice+Type.swift */; };
 		BE38A04F23F34434005D51F9 /* GlobalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38A04E23F34434005D51F9 /* GlobalConfiguration.swift */; };
 		BE38A05123F34454005D51F9 /* DefaultConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38A05023F34454005D51F9 /* DefaultConfiguration.swift */; };
@@ -39,8 +41,6 @@
 		BE475313240084D300B7E953 /* Double+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE475310240084D300B7E953 /* Double+Conversions.swift */; };
 		BE475314240084D300B7E953 /* UserDefaultsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE475311240084D300B7E953 /* UserDefaultsRepository.swift */; };
 		BE475315240084D300B7E953 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE475312240084D300B7E953 /* Formatters.swift */; };
-		BE475318240084E500B7E953 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE475316240084E500B7E953 /* TodayViewModel.swift */; };
-		BE475319240084E500B7E953 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE475317240084E500B7E953 /* CalculatorButton.swift */; };
 		BE4B4F0823EDC89A0090CCD9 /* User+WorkTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F0723EDC89A0090CCD9 /* User+WorkTime.swift */; };
 		BE4B4F0A23EDCCE50090CCD9 /* TableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F0923EDCCE50090CCD9 /* TableImage.swift */; };
 		BE4B4F0E23EEF8F10090CCD9 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F0D23EEF8F10090CCD9 /* AvatarView.swift */; };
@@ -52,10 +52,6 @@
 		BE4B4F1E23F0C5890090CCD9 /* AvatarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1D23F0C5890090CCD9 /* AvatarButtonView.swift */; };
 		BE57677E23CE838D004BF48C /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57677D23CE838D004BF48C /* EditView.swift */; };
 		BE66B18323BD096800166912 /* OnboardingWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B18223BD096800166912 /* OnboardingWelcomeView.swift */; };
-		BE8F8C0F2401B614003A5A2D /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28C4F023D7A9D300CA9D13 /* R.generated.swift */; };
-		BE8F8C102401B930003A5A2D /* Double+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE475310240084D300B7E953 /* Double+Conversions.swift */; };
-		BE8F8C112401B930003A5A2D /* UserDefaultsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE475311240084D300B7E953 /* UserDefaultsRepository.swift */; };
-		BE8F8C122401B930003A5A2D /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE475312240084D300B7E953 /* Formatters.swift */; };
 		BE92644423EC4F020072A555 /* CurrencyInputComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92644323EC4F020072A555 /* CurrencyInputComponentView.swift */; };
 		BE92644623ECD0380072A555 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92644523ECD0380072A555 /* MainInteractor.swift */; };
 		BE92644C23ED95210072A555 /* InteractorsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92644B23ED95210072A555 /* InteractorsContainer.swift */; };
@@ -77,10 +73,12 @@
 		BEC00AF223BFE591001B6724 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC00AF123BFE591001B6724 /* View+Extensions.swift */; };
 		BEC748BB23D23BB50027F26D /* WeekHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC748BA23D23BB50027F26D /* WeekHStack.swift */; };
 		BEC748BD23D23BCF0027F26D /* WeekdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC748BC23D23BCF0027F26D /* WeekdayView.swift */; };
-		BEC76D9423F93F0C0059C724 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC76D9323F93F0C0059C724 /* NotificationCenter.framework */; };
-		BEC76D9723F93F0C0059C724 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC76D9623F93F0C0059C724 /* TodayViewController.swift */; };
-		BEC76D9A23F93F0C0059C724 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEC76D9823F93F0C0059C724 /* MainInterface.storyboard */; };
-		BEC76D9E23F93F0C0059C724 /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BEC76D9223F93F0C0059C724 /* Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BEC765472401BF120032BC0F /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC76D9323F93F0C0059C724 /* NotificationCenter.framework */; };
+		BEC7654D2401BF120032BC0F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEC7654B2401BF120032BC0F /* MainInterface.storyboard */; };
+		BEC765512401BF120032BC0F /* Calculator Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BEC765462401BF120032BC0F /* Calculator Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BEC765572401BF3A0032BC0F /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC765552401BF3A0032BC0F /* TodayViewModel.swift */; };
+		BEC765582401BF3B0032BC0F /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC765562401BF3A0032BC0F /* CalculatorButton.swift */; };
+		BEC7655A2401BF4C0032BC0F /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC765592401BF4C0032BC0F /* TodayViewController.swift */; };
 		BEFBF0E723BD470200FBE0D2 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFBF0E623BD470200FBE0D2 /* Design.swift */; };
 		EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427001234F4A1E007A63D9 /* AppDelegate.swift */; };
 		EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427003234F4A1E007A63D9 /* SceneDelegate.swift */; };
@@ -91,12 +89,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BEC76D9C23F93F0C0059C724 /* PBXContainerItemProxy */ = {
+		BEC7654F2401BF120032BC0F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EE426FF6234F4A1E007A63D9 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BEC76D9123F93F0C0059C724;
-			remoteInfo = Widget;
+			remoteGlobalIDString = BEC765452401BF120032BC0F;
+			remoteInfo = "Calculator Widget";
 		};
 		EE427018234F4A23007A63D9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -121,7 +119,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				BEC76D9E23F93F0C0059C724 /* Widget.appex in Embed App Extensions */,
+				BEC765512401BF120032BC0F /* Calculator Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,12 +127,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		218B7FB21ACA5F98C6F87C9F /* Pods-Calculator Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calculator Widget.release.xcconfig"; path = "Target Support Files/Pods-Calculator Widget/Pods-Calculator Widget.release.xcconfig"; sourceTree = "<group>"; };
 		28FB313556CA0827677B5927 /* Pods_Time_is_Money_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Time_is_Money_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D4D3DDD063337FD9F4123E9 /* Pods-Time is Money-Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time is Money-Widget.release.xcconfig"; path = "Target Support Files/Pods-Time is Money-Widget/Pods-Time is Money-Widget.release.xcconfig"; sourceTree = "<group>"; };
 		320BB3A134EFA0E7C424EAEB /* Pods-Time is Money-Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time is Money-Widget.debug.xcconfig"; path = "Target Support Files/Pods-Time is Money-Widget/Pods-Time is Money-Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		39B88DD7EAD41710042B064D /* Pods-Time is Money.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time is Money.release.xcconfig"; path = "Target Support Files/Pods-Time is Money/Pods-Time is Money.release.xcconfig"; sourceTree = "<group>"; };
 		69DE7463242B13DBA38ABD09 /* Pods_Time_is_Money.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Time_is_Money.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72A8156F1017C5870C6B6FFB /* Pods-Time is Money.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time is Money.debug.xcconfig"; path = "Target Support Files/Pods-Time is Money/Pods-Time is Money.debug.xcconfig"; sourceTree = "<group>"; };
+		B0604340B27B5099964EC827 /* Pods_Calculator_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Calculator_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE270BD623C039E50099AAC7 /* OnboardingWeekdaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWeekdaysView.swift; sourceTree = "<group>"; };
 		BE28C4F023D7A9D300CA9D13 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		BE28C4F523D7AABA00CA9D13 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -145,6 +145,8 @@
 		BE293A5F23F4895A00BB4E98 /* Font+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+UIFont.swift"; sourceTree = "<group>"; };
 		BE293A6123F4957400BB4E98 /* DarkModeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeConfiguration.swift; sourceTree = "<group>"; };
 		BE2F8B2523F4B30900D26E27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BE3725662401C11800CC1CE8 /* WidgetUserDefaultsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetUserDefaultsRepository.swift; sourceTree = "<group>"; };
+		BE3725692401C16D00CC1CE8 /* WidgetWeekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetWeekday.swift; sourceTree = "<group>"; };
 		BE37722823E7149F003C8D3F /* UIDevice+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Type.swift"; sourceTree = "<group>"; };
 		BE38A04E23F34434005D51F9 /* GlobalConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfiguration.swift; sourceTree = "<group>"; };
 		BE38A05023F34454005D51F9 /* DefaultConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultConfiguration.swift; sourceTree = "<group>"; };
@@ -160,8 +162,6 @@
 		BE475310240084D300B7E953 /* Double+Conversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Conversions.swift"; sourceTree = "<group>"; };
 		BE475311240084D300B7E953 /* UserDefaultsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsRepository.swift; sourceTree = "<group>"; };
 		BE475312240084D300B7E953 /* Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
-		BE475316240084E500B7E953 /* TodayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
-		BE475317240084E500B7E953 /* CalculatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
 		BE4B4F0723EDC89A0090CCD9 /* User+WorkTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+WorkTime.swift"; sourceTree = "<group>"; };
 		BE4B4F0923EDCCE50090CCD9 /* TableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableImage.swift; sourceTree = "<group>"; };
 		BE4B4F0D23EEF8F10090CCD9 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
@@ -203,11 +203,13 @@
 		BEC00AF123BFE591001B6724 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		BEC748BA23D23BB50027F26D /* WeekHStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHStack.swift; sourceTree = "<group>"; };
 		BEC748BC23D23BCF0027F26D /* WeekdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayView.swift; sourceTree = "<group>"; };
-		BEC76D9223F93F0C0059C724 /* Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEC765462401BF120032BC0F /* Calculator Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Calculator Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEC7654C2401BF120032BC0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		BEC7654E2401BF120032BC0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEC765552401BF3A0032BC0F /* TodayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
+		BEC765562401BF3A0032BC0F /* CalculatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
+		BEC765592401BF4C0032BC0F /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		BEC76D9323F93F0C0059C724 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		BEC76D9623F93F0C0059C724 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		BEC76D9923F93F0C0059C724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		BEC76D9B23F93F0C0059C724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEFBF0E623BD470200FBE0D2 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		C92CA43E729AA6B3046B2BAE /* Pods-Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Widget.debug.xcconfig"; path = "Target Support Files/Pods-Widget/Pods-Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		EBCDC743B65BF184256A09C9 /* Pods-Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Widget.release.xcconfig"; path = "Target Support Files/Pods-Widget/Pods-Widget.release.xcconfig"; sourceTree = "<group>"; };
@@ -222,15 +224,16 @@
 		EE427022234F4A23007A63D9 /* Time is MoneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Time is MoneyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE427026234F4A23007A63D9 /* Time_is_MoneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_is_MoneyUITests.swift; sourceTree = "<group>"; };
 		EE427028234F4A23007A63D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFE4D4584E1CE3419DF4CBD1 /* Pods-Calculator Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calculator Widget.debug.xcconfig"; path = "Target Support Files/Pods-Calculator Widget/Pods-Calculator Widget.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BEC76D8F23F93F0C0059C724 /* Frameworks */ = {
+		BEC765432401BF120032BC0F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEC76D9423F93F0C0059C724 /* NotificationCenter.framework in Frameworks */,
-				B35A6C6A168A51C76314FB79 /* Pods_Time_is_Money_Widget.framework in Frameworks */,
+				BEC765472401BF120032BC0F /* NotificationCenter.framework in Frameworks */,
+				84A43F4FE38E8E11343AAF92 /* Pods_Calculator_Widget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +271,8 @@
 				EBCDC743B65BF184256A09C9 /* Pods-Widget.release.xcconfig */,
 				320BB3A134EFA0E7C424EAEB /* Pods-Time is Money-Widget.debug.xcconfig */,
 				2D4D3DDD063337FD9F4123E9 /* Pods-Time is Money-Widget.release.xcconfig */,
+				EFE4D4584E1CE3419DF4CBD1 /* Pods-Calculator Widget.debug.xcconfig */,
+				218B7FB21ACA5F98C6F87C9F /* Pods-Calculator Widget.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -473,6 +478,7 @@
 				69DE7463242B13DBA38ABD09 /* Pods_Time_is_Money.framework */,
 				BEC76D9323F93F0C0059C724 /* NotificationCenter.framework */,
 				28FB313556CA0827677B5927 /* Pods_Time_is_Money_Widget.framework */,
+				B0604340B27B5099964EC827 /* Pods_Calculator_Widget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -503,16 +509,18 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		BEC76D9523F93F0C0059C724 /* Widget */ = {
+		BEC765482401BF120032BC0F /* Calculator Widget */ = {
 			isa = PBXGroup;
 			children = (
-				BE475317240084E500B7E953 /* CalculatorButton.swift */,
-				BE475316240084E500B7E953 /* TodayViewModel.swift */,
-				BEC76D9623F93F0C0059C724 /* TodayViewController.swift */,
-				BEC76D9823F93F0C0059C724 /* MainInterface.storyboard */,
-				BEC76D9B23F93F0C0059C724 /* Info.plist */,
+				BEC765562401BF3A0032BC0F /* CalculatorButton.swift */,
+				BEC765592401BF4C0032BC0F /* TodayViewController.swift */,
+				BEC765552401BF3A0032BC0F /* TodayViewModel.swift */,
+				BEC7654B2401BF120032BC0F /* MainInterface.storyboard */,
+				BEC7654E2401BF120032BC0F /* Info.plist */,
+				BE3725662401C11800CC1CE8 /* WidgetUserDefaultsRepository.swift */,
+				BE3725692401C16D00CC1CE8 /* WidgetWeekday.swift */,
 			);
-			path = Widget;
+			path = "Calculator Widget";
 			sourceTree = "<group>";
 		};
 		EE426FF5234F4A1E007A63D9 = {
@@ -521,8 +529,8 @@
 				BE28C4F023D7A9D300CA9D13 /* R.generated.swift */,
 				BE47530F240084D300B7E953 /* Shared */,
 				BE2F8B2723F4B31700D26E27 /* Time is Money */,
+				BEC765482401BF120032BC0F /* Calculator Widget */,
 				BE2F8B2523F4B30900D26E27 /* GoogleService-Info.plist */,
-				BEC76D9523F93F0C0059C724 /* Widget */,
 				EE42701A234F4A23007A63D9 /* Time is MoneyTests */,
 				EE427025234F4A23007A63D9 /* Time is MoneyUITests */,
 				EE426FFF234F4A1E007A63D9 /* Products */,
@@ -537,7 +545,7 @@
 				EE426FFE234F4A1E007A63D9 /* Time is Money.app */,
 				EE427017234F4A23007A63D9 /* Time is MoneyTests.xctest */,
 				EE427022234F4A23007A63D9 /* Time is MoneyUITests.xctest */,
-				BEC76D9223F93F0C0059C724 /* Widget.appex */,
+				BEC765462401BF120032BC0F /* Calculator Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -567,22 +575,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BEC76D9123F93F0C0059C724 /* Widget */ = {
+		BEC765452401BF120032BC0F /* Calculator Widget */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BEC76DA223F93F0C0059C724 /* Build configuration list for PBXNativeTarget "Widget" */;
+			buildConfigurationList = BEC765522401BF120032BC0F /* Build configuration list for PBXNativeTarget "Calculator Widget" */;
 			buildPhases = (
-				049A7EBCD93971556C61249E /* [CP] Check Pods Manifest.lock */,
-				BEC76D8E23F93F0C0059C724 /* Sources */,
-				BEC76D8F23F93F0C0059C724 /* Frameworks */,
-				BEC76D9023F93F0C0059C724 /* Resources */,
+				CC5339267F31B2CA23D9EDAE /* [CP] Check Pods Manifest.lock */,
+				BEC765422401BF120032BC0F /* Sources */,
+				BEC765432401BF120032BC0F /* Frameworks */,
+				BEC765442401BF120032BC0F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Widget;
-			productName = Widget;
-			productReference = BEC76D9223F93F0C0059C724 /* Widget.appex */;
+			name = "Calculator Widget";
+			productName = "Calculator Widget";
+			productReference = BEC765462401BF120032BC0F /* Calculator Widget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		EE426FFD234F4A1E007A63D9 /* Time is Money */ = {
@@ -600,7 +608,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				BEC76D9D23F93F0C0059C724 /* PBXTargetDependency */,
+				BEC765502401BF120032BC0F /* PBXTargetDependency */,
 			);
 			name = "Time is Money";
 			productName = "Time is Money";
@@ -654,7 +662,7 @@
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Victor S Melo";
 				TargetAttributes = {
-					BEC76D9123F93F0C0059C724 = {
+					BEC765452401BF120032BC0F = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
 					EE426FFD234F4A1E007A63D9 = {
@@ -688,17 +696,17 @@
 				EE426FFD234F4A1E007A63D9 /* Time is Money */,
 				EE427016234F4A23007A63D9 /* Time is MoneyTests */,
 				EE427021234F4A23007A63D9 /* Time is MoneyUITests */,
-				BEC76D9123F93F0C0059C724 /* Widget */,
+				BEC765452401BF120032BC0F /* Calculator Widget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BEC76D9023F93F0C0059C724 /* Resources */ = {
+		BEC765442401BF120032BC0F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEC76D9A23F93F0C0059C724 /* MainInterface.storyboard in Resources */,
+				BEC7654D2401BF120032BC0F /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,28 +739,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		049A7EBCD93971556C61249E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Time is Money-Widget-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		0B1B414EC172E0780F87F8F7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -784,7 +770,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -812,20 +798,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CC5339267F31B2CA23D9EDAE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Calculator Widget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BEC76D8E23F93F0C0059C724 /* Sources */ = {
+		BEC765422401BF120032BC0F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE8F8C112401B930003A5A2D /* UserDefaultsRepository.swift in Sources */,
-				BE475318240084E500B7E953 /* TodayViewModel.swift in Sources */,
-				BE475319240084E500B7E953 /* CalculatorButton.swift in Sources */,
-				BE8F8C102401B930003A5A2D /* Double+Conversions.swift in Sources */,
-				BEC76D9723F93F0C0059C724 /* TodayViewController.swift in Sources */,
-				BE8F8C0F2401B614003A5A2D /* R.generated.swift in Sources */,
-				BE8F8C122401B930003A5A2D /* Formatters.swift in Sources */,
+				BE37256A2401C16D00CC1CE8 /* WidgetWeekday.swift in Sources */,
+				BEC765572401BF3A0032BC0F /* TodayViewModel.swift in Sources */,
+				BE3725672401C11800CC1CE8 /* WidgetUserDefaultsRepository.swift in Sources */,
+				BEC765582401BF3B0032BC0F /* CalculatorButton.swift in Sources */,
+				BEC7655A2401BF4C0032BC0F /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -917,10 +923,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BEC76D9D23F93F0C0059C724 /* PBXTargetDependency */ = {
+		BEC765502401BF120032BC0F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BEC76D9123F93F0C0059C724 /* Widget */;
-			targetProxy = BEC76D9C23F93F0C0059C724 /* PBXContainerItemProxy */;
+			target = BEC765452401BF120032BC0F /* Calculator Widget */;
+			targetProxy = BEC7654F2401BF120032BC0F /* PBXContainerItemProxy */;
 		};
 		EE427019234F4A23007A63D9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -944,10 +950,10 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		BEC76D9823F93F0C0059C724 /* MainInterface.storyboard */ = {
+		BEC7654B2401BF120032BC0F /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BEC76D9923F93F0C0059C724 /* Base */,
+				BEC7654C2401BF120032BC0F /* Base */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -964,20 +970,20 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		BEC76DA023F93F0C0059C724 /* Debug */ = {
+		BEC765532401BF120032BC0F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 320BB3A134EFA0E7C424EAEB /* Pods-Time is Money-Widget.debug.xcconfig */;
+			baseConfigurationReference = EFE4D4584E1CE3419DF4CBD1 /* Pods-Calculator Widget.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y93HUJS49V;
-				INFOPLIST_FILE = Widget/Info.plist;
+				INFOPLIST_FILE = "Calculator Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.victormelo.Time-is-Money.Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.victormelo.Time-is-Money.Calculator-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -985,20 +991,20 @@
 			};
 			name = Debug;
 		};
-		BEC76DA123F93F0C0059C724 /* Release */ = {
+		BEC765542401BF120032BC0F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D4D3DDD063337FD9F4123E9 /* Pods-Time is Money-Widget.release.xcconfig */;
+			baseConfigurationReference = 218B7FB21ACA5F98C6F87C9F /* Pods-Calculator Widget.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y93HUJS49V;
-				INFOPLIST_FILE = Widget/Info.plist;
+				INFOPLIST_FILE = "Calculator Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.victormelo.Time-is-Money.Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.victormelo.Time-is-Money.Calculator-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -1268,11 +1274,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BEC76DA223F93F0C0059C724 /* Build configuration list for PBXNativeTarget "Widget" */ = {
+		BEC765522401BF120032BC0F /* Build configuration list for PBXNativeTarget "Calculator Widget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BEC76DA023F93F0C0059C724 /* Debug */,
-				BEC76DA123F93F0C0059C724 /* Release */,
+				BEC765532401BF120032BC0F /* Debug */,
+				BEC765542401BF120032BC0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

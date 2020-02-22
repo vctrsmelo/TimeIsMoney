@@ -4,12 +4,16 @@ use_frameworks!
 # ignore all warnings from all pods
 inhibit_all_warnings!
 
-target 'Time is Money' do
-    pod 'R.swift'
-    pod 'Firebase/Analytics'
-    project 'Time is Money.xcodeproj'
+def shared_pods
+  use_frameworks!
+  pod 'R.swift'
+  pod 'Firebase/Analytics'
+end
 
-    target 'Widget' do
-        pod 'R.swift'
-    end
+target 'Time is Money' do
+    shared_pods
+end
+
+target 'Calculator Widget' do
+    shared_pods
 end

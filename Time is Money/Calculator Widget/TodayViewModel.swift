@@ -7,14 +7,15 @@
 //
 
 import Foundation
-import SwiftUI
+
 
 protocol TodayViewModelDelegate: AnyObject {
     func didUpdateWorkingTime(_ workingTime: String)
 }
 
 class TodayViewModel {
-
+    
+    let db = UserDefaultsRepository()
 
     weak var delegate: TodayViewModelDelegate?
 
