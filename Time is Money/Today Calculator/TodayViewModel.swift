@@ -28,6 +28,7 @@ class TodayViewModel {
         self.monthlySalary = NSDecimalNumber(value: db.loadMonthlySalary())
         self.weeklyWorkHours = db.loadWeeklyWorkHours()
         self.weeklyWorkdays = db.loadWorkdays()
+        
     }
 
     func updateWorkingTime(newValue: NSDecimalNumber) {

@@ -22,23 +22,23 @@ public struct UserDefaultsRepository {
     public init() {}
     
     public func loadIsOnboardingCompleted() -> Bool {
-        UserDefaults.standard.bool(forKey: DataKey.isOnboardingCompleted.rawValue)
+        userDefaults.bool(forKey: DataKey.isOnboardingCompleted.rawValue)
     }
     
     public func loadMonthlySalary() -> Double {
-        UserDefaults.standard.double(forKey: DataKey.monthlySalary.rawValue)
+        userDefaults.double(forKey: DataKey.monthlySalary.rawValue)
     }
     
     public func loadWeeklyWorkHours() -> Int {
-        UserDefaults.standard.integer(forKey: DataKey.weeklyWorkHours.rawValue)
+        userDefaults.integer(forKey: DataKey.weeklyWorkHours.rawValue)
     }
     
     public func loadWorkdays() -> [Weekday] {
-        UserDefaults.standard.maybeWeekdays(forKey: DataKey.workdays.rawValue) ?? Weekday.weekdays()
+        userDefaults.maybeWeekdays(forKey: DataKey.workdays.rawValue) ?? Weekday.weekdays()
     }
     
     func loadAvatarId() -> String {
-        guard let id = UserDefaults.standard.string(forKey: DataKey.avatarId.rawValue) else {
+        guard let id = userDefaults.string(forKey: DataKey.avatarId.rawValue) else {
             saveAvatarId("male2-deprecated")
             return loadAvatarId()
         }
@@ -46,7 +46,7 @@ public struct UserDefaultsRepository {
     }
     
     func loadWorkplace() -> ScenarioFactory.Workplace {
-        guard let rawValue = UserDefaults.standard.string(forKey: DataKey.workplace.rawValue) else {
+        guard let rawValue = userDefaults.string(forKey: DataKey.workplace.rawValue) else {
             saveWorkplace(.office)
             return loadWorkplace()
         }
@@ -55,29 +55,29 @@ public struct UserDefaultsRepository {
     }
     
     func saveIsOnboardingCompleted(_ isOnboardingCompleted: Bool) {
-        UserDefaults.standard.set(isOnboardingCompleted, forKey: DataKey.isOnboardingCompleted.rawValue)
+        userDefaults.set(isOnboardingCompleted, forKey: DataKey.isOnboardingCompleted.rawValue)
     }
     
     func saveMonthlySalary(_ monthlySalary: Double) {
-        UserDefaults.standard.set(monthlySalary, forKey: DataKey.monthlySalary.rawValue)
+        userDefaults.set(monthlySalary, forKey: DataKey.monthlySalary.rawValue)
     }
     
     func saveWeeklyWorkHours(_ weeklyWorkHours: Int) {
-        UserDefaults.standard.set(weeklyWorkHours, forKey: DataKey.weeklyWorkHours.rawValue)
+        userDefaults.set(weeklyWorkHours, forKey: DataKey.weeklyWorkHours.rawValue)
     }
     
     func saveWorkdays(_ workdays: [Weekday]) {
         if let encoded = try? JSONEncoder().encode(workdays) {
-            UserDefaults.standard.set(encoded, forKey: DataKey.workdays.rawValue)
+            userDefaults.set(encoded, forKey: DataKey.workdays.rawValue)
         }
     }
     
     func saveAvatarId(_ id: String) {
-        UserDefaults.standard.set(id, forKey: DataKey.avatarId.rawValue)
+        userDefaults.set(id, forKey: DataKey.avatarId.rawValue)
     }
     
     func saveWorkplace(_ workplace: ScenarioFactory.Workplace) {
-        UserDefaults.standard.set(workplace.rawValue, forKey: DataKey.workplace.rawValue)
+        userDefaults.set(workplace.rawValue, forKey: DataKey.workplace.rawValue)
     }
 }
 
@@ -85,7 +85,7 @@ private extension UserDefaults {
         
     func maybeWeekdays(forKey key: String) -> [Weekday]? {
         guard self.isKeyPresentInUserDefaults(key: key) else { return nil }
-        guard let workdaysData = UserDefaults.standard.data(forKey: key),
+        guard let workdaysData = userDefaults.data(forKey: key),
               let weekdays = try? JSONDecoder().decode([Weekday].self, from: workdaysData) else {
                 return nil
         }
@@ -99,7 +99,7 @@ private extension UserDefaults {
     }
     
     func isKeyPresentInUserDefaults(key: String) -> Bool {
-        return UserDefaults.standard.object(forKey: key) != nil
+        return userDefaults.object(forKey: key) != nil
     }
 }
 

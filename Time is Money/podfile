@@ -13,7 +13,3 @@ end
 target 'Time is Money' do
     shared_pods
 end
-
-target 'Calculator Widget' do
-    shared_pods
-end

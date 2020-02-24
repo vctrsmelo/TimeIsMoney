@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		656D24ECE819A573D47C940D /* Pods_Time_is_Money.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DE7463242B13DBA38ABD09 /* Pods_Time_is_Money.framework */; };
-		84A43F4FE38E8E11343AAF92 /* Pods_Calculator_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0604340B27B5099964EC827 /* Pods_Calculator_Widget.framework */; };
 		BE270BD723C039E50099AAC7 /* OnboardingWeekdaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE270BD623C039E50099AAC7 /* OnboardingWeekdaysView.swift */; };
 		BE28C4F123D7A9D300CA9D13 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28C4F023D7A9D300CA9D13 /* R.generated.swift */; };
 		BE28C4F823D7AB3400CA9D13 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE28C4FA23D7AB3400CA9D13 /* Localizable.strings */; };
@@ -17,8 +16,7 @@
 		BE293A6023F4895A00BB4E98 /* Font+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293A5F23F4895A00BB4E98 /* Font+UIFont.swift */; };
 		BE293A6223F4957400BB4E98 /* DarkModeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293A6123F4957400BB4E98 /* DarkModeConfiguration.swift */; };
 		BE2F8B2623F4B30900D26E27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE2F8B2523F4B30900D26E27 /* GoogleService-Info.plist */; };
-		BE3725672401C11800CC1CE8 /* WidgetUserDefaultsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3725662401C11800CC1CE8 /* WidgetUserDefaultsRepository.swift */; };
-		BE37256A2401C16D00CC1CE8 /* WidgetWeekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3725692401C16D00CC1CE8 /* WidgetWeekday.swift */; };
+		BE37256C24045D1700CC1CE8 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37256B24045D1700CC1CE8 /* UserDefaults.swift */; };
 		BE37722923E7149F003C8D3F /* UIDevice+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37722823E7149F003C8D3F /* UIDevice+Type.swift */; };
 		BE38A04F23F34434005D51F9 /* GlobalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38A04E23F34434005D51F9 /* GlobalConfiguration.swift */; };
 		BE38A05123F34454005D51F9 /* DefaultConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38A05023F34454005D51F9 /* DefaultConfiguration.swift */; };
@@ -52,6 +50,15 @@
 		BE4B4F1E23F0C5890090CCD9 /* AvatarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1D23F0C5890090CCD9 /* AvatarButtonView.swift */; };
 		BE57677E23CE838D004BF48C /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57677D23CE838D004BF48C /* EditView.swift */; };
 		BE66B18323BD096800166912 /* OnboardingWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B18223BD096800166912 /* OnboardingWelcomeView.swift */; };
+		BE90BF8A2404610E00B4AC24 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC76D9323F93F0C0059C724 /* NotificationCenter.framework */; };
+		BE90BF8D2404610E00B4AC24 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90BF8C2404610E00B4AC24 /* TodayViewController.swift */; };
+		BE90BF902404610E00B4AC24 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE90BF8E2404610E00B4AC24 /* MainInterface.storyboard */; };
+		BE90BF942404610E00B4AC24 /* Today Calculator.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BE90BF892404610E00B4AC24 /* Today Calculator.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BE90BF9C240462B200B4AC24 /* WidgetUserDefaultsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90BF98240462AF00B4AC24 /* WidgetUserDefaultsRepository.swift */; };
+		BE90BF9D240462B200B4AC24 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90BF99240462B000B4AC24 /* CalculatorButton.swift */; };
+		BE90BF9E240462B200B4AC24 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90BF9A240462B100B4AC24 /* TodayViewModel.swift */; };
+		BE90BF9F240462B200B4AC24 /* WidgetWeekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90BF9B240462B200B4AC24 /* WidgetWeekday.swift */; };
+		BE90BFA0240462FF00B4AC24 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37256B24045D1700CC1CE8 /* UserDefaults.swift */; };
 		BE92644423EC4F020072A555 /* CurrencyInputComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92644323EC4F020072A555 /* CurrencyInputComponentView.swift */; };
 		BE92644623ECD0380072A555 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92644523ECD0380072A555 /* MainInteractor.swift */; };
 		BE92644C23ED95210072A555 /* InteractorsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92644B23ED95210072A555 /* InteractorsContainer.swift */; };
@@ -73,12 +80,6 @@
 		BEC00AF223BFE591001B6724 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC00AF123BFE591001B6724 /* View+Extensions.swift */; };
 		BEC748BB23D23BB50027F26D /* WeekHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC748BA23D23BB50027F26D /* WeekHStack.swift */; };
 		BEC748BD23D23BCF0027F26D /* WeekdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC748BC23D23BCF0027F26D /* WeekdayView.swift */; };
-		BEC765472401BF120032BC0F /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC76D9323F93F0C0059C724 /* NotificationCenter.framework */; };
-		BEC7654D2401BF120032BC0F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEC7654B2401BF120032BC0F /* MainInterface.storyboard */; };
-		BEC765512401BF120032BC0F /* Calculator Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BEC765462401BF120032BC0F /* Calculator Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		BEC765572401BF3A0032BC0F /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC765552401BF3A0032BC0F /* TodayViewModel.swift */; };
-		BEC765582401BF3B0032BC0F /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC765562401BF3A0032BC0F /* CalculatorButton.swift */; };
-		BEC7655A2401BF4C0032BC0F /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC765592401BF4C0032BC0F /* TodayViewController.swift */; };
 		BEFBF0E723BD470200FBE0D2 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFBF0E623BD470200FBE0D2 /* Design.swift */; };
 		EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427001234F4A1E007A63D9 /* AppDelegate.swift */; };
 		EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427003234F4A1E007A63D9 /* SceneDelegate.swift */; };
@@ -89,12 +90,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BEC7654F2401BF120032BC0F /* PBXContainerItemProxy */ = {
+		BE90BF922404610E00B4AC24 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EE426FF6234F4A1E007A63D9 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BEC765452401BF120032BC0F;
-			remoteInfo = "Calculator Widget";
+			remoteGlobalIDString = BE90BF882404610E00B4AC24;
+			remoteInfo = "Today Calculator";
 		};
 		EE427018234F4A23007A63D9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -119,7 +120,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				BEC765512401BF120032BC0F /* Calculator Widget.appex in Embed App Extensions */,
+				BE90BF942404610E00B4AC24 /* Today Calculator.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,8 +146,7 @@
 		BE293A5F23F4895A00BB4E98 /* Font+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+UIFont.swift"; sourceTree = "<group>"; };
 		BE293A6123F4957400BB4E98 /* DarkModeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeConfiguration.swift; sourceTree = "<group>"; };
 		BE2F8B2523F4B30900D26E27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		BE3725662401C11800CC1CE8 /* WidgetUserDefaultsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetUserDefaultsRepository.swift; sourceTree = "<group>"; };
-		BE3725692401C16D00CC1CE8 /* WidgetWeekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetWeekday.swift; sourceTree = "<group>"; };
+		BE37256B24045D1700CC1CE8 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		BE37722823E7149F003C8D3F /* UIDevice+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Type.swift"; sourceTree = "<group>"; };
 		BE38A04E23F34434005D51F9 /* GlobalConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfiguration.swift; sourceTree = "<group>"; };
 		BE38A05023F34454005D51F9 /* DefaultConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultConfiguration.swift; sourceTree = "<group>"; };
@@ -174,6 +174,16 @@
 		BE57677D23CE838D004BF48C /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		BE66B18223BD096800166912 /* OnboardingWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeView.swift; sourceTree = "<group>"; };
 		BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE90BF892404610E00B4AC24 /* Today Calculator.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Today Calculator.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE90BF8C2404610E00B4AC24 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		BE90BF8F2404610E00B4AC24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		BE90BF912404610E00B4AC24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE90BF98240462AF00B4AC24 /* WidgetUserDefaultsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetUserDefaultsRepository.swift; sourceTree = "<group>"; };
+		BE90BF99240462B000B4AC24 /* CalculatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
+		BE90BF9A240462B100B4AC24 /* TodayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
+		BE90BF9B240462B200B4AC24 /* WidgetWeekday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetWeekday.swift; sourceTree = "<group>"; };
+		BE90BFA22404646500B4AC24 /* Today Calculator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Today Calculator.entitlements"; sourceTree = "<group>"; };
+		BE90BFA32404648800B4AC24 /* Time is Money.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Time is Money.entitlements"; sourceTree = "<group>"; };
 		BE92644323EC4F020072A555 /* CurrencyInputComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyInputComponentView.swift; sourceTree = "<group>"; };
 		BE92644523ECD0380072A555 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		BE92644B23ED95210072A555 /* InteractorsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorsContainer.swift; sourceTree = "<group>"; };
@@ -203,12 +213,6 @@
 		BEC00AF123BFE591001B6724 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		BEC748BA23D23BB50027F26D /* WeekHStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHStack.swift; sourceTree = "<group>"; };
 		BEC748BC23D23BCF0027F26D /* WeekdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayView.swift; sourceTree = "<group>"; };
-		BEC765462401BF120032BC0F /* Calculator Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Calculator Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BEC7654C2401BF120032BC0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		BEC7654E2401BF120032BC0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BEC765552401BF3A0032BC0F /* TodayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
-		BEC765562401BF3A0032BC0F /* CalculatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
-		BEC765592401BF4C0032BC0F /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		BEC76D9323F93F0C0059C724 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		BEFBF0E623BD470200FBE0D2 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		C92CA43E729AA6B3046B2BAE /* Pods-Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Widget.debug.xcconfig"; path = "Target Support Files/Pods-Widget/Pods-Widget.debug.xcconfig"; sourceTree = "<group>"; };
@@ -228,12 +232,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BEC765432401BF120032BC0F /* Frameworks */ = {
+		BE90BF862404610E00B4AC24 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEC765472401BF120032BC0F /* NotificationCenter.framework in Frameworks */,
-				84A43F4FE38E8E11343AAF92 /* Pods_Calculator_Widget.framework in Frameworks */,
+				BE90BF8A2404610E00B4AC24 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +292,7 @@
 		BE2F8B2723F4B31700D26E27 /* Time is Money */ = {
 			isa = PBXGroup;
 			children = (
+				BE90BFA32404648800B4AC24 /* Time is Money.entitlements */,
 				BE442C5623ED9FE1002306E6 /* System */,
 				BE442C5723ED9FE5002306E6 /* Utilities */,
 				BE442C5D23EDA000002306E6 /* Injected */,
@@ -383,6 +387,7 @@
 		BE442C5C23ED9FFC002306E6 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				BE475311240084D300B7E953 /* UserDefaultsRepository.swift */,
 				BE92645D23ED9F270072A555 /* AppStateRepository.swift */,
 			);
 			path = Repositories;
@@ -449,8 +454,8 @@
 			isa = PBXGroup;
 			children = (
 				BE475310240084D300B7E953 /* Double+Conversions.swift */,
-				BE475311240084D300B7E953 /* UserDefaultsRepository.swift */,
 				BE475312240084D300B7E953 /* Formatters.swift */,
+				BE37256B24045D1700CC1CE8 /* UserDefaults.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -483,6 +488,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BE90BF8B2404610E00B4AC24 /* Today Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				BE90BFA22404646500B4AC24 /* Today Calculator.entitlements */,
+				BE90BF99240462B000B4AC24 /* CalculatorButton.swift */,
+				BE90BF9A240462B100B4AC24 /* TodayViewModel.swift */,
+				BE90BF98240462AF00B4AC24 /* WidgetUserDefaultsRepository.swift */,
+				BE90BF9B240462B200B4AC24 /* WidgetWeekday.swift */,
+				BE90BF8C2404610E00B4AC24 /* TodayViewController.swift */,
+				BE90BF8E2404610E00B4AC24 /* MainInterface.storyboard */,
+				BE90BF912404610E00B4AC24 /* Info.plist */,
+			);
+			path = "Today Calculator";
+			sourceTree = "<group>";
+		};
 		BEBACBAF23E745E0002ABD20 /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
@@ -509,27 +529,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		BEC765482401BF120032BC0F /* Calculator Widget */ = {
-			isa = PBXGroup;
-			children = (
-				BEC765562401BF3A0032BC0F /* CalculatorButton.swift */,
-				BEC765592401BF4C0032BC0F /* TodayViewController.swift */,
-				BEC765552401BF3A0032BC0F /* TodayViewModel.swift */,
-				BEC7654B2401BF120032BC0F /* MainInterface.storyboard */,
-				BEC7654E2401BF120032BC0F /* Info.plist */,
-				BE3725662401C11800CC1CE8 /* WidgetUserDefaultsRepository.swift */,
-				BE3725692401C16D00CC1CE8 /* WidgetWeekday.swift */,
-			);
-			path = "Calculator Widget";
-			sourceTree = "<group>";
-		};
 		EE426FF5234F4A1E007A63D9 = {
 			isa = PBXGroup;
 			children = (
 				BE28C4F023D7A9D300CA9D13 /* R.generated.swift */,
 				BE47530F240084D300B7E953 /* Shared */,
 				BE2F8B2723F4B31700D26E27 /* Time is Money */,
-				BEC765482401BF120032BC0F /* Calculator Widget */,
+				BE90BF8B2404610E00B4AC24 /* Today Calculator */,
 				BE2F8B2523F4B30900D26E27 /* GoogleService-Info.plist */,
 				EE42701A234F4A23007A63D9 /* Time is MoneyTests */,
 				EE427025234F4A23007A63D9 /* Time is MoneyUITests */,
@@ -545,7 +551,7 @@
 				EE426FFE234F4A1E007A63D9 /* Time is Money.app */,
 				EE427017234F4A23007A63D9 /* Time is MoneyTests.xctest */,
 				EE427022234F4A23007A63D9 /* Time is MoneyUITests.xctest */,
-				BEC765462401BF120032BC0F /* Calculator Widget.appex */,
+				BE90BF892404610E00B4AC24 /* Today Calculator.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -575,22 +581,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BEC765452401BF120032BC0F /* Calculator Widget */ = {
+		BE90BF882404610E00B4AC24 /* Today Calculator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BEC765522401BF120032BC0F /* Build configuration list for PBXNativeTarget "Calculator Widget" */;
+			buildConfigurationList = BE90BF972404610E00B4AC24 /* Build configuration list for PBXNativeTarget "Today Calculator" */;
 			buildPhases = (
-				CC5339267F31B2CA23D9EDAE /* [CP] Check Pods Manifest.lock */,
-				BEC765422401BF120032BC0F /* Sources */,
-				BEC765432401BF120032BC0F /* Frameworks */,
-				BEC765442401BF120032BC0F /* Resources */,
+				BE90BF852404610E00B4AC24 /* Sources */,
+				BE90BF862404610E00B4AC24 /* Frameworks */,
+				BE90BF872404610E00B4AC24 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Calculator Widget";
-			productName = "Calculator Widget";
-			productReference = BEC765462401BF120032BC0F /* Calculator Widget.appex */;
+			name = "Today Calculator";
+			productName = "Today Calculator";
+			productReference = BE90BF892404610E00B4AC24 /* Today Calculator.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		EE426FFD234F4A1E007A63D9 /* Time is Money */ = {
@@ -608,7 +613,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				BEC765502401BF120032BC0F /* PBXTargetDependency */,
+				BE90BF932404610E00B4AC24 /* PBXTargetDependency */,
 			);
 			name = "Time is Money";
 			productName = "Time is Money";
@@ -662,7 +667,7 @@
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Victor S Melo";
 				TargetAttributes = {
-					BEC765452401BF120032BC0F = {
+					BE90BF882404610E00B4AC24 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
 					EE426FFD234F4A1E007A63D9 = {
@@ -696,17 +701,17 @@
 				EE426FFD234F4A1E007A63D9 /* Time is Money */,
 				EE427016234F4A23007A63D9 /* Time is MoneyTests */,
 				EE427021234F4A23007A63D9 /* Time is MoneyUITests */,
-				BEC765452401BF120032BC0F /* Calculator Widget */,
+				BE90BF882404610E00B4AC24 /* Today Calculator */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BEC765442401BF120032BC0F /* Resources */ = {
+		BE90BF872404610E00B4AC24 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEC7654D2401BF120032BC0F /* MainInterface.storyboard in Resources */,
+				BE90BF902404610E00B4AC24 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -798,40 +803,19 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CC5339267F31B2CA23D9EDAE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Calculator Widget-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BEC765422401BF120032BC0F /* Sources */ = {
+		BE90BF852404610E00B4AC24 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE37256A2401C16D00CC1CE8 /* WidgetWeekday.swift in Sources */,
-				BEC765572401BF3A0032BC0F /* TodayViewModel.swift in Sources */,
-				BE3725672401C11800CC1CE8 /* WidgetUserDefaultsRepository.swift in Sources */,
-				BEC765582401BF3B0032BC0F /* CalculatorButton.swift in Sources */,
-				BEC7655A2401BF4C0032BC0F /* TodayViewController.swift in Sources */,
+				BE90BF9E240462B200B4AC24 /* TodayViewModel.swift in Sources */,
+				BE90BF9F240462B200B4AC24 /* WidgetWeekday.swift in Sources */,
+				BE90BFA0240462FF00B4AC24 /* UserDefaults.swift in Sources */,
+				BE90BF9C240462B200B4AC24 /* WidgetUserDefaultsRepository.swift in Sources */,
+				BE90BF9D240462B200B4AC24 /* CalculatorButton.swift in Sources */,
+				BE90BF8D2404610E00B4AC24 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -868,6 +852,7 @@
 				BE442C7523EDAA16002306E6 /* Routine.swift in Sources */,
 				BEC00AEB23BFDC3C001B6724 /* OnboardingIncomeView.swift in Sources */,
 				BE442C6223EDA31B002306E6 /* Decimal+Conversions.swift in Sources */,
+				BE37256C24045D1700CC1CE8 /* UserDefaults.swift in Sources */,
 				BE92644C23ED95210072A555 /* InteractorsContainer.swift in Sources */,
 				BE442C7423EDAA14002306E6 /* User.swift in Sources */,
 				BE38A04F23F34434005D51F9 /* GlobalConfiguration.swift in Sources */,
@@ -923,10 +908,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BEC765502401BF120032BC0F /* PBXTargetDependency */ = {
+		BE90BF932404610E00B4AC24 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BEC765452401BF120032BC0F /* Calculator Widget */;
-			targetProxy = BEC7654F2401BF120032BC0F /* PBXContainerItemProxy */;
+			target = BE90BF882404610E00B4AC24 /* Today Calculator */;
+			targetProxy = BE90BF922404610E00B4AC24 /* PBXContainerItemProxy */;
 		};
 		EE427019234F4A23007A63D9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -950,10 +935,10 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		BEC7654B2401BF120032BC0F /* MainInterface.storyboard */ = {
+		BE90BF8E2404610E00B4AC24 /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BEC7654C2401BF120032BC0F /* Base */,
+				BE90BF8F2404610E00B4AC24 /* Base */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -970,20 +955,20 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		BEC765532401BF120032BC0F /* Debug */ = {
+		BE90BF952404610E00B4AC24 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFE4D4584E1CE3419DF4CBD1 /* Pods-Calculator Widget.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Today Calculator/Today Calculator.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y93HUJS49V;
-				INFOPLIST_FILE = "Calculator Widget/Info.plist";
+				INFOPLIST_FILE = "Today Calculator/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.victormelo.Time-is-Money.Calculator-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.victormelo.Time-is-Money.Today-Calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -991,20 +976,20 @@
 			};
 			name = Debug;
 		};
-		BEC765542401BF120032BC0F /* Release */ = {
+		BE90BF962404610E00B4AC24 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 218B7FB21ACA5F98C6F87C9F /* Pods-Calculator Widget.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Today Calculator/Today Calculator.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y93HUJS49V;
-				INFOPLIST_FILE = "Calculator Widget/Info.plist";
+				INFOPLIST_FILE = "Today Calculator/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.victormelo.Time-is-Money.Calculator-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.victormelo.Time-is-Money.Today-Calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -1134,6 +1119,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Time is Money/Time is Money.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Time is Money/Resources/Preview Content\"";
@@ -1162,6 +1148,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Time is Money/Time is Money.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Time is Money/Resources/Preview Content\"";
@@ -1274,11 +1261,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BEC765522401BF120032BC0F /* Build configuration list for PBXNativeTarget "Calculator Widget" */ = {
+		BE90BF972404610E00B4AC24 /* Build configuration list for PBXNativeTarget "Today Calculator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BEC765532401BF120032BC0F /* Debug */,
-				BEC765542401BF120032BC0F /* Release */,
+				BE90BF952404610E00B4AC24 /* Debug */,
+				BE90BF962404610E00B4AC24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
