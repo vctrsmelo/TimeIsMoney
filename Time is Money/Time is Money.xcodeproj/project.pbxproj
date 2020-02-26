@@ -52,7 +52,6 @@
 		BE66B18323BD096800166912 /* OnboardingWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B18223BD096800166912 /* OnboardingWelcomeView.swift */; };
 		BE90BF8A2404610E00B4AC24 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC76D9323F93F0C0059C724 /* NotificationCenter.framework */; };
 		BE90BF8D2404610E00B4AC24 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90BF8C2404610E00B4AC24 /* TodayViewController.swift */; };
-		BE90BF902404610E00B4AC24 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE90BF8E2404610E00B4AC24 /* MainInterface.storyboard */; };
 		BE90BF942404610E00B4AC24 /* Today Calculator.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BE90BF892404610E00B4AC24 /* Today Calculator.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BE90BF9C240462B200B4AC24 /* WidgetUserDefaultsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90BF98240462AF00B4AC24 /* WidgetUserDefaultsRepository.swift */; };
 		BE90BF9D240462B200B4AC24 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90BF99240462B000B4AC24 /* CalculatorButton.swift */; };
@@ -73,6 +72,13 @@
 		BEB0979A23BF984F00244E30 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0979923BF984F00244E30 /* PageViewController.swift */; };
 		BEB0979D23BF990E00244E30 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0979C23BF990E00244E30 /* PageView.swift */; };
 		BEBACBB123E745EA002ABD20 /* ScaledFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBACBB023E745EA002ABD20 /* ScaledFont.swift */; };
+		BEBBF8BE24071E740029FB88 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBBF8BD24071E740029FB88 /* Calculator.swift */; };
+		BEBBF8C024071F430029FB88 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBBF8BF24071F430029FB88 /* Extensions.swift */; };
+		BEBBF8C224071FAD0029FB88 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBBF8C124071FAD0029FB88 /* User.swift */; };
+		BEBBF8C4240720100029FB88 /* TimePeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBBF8C3240720100029FB88 /* TimePeriod.swift */; };
+		BEBBF8C62407206B0029FB88 /* SecondsContainedIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBBF8C52407206B0029FB88 /* SecondsContainedIn.swift */; };
+		BEBBF8C82407207F0029FB88 /* TimeInterval+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBBF8C72407207F0029FB88 /* TimeInterval+Conversions.swift */; };
+		BEBBF8CA240725910029FB88 /* TimeTextTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBBF8C9240725910029FB88 /* TimeTextTranslator.swift */; };
 		BEC00AE723BFD6A0001B6724 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC00AE623BFD6A0001B6724 /* PageControl.swift */; };
 		BEC00AE923BFDC2C001B6724 /* OnboardingWorkTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC00AE823BFDC2C001B6724 /* OnboardingWorkTimeView.swift */; };
 		BEC00AEB23BFDC3C001B6724 /* OnboardingIncomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC00AEA23BFDC3C001B6724 /* OnboardingIncomeView.swift */; };
@@ -176,7 +182,6 @@
 		BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE90BF892404610E00B4AC24 /* Today Calculator.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Today Calculator.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE90BF8C2404610E00B4AC24 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		BE90BF8F2404610E00B4AC24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		BE90BF912404610E00B4AC24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE90BF98240462AF00B4AC24 /* WidgetUserDefaultsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetUserDefaultsRepository.swift; sourceTree = "<group>"; };
 		BE90BF99240462B000B4AC24 /* CalculatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
@@ -206,6 +211,13 @@
 		BEB0979923BF984F00244E30 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		BEB0979C23BF990E00244E30 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		BEBACBB023E745EA002ABD20 /* ScaledFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledFont.swift; sourceTree = "<group>"; };
+		BEBBF8BD24071E740029FB88 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		BEBBF8BF24071F430029FB88 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BEBBF8C124071FAD0029FB88 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BEBBF8C3240720100029FB88 /* TimePeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePeriod.swift; sourceTree = "<group>"; };
+		BEBBF8C52407206B0029FB88 /* SecondsContainedIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondsContainedIn.swift; sourceTree = "<group>"; };
+		BEBBF8C72407207F0029FB88 /* TimeInterval+Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Conversions.swift"; sourceTree = "<group>"; };
+		BEBBF8C9240725910029FB88 /* TimeTextTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTextTranslator.swift; sourceTree = "<group>"; };
 		BEC00AE623BFD6A0001B6724 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		BEC00AE823BFDC2C001B6724 /* OnboardingWorkTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWorkTimeView.swift; sourceTree = "<group>"; };
 		BEC00AEA23BFDC3C001B6724 /* OnboardingIncomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingIncomeView.swift; sourceTree = "<group>"; };
@@ -492,12 +504,10 @@
 			isa = PBXGroup;
 			children = (
 				BE90BFA22404646500B4AC24 /* Today Calculator.entitlements */,
-				BE90BF99240462B000B4AC24 /* CalculatorButton.swift */,
-				BE90BF9A240462B100B4AC24 /* TodayViewModel.swift */,
-				BE90BF98240462AF00B4AC24 /* WidgetUserDefaultsRepository.swift */,
-				BE90BF9B240462B200B4AC24 /* WidgetWeekday.swift */,
+				BEBBF8BA24071D220029FB88 /* Model & Repository */,
 				BE90BF8C2404610E00B4AC24 /* TodayViewController.swift */,
-				BE90BF8E2404610E00B4AC24 /* MainInterface.storyboard */,
+				BE90BF9A240462B100B4AC24 /* TodayViewModel.swift */,
+				BE90BF99240462B000B4AC24 /* CalculatorButton.swift */,
 				BE90BF912404610E00B4AC24 /* Info.plist */,
 			);
 			path = "Today Calculator";
@@ -509,6 +519,21 @@
 				BEBACBB023E745EA002ABD20 /* ScaledFont.swift */,
 			);
 			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		BEBBF8BA24071D220029FB88 /* Model & Repository */ = {
+			isa = PBXGroup;
+			children = (
+				BE90BF98240462AF00B4AC24 /* WidgetUserDefaultsRepository.swift */,
+				BE90BF9B240462B200B4AC24 /* WidgetWeekday.swift */,
+				BEBBF8BD24071E740029FB88 /* Calculator.swift */,
+				BEBBF8BF24071F430029FB88 /* Extensions.swift */,
+				BEBBF8C124071FAD0029FB88 /* User.swift */,
+				BEBBF8C72407207F0029FB88 /* TimeInterval+Conversions.swift */,
+				BEBBF8C52407206B0029FB88 /* SecondsContainedIn.swift */,
+				BEBBF8C9240725910029FB88 /* TimeTextTranslator.swift */,
+			);
+			path = "Model & Repository";
 			sourceTree = "<group>";
 		};
 		BEC00AF023BFE57D001B6724 /* Extensions */ = {
@@ -532,6 +557,7 @@
 		EE426FF5234F4A1E007A63D9 = {
 			isa = PBXGroup;
 			children = (
+				BEBBF8C3240720100029FB88 /* TimePeriod.swift */,
 				BE28C4F023D7A9D300CA9D13 /* R.generated.swift */,
 				BE47530F240084D300B7E953 /* Shared */,
 				BE2F8B2723F4B31700D26E27 /* Time is Money */,
@@ -711,7 +737,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE90BF902404610E00B4AC24 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -811,9 +836,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE90BF9E240462B200B4AC24 /* TodayViewModel.swift in Sources */,
+				BEBBF8C82407207F0029FB88 /* TimeInterval+Conversions.swift in Sources */,
+				BEBBF8C4240720100029FB88 /* TimePeriod.swift in Sources */,
 				BE90BF9F240462B200B4AC24 /* WidgetWeekday.swift in Sources */,
 				BE90BFA0240462FF00B4AC24 /* UserDefaults.swift in Sources */,
+				BEBBF8CA240725910029FB88 /* TimeTextTranslator.swift in Sources */,
+				BEBBF8C024071F430029FB88 /* Extensions.swift in Sources */,
 				BE90BF9C240462B200B4AC24 /* WidgetUserDefaultsRepository.swift in Sources */,
+				BEBBF8C62407206B0029FB88 /* SecondsContainedIn.swift in Sources */,
+				BEBBF8C224071FAD0029FB88 /* User.swift in Sources */,
+				BEBBF8BE24071E740029FB88 /* Calculator.swift in Sources */,
 				BE90BF9D240462B200B4AC24 /* CalculatorButton.swift in Sources */,
 				BE90BF8D2404610E00B4AC24 /* TodayViewController.swift in Sources */,
 			);
@@ -933,14 +965,6 @@
 				BE28C4FC23D7AB5300CA9D13 /* en */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		BE90BF8E2404610E00B4AC24 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BE90BF8F2404610E00B4AC24 /* Base */,
-			);
-			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 		EE42700F234F4A23007A63D9 /* LaunchScreen.storyboard */ = {

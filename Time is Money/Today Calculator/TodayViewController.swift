@@ -13,8 +13,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
     var viewModel: TodayViewModel
     var monetaryValue = NSDecimalNumber(value: 0)
-
-    let titleLabel = UILabel()
+    
+    let worktimeLabel = UILabel()
     let toPayOffLabel = UILabel()
     let monetaryValueLabel = UILabel()
     let stackView = UIStackView()
@@ -30,6 +30,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         CalculatorButton(title: "+1k", action: AddValueAction.withValue(1000))
     ]
     
+    let currencyFormatter: NumberFormatter = {
+        let nf = NumberFormatter()
+        nf.numberStyle = .currency
+        nf.isLenient = true
+        return nf
+    }()
+    
     init() {
         self.viewModel = TodayViewModel()
         super.init(nibName: nil, bundle: nil)
@@ -40,17 +47,17 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         super.init(coder: coder)
     }
     
-//    override func loadView() {
-//        self.view = UIView()
-//    }
+    override func loadView() {
+        self.view = UIView()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
         
-        titleLabel.text = "3 weeks, 2 hours"
+        worktimeLabel.text = ""
         toPayOffLabel.text = "to pay off"
-//        monetaryValueLabel.text = Formatter.currency.string(from: monetaryValue)
+        monetaryValueLabel.text = currencyFormatter.string(from: monetaryValue)
         
         view.addSubview(stackView)
         stackView.axis = .vertical
@@ -61,12 +68,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         stackView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor).isActive = true
         stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
-        stackView.addArrangedSubview(titleLabel)
+        stackView.addArrangedSubview(worktimeLabel)
         stackView.addArrangedSubview(toPayOffLabel)
         stackView.addArrangedSubview(monetaryValueLabel)
         stackView.addArrangedSubview(buttonsStackView)
 
         configureButtonsStackView()
+        
+        viewModel.updateWorkingTime(for: monetaryValue)
     }
     
     private func configureButtonsStackView() {
@@ -79,11 +88,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @objc
     func buttonAction(sender: CalculatorButton) {
         calculate(sender.action)
-//        monetaryValueLabel.text = Formatter.currency.string(from: monetaryValue)
+        monetaryValueLabel.text = currencyFormatter.string(from: monetaryValue)
     }
     
-    func calculate(_ calculatorAction: CalculatorAction) {
+    func calculate(_ calculatorAction: CalculatorButtonAction) {
         monetaryValue = calculatorAction.action(monetaryValue)
+        viewModel.updateWorkingTime(for: monetaryValue)
     }
         
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
@@ -99,38 +109,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 }
 
 extension TodayViewController: TodayViewModelDelegate {
-
+    
     func didUpdateWorkingTime(_ workingTime: String) {
-
-    }
-
-}
-
-@objc
-protocol CalculatorAction {
-    @objc func action(_ input: NSDecimalNumber) -> NSDecimalNumber
-}
-
-@objc
-class ClearAction: NSObject, CalculatorAction {
-    func action(_ input: NSDecimalNumber) -> NSDecimalNumber {
-        NSDecimalNumber(value: 0)
-    }
-}
-
-class AddValueAction: CalculatorAction {
-    
-    private var value = NSDecimalNumber(value: 0)
-    
-    init(value: NSDecimalNumber) {
-        self.value = value
+        self.worktimeLabel.text = workingTime
     }
     
-    static func withValue(_ value: NSDecimalNumber) -> AddValueAction {
-        AddValueAction(value: value)
-    }
-    
-    func action(_ input: NSDecimalNumber) -> NSDecimalNumber {
-        input.adding(value)
-    }
 }

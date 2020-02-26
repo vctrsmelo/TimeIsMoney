@@ -15,9 +15,7 @@ protocol TodayViewModelDelegate: AnyObject {
 
 class TodayViewModel {
     
-    let monthlySalary: NSDecimalNumber
-    let weeklyWorkHours: Int
-    let weeklyWorkdays: [WidgetWeekday]
+    let user: User
 
     weak var delegate: TodayViewModelDelegate?
 
@@ -25,14 +23,14 @@ class TodayViewModel {
         self.delegate = delegate
         
         let db = UserDefaultsRepository()
-        self.monthlySalary = NSDecimalNumber(value: db.loadMonthlySalary())
-        self.weeklyWorkHours = db.loadWeeklyWorkHours()
-        self.weeklyWorkdays = db.loadWorkdays()
-        
+        user = db.loadUser()
     }
 
-    func updateWorkingTime(newValue: NSDecimalNumber) {
-//        guard case .success(let worktime) = Calculator.getWorkTimeToPay(for: newValue.doubleValue, user: user) else { return }
-//        delegate?.didUpdateWorkingTime("\(worktime)")
+    func updateWorkingTime(for monetaryValue: NSDecimalNumber) {
+        
+        guard case .success(let worktime) = Calculator.getWorkTimeToPay(for: monetaryValue.doubleValue, user: user) else { return }
+        
+        let formattedWorktime = TimeTextTranslator.getWorkTimeDescriptionToPay(for: worktime, user: user)
+        delegate?.didUpdateWorkingTime(formattedWorktime)
     }
 }
