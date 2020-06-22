@@ -23,7 +23,7 @@ struct OnboardingAvatarPickerView: View {
                     .foregroundColor(config.color.complementaryColor.swiftUIColor)
                     .frame(maxHeight: UIScreen.main.bounds.height/4)
             }
-            VAvatarPickerView(buttonWidth: 100)
+            VAvatarPickerView(buttonWidth: 100).environmentObject(appState)
         }.withBackground()
         .navigationBarTitle("")
         .navigationBarHidden(true)

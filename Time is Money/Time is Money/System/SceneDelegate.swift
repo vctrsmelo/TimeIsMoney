@@ -15,15 +15,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
+        let interactors = InteractorsContainer.defaultValue
+        
+        interactors.mainInteractor.loadAppState()
         let pages = [AnyView(OnboardingWelcomeView()),
                      AnyView(OnboardingAvatarPickerView()),
                     AnyView(OnboardingWeekdaysView()),
                     AnyView(OnboardingWorkTimeView()),
-                    AnyView(OnboardingIncomeView())]
+                    AnyView(OnboardingIncomeView())].map { $0.environmentObject(interactors.mainInteractor.appState) }
         
-        let interactors = InteractorsContainer.defaultValue
-        
-        interactors.mainInteractor.loadAppState()
         let onboardingView = PageView(pages).environmentObject(interactors.mainInteractor.appState)
         
         let mainView = NavigationView {
