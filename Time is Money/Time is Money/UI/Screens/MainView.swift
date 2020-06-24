@@ -15,12 +15,15 @@ struct MainView: View {
     @EnvironmentObject var appState: AppState
     @Environment(\.interactors) var interactors: InteractorsContainer
     
-    @State private var offsetValue: CGFloat = 0.0
-    @State private var showEditView = false
-    @State private var topTextPadding: CGFloat = 0.0
-    @State private var isKeyboardVisible = false
+    private struct MainViewModel {
+        var offsetValue: CGFloat = 0.0
+        var showEditView = false
+        var topTextPadding: CGFloat = 0.0
+        var isKeyboardVisible = false
+        var isAlertShowing: Bool = false
+    }
     
-    @State private var isAlertShowing: Bool = false
+    @State private var viewModel: MainViewModel = MainViewModel()
     
     var body: some View {
         
@@ -57,7 +60,7 @@ struct MainView: View {
                 Spacer()
                 VStack(alignment: .trailing, spacing: 0) {
                     Button(action: {
-                        self.showEditView.toggle()
+                        self.viewModel.showEditView.toggle()
                     }) {
                         Image(systemName: "gear")
                             .imageScale(.large)
@@ -68,10 +71,11 @@ struct MainView: View {
                 }
 
             }.frame(width: UIScreen.main.bounds.width, height: 60)
-            .isHidden(isKeyboardVisible)
+            .isHidden(viewModel.isKeyboardVisible)
 
 
             HStack {
+                // these parameters shouldn't be here
                 headerTextSection(timeMessage: timeMessage, formattedValue: formattedValue, priceAsSeconds: priceAsSeconds)
             }
             .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
@@ -85,23 +89,23 @@ struct MainView: View {
             Spacer()
 
             HStack {
-                inputSection(priceBinding: priceBinding)
+                InputSectionView(priceBinding: priceBinding, isKeyboardVisible: viewModel.isKeyboardVisible)
             }
 
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle("")
         .navigationBarHidden(true)
-        .sheet(isPresented: $showEditView) {
+        .sheet(isPresented: $viewModel.showEditView) {
             EditView().environmentObject(self.appState)
         }
         .frame(width: UIScreen.main.bounds.width, alignment: .center)
-        .keyboardSensible($offsetValue, type: .paddingAndOffset, onAppearKeyboardCustom: {
-            self.topTextPadding = -UIScreen.main.bounds.height/12
-            self.isKeyboardVisible = true
+        .keyboardSensible($viewModel.offsetValue, type: .paddingAndOffset, onAppearKeyboardCustom: {
+            self.viewModel.topTextPadding = -UIScreen.main.bounds.height/12
+            self.viewModel.isKeyboardVisible = true
         }, onHideKeyboardCustom: {
-            self.topTextPadding = 0
-            self.isKeyboardVisible = false
+            self.viewModel.topTextPadding = 0
+            self.viewModel.isKeyboardVisible = false
         })
         .onAppear() {
             if self.appState.user.isOnboardingCompleted == false {
@@ -109,16 +113,17 @@ struct MainView: View {
             }
             
             if self.appState.avatarId == "male2-deprecated" {
-                self.isAlertShowing = true
+                self.viewModel.isAlertShowing = true
                 self.appState.avatarId = "male2"
             }
             
             self.interactors.mainInteractor.saveAppState()
-        }.alert(isPresented: $isAlertShowing) {
+        }.alert(isPresented: $viewModel.isAlertShowing) {
             return Alert(title: Text(R.string.localizable.yayUpdate()), message: Text(R.string.localizable.nowYouCanSelectADifferentAvatarGoToSettingsScreenToSelectYours()), dismissButton: Alert.Button.default(Text("Ok")))
         }
     }
     
+    // make this a view
     private func headerTextSection(timeMessage: String, formattedValue: String, priceAsSeconds: TimeInterval) -> some View {
         let isMonetaryValueZero = appState.getCurrentValue().getAsMoney() == 0.0
         
@@ -157,7 +162,7 @@ struct MainView: View {
                     .isHidden(isMonetaryValueZero)
                 
             }
-            .isHidden(isKeyboardVisible)
+            .isHidden(viewModel.isKeyboardVisible)
         }
     }
     
@@ -190,28 +195,7 @@ struct MainView: View {
             .frame(minHeight: 50, alignment: .center)
             .animation(.none)
     }
-    
-    private func inputSection(priceBinding: Binding<Decimal>) -> some View {
-        
-        let width = UIScreen.main.bounds.width - (UIDevice.current.hasHomeButton ? 0 : 16)
-        let cornerRadius: CGFloat = UIDevice.current.hasHomeButton ? 0 : 100
-        let keyboardVisibleOffset: CGFloat = UIDevice.current.hasHomeButton ? 0 : -16
-        
-        let income = R.string.localizable.income()
-        
-        return VStack {
-            Text("Type below the price")
-                .font(config.font.light(size: .h4).swiftUIFont)
-                .foregroundColor(config.color.complementaryColor.swiftUIColor)
-                .isHidden(isKeyboardVisible)
 
-            CurrencyField(priceBinding, placeholder: income, textColor: .white)
-                .background(config.color.complementaryColor.swiftUIColor)
-                .frame(width: width, height: 50, alignment: .center)
-                .cornerRadius(cornerRadius)
-        }
-        .offset(x: 0, y: (isKeyboardVisible) ? keyboardVisibleOffset : 0)
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -224,3 +208,31 @@ struct ContentView_Previews: PreviewProvider {
 
 // MARK: - Other Views
 
+// Create subviews private here
+private struct InputSectionView: View {
+    
+    @Binding var priceBinding: Decimal
+    
+    var isKeyboardVisible: Bool
+    
+    var body: some View {
+        let width = UIScreen.main.bounds.width - (UIDevice.current.hasHomeButton ? 0 : 16)
+               let cornerRadius: CGFloat = UIDevice.current.hasHomeButton ? 0 : 100
+               let keyboardVisibleOffset: CGFloat = UIDevice.current.hasHomeButton ? 0 : -16
+               
+               let income = R.string.localizable.income()
+               
+       return VStack {
+           Text("Type below the price")
+               .font(config.font.light(size: .h4).swiftUIFont)
+               .foregroundColor(config.color.complementaryColor.swiftUIColor)
+               .isHidden(isKeyboardVisible)
+
+           CurrencyField($priceBinding, placeholder: income, textColor: .white)
+               .background(config.color.complementaryColor.swiftUIColor)
+               .frame(width: width, height: 50, alignment: .center)
+               .cornerRadius(cornerRadius)
+       }
+       .offset(x: 0, y: (isKeyboardVisible) ? keyboardVisibleOffset : 0)
+    }
+}
