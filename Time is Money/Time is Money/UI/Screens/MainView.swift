@@ -12,9 +12,6 @@ import Rswift
 
 struct MainView: View {
     
-    @EnvironmentObject var appState: AppState
-    @Environment(\.interactors) var interactors: InteractorsContainer
-    
     private struct MainViewModel {
         var offsetValue: CGFloat = 0.0
         var showEditView = false
@@ -22,6 +19,9 @@ struct MainView: View {
         var isKeyboardVisible = false
         var isAlertShowing: Bool = false
     }
+    
+    @EnvironmentObject var appState: AppState
+    @Environment(\.interactors) var interactors: InteractorsContainer
     
     @State private var viewModel: MainViewModel = MainViewModel()
     

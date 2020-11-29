@@ -6,6 +6,5 @@ inhibit_all_warnings!
 
 target 'Time is Money' do
     pod 'R.swift'
-    pod 'Firebase/Analytics'
     project 'Time is Money.xcodeproj'
 end
