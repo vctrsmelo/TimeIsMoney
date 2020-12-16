@@ -26,57 +26,57 @@ public enum Weekday: String, Codable, Identifiable {
     public func localized() -> String {
         switch self {
         case .monday:
-            return R.string.localizable.mon_weekday_short()
+            return "Mon_weekday_short"
         case .tuesday:
-            return R.string.localizable.tue_weekday_short()
+            return "Tue_weekday_short"
         case .wednesday:
-            return R.string.localizable.wed_weekday_short()
+            return "Wed_weekday_short"
         case .thursday:
-            return R.string.localizable.thu_weekday_short()
+            return "Thu_weekday_short"
         case .friday:
-            return R.string.localizable.fri_weekday_short()
+            return "Fri_weekday_short"
         case .saturday:
-            return R.string.localizable.sat_weekday_short()
+            return "Sat_weekday_short"
         case .sunday:
-            return R.string.localizable.sun_weekday_short()
+            return "Sun_weekday_short"
         }
     }
     
     public func localizedMedium() -> String {
         switch self {
         case .monday:
-            return R.string.localizable.mon_weekday_medium()
+            return "Mon_weekday_medium"
         case .tuesday:
-            return R.string.localizable.tue_weekday_medium()
+            return "Tue_weekday_medium"
         case .wednesday:
-            return R.string.localizable.wed_weekday_medium()
+            return "Wed_weekday_medium"
         case .thursday:
-            return R.string.localizable.thu_weekday_medium()
+            return "Thu_weekday_medium"
         case .friday:
-            return R.string.localizable.fri_weekday_medium()
+            return "Fri_weekday_medium"
         case .saturday:
-            return R.string.localizable.sat_weekday_medium()
+            return "Sat_weekday_medium"
         case .sunday:
-            return R.string.localizable.sun_weekday_medium()
+            return "Sun_weekday_medium"
         }
     }
     
     public func localizedLong() -> String {
         switch self {
         case .monday:
-            return R.string.localizable.mon_weekday_long()
+            return "Mon_weekday_long"
         case .tuesday:
-            return R.string.localizable.tue_weekday_long()
+            return "Tue_weekday_long"
         case .wednesday:
-            return R.string.localizable.wed_weekday_long()
+            return "Wed_weekday_long"
         case .thursday:
-            return R.string.localizable.thu_weekday_long()
+            return "Thu_weekday_long"
         case .friday:
-            return R.string.localizable.fri_weekday_long()
+            return "Fri_weekday_long"
         case .saturday:
-            return R.string.localizable.sat_weekday_long()
+            return "Sat_weekday_long"
         case .sunday:
-            return R.string.localizable.sun_weekday_long()
+            return "Sun_weekday_long"
         }
     }
     

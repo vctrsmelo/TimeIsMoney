@@ -35,15 +35,15 @@ struct MainView: View {
         
         if let money = value.getAsMoney(), money < Money(value: 0.01) {
             priceAsSeconds = 0.0
-            timeMessage = R.string.localizable.itSOnTheHouse🤑()
+            timeMessage = "It's on the house 🤑"
             
         } else if appState.user.dailyWorkHours <= NSDecimalNumber(value: 0.1) || appState.user.monthlySalary <= Decimal(0.01) {
             priceAsSeconds = 0.0
-            timeMessage = R.string.localizable.foreverIGuess😮()
+            timeMessage = "Forever, I guess 😮"
             
         } else if let calculatedPrice = value.getAsTimeInSeconds() {
             priceAsSeconds = calculatedPrice
-            timeMessage = priceAsSeconds < 1 ? R.string.localizable.lessThanASecond() : TimeTextTranslator.getWorkTimeDescriptionToPay(for: priceAsSeconds, user: appState.user)
+            timeMessage = priceAsSeconds < 1 ? "Less than a second" : TimeTextTranslator.getWorkTimeDescriptionToPay(for: priceAsSeconds, user: appState.user)
         } else {
             priceAsSeconds = 0.0
             timeMessage = "¯\\_(ツ)_/¯"
@@ -118,7 +118,7 @@ struct MainView: View {
             
             self.interactors.mainInteractor.saveAppState()
         }.alert(isPresented: $viewModel.isAlertShowing) {
-            return Alert(title: Text(R.string.localizable.yayUpdate()), message: Text(R.string.localizable.nowYouCanSelectADifferentAvatarGoToSettingsScreenToSelectYours()), dismissButton: Alert.Button.default(Text("Ok")))
+            return Alert(title: Text("Yay! update"), message: Text("Now you can select a different avatar. Go to settings screen to select yours"), dismissButton: Alert.Button.default(Text("Ok")))
         }
     }
     
@@ -176,11 +176,13 @@ struct MainView: View {
             return Text("")
         }
         
+        let localizedWorking = NSLocalizedString("Working", comment: "Working")
+        
         switch routine.period {
         case .weekly:
-            return Text(R.string.localizable.working()+" \(routineHoursAndMinutes) "+R.string.localizable.perWeek())
+            return Text(localizedWorking+" \(routineHoursAndMinutes) "+NSLocalizedString("per week", comment: ""))
         case .daily:
-            return Text(R.string.localizable.working()+" \(routineHoursAndMinutes) "+R.string.localizable.perDay())
+            return Text(localizedWorking+" \(routineHoursAndMinutes) "+NSLocalizedString("per day", comment: ""))
         }
     }
     
@@ -219,7 +221,7 @@ private struct InputSectionView: View {
                let cornerRadius: CGFloat = UIDevice.current.hasHomeButton ? 0 : 100
                let keyboardVisibleOffset: CGFloat = UIDevice.current.hasHomeButton ? 0 : -16
                
-               let income = R.string.localizable.income()
+               let income = NSLocalizedString("Income", comment: "")
                
        return VStack {
            Text("Type below the price")

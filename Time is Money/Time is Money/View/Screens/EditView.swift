@@ -25,9 +25,9 @@ struct EditView: View {
     
     var body: some View {
         
-        let weeklyWorktime = R.string.localizable.weeklyWorktime()
-        let weeklyWorkdays = R.string.localizable.weeklyWorkdays()
-        let monthlyIncome = R.string.localizable.monthlyIncome()
+        let weeklyWorktime = "Weekly Worktime"
+        let weeklyWorkdays = "Weekly workdays"
+        let monthlyIncome = "Monthly Income"
         
         return NavigationView {
             VStack {
@@ -53,7 +53,7 @@ struct EditView: View {
     
     private var avatarSection: some View {
         VStack {
-            Text(R.string.localizable.avatar())
+            Text("Avatar")
                 .multilineTextAlignment(.center)
                 .font(config.font.light(size: .body).swiftUIFont)
                 .foregroundColor(config.color.complementaryColor.swiftUIColor)
@@ -69,9 +69,9 @@ struct EditView: View {
             set: { self.appState.user.weeklyWorkHours = $0 }
         )
         
-       return Picker(selection: selectedHours, label: EmptyView()) {
+        return Picker(selection: selectedHours, label: EmptyView()) {
             ForEach(0 ..< hours.count) {
-                Text(self.hours[$0]+" "+R.string.localizable.hours())
+                Text(self.hours[$0]+" "+NSLocalizedString("hours", comment: "hours"))
                     .font(config.font.regular(size: .body).swiftUIFont)
                     .foregroundColor(self.appState.user.isSelectedHoursValid($0) ? config.color.disabledColor.swiftUIColor : config.color.complementaryColor.swiftUIColor)
             }

@@ -30,7 +30,7 @@ struct OnboardingWorkTimeView: View {
                 
                 Spacer()
                 
-                Text(R.string.localizable.howManyHoursDoYouWorkPerWeek())
+                Text("How many hours do you work per week?")
                     .lineLimit(nil)
                     .font(config.font.bold(size: .title).swiftUIFont)
                     .foregroundColor(config.color.complementaryColor.swiftUIColor)
@@ -74,7 +74,7 @@ struct OnboardingWorkTimeView: View {
                 )
         }
         
-        let hours = R.string.localizable.hours()
+        let hours = "hours"
             
         return AnyView(
             Section {

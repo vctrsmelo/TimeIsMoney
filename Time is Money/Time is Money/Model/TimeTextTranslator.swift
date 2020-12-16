@@ -36,7 +36,7 @@ class TimeTextTranslator {
     
     static func getWorkTimeDescriptionToPay(for priceAsSeconds: TimeInterval, user: User) -> String {
         guard user.dailyWorkHours > 0.00000 && user.monthlySalary > 0.00000 else {
-            return R.string.localizable.foreverIGuess😮()
+            return "Forever, I guess 😮"
         }
         
         let normalizedWorkTime = getNormalizedWorkTimeFrom(priceAsSeconds: NSDecimalNumber(value: priceAsSeconds), user: user)

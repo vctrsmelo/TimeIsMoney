@@ -17,12 +17,12 @@ class DefaultConfiguration: ThemeConfigurationProtocol {
 }
 
 class DefaultColorStyle: ColorStyle {
-    let brandColor = R.color.defaultBrandColor()!
-    let primaryColor = R.color.defaultPrimaryColor()!
-    let secondaryColor = R.color.defaultSecondaryColor()!
-    let complementaryColor = R.color.defaultComplementaryColor()!
-    let enabledColor = R.color.defaultEnabledColor()!
-    let disabledColor = R.color.defaultDisabledColor()!
+    let brandColor = UIColor(named: "defaultBrandColor")!
+    let primaryColor = UIColor(named: "defaultPrimaryColor")!
+    let secondaryColor = UIColor(named: "defaultSecondaryColor")!
+    let complementaryColor = UIColor(named: "defaultComplementaryColor")!
+    let enabledColor = UIColor(named: "defaultEnabledColor")!
+    let disabledColor = UIColor(named: "defaultDisabledColor")!
 }
 
 class DefaultFontConfiguration: FontConfiguration {

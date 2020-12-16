@@ -38,7 +38,7 @@ struct OnboardingWelcomeView: View {
             
             Spacer()
 
-            Text(R.string.localizable.forThisWeWillNeedOnlyAFewInformationLetSGo😄())
+            Text("For this we will need only a few information. Let's go? 😄")
                 .lineLimit(nil)
                 .font(config.font.light(size: .subtitle).swiftUIFont)
                 .foregroundColor(config.color.complementaryColor.swiftUIColor)
