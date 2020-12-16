@@ -19,20 +19,12 @@ import Foundation
  enum Calculator {
     
      static func getWorkTimeToPay(for price: Double?, user: User) -> Result<TimeInterval, CalculatorError> {
-        do {
-            try validate(price: price, user: user)
-        } catch {
-            return .failure(error as? CalculatorError ?? .undefinedError)
-        }
-        
         guard let price = price else { return .failure(.undefinedPrice) }
         return getWorkTimeToPay(for: Money(value: price), user: user)
     }
     
      static func getWorkTimeToPay(for price: Money, user: User) -> Result<TimeInterval, CalculatorError> {
         guard price > 0.0 else { return .success(0.0) }
-        guard user.workdays.count > 0 else { return .success(0.0) }
-        guard user.monthlySalary > 0.0 else { return .success(0.0) }
         if case .failure(let error) = isUserDataValid(user) {
             return .failure(error)
         }
