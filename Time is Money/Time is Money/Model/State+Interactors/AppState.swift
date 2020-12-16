@@ -20,7 +20,6 @@ public class AppState: ObservableObject {
     }
 }
 
-typealias User = AppState.User
 public extension AppState {
     struct User {
         public var isOnboardingCompleted: Bool = false

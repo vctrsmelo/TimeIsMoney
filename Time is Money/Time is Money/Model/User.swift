@@ -1,0 +1,1 @@
+typealias User = AppState.User

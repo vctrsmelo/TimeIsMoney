@@ -14,7 +14,7 @@ protocol MainInteractor {
     func saveAppState()
 }
 
-struct RealMainInteractor: MainInteractor {
+struct MainInteractorImp: MainInteractor {
     
     let userRepository: AppStateRepository
     let appState: AppState

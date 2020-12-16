@@ -45,9 +45,11 @@
 		BE4B4F1923F0B78C0090CCD9 /* OnboardingAvatarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1823F0B78C0090CCD9 /* OnboardingAvatarPickerView.swift */; };
 		BE4B4F1B23F0C15C0090CCD9 /* AvatarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1A23F0C15C0090CCD9 /* AvatarPickerView.swift */; };
 		BE4B4F1E23F0C5890090CCD9 /* AvatarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1D23F0C5890090CCD9 /* AvatarButtonView.swift */; };
+		BE52E506257412A4003348D9 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52E505257412A4003348D9 /* GlobalConstants.swift */; };
 		BE57677E23CE838D004BF48C /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57677D23CE838D004BF48C /* EditView.swift */; };
 		BE66B18323BD096800166912 /* OnboardingWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B18223BD096800166912 /* OnboardingWelcomeView.swift */; };
-		BE85876923BFF2A300DEFE98 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE85876823BFF2A300DEFE98 /* Formatters.swift */; };
+		BE770FCD258AAD2600766DB3 /* ScenarioFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE770FCC258AAD2600766DB3 /* ScenarioFactoryTests.swift */; };
+		BE85876923BFF2A300DEFE98 /* Formatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE85876823BFF2A300DEFE98 /* Formatter+Extensions.swift */; };
 		BE92644423EC4F020072A555 /* CurrencyInputComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92644323EC4F020072A555 /* CurrencyInputComponentView.swift */; };
 		BE92644623ECD0380072A555 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92644523ECD0380072A555 /* MainInteractor.swift */; };
 		BE92644C23ED95210072A555 /* InteractorsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92644B23ED95210072A555 /* InteractorsContainer.swift */; };
@@ -73,7 +75,6 @@
 		BEC76D9723F93F0C0059C724 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC76D9623F93F0C0059C724 /* TodayViewController.swift */; };
 		BEC76D9A23F93F0C0059C724 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEC76D9823F93F0C0059C724 /* MainInterface.storyboard */; };
 		BEC76D9E23F93F0C0059C724 /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BEC76D9223F93F0C0059C724 /* Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		BEFBF0E723BD470200FBE0D2 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFBF0E623BD470200FBE0D2 /* Design.swift */; };
 		EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427001234F4A1E007A63D9 /* AppDelegate.swift */; };
 		EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427003234F4A1E007A63D9 /* SceneDelegate.swift */; };
 		EE427009234F4A1E007A63D9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427008234F4A1E007A63D9 /* MainView.swift */; };
@@ -156,10 +157,12 @@
 		BE4B4F1823F0B78C0090CCD9 /* OnboardingAvatarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingAvatarPickerView.swift; sourceTree = "<group>"; };
 		BE4B4F1A23F0C15C0090CCD9 /* AvatarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerView.swift; sourceTree = "<group>"; };
 		BE4B4F1D23F0C5890090CCD9 /* AvatarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarButtonView.swift; sourceTree = "<group>"; };
+		BE52E505257412A4003348D9 /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		BE57677D23CE838D004BF48C /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		BE66B18223BD096800166912 /* OnboardingWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeView.swift; sourceTree = "<group>"; };
+		BE770FCC258AAD2600766DB3 /* ScenarioFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioFactoryTests.swift; sourceTree = "<group>"; };
 		BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE85876823BFF2A300DEFE98 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		BE85876823BFF2A300DEFE98 /* Formatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extensions.swift"; sourceTree = "<group>"; };
 		BE92644323EC4F020072A555 /* CurrencyInputComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyInputComponentView.swift; sourceTree = "<group>"; };
 		BE92644523ECD0380072A555 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		BE92644B23ED95210072A555 /* InteractorsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorsContainer.swift; sourceTree = "<group>"; };
@@ -194,7 +197,6 @@
 		BEC76D9623F93F0C0059C724 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		BEC76D9923F93F0C0059C724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		BEC76D9B23F93F0C0059C724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BEFBF0E623BD470200FBE0D2 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		EE426FFE234F4A1E007A63D9 /* Time is Money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time is Money.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE427001234F4A1E007A63D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE427003234F4A1E007A63D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -263,14 +265,10 @@
 		BE2F8B2723F4B31700D26E27 /* Time is Money */ = {
 			isa = PBXGroup;
 			children = (
-				BE442C5623ED9FE1002306E6 /* System */,
-				BE442C5723ED9FE5002306E6 /* Utilities */,
-				BE442C5D23EDA000002306E6 /* Injected */,
-				BE442C5C23ED9FFC002306E6 /* Repositories */,
-				BE442C5B23ED9FF9002306E6 /* Interactors */,
-				BE442C5A23ED9FF7002306E6 /* Models */,
-				BE442C5923ED9FF5002306E6 /* UI */,
-				BE442C5823ED9FEE002306E6 /* Resources */,
+				BE52E4E32574021F003348D9 /* Model */,
+				BE442C5923ED9FF5002306E6 /* View */,
+				BE442C5623ED9FE1002306E6 /* System Delegates */,
+				BE442C5823ED9FEE002306E6 /* Supporting Files */,
 			);
 			path = "Time is Money";
 			sourceTree = "<group>";
@@ -286,33 +284,16 @@
 			path = "Design System";
 			sourceTree = "<group>";
 		};
-		BE442C5623ED9FE1002306E6 /* System */ = {
+		BE442C5623ED9FE1002306E6 /* System Delegates */ = {
 			isa = PBXGroup;
 			children = (
 				EE427003234F4A1E007A63D9 /* SceneDelegate.swift */,
 				EE427001234F4A1E007A63D9 /* AppDelegate.swift */,
 			);
-			path = System;
+			path = "System Delegates";
 			sourceTree = "<group>";
 		};
-		BE442C5723ED9FE5002306E6 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				BE442C6C23EDA834002306E6 /* SecondsContainedIn.swift */,
-				BEC00AF023BFE57D001B6724 /* Extensions */,
-				BE92644D23ED9F270072A555 /* Calculator.swift */,
-				BE92645323ED9F270072A555 /* TimeTextTranslator.swift */,
-				BEFBF0E623BD470200FBE0D2 /* Design.swift */,
-				BE85876823BFF2A300DEFE98 /* Formatters.swift */,
-				BE442C7923EDAB0F002306E6 /* TimePeriod.swift */,
-				BE4B4F0923EDCCE50090CCD9 /* TableImage.swift */,
-				BE4B4F1223EEFE500090CCD9 /* ScenarioFactory.swift */,
-				BE4B4F1423EF18E30090CCD9 /* AvatarFactory.swift */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		BE442C5823ED9FEE002306E6 /* Resources */ = {
+		BE442C5823ED9FEE002306E6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				BE442C6923EDA674002306E6 /* Preview Content */,
@@ -321,55 +302,30 @@
 				BE28C4FA23D7AB3400CA9D13 /* Localizable.strings */,
 				BE442C6E23EDA864002306E6 /* Info.plist */,
 			);
-			path = Resources;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BE442C5923ED9FF5002306E6 /* UI */ = {
+		BE442C5923ED9FF5002306E6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BE52E50B257412C0003348D9 /* Utilities */,
 				BE38A04D23F34426005D51F9 /* Design System */,
 				BE442C5E23EDA080002306E6 /* Components */,
 				BE442C5F23EDA084002306E6 /* Screens */,
 				BEBACBAF23E745E0002ABD20 /* ViewModifiers */,
 			);
-			path = UI;
+			path = View;
 			sourceTree = "<group>";
 		};
-		BE442C5A23ED9FF7002306E6 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				BE92645923ED9F270072A555 /* Money.swift */,
-				BE92645A23ED9F270072A555 /* User.swift */,
-				BE92645B23ED9F270072A555 /* Weekday.swift */,
-				BE92645C23ED9F270072A555 /* Routine.swift */,
-				BE4B4F1623F0ACC40090CCD9 /* Avatar.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		BE442C5B23ED9FF9002306E6 /* Interactors */ = {
-			isa = PBXGroup;
-			children = (
-				BE92644523ECD0380072A555 /* MainInteractor.swift */,
-			);
-			path = Interactors;
-			sourceTree = "<group>";
-		};
-		BE442C5C23ED9FFC002306E6 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-				BE92645D23ED9F270072A555 /* AppStateRepository.swift */,
-			);
-			path = Repositories;
-			sourceTree = "<group>";
-		};
-		BE442C5D23EDA000002306E6 /* Injected */ = {
+		BE442C5B23ED9FF9002306E6 /* State+Interactors */ = {
 			isa = PBXGroup;
 			children = (
 				BE92645E23ED9F270072A555 /* AppState.swift */,
+				BE92645D23ED9F270072A555 /* AppStateRepository.swift */,
 				BE92644B23ED95210072A555 /* InteractorsContainer.swift */,
+				BE92644523ECD0380072A555 /* MainInteractor.swift */,
 			);
-			path = Injected;
+			path = "State+Interactors";
 			sourceTree = "<group>";
 		};
 		BE442C5E23EDA080002306E6 /* Components */ = {
@@ -436,6 +392,53 @@
 			path = AvatarButtonView;
 			sourceTree = "<group>";
 		};
+		BE52E4E32574021F003348D9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BEC00AF023BFE57D001B6724 /* Extensions */,
+				BE442C5B23ED9FF9002306E6 /* State+Interactors */,
+				BE4B4F1623F0ACC40090CCD9 /* Avatar.swift */,
+				BE92644D23ED9F270072A555 /* Calculator.swift */,
+				BE52E505257412A4003348D9 /* GlobalConstants.swift */,
+				BE92645923ED9F270072A555 /* Money.swift */,
+				BE92645C23ED9F270072A555 /* Routine.swift */,
+				BE442C6C23EDA834002306E6 /* SecondsContainedIn.swift */,
+				BE442C7923EDAB0F002306E6 /* TimePeriod.swift */,
+				BE92645323ED9F270072A555 /* TimeTextTranslator.swift */,
+				BE92645A23ED9F270072A555 /* User.swift */,
+				BE442C7723EDAAB5002306E6 /* User+Salary.swift */,
+				BE4B4F0723EDC89A0090CCD9 /* User+WorkTime.swift */,
+				BE92645B23ED9F270072A555 /* Weekday.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BE52E50B257412C0003348D9 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BE4B4F0923EDCCE50090CCD9 /* TableImage.swift */,
+				BE4B4F1223EEFE500090CCD9 /* ScenarioFactory.swift */,
+				BE4B4F1423EF18E30090CCD9 /* AvatarFactory.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		BE770FCA258AAD1200766DB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BE770FCB258AAD1400766DB3 /* Utilities */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BE770FCB258AAD1400766DB3 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BE770FCC258AAD2600766DB3 /* ScenarioFactoryTests.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		BE815FC52383497200000FB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -457,18 +460,17 @@
 		BEC00AF023BFE57D001B6724 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				BE37722823E7149F003C8D3F /* UIDevice+Type.swift */,
-				BEC00AF123BFE591001B6724 /* View+Extensions.swift */,
-				BE28C4FF23D7AD9600CA9D13 /* PreviewProvider+Locale.swift */,
+				BE92645123ED9F270072A555 /* DateComponentsFormatter+String.swift */,
 				BE442C6123EDA31B002306E6 /* Decimal+Conversions.swift */,
 				BE442C6323EDA32F002306E6 /* Double+Conversions.swift */,
-				BE442C6523EDA369002306E6 /* TimeInterval+Conversions.swift */,
-				BE92645023ED9F270072A555 /* NSDecimalNumber+Operators.swift */,
-				BE92645123ED9F270072A555 /* DateComponentsFormatter+String.swift */,
-				BE442C7723EDAAB5002306E6 /* User+Salary.swift */,
-				BE4B4F0723EDC89A0090CCD9 /* User+WorkTime.swift */,
-				BE293A5D23F4719500BB4E98 /* UIColor+Init.swift */,
 				BE293A5F23F4895A00BB4E98 /* Font+UIFont.swift */,
+				BE85876823BFF2A300DEFE98 /* Formatter+Extensions.swift */,
+				BE92645023ED9F270072A555 /* NSDecimalNumber+Operators.swift */,
+				BE28C4FF23D7AD9600CA9D13 /* PreviewProvider+Locale.swift */,
+				BE442C6523EDA369002306E6 /* TimeInterval+Conversions.swift */,
+				BE293A5D23F4719500BB4E98 /* UIColor+Init.swift */,
+				BE37722823E7149F003C8D3F /* UIDevice+Type.swift */,
+				BEC00AF123BFE591001B6724 /* View+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -512,6 +514,7 @@
 		EE42701A234F4A23007A63D9 /* Time is MoneyTests */ = {
 			isa = PBXGroup;
 			children = (
+				BE770FCA258AAD1200766DB3 /* View */,
 				EE42701D234F4A23007A63D9 /* Info.plist */,
 				BE92646A23ED9F4A0072A555 /* TimeTextTranslatorTests.swift */,
 				BE92646423ED9F4A0072A555 /* UserTests.swift */,
@@ -783,7 +786,7 @@
 				BE4B4F1723F0ACC40090CCD9 /* Avatar.swift in Sources */,
 				BEC00AE723BFD6A0001B6724 /* PageControl.swift in Sources */,
 				BE4B4F1E23F0C5890090CCD9 /* AvatarButtonView.swift in Sources */,
-				BE85876923BFF2A300DEFE98 /* Formatters.swift in Sources */,
+				BE85876923BFF2A300DEFE98 /* Formatter+Extensions.swift in Sources */,
 				BEB0979A23BF984F00244E30 /* PageViewController.swift in Sources */,
 				BEBACBB123E745EA002ABD20 /* ScaledFont.swift in Sources */,
 				BEC748BB23D23BB50027F26D /* WeekHStack.swift in Sources */,
@@ -796,6 +799,7 @@
 				BEC748BD23D23BCF0027F26D /* WeekdayView.swift in Sources */,
 				BE28C4F123D7A9D300CA9D13 /* R.generated.swift in Sources */,
 				BE442C7523EDAA16002306E6 /* Routine.swift in Sources */,
+				BE52E506257412A4003348D9 /* GlobalConstants.swift in Sources */,
 				BEC00AEB23BFDC3C001B6724 /* OnboardingIncomeView.swift in Sources */,
 				BE442C6423EDA32F002306E6 /* Double+Conversions.swift in Sources */,
 				BE442C6223EDA31B002306E6 /* Decimal+Conversions.swift in Sources */,
@@ -805,7 +809,6 @@
 				BEC00AEF23BFE361001B6724 /* BackgroundView.swift in Sources */,
 				EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */,
 				BE442C7823EDAAB5002306E6 /* User+Salary.swift in Sources */,
-				BEFBF0E723BD470200FBE0D2 /* Design.swift in Sources */,
 				BEC00AF223BFE591001B6724 /* View+Extensions.swift in Sources */,
 				BE4B4F1B23F0C15C0090CCD9 /* AvatarPickerView.swift in Sources */,
 				BE442C6823EDA399002306E6 /* DateComponentsFormatter+String.swift in Sources */,
@@ -839,6 +842,7 @@
 				BE92646D23ED9F4A0072A555 /* CalculatorTests.swift in Sources */,
 				BE92646E23ED9F4A0072A555 /* ValueTests.swift in Sources */,
 				BE92647023ED9F4A0072A555 /* UserTests.swift in Sources */,
+				BE770FCD258AAD2600766DB3 /* ScenarioFactoryTests.swift in Sources */,
 				BE92646B23ED9F4A0072A555 /* XCTestCase+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1065,14 +1069,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
-				DEVELOPMENT_ASSET_PATHS = "\"Time is Money/Resources/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Time is Money/Supporting Files/Preview Content\"";
 				DEVELOPMENT_TEAM = Y93HUJS49V;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "Time is Money/Resources/Info.plist";
+				INFOPLIST_FILE = "Time is Money/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1093,14 +1097,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
-				DEVELOPMENT_ASSET_PATHS = "\"Time is Money/Resources/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Time is Money/Supporting Files/Preview Content\"";
 				DEVELOPMENT_TEAM = Y93HUJS49V;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "Time is Money/Resources/Info.plist";
+				INFOPLIST_FILE = "Time is Money/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
