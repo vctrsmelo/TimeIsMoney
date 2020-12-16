@@ -1,6 +1,6 @@
 //
 //  Calculator.swift
-//  TimeIsMoneyCore
+//  TimeIsMoney
 //
 //  Created by Victor Melo on 29/01/20.
 //  Copyright © 2020 Victor Melo. All rights reserved.
@@ -13,17 +13,20 @@ import Foundation
     case undefinedWeeklyWorkHours
     case undefinedSalary
     case undefinedPrice
+    case undefinedError
 }
 
  enum Calculator {
     
      static func getWorkTimeToPay(for price: Double?, user: User) -> Result<TimeInterval, CalculatorError> {
-        guard let price = price else {
-            return .failure(CalculatorError.undefinedPrice)
+        do {
+            try validate(price: price, user: user)
+        } catch {
+            return .failure(error as? CalculatorError ?? .undefinedError)
         }
         
+        guard let price = price else { return .failure(.undefinedPrice) }
         return getWorkTimeToPay(for: Money(value: price), user: user)
-
     }
     
      static func getWorkTimeToPay(for price: Money, user: User) -> Result<TimeInterval, CalculatorError> {
@@ -98,5 +101,14 @@ import Foundation
     
     private static func hasMonthlyIncome(_ user: User) -> Bool {
         user.monthlySalary > 0
+    }
+    
+    
+    private static func validate(price: Double?, user: User) throws {
+        if price == nil { throw CalculatorError.undefinedPrice }
+        
+        let isUserDataValid = self.isUserDataValid(user)
+        
+        if case .failure(let error) = isUserDataValid {throw error }
     }
 }

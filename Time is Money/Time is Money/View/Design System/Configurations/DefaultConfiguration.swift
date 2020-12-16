@@ -8,7 +8,6 @@
 
 import SwiftUI
 import UIKit
-import Rswift
 
 class DefaultConfiguration: ThemeConfigurationProtocol {
     let color: ColorStyle = DefaultColorStyle()

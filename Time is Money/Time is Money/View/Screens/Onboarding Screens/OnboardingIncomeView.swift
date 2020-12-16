@@ -34,7 +34,7 @@ struct OnboardingIncomeView: View {
                 Spacer()
                 
                 HStack {
-                    Text(R.string.localizable.whatIsYourIncome())
+                    Text("What is your income?")
                         .padding(.top, 20)
                         .font(config.font.bold(size: .title).swiftUIFont)
                         .foregroundColor(config.color.complementaryColor.swiftUIColor)

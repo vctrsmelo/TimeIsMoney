@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import Rswift
 
 struct OnboardingAvatarPickerView: View {
     
@@ -17,7 +16,7 @@ struct OnboardingAvatarPickerView: View {
     var body: some View {
         VStack {
             HStack {
-                Text(R.string.localizable.selectYourAvatar())
+                Text("Select your Avatar")
                     .lineLimit(nil)
                     .font(config.font.bold(size: .title).swiftUIFont)
                     .foregroundColor(config.color.complementaryColor.swiftUIColor)

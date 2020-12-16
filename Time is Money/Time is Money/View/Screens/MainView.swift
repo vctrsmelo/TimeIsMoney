@@ -8,7 +8,6 @@
 
 import SwiftUI
 import UIKit
-import Rswift
 
 struct MainView: View {
     
