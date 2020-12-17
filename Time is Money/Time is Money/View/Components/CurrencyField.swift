@@ -79,10 +79,13 @@ final class UICurrencyField: UITextField {
         Formatter.currency.locale = locale
         self.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
         keyboardType = .numberPad
-        sendActions(for: .editingChanged)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func didMoveToSuperview() {
+        sendActions(for: .editingChanged)
     }
 
     @objc func keyBoardWillShow(notification: Notification) {

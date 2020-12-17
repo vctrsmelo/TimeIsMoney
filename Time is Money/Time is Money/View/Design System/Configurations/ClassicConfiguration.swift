@@ -9,23 +9,23 @@
 import SwiftUI
 import UIKit
 
-class DefaultConfiguration: ThemeConfigurationProtocol {
-    let color: DSColorStyle = DefaultColorStyle()
-    let font: DSFontConfiguration = DefaultFontConfiguration()
+class ClassicConfiguration: ThemeConfigurationProtocol {
+    let color: DSColorStyle = ColorStyle()
+    let font: DSFontConfiguration = FontConfiguration()
     let isCornerRadiusEnabled = true
     let cornerRadius = DSCornerRadius.three
 }
 
-class DefaultColorStyle: DSColorStyle {
-    let brand = DSColor(named: "defaultBrandColor")
-    let primary = DSColor(named: "defaultPrimaryColor")
-    let secondary = DSColor(named: "defaultSecondaryColor")
-    let complementary = DSColor(named: "defaultComplementaryColor")
-    let enabled = DSColor(named: "defaultEnabledColor")
-    let disabled = DSColor(named: "defaultDisabledColor")
+private struct ColorStyle: DSColorStyle {
+    let brand =             DSColor(named: "classicBrandColor")
+    let primary =           DSColor(named: "classicPrimaryColor")
+    let secondary =         DSColor(named: "classicSecondaryColor")
+    let complementary =     DSColor(named: "classicComplementaryColor")
+    let enabled =           DSColor(named: "classicEnabledColor")
+    let disabled =          DSColor(named: "classicDisabledColor")
 }
 
-struct DefaultFontConfiguration: DSFontConfiguration {
+private struct FontConfiguration: DSFontConfiguration {
     
     func light(size: DSFontSize) -> DSFont {
         getDSFont(size: size, weight: .light)

@@ -14,7 +14,7 @@
 		BE293A6023F4895A00BB4E98 /* Font+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293A5F23F4895A00BB4E98 /* Font+UIFont.swift */; };
 		BE2F8B2623F4B30900D26E27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE2F8B2523F4B30900D26E27 /* GoogleService-Info.plist */; };
 		BE37722923E7149F003C8D3F /* UIDevice+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37722823E7149F003C8D3F /* UIDevice+Type.swift */; };
-		BE38A05123F34454005D51F9 /* DefaultConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38A05023F34454005D51F9 /* DefaultConfiguration.swift */; };
+		BE38A05123F34454005D51F9 /* ClassicConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38A05023F34454005D51F9 /* ClassicConfiguration.swift */; };
 		BE38A05323F3445F005D51F9 /* ConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38A05223F3445F005D51F9 /* ConfigurationProtocol.swift */; };
 		BE407965258B838C00865615 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE407964258B838C00865615 /* UserTests.swift */; };
 		BE442C6223EDA31B002306E6 /* Decimal+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442C6123EDA31B002306E6 /* Decimal+Conversions.swift */; };
@@ -52,6 +52,7 @@
 		BE92646C23ED9F4A0072A555 /* TimeTextTranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92646A23ED9F4A0072A555 /* TimeTextTranslatorTests.swift */; };
 		BE92646D23ED9F4A0072A555 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92646523ED9F4A0072A555 /* CalculatorTests.swift */; };
 		BE92646E23ED9F4A0072A555 /* ValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92646923ED9F4A0072A555 /* ValueTests.swift */; };
+		BE9F0E9F258BEDA100EF4284 /* CleanConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F0E9E258BEDA100EF4284 /* CleanConfiguration.swift */; };
 		BEA9AB3423C5308B0057EA1E /* CurrencyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA9AB3323C5308B0057EA1E /* CurrencyField.swift */; };
 		BEB0979A23BF984F00244E30 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0979923BF984F00244E30 /* PageViewController.swift */; };
 		BEB0979D23BF990E00244E30 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0979C23BF990E00244E30 /* PageView.swift */; };
@@ -111,7 +112,7 @@
 		BE293A5F23F4895A00BB4E98 /* Font+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+UIFont.swift"; sourceTree = "<group>"; };
 		BE2F8B2523F4B30900D26E27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BE37722823E7149F003C8D3F /* UIDevice+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Type.swift"; sourceTree = "<group>"; };
-		BE38A05023F34454005D51F9 /* DefaultConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultConfiguration.swift; sourceTree = "<group>"; };
+		BE38A05023F34454005D51F9 /* ClassicConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicConfiguration.swift; sourceTree = "<group>"; };
 		BE38A05223F3445F005D51F9 /* ConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationProtocol.swift; sourceTree = "<group>"; };
 		BE407964258B838C00865615 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		BE442C6123EDA31B002306E6 /* Decimal+Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Conversions.swift"; sourceTree = "<group>"; };
@@ -151,6 +152,7 @@
 		BE92646823ED9F4A0072A555 /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		BE92646923ED9F4A0072A555 /* ValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTests.swift; sourceTree = "<group>"; };
 		BE92646A23ED9F4A0072A555 /* TimeTextTranslatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTextTranslatorTests.swift; sourceTree = "<group>"; };
+		BE9F0E9E258BEDA100EF4284 /* CleanConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanConfiguration.swift; sourceTree = "<group>"; };
 		BEA9AB3323C5308B0057EA1E /* CurrencyField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyField.swift; sourceTree = "<group>"; };
 		BEB0979923BF984F00244E30 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		BEB0979C23BF990E00244E30 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
@@ -204,7 +206,8 @@
 		BE293A6323F4958400BB4E98 /* Configurations */ = {
 			isa = PBXGroup;
 			children = (
-				BE38A05023F34454005D51F9 /* DefaultConfiguration.swift */,
+				BE38A05023F34454005D51F9 /* ClassicConfiguration.swift */,
+				BE9F0E9E258BEDA100EF4284 /* CleanConfiguration.swift */,
 			);
 			path = Configurations;
 			sourceTree = "<group>";
@@ -592,7 +595,7 @@
 			files = (
 				BE4B4F1923F0B78C0090CCD9 /* OnboardingAvatarPickerView.swift in Sources */,
 				BE66B18323BD096800166912 /* OnboardingWelcomeView.swift in Sources */,
-				BE38A05123F34454005D51F9 /* DefaultConfiguration.swift in Sources */,
+				BE38A05123F34454005D51F9 /* ClassicConfiguration.swift in Sources */,
 				BE442C7123EDA9E0002306E6 /* Weekday.swift in Sources */,
 				BE442C7223EDAA09002306E6 /* AppStateRepository.swift in Sources */,
 				BE442C6623EDA369002306E6 /* TimeInterval+Conversions.swift in Sources */,
@@ -627,6 +630,7 @@
 				BE270BD723C039E50099AAC7 /* OnboardingWeekdaysView.swift in Sources */,
 				BE442C7023EDA9DC002306E6 /* AppState.swift in Sources */,
 				BE57677E23CE838D004BF48C /* EditView.swift in Sources */,
+				BE9F0E9F258BEDA100EF4284 /* CleanConfiguration.swift in Sources */,
 				EE427009234F4A1E007A63D9 /* MainView.swift in Sources */,
 				BEC00AE923BFDC2C001B6724 /* OnboardingWorkTimeView.swift in Sources */,
 				BE37722923E7149F003C8D3F /* UIDevice+Type.swift in Sources */,
