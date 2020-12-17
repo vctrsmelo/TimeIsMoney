@@ -8,4 +8,6 @@
 
 import Foundation
 
+let DesignSystem: ThemeConfigurationProtocol = DefaultConfiguration()
+
 let WEEKS_IN_MONTH = NSDecimalNumber(value: 4.429531) // ~30 days per month

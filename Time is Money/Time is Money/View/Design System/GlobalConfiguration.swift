@@ -8,8 +8,3 @@
 
 import Foundation
 
-fileprivate let designSystemConfiguration = DefaultConfiguration()
-
-var DesignSystem: ThemeConfigurationProtocol {
-    designSystemConfiguration
-}

@@ -111,11 +111,6 @@ struct MainView: View {
                 self.appState.user.isOnboardingCompleted.toggle()
             }
             
-            if self.appState.avatarId == "male2-deprecated" {
-                self.viewModel.isAlertShowing = true
-                self.appState.avatarId = "male2"
-            }
-            
             self.interactors.mainInteractor.saveAppState()
         }.alert(isPresented: $viewModel.isAlertShowing) {
             return Alert(title: Text("Yay! update"), message: Text("Now you can select a different avatar. Go to settings screen to select yours"), dismissButton: Alert.Button.default(Text("Ok")))

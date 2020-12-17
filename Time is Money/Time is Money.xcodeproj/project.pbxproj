@@ -12,7 +12,6 @@
 		BE28C50023D7AD9600CA9D13 /* PreviewProvider+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28C4FF23D7AD9600CA9D13 /* PreviewProvider+Locale.swift */; };
 		BE293A5E23F4719500BB4E98 /* UIColor+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293A5D23F4719500BB4E98 /* UIColor+Init.swift */; };
 		BE293A6023F4895A00BB4E98 /* Font+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293A5F23F4895A00BB4E98 /* Font+UIFont.swift */; };
-		BE293A6223F4957400BB4E98 /* DarkModeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293A6123F4957400BB4E98 /* DarkModeConfiguration.swift */; };
 		BE2F8B2623F4B30900D26E27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE2F8B2523F4B30900D26E27 /* GoogleService-Info.plist */; };
 		BE37722923E7149F003C8D3F /* UIDevice+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37722823E7149F003C8D3F /* UIDevice+Type.swift */; };
 		BE38A04F23F34434005D51F9 /* GlobalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38A04E23F34434005D51F9 /* GlobalConfiguration.swift */; };
@@ -111,7 +110,6 @@
 		BE28C4FF23D7AD9600CA9D13 /* PreviewProvider+Locale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewProvider+Locale.swift"; sourceTree = "<group>"; };
 		BE293A5D23F4719500BB4E98 /* UIColor+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Init.swift"; sourceTree = "<group>"; };
 		BE293A5F23F4895A00BB4E98 /* Font+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+UIFont.swift"; sourceTree = "<group>"; };
-		BE293A6123F4957400BB4E98 /* DarkModeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeConfiguration.swift; sourceTree = "<group>"; };
 		BE2F8B2523F4B30900D26E27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BE37722823E7149F003C8D3F /* UIDevice+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Type.swift"; sourceTree = "<group>"; };
 		BE38A04E23F34434005D51F9 /* GlobalConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfiguration.swift; sourceTree = "<group>"; };
@@ -209,7 +207,6 @@
 			isa = PBXGroup;
 			children = (
 				BE38A05023F34454005D51F9 /* DefaultConfiguration.swift */,
-				BE293A6123F4957400BB4E98 /* DarkModeConfiguration.swift */,
 			);
 			path = Configurations;
 			sourceTree = "<group>";
@@ -651,7 +648,6 @@
 				BE442C7023EDA9DC002306E6 /* AppState.swift in Sources */,
 				BE57677E23CE838D004BF48C /* EditView.swift in Sources */,
 				EE427009234F4A1E007A63D9 /* MainView.swift in Sources */,
-				BE293A6223F4957400BB4E98 /* DarkModeConfiguration.swift in Sources */,
 				BEC00AE923BFDC2C001B6724 /* OnboardingWorkTimeView.swift in Sources */,
 				BE37722923E7149F003C8D3F /* UIDevice+Type.swift in Sources */,
 				BE92646123ED9F270072A555 /* Calculator.swift in Sources */,

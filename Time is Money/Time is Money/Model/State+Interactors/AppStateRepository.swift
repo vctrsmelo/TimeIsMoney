@@ -52,7 +52,7 @@ struct UserDefaultsAppStateRepository: AppStateRepository {
     
     func loadAvatarId() -> String {
         guard let id = UserDefaults.standard.string(forKey: Key.avatarId.rawValue) else {
-            saveAvatarId("male2-deprecated")
+            saveAvatarId("male2")
             return loadAvatarId()
         }
         

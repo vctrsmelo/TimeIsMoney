@@ -10,7 +10,7 @@ import SwiftUI
 
 public class AppState: ObservableObject {
     @Published var user = User()
-    @Published var avatarId = "male2-deprecated"
+    @Published var avatarId = "male2"
     @Published var workplace = ScenarioFactory.Workplace.office
     @Published var currentPrice = Money(value: 0.0)
     @Published var system = System()
