@@ -14,7 +14,6 @@
 		BE293A6023F4895A00BB4E98 /* Font+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293A5F23F4895A00BB4E98 /* Font+UIFont.swift */; };
 		BE2F8B2623F4B30900D26E27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE2F8B2523F4B30900D26E27 /* GoogleService-Info.plist */; };
 		BE37722923E7149F003C8D3F /* UIDevice+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37722823E7149F003C8D3F /* UIDevice+Type.swift */; };
-		BE38A04F23F34434005D51F9 /* GlobalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38A04E23F34434005D51F9 /* GlobalConfiguration.swift */; };
 		BE38A05123F34454005D51F9 /* DefaultConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38A05023F34454005D51F9 /* DefaultConfiguration.swift */; };
 		BE38A05323F3445F005D51F9 /* ConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38A05223F3445F005D51F9 /* ConfigurationProtocol.swift */; };
 		BE407965258B838C00865615 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE407964258B838C00865615 /* UserTests.swift */; };
@@ -112,7 +111,6 @@
 		BE293A5F23F4895A00BB4E98 /* Font+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+UIFont.swift"; sourceTree = "<group>"; };
 		BE2F8B2523F4B30900D26E27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BE37722823E7149F003C8D3F /* UIDevice+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Type.swift"; sourceTree = "<group>"; };
-		BE38A04E23F34434005D51F9 /* GlobalConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfiguration.swift; sourceTree = "<group>"; };
 		BE38A05023F34454005D51F9 /* DefaultConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultConfiguration.swift; sourceTree = "<group>"; };
 		BE38A05223F3445F005D51F9 /* ConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationProtocol.swift; sourceTree = "<group>"; };
 		BE407964258B838C00865615 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
@@ -226,7 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				BE293A6323F4958400BB4E98 /* Configurations */,
-				BE38A04E23F34434005D51F9 /* GlobalConfiguration.swift */,
 				BE38A05223F3445F005D51F9 /* ConfigurationProtocol.swift */,
 			);
 			path = "Design System";
@@ -287,9 +284,9 @@
 		BE442C5E23EDA080002306E6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				BE4B4F1C23F0C5780090CCD9 /* AvatarButtonView */,
-				BE4B4F0F23EEFB240090CCD9 /* Images */,
+				BE4B4F1D23F0C5890090CCD9 /* AvatarButtonView.swift */,
 				BE4B4F1A23F0C15C0090CCD9 /* AvatarPickerView.swift */,
+				BE4B4F0D23EEF8F10090CCD9 /* AvatarView.swift */,
 				BEC00AEE23BFE361001B6724 /* BackgroundView.swift */,
 				BEC748BA23D23BB50027F26D /* WeekHStack.swift */,
 				BEC748BC23D23BCF0027F26D /* WeekdayView.swift */,
@@ -330,22 +327,6 @@
 				BE442C6A23EDA674002306E6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		BE4B4F0F23EEFB240090CCD9 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				BE4B4F0D23EEF8F10090CCD9 /* AvatarView.swift */,
-			);
-			path = Images;
-			sourceTree = "<group>";
-		};
-		BE4B4F1C23F0C5780090CCD9 /* AvatarButtonView */ = {
-			isa = PBXGroup;
-			children = (
-				BE4B4F1D23F0C5890090CCD9 /* AvatarButtonView.swift */,
-			);
-			path = AvatarButtonView;
 			sourceTree = "<group>";
 		};
 		BE52E4E32574021F003348D9 /* Model */ = {
@@ -637,7 +618,6 @@
 				BE442C6223EDA31B002306E6 /* Decimal+Conversions.swift in Sources */,
 				BE92644C23ED95210072A555 /* InteractorsContainer.swift in Sources */,
 				BE442C7423EDAA14002306E6 /* User.swift in Sources */,
-				BE38A04F23F34434005D51F9 /* GlobalConfiguration.swift in Sources */,
 				BEC00AEF23BFE361001B6724 /* BackgroundView.swift in Sources */,
 				EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */,
 				BEC00AF223BFE591001B6724 /* View+Extensions.swift in Sources */,

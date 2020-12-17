@@ -11,40 +11,49 @@ import SwiftUI
 struct OnboardingWelcomeView: View {
     
     var body: some View {
-        VStack {
+        GeometryReader { geometry in
+            VStack {
+                Spacer()
+                    .frame(height: 100)
+                
+                Image("MoneyClock_img")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: UIScreen.main.bounds.width * 2/4.5 , minHeight: 150)
+                
+                Text("Welcome!")
+                    .font(DesignSystem.font.bold(size: .heading).asFont)
+                    .foregroundColor(DesignSystem.color.complementary.asColor)
+                    .padding(.top, DSSpacing.l)
+                
+                    Spacer()
+                        .frame(minHeight: DSSpacing.m, maxHeight: DSSpacing.l)
+                
+                Text("Let's find out how much things really cost?")
+                    .lineLimit(nil)
+                    .font(DesignSystem.font.bold(size: .subtitle).asFont)
+                    .foregroundColor(DesignSystem.color.complementary.asColor)
+                    .frame(width: geometry.size.width - DSSpacing.xxl,
+                           alignment: .leading)
+                
+                Spacer()
 
-            Spacer()
-            
-            Image("MoneyClock_img")
-                .resizable()
-                .scaledToFit()
-                .frame(maxWidth: UIScreen.main.bounds.width * 2/3 , minHeight: 150)
-            
-            Text("Welcome!")
-                .font(DesignSystem.font.bold(size: .heading).asFont)
-                .foregroundColor(DesignSystem.color.complementary.asColor)
-                .padding(.top, 20)
-
-            Spacer()
-            
-            Text("Let's find out how much things really cost?")
-                .lineLimit(nil)
-                .font(DesignSystem.font.regular(size: .subtitle).asFont)
-                .foregroundColor(DesignSystem.color.complementary.asColor)
-                .frame(idealWidth: UIScreen.main.bounds.width-64, maxWidth: UIScreen.main.bounds.width-16, minHeight: 25, idealHeight: 50, alignment: .center)
-            
-            Spacer()
-
-            Text("For this we will need only a few information. Let's go? 😄")
-                .lineLimit(nil)
-                .font(DesignSystem.font.light(size: .subtitle).asFont)
-                .foregroundColor(DesignSystem.color.complementary.asColor)
-                .frame(idealWidth: UIScreen.main.bounds.width-64, maxWidth: UIScreen.main.bounds.width-16, minHeight: 25, idealHeight: 50, alignment: .center)
-            Spacer()
+                Text("For this we will need only a few information. Let's go? 😄")
+                    .lineLimit(nil)
+                    .font(DesignSystem.font.regular(size: .subtitle).asFont)
+                    .foregroundColor(DesignSystem.color.complementary.asColor)
+                    .frame(width: geometry.size.width - DSSpacing.xxl,
+                           alignment: .leading)
+                
+                
+                Spacer()
+                    .frame(height: DSSpacing.xxl)
+                
+            }
+            .withBackground()
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
         }
-        .withBackground()
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
     }
 }
 

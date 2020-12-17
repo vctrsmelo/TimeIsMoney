@@ -31,11 +31,13 @@ import UIKit
     static var body = DSFontSize.h3
 }
 
- enum DSSpacing: CGFloat {
-    case pp = 4
-    case p = 8
-    case m = 16
-    case g = 24
+ enum DSSpacing {
+    static let xs: CGFloat  = 4
+    static let s: CGFloat = 8
+    static let m: CGFloat = 16
+    static let l: CGFloat = 24
+    static let xl: CGFloat = 32
+    static let xxl: CGFloat = 64
 }
 
 protocol DSColorStyle {
