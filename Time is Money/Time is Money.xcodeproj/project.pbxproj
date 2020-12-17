@@ -53,6 +53,7 @@
 		BE92646D23ED9F4A0072A555 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92646523ED9F4A0072A555 /* CalculatorTests.swift */; };
 		BE92646E23ED9F4A0072A555 /* ValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92646923ED9F4A0072A555 /* ValueTests.swift */; };
 		BE9F0E9F258BEDA100EF4284 /* CleanConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F0E9E258BEDA100EF4284 /* CleanConfiguration.swift */; };
+		BE9F0EAB258BF95500EF4284 /* DesignSystemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F0EAA258BF95500EF4284 /* DesignSystemFactory.swift */; };
 		BEA9AB3423C5308B0057EA1E /* CurrencyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA9AB3323C5308B0057EA1E /* CurrencyField.swift */; };
 		BEB0979A23BF984F00244E30 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0979923BF984F00244E30 /* PageViewController.swift */; };
 		BEB0979D23BF990E00244E30 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0979C23BF990E00244E30 /* PageView.swift */; };
@@ -153,6 +154,7 @@
 		BE92646923ED9F4A0072A555 /* ValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTests.swift; sourceTree = "<group>"; };
 		BE92646A23ED9F4A0072A555 /* TimeTextTranslatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTextTranslatorTests.swift; sourceTree = "<group>"; };
 		BE9F0E9E258BEDA100EF4284 /* CleanConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanConfiguration.swift; sourceTree = "<group>"; };
+		BE9F0EAA258BF95500EF4284 /* DesignSystemFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemFactory.swift; sourceTree = "<group>"; };
 		BEA9AB3323C5308B0057EA1E /* CurrencyField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyField.swift; sourceTree = "<group>"; };
 		BEB0979923BF984F00244E30 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		BEB0979C23BF990E00244E30 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			children = (
 				BE293A6323F4958400BB4E98 /* Configurations */,
 				BE38A05223F3445F005D51F9 /* ConfigurationProtocol.swift */,
+				BE9F0EAA258BF95500EF4284 /* DesignSystemFactory.swift */,
 			);
 			path = "Design System";
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				BEB0979A23BF984F00244E30 /* PageViewController.swift in Sources */,
 				BEBACBB123E745EA002ABD20 /* ScaledFont.swift in Sources */,
 				BEC748BB23D23BB50027F26D /* WeekHStack.swift in Sources */,
+				BE9F0EAB258BF95500EF4284 /* DesignSystemFactory.swift in Sources */,
 				BE28C50023D7AD9600CA9D13 /* PreviewProvider+Locale.swift in Sources */,
 				BE293A5E23F4719500BB4E98 /* UIColor+Init.swift in Sources */,
 				BE293A6023F4895A00BB4E98 /* Font+UIFont.swift in Sources */,

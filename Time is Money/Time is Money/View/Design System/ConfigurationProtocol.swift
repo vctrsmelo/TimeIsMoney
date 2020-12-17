@@ -71,6 +71,7 @@ enum DSCornerRadius: Int {
 }
 
 protocol ThemeConfigurationProtocol {
+    static var id: String { get }
     var color: DSColorStyle { get }
     var font: DSFontConfiguration { get }
     var isCornerRadiusEnabled: Bool { get }

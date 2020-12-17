@@ -12,12 +12,16 @@ import Combine
 
 protocol AppStateRepository {
     func loadUser() -> User
-    func loadAvatarId() -> String
-    func loadWorkplace() -> ScenarioFactory.Workplace
-
     func saveUser(_ user: User)
+
+    func loadAvatarId() -> String
     func saveAvatarId(_ id: String)
+
+    func loadWorkplace() -> ScenarioFactory.Workplace
     func saveWorkplace(_ workplace: ScenarioFactory.Workplace)
+    
+    func loadDesignSystem() -> ThemeConfigurationProtocol
+    func saveDesignSystem(_ id: String)
 }
 
 struct UserDefaultsAppStateRepository: AppStateRepository {
@@ -29,6 +33,7 @@ struct UserDefaultsAppStateRepository: AppStateRepository {
         case workdays = "Workdays"
         case avatarId = "AvatarId"
         case workplace = "Workplace"
+        case designSystem = "DesignSystem"
     }
     
     func loadUser() -> User {
@@ -59,6 +64,10 @@ struct UserDefaultsAppStateRepository: AppStateRepository {
         return id
     }
     
+    func saveAvatarId(_ id: String) {
+        UserDefaults.standard.set(id, forKey: Key.avatarId.rawValue)
+    }
+    
     func loadWorkplace() -> ScenarioFactory.Workplace {
         guard let rawValue = UserDefaults.standard.string(forKey: Key.workplace.rawValue) else {
             saveWorkplace(.office)
@@ -68,12 +77,21 @@ struct UserDefaultsAppStateRepository: AppStateRepository {
         return ScenarioFactory.Workplace.init(rawValue: rawValue) ?? .office
     }
     
-    func saveAvatarId(_ id: String) {
-        UserDefaults.standard.set(id, forKey: Key.avatarId.rawValue)
-    }
-    
     func saveWorkplace(_ workplace: ScenarioFactory.Workplace) {
         UserDefaults.standard.set(workplace.rawValue, forKey: Key.workplace.rawValue)
+    }
+    
+    func loadDesignSystem() -> ThemeConfigurationProtocol {
+        guard let id = UserDefaults.standard.string(forKey: Key.designSystem.rawValue) else {
+            saveDesignSystem(ClassicConfiguration.id)
+            return loadDesignSystem()
+        }
+        
+        return DesignSystemFactory.getBy(id)
+    }
+    
+    func saveDesignSystem(_ id: String) {
+        UserDefaults.standard.set(id, forKey: Key.designSystem.rawValue)
     }
 }
 

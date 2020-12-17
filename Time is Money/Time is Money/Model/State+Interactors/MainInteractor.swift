@@ -28,11 +28,13 @@ struct MainInteractorImp: MainInteractor {
         appState.user = userRepository.loadUser()
         appState.avatarId = userRepository.loadAvatarId()
         appState.workplace = userRepository.loadWorkplace()
+        appState.designSystem = userRepository.loadDesignSystem()
     }
     
     func saveAppState() {
         userRepository.saveUser(appState.user)
         userRepository.saveAvatarId(appState.avatarId)
         userRepository.saveWorkplace(appState.workplace)
+        userRepository.saveDesignSystem(type(of: appState.designSystem).id)
     }
 }

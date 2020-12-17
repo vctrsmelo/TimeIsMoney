@@ -10,6 +10,7 @@ import SwiftUI
 import UIKit
 
 class ClassicConfiguration: ThemeConfigurationProtocol {
+    static let id = "ClassicConfiguration"
     let color: DSColorStyle = ColorStyle()
     let font: DSFontConfiguration = FontConfiguration()
     let isCornerRadiusEnabled = true
