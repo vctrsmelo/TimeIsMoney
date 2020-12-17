@@ -63,7 +63,7 @@ struct MainView: View {
                     }) {
                         Image(systemName: "gear")
                             .imageScale(.large)
-                            .foregroundColor(DesignSystem.color.complementary.asColor)
+                            .foregroundColor(appState.designSystem.color.complementary.asColor)
                             .frame(width: 60, height: 60)
                     }
 
@@ -105,7 +105,7 @@ struct MainView: View {
         }, onHideKeyboardCustom: {
             self.viewModel.topTextPadding = 0
             self.viewModel.isKeyboardVisible = false
-        })
+        }, backgroundColor: appState.designSystem.color.primary.asColor)
         .onAppear() {
             if self.appState.user.isOnboardingCompleted == false {
                 self.appState.user.isOnboardingCompleted.toggle()
@@ -124,34 +124,34 @@ struct MainView: View {
         return VStack {
             Text("It will take")
                 .multilineTextAlignment(.center)
-                .font(DesignSystem.font.light(size: .body).asFont)
-                .foregroundColor(DesignSystem.color.complementary.asColor)
+                .font(appState.designSystem.font.light(size: .body).asFont)
+                .foregroundColor(appState.designSystem.color.complementary.asColor)
                 .animation(.none)
                 .isHidden(isMonetaryValueZero)
             Text("\(timeMessage)")
                 .lineLimit(nil)
-                .font(DesignSystem.font.bold(size: .title).asFont)
-                .foregroundColor(DesignSystem.color.complementary.asColor)
+                .font(appState.designSystem.font.bold(size: .title).asFont)
+                .foregroundColor(appState.designSystem.color.complementary.asColor)
                 .multilineTextAlignment(.center)
                 .animation(.none)
                 .padding(.top, 10)
     
             getExpectedWorkingTimeText(priceAsSeconds: priceAsSeconds)
-                .font(DesignSystem.font.light(size: .body).asFont)
-                .foregroundColor(DesignSystem.color.complementary.asColor)
+                .font(appState.designSystem.font.light(size: .body).asFont)
+                .foregroundColor(appState.designSystem.color.complementary.asColor)
                 .padding(.top, 10)
                 .isHidden(isMonetaryValueZero)
             Group {
                 Text("to pay off these")
                     .multilineTextAlignment(.center)
-                    .font(DesignSystem.font.light(size: .body).asFont)
-                    .foregroundColor(DesignSystem.color.complementary.asColor)
+                    .font(appState.designSystem.font.light(size: .body).asFont)
+                    .foregroundColor(appState.designSystem.color.complementary.asColor)
                     .animation(.none)
                     .isHidden(isMonetaryValueZero)
                 Text("\(formattedValue)")
                     .frame(minWidth: 100, alignment: .center)
-                    .font(DesignSystem.font.bold(size: .subtitle).asFont)
-                    .foregroundColor(DesignSystem.color.complementary.asColor)
+                    .font(appState.designSystem.font.bold(size: .subtitle).asFont)
+                    .foregroundColor(appState.designSystem.color.complementary.asColor)
                     .padding(.top, 10)
                     .isHidden(isMonetaryValueZero)
                 
@@ -206,7 +206,8 @@ struct ContentView_Previews: PreviewProvider {
 
 // Create subviews private here
 private struct InputSectionView: View {
-    
+
+    @EnvironmentObject var appState: AppState
     @Binding var priceBinding: Decimal
     
     var isKeyboardVisible: Bool
@@ -220,12 +221,12 @@ private struct InputSectionView: View {
                
        return VStack {
            Text("Type below the price")
-               .font(DesignSystem.font.light(size: .h4).asFont)
-               .foregroundColor(DesignSystem.color.complementary.asColor)
+               .font(appState.designSystem.font.light(size: .h4).asFont)
+               .foregroundColor(appState.designSystem.color.complementary.asColor)
                .isHidden(isKeyboardVisible)
 
-           CurrencyField($priceBinding, placeholder: income, textColor: .white)
-               .background(DesignSystem.color.complementary.asColor)
+        CurrencyField($priceBinding, placeholder: income, textColor: appState.designSystem.color.primary, designSystem: appState.designSystem)
+               .background(appState.designSystem.color.complementary.asColor)
                .frame(width: width, height: 50, alignment: .center)
                .cornerRadius(cornerRadius)
        }

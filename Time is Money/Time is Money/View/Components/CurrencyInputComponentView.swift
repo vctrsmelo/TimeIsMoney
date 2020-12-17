@@ -10,6 +10,7 @@ import SwiftUI
 
 struct CurrencyInputComponentView: View {
     
+    @EnvironmentObject var appState: AppState
     @State private var isKeyboardVisible: Bool = false
     
     private var priceBinding: Binding<Decimal>
@@ -28,11 +29,11 @@ struct CurrencyInputComponentView: View {
     var body: some View {
         VStack {
             Text("Type below the price")
-                .font(DesignSystem.font.light(size: .h4).asFont)
-                .foregroundColor(DesignSystem.color.complementary.asColor)
+                .font(appState.designSystem.font.light(size: .h4).asFont)
+                .foregroundColor(appState.designSystem.color.complementary.asColor)
                 .isHidden(isKeyboardVisible)
 
-            CurrencyField(priceBinding, placeholder: "Income", textColor: .white)
+            CurrencyField(priceBinding, placeholder: "Income", designSystem: appState.designSystem)
                 .background(Color(.sRGB, red: 94/255.0, green: 128/255.0, blue: 142/255.0, opacity: 1))
                 .frame(width: currencyFieldWidth, height: 50, alignment: .center)
                 .cornerRadius(cornerRadius)

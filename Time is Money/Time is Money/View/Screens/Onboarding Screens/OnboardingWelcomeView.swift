@@ -10,6 +10,8 @@ import SwiftUI
 
 struct OnboardingWelcomeView: View {
     
+    @EnvironmentObject var appState: AppState
+    
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -22,8 +24,8 @@ struct OnboardingWelcomeView: View {
                     .frame(maxWidth: UIScreen.main.bounds.width * 2/4.5 , minHeight: 150)
                 
                 Text("Welcome!")
-                    .font(DesignSystem.font.bold(size: .heading).asFont)
-                    .foregroundColor(DesignSystem.color.complementary.asColor)
+                    .font(appState.designSystem.font.bold(size: .heading).asFont)
+                    .foregroundColor(appState.designSystem.color.complementary.asColor)
                     .padding(.top, DSSpacing.l)
                 
                     Spacer()
@@ -31,8 +33,8 @@ struct OnboardingWelcomeView: View {
                 
                 Text("Let's find out how much things really cost?")
                     .lineLimit(nil)
-                    .font(DesignSystem.font.bold(size: .subtitle).asFont)
-                    .foregroundColor(DesignSystem.color.complementary.asColor)
+                    .font(appState.designSystem.font.bold(size: .subtitle).asFont)
+                    .foregroundColor(appState.designSystem.color.complementary.asColor)
                     .frame(width: geometry.size.width - DSSpacing.xxl,
                            alignment: .leading)
                 
@@ -40,8 +42,8 @@ struct OnboardingWelcomeView: View {
 
                 Text("For this we will need only a few information. Let's go? 😄")
                     .lineLimit(nil)
-                    .font(DesignSystem.font.regular(size: .subtitle).asFont)
-                    .foregroundColor(DesignSystem.color.complementary.asColor)
+                    .font(appState.designSystem.font.regular(size: .subtitle).asFont)
+                    .foregroundColor(appState.designSystem.color.complementary.asColor)
                     .frame(width: geometry.size.width - DSSpacing.xxl,
                            alignment: .leading)
                 
@@ -49,7 +51,7 @@ struct OnboardingWelcomeView: View {
                 Spacer()
                 
             }
-            .withBackground()
+            .withBackground(appState.designSystem.color.primary.asColor)
             .navigationBarTitle("")
             .navigationBarHidden(true)
         }

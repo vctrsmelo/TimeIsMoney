@@ -23,7 +23,7 @@ struct WeekdayView: View {
     }
     
     var body: some View {
-        let color = DesignSystem.color
+        let color = appState.designSystem.color
         let backgroundColor = isSelected ? color.enabled.asColor : color.disabled.asColor
         
         return ZStack {
@@ -37,7 +37,7 @@ struct WeekdayView: View {
                 }
             }) {
                 Text(self.weekday.localized())
-                    .font(DesignSystem.font.bold(size: .h4).asFont)
+                    .font(appState.designSystem.font.bold(size: .h4).asFont)
                     .foregroundColor(Color.white)
                     .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
             }

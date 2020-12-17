@@ -36,8 +36,8 @@ struct OnboardingIncomeView: View {
                 HStack {
                     Text("What is your income?")
                         .padding(.top, 20)
-                        .font(DesignSystem.font.bold(size: .title).asFont)
-                        .foregroundColor(DesignSystem.color.complementary.asColor)
+                        .font(appState.designSystem.font.bold(size: .title).asFont)
+                        .foregroundColor(appState.designSystem.color.complementary.asColor)
                         .frame(maxWidth: .infinity, maxHeight:80)
                 }
                 
@@ -55,14 +55,14 @@ struct OnboardingIncomeView: View {
                 Spacer()
                 
                 HStack {
-                    CurrencyField(incomeBinding, placeholder: "Income")
+                    CurrencyField(incomeBinding, placeholder: "Income", designSystem: appState.designSystem)
                         .frame(width: UIScreen.main.bounds.width, height: 60, alignment: .center)
                 }
                 
                 HStack {
                     Text("per month")
-                        .font(DesignSystem.font.light(size: .body).asFont)
-                        .foregroundColor(DesignSystem.color.complementary.asColor)
+                        .font(appState.designSystem.font.light(size: .body).asFont)
+                        .foregroundColor(appState.designSystem.color.complementary.asColor)
                 }
                 
                 Spacer()
@@ -70,10 +70,10 @@ struct OnboardingIncomeView: View {
                 HStack {
                     NavigationLink(destination: MainView().environmentObject(self.appState)) {
                         Text("Finish")
-                            .font(DesignSystem.font.semibold(size: .body).asFont)
+                            .font(appState.designSystem.font.semibold(size: .body).asFont)
                             .frame(width: 200, height: 50, alignment: .center)
-                            .background(DesignSystem.color.complementary.asColor)
-                            .foregroundColor(DesignSystem.color.primary.asColor)
+                            .background(appState.designSystem.color.complementary.asColor)
+                            .foregroundColor(appState.designSystem.color.primary.asColor)
                             .cornerRadius(5)
                     }
                 }
@@ -81,10 +81,10 @@ struct OnboardingIncomeView: View {
                 Spacer()
             }
         }
-        .withBackground()
+        .withBackground(appState.designSystem.color.primary.asColor)
         .navigationBarTitle("")
         .navigationBarHidden(true)
-        .keyboardSensible($offsetValue, type: .padding)
+        .keyboardSensible($offsetValue, type: .padding, backgroundColor: appState.designSystem.color.primary.asColor)
     }
 }
 

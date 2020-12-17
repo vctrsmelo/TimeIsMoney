@@ -18,12 +18,13 @@ struct OnboardingAvatarPickerView: View {
             HStack {
                 Text("Select your Avatar")
                     .lineLimit(nil)
-                    .font(DesignSystem.font.bold(size: .title).asFont)
-                    .foregroundColor(DesignSystem.color.complementary.asColor)
+                    .font(appState.designSystem.font.bold(size: .title).asFont)
+                    .foregroundColor(appState.designSystem.color.complementary.asColor)
                     .frame(maxHeight: UIScreen.main.bounds.height/4)
             }
             VAvatarPickerView(buttonWidth: 100).environmentObject(appState)
-        }.withBackground()
+        }
+        .withBackground(appState.designSystem.color.primary.asColor)
         .navigationBarTitle("")
         .navigationBarHidden(true)
     }

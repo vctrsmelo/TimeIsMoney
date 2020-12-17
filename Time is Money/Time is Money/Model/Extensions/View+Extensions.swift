@@ -11,7 +11,7 @@ import SwiftUI
 
 // MARK: - Background
 extension View {
-    func withBackground(_ color: Color = DesignSystem.color.primary.asColor) -> some View {
+    func withBackground(_ color: Color) -> some View {
         return ZStack {
             BackgroundView(color)
             self
@@ -37,23 +37,23 @@ extension View {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
     }
     
-    func keyboardSensible(_ offsetValue: Binding<CGFloat>, type: KeyboardSensibleType, onAppearKeyboardCustom: (() -> Void)? = nil, onHideKeyboardCustom: (() -> Void)? = nil) -> some View {
+    func keyboardSensible(_ offsetValue: Binding<CGFloat>, type: KeyboardSensibleType, onAppearKeyboardCustom: (() -> Void)? = nil, onHideKeyboardCustom: (() -> Void)? = nil, backgroundColor: Color) -> some View {
         
         func adjustedType(_ type: KeyboardSensibleType) -> some View {
             switch type {
             case .padding:
                 return ZStack {
-                    BackgroundView()
+                    BackgroundView(backgroundColor)
                     AnyView(self.padding(.bottom, offsetValue.wrappedValue))
                 }
             case .offset:
                 return ZStack {
-                    BackgroundView()
+                    BackgroundView(backgroundColor)
                         AnyView(self.offset(y: -offsetValue.wrappedValue))
                     }
             case .paddingAndOffset:
             return ZStack {
-                    BackgroundView()
+                    BackgroundView(backgroundColor)
                     AnyView(self.padding(.top, offsetValue.wrappedValue)
                            .offset(y: -offsetValue.wrappedValue))
                 

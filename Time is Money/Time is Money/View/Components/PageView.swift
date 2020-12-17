@@ -10,6 +10,7 @@ import SwiftUI
 
 struct PageView<Page: View>: View {
 
+    @EnvironmentObject var appState: AppState
     var viewControllers: [UIHostingController<Page>]
     @State var currentPage = 0
     
@@ -20,7 +21,7 @@ struct PageView<Page: View>: View {
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
-                BackgroundView()
+                BackgroundView(appState.designSystem.color.primary.asColor)
                 VStack {
                     PageViewController(controllers: viewControllers, currentPage: $currentPage)
                         .edgesIgnoringSafeArea(.all)
@@ -37,7 +38,7 @@ struct PageView<Page: View>: View {
             .navigationBarHidden(true)
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .withBackground()
+        .withBackground(appState.designSystem.color.primary.asColor)
     }
 }
 

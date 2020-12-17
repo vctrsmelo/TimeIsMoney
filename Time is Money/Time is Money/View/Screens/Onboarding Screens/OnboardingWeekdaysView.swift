@@ -33,8 +33,8 @@ struct OnboardingWeekdaysView: View {
                 Text("Which days of the week do you usually work?")
                 .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
                     .lineLimit(nil)
-                    .font(DesignSystem.font.bold(size: .title).asFont)
-                    .foregroundColor(DesignSystem.color.complementary.asColor)
+                    .font(appState.designSystem.font.bold(size: .title).asFont)
+                    .foregroundColor(appState.designSystem.color.complementary.asColor)
             }
             
             Spacer()
@@ -58,8 +58,8 @@ struct OnboardingWeekdaysView: View {
             
             HStack {
                 Text(self.workdays)
-                    .font(DesignSystem.font.regular(size: .h4).asFont)
-                    .foregroundColor(DesignSystem.color.complementary.asColor)
+                    .font(appState.designSystem.font.regular(size: .h4).asFont)
+                    .foregroundColor(appState.designSystem.color.complementary.asColor)
             }
             .frame(height: 68)
             .padding(.leading, DSSpacing.xl)
@@ -68,7 +68,7 @@ struct OnboardingWeekdaysView: View {
             Spacer()
         
         }
-        .withBackground()
+        .withBackground(appState.designSystem.color.primary.asColor)
         .navigationBarTitle("")
         .navigationBarHidden(true)
     }

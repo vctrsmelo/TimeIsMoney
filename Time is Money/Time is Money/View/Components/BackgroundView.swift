@@ -12,7 +12,7 @@ struct BackgroundView: View {
     
     var backgroundColor: Color
     
-    init(_ backgroundColor: Color = DesignSystem.color.primary.asColor) {
+    init(_ backgroundColor: Color) {
         self.backgroundColor = backgroundColor
     }
     
@@ -33,6 +33,6 @@ struct BackgroundView: View {
 
 struct BackgroundView_Previews: PreviewProvider {
     static var previews: some View {
-        BackgroundView()
+        BackgroundView(Color.white)
     }
 }

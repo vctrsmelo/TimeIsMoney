@@ -31,7 +31,7 @@ struct AvatarButtonView: View {
             self.appState.avatarId = self.avatar.id
         }) {
             avatar.happy
-                .avatarViewModifiers(avatarWidth: buttonWidth, buttonPadding: buttonPadding, isSelected: isSelected)
+                .avatarViewModifiers(avatarWidth: buttonWidth, buttonPadding: buttonPadding, isSelected: isSelected, selectedColor: appState.designSystem.color.enabled, unselectedColor: appState.designSystem.color.disabled)
                 
         }
     }
@@ -44,7 +44,7 @@ struct AvatarButtonView_Previews: PreviewProvider {
 }
 
 private extension Image {
-    func avatarViewModifiers(avatarWidth: CGFloat, buttonPadding: EdgeInsets, isSelected: Bool) -> some View {
+    func avatarViewModifiers(avatarWidth: CGFloat, buttonPadding: EdgeInsets, isSelected: Bool, selectedColor: DSColor, unselectedColor: DSColor) -> some View {
         self
             .renderingMode(.original)
             .resizable()
@@ -54,8 +54,8 @@ private extension Image {
             .scaleEffect(isSelected ? 0.90 : 1)
             .animation(.easeInOut)
             .background(isSelected ?
-                            DesignSystem.color.enabled.asColor :
-                            DesignSystem.color.disabled.asColor)
+                            selectedColor.asColor :
+                            unselectedColor.asColor)
             .cornerRadius(32)
 
     }
