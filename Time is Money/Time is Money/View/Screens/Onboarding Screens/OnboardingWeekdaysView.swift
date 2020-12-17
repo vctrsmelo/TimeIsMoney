@@ -25,51 +25,52 @@ struct OnboardingWeekdaysView: View {
     }
     
     var body: some View {
-        
-        GeometryReader { g in
-            VStack(spacing: 0) {
-                
-                Spacer()
-                
-                HStack {
-                    Text("Which days of the week do you usually work?")
-                    .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
-                        .lineLimit(nil)
-                        .font(DesignSystem.font.bold(size: .title).asFont)
-                        .foregroundColor(DesignSystem.color.complementary.asColor)
+        VStack(spacing: 0) {
+            
+            Spacer()
+            
+            HStack {
+                Text("Which days of the week do you usually work?")
+                .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+                    .lineLimit(nil)
+                    .font(DesignSystem.font.bold(size: .title).asFont)
+                    .foregroundColor(DesignSystem.color.complementary.asColor)
+            }
+            
+            Spacer()
+            
+            HStack {
+                Image("Calendar_img")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: UIScreen.main.bounds.width/2.5)
+                    .padding(.bottom, DSSpacing.xl)
+            }
+            
+            Spacer()
+            
+            HStack {
+                ForEach(Weekday.all(), id: \.self) {
+                    WeekdayView($0)
                 }
-                
-                Spacer()
-                
-                HStack {
-                    Image("Calendar_img")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: UIScreen.main.bounds.width/2.5)
-                        .padding(.bottom, 30)
-                }
-                
-                Spacer()
-                
-                HStack {
-                    ForEach(Weekday.all(), id: \.self) {
-                        WeekdayView($0)
-                    }
-                }.frame(maxWidth: UIScreen.main.bounds.width-16, minHeight: 50, maxHeight: 100, alignment: .center)
-                
-                HStack {
-                    Text(self.workdays)
-                        .font(DesignSystem.font.regular(size: .h4).asFont)
-                        .foregroundColor(DesignSystem.color.complementary.asColor)
-                }
-                
-                Spacer()
+            }
+            .frame(maxWidth: UIScreen.main.bounds.width - DSSpacing.xxl, minHeight: 50, maxHeight: 100, alignment: .center)
+            
+            HStack {
+                Text(self.workdays)
+                    .font(DesignSystem.font.regular(size: .h4).asFont)
+                    .foregroundColor(DesignSystem.color.complementary.asColor)
+            }
+            .frame(height: 68)
+            .padding(.leading, DSSpacing.xl)
+            .padding(.trailing, DSSpacing.xl)
+            
+            Spacer()
         
         }
         .withBackground()
         .navigationBarTitle("")
         .navigationBarHidden(true)
-        }
     }
 }
 

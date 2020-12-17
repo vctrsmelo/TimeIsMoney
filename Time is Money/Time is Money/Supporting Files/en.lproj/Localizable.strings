@@ -99,3 +99,79 @@
 "Yay! update" = "Yay! update";
 "Now you can select a different avatar. Go to settings screen to select yours" = "Now you can select a different avatar. Go to settings screen to select yours";
 
+// - MARK: Images
+
+"male_1_happy" = "male_1_happy";
+"male_2_happy" = "male_2_happy";
+"female_1_happy" = "female_1_happy";
+"female_2_happy" = "female_2_happy";
+
+"male_1_normal" = "male_1_normal";
+"male_2_normal" = "male_2_normal";
+"female_1_normal" = "female_1_normal";
+"female_2_normal" = "female_2_normal";
+
+"male_1_sad" = "male_1_sad";
+"male_2_sad" = "male_2_sad";
+"female_1_sad" = "female_1_sad";
+"female_2_sad" = "female_2_sad";
+
+"office_male1_table0" = "office_male1_table0";
+"office_male1_table1" = "office_male1_table1";
+"office_male1_table2" = "office_male1_table2";
+"office_male1_table3" = "office_male1_table3";
+"office_male1_table4" = "office_male1_table4";
+"office_male1_table5" = "office_male1_table5";
+"office_male1_table6" = "office_male1_table6";
+"office_male1_table7" = "office_male1_table7";
+"office_male1_table8" = "office_male1_table8";
+"office_male1_table9" = "office_male1_table9";
+"office_male1_table10" = "office_male1_table10";
+"office_male1_table11" = "office_male1_table11";
+"office_male1_table12" = "office_male1_table12";
+"office_male1_table13" = "office_male1_table13";
+
+"office_male2_table0" = "office_male2_table0";
+"office_male2_table1" = "office_male2_table1";
+"office_male2_table2" = "office_male2_table2";
+"office_male2_table3" = "office_male2_table3";
+"office_male2_table4" = "office_male2_table4";
+"office_male2_table5" = "office_male2_table5";
+"office_male2_table6" = "office_male2_table6";
+"office_male2_table7" = "office_male2_table7";
+"office_male2_table8" = "office_male2_table8";
+"office_male2_table9" = "office_male2_table9";
+"office_male2_table10" = "office_male2_table10";
+"office_male2_table11" = "office_male2_table11";
+"office_male2_table12" = "office_male2_table12";
+"office_male2_table13" = "office_male2_table13";
+
+"office_female1_table0" = "office_female1_table0";
+"office_female1_table1" = "office_female1_table1";
+"office_female1_table2" = "office_female1_table2";
+"office_female1_table3" = "office_female1_table3";
+"office_female1_table4" = "office_female1_table4";
+"office_female1_table5" = "office_female1_table5";
+"office_female1_table6" = "office_female1_table6";
+"office_female1_table7" = "office_female1_table7";
+"office_female1_table8" = "office_female1_table8";
+"office_female1_table9" = "office_female1_table9";
+"office_female1_table10" = "office_female1_table10";
+"office_female1_table11" = "office_female1_table11";
+"office_female1_table12" = "office_female1_table12";
+"office_female1_table13" = "office_female1_table13";
+
+"office_female2_table0" = "office_female2_table0";
+"office_female2_table1" = "office_female2_table1";
+"office_female2_table2" = "office_female2_table2";
+"office_female2_table3" = "office_female2_table3";
+"office_female2_table4" = "office_female2_table4";
+"office_female2_table5" = "office_female2_table5";
+"office_female2_table6" = "office_female2_table6";
+"office_female2_table7" = "office_female2_table7";
+"office_female2_table8" = "office_female2_table8";
+"office_female2_table9" = "office_female2_table9";
+"office_female2_table10" = "office_female2_table10";
+"office_female2_table11" = "office_female2_table11";
+"office_female2_table12" = "office_female2_table12";
+"office_female2_table13" = "office_female2_table13";

@@ -34,14 +34,15 @@ struct OnboardingWorkTimeView: View {
                     .lineLimit(nil)
                     .font(DesignSystem.font.bold(size: .title).asFont)
                     .foregroundColor(DesignSystem.color.complementary.asColor)
-                    .frame(maxHeight: .infinity)
+                    .padding(.leading, DSSpacing.xl)
+                    .padding(.trailing, DSSpacing.xl)
                 
                 Spacer()
                 
                 Image("office_\(appState.avatarId)_table2")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: UIScreen.main.bounds.width-120, alignment: .center)
+                    .frame(width: UIScreen.main.bounds.width - DSSpacing.xxxl, alignment: .center)
                     .frame(minHeight: 50, alignment: .center)
                     .animation(.none)
                 

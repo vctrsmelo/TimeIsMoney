@@ -47,7 +47,6 @@ struct OnboardingWelcomeView: View {
                 
                 
                 Spacer()
-                    .frame(height: DSSpacing.xxl)
                 
             }
             .withBackground()

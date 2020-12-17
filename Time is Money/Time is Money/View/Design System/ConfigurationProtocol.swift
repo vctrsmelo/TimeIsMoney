@@ -32,12 +32,20 @@ import UIKit
 }
 
  enum DSSpacing {
+    ///4
     static let xs: CGFloat  = 4
+    ///8
     static let s: CGFloat = 8
+    ///16
     static let m: CGFloat = 16
+    ///24
     static let l: CGFloat = 24
+    ///32
     static let xl: CGFloat = 32
+    ///64
     static let xxl: CGFloat = 64
+    ///128
+    static let xxxl: CGFloat = 128
 }
 
 protocol DSColorStyle {

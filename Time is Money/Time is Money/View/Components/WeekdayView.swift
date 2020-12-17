@@ -37,7 +37,7 @@ struct WeekdayView: View {
                 }
             }) {
                 Text(self.weekday.localized())
-                    .font(DesignSystem.font.regular(size: .h4).asFont)
+                    .font(DesignSystem.font.bold(size: .h4).asFont)
                     .foregroundColor(Color.white)
                     .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
             }
