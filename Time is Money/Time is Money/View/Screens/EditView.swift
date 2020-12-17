@@ -25,17 +25,29 @@ struct EditView: View {
     
     var body: some View {
         
-        let weeklyWorktime = "Weekly Worktime"
-        let weeklyWorkdays = "Weekly workdays"
-        let monthlyIncome = "Monthly Income"
-        
         return NavigationView {
             VStack {
                 Form {
                     Section(header: EmptyView(), footer: avatarSection) {
-                        EditFieldView(title: weeklyWorktime, icon: Image("MoneyClockIcon"), inputView: AnyView(worktimePicker), designSystem: appState.designSystem)
-                        EditFieldView(title: weeklyWorkdays, icon: Image("CalendarIcon"), inputView: AnyView(weekdays), designSystem: appState.designSystem)
-                        EditFieldView(title: monthlyIncome, icon: Image("MoneyIcon"), inputView: AnyView(salaryField), designSystem: appState.designSystem)
+                        EditFieldView(title: "Weekly Worktime",
+                                      icon: Image("MoneyClockIcon"),
+                                      inputView: AnyView(worktimePicker),
+                                      designSystem: appState.designSystem)
+                        
+                        EditFieldView(title: "Weekly workdays",
+                                      icon: Image("CalendarIcon"),
+                                      inputView: AnyView(weekdays),
+                                      designSystem: appState.designSystem)
+                        
+                        EditFieldView(title: "Monthly Income",
+                                      icon: Image("MoneyIcon"),
+                                      inputView: AnyView(salaryField),
+                                      designSystem: appState.designSystem)
+                        
+                        EditFieldView(title: "Theme",
+                                      icon: Image("MoneyIcon"),
+                                      inputView: AnyView(themes),
+                                      designSystem: appState.designSystem)
                     }
                 }
             }
@@ -100,6 +112,13 @@ struct EditView: View {
        )
         
         return CurrencyField(salaryBinding, placeholder: "", designSystem: appState.designSystem, textAlignment: NSTextAlignment.left)
+    }
+    
+    private var themes: some View {
+        return NavigationLink(destination: ThemeSelectionListView()) {
+            Text(type(of:appState.designSystem).id)
+                .font(appState.designSystem.font.regular(size: .body).asFont)
+        }
     }
     
 }
@@ -194,4 +213,16 @@ struct EditFieldView: View {
         }
         .listRowBackground(designSystem.color.primary.asColor)
     }
+}
+
+struct ThemeSelectionListView: View {
+    
+    var body: some View {
+        List {
+            ForEach(DesignSystemFactory.allThemes(), id: \.self) {
+                Text($0)
+            }
+        }
+    }
+    
 }

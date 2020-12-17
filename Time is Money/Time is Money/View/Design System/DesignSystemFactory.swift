@@ -9,6 +9,14 @@
 import Foundation
 
 struct DesignSystemFactory {
+    
+    static func allThemes() -> [String] {
+        return [
+            "Classic",
+            "Clean"
+        ]
+    }
+    
     static func getBy(_ id: String) -> ThemeConfigurationProtocol {
         switch id {
         case ClassicConfiguration.id: return ClassicConfiguration()
