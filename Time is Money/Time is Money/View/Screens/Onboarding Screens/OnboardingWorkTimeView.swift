@@ -32,8 +32,8 @@ struct OnboardingWorkTimeView: View {
                 
                 Text("How many hours do you work per week?")
                     .lineLimit(nil)
-                    .font(config.font.bold(size: .title).swiftUIFont)
-                    .foregroundColor(config.color.complementaryColor.swiftUIColor)
+                    .font(DesignSystem.font.bold(size: .title).asFont)
+                    .foregroundColor(DesignSystem.color.complementary.asColor)
                     .frame(maxHeight: .infinity)
                 
                 Spacer()
@@ -48,12 +48,12 @@ struct OnboardingWorkTimeView: View {
                 Spacer()
             
                 Text("\(hours[hoursArrayIndex])")
-                    .font(config.font.bold(size: .title).swiftUIFont)
-                    .foregroundColor(config.color.complementaryColor.swiftUIColor)
+                    .font(DesignSystem.font.bold(size: .title).asFont)
+                    .foregroundColor(DesignSystem.color.complementary.asColor)
                     .padding(.bottom, 6)
                 Text("Hours per week")
-                    .font(config.font.bold(size: .title).swiftUIFont)
-                    .foregroundColor(config.color.complementaryColor.swiftUIColor)
+                    .font(DesignSystem.font.bold(size: .title).asFont)
+                    .foregroundColor(DesignSystem.color.complementary.asColor)
                 maybePickerSection(selectedHours: selectedHours)
                 
                 Spacer()
@@ -68,8 +68,8 @@ struct OnboardingWorkTimeView: View {
             return
                 AnyView(
                         Text("(Set your workdays to update here)")
-                            .font(config.font.light(size: .h4).swiftUIFont)
-                        .foregroundColor(config.color.complementaryColor.swiftUIColor)
+                            .font(DesignSystem.font.light(size: .h4).asFont)
+                        .foregroundColor(DesignSystem.color.complementary.asColor)
                             .multilineTextAlignment(.center)
                 )
         }
@@ -81,10 +81,10 @@ struct OnboardingWorkTimeView: View {
                 Picker(selection: selectedHours, label: EmptyView()) {
                     ForEach(0 ..< self.hours.count) {
                         Text(self.hours[$0]+" "+hours)
-                            .foregroundColor(self.appState.user.isSelectedHoursValid($0) ? config.color.disabledColor.swiftUIColor : config.color.complementaryColor.swiftUIColor)
+                            .foregroundColor(self.appState.user.isSelectedHoursValid($0) ? DesignSystem.color.disabled.asColor : DesignSystem.color.complementary.asColor)
                     }
                 }
-                .foregroundColor(config.color.complementaryColor.swiftUIColor)
+                .foregroundColor(DesignSystem.color.complementary.asColor)
                 .pickerStyle(WheelPickerStyle())
                 .labelsHidden()
             }

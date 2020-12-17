@@ -20,17 +20,6 @@ struct ScenarioFactory {
         }
     }
     
-    static private func officeScenarios(avatar: Avatar) -> [String] {
-        let id = avatar.id != "male2-deprecated" ? avatar.id : "male2"
-
-        return officeScenarioTitles(avatarId: id)
-    }
-    
-    static private func officeScenarioTitles(avatarId: String) -> [String] {
-        (0...13).map { "office_\(avatarId)_table\($0)" }
-    }
-    
-    
     static func getScenario(from scenarios: [Image], price: NSDecimalNumber, user: User) -> Image {
         let maxIndex = NSDecimalNumber(value: scenarios.count-1)
         let maxPrice = NSDecimalNumber(value: max(1,user.monthlySalary).asDouble())
@@ -39,5 +28,12 @@ struct ScenarioFactory {
 
         return scenarios[Int(expensivityIndex)]
     }
+}
 
+// MARK: - Office
+
+extension ScenarioFactory {
+    static private func officeScenarios(avatar: Avatar) -> [String] {
+        (0...13).map { "office_\(avatar.id)_table\($0)" }
+    }
 }

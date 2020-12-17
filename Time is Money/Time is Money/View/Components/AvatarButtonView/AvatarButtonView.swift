@@ -53,7 +53,9 @@ private extension Image {
             .padding(buttonPadding)
             .scaleEffect(isSelected ? 0.90 : 1)
             .animation(.easeInOut)
-            .background(isSelected ? GlobalConfiguration.configuration.color.enabledColor.swiftUIColor : GlobalConfiguration.configuration.color.disabledColor.swiftUIColor)
+            .background(isSelected ?
+                            DesignSystem.color.enabled.asColor :
+                            DesignSystem.color.disabled.asColor)
             .cornerRadius(32)
 
     }

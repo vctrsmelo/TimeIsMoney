@@ -20,7 +20,7 @@ struct CurrencyField: UIViewRepresentable {
     var keyboardWillHide: (() -> ())?
     var keyboardWillShow: (() -> ())?
     
-    init(_ value: Binding<Decimal>, placeholder: String, textColor: UIColor = config.color.complementaryColor, font: UIFont = config.font.bold(size: .title).uiKitFont, textAlignment: NSTextAlignment = .center, keyboardWillHide: (() -> ())? = nil, keyboardWillShow: (() -> ())? = nil) {
+    init(_ value: Binding<Decimal>, placeholder: String, textColor: UIColor = DesignSystem.color.complementary.asUIColor, font: UIFont = DesignSystem.font.bold(size: .title).asUIFont, textAlignment: NSTextAlignment = .center, keyboardWillHide: (() -> ())? = nil, keyboardWillShow: (() -> ())? = nil) {
         self.value = value
         self.placeholder = placeholder
         self.textColor = textColor

@@ -28,8 +28,8 @@ struct CurrencyInputComponentView: View {
     var body: some View {
         VStack {
             Text("Type below the price")
-                .font(config.font.light(size: .h4).swiftUIFont)
-                .foregroundColor(config.color.complementaryColor.swiftUIColor)
+                .font(DesignSystem.font.light(size: .h4).asFont)
+                .foregroundColor(DesignSystem.color.complementary.asColor)
                 .isHidden(isKeyboardVisible)
 
             CurrencyField(priceBinding, placeholder: "Income", textColor: .white)

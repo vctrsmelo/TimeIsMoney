@@ -10,74 +10,30 @@ import Foundation
 import SwiftUI
 
 public enum Weekday: String, Codable, Identifiable {
-    
+    case monday = "Mon"
+    case tuesday = "Tue"
+    case wednesday = "Wed"
+    case thursday = "Thu"
+    case friday = "Fri"
+    case saturday = "Sat"
+    case sunday = "Sun"
+}
+
+extension Weekday {
     public var id: String {
         return self.localizedLong()
     }
     
-    case monday
-    case tuesday
-    case wednesday
-    case thursday
-    case friday
-    case saturday
-    case sunday
-    
     public func localized() -> String {
-        switch self {
-        case .monday:
-            return "Mon_weekday_short"
-        case .tuesday:
-            return "Tue_weekday_short"
-        case .wednesday:
-            return "Wed_weekday_short"
-        case .thursday:
-            return "Thu_weekday_short"
-        case .friday:
-            return "Fri_weekday_short"
-        case .saturday:
-            return "Sat_weekday_short"
-        case .sunday:
-            return "Sun_weekday_short"
-        }
+        NSLocalizedString("\(self.rawValue)_weekday_short", comment: "")
     }
     
     public func localizedMedium() -> String {
-        switch self {
-        case .monday:
-            return "Mon_weekday_medium"
-        case .tuesday:
-            return "Tue_weekday_medium"
-        case .wednesday:
-            return "Wed_weekday_medium"
-        case .thursday:
-            return "Thu_weekday_medium"
-        case .friday:
-            return "Fri_weekday_medium"
-        case .saturday:
-            return "Sat_weekday_medium"
-        case .sunday:
-            return "Sun_weekday_medium"
-        }
+        NSLocalizedString("\(self.rawValue)_weekday_medium", comment: "")
     }
     
     public func localizedLong() -> String {
-        switch self {
-        case .monday:
-            return "Mon_weekday_long"
-        case .tuesday:
-            return "Tue_weekday_long"
-        case .wednesday:
-            return "Wed_weekday_long"
-        case .thursday:
-            return "Thu_weekday_long"
-        case .friday:
-            return "Fri_weekday_long"
-        case .saturday:
-            return "Sat_weekday_long"
-        case .sunday:
-            return "Sun_weekday_long"
-        }
+        NSLocalizedString("\(self.rawValue)_weekday_long", comment: "")
     }
     
     static public func all() -> [Weekday] {

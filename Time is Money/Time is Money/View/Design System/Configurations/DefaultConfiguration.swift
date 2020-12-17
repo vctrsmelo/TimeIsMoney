@@ -10,42 +10,42 @@ import SwiftUI
 import UIKit
 
 class DefaultConfiguration: ThemeConfigurationProtocol {
-    let color: ColorStyle = DefaultColorStyle()
-    let font: FontConfiguration = DefaultFontConfiguration()
-    let enabledCornerRadius = true
-    let cornerRadiusType = CornerRadiusType.three
+    let color: DSColorStyle = DefaultColorStyle()
+    let font: DSFontConfiguration = DefaultFontConfiguration()
+    let isCornerRadiusEnabled = true
+    let cornerRadius = DSCornerRadius.three
 }
 
-class DefaultColorStyle: ColorStyle {
-    let brandColor = UIColor(named: "defaultBrandColor")!
-    let primaryColor = UIColor(named: "defaultPrimaryColor")!
-    let secondaryColor = UIColor(named: "defaultSecondaryColor")!
-    let complementaryColor = UIColor(named: "defaultComplementaryColor")!
-    let enabledColor = UIColor(named: "defaultEnabledColor")!
-    let disabledColor = UIColor(named: "defaultDisabledColor")!
+class DefaultColorStyle: DSColorStyle {
+    let brand = DSColor(named: "defaultBrandColor")
+    let primary = DSColor(named: "defaultPrimaryColor")
+    let secondary = DSColor(named: "defaultSecondaryColor")
+    let complementary = DSColor(named: "defaultComplementaryColor")
+    let enabled = DSColor(named: "defaultEnabledColor")
+    let disabled = DSColor(named: "defaultDisabledColor")
 }
 
-class DefaultFontConfiguration: FontConfiguration {
+struct DefaultFontConfiguration: DSFontConfiguration {
     
-    func light(size: FontSize) -> DSFont {
+    func light(size: DSFontSize) -> DSFont {
         getDSFont(size: size, weight: .light)
     }
     
-    func regular(size: FontSize) -> DSFont {
+    func regular(size: DSFontSize) -> DSFont {
         getDSFont(size: size, weight: .regular)
     }
     
-    func semibold(size: FontSize) -> DSFont {
+    func semibold(size: DSFontSize) -> DSFont {
         getDSFont(size: size, weight: .semibold)
     }
     
-    func bold(size: FontSize) -> DSFont {
+    func bold(size: DSFontSize) -> DSFont {
         getDSFont(size: size, weight: .bold)
     }
     
-    private func getDSFont(size: FontSize, weight: Font.Weight) -> DSFont {
+    private func getDSFont(size: DSFontSize, weight: Font.Weight) -> DSFont {
         let font = Font.system(size: size.rawValue, weight: weight)
         let uiFont = UIFont.systemFont(ofSize: size.rawValue, weight: weight.uiFontWeight)
-        return DSFont(swiftUIFont: font, uiKitFont: uiFont)
+        return DSFont(asFont: font, asUIFont: uiFont)
     }
 }

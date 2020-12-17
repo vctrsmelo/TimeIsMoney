@@ -7,14 +7,9 @@
 //
 
 import Foundation
-import UIKit
-import SwiftUI
 
-var config: ThemeConfigurationProtocol {
-    GlobalConfiguration.configuration
-}
+fileprivate let designSystemConfiguration = DefaultConfiguration()
 
-class GlobalConfiguration {
-    static var configuration: ThemeConfigurationProtocol = DefaultConfiguration()
-
+var DesignSystem: ThemeConfigurationProtocol {
+    designSystemConfiguration
 }

@@ -6,8 +6,6 @@
 //  Copyright © 2020 Victor S Melo. All rights reserved.
 //
 
-import SwiftUI
-
 struct AvatarFactory {
 
     static let all: [Avatar] = {
@@ -39,6 +37,6 @@ struct AvatarFactory {
     }
     
     static func getById(id: String) -> Avatar {
-        all.first { $0.id == id } ?? AvatarMale2Deprecated()
+        all.first { $0.id == id } ?? AvatarMale2()
     }
 }

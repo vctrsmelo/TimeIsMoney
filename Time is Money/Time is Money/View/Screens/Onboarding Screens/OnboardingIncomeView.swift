@@ -36,8 +36,8 @@ struct OnboardingIncomeView: View {
                 HStack {
                     Text("What is your income?")
                         .padding(.top, 20)
-                        .font(config.font.bold(size: .title).swiftUIFont)
-                        .foregroundColor(config.color.complementaryColor.swiftUIColor)
+                        .font(DesignSystem.font.bold(size: .title).asFont)
+                        .foregroundColor(DesignSystem.color.complementary.asColor)
                         .frame(maxWidth: .infinity, maxHeight:80)
                 }
                 
@@ -61,8 +61,8 @@ struct OnboardingIncomeView: View {
                 
                 HStack {
                     Text("per month")
-                        .font(config.font.light(size: .body).swiftUIFont)
-                        .foregroundColor(config.color.complementaryColor.swiftUIColor)
+                        .font(DesignSystem.font.light(size: .body).asFont)
+                        .foregroundColor(DesignSystem.color.complementary.asColor)
                 }
                 
                 Spacer()
@@ -70,10 +70,10 @@ struct OnboardingIncomeView: View {
                 HStack {
                     NavigationLink(destination: MainView().environmentObject(self.appState)) {
                         Text("Finish")
-                            .font(config.font.semibold(size: .body).swiftUIFont)
+                            .font(DesignSystem.font.semibold(size: .body).asFont)
                             .frame(width: 200, height: 50, alignment: .center)
-                            .background(config.color.complementaryColor.swiftUIColor)
-                            .foregroundColor(config.color.primaryColor.swiftUIColor)
+                            .background(DesignSystem.color.complementary.asColor)
+                            .foregroundColor(DesignSystem.color.primary.asColor)
                             .cornerRadius(5)
                     }
                 }
