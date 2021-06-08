@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		656D24ECE819A573D47C940D /* Pods_Time_is_Money.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DE7463242B13DBA38ABD09 /* Pods_Time_is_Money.framework */; };
 		BE270BD723C039E50099AAC7 /* OnboardingWeekdaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE270BD623C039E50099AAC7 /* OnboardingWeekdaysView.swift */; };
 		BE28C4F123D7A9D300CA9D13 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28C4F023D7A9D300CA9D13 /* R.generated.swift */; };
 		BE28C4F823D7AB3400CA9D13 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE28C4FA23D7AB3400CA9D13 /* Localizable.strings */; };
@@ -46,6 +45,7 @@
 		BE4B4F1B23F0C15C0090CCD9 /* AvatarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1A23F0C15C0090CCD9 /* AvatarPickerView.swift */; };
 		BE4B4F1E23F0C5890090CCD9 /* AvatarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1D23F0C5890090CCD9 /* AvatarButtonView.swift */; };
 		BE57677E23CE838D004BF48C /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57677D23CE838D004BF48C /* EditView.swift */; };
+		BE60E037266F9CAB00039B28 /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = BE60E036266F9CAB00039B28 /* Rswift */; };
 		BE66B18323BD096800166912 /* OnboardingWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B18223BD096800166912 /* OnboardingWelcomeView.swift */; };
 		BE85876923BFF2A300DEFE98 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE85876823BFF2A300DEFE98 /* Formatters.swift */; };
 		BE92644423EC4F020072A555 /* CurrencyInputComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92644323EC4F020072A555 /* CurrencyInputComponentView.swift */; };
@@ -69,10 +69,6 @@
 		BEC00AF223BFE591001B6724 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC00AF123BFE591001B6724 /* View+Extensions.swift */; };
 		BEC748BB23D23BB50027F26D /* WeekHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC748BA23D23BB50027F26D /* WeekHStack.swift */; };
 		BEC748BD23D23BCF0027F26D /* WeekdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC748BC23D23BCF0027F26D /* WeekdayView.swift */; };
-		BEC76D9423F93F0C0059C724 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC76D9323F93F0C0059C724 /* NotificationCenter.framework */; };
-		BEC76D9723F93F0C0059C724 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC76D9623F93F0C0059C724 /* TodayViewController.swift */; };
-		BEC76D9A23F93F0C0059C724 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEC76D9823F93F0C0059C724 /* MainInterface.storyboard */; };
-		BEC76D9E23F93F0C0059C724 /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BEC76D9223F93F0C0059C724 /* Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BEFBF0E723BD470200FBE0D2 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFBF0E623BD470200FBE0D2 /* Design.swift */; };
 		EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427001234F4A1E007A63D9 /* AppDelegate.swift */; };
 		EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427003234F4A1E007A63D9 /* SceneDelegate.swift */; };
@@ -83,13 +79,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BEC76D9C23F93F0C0059C724 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EE426FF6234F4A1E007A63D9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BEC76D9123F93F0C0059C724;
-			remoteInfo = Widget;
-		};
 		EE427018234F4A23007A63D9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EE426FF6234F4A1E007A63D9 /* Project object */;
@@ -113,7 +102,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				BEC76D9E23F93F0C0059C724 /* Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,9 +109,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		39B88DD7EAD41710042B064D /* Pods-Time is Money.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time is Money.release.xcconfig"; path = "Target Support Files/Pods-Time is Money/Pods-Time is Money.release.xcconfig"; sourceTree = "<group>"; };
-		69DE7463242B13DBA38ABD09 /* Pods_Time_is_Money.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Time_is_Money.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		72A8156F1017C5870C6B6FFB /* Pods-Time is Money.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Time is Money.debug.xcconfig"; path = "Target Support Files/Pods-Time is Money/Pods-Time is Money.debug.xcconfig"; sourceTree = "<group>"; };
 		BE270BD623C039E50099AAC7 /* OnboardingWeekdaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWeekdaysView.swift; sourceTree = "<group>"; };
 		BE28C4F023D7A9D300CA9D13 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		BE28C4F523D7AABA00CA9D13 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -158,7 +143,6 @@
 		BE4B4F1D23F0C5890090CCD9 /* AvatarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarButtonView.swift; sourceTree = "<group>"; };
 		BE57677D23CE838D004BF48C /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		BE66B18223BD096800166912 /* OnboardingWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeView.swift; sourceTree = "<group>"; };
-		BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimeIsMoneyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE85876823BFF2A300DEFE98 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		BE92644323EC4F020072A555 /* CurrencyInputComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyInputComponentView.swift; sourceTree = "<group>"; };
 		BE92644523ECD0380072A555 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
@@ -189,11 +173,7 @@
 		BEC00AF123BFE591001B6724 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		BEC748BA23D23BB50027F26D /* WeekHStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHStack.swift; sourceTree = "<group>"; };
 		BEC748BC23D23BCF0027F26D /* WeekdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayView.swift; sourceTree = "<group>"; };
-		BEC76D9223F93F0C0059C724 /* Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC76D9323F93F0C0059C724 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		BEC76D9623F93F0C0059C724 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		BEC76D9923F93F0C0059C724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		BEC76D9B23F93F0C0059C724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEFBF0E623BD470200FBE0D2 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		EE426FFE234F4A1E007A63D9 /* Time is Money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time is Money.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE427001234F4A1E007A63D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -209,19 +189,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BEC76D8F23F93F0C0059C724 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BEC76D9423F93F0C0059C724 /* NotificationCenter.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		EE426FFB234F4A1E007A63D9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				656D24ECE819A573D47C940D /* Pods_Time_is_Money.framework in Frameworks */,
+				BE60E037266F9CAB00039B28 /* Rswift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,15 +214,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1810937E6B25167BFE90E2C0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				72A8156F1017C5870C6B6FFB /* Pods-Time is Money.debug.xcconfig */,
-				39B88DD7EAD41710042B064D /* Pods-Time is Money.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		BE293A6323F4958400BB4E98 /* Configurations */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,8 +402,6 @@
 		BE815FC52383497200000FB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BE815FC62383497200000FB9 /* TimeIsMoneyCore.framework */,
-				69DE7463242B13DBA38ABD09 /* Pods_Time_is_Money.framework */,
 				BEC76D9323F93F0C0059C724 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
@@ -473,28 +434,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		BEC76D9523F93F0C0059C724 /* Widget */ = {
-			isa = PBXGroup;
-			children = (
-				BEC76D9623F93F0C0059C724 /* TodayViewController.swift */,
-				BEC76D9823F93F0C0059C724 /* MainInterface.storyboard */,
-				BEC76D9B23F93F0C0059C724 /* Info.plist */,
-			);
-			path = Widget;
-			sourceTree = "<group>";
-		};
 		EE426FF5234F4A1E007A63D9 = {
 			isa = PBXGroup;
 			children = (
 				BE28C4F023D7A9D300CA9D13 /* R.generated.swift */,
 				BE2F8B2723F4B31700D26E27 /* Time is Money */,
 				BE2F8B2523F4B30900D26E27 /* GoogleService-Info.plist */,
-				BEC76D9523F93F0C0059C724 /* Widget */,
 				EE42701A234F4A23007A63D9 /* Time is MoneyTests */,
 				EE427025234F4A23007A63D9 /* Time is MoneyUITests */,
 				EE426FFF234F4A1E007A63D9 /* Products */,
 				BE815FC52383497200000FB9 /* Frameworks */,
-				1810937E6B25167BFE90E2C0 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -504,7 +453,6 @@
 				EE426FFE234F4A1E007A63D9 /* Time is Money.app */,
 				EE427017234F4A23007A63D9 /* Time is MoneyTests.xctest */,
 				EE427022234F4A23007A63D9 /* Time is MoneyUITests.xctest */,
-				BEC76D9223F93F0C0059C724 /* Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -534,41 +482,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BEC76D9123F93F0C0059C724 /* Widget */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BEC76DA223F93F0C0059C724 /* Build configuration list for PBXNativeTarget "Widget" */;
-			buildPhases = (
-				BEC76D8E23F93F0C0059C724 /* Sources */,
-				BEC76D8F23F93F0C0059C724 /* Frameworks */,
-				BEC76D9023F93F0C0059C724 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Widget;
-			productName = Widget;
-			productReference = BEC76D9223F93F0C0059C724 /* Widget.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		EE426FFD234F4A1E007A63D9 /* Time is Money */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE42702B234F4A23007A63D9 /* Build configuration list for PBXNativeTarget "Time is Money" */;
 			buildPhases = (
-				C2DBEFCDA3648FBB26355388 /* [CP] Check Pods Manifest.lock */,
 				BE28C4EF23D7A96C00CA9D13 /* R.Swift */,
 				EE426FFA234F4A1E007A63D9 /* Sources */,
 				EE426FFB234F4A1E007A63D9 /* Frameworks */,
 				EE426FFC234F4A1E007A63D9 /* Resources */,
-				0B1B414EC172E0780F87F8F7 /* [CP] Embed Pods Frameworks */,
 				BEC76D9F23F93F0C0059C724 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BEC76D9D23F93F0C0059C724 /* PBXTargetDependency */,
 			);
 			name = "Time is Money";
+			packageProductDependencies = (
+				BE60E036266F9CAB00039B28 /* Rswift */,
+			);
 			productName = "Time is Money";
 			productReference = EE426FFE234F4A1E007A63D9 /* Time is Money.app */;
 			productType = "com.apple.product-type.application";
@@ -620,9 +551,6 @@
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Victor S Melo";
 				TargetAttributes = {
-					BEC76D9123F93F0C0059C724 = {
-						CreatedOnToolsVersion = 11.3.1;
-					};
 					EE426FFD234F4A1E007A63D9 = {
 						CreatedOnToolsVersion = 11.1;
 					};
@@ -647,6 +575,9 @@
 				"pt-BR",
 			);
 			mainGroup = EE426FF5234F4A1E007A63D9;
+			packageReferences = (
+				BE60E035266F9CAB00039B28 /* XCRemoteSwiftPackageReference "R.swift" */,
+			);
 			productRefGroup = EE426FFF234F4A1E007A63D9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -654,20 +585,11 @@
 				EE426FFD234F4A1E007A63D9 /* Time is Money */,
 				EE427016234F4A23007A63D9 /* Time is MoneyTests */,
 				EE427021234F4A23007A63D9 /* Time is MoneyUITests */,
-				BEC76D9123F93F0C0059C724 /* Widget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BEC76D9023F93F0C0059C724 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BEC76D9A23F93F0C0059C724 /* MainInterface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		EE426FFC234F4A1E007A63D9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -697,23 +619,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0B1B414EC172E0780F87F8F7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Time is Money/Pods-Time is Money-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Time is Money/Pods-Time is Money-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Time is Money/Pods-Time is Money-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		BE28C4EF23D7A96C00CA9D13 /* R.Swift */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -732,41 +637,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
-		};
-		C2DBEFCDA3648FBB26355388 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Time is Money-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "rswift generate \"$SRCROOT/R.generated.swift\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BEC76D8E23F93F0C0059C724 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BEC76D9723F93F0C0059C724 /* TodayViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		EE426FFA234F4A1E007A63D9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -854,11 +729,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BEC76D9D23F93F0C0059C724 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BEC76D9123F93F0C0059C724 /* Widget */;
-			targetProxy = BEC76D9C23F93F0C0059C724 /* PBXContainerItemProxy */;
-		};
 		EE427019234F4A23007A63D9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EE426FFD234F4A1E007A63D9 /* Time is Money */;
@@ -881,14 +751,6 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		BEC76D9823F93F0C0059C724 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BEC76D9923F93F0C0059C724 /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
 		EE42700F234F4A23007A63D9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -901,46 +763,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		BEC76DA023F93F0C0059C724 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y93HUJS49V;
-				INFOPLIST_FILE = Widget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.victormelo.Time-is-Money.Widget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		BEC76DA123F93F0C0059C724 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y93HUJS49V;
-				INFOPLIST_FILE = Widget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.victormelo.Time-is-Money.Widget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		EE427029234F4A23007A63D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1059,7 +881,6 @@
 		};
 		EE42702C234F4A23007A63D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72A8156F1017C5870C6B6FFB /* Pods-Time is Money.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1087,7 +908,6 @@
 		};
 		EE42702D234F4A23007A63D9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 39B88DD7EAD41710042B064D /* Pods-Time is Money.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1203,15 +1023,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BEC76DA223F93F0C0059C724 /* Build configuration list for PBXNativeTarget "Widget" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BEC76DA023F93F0C0059C724 /* Debug */,
-				BEC76DA123F93F0C0059C724 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		EE426FF9234F4A1E007A63D9 /* Build configuration list for PBXProject "Time is Money" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1249,6 +1060,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BE60E035266F9CAB00039B28 /* XCRemoteSwiftPackageReference "R.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift.Library";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BE60E036266F9CAB00039B28 /* Rswift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE60E035266F9CAB00039B28 /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = Rswift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EE426FF6234F4A1E007A63D9 /* Project object */;
 }

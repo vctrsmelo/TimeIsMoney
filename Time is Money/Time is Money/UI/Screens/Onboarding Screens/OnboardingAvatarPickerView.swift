@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import Rswift
 
 struct OnboardingAvatarPickerView: View {
     
