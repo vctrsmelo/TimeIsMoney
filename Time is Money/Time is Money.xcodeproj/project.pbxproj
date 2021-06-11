@@ -31,7 +31,6 @@
 		BE442C7123EDA9E0002306E6 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645B23ED9F270072A555 /* Weekday.swift */; };
 		BE442C7223EDAA09002306E6 /* AppStateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645D23ED9F270072A555 /* AppStateRepository.swift */; };
 		BE442C7323EDAA14002306E6 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645923ED9F270072A555 /* Money.swift */; };
-		BE442C7423EDAA14002306E6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645A23ED9F270072A555 /* User.swift */; };
 		BE442C7523EDAA16002306E6 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645C23ED9F270072A555 /* Routine.swift */; };
 		BE442C7823EDAAB5002306E6 /* User+Salary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442C7723EDAAB5002306E6 /* User+Salary.swift */; };
 		BE442C7A23EDAB0F002306E6 /* TimePeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442C7923EDAB0F002306E6 /* TimePeriod.swift */; };
@@ -69,7 +68,13 @@
 		BEC00AF223BFE591001B6724 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC00AF123BFE591001B6724 /* View+Extensions.swift */; };
 		BEC748BB23D23BB50027F26D /* WeekHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC748BA23D23BB50027F26D /* WeekHStack.swift */; };
 		BEC748BD23D23BCF0027F26D /* WeekdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC748BC23D23BCF0027F26D /* WeekdayView.swift */; };
-		BEFBF0E723BD470200FBE0D2 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFBF0E623BD470200FBE0D2 /* Design.swift */; };
+		BED25A402672CEBE00CC4C43 /* InputSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED25A3F2672CEBE00CC4C43 /* InputSectionView.swift */; };
+		BED25A422672D18500CC4C43 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED25A412672D18500CC4C43 /* MainViewModel.swift */; };
+		BED25A442672F46300CC4C43 /* HomeNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED25A432672F46300CC4C43 /* HomeNavigationBarView.swift */; };
+		BED25A462672F4D600CC4C43 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED25A452672F4D600CC4C43 /* HomeHeaderView.swift */; };
+		BED25A482672F59F00CC4C43 /* WorkingTimeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED25A472672F59F00CC4C43 /* WorkingTimeText.swift */; };
+		BED25A4A2672F6C000CC4C43 /* WorkspaceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED25A492672F6C000CC4C43 /* WorkspaceImage.swift */; };
+		BED25A4C2672FF1900CC4C43 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED25A4B2672FF1900CC4C43 /* User.swift */; };
 		EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427001234F4A1E007A63D9 /* AppDelegate.swift */; };
 		EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427003234F4A1E007A63D9 /* SceneDelegate.swift */; };
 		EE427009234F4A1E007A63D9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427008234F4A1E007A63D9 /* MainView.swift */; };
@@ -152,7 +157,6 @@
 		BE92645123ED9F270072A555 /* DateComponentsFormatter+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponentsFormatter+String.swift"; sourceTree = "<group>"; };
 		BE92645323ED9F270072A555 /* TimeTextTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTextTranslator.swift; sourceTree = "<group>"; };
 		BE92645923ED9F270072A555 /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
-		BE92645A23ED9F270072A555 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BE92645B23ED9F270072A555 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		BE92645C23ED9F270072A555 /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
 		BE92645D23ED9F270072A555 /* AppStateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateRepository.swift; sourceTree = "<group>"; };
@@ -174,7 +178,13 @@
 		BEC748BA23D23BB50027F26D /* WeekHStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHStack.swift; sourceTree = "<group>"; };
 		BEC748BC23D23BCF0027F26D /* WeekdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayView.swift; sourceTree = "<group>"; };
 		BEC76D9323F93F0C0059C724 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		BEFBF0E623BD470200FBE0D2 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
+		BED25A3F2672CEBE00CC4C43 /* InputSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSectionView.swift; sourceTree = "<group>"; };
+		BED25A412672D18500CC4C43 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		BED25A432672F46300CC4C43 /* HomeNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationBarView.swift; sourceTree = "<group>"; };
+		BED25A452672F4D600CC4C43 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		BED25A472672F59F00CC4C43 /* WorkingTimeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingTimeText.swift; sourceTree = "<group>"; };
+		BED25A492672F6C000CC4C43 /* WorkspaceImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceImage.swift; sourceTree = "<group>"; };
+		BED25A4B2672FF1900CC4C43 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EE426FFE234F4A1E007A63D9 /* Time is Money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time is Money.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE427001234F4A1E007A63D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE427003234F4A1E007A63D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -226,14 +236,11 @@
 		BE2F8B2723F4B31700D26E27 /* Time is Money */ = {
 			isa = PBXGroup;
 			children = (
-				BE442C5623ED9FE1002306E6 /* System */,
-				BE442C5723ED9FE5002306E6 /* Utilities */,
-				BE442C5D23EDA000002306E6 /* Injected */,
-				BE442C5C23ED9FFC002306E6 /* Repositories */,
-				BE442C5B23ED9FF9002306E6 /* Interactors */,
-				BE442C5A23ED9FF7002306E6 /* Models */,
-				BE442C5923ED9FF5002306E6 /* UI */,
+				BE442C5623ED9FE1002306E6 /* System Delegates */,
+				BED25A362672C99800CC4C43 /* Common */,
+				BED25A382672CA1000CC4C43 /* Flows */,
 				BE442C5823ED9FEE002306E6 /* Resources */,
+				BED25A332672C94D00CC4C43 /* Old Folder Structure */,
 			);
 			path = "Time is Money";
 			sourceTree = "<group>";
@@ -249,28 +256,19 @@
 			path = "Design System";
 			sourceTree = "<group>";
 		};
-		BE442C5623ED9FE1002306E6 /* System */ = {
+		BE442C5623ED9FE1002306E6 /* System Delegates */ = {
 			isa = PBXGroup;
 			children = (
 				EE427003234F4A1E007A63D9 /* SceneDelegate.swift */,
 				EE427001234F4A1E007A63D9 /* AppDelegate.swift */,
 			);
-			path = System;
+			path = "System Delegates";
 			sourceTree = "<group>";
 		};
 		BE442C5723ED9FE5002306E6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				BE442C6C23EDA834002306E6 /* SecondsContainedIn.swift */,
-				BEC00AF023BFE57D001B6724 /* Extensions */,
-				BE92644D23ED9F270072A555 /* Calculator.swift */,
-				BE92645323ED9F270072A555 /* TimeTextTranslator.swift */,
-				BEFBF0E623BD470200FBE0D2 /* Design.swift */,
-				BE85876823BFF2A300DEFE98 /* Formatters.swift */,
 				BE442C7923EDAB0F002306E6 /* TimePeriod.swift */,
-				BE4B4F0923EDCCE50090CCD9 /* TableImage.swift */,
-				BE4B4F1223EEFE500090CCD9 /* ScenarioFactory.swift */,
-				BE4B4F1423EF18E30090CCD9 /* AvatarFactory.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -287,22 +285,10 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		BE442C5923ED9FF5002306E6 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				BE38A04D23F34426005D51F9 /* Design System */,
-				BE442C5E23EDA080002306E6 /* Components */,
-				BE442C5F23EDA084002306E6 /* Screens */,
-				BEBACBAF23E745E0002ABD20 /* ViewModifiers */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
 		BE442C5A23ED9FF7002306E6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				BE92645923ED9F270072A555 /* Money.swift */,
-				BE92645A23ED9F270072A555 /* User.swift */,
 				BE92645B23ED9F270072A555 /* Weekday.swift */,
 				BE92645C23ED9F270072A555 /* Routine.swift */,
 				BE4B4F1623F0ACC40090CCD9 /* Avatar.swift */,
@@ -310,12 +296,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		BE442C5B23ED9FF9002306E6 /* Interactors */ = {
+		BE442C5B23ED9FF9002306E6 /* Global State */ = {
 			isa = PBXGroup;
 			children = (
+				BE92645E23ED9F270072A555 /* AppState.swift */,
+				BE92644B23ED95210072A555 /* InteractorsContainer.swift */,
 				BE92644523ECD0380072A555 /* MainInteractor.swift */,
+				BED25A4B2672FF1900CC4C43 /* User.swift */,
 			);
-			path = Interactors;
+			path = "Global State";
 			sourceTree = "<group>";
 		};
 		BE442C5C23ED9FFC002306E6 /* Repositories */ = {
@@ -326,16 +315,7 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
-		BE442C5D23EDA000002306E6 /* Injected */ = {
-			isa = PBXGroup;
-			children = (
-				BE92645E23ED9F270072A555 /* AppState.swift */,
-				BE92644B23ED95210072A555 /* InteractorsContainer.swift */,
-			);
-			path = Injected;
-			sourceTree = "<group>";
-		};
-		BE442C5E23EDA080002306E6 /* Components */ = {
+		BE442C5E23EDA080002306E6 /* View Components */ = {
 			isa = PBXGroup;
 			children = (
 				BE4B4F1C23F0C5780090CCD9 /* AvatarButtonView */,
@@ -350,20 +330,18 @@
 				BEB0979923BF984F00244E30 /* PageViewController.swift */,
 				BEB0979C23BF990E00244E30 /* PageView.swift */,
 			);
-			path = Components;
+			path = "View Components";
 			sourceTree = "<group>";
 		};
-		BE442C5F23EDA084002306E6 /* Screens */ = {
+		BE442C5F23EDA084002306E6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BE442C6023EDA10E002306E6 /* Onboarding Screens */,
-				EE427008234F4A1E007A63D9 /* MainView.swift */,
 				BE57677D23CE838D004BF48C /* EditView.swift */,
 			);
-			path = Screens;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		BE442C6023EDA10E002306E6 /* Onboarding Screens */ = {
+		BE442C6023EDA10E002306E6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				BE4B4F1823F0B78C0090CCD9 /* OnboardingAvatarPickerView.swift */,
@@ -372,7 +350,7 @@
 				BE66B18223BD096800166912 /* OnboardingWelcomeView.swift */,
 				BEC00AE823BFDC2C001B6724 /* OnboardingWorkTimeView.swift */,
 			);
-			path = "Onboarding Screens";
+			path = Views;
 			sourceTree = "<group>";
 		};
 		BE442C6923EDA674002306E6 /* Preview Content */ = {
@@ -407,12 +385,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BEBACBAF23E745E0002ABD20 /* ViewModifiers */ = {
+		BEBACBAF23E745E0002ABD20 /* View Modifiers */ = {
 			isa = PBXGroup;
 			children = (
 				BEBACBB023E745EA002ABD20 /* ScaledFont.swift */,
 			);
-			path = ViewModifiers;
+			path = "View Modifiers";
 			sourceTree = "<group>";
 		};
 		BEC00AF023BFE57D001B6724 /* Extensions */ = {
@@ -430,8 +408,117 @@
 				BE4B4F0723EDC89A0090CCD9 /* User+WorkTime.swift */,
 				BE293A5D23F4719500BB4E98 /* UIColor+Init.swift */,
 				BE293A5F23F4895A00BB4E98 /* Font+UIFont.swift */,
+				BE85876823BFF2A300DEFE98 /* Formatters.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BED25A332672C94D00CC4C43 /* Old Folder Structure */ = {
+			isa = PBXGroup;
+			children = (
+				BED25A3D2672CC8E00CC4C43 /* Avatars */,
+				BED25A3C2672CBE800CC4C43 /* Data to View Handlers */,
+				BED25A3B2672CB9E00CC4C43 /* Time Money Conversion */,
+				BED25A3A2672CB7E00CC4C43 /* Time Helpers */,
+				BE442C5723ED9FE5002306E6 /* Utilities */,
+				BE442C5C23ED9FFC002306E6 /* Repositories */,
+				BE442C5A23ED9FF7002306E6 /* Models */,
+			);
+			path = "Old Folder Structure";
+			sourceTree = "<group>";
+		};
+		BED25A342672C97100CC4C43 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				BE442C6023EDA10E002306E6 /* Views */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		BED25A352672C97600CC4C43 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BED25A392672CA3900CC4C43 /* Views */,
+				BE4B4F1223EEFE500090CCD9 /* ScenarioFactory.swift */,
+				BE4B4F0923EDCCE50090CCD9 /* TableImage.swift */,
+				BED25A412672D18500CC4C43 /* MainViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BED25A362672C99800CC4C43 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BE38A04D23F34426005D51F9 /* Design System */,
+				BEC00AF023BFE57D001B6724 /* Extensions */,
+				BE442C5B23ED9FF9002306E6 /* Global State */,
+				BE442C5E23EDA080002306E6 /* View Components */,
+				BEBACBAF23E745E0002ABD20 /* View Modifiers */,
+				BE4B4F1423EF18E30090CCD9 /* AvatarFactory.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		BED25A372672C9FE00CC4C43 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				BE442C5F23EDA084002306E6 /* Views */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		BED25A382672CA1000CC4C43 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				BED25A352672C97600CC4C43 /* Home */,
+				BED25A372672C9FE00CC4C43 /* Config */,
+				BED25A342672C97100CC4C43 /* Onboarding */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		BED25A392672CA3900CC4C43 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BED25A472672F59F00CC4C43 /* WorkingTimeText.swift */,
+				EE427008234F4A1E007A63D9 /* MainView.swift */,
+				BED25A3F2672CEBE00CC4C43 /* InputSectionView.swift */,
+				BED25A432672F46300CC4C43 /* HomeNavigationBarView.swift */,
+				BED25A452672F4D600CC4C43 /* HomeHeaderView.swift */,
+				BED25A492672F6C000CC4C43 /* WorkspaceImage.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BED25A3A2672CB7E00CC4C43 /* Time Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BE442C6C23EDA834002306E6 /* SecondsContainedIn.swift */,
+			);
+			path = "Time Helpers";
+			sourceTree = "<group>";
+		};
+		BED25A3B2672CB9E00CC4C43 /* Time Money Conversion */ = {
+			isa = PBXGroup;
+			children = (
+				BE92644D23ED9F270072A555 /* Calculator.swift */,
+			);
+			path = "Time Money Conversion";
+			sourceTree = "<group>";
+		};
+		BED25A3C2672CBE800CC4C43 /* Data to View Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				BE92645323ED9F270072A555 /* TimeTextTranslator.swift */,
+			);
+			path = "Data to View Handlers";
+			sourceTree = "<group>";
+		};
+		BED25A3D2672CC8E00CC4C43 /* Avatars */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Avatars;
 			sourceTree = "<group>";
 		};
 		EE426FF5234F4A1E007A63D9 = {
@@ -648,6 +735,8 @@
 			files = (
 				BE4B4F1923F0B78C0090CCD9 /* OnboardingAvatarPickerView.swift in Sources */,
 				BE66B18323BD096800166912 /* OnboardingWelcomeView.swift in Sources */,
+				BED25A402672CEBE00CC4C43 /* InputSectionView.swift in Sources */,
+				BED25A442672F46300CC4C43 /* HomeNavigationBarView.swift in Sources */,
 				BE38A05123F34454005D51F9 /* DefaultConfiguration.swift in Sources */,
 				BE38A05623F345D0005D51F9 /* DSFont.swift in Sources */,
 				BE442C7123EDA9E0002306E6 /* Weekday.swift in Sources */,
@@ -675,20 +764,23 @@
 				BE442C6423EDA32F002306E6 /* Double+Conversions.swift in Sources */,
 				BE442C6223EDA31B002306E6 /* Decimal+Conversions.swift in Sources */,
 				BE92644C23ED95210072A555 /* InteractorsContainer.swift in Sources */,
-				BE442C7423EDAA14002306E6 /* User.swift in Sources */,
+				BED25A482672F59F00CC4C43 /* WorkingTimeText.swift in Sources */,
 				BE38A04F23F34434005D51F9 /* GlobalConfiguration.swift in Sources */,
 				BEC00AEF23BFE361001B6724 /* BackgroundView.swift in Sources */,
 				EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */,
 				BE442C7823EDAAB5002306E6 /* User+Salary.swift in Sources */,
-				BEFBF0E723BD470200FBE0D2 /* Design.swift in Sources */,
+				BED25A462672F4D600CC4C43 /* HomeHeaderView.swift in Sources */,
 				BEC00AF223BFE591001B6724 /* View+Extensions.swift in Sources */,
 				BE4B4F1B23F0C15C0090CCD9 /* AvatarPickerView.swift in Sources */,
+				BED25A422672D18500CC4C43 /* MainViewModel.swift in Sources */,
+				BED25A4C2672FF1900CC4C43 /* User.swift in Sources */,
 				BE442C6823EDA399002306E6 /* DateComponentsFormatter+String.swift in Sources */,
 				BEA9AB3423C5308B0057EA1E /* CurrencyField.swift in Sources */,
 				BE4B4F0A23EDCCE50090CCD9 /* TableImage.swift in Sources */,
 				BE270BD723C039E50099AAC7 /* OnboardingWeekdaysView.swift in Sources */,
 				BE442C7023EDA9DC002306E6 /* AppState.swift in Sources */,
 				BE57677E23CE838D004BF48C /* EditView.swift in Sources */,
+				BED25A4A2672F6C000CC4C43 /* WorkspaceImage.swift in Sources */,
 				EE427009234F4A1E007A63D9 /* MainView.swift in Sources */,
 				BE293A6223F4957400BB4E98 /* DarkModeConfiguration.swift in Sources */,
 				BEC00AE923BFDC2C001B6724 /* OnboardingWorkTimeView.swift in Sources */,
@@ -885,7 +977,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"Time is Money/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = Y93HUJS49V;
 				ENABLE_PREVIEWS = YES;
@@ -898,7 +990,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.victormelo.Time-is-Money";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -912,7 +1004,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"Time is Money/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = Y93HUJS49V;
 				ENABLE_PREVIEWS = YES;
@@ -925,7 +1017,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.victormelo.Time-is-Money";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
