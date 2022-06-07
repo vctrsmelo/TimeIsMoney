@@ -31,7 +31,7 @@ extension XCTestCase {
             }
         }
         
-        return User(isOnboardingCompleted: true, monthlySalary: salary.asDecimal(), weeklyWorkHours: weeklyWorkHours, workdays: workdays)
+        return User(isOnboardingCompleted: true, monthlySalary: salary.asNSDecimalNumber(), weeklyWorkHours: weeklyWorkHours, workdays: workdays)
     }
     
     

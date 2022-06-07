@@ -16,35 +16,36 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         let interactors = InteractorsContainer.defaultValue
-        
         interactors.mainInteractor.loadAppState()
-        let pages = [AnyView(OnboardingWelcomeView()),
-                     AnyView(OnboardingAvatarPickerView()),
-                     AnyView(OnboardingWeekdaysView()),
-                     AnyView(OnboardingWorkTimeView()),
-                     AnyView(OnboardingIncomeView())].map { $0.environmentObject(interactors.mainInteractor.appState) }
         
+        let pages = getPages().map { $0.environmentObject(interactors.mainInteractor.appState) }
         let onboardingView = PageView(pages).environmentObject(interactors.mainInteractor.appState)
         
-        let mainView = NavigationView {
-            MainView()
-        }
-        .navigationViewStyle(StackNavigationViewStyle())
-        .environmentObject(interactors.mainInteractor.appState)
+        let mainView = NavigationView { MainView() }
+            .navigationViewStyle(StackNavigationViewStyle())
+            .environmentObject(interactors.mainInteractor.appState)
         
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
+            let isOnboardingCompleted = interactors.mainInteractor.appState.user.isOnboardingCompleted
             
-            if interactors.mainInteractor.appState.user.isOnboardingCompleted {
-                window.rootViewController = UIHostingController(rootView: mainView)
-            } else {
-                window.rootViewController = UIHostingController(rootView: onboardingView)
-            }
+            let rootVC = isOnboardingCompleted ?
+                UIHostingController(rootView: mainView) :
+                UIHostingController(rootView: onboardingView)
             
+            window.rootViewController = rootVC
             self.window = window
             window.makeKeyAndVisible()
         }
+    }
+    
+    private func getPages() -> [AnyView] {
+        [AnyView(OnboardingWelcomeView()),
+         AnyView(OnboardingAvatarPickerView()),
+         AnyView(OnboardingWeekdaysView()),
+         AnyView(OnboardingWorkTimeView()),
+         AnyView(OnboardingIncomeView())]
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

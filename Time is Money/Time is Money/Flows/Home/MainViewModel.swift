@@ -33,7 +33,7 @@ class MainViewState: ObservableObject {
             
         } else if let calculatedPrice = appState.getCurrentValue().getAsTimeInSeconds() {
             timeMessage = calculatedPrice < 1 ? R.string.localizable.lessThanASecond() :
-                TimeTextTranslator.getWorkTimeDescriptionToPay(for: calculatedPrice, user: appState.user)
+            TimeTextTranslator.getWorkTimeDescriptionToPay(for: NSDecimalNumber(value: calculatedPrice), user: appState.user)
         } else {
             timeMessage = "¯\\_(ツ)_/¯"
         }

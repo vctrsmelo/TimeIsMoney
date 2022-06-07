@@ -38,7 +38,7 @@ extension User {
     }
 
     func getSalaryPerSecond() -> Money {
-        getSalaryPerMinute() / NSDecimalNumber(value: SecondsContainedIn.minute.rawValue)
+        getSalaryPerMinute() / NSDecimalNumber(value: 1.minuteInSeconds)
     }
 
     func getMoneyReceivedFromSeconds(workSeconds: TimeInterval) -> Money {

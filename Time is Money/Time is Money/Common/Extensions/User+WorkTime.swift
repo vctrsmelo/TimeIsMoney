@@ -28,7 +28,7 @@ extension User {
     }
     
     public var weeklyWorkSeconds: NSDecimalNumber {
-        NSDecimalNumber(value: weeklyWorkHours) * NSDecimalNumber(value: SecondsContainedIn.hour.asDouble())
+        NSDecimalNumber(value: weeklyWorkHours) * NSDecimalNumber(value: 1.hourInSeconds)
     }
     
     public var dailyWorkSeconds: NSDecimalNumber {

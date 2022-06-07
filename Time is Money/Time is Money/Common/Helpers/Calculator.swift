@@ -17,7 +17,7 @@ enum CalculatorError: Error {
 
 enum Calculator {
     
-    static func getWorkTimeToPay(for price: Double?, user: User) -> Result<TimeInterval, CalculatorError> {
+    static func getWorkTimeToPay(for price: Double?, user: User) -> Result<NSDecimalNumber, CalculatorError> {
         guard let price = price else {
             return .failure(CalculatorError.undefinedPrice)
         }
@@ -26,10 +26,10 @@ enum Calculator {
         
     }
     
-    static func getWorkTimeToPay(for price: Money, user: User) -> Result<TimeInterval, CalculatorError> {
+    static func getWorkTimeToPay(for price: Money, user: User) -> Result<NSDecimalNumber, CalculatorError> {
         guard price > 0.0 else { return .success(0.0) }
-        guard user.workdays.count > 0 else { return .success(0.0) }
-        guard user.monthlySalary > 0.0 else { return .success(0.0) }
+        guard user.workdays.count > 0 else { return .failure(.undefinedWeeklyWorkDays) }
+        guard user.monthlySalary > 0.0 else { return .failure(.undefinedSalary) }
         if case .failure(let error) = isUserDataValid(user) {
             return .failure(error)
         }
@@ -65,7 +65,7 @@ enum Calculator {
         priceDiscountingAlreadyPaidValue -= user.getSalaryPerSecond() * workSecondsNeeded
         currentWorkSeconds += user.secondWorkSeconds * workSecondsNeeded
         
-        return .success(currentWorkSeconds.timeIntervalValue)
+        return .success(currentWorkSeconds)
     }
     
     static func getMoneyReceivedFromWorkSeconds(workSeconds: TimeInterval, user: User) -> Result<Money, CalculatorError> {

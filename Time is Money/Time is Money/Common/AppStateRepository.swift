@@ -1,11 +1,3 @@
-//
-//  UserRepository.swift
-//  TimeIsMoneyCore
-//
-//  Created by Victor Melo on 06/02/20.
-//  Copyright © 2020 Victor Melo. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import Combine

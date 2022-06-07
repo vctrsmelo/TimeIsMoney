@@ -59,7 +59,7 @@ import Foundation
         switch value {
         case .monetary(let value):
             if case .success(let tValue) = value.asSeconds(for: user) {
-                timeInSecondsValue = tValue
+                timeInSecondsValue = tValue.doubleValue
             }
         case .timeInSeconds(let value):
             timeInSecondsValue = value
@@ -77,7 +77,7 @@ private extension TimeInterval {
 }
 
 private extension Money {
-    func asSeconds(for user: User) -> Result<TimeInterval, CalculatorError> {
+    func asSeconds(for user: User) -> Result<NSDecimalNumber, CalculatorError> {
         return Calculator.getWorkTimeToPay(for: self, user: user)
     }
 }

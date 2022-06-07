@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,7 +26,6 @@
 		BE442C6723EDA399002306E6 /* NSDecimalNumber+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645023ED9F270072A555 /* NSDecimalNumber+Operators.swift */; };
 		BE442C6823EDA399002306E6 /* DateComponentsFormatter+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645123ED9F270072A555 /* DateComponentsFormatter+String.swift */; };
 		BE442C6B23EDA674002306E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE442C6A23EDA674002306E6 /* Preview Assets.xcassets */; };
-		BE442C6D23EDA834002306E6 /* SecondsContainedIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442C6C23EDA834002306E6 /* SecondsContainedIn.swift */; };
 		BE442C7023EDA9DC002306E6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645E23ED9F270072A555 /* AppState.swift */; };
 		BE442C7123EDA9E0002306E6 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645B23ED9F270072A555 /* Weekday.swift */; };
 		BE442C7223EDAA09002306E6 /* AppStateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645D23ED9F270072A555 /* AppStateRepository.swift */; };
@@ -44,7 +43,6 @@
 		BE4B4F1B23F0C15C0090CCD9 /* AvatarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1A23F0C15C0090CCD9 /* AvatarPickerView.swift */; };
 		BE4B4F1E23F0C5890090CCD9 /* AvatarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F1D23F0C5890090CCD9 /* AvatarButtonView.swift */; };
 		BE57677E23CE838D004BF48C /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57677D23CE838D004BF48C /* EditView.swift */; };
-		BE60E037266F9CAB00039B28 /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = BE60E036266F9CAB00039B28 /* Rswift */; };
 		BE66B18323BD096800166912 /* OnboardingWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B18223BD096800166912 /* OnboardingWelcomeView.swift */; };
 		BE85876923BFF2A300DEFE98 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE85876823BFF2A300DEFE98 /* Formatters.swift */; };
 		BE92644423EC4F020072A555 /* CurrencyInputComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92644323EC4F020072A555 /* CurrencyInputComponentView.swift */; };
@@ -75,6 +73,8 @@
 		BED25A482672F59F00CC4C43 /* WorkingTimeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED25A472672F59F00CC4C43 /* WorkingTimeText.swift */; };
 		BED25A4A2672F6C000CC4C43 /* WorkspaceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED25A492672F6C000CC4C43 /* WorkspaceImage.swift */; };
 		BED25A4C2672FF1900CC4C43 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED25A4B2672FF1900CC4C43 /* User.swift */; };
+		BEE88BAD280E1D2A003ECC8D /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = BEE88BAC280E1D2A003ECC8D /* Rswift */; };
+		BEEE4479284F19D700E579A0 /* DateComponents+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE4478284F19D700E579A0 /* DateComponents+Comparable.swift */; };
 		EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427001234F4A1E007A63D9 /* AppDelegate.swift */; };
 		EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427003234F4A1E007A63D9 /* SceneDelegate.swift */; };
 		EE427009234F4A1E007A63D9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427008234F4A1E007A63D9 /* MainView.swift */; };
@@ -133,7 +133,6 @@
 		BE442C6323EDA32F002306E6 /* Double+Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Conversions.swift"; sourceTree = "<group>"; wrapsLines = 0; };
 		BE442C6523EDA369002306E6 /* TimeInterval+Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Conversions.swift"; sourceTree = "<group>"; };
 		BE442C6A23EDA674002306E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		BE442C6C23EDA834002306E6 /* SecondsContainedIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondsContainedIn.swift; sourceTree = "<group>"; };
 		BE442C6E23EDA864002306E6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE442C7723EDAAB5002306E6 /* User+Salary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Salary.swift"; sourceTree = "<group>"; };
 		BE442C7923EDAB0F002306E6 /* TimePeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePeriod.swift; sourceTree = "<group>"; };
@@ -185,6 +184,7 @@
 		BED25A472672F59F00CC4C43 /* WorkingTimeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingTimeText.swift; sourceTree = "<group>"; };
 		BED25A492672F6C000CC4C43 /* WorkspaceImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceImage.swift; sourceTree = "<group>"; };
 		BED25A4B2672FF1900CC4C43 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BEEE4478284F19D700E579A0 /* DateComponents+Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponents+Comparable.swift"; sourceTree = "<group>"; };
 		EE426FFE234F4A1E007A63D9 /* Time is Money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time is Money.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE427001234F4A1E007A63D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE427003234F4A1E007A63D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -203,7 +203,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE60E037266F9CAB00039B28 /* Rswift in Frameworks */,
+				BEE88BAD280E1D2A003ECC8D /* Rswift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,14 +265,6 @@
 			path = "System Delegates";
 			sourceTree = "<group>";
 		};
-		BE442C5723ED9FE5002306E6 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				BE442C7923EDAB0F002306E6 /* TimePeriod.swift */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
 		BE442C5823ED9FEE002306E6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,14 +297,6 @@
 				BED25A4B2672FF1900CC4C43 /* User.swift */,
 			);
 			path = "Global State";
-			sourceTree = "<group>";
-		};
-		BE442C5C23ED9FFC002306E6 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-				BE92645D23ED9F270072A555 /* AppStateRepository.swift */,
-			);
-			path = Repositories;
 			sourceTree = "<group>";
 		};
 		BE442C5E23EDA080002306E6 /* View Components */ = {
@@ -409,6 +393,7 @@
 				BE293A5D23F4719500BB4E98 /* UIColor+Init.swift */,
 				BE293A5F23F4895A00BB4E98 /* Font+UIFont.swift */,
 				BE85876823BFF2A300DEFE98 /* Formatters.swift */,
+				BEEE4478284F19D700E579A0 /* DateComponents+Comparable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -416,13 +401,6 @@
 		BED25A332672C94D00CC4C43 /* Old Folder Structure */ = {
 			isa = PBXGroup;
 			children = (
-				BED25A3D2672CC8E00CC4C43 /* Avatars */,
-				BED25A3C2672CBE800CC4C43 /* Data to View Handlers */,
-				BED25A3B2672CB9E00CC4C43 /* Time Money Conversion */,
-				BED25A3A2672CB7E00CC4C43 /* Time Helpers */,
-				BE442C5723ED9FE5002306E6 /* Utilities */,
-				BE442C5C23ED9FFC002306E6 /* Repositories */,
-				BE442C5A23ED9FF7002306E6 /* Models */,
 			);
 			path = "Old Folder Structure";
 			sourceTree = "<group>";
@@ -449,11 +427,14 @@
 		BED25A362672C99800CC4C43 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BE442C5A23ED9FF7002306E6 /* Models */,
+				BED25A3A2672CB7E00CC4C43 /* Helpers */,
 				BE38A04D23F34426005D51F9 /* Design System */,
 				BEC00AF023BFE57D001B6724 /* Extensions */,
 				BE442C5B23ED9FF9002306E6 /* Global State */,
 				BE442C5E23EDA080002306E6 /* View Components */,
 				BEBACBAF23E745E0002ABD20 /* View Modifiers */,
+				BE92645D23ED9F270072A555 /* AppStateRepository.swift */,
 				BE4B4F1423EF18E30090CCD9 /* AvatarFactory.swift */,
 			);
 			path = Common;
@@ -490,35 +471,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		BED25A3A2672CB7E00CC4C43 /* Time Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				BE442C6C23EDA834002306E6 /* SecondsContainedIn.swift */,
-			);
-			path = "Time Helpers";
-			sourceTree = "<group>";
-		};
-		BED25A3B2672CB9E00CC4C43 /* Time Money Conversion */ = {
+		BED25A3A2672CB7E00CC4C43 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				BE92644D23ED9F270072A555 /* Calculator.swift */,
-			);
-			path = "Time Money Conversion";
-			sourceTree = "<group>";
-		};
-		BED25A3C2672CBE800CC4C43 /* Data to View Handlers */ = {
-			isa = PBXGroup;
-			children = (
 				BE92645323ED9F270072A555 /* TimeTextTranslator.swift */,
+				BE442C7923EDAB0F002306E6 /* TimePeriod.swift */,
 			);
-			path = "Data to View Handlers";
-			sourceTree = "<group>";
-		};
-		BED25A3D2672CC8E00CC4C43 /* Avatars */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Avatars;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		EE426FF5234F4A1E007A63D9 = {
@@ -585,7 +545,7 @@
 			);
 			name = "Time is Money";
 			packageProductDependencies = (
-				BE60E036266F9CAB00039B28 /* Rswift */,
+				BEE88BAC280E1D2A003ECC8D /* Rswift */,
 			);
 			productName = "Time is Money";
 			productReference = EE426FFE234F4A1E007A63D9 /* Time is Money.app */;
@@ -635,7 +595,7 @@
 			attributes = {
 				DefaultBuildSystemTypeForWorkspace = Original;
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1110;
+				LastUpgradeCheck = 1330;
 				ORGANIZATIONNAME = "Victor S Melo";
 				TargetAttributes = {
 					EE426FFD234F4A1E007A63D9 = {
@@ -663,7 +623,7 @@
 			);
 			mainGroup = EE426FF5234F4A1E007A63D9;
 			packageReferences = (
-				BE60E035266F9CAB00039B28 /* XCRemoteSwiftPackageReference "R.swift" */,
+				BEE88BAB280E1D2A003ECC8D /* XCRemoteSwiftPackageReference "R.swift" */,
 			);
 			productRefGroup = EE426FFF234F4A1E007A63D9 /* Products */;
 			projectDirPath = "";
@@ -708,6 +668,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		BE28C4EF23D7A96C00CA9D13 /* R.Swift */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -742,6 +703,7 @@
 				BE442C7123EDA9E0002306E6 /* Weekday.swift in Sources */,
 				BE442C7223EDAA09002306E6 /* AppStateRepository.swift in Sources */,
 				BE442C6623EDA369002306E6 /* TimeInterval+Conversions.swift in Sources */,
+				BEEE4479284F19D700E579A0 /* DateComponents+Comparable.swift in Sources */,
 				BEB0979D23BF990E00244E30 /* PageView.swift in Sources */,
 				BE442C7A23EDAB0F002306E6 /* TimePeriod.swift in Sources */,
 				BE4B4F1723F0ACC40090CCD9 /* Avatar.swift in Sources */,
@@ -787,7 +749,6 @@
 				BE37722923E7149F003C8D3F /* UIDevice+Type.swift in Sources */,
 				BE92646123ED9F270072A555 /* Calculator.swift in Sources */,
 				BE4B4F0E23EEF8F10090CCD9 /* AvatarView.swift in Sources */,
-				BE442C6D23EDA834002306E6 /* SecondsContainedIn.swift in Sources */,
 				EE427004234F4A1E007A63D9 /* SceneDelegate.swift in Sources */,
 				BE442C6723EDA399002306E6 /* NSDecimalNumber+Operators.swift in Sources */,
 				BE4B4F1523EF18E30090CCD9 /* AvatarFactory.swift in Sources */,
@@ -882,6 +843,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -943,6 +905,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1154,7 +1117,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BE60E035266F9CAB00039B28 /* XCRemoteSwiftPackageReference "R.swift" */ = {
+		BEE88BAB280E1D2A003ECC8D /* XCRemoteSwiftPackageReference "R.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mac-cain13/R.swift.Library";
 			requirement = {
@@ -1165,9 +1128,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BE60E036266F9CAB00039B28 /* Rswift */ = {
+		BEE88BAC280E1D2A003ECC8D /* Rswift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BE60E035266F9CAB00039B28 /* XCRemoteSwiftPackageReference "R.swift" */;
+			package = BEE88BAB280E1D2A003ECC8D /* XCRemoteSwiftPackageReference "R.swift" */;
 			productName = Rswift;
 		};
 /* End XCSwiftPackageProductDependency section */

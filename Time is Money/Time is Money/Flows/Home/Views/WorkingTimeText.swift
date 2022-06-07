@@ -11,15 +11,18 @@ import SwiftUI
 
 struct WorkingTimeText: View {
     
-    @Binding var priceAsSeconds: TimeInterval
+    @Binding var price: Money
     @Binding var user: User
     
     var body: some View {
-        getExpectedWorkingTimeText(priceAsSeconds: priceAsSeconds)
+        getExpectedWorkingTimeText()
     }
     
-    private func getExpectedWorkingTimeText(priceAsSeconds: TimeInterval) -> Text {
-        let priceNormalizedToWorkTime = TimeTextTranslator.getNormalizedWorkTimeFrom(priceAsSeconds: NSDecimalNumber(value: priceAsSeconds), user: user)
+    private func getExpectedWorkingTimeText() -> Text {
+        guard case let .success(priceAsSeconds) = Calculator.getWorkTimeToPay(for: price, user: user) else { return Text("")
+        }
+        
+        let priceNormalizedToWorkTime = TimeTextTranslator.getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, user: user)
         guard let routine = TimeTextTranslator.getWorkRoutineDescriptionToPay(for: priceNormalizedToWorkTime, dailyWorkHours: user.dailyWorkHours, weeklyWorkDays: user.workdays.count) else {
             return Text("")
         }

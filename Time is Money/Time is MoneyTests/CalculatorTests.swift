@@ -20,8 +20,8 @@ class CalculatorTests: XCTestCase {
         guard case .success(let notNormalizedWorkTime1) = getSUT().getWorkTimeToPay(for: price, user: user1) else { XCTFail(); return }
         guard case .success(let notNormalizedWorkTime2) = getSUT().getWorkTimeToPay(for: price, user: user2) else { XCTFail(); return }
         
-        let normalizedWorkTime1 = TimeTextTranslator.getNormalizedWorkTimeFrom(priceAsSeconds: NSDecimalNumber(value: notNormalizedWorkTime1), user: user1)
-        let normalizedWorkTime2 = TimeTextTranslator.getNormalizedWorkTimeFrom(priceAsSeconds: NSDecimalNumber(value: notNormalizedWorkTime2), user: user2)
+        let normalizedWorkTime1 = TimeTextTranslator.getNormalizedWorkTimeFrom(priceAsSeconds: notNormalizedWorkTime1, user: user1)
+        let normalizedWorkTime2 = TimeTextTranslator.getNormalizedWorkTimeFrom(priceAsSeconds: notNormalizedWorkTime2, user: user2)
         
         XCTAssertEqual(normalizedWorkTime1, normalizedWorkTime2)
     }
@@ -35,8 +35,8 @@ class CalculatorTests: XCTestCase {
         guard case .success(let lowerNotNormalizedTime) = getSUT().getWorkTimeToPay(for: lowerPrice, user: user) else { XCTFail(); return }
         guard case .success(let biggerNotNormalizedTime) = getSUT().getWorkTimeToPay(for: biggerPrice, user: user) else { XCTFail(); return }
         
-        let lowerNormalizedTime = TimeTextTranslator.getNormalizedWorkTimeFrom(priceAsSeconds: NSDecimalNumber(value: lowerNotNormalizedTime), user: user)
-        let biggerNormalizedTime = TimeTextTranslator.getNormalizedWorkTimeFrom(priceAsSeconds: NSDecimalNumber(value: biggerNotNormalizedTime), user: user)
+        let lowerNormalizedTime = TimeTextTranslator.getNormalizedWorkTimeFrom(priceAsSeconds: lowerNotNormalizedTime, user: user)
+        let biggerNormalizedTime = TimeTextTranslator.getNormalizedWorkTimeFrom(priceAsSeconds: biggerNotNormalizedTime, user: user)
         
         XCTAssertGreaterThan(biggerNotNormalizedTime, lowerNotNormalizedTime)
         XCTAssertGreaterThan(biggerNormalizedTime, lowerNormalizedTime)

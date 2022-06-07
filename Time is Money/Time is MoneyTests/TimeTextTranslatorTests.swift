@@ -30,7 +30,7 @@ class TimeTextTranslatorTests: XCTestCase {
         
         let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, user: user)
         
-        XCTAssertEqual(result.doubleValue, 1.yearInSeconds)
+        XCTAssertEqual(result.year, 1)
     }
     
     func testGetWorkTimeFor1YearWith12hDailyWorkGet2Years() {
@@ -39,7 +39,7 @@ class TimeTextTranslatorTests: XCTestCase {
         
         let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, user: user)
         
-        XCTAssertEqual(result.doubleValue, 2.yearsInSeconds)
+        XCTAssertEqual(result.year, 2)
     }
     
     // MARK: - Month only tests
@@ -50,7 +50,7 @@ class TimeTextTranslatorTests: XCTestCase {
         
         let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, user: user)
         
-        XCTAssertEqual(result.doubleValue, 1.monthInSeconds)
+        XCTAssertEqual(result.month, 1)
     }
     
     func testGetWorkTimeFor1MonthWith12hDailyWorkGet2Months() {
@@ -59,7 +59,7 @@ class TimeTextTranslatorTests: XCTestCase {
         
         let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, user: user)
         
-        XCTAssertEqual(result.doubleValue, 2.monthInSeconds)
+        XCTAssertEqual(result.month, 2)
     }
     
     // MARK: Week only tests
@@ -70,7 +70,7 @@ class TimeTextTranslatorTests: XCTestCase {
         
         let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, user: user)
         
-        XCTAssertEqual(result.doubleValue, 1.weekInSeconds)
+        XCTAssertEqual(result.day, 7)
     }
     
     func testGetWorkTimeFor1WeekWith12hDailyWorkGet2Weeks() {
@@ -79,7 +79,7 @@ class TimeTextTranslatorTests: XCTestCase {
 
         let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, user: user)
         
-        XCTAssertEqual(result.doubleValue, 2.weeksInSeconds)
+        XCTAssertEqual(result.day, 14)
     }
     
     // MARK: Day only tests
@@ -90,7 +90,7 @@ class TimeTextTranslatorTests: XCTestCase {
         
         let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, user: user)
         
-        XCTAssertEqual(result.doubleValue, 1.dayInSeconds)
+        XCTAssertEqual(result.day, 1)
     }
     
     func testGetWorkTimeFor1DayWith12hDailyWorkGet2Days() {
@@ -99,7 +99,7 @@ class TimeTextTranslatorTests: XCTestCase {
 
         let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, user: user)
         
-        XCTAssertEqual(result.doubleValue, 2.daysInSeconds)
+        XCTAssertEqual(result.day, 2)
     }
     
     // MARK: Hour only tests
@@ -110,16 +110,16 @@ class TimeTextTranslatorTests: XCTestCase {
         
         let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, user: user)
         
-        XCTAssertEqual(result.doubleValue, 16.hoursInSeconds)
+        XCTAssertEqual(result.hour, 16)
     }
     
-    func testGetWorkTimeFor12hoursWith12hDailyWorkGet1Day() {
+    func testGetWorkTimeFor12hoursWith12hDailyWorkGet2Days() {
         let priceAsSeconds = NSDecimalNumber(value: 1.dayInSeconds)
         let user = getUser(dailyWorkHours: 12, weeklyWorkDays: 7)
 
         let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, user: user)
         
-        XCTAssertEqual(result.doubleValue, 2.daysInSeconds)
+        XCTAssertEqual(result.day, 2)
     }
     
     // MARK: Minute only tests
@@ -130,7 +130,7 @@ class TimeTextTranslatorTests: XCTestCase {
         
         let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, user: user)
         
-        XCTAssertEqual(result.doubleValue, 1.minuteInSeconds)
+        XCTAssertEqual(result.minute, 1)
     }
     
     func testGetWorkTimeFor60MinutesWith12hDailyWorkGet1Hour() {
@@ -139,7 +139,7 @@ class TimeTextTranslatorTests: XCTestCase {
 
         let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, user: user)
         
-        XCTAssertEqual(result.doubleValue, 1.hourInSeconds)
+        XCTAssertEqual(result.hour, 1)
     }
     
     // MARK: Second only tests
@@ -150,7 +150,7 @@ class TimeTextTranslatorTests: XCTestCase {
         
         let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, user: user)
         
-        XCTAssertEqual(result.doubleValue, 55)
+        XCTAssertEqual(result.second, 55)
     }
     
     func testGetWorkTimeFor125SecondsWith12hDailyWorkGet2MinutesAnd5Seconds() {
@@ -159,7 +159,8 @@ class TimeTextTranslatorTests: XCTestCase {
 
         let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, user: user)
         
-        XCTAssertEqual(result.doubleValue, (2.minuteInSeconds + 5))
+        XCTAssertEqual(result.minute, 2)
+        XCTAssertEqual(result.second, 5)
     }
     
     func testGetWorkTimeFor1Day() {
@@ -168,7 +169,7 @@ class TimeTextTranslatorTests: XCTestCase {
 
         let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, user: user)
 
-        XCTAssertEqual(result.doubleValue, 1.dayInSeconds)
+        XCTAssertEqual(result.day, 1)
     }
 
     func testGetWorkTimeFor2Days() {
@@ -177,7 +178,7 @@ class TimeTextTranslatorTests: XCTestCase {
 
         let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, user: user)
 
-        XCTAssertEqual(result.doubleValue, 2.daysInSeconds)
+        XCTAssertEqual(result.day, 2)
     }
 
     func testGetWorkTimeForHalfDay() {
@@ -186,14 +187,14 @@ class TimeTextTranslatorTests: XCTestCase {
 
         let result = getSUT().getNormalizedWorkTimeFrom(priceAsSeconds: priceAsSeconds, user: user)
 
-        XCTAssertEqual(result.doubleValue, 4.hoursInSeconds)
+        XCTAssertEqual(result.hour, 4)
     }
 
     func testGetWorkTimeDescriptionToPay() {
         let priceAsSeconds = NSDecimalNumber(value: 3.hourInSeconds)
         let user = getUser(dailyWorkHours: 1, weeklyWorkDays: 3)
 
-        let result = getSUT().getWorkTimeDescriptionToPay(for: priceAsSeconds.timeIntervalValue, user: user)
+        let result = getSUT().getWorkTimeDescriptionToPay(for: priceAsSeconds, user: user)
 
         XCTAssertEqual(result, "1 week")
     }
@@ -202,25 +203,27 @@ class TimeTextTranslatorTests: XCTestCase {
         let priceAsSeconds = NSDecimalNumber(value: 1.hourInSeconds)
         let user = getUser(dailyWorkHours: 1, weeklyWorkDays: 1)
 
-        let result = getSUT().getWorkTimeDescriptionToPay(for: priceAsSeconds.timeIntervalValue, user: user)
+        let result = getSUT().getWorkTimeDescriptionToPay(for: priceAsSeconds, user: user)
 
         XCTAssertEqual(result, "1 week")
     }
 
     func testGetWorkHoursRoutineFor10HoursReturnsNil() {
-        let priceAsSeconds = NSDecimalNumber(value: 10.hoursInSeconds)
+        var components = DateComponents()
+        components.hour = 10
         let user = getUser(dailyWorkHours: 8, weeklyWorkDays: 5)
 
-        let result = getSUT().getWorkRoutineDescriptionToPay(for: priceAsSeconds, dailyWorkHours: user.dailyWorkHours, weeklyWorkDays: user.weeklyWorkDays.intValue)
+        let result = getSUT().getWorkRoutineDescriptionToPay(for: components, dailyWorkHours: user.dailyWorkHours, weeklyWorkDays: user.weeklyWorkDays.intValue)
 
         XCTAssertNil(result)
     }
 
-    func testGetWorkHoursRoutineFor48HoursReturnsDailyRoutine() {
-        let priceAsSeconds = NSDecimalNumber(value: 48.hoursInSeconds)
+    func testGetWorkHoursRoutineFor2DaysReturnsDailyRoutine() {
+        var components = DateComponents()
+        components.day = 2
         let user = getUser(dailyWorkHours: 8, weeklyWorkDays: 5)
 
-        let result = getSUT().getWorkRoutineDescriptionToPay(for: priceAsSeconds, dailyWorkHours: user.dailyWorkHours, weeklyWorkDays: user.weeklyWorkDays.intValue)
+        let result = getSUT().getWorkRoutineDescriptionToPay(for: components, dailyWorkHours: user.dailyWorkHours, weeklyWorkDays: user.weeklyWorkDays.intValue)
 
         XCTAssertNotNil(result)
         XCTAssertEqual(result?.value, 8)
@@ -228,13 +231,14 @@ class TimeTextTranslatorTests: XCTestCase {
     }
 
     func testGetWorkHoursRoutineFor2WeeksReturnsWeeklyRoutine() {
-        let priceAsSeconds = NSDecimalNumber(value: 2.weeksInSeconds)
+        var components = DateComponents()
+        components.day = 14
         let user = getUser(dailyWorkHours: 8, weeklyWorkDays: 5)
 
-        let result = getSUT().getWorkRoutineDescriptionToPay(for: priceAsSeconds, dailyWorkHours: user.dailyWorkHours, weeklyWorkDays: user.weeklyWorkDays.intValue)
+        let result = getSUT().getWorkRoutineDescriptionToPay(for: components, dailyWorkHours: user.dailyWorkHours, weeklyWorkDays: user.weeklyWorkDays.intValue)
 
         XCTAssertNotNil(result)
-        XCTAssertEqual(result?.value, 8*5)
+        XCTAssertEqual(result?.value, 40)
         XCTAssertEqual(result?.period, .weekly)
     }
 

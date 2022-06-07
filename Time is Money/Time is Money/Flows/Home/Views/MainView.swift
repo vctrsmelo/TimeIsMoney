@@ -17,16 +17,15 @@ struct MainView: View {
     
     @State var offsetValue: CGFloat = 0.0
     @State var topTextPadding: CGFloat = 0.0
-    @State var priceAsSeconds: TimeInterval = 100.0
     @State var isShowingEditView = false
     @State var isKeyboardVisible = false
-    @State var isMonetaryValueZero: Bool = false
+    @State var isMonetaryValueZero = false
     
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
             HomeNavigationBarView(isKeyboardVisible: $isKeyboardVisible, isShowingEditView: $isShowingEditView)
 
-            HomeHeaderView(user: $appState.user, isKeyboardVisible: $isKeyboardVisible, isMonetaryValueZero: $isMonetaryValueZero, priceAsSeconds: $priceAsSeconds)
+            HomeHeaderView(user: $appState.user, isKeyboardVisible: $isKeyboardVisible, isMonetaryValueZero: $isMonetaryValueZero, price: $appState.currentPrice)
             
             Spacer()
             

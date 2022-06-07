@@ -9,7 +9,10 @@
 import Foundation
 
 extension DateComponentsFormatter {
-    func string(from seconds: NSDecimalNumber) -> String? {
-        return string(from: Date(), to: Date().addingTimeInterval(seconds.timeIntervalValue))
+    func string(from components: DateComponents) -> String? {
+        let currentDate = Date()
+        guard let futureDate = Calendar.current.date(byAdding: components, to: currentDate) else { return nil }
+
+        return string(from: currentDate, to: futureDate)
     }
 }
