@@ -10,7 +10,7 @@ import SwiftUI
 
 struct OnboardingWelcomeView: View {
     
-    let config = GlobalConfiguration.configuration
+    let theme = GlobalConfiguration.theme
     
     var body: some View {
         VStack {
@@ -24,24 +24,24 @@ struct OnboardingWelcomeView: View {
             
             
             Text("Welcome!")
-                .font(config.font.bold(size: .heading).swiftUIFont)
-                .foregroundColor(config.color.complementaryColor.swiftUIColor)
+                .font(theme.font.bold(size: .heading).swiftUIFont)
+                .foregroundColor(theme.color.complementaryColor.swiftUIColor)
                 .padding(.top, 20)
 
             Spacer()
             
             Text("Let's find out how much things really cost?")
                 .lineLimit(nil)
-                .font(config.font.regular(size: .subtitle).swiftUIFont)
-                .foregroundColor(config.color.complementaryColor.swiftUIColor)
+                .font(theme.font.regular(size: .subtitle).swiftUIFont)
+                .foregroundColor(theme.color.complementaryColor.swiftUIColor)
                 .frame(idealWidth: UIScreen.main.bounds.width-64, maxWidth: UIScreen.main.bounds.width-16, minHeight: 25, idealHeight: 50, alignment: .center)
             
             Spacer()
 
             Text(R.string.localizable.forThisWeWillNeedOnlyAFewInformationLetSGo😄())
                 .lineLimit(nil)
-                .font(config.font.light(size: .subtitle).swiftUIFont)
-                .foregroundColor(config.color.complementaryColor.swiftUIColor)
+                .font(theme.font.light(size: .subtitle).swiftUIFont)
+                .foregroundColor(theme.color.complementaryColor.swiftUIColor)
                 .frame(idealWidth: UIScreen.main.bounds.width-64, maxWidth: UIScreen.main.bounds.width-16, minHeight: 25, idealHeight: 50, alignment: .center)
             Spacer()
         }

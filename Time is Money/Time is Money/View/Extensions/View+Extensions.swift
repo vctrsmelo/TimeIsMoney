@@ -11,7 +11,7 @@ import SwiftUI
 
 // MARK: - Background
 extension View {
-    func withBackground(_ color: Color = GlobalConfiguration.configuration.color.primaryColor.swiftUIColor) -> some View {
+    func withBackground(_ color: Color = GlobalConfiguration.theme.color.primaryColor.swiftUIColor) -> some View {
         return ZStack {
             BackgroundView(color)
             self

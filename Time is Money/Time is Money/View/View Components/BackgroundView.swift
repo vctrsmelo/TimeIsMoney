@@ -12,7 +12,7 @@ struct BackgroundView: View {
     
     var backgroundColor: Color
     
-    init(_ backgroundColor: Color = GlobalConfiguration.configuration.color.primaryColor.swiftUIColor) {
+    init(_ backgroundColor: Color = GlobalConfiguration.theme.color.primaryColor.swiftUIColor) {
         self.backgroundColor = backgroundColor
     }
     

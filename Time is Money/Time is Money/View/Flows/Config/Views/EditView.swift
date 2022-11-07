@@ -70,7 +70,7 @@ struct EditView: View {
         )
         
        return Picker(selection: selectedHours, label: EmptyView()) {
-            ForEach(0 ..< hours.count) {
+            ForEach(0 ..< hours.count, id: \.self) {
                 Text(self.hours[$0]+" "+R.string.localizable.hours())
                     .font(config.font.regular(size: .body).swiftUIFont)
                     .foregroundColor(self.appState.user.isSelectedHoursValid($0) ? config.color.disabledColor.swiftUIColor : config.color.complementaryColor.swiftUIColor)

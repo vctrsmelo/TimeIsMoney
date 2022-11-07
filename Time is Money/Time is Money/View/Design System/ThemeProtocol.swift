@@ -9,14 +9,14 @@
 import SwiftUI
 import UIKit
 
- protocol FontConfiguration {
-    func light(size: FontSize) -> DSFont
-    func regular(size: FontSize) -> DSFont
-    func bold(size: FontSize) -> DSFont
-    func semibold(size: FontSize) -> DSFont
+ protocol FontTheme {
+    func light(size: FontSizeTheme) -> DSFont
+    func regular(size: FontSizeTheme) -> DSFont
+    func bold(size: FontSizeTheme) -> DSFont
+    func semibold(size: FontSizeTheme) -> DSFont
 }
 
- enum FontSize: CGFloat {
+ enum FontSizeTheme: CGFloat {
     case h0 = 50.0
     case h1 = 24.0
     case h2 = 20.0
@@ -25,20 +25,20 @@ import UIKit
     case h5 = 12.0
     case h6 = 10.0
     
-    static var heading = FontSize.h0
-    static var title = FontSize.h1
-    static var subtitle = FontSize.h2
-    static var body = FontSize.h3
+    static var heading = FontSizeTheme.h0
+    static var title = FontSizeTheme.h1
+    static var subtitle = FontSizeTheme.h2
+    static var body = FontSizeTheme.h3
 }
 
- enum Spacing: CGFloat {
+ enum SpacingTheme: CGFloat {
     case pp = 4
     case p = 8
     case m = 16
     case g = 24
 }
 
- protocol ColorStyle {
+ protocol ColorTheme {
     var brandColor: UIColor { get }
     var primaryColor: UIColor { get }
     var secondaryColor: UIColor { get }
@@ -48,7 +48,7 @@ import UIKit
 
 }
 
- enum CornerRadiusType: Int {
+ enum CornerRadiusTheme: Int {
     case zero
     case one
     case two
@@ -61,19 +61,15 @@ import UIKit
     }
 }
 
-protocol ThemeConfigurationProtocol {
-    var color: ColorStyle { get }
-    var font: FontConfiguration { get }
+protocol ThemeProtocol {
+    var color: ColorTheme { get }
+    var font: FontTheme { get }
     var enabledCornerRadius: Bool { get }
-    var cornerRadiusType: CornerRadiusType { get }
+    var cornerRadius: CornerRadiusTheme { get }
 }
 
-extension ThemeConfigurationProtocol {
+extension ThemeProtocol {
     var cornerRadiusSize: CGFloat {
-        if enabledCornerRadius {
-            return cornerRadiusType.size
-        } else {
-            return 0.0
-        }
+        enabledCornerRadius ? cornerRadius.size : 0.0
     }
 }

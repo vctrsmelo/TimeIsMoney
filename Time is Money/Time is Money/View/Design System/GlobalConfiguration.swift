@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 import SwiftUI
 
-var config: ThemeConfigurationProtocol {
-    GlobalConfiguration.configuration
+var config: ThemeProtocol {
+    GlobalConfiguration.theme
 }
 
 class GlobalConfiguration {
-    static var configuration: ThemeConfigurationProtocol = DefaultConfiguration()
+    static var theme: ThemeProtocol = LightTheme()
 
 }

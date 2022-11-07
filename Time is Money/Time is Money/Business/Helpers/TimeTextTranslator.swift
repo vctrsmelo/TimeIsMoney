@@ -51,25 +51,14 @@ class TimeTextTranslator {
     static func getNormalizedWorkTimeFrom(priceAsSeconds: NSDecimalNumber, user: User) -> DateComponents {
         guard user.weeklyWorkHours > 0 else { return DateComponents() }
     
-        var components = DateComponents()
-        components.year = 0
-        components.month = 0
-        components.day = 0
-        components.hour = 0
-        components.minute = 0
-        components.second = 0
-        
+        var components = DateComponents(year: 0, month: 0, day: 0, hour: 0, minute: 0, second: 0)
         var priceSecondsDiscountingTime = priceAsSeconds
         
         let oneWorkYearInSeconds = user.yearlyWorkSeconds
         let oneWorkMonthInSeconds = user.monthlyWorkSeconds
         let oneWorkWeekInSeconds = user.weeklyWorkSeconds
         let oneWorkDayInSeconds = user.dailyWorkSeconds
-    
-        let oneYearInSeconds = NSDecimalNumber(value: 1.yearInSeconds)
-        let oneMonthInSeconds = NSDecimalNumber(value: 1.monthInSeconds)
-        let oneWeekInSeconds = NSDecimalNumber(value: 1.weekInSeconds)
-        let oneDayInSeconds = NSDecimalNumber(value: 1.dayInSeconds)
+        
         let oneHourInSeconds = NSDecimalNumber(value: 1.hourInSeconds)
         let oneMinuteInSeconds = NSDecimalNumber(value: 1.minuteInSeconds)
     

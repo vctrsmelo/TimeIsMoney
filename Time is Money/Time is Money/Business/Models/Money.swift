@@ -8,9 +8,9 @@
 
 import Foundation
 
- typealias Money = NSDecimalNumber
+typealias Money = NSDecimalNumber
 
- struct Value {
+struct Value {
     
      enum ValueType {
         case monetary(_ value: Money)
@@ -70,7 +70,6 @@ import Foundation
 }
 
 private extension TimeInterval {
-    
     func asMoney(for user: User) -> Result<Money, CalculatorError> {
         return Calculator.getMoneyReceivedFromWorkSeconds(workSeconds: self, user: user)
     }

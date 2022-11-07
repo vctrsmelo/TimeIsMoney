@@ -20,8 +20,6 @@ class AppState: ObservableObject {
     }
 }
 
-
-
 extension AppState {
     struct System {
         public var isActive: Bool = false

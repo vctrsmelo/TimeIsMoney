@@ -79,7 +79,7 @@ struct OnboardingWorkTimeView: View {
         return AnyView(
             Section {
                 Picker(selection: selectedHours, label: EmptyView()) {
-                    ForEach(0 ..< self.hours.count) {
+                    ForEach(0 ..< self.hours.count, id: \.self) {
                         Text(self.hours[$0]+" "+hours)
                             .foregroundColor(self.appState.user.isSelectedHoursValid($0) ? config.color.disabledColor.swiftUIColor : config.color.complementaryColor.swiftUIColor)
                     }

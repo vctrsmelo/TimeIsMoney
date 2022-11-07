@@ -23,7 +23,7 @@ struct WeekdayView: View {
     }
     
     var body: some View {
-        let color = GlobalConfiguration.configuration.color
+        let color = GlobalConfiguration.theme.color
         let backgroundColor = isSelected ? color.enabledColor.swiftUIColor : color.disabledColor.swiftUIColor
         
         return ZStack {
