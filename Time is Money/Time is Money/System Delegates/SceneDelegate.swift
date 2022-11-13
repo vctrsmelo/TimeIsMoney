@@ -11,12 +11,13 @@ import SwiftUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
+    private(set) static var shared: SceneDelegate?
     var window: UIWindow?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        Self.shared = self
         
         let interactors = InteractorsContainer.defaultValue
-        interactors.mainInteractor.loadAppState()
         
         let pages = getPages().map { $0.environmentObject(interactors.mainInteractor.appState) }
         let onboardingView = PageView(pages).environmentObject(interactors.mainInteractor.appState)
@@ -38,6 +39,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             window.makeKeyAndVisible()
         }
+
+        interactors.mainInteractor.loadAppState()
     }
     
     private func getPages() -> [AnyView] {

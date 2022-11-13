@@ -11,9 +11,9 @@ import UIKit
 
 struct EditView: View {
     
+    @EnvironmentObject var appState: AppState
     @Binding var viewModel: EditViewModel
     
-    @EnvironmentObject var appState: AppState
     @Environment(\.interactors) var interactors: InteractorsContainer
 
 //    @State private var moneyPerHour: NSNumber = 0.0

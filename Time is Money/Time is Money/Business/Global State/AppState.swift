@@ -13,16 +13,16 @@ class AppState: ObservableObject {
     @Published var avatarId = "male2-deprecated"
     @Published var workplace = ScenarioFactory.Workplace.office
     @Published var currentPrice = Currency(value: 0.0)
-    @Published var system = System()
+    private(set) var theme: UIUserInterfaceStyle = .light
     
     func getCurrentValue() -> Price {
         return Price(currency: currentPrice, user: user)
     }
-}
-
-extension AppState {
-    struct System {
-        public var isActive: Bool = false
-        public var keyboardHeight: CGFloat = 0
+    
+    func setTheme(_ newTheme: UIUserInterfaceStyle) {
+        print("did call setTheme with \(newTheme.rawValue)")
+        self.theme = newTheme
+        print("did call setTheme with \(theme.rawValue)")
+        SceneDelegate.shared?.window?.overrideUserInterfaceStyle = newTheme
     }
 }

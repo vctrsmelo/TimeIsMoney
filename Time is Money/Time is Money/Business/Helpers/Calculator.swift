@@ -23,7 +23,6 @@ enum Calculator {
         }
         
         return getWorkTimeToPay(for: Currency(value: price), user: user)
-        
     }
     
     static func getWorkTimeToPay(for price: Currency, user: User) -> Result<NSDecimalNumber, CalculatorError> {

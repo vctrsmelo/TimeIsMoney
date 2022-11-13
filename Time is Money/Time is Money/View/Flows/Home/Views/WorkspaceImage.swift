@@ -18,7 +18,6 @@ struct WorkspaceImage: View {
         let avatar = AvatarFactory.getById(id: avatarId)
         let scenarios = ScenarioFactory.getAllScenarios(for: .office, avatar: avatar)
         
-        
         return ScenarioFactory.getScenario(from: scenarios, price: currentPrice, user: user)
             .resizable()
             .aspectRatio(contentMode: .fit)

@@ -8,28 +8,35 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 struct EditViewModel {
     
     let themeOptions = ["Light", "Dark"]
     let hours = (0...168).map { "\($0)"}
     
-    var currentThemeIndex: Int = 0
     var moneyPerHour: NSNumber = 0.0
     var showingAlert = false
     var themeSelectedIndex: Int = 0
+    
+    private let appState: AppState = InteractorsContainer.defaultValue.mainInteractor.appState
     
     init() {
         self.buildCurrentTheme()
     }
     
     private mutating func buildCurrentTheme() {
-        let currentTheme = UIScreen.main.traitCollection.userInterfaceStyle
-        currentThemeIndex = currentTheme != .unspecified ? currentTheme.rawValue : 0
+        let currentTheme = appState.theme
+        themeSelectedIndex = currentTheme != .unspecified ? currentTheme.rawValue-1 : 0
+        
+        print("currentTheme.rawValue == \(currentTheme.rawValue)")
+        print("themeSelectedIndex == \(themeSelectedIndex)")
+
     }
     
     func setTheme(_ index: Int) {
         let newTheme: UIUserInterfaceStyle = index == 0 ? .light : .dark
-        UIWindow.appearance().overrideUserInterfaceStyle = newTheme
+        appState.setTheme(newTheme)
+        print("did setTheme to \(newTheme.rawValue)")
     }
 }

@@ -28,9 +28,11 @@ struct RealMainInteractor: MainInteractor {
         appState.user = userRepository.loadUser()
         appState.avatarId = userRepository.loadAvatarId()
         appState.workplace = userRepository.loadWorkplace()
+        appState.setTheme(userRepository.loadTheme())
     }
     
     func saveAppState() {
+        userRepository.saveTheme(appState.theme)
         userRepository.saveUser(appState.user)
         userRepository.saveAvatarId(appState.avatarId)
         userRepository.saveWorkplace(appState.workplace)

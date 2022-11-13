@@ -1,12 +1,15 @@
 import Foundation
 import UIKit
 import Combine
+import os
 
 protocol AppStateRepository {
+    func loadTheme() -> UIUserInterfaceStyle
     func loadUser() -> User
     func loadAvatarId() -> String
     func loadWorkplace() -> ScenarioFactory.Workplace
 
+    func saveTheme(_ theme: UIUserInterfaceStyle)
     func saveUser(_ user: User)
     func saveAvatarId(_ id: String)
     func saveWorkplace(_ workplace: ScenarioFactory.Workplace)
@@ -21,6 +24,29 @@ struct UserDefaultsAppStateRepository: AppStateRepository {
         case workdays = "Workdays"
         case avatarId = "AvatarId"
         case workplace = "Workplace"
+        case theme = "Theme"
+    }
+    
+    
+    func loadTheme() -> UIUserInterfaceStyle {
+        let themeRawValue = UserDefaults.standard.integer(forKey: Key.theme.rawValue)
+        if themeRawValue == 0 {
+            saveTheme(UITraitCollection.current.userInterfaceStyle)
+            return loadTheme()
+        }
+        
+        guard let theme = UIUserInterfaceStyle(rawValue: themeRawValue) else {
+            Logger().critical("Unable to fetch theme from UserDefaults. It means theme persistence is not working properly.")
+            return UITraitCollection.current.userInterfaceStyle
+        }
+        
+        return theme
+    }
+    
+    func saveTheme(_ theme: UIUserInterfaceStyle) {
+        
+        print("did call saveTheme with \(theme.rawValue)")
+        UserDefaults.standard.set(theme.rawValue, forKey: Key.theme.rawValue)
     }
     
     func loadUser() -> User {

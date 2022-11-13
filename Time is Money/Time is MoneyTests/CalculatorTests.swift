@@ -15,7 +15,7 @@ class CalculatorTests: XCTestCase {
         let user1 = getUser(salary: 1000, weeklyWorkHours: 44, weeklyWorkDays: 5)
         let user2 = getUser(salary: 1000, weeklyWorkHours: 120, weeklyWorkDays: 5)
         
-        let price = Money(value: 500_000)
+        let price = Currency(value: 500_000)
         
         guard case .success(let notNormalizedWorkTime1) = getSUT().getWorkTimeToPay(for: price, user: user1) else { XCTFail(); return }
         guard case .success(let notNormalizedWorkTime2) = getSUT().getWorkTimeToPay(for: price, user: user2) else { XCTFail(); return }
@@ -29,8 +29,8 @@ class CalculatorTests: XCTestCase {
     func testGreaterValueReturnsGreaterResult() {
         let user = getUser(salary: 6600, weeklyWorkHours: 40, weeklyWorkDays: 5)
         
-        let lowerPrice = Money(value: 1)
-        let biggerPrice = Money(value: 10)
+        let lowerPrice = Currency(value: 1)
+        let biggerPrice = Currency(value: 10)
         
         guard case .success(let lowerNotNormalizedTime) = getSUT().getWorkTimeToPay(for: lowerPrice, user: user) else { XCTFail(); return }
         guard case .success(let biggerNotNormalizedTime) = getSUT().getWorkTimeToPay(for: biggerPrice, user: user) else { XCTFail(); return }
