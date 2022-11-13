@@ -95,15 +95,15 @@ class TimeTextTranslator {
         hoursNeeded % dailyWorkHours == 0
     }
     
-    static func getWorkRoutineDescriptionToPay(for priceComponents: DateComponents, dailyWorkHours: NSDecimalNumber, weeklyWorkDays: Int) -> Routine? {
+    static func getWorkRoutineDescriptionToPay(for priceComponents: DateComponents, dailyWorkHours: NSDecimalNumber, weeklyWorkDays: Int) -> WorkRoutine? {
         guard (priceComponents.day ?? 0) > 1 else { return nil }
         
         let isLessThanAWeek = (priceComponents.day ?? 0) < 7
         if isLessThanAWeek {
-            return Routine(value: dailyWorkHours, period: .daily)
+            return WorkRoutine(value: dailyWorkHours, period: .daily)
         } else {
             let weeklyWorkHours = dailyWorkHours * NSDecimalNumber(value: weeklyWorkDays)
-            return Routine(value: weeklyWorkHours, period: .weekly)
+            return WorkRoutine(value: weeklyWorkHours, period: .weekly)
         }
     }
     

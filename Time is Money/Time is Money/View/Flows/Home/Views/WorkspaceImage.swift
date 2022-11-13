@@ -11,7 +11,7 @@ import SwiftUI
 struct WorkspaceImage: View {
     
     @Binding var avatarId: String
-    @Binding var currentPrice: Money
+    @Binding var currentPrice: Currency
     @Binding var user: User
     
     var body: some View {
@@ -31,7 +31,7 @@ struct WorkspaceImage: View {
 struct WorkspaceImage_Previews: PreviewProvider {
     
     @State static var avatarId = "male2"
-    @State static var currentPrice: Money = 100
+    @State static var currentPrice: Currency = 100
     @State static var user = User()
     
     static var previews: some View {

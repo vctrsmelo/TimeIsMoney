@@ -12,11 +12,11 @@ class AppState: ObservableObject {
     @Published var user = User()
     @Published var avatarId = "male2-deprecated"
     @Published var workplace = ScenarioFactory.Workplace.office
-    @Published var currentPrice = Money(value: 0.0)
+    @Published var currentPrice = Currency(value: 0.0)
     @Published var system = System()
     
-    func getCurrentValue() -> Value {
-        return Value(money: currentPrice, user: user)
+    func getCurrentValue() -> Price {
+        return Price(currency: currentPrice, user: user)
     }
 }
 

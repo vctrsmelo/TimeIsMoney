@@ -66,20 +66,20 @@ public func %(lhs: NSDecimalNumber, rhs: NSDecimalNumber) -> NSDecimalNumber {
 }
 
 extension Double {
-    func asMoney() -> Money {
-        return Money(value: self)
+    func asCurrency() -> Currency {
+        return Currency(value: self)
     }
 }
 
 extension Int {
-    func asMoney() -> Money {
-        return Money(value: self)
+    func asCurrency() -> Currency {
+        return Currency(value: self)
     }
 }
 
 extension Decimal {
-    func asMoney() -> Money {
-        return Money(decimal: self)
+    func asCurrency() -> Currency {
+        return Currency(decimal: self)
     }
 }
 

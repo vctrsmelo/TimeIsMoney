@@ -26,7 +26,7 @@ class MainViewState: ObservableObject {
     var timeMessage: String {
         let timeMessage: String
         
-        if let money = appState.getCurrentValue().getAsMoney(), money < Money(value: 0.01) {
+        if let money = appState.getCurrentValue().getAsCurrency(), money < Currency(value: 0.01) {
             timeMessage = R.string.localizable.itSOnTheHouse🤑()
         } else if appState.user.dailyWorkHours <= NSDecimalNumber(value: 0.1) || appState.user.monthlySalary.decimalValue <= Decimal(0.01) {
             timeMessage = R.string.localizable.foreverIGuess😮()
@@ -50,7 +50,7 @@ class MainViewState: ObservableObject {
 class MainViewModel: ObservableObject {
     
     enum State {
-        case valid(message: String, inputValue: Money)
+        case valid(message: String, inputValue: Currency)
         case free
         case infinite
     }
@@ -79,12 +79,12 @@ extension MainViewModel {
         }
     }
     
-    static private func reduceValid(message: String, inputValue: Money, event: Event) -> State {
+    static private func reduceValid(message: String, inputValue: Currency, event: Event) -> State {
         switch event {
         case .onAppear:
             return .free
         case let .onUpdateValue(newValue):
-            return .valid(message: "Teste reduceValid", inputValue: Money(decimal: newValue))
+            return .valid(message: "Teste reduceValid", inputValue: Currency(decimal: newValue))
         }
     }
     
@@ -93,7 +93,7 @@ extension MainViewModel {
         case .onAppear:
             return .free
         case let .onUpdateValue(newValue):
-            return .valid(message: "Teste reduceFree", inputValue: Money(decimal: newValue))
+            return .valid(message: "Teste reduceFree", inputValue: Currency(decimal: newValue))
         }
     }
     
@@ -102,7 +102,7 @@ extension MainViewModel {
         case .onAppear:
             return .free
         case let .onUpdateValue(newValue):
-            return .valid(message: "Teste reduceInfinite", inputValue: Money(decimal: newValue))
+            return .valid(message: "Teste reduceInfinite", inputValue: Currency(decimal: newValue))
         }
     }
 }

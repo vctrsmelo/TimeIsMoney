@@ -11,7 +11,7 @@ import SwiftUI
 
 struct CurrencyField: UIViewRepresentable {
     
-    private var value: Binding<Money>
+    private var value: Binding<Currency>
     private var placeholder: String?
     private var textColor: UIColor
     private var font: UIFont
@@ -20,7 +20,7 @@ struct CurrencyField: UIViewRepresentable {
     var keyboardWillHide: (() -> ())?
     var keyboardWillShow: (() -> ())?
     
-    init(_ value: Binding<Money>, placeholder: String, textColor: UIColor = config.color.complementaryColor, font: UIFont = config.font.bold(size: .title).uiKitFont, textAlignment: NSTextAlignment = .center, keyboardWillHide: (() -> ())? = nil, keyboardWillShow: (() -> ())? = nil) {
+    init(_ value: Binding<Currency>, placeholder: String, textColor: UIColor = config.color.complementaryColor, font: UIFont = config.font.bold(size: .title).uiKitFont, textAlignment: NSTextAlignment = .center, keyboardWillHide: (() -> ())? = nil, keyboardWillShow: (() -> ())? = nil) {
         self.value = value
         self.placeholder = placeholder
         self.textColor = textColor
@@ -52,7 +52,7 @@ final class UICurrencyField: UITextField {
     var maximum: Decimal = 10_000_000
     var lastValue: String?
     
-    private var value: Binding<Money>?
+    private var value: Binding<Currency>?
     
     var keyboardWillHideClosure: (() -> ())?
     var keyboardWillShowClosure: (() -> ())?
@@ -65,7 +65,7 @@ final class UICurrencyField: UITextField {
     }
     
     
-    init(_ value: Binding<Money>) {
+    init(_ value: Binding<Currency>) {
         super.init(frame: .zero)
         self.value = value
         self.text = value.wrappedValue.decimalValue.currency
@@ -104,7 +104,7 @@ final class UICurrencyField: UITextField {
         let newValue = decimal <= maximum ? decimal : maximum
         text = newValue.currency
         lastValue = text
-        value?.wrappedValue = Money(decimal: decimal)
+        value?.wrappedValue = Currency(decimal: decimal)
     }
     
 }

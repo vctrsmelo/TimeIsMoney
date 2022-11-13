@@ -13,7 +13,7 @@ struct HomeHeaderView: View {
     @Binding var user: User
     @Binding var isKeyboardVisible: Bool
     @Binding var isMonetaryValueZero: Bool
-    @Binding var price: Money
+    @Binding var price: Currency
     
     var body: some View {
         HStack {
@@ -75,7 +75,7 @@ struct HomeHeaderView_Previews: PreviewProvider {
     @State static var user: User = User()
     @State static var isKeyboardVisible = false
     @State static var isMonetaryValueZero = false
-    @State static var price = Money(decimal: 10)
+    @State static var price = Currency(decimal: 10)
     
     static var previews: some View {
         HomeHeaderView(user: $user, isKeyboardVisible: $isKeyboardVisible, isMonetaryValueZero: $isMonetaryValueZero, price: $price)

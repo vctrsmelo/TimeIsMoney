@@ -13,12 +13,12 @@ struct CurrencyInputComponentView: View {
     
     @State private var isKeyboardVisible: Bool = false
     
-    private var priceBinding: Binding<Money>
+    private var priceBinding: Binding<Currency>
     private let currencyFieldWidth: CGFloat
     private let keyboardVisibleOffset: CGFloat
     private let cornerRadius: CGFloat
     
-    init(isKeyboardVisible: Bool, priceBinding: Binding<Money>) {
+    init(isKeyboardVisible: Bool, priceBinding: Binding<Currency>) {
         self.priceBinding = priceBinding
         self.currencyFieldWidth = UIScreen.main.bounds.width - (UIDevice.current.hasHomeButton ? 0 : 16)
         self.keyboardVisibleOffset = UIDevice.current.hasHomeButton ? 0 : -16
@@ -44,7 +44,7 @@ struct CurrencyInputComponentView: View {
 
 struct CurrencyInputComponentView_Previews: PreviewProvider {
     
-    @State private static var price: Money = 100
+    @State private static var price: Currency = 100
     
     static var previews: some View {
         let priceBinding = Binding(

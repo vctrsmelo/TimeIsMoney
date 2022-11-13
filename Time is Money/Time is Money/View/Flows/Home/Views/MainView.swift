@@ -15,6 +15,8 @@ struct MainView: View {
     @Environment(\.interactors) var interactors: InteractorsContainer
     @EnvironmentObject var appState: AppState
     
+    @State private var editViewModel = EditViewModel()
+    
     @State var offsetValue: CGFloat = 0.0
     @State var topTextPadding: CGFloat = 0.0
     @State var isShowingEditView = false
@@ -38,7 +40,7 @@ struct MainView: View {
         }
         .navigationBarHidden(true)
         .sheet(isPresented: $isShowingEditView) {
-            EditView().environmentObject(appState)
+            EditView(viewModel: $editViewModel).environmentObject(appState)
         }
         .onTapGesture(perform: hideKeyboard)
         .withBackground()

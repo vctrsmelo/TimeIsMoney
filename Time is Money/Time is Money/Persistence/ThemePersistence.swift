@@ -14,7 +14,5 @@ final class ThemePersistence {
         case dark
         case light
     }
-    
-    
-    
+
 }

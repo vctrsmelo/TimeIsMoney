@@ -11,37 +11,37 @@ import Foundation
 
 extension User {
     
-    func getSalaryPerYear() -> Money {
+    func getSalaryPerYear() -> Currency {
         monthlySalary * NSDecimalNumber(value: 12)
     }
 
-    func getSalaryPerMonth() -> Money {
+    func getSalaryPerMonth() -> Currency {
         monthlySalary
     }
 
-    func getSalaryPerWeek() -> Money {
+    func getSalaryPerWeek() -> Currency {
         getSalaryPerMonth() / MonthTimePeriod(value: 1).asWeekOfMonth()
     }
 
-    func getSalaryPerDay() -> Money {
-        guard weeklyWorkDays > 0 else { return Money(value: 0) }
+    func getSalaryPerDay() -> Currency {
+        guard weeklyWorkDays > 0 else { return Currency(value: 0) }
         return getSalaryPerWeek() / weeklyWorkDays
     }
 
-    func getSalaryPerHour() -> Money {
-        guard dailyWorkHours > 0 else { return Money(value: 0) }
+    func getSalaryPerHour() -> Currency {
+        guard dailyWorkHours > 0 else { return Currency(value: 0) }
         return getSalaryPerDay() / dailyWorkHours
     }
 
-    func getSalaryPerMinute() -> Money {
+    func getSalaryPerMinute() -> Currency {
         getSalaryPerHour() / NSDecimalNumber(value: 60)
     }
 
-    func getSalaryPerSecond() -> Money {
+    func getSalaryPerSecond() -> Currency {
         getSalaryPerMinute() / NSDecimalNumber(value: 1.minuteInSeconds)
     }
 
-    func getMoneyReceivedFromSeconds(workSeconds: TimeInterval) -> Money {
+    func getCurrencyReceivedFromSeconds(workSeconds: TimeInterval) -> Currency {
         return getSalaryPerSecond() * NSDecimalNumber(value: workSeconds)
     }
 }

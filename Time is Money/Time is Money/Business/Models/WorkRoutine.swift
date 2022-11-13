@@ -8,12 +8,13 @@
 
 import Foundation
 
-public struct Routine {
+public struct WorkRoutine {
+    
+    public enum RoutineTimePeriod {
+        case weekly
+        case daily
+    }
+    
     public let value: NSDecimalNumber
     public let period: RoutineTimePeriod
-}
-
-public enum RoutineTimePeriod {
-    case weekly
-    case daily
 }

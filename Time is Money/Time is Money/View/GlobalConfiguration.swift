@@ -16,5 +16,4 @@ var config: ThemeProtocol {
 
 class GlobalConfiguration {
     static var theme: ThemeProtocol = LightTheme()
-
 }

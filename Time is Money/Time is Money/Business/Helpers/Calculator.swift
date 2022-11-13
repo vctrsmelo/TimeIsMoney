@@ -22,11 +22,11 @@ enum Calculator {
             return .failure(CalculatorError.undefinedPrice)
         }
         
-        return getWorkTimeToPay(for: Money(value: price), user: user)
+        return getWorkTimeToPay(for: Currency(value: price), user: user)
         
     }
     
-    static func getWorkTimeToPay(for price: Money, user: User) -> Result<NSDecimalNumber, CalculatorError> {
+    static func getWorkTimeToPay(for price: Currency, user: User) -> Result<NSDecimalNumber, CalculatorError> {
         guard price > 0.0 else { return .success(0.0) }
         guard user.workdays.count > 0 else { return .failure(.undefinedWeeklyWorkDays) }
         guard user.monthlySalary > 0.0 else { return .failure(.undefinedSalary) }
@@ -68,7 +68,7 @@ enum Calculator {
         return .success(currentWorkSeconds)
     }
     
-    static func getMoneyReceivedFromWorkSeconds(workSeconds: TimeInterval, user: User) -> Result<Money, CalculatorError> {
+    static func getMoneyReceivedFromWorkSeconds(workSeconds: TimeInterval, user: User) -> Result<Currency, CalculatorError> {
         guard workSeconds > 0.0 else { return .success(0.0) }
         if case .failure(let error) = isUserDataValid(user) {
             return .failure(error)

@@ -13,7 +13,7 @@
 		BE28C50023D7AD9600CA9D13 /* PreviewProvider+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28C4FF23D7AD9600CA9D13 /* PreviewProvider+Locale.swift */; };
 		BE293A5E23F4719500BB4E98 /* UIColor+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293A5D23F4719500BB4E98 /* UIColor+Init.swift */; };
 		BE293A6023F4895A00BB4E98 /* Font+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293A5F23F4895A00BB4E98 /* Font+UIFont.swift */; };
-		BE293A6223F4957400BB4E98 /* DarkModeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293A6123F4957400BB4E98 /* DarkModeConfiguration.swift */; };
+		BE293A6223F4957400BB4E98 /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293A6123F4957400BB4E98 /* DarkTheme.swift */; };
 		BE37722923E7149F003C8D3F /* UIDevice+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37722823E7149F003C8D3F /* UIDevice+Type.swift */; };
 		BE38A04F23F34434005D51F9 /* GlobalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38A04E23F34434005D51F9 /* GlobalConfiguration.swift */; };
 		BE38A05123F34454005D51F9 /* LightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38A05023F34454005D51F9 /* LightTheme.swift */; };
@@ -28,8 +28,8 @@
 		BE442C7023EDA9DC002306E6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645E23ED9F270072A555 /* AppState.swift */; };
 		BE442C7123EDA9E0002306E6 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645B23ED9F270072A555 /* Weekday.swift */; };
 		BE442C7223EDAA09002306E6 /* AppStateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645D23ED9F270072A555 /* AppStateRepository.swift */; };
-		BE442C7323EDAA14002306E6 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645923ED9F270072A555 /* Money.swift */; };
-		BE442C7523EDAA16002306E6 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645C23ED9F270072A555 /* Routine.swift */; };
+		BE442C7323EDAA14002306E6 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645923ED9F270072A555 /* Price.swift */; };
+		BE442C7523EDAA16002306E6 /* WorkRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92645C23ED9F270072A555 /* WorkRoutine.swift */; };
 		BE442C7823EDAAB5002306E6 /* User+Salary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442C7723EDAAB5002306E6 /* User+Salary.swift */; };
 		BE442C7A23EDAB0F002306E6 /* TimePeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE442C7923EDAB0F002306E6 /* TimePeriod.swift */; };
 		BE4B4F0823EDC89A0090CCD9 /* User+WorkTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4F0723EDC89A0090CCD9 /* User+WorkTime.swift */; };
@@ -55,6 +55,7 @@
 		BE92646E23ED9F4A0072A555 /* ValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92646923ED9F4A0072A555 /* ValueTests.swift */; };
 		BE92647023ED9F4A0072A555 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92646423ED9F4A0072A555 /* UserTests.swift */; };
 		BEA7FD1C2919B96F007777D5 /* ThemePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7FD1B2919B96F007777D5 /* ThemePersistence.swift */; };
+		BEA7FD1E2919BFB2007777D5 /* EditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7FD1D2919BFB2007777D5 /* EditViewModel.swift */; };
 		BEA9AB3423C5308B0057EA1E /* CurrencyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA9AB3323C5308B0057EA1E /* CurrencyField.swift */; };
 		BEB0979A23BF984F00244E30 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0979923BF984F00244E30 /* PageViewController.swift */; };
 		BEB0979D23BF990E00244E30 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0979C23BF990E00244E30 /* PageView.swift */; };
@@ -73,6 +74,7 @@
 		BED25A482672F59F00CC4C43 /* WorkingTimeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED25A472672F59F00CC4C43 /* WorkingTimeText.swift */; };
 		BED25A4A2672F6C000CC4C43 /* WorkspaceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED25A492672F6C000CC4C43 /* WorkspaceImage.swift */; };
 		BED25A4C2672FF1900CC4C43 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED25A4B2672FF1900CC4C43 /* User.swift */; };
+		BED2F9852921403700131800 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED2F9842921403700131800 /* Currency.swift */; };
 		BEE88BAD280E1D2A003ECC8D /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = BEE88BAC280E1D2A003ECC8D /* Rswift */; };
 		BEEE4479284F19D700E579A0 /* DateComponents+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE4478284F19D700E579A0 /* DateComponents+Comparable.swift */; };
 		EE427002234F4A1E007A63D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE427001234F4A1E007A63D9 /* AppDelegate.swift */; };
@@ -122,7 +124,7 @@
 		BE28C4FF23D7AD9600CA9D13 /* PreviewProvider+Locale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewProvider+Locale.swift"; sourceTree = "<group>"; };
 		BE293A5D23F4719500BB4E98 /* UIColor+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Init.swift"; sourceTree = "<group>"; };
 		BE293A5F23F4895A00BB4E98 /* Font+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+UIFont.swift"; sourceTree = "<group>"; };
-		BE293A6123F4957400BB4E98 /* DarkModeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeConfiguration.swift; sourceTree = "<group>"; };
+		BE293A6123F4957400BB4E98 /* DarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
 		BE37722823E7149F003C8D3F /* UIDevice+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Type.swift"; sourceTree = "<group>"; };
 		BE38A04E23F34434005D51F9 /* GlobalConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfiguration.swift; sourceTree = "<group>"; };
 		BE38A05023F34454005D51F9 /* LightTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightTheme.swift; sourceTree = "<group>"; };
@@ -154,9 +156,9 @@
 		BE92645023ED9F270072A555 /* NSDecimalNumber+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDecimalNumber+Operators.swift"; sourceTree = "<group>"; };
 		BE92645123ED9F270072A555 /* DateComponentsFormatter+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponentsFormatter+String.swift"; sourceTree = "<group>"; };
 		BE92645323ED9F270072A555 /* TimeTextTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTextTranslator.swift; sourceTree = "<group>"; };
-		BE92645923ED9F270072A555 /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		BE92645923ED9F270072A555 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		BE92645B23ED9F270072A555 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
-		BE92645C23ED9F270072A555 /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
+		BE92645C23ED9F270072A555 /* WorkRoutine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkRoutine.swift; sourceTree = "<group>"; };
 		BE92645D23ED9F270072A555 /* AppStateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateRepository.swift; sourceTree = "<group>"; };
 		BE92645E23ED9F270072A555 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		BE92646423ED9F4A0072A555 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		BE92646923ED9F4A0072A555 /* ValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTests.swift; sourceTree = "<group>"; };
 		BE92646A23ED9F4A0072A555 /* TimeTextTranslatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTextTranslatorTests.swift; sourceTree = "<group>"; };
 		BEA7FD1B2919B96F007777D5 /* ThemePersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePersistence.swift; sourceTree = "<group>"; };
+		BEA7FD1D2919BFB2007777D5 /* EditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewModel.swift; sourceTree = "<group>"; };
 		BEA9AB3323C5308B0057EA1E /* CurrencyField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyField.swift; sourceTree = "<group>"; };
 		BEB0979923BF984F00244E30 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		BEB0979C23BF990E00244E30 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
@@ -184,6 +187,7 @@
 		BED25A472672F59F00CC4C43 /* WorkingTimeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingTimeText.swift; sourceTree = "<group>"; };
 		BED25A492672F6C000CC4C43 /* WorkspaceImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceImage.swift; sourceTree = "<group>"; };
 		BED25A4B2672FF1900CC4C43 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BED2F9842921403700131800 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		BEEE4478284F19D700E579A0 /* DateComponents+Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponents+Comparable.swift"; sourceTree = "<group>"; };
 		EE426FFE234F4A1E007A63D9 /* Time is Money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time is Money.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE427001234F4A1E007A63D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -228,7 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				BE38A05023F34454005D51F9 /* LightTheme.swift */,
-				BE293A6123F4957400BB4E98 /* DarkModeConfiguration.swift */,
+				BE293A6123F4957400BB4E98 /* DarkTheme.swift */,
 			);
 			path = Themes;
 			sourceTree = "<group>";
@@ -249,7 +253,6 @@
 			isa = PBXGroup;
 			children = (
 				BE293A6323F4958400BB4E98 /* Themes */,
-				BE38A04E23F34434005D51F9 /* GlobalConfiguration.swift */,
 				BE38A05223F3445F005D51F9 /* ThemeProtocol.swift */,
 				BE38A05523F345D0005D51F9 /* DSFont.swift */,
 			);
@@ -280,10 +283,12 @@
 		BE442C5A23ED9FF7002306E6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BE92645923ED9F270072A555 /* Money.swift */,
+				BED25A4B2672FF1900CC4C43 /* User.swift */,
+				BE92645923ED9F270072A555 /* Price.swift */,
 				BE92645B23ED9F270072A555 /* Weekday.swift */,
-				BE92645C23ED9F270072A555 /* Routine.swift */,
+				BE92645C23ED9F270072A555 /* WorkRoutine.swift */,
 				BE4B4F1623F0ACC40090CCD9 /* Avatar.swift */,
+				BED2F9842921403700131800 /* Currency.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -294,7 +299,6 @@
 				BE92645E23ED9F270072A555 /* AppState.swift */,
 				BE92644B23ED95210072A555 /* InteractorsContainer.swift */,
 				BE92644523ECD0380072A555 /* MainInteractor.swift */,
-				BED25A4B2672FF1900CC4C43 /* User.swift */,
 			);
 			path = "Global State";
 			sourceTree = "<group>";
@@ -321,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				BE57677D23CE838D004BF48C /* EditView.swift */,
+				BEA7FD1D2919BFB2007777D5 /* EditViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -466,6 +471,7 @@
 		BED25A382672CA1000CC4C43 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BE38A04E23F34434005D51F9 /* GlobalConfiguration.swift */,
 				BE38A04D23F34426005D51F9 /* Design System */,
 				BEA7FD1A2919B793007777D5 /* Extensions */,
 				BEBACBAF23E745E0002ABD20 /* View Modifiers */,
@@ -709,6 +715,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEA7FD1E2919BFB2007777D5 /* EditViewModel.swift in Sources */,
 				BE4B4F1923F0B78C0090CCD9 /* OnboardingAvatarPickerView.swift in Sources */,
 				BE66B18323BD096800166912 /* OnboardingWelcomeView.swift in Sources */,
 				BED25A402672CEBE00CC4C43 /* InputSectionView.swift in Sources */,
@@ -729,6 +736,7 @@
 				BEBACBB123E745EA002ABD20 /* ScaledFont.swift in Sources */,
 				BEC748BB23D23BB50027F26D /* WeekHStack.swift in Sources */,
 				BEA7FD1C2919B96F007777D5 /* ThemePersistence.swift in Sources */,
+				BED2F9852921403700131800 /* Currency.swift in Sources */,
 				BE28C50023D7AD9600CA9D13 /* PreviewProvider+Locale.swift in Sources */,
 				BE4B4F0823EDC89A0090CCD9 /* User+WorkTime.swift in Sources */,
 				BE293A5E23F4719500BB4E98 /* UIColor+Init.swift in Sources */,
@@ -737,7 +745,7 @@
 				BE92646023ED9F270072A555 /* TimeTextTranslator.swift in Sources */,
 				BEC748BD23D23BCF0027F26D /* WeekdayView.swift in Sources */,
 				BE28C4F123D7A9D300CA9D13 /* R.generated.swift in Sources */,
-				BE442C7523EDAA16002306E6 /* Routine.swift in Sources */,
+				BE442C7523EDAA16002306E6 /* WorkRoutine.swift in Sources */,
 				BEC00AEB23BFDC3C001B6724 /* OnboardingIncomeView.swift in Sources */,
 				BE442C6423EDA32F002306E6 /* Double+Conversions.swift in Sources */,
 				BE442C6223EDA31B002306E6 /* Decimal+Conversions.swift in Sources */,
@@ -760,7 +768,7 @@
 				BE57677E23CE838D004BF48C /* EditView.swift in Sources */,
 				BED25A4A2672F6C000CC4C43 /* WorkspaceImage.swift in Sources */,
 				EE427009234F4A1E007A63D9 /* MainView.swift in Sources */,
-				BE293A6223F4957400BB4E98 /* DarkModeConfiguration.swift in Sources */,
+				BE293A6223F4957400BB4E98 /* DarkTheme.swift in Sources */,
 				BEC00AE923BFDC2C001B6724 /* OnboardingWorkTimeView.swift in Sources */,
 				BE37722923E7149F003C8D3F /* UIDevice+Type.swift in Sources */,
 				BE92646123ED9F270072A555 /* Calculator.swift in Sources */,
@@ -769,7 +777,7 @@
 				BE442C6723EDA399002306E6 /* NSDecimalNumber+Operators.swift in Sources */,
 				BE4B4F1523EF18E30090CCD9 /* AvatarFactory.swift in Sources */,
 				BE4B4F1323EEFE500090CCD9 /* ScenarioFactory.swift in Sources */,
-				BE442C7323EDAA14002306E6 /* Money.swift in Sources */,
+				BE442C7323EDAA14002306E6 /* Price.swift in Sources */,
 				BE92644423EC4F020072A555 /* CurrencyInputComponentView.swift in Sources */,
 				BE92644623ECD0380072A555 /* MainInteractor.swift in Sources */,
 			);
@@ -965,6 +973,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Time is Money/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -992,6 +1001,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Time is Money/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1013,7 +1023,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y93HUJS49V;
 				INFOPLIST_FILE = "Time is MoneyTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1037,7 +1047,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y93HUJS49V;
 				INFOPLIST_FILE = "Time is MoneyTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1058,6 +1068,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y93HUJS49V;
 				INFOPLIST_FILE = "Time is MoneyUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1078,6 +1089,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y93HUJS49V;
 				INFOPLIST_FILE = "Time is MoneyUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

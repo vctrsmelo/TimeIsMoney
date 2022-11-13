@@ -12,7 +12,7 @@ import SwiftUI
 // Create subviews private here
 struct InputSectionView: View {
     
-    @Binding var priceBinding: Money
+    @Binding var priceBinding: Currency
     
     var isKeyboardVisible: Bool
     

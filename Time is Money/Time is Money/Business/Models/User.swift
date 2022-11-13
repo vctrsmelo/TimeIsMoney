@@ -13,11 +13,13 @@ struct User {
     
     public var isOnboardingCompleted: Bool = false
     public var monthlySalary: NSDecimalNumber = 1000
+
     public var weeklyWorkHours: Int = 40 {
         didSet {
             syncWorkdaysWithWorkHours()
         }
     }
+
     public var workdays: [Weekday] = Weekday.weekdays() {
         didSet {
             syncWorkdaysWithWorkHours()

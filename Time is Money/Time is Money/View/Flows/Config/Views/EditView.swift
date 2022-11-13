@@ -11,16 +11,17 @@ import UIKit
 
 struct EditView: View {
     
+    @Binding var viewModel: EditViewModel
+    
     @EnvironmentObject var appState: AppState
     @Environment(\.interactors) var interactors: InteractorsContainer
-    
-    private let hours = (0...168).map { "\($0)"}
-    
-    @State private var moneyPerHour: NSNumber = 0.0
-    @State private var showingAlert = false
+
+//    @State private var moneyPerHour: NSNumber = 0.0
+//    @State private var showingAlert = false
+//    @State private var themeSelectedIndex: Int = 0
     
     private var moneyPerHourFormatted: String {
-        return Formatter.currency.string(from: moneyPerHour) ?? ""
+        return Formatter.currency.string(from: viewModel.moneyPerHour) ?? ""
     }
     
     var body: some View {
@@ -32,6 +33,13 @@ struct EditView: View {
         return NavigationView {
             VStack {
                 Form {
+                    Section {
+                        Picker("Theme", selection: $viewModel.themeSelectedIndex) {
+                            ForEach(0 ..< viewModel.themeOptions.count, id: \.self) {
+                                Text(self.viewModel.themeOptions[$0])
+                            }
+                        }.onChange(of: viewModel.themeSelectedIndex, perform: viewModel.setTheme)
+                    }
                     Section(header: EmptyView(), footer: avatarSection) {
                         EditFieldView(title: weeklyWorktime, icon: Image("MoneyClockIcon"), inputView: AnyView(worktimePicker))
                         EditFieldView(title: weeklyWorkdays, icon: Image("CalendarIcon"), inputView: AnyView(weekdays))
@@ -70,8 +78,8 @@ struct EditView: View {
         )
         
        return Picker(selection: selectedHours, label: EmptyView()) {
-            ForEach(0 ..< hours.count, id: \.self) {
-                Text(self.hours[$0]+" "+R.string.localizable.hours())
+           ForEach(0 ..< viewModel.hours.count, id: \.self) {
+                Text(viewModel.hours[$0]+" "+R.string.localizable.hours())
                     .font(config.font.regular(size: .body).swiftUIFont)
                     .foregroundColor(self.appState.user.isSelectedHoursValid($0) ? config.color.disabledColor.swiftUIColor : config.color.complementaryColor.swiftUIColor)
             }
@@ -101,14 +109,13 @@ struct EditView: View {
         
         return CurrencyField(salaryBinding, placeholder: "", font: config.font.regular(size: .body).uiKitFont, textAlignment: NSTextAlignment.left)
     }
-    
 }
 
-struct EditView_Previews: PreviewProvider {
-    static var previews: some View {
-        EditView()
-    }
-}
+//struct EditView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EditView()
+//    }
+//}
 
 // MARK: - Other Views
 
